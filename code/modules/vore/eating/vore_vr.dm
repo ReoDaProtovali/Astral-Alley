@@ -67,7 +67,10 @@ V::::::V           V::::::VO:::::::OOO:::::::ORR:::::R     R:::::REE::::::EEEEEE
 	var/show_vore_fx = TRUE
 	var/step_mechanics_pref = FALSE
 	var/pickup_pref = TRUE
+<<<<<<< HEAD
 	var/vore_sprite_color = list("stomach" = "#000", "taur belly" = "#000")
+=======
+>>>>>>> 7629be0be9 ([MIRROR] ports mind transfer pref from chomp (#8861))
 	var/allow_mind_transfer = FALSE
 
 	//CHOMP stuff
@@ -220,7 +223,10 @@ V::::::V           V::::::VO:::::::OOO:::::::ORR:::::R     R:::::REE::::::EEEEEE
 	weight_message_visible = json_from_file["weight_message_visible"]
 	weight_messages = json_from_file["weight_messages"]
 	eating_privacy_global = json_from_file["eating_privacy_global"]
+<<<<<<< HEAD
 	vore_sprite_color = json_from_file["vore_sprite_color"]
+=======
+>>>>>>> 7629be0be9 ([MIRROR] ports mind transfer pref from chomp (#8861))
 	allow_mind_transfer = json_from_file["allow_mind_transfer"]
 
 	//CHOMP stuff Start
@@ -331,8 +337,11 @@ V::::::V           V::::::VO:::::::OOO:::::::ORR:::::R     R:::::REE::::::EEEEEE
 	else if(weight_messages.len < 10)
 		while(weight_messages.len < 10)
 			weight_messages.Add("")
+<<<<<<< HEAD
 	if(isnull(vore_sprite_color))
 		vore_sprite_color = list("stomach" = "#000", "taur belly" = "#000")
+=======
+>>>>>>> 7629be0be9 ([MIRROR] ports mind transfer pref from chomp (#8861))
 	if(isnull(allow_mind_transfer))
 		allow_mind_transfer = FALSE
 

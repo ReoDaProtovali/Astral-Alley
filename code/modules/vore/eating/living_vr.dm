@@ -274,7 +274,10 @@
 	P.nutrition_messages = src.nutrition_messages
 	P.weight_message_visible = src.weight_message_visible
 	P.weight_messages = src.weight_messages
+<<<<<<< HEAD
 	P.vore_sprite_color = src.vore_sprite_color // CHOMPEdit
+=======
+>>>>>>> 7629be0be9 ([MIRROR] ports mind transfer pref from chomp (#8861))
 	P.allow_mind_transfer = src.allow_mind_transfer
 
 	//CHOMP stuff Start
@@ -348,7 +351,10 @@
 	nutrition_messages = P.nutrition_messages
 	weight_message_visible = P.weight_message_visible
 	weight_messages = P.weight_messages
+<<<<<<< HEAD
 	vore_sprite_color = P.vore_sprite_color //CHOMPEdit
+=======
+>>>>>>> 7629be0be9 ([MIRROR] ports mind transfer pref from chomp (#8861))
 	allow_mind_transfer = P.allow_mind_transfer
 
 	//CHOMP stuff
