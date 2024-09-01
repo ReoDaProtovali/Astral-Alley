@@ -143,9 +143,14 @@ export const VoreSelectedBellyDescriptions = (props: {
           ''
         )}
         {message_mode ||
+<<<<<<< HEAD
         (escapable &&
           (!!interacts.transferlocation ||
             !!interacts.transferlocation_secondary)) ||
+=======
+        !!interacts.transferlocation ||
+        !!interacts.transferlocation_secondary ||
+>>>>>>> 4c0c25c489 ([MIRROR] Vore Panel tweaks and fixes (#8856))
         (autotransfer_enabled &&
           (!!autotransfer.autotransferlocation ||
             !!autotransfer.autotransferlocation_secondary)) ? (
