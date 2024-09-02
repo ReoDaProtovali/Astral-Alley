@@ -9,7 +9,11 @@
 		return
 
 	var/list/smite_types = list(SMITE_BREAKLEGS,SMITE_BLUESPACEARTILLERY,SMITE_SPONTANEOUSCOMBUSTION,SMITE_LIGHTNINGBOLT,
+<<<<<<< HEAD
 								SMITE_SHADEKIN_ATTACK,SMITE_SHADEKIN_NOMF,SMITE_AD_SPAM,SMITE_REDSPACE_ABDUCT,SMITE_AUTOSAVE,SMITE_AUTOSAVE_WIDE,SMITE_SPICEREQUEST,SMITE_PEPPERNADE,SMITE_TERROR,
+=======
+								SMITE_SHADEKIN_ATTACK,SMITE_SHADEKIN_NOMF,SMITE_AD_SPAM,SMITE_REDSPACE_ABDUCT,SMITE_AUTOSAVE,SMITE_AUTOSAVE_WIDE,SMITE_TERROR,
+>>>>>>> 7425ef0b2c ([MIRROR] Fear and Phobias (#8857))
 								SMITE_PIE, SMITE_SPICE, SMITE_HOTDOG) //CHOMP Add pie, spicy air and hot dog
 
 	var/smite_choice = tgui_input_list(usr, "Select the type of SMITE for [target]","SMITE Type Choice", smite_types)
@@ -163,6 +167,7 @@
 			if(ishuman(target))
 				target.fear = 200
 
+<<<<<<< HEAD
 		if(SMITE_PEPPERNADE)
 			var/obj/item/weapon/grenade/chem_grenade/teargas/grenade = new /obj/item/weapon/grenade/chem_grenade/teargas
 			grenade.loc = target.loc
@@ -174,6 +179,8 @@
 			spice.loc = target.loc
 			to_chat(target,"A bottle of spices appears at your feet... be careful what you wish for!")
 
+=======
+>>>>>>> 7425ef0b2c ([MIRROR] Fear and Phobias (#8857))
 		if(SMITE_PIE) //CHOMP Add
 			new/obj/effect/decal/cleanable/pie_smudge(get_turf(target))
 			playsound(target, 'sound/effects/slime_squish.ogg', 100, 1, get_rand_frequency(), falloff = 5)
