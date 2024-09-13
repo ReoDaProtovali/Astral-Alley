@@ -293,7 +293,11 @@ GLOBAL_LIST_EMPTY(mannequins)
 
 	// Custom species icon bases
 	var/list/blacklisted_icons = list(SPECIES_CUSTOM,SPECIES_PROMETHEAN) //VOREStation Edit
+<<<<<<< HEAD
 	var/list/whitelisted_icons = list(SPECIES_FENNEC,SPECIES_XENOHYBRID, SPECIES_SHADEKIN) //CHOMPedit
+=======
+	var/list/whitelisted_icons = list(SPECIES_FENNEC,SPECIES_XENOHYBRID,SPECIES_VOX,SPECIES_SHADEKIN) //CHOMPedit
+>>>>>>> 07af330be6 ([MIRROR] tesh aren't whitelisted (#8950))
 	for(var/species_name in GLOB.playable_species)
 		if(species_name in blacklisted_icons)
 			continue
