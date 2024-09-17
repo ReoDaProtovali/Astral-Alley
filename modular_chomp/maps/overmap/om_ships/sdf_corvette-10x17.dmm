@@ -1,10 +1,8 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "bd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/fuel,
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 1380;
-	id_tag = "expshuttle_vent"
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8
 	},
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
 /obj/structure/closet/walllocker_double/emergency_engi/north,
@@ -40,9 +38,13 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/universal{
 	dir = 4
 	},
-/obj/effect/map_helper/airlock/sensor/int_sensor,
-/obj/machinery/airlock_sensor/airlock_interior{
-	pixel_y = -24
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/item/stack/material/phoron{
+	amount = 50
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
@@ -134,7 +136,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
 "hy" = (
-/obj/machinery/power/smes/buildable,
+/obj/machinery/power/smes/buildable/point_of_interest,
 /obj/structure/cable/green{
 	d2 = 4;
 	icon_state = "0-4"
@@ -145,8 +147,9 @@
 /obj/structure/handrail,
 /obj/machinery/atmospherics/pipe/manifold4w/hidden,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	id_tag = "sdfc_dock_con";
-	pixel_y = 24
+	id_tag = "sdfc_dock_con2";
+	pixel_y = 24;
+	frequency = 1380
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
@@ -202,6 +205,11 @@
 /obj/machinery/door/firedoor/glass,
 /obj/effect/map_helper/airlock/door/int_door,
 /obj/machinery/door/airlock/voidcraft,
+/obj/machinery/airlock_sensor/airlock_interior{
+	pixel_y = 8;
+	pixel_x = -26
+	},
+/obj/effect/map_helper/airlock/sensor/int_sensor,
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
 "ms" = (
@@ -226,7 +234,6 @@
 	d2 = 8;
 	icon_state = "1-8"
 	},
-/obj/machinery/sleep_console,
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
 "nh" = (
@@ -254,7 +261,8 @@
 	},
 /obj/machinery/alarm/alarms_hidden{
 	dir = 1;
-	pixel_y = -26
+	pixel_y = -26;
+	locked = 0
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
@@ -272,7 +280,8 @@
 	},
 /obj/machinery/alarm/alarms_hidden{
 	dir = 8;
-	pixel_x = 26
+	pixel_x = 26;
+	locked = 0
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
@@ -348,9 +357,17 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/sleeper{
-	dir = 8
+/obj/structure/closet/secure_closet/guncabinet{
+	req_one_access = null
 	},
+/obj/item/clothing/suit/armor/pcarrier/light,
+/obj/item/clothing/head/helmet,
+/obj/item/weapon/gun/projectile/automatic/p90,
+/obj/item/ammo_magazine/a57p90,
+/obj/item/ammo_magazine/a57p90,
+/obj/item/ammo_magazine/a57p90,
+/obj/item/ammo_magazine/a57p90,
+/obj/item/ammo_magazine/a57p90,
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
 "tt" = (
@@ -362,10 +379,8 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
-/obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	dir = 8;
-	frequency = 1380;
-	id_tag = "expshuttle_vent"
+/obj/machinery/atmospherics/unary/vent_pump{
+	dir = 8
 	},
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
 /obj/effect/shuttle_landmark/shuttle_initializer/sdf_corvette,
@@ -397,14 +412,14 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
 "wl" = (
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/obj/machinery/light{
+	dir = 1
+	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
 	frequency = 1380;
 	id_tag = "expshuttle_vent"
-	},
-/obj/effect/map_helper/airlock/atmos/chamber_pump,
-/obj/machinery/light{
-	dir = 1
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
@@ -460,6 +475,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
+	},
+/obj/structure/cable{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
@@ -542,7 +562,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
-/obj/machinery/pointdefense,
+/obj/machinery/pointdefense{
+	id_tag = "sdfc_pd"
+	},
 /turf/simulated/floor/airless,
 /area/shuttle/sdf_corvette)
 "Eo" = (
@@ -663,7 +685,7 @@
 /area/shuttle/sdf_corvette)
 "KM" = (
 /turf/template_noop,
-/area/space)
+/area/template_noop)
 "Ly" = (
 /obj/machinery/door/firedoor/glass,
 /obj/structure/grille,
@@ -688,10 +710,7 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
-/obj/item/weapon/storage/firstaid{
-	pixel_x = 2;
-	pixel_y = 2
-	},
+/obj/item/weapon/storage/firstaid/adv,
 /obj/item/weapon/storage/firstaid/o2{
 	pixel_x = -2;
 	pixel_y = -2
@@ -758,7 +777,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
-/obj/machinery/pointdefense,
+/obj/machinery/pointdefense{
+	id_tag = "sdfc_pd"
+	},
 /turf/simulated/floor/airless,
 /area/shuttle/sdf_corvette)
 "Rb" = (
@@ -784,7 +805,12 @@
 	icon_state = "0-8"
 	},
 /obj/machinery/power/apc/alarms_hidden{
-	pixel_y = -24
+	pixel_y = -24;
+	locked = 0
+	},
+/obj/structure/table/steel_reinforced,
+/obj/machinery/photocopier/faxmachine{
+	department = "Corvette"
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
@@ -794,6 +820,13 @@
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/closet/walllocker/emerglocker/south,
+/obj/structure/cable{
+	d2 = 4;
+	icon_state = "0-4"
+	},
+/obj/machinery/power/port_gen/pacman{
+	anchored = 1
+	},
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
 "UB" = (
@@ -823,7 +856,9 @@
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
 	},
-/obj/machinery/pointdefense,
+/obj/machinery/pointdefense{
+	id_tag = "sdfc_pd"
+	},
 /turf/simulated/floor/airless,
 /area/shuttle/sdf_corvette)
 "WA" = (
