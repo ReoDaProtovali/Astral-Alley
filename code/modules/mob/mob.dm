@@ -1231,6 +1231,12 @@
 	set instant = TRUE
 	throw_mode_on()
 
+/mob/verb/spacebar_throw_on()
+	set name = ".throwon"
+	set hidden = TRUE
+	set instant = TRUE
+	throw_mode_on()
+
 /mob/verb/spacebar_throw_off()
 	set name = ".throwoff"
 	set hidden = TRUE
