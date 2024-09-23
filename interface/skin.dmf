@@ -792,6 +792,7 @@ macro "hotkeymode"
 	elem
 		name = "CTRL+SHIFT+SUBTRACT"
 		command = "planedown"
+
 //	elem	// CHOMPREMOVE Start
 //		name = "Space"
 //		command = ".throwon"
