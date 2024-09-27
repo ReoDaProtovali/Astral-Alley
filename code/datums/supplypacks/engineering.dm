@@ -192,7 +192,12 @@
 			)
 	containertype = /obj/structure/closet/crate/secure/einstein
 	containername = "Particle Accelerator crate"
+<<<<<<< HEAD
 	access = access_ce
+=======
+	access = list(access_ce, access_research) // CHOMPEdit
+	one_access = TRUE //CHOMPAdd
+>>>>>>> 6a0ae53711 (only check either access (#9048))
 
 /datum/supply_pack/eng/shield_gen
 	contains = list(/obj/item/weapon/circuitboard/shield_gen)
