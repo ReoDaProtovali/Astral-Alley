@@ -229,7 +229,11 @@
 					var/selected_radio_channel = tgui_input_list(usr, "Please select the radio channel to add", "Channels", available_channels)
 					if(!selected_radio_channel || selected_radio_channel == "Cancel")
 						break
+<<<<<<< HEAD
 					if(selected_radio_channel == "Special Ops")
+=======
+					if(selected_radio_channel == CHANNEL_SPECIAL_OPS || selected_radio_channel == CHANNEL_RESPONSE_TEAM)
+>>>>>>> 1e0b72d950 ([MIRROR] fix the modify robot admin section for the ert channel (#9051))
 						target.radio.centComm = 1
 					if(selected_radio_channel == "Raider")
 						qdel(target.radio.keyslot)
@@ -249,7 +253,11 @@
 					var/selected_radio_channel = tgui_input_list(usr, "Please select the radio channel to remove", "Channels", target.radio.channels)
 					if(!selected_radio_channel || selected_radio_channel == "Cancel")
 						break
+<<<<<<< HEAD
 					if(selected_radio_channel == "Special Ops")
+=======
+					if(selected_radio_channel == CHANNEL_SPECIAL_OPS || selected_radio_channel == CHANNEL_RESPONSE_TEAM && !(target.module.channels[CHANNEL_SPECIAL_OPS] || target.module.channels[CHANNEL_RESPONSE_TEAM]))
+>>>>>>> 1e0b72d950 ([MIRROR] fix the modify robot admin section for the ert channel (#9051))
 						target.radio.centComm = 0
 					target.module.channels -= selected_radio_channel
 					if((selected_radio_channel == "Mercenary" || selected_radio_channel == "Raider") && !(target.module.channels["Raider"] || target.module.channels["Mercenary"]))
