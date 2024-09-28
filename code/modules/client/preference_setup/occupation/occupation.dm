@@ -18,7 +18,11 @@
 	S["job_talon_med"]		>> pref.job_talon_med
 	S["job_talon_high"]		>> pref.job_talon_high
 	//VOREStation Add End
+<<<<<<< HEAD
 	S["player_alt_titles"]	>> pref.player_alt_titles
+=======
+	pref.player_alt_titles	= check_list_copy(save_data["player_alt_titles"])
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))
 	//CHOMPStation Add
 	S["job_other_low"]		>> pref.job_other_low
 	S["job_other_med"]		>> pref.job_other_med
@@ -41,7 +45,11 @@
 	S["job_talon_med"]		<< pref.job_talon_med
 	S["job_talon_high"]		<< pref.job_talon_high
 	//VOREStation Add End
+<<<<<<< HEAD
 	S["player_alt_titles"]	<< pref.player_alt_titles
+=======
+	save_data["player_alt_titles"]	= check_list_copy(pref.player_alt_titles)
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))
 	//CHOMPStation Add
 	S["job_other_low"]		<< pref.job_other_low
 	S["job_other_med"]		<< pref.job_other_med

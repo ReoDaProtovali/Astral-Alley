@@ -14,10 +14,31 @@
 	S["nif_durability"]	>> pref.nif_durability
 	S["nif_savedata"]	>> pref.nif_savedata
 
+<<<<<<< HEAD
 /datum/category_item/player_setup_item/vore/nif/save_character(var/savefile/S)
 	S["nif_path"]		<< pref.nif_path
 	S["nif_durability"]	<< pref.nif_durability
 	S["nif_savedata"]	<< pref.nif_savedata
+=======
+/datum/category_item/player_setup_item/vore/nif/load_character()
+	var/datum/json_savefile/savefile = new /datum/json_savefile(nif_savefile_path(pref.client_ckey))
+	var/list/save_data_file = savefile.get_entry("character[pref.default_slot]", list())
+
+	pref.nif_path		= save_data_file["nif_path"]
+	pref.nif_durability	= save_data_file["nif_durability"]
+	pref.nif_savedata	= check_list_copy(save_data_file["nif_savedata"])
+
+/datum/category_item/player_setup_item/vore/nif/save_character()
+	var/datum/json_savefile/savefile = new /datum/json_savefile(nif_savefile_path(pref.client_ckey))
+	var/list/save_data_file = savefile.get_entry("character[pref.default_slot]", list())
+
+	save_data_file["nif_path"]			= pref.nif_path
+	save_data_file["nif_durability"]	= pref.nif_durability
+	save_data_file["nif_savedata"]		= check_list_copy(pref.nif_savedata)
+
+	savefile.set_entry("character[pref.default_slot]", save_data_file)
+	savefile.save()
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))
 
 /datum/category_item/player_setup_item/vore/nif/sanitize_character()
 	if(pref.nif_path && !ispath(pref.nif_path))		//We have at least a text string that should be a path.
