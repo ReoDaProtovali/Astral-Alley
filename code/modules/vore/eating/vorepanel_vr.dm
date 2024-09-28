@@ -584,6 +584,10 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 		data["soulcatcher"]["mind_backups"] = host.soulgem.flag_check(NIF_SC_BACKUPS)
 		data["soulcatcher"]["ar_projecting"] = host.soulgem.flag_check(NIF_SC_PROJECTING)
 		data["soulcatcher"]["show_vore_sfx"] = host.soulgem.flag_check(SOULGEM_SHOW_VORE_SFX)
+<<<<<<< HEAD
+=======
+		data["soulcatcher"]["see_sr_projecting"] = host.soulgem.flag_check(SOULGEM_SEE_SR_SOULS)
+>>>>>>> c8bd9bfdac (fix soulcatcher SR sight (#9074))
 	var/nutri_value = 0
 	if(istype(host, /mob/living))
 		var/mob/living/H = host
@@ -2313,6 +2317,13 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			host.soulgem.toggle_setting(SOULGEM_SHOW_VORE_SFX)
 			unsaved_changes = TRUE
 			return TRUE
+<<<<<<< HEAD
+=======
+		if("toggle_sr_vision")
+			host.soulgem.toggle_setting(SOULGEM_SEE_SR_SOULS)
+			unsaved_changes = TRUE
+			return TRUE
+>>>>>>> c8bd9bfdac (fix soulcatcher SR sight (#9074))
 		if("soulcatcher_rename")
 			var/new_name = tgui_input_text(host, "Adjust the name of your soulcatcher. Limit 60 chars.", \
 				"New Name", html_decode(host.soulgem.name), 60, prevent_enter = TRUE)
