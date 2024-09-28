@@ -590,3 +590,41 @@
 /// for use inside of browse() calls to html assets that might be loaded on a cdn.
 /proc/url2htmlloader(url)
 	return {"<html><head><meta http-equiv="refresh" content="0;URL='[url]'"/></head><body onLoad="parent.location='[url]'"></body></html>"}
+<<<<<<< HEAD
+=======
+
+/// Returns a list with all keys turned into paths
+/proc/text2path_list(list/L)
+	. = list()
+	for(var/key in L)
+		var/path = key
+		if(!ispath(path))
+			path = text2path(key)
+		if(!isnull(L[path]))
+			.[path] = L[path]
+			continue
+		if(!isnull(L[key]))
+			.[path] = L[key]
+			continue
+		if(!isnull(path))
+			. += path
+
+/proc/path2text_list(list/L)
+	. = list()
+	for(var/key in L)
+		var/text = "[key]"
+		if(!isnull(L[text]))
+			.[text] = L[text]
+			continue
+		if(!isnull(L[key]))
+			.[text] = L[key]
+			continue
+		if(!isnull(text))
+			.[text] = ""
+
+/proc/check_list_copy(var/i)
+	if(islist(i))
+		var/list/l = i
+		return l.Copy()
+	return i
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))

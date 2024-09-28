@@ -105,7 +105,11 @@
 		if(direct)
 			if(ismob(thing))
 				var/mob/M = thing
+<<<<<<< HEAD
 				if(pref_check && !M.is_preference_enabled(pref_check))
+=======
+				if(!M.check_sound_preference(pref_check))
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))
 					continue
 			SEND_SOUND(thing, S)
 		else

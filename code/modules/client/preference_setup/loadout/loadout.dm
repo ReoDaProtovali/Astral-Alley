@@ -45,6 +45,7 @@ var/list/gear_datums = list()
 	sort_order = 1
 	var/current_tab = "General"
 
+<<<<<<< HEAD
 /datum/category_item/player_setup_item/loadout/load_character(var/savefile/S)
 	from_file(S["gear_list"], pref.gear_list)
 	from_file(S["gear_slot"], pref.gear_slot)
@@ -52,12 +53,41 @@ var/list/gear_datums = list()
 		pref.gear = pref.gear_list["[pref.gear_slot]"]
 	else
 		from_file(S["gear"], pref.gear)
+=======
+/datum/category_item/player_setup_item/loadout/load_character(list/save_data)
+	pref.gear_list = list()
+	var/all_gear = check_list_copy(save_data["gear_list"])
+	for(var/i in all_gear)
+		var/list/entries = check_list_copy(all_gear["[i]"])
+		for(var/j in entries)
+			entries["[j]"] = path2text_list(entries["[j]"])
+		pref.gear_list["[i]"] = entries
+	pref.gear_slot = save_data["gear_slot"]
+	if(pref.gear_list!=null && pref.gear_slot!=null)
+		pref.gear = pref.gear_list["[pref.gear_slot]"]
+	else
+		pref.gear = check_list_copy(save_data["gear"])
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))
 		pref.gear_slot = 1
 
 /datum/category_item/player_setup_item/loadout/save_character(var/savefile/S)
 	pref.gear_list["[pref.gear_slot]"] = pref.gear
+<<<<<<< HEAD
 	to_file(S["gear_list"], pref.gear_list)
 	to_file(S["gear_slot"], pref.gear_slot)
+=======
+	var/list/all_gear = list()
+	var/worn_gear = check_list_copy(pref.gear_list)
+	for(var/i in worn_gear)
+		var/list/entries = check_list_copy(worn_gear["[i]"])
+		if(!length(entries))
+			entries = check_list_copy(worn_gear[i])
+		for(var/j in entries)
+			entries["[j]"] = check_list_copy(entries["[j]"])
+		all_gear["[i]"] = entries
+	save_data["gear_list"] = all_gear
+	save_data["gear_slot"] = pref.gear_slot
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))
 
 /datum/category_item/player_setup_item/loadout/proc/valid_gear_choices(var/max_cost)
 	. = list()

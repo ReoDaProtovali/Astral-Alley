@@ -131,6 +131,7 @@ var/global/list/valid_bloodreagents = list("default","iron","copper","phoron","s
 	S["custom_ask"]		>> pref.custom_ask
 	S["custom_exclaim"]	>> pref.custom_exclaim
 
+<<<<<<< HEAD
 	S["custom_heat"]	>> pref.custom_heat
 	S["custom_cold"]	>> pref.custom_cold
 
@@ -142,6 +143,19 @@ var/global/list/valid_bloodreagents = list("default","iron","copper","phoron","s
 	S["neg_traits"]		<< pref.neg_traits
 	S["blood_color"]	<< pref.blood_color
 	S["blood_reagents"]		<< pref.blood_reagents
+=======
+	pref.custom_heat			= check_list_copy(save_data["custom_heat"])
+	pref.custom_cold			= check_list_copy(save_data["custom_cold"])
+
+/datum/category_item/player_setup_item/vore/traits/save_character(list/save_data)
+	save_data["custom_species"]		= pref.custom_species
+	save_data["custom_base"]		= pref.custom_base
+	save_data["pos_traits"]			= check_list_copy(pref.pos_traits)
+	save_data["neu_traits"]			= check_list_copy(pref.neu_traits)
+	save_data["neg_traits"]			= check_list_copy(pref.neg_traits)
+	save_data["blood_color"]		= pref.blood_color
+	save_data["blood_reagents"]		= pref.blood_reagents
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))
 
 	S["traits_cheating"]	<< pref.traits_cheating
 	S["max_traits"]		<< pref.max_traits
@@ -152,8 +166,13 @@ var/global/list/valid_bloodreagents = list("default","iron","copper","phoron","s
 	S["custom_ask"]		<< pref.custom_ask
 	S["custom_exclaim"]	<< pref.custom_exclaim
 
+<<<<<<< HEAD
 	S["custom_heat"]	<< pref.custom_heat
 	S["custom_cold"]	<< pref.custom_cold
+=======
+	save_data["custom_heat"]		= check_list_copy(pref.custom_heat)
+	save_data["custom_cold"]		= check_list_copy(pref.custom_cold)
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))
 
 /datum/category_item/player_setup_item/vore/traits/sanitize_character()
 	if(!pref.pos_traits) pref.pos_traits = list()

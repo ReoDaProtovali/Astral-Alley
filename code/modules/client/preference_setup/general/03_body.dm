@@ -90,6 +90,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	name = "Body"
 	sort_order = 3
 
+<<<<<<< HEAD
 /datum/category_item/player_setup_item/general/body/load_character(var/savefile/S)
 	S["species"]			>> pref.species
 	S["hair_red"]			>> pref.r_hair
@@ -234,6 +235,160 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	S["g_wing3"]		<< pref.g_wing3
 	S["b_wing3"]		<< pref.b_wing3
 	S["digitigrade"]	<< pref.digitigrade
+=======
+/datum/category_item/player_setup_item/general/body/load_character(list/save_data)
+	pref.species			= save_data["species"]
+	pref.r_hair				= save_data["hair_red"]
+	pref.g_hair				= save_data["hair_green"]
+	pref.b_hair				= save_data["hair_blue"]
+	pref.r_facial			= save_data["facial_red"]
+	pref.r_grad				= save_data["grad_red"]
+	pref.g_grad				= save_data["grad_green"]
+	pref.b_grad				= save_data["grad_blue"]
+	pref.g_facial			= save_data["facial_green"]
+	pref.b_facial			= save_data["facial_blue"]
+	pref.s_tone				= save_data["skin_tone"]
+	pref.r_skin				= save_data["skin_red"]
+	pref.g_skin				= save_data["skin_green"]
+	pref.b_skin				= save_data["skin_blue"]
+	pref.h_style			= save_data["hair_style_name"]
+	pref.f_style			= save_data["facial_style_name"]
+	pref.grad_style			= save_data["grad_style_name"]
+	pref.r_eyes				= save_data["eyes_red"]
+	pref.g_eyes				= save_data["eyes_green"]
+	pref.b_eyes				= save_data["eyes_blue"]
+	pref.b_type				= save_data["b_type"]
+	pref.disabilities		= save_data["disabilities"]
+	pref.organ_data			= check_list_copy(save_data["organ_data"])
+	pref.rlimb_data			= check_list_copy(save_data["rlimb_data"])
+	pref.body_markings		= check_list_copy(save_data["body_markings"])
+	for(var/i in pref.body_markings)
+		pref.body_markings[i] = check_list_copy(pref.body_markings[i])
+		for(var/j in pref.body_markings[i])
+			pref.body_markings[i][j] = check_list_copy(pref.body_markings[i][j])
+	pref.synth_color		= save_data["synth_color"]
+	pref.r_synth			= save_data["synth_red"]
+	pref.g_synth			= save_data["synth_green"]
+	pref.b_synth			= save_data["synth_blue"]
+	pref.synth_markings		= save_data["synth_markings"]
+	pref.bgstate			= save_data["bgstate"]
+	pref.body_descriptors	= check_list_copy(save_data["body_descriptors"])
+	//YWadd start
+	pref.wingdings			= save_data["Wingdings"]
+	pref.colorblind_mono	= save_data["colorblind_mono"]
+	pref.colorblind_vulp	= save_data["colorblind_vulp"]
+	pref.colorblind_taj		= save_data["colorblind_taj"]
+	pref.haemophilia		= save_data["haemophilia"]
+	//YWadd end
+	pref.ear_style			= save_data["ear_style"]
+	pref.r_ears				= save_data["r_ears"]
+	pref.g_ears				= save_data["g_ears"]
+	pref.b_ears				= save_data["b_ears"]
+	pref.r_ears2			= save_data["r_ears2"]
+	pref.g_ears2			= save_data["g_ears2"]
+	pref.b_ears2			= save_data["b_ears2"]
+	pref.r_ears3			= save_data["r_ears3"]
+	pref.g_ears3			= save_data["g_ears3"]
+	pref.b_ears3			= save_data["b_ears3"]
+	pref.tail_style			= save_data["tail_style"]
+	pref.r_tail				= save_data["r_tail"]
+	pref.g_tail				= save_data["g_tail"]
+	pref.b_tail				= save_data["b_tail"]
+	pref.r_tail2			= save_data["r_tail2"]
+	pref.g_tail2			= save_data["g_tail2"]
+	pref.b_tail2			= save_data["b_tail2"]
+	pref.r_tail3			= save_data["r_tail3"]
+	pref.g_tail3			= save_data["g_tail3"]
+	pref.b_tail3			= save_data["b_tail3"]
+	pref.wing_style			= save_data["wing_style"]
+	pref.r_wing				= save_data["r_wing"]
+	pref.g_wing				= save_data["g_wing"]
+	pref.b_wing				= save_data["b_wing"]
+	pref.r_wing2			= save_data["r_wing2"]
+	pref.g_wing2			= save_data["g_wing2"]
+	pref.b_wing2			= save_data["b_wing2"]
+	pref.r_wing3			= save_data["r_wing3"]
+	pref.g_wing3			= save_data["g_wing3"]
+	pref.b_wing3			= save_data["b_wing3"]
+	pref.digitigrade 		= save_data["digitigrade"]
+
+/datum/category_item/player_setup_item/general/body/save_character(list/save_data)
+	save_data["species"]			= pref.species
+	save_data["hair_red"]			= pref.r_hair
+	save_data["hair_green"]			= pref.g_hair
+	save_data["hair_blue"]			= pref.b_hair
+	save_data["grad_red"]			= pref.r_grad
+	save_data["grad_green"]			= pref.g_grad
+	save_data["grad_blue"]			= pref.b_grad
+	save_data["facial_red"]			= pref.r_facial
+	save_data["facial_green"]		= pref.g_facial
+	save_data["facial_blue"]		= pref.b_facial
+	save_data["skin_tone"]			= pref.s_tone
+	save_data["skin_red"]			= pref.r_skin
+	save_data["skin_green"]			= pref.g_skin
+	save_data["skin_blue"]			= pref.b_skin
+	save_data["hair_style_name"]	= pref.h_style
+	save_data["facial_style_name"]	= pref.f_style
+	save_data["grad_style_name"]	= pref.grad_style
+	save_data["eyes_red"]			= pref.r_eyes
+	save_data["eyes_green"]			= pref.g_eyes
+	save_data["eyes_blue"]			= pref.b_eyes
+	save_data["b_type"]				= pref.b_type
+	save_data["disabilities"]		= pref.disabilities
+	save_data["organ_data"]			= check_list_copy(pref.organ_data)
+	save_data["rlimb_data"]			= check_list_copy(pref.rlimb_data)
+	var/list/body_markings 			= check_list_copy(pref.body_markings)
+	for(var/i in pref.body_markings)
+		body_markings[i] = check_list_copy(body_markings[i])
+		for(var/j in body_markings[i])
+			body_markings[i][j] = check_list_copy(body_markings[i][j])
+	save_data["body_markings"]		= body_markings
+	save_data["synth_color"]		= pref.synth_color
+	save_data["synth_red"]			= pref.r_synth
+	save_data["synth_green"]		= pref.g_synth
+	save_data["synth_blue"]			= pref.b_synth
+	save_data["synth_markings"]		= pref.synth_markings
+	save_data["bgstate"]			= pref.bgstate
+	save_data["body_descriptors"]	= check_list_copy(pref.body_descriptors)
+	//YWadd start
+	save_data["Wingdings"]			= pref.wingdings
+	save_data["colorblind_mono"]	= pref.colorblind_mono
+	save_data["colorblind_vulp"]	= pref.colorblind_vulp
+	save_data["colorblind_taj"]		= pref.colorblind_taj
+	save_data["haemophilia"]		= pref.haemophilia
+	//YWadd end
+	save_data["ear_style"]			= pref.ear_style
+	save_data["r_ears"]				= pref.r_ears
+	save_data["g_ears"]				= pref.g_ears
+	save_data["b_ears"]				= pref.b_ears
+	save_data["r_ears2"]			= pref.r_ears2
+	save_data["g_ears2"]			= pref.g_ears2
+	save_data["b_ears2"]			= pref.b_ears2
+	save_data["r_ears3"]			= pref.r_ears3
+	save_data["g_ears3"]			= pref.g_ears3
+	save_data["b_ears3"]			= pref.b_ears3
+	save_data["tail_style"]			= pref.tail_style
+	save_data["r_tail"]				= pref.r_tail
+	save_data["g_tail"]				= pref.g_tail
+	save_data["b_tail"]				= pref.b_tail
+	save_data["r_tail2"]			= pref.r_tail2
+	save_data["g_tail2"]			= pref.g_tail2
+	save_data["b_tail2"]			= pref.b_tail2
+	save_data["r_tail3"]			= pref.r_tail3
+	save_data["g_tail3"]			= pref.g_tail3
+	save_data["b_tail3"]			= pref.b_tail3
+	save_data["wing_style"]			= pref.wing_style
+	save_data["r_wing"]				= pref.r_wing
+	save_data["g_wing"]				= pref.g_wing
+	save_data["b_wing"]				= pref.b_wing
+	save_data["r_wing2"]			= pref.r_wing2
+	save_data["g_wing2"]			= pref.g_wing2
+	save_data["b_wing2"]			= pref.b_wing2
+	save_data["r_wing3"]			= pref.r_wing3
+	save_data["g_wing3"]			= pref.g_wing3
+	save_data["b_wing3"]			= pref.b_wing3
+	save_data["digitigrade"]		= pref.digitigrade
+>>>>>>> f37f844f5a ([MIRROR] de-reference save_data lists (#9067))
 
 /datum/category_item/player_setup_item/general/body/sanitize_character(var/savefile/S)
 	if(!pref.species || !(pref.species in GLOB.playable_species))
