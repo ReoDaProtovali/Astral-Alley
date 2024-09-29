@@ -426,6 +426,11 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/rcd/electric/mounted/borg(src)
 	src.modules += new /obj/item/weapon/pickaxe/plasmacutter/borg(src)
 	src.modules += new /obj/item/weapon/gripper/no_use/loader(src)
+<<<<<<< HEAD
+=======
+	src.modules += new /obj/item/dogborg/stasis_clamp(src)
+	src.modules += new /obj/item/weapon/holosign_creator/combifan(src) //CHOMPAdd
+>>>>>>> f0905c72fd ([MIRROR] Engiborg stasis clamp (#9092))
 
 	var/datum/matter_synth/metal = new /datum/matter_synth/metal(40000)
 	var/datum/matter_synth/glass = new /datum/matter_synth/glass(40000)
