@@ -522,6 +522,15 @@
 	if(prefs)
 		prefs.ShowChoices(usr)
 
+<<<<<<< HEAD
+=======
+/client/verb/game_options()
+	set name = "Game Options"
+	set category = "Preferences.Game" //CHOMPEdit
+	if(prefs)
+		prefs.tgui_interact(usr)
+
+>>>>>>> d7759055ff (don't assume it's a human (#9091))
 /client/proc/findJoinDate()
 	var/list/http = world.Export("http://byond.com/members/[ckey]?format=text")
 	if(!http)
