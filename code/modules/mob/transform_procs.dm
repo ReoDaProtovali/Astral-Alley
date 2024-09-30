@@ -174,14 +174,23 @@
 		O.key = key
 
 	O.loc = loc
+<<<<<<< HEAD
 	O.job = "Cyborg"
 	if(O.mind.assigned_role == "Cyborg")
 		if(O.mind.role_alt_title == "Robot")
 			O.mmi = new /obj/item/device/mmi/digital/posibrain(O)
 		else if(O.mind.role_alt_title == "Drone")
 			O.mmi = new /obj/item/device/mmi/digital/robot(O)
+=======
+	O.job = JOB_CYBORG
+	if(O.mind.assigned_role == JOB_CYBORG)
+		if(O.mind.role_alt_title == JOB_ALT_ROBOT)
+			O.mmi = new /obj/item/mmi/digital/posibrain(O)
+		else if(O.mind.role_alt_title == JOB_ALT_DRONE)
+			O.mmi = new /obj/item/mmi/digital/robot(O)
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 		else
-			O.mmi = new /obj/item/device/mmi(O)
+			O.mmi = new /obj/item/mmi(O)
 
 		O.mmi.transfer_identity(src)
 

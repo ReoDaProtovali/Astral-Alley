@@ -238,6 +238,7 @@
 		stack_trace("Persist (NIF): Given a nonhuman: [H]")
 		return
 
+<<<<<<< HEAD
 	if(!prefs)
 		prefs = prep_for_persist(H)
 
@@ -246,6 +247,9 @@
 		return
 
 	var/obj/item/device/nif/nif = H.nif
+=======
+	var/obj/item/nif/nif = H.nif
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 
 	if(nif && H.ckey != nif.owner_key)
 		return
