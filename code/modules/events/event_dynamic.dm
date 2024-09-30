@@ -200,6 +200,7 @@ var/list/event_last_fired = list()
 		if(istype(M, /mob/living/silicon/robot))
 			var/mob/living/silicon/robot/R = M
 			if(R.module)
+<<<<<<< HEAD
 				if(istype(R.module, /obj/item/weapon/robot_module/robot/engineering))
 					active_with_role["Engineer"]++
 				else if(istype(R.module, /obj/item/weapon/robot_module/robot/security))
@@ -212,6 +213,24 @@ var/list/event_last_fired = list()
 					active_with_role["Janitor"]++
 				else if(istype(R.module, /obj/item/weapon/robot_module/robot/clerical/butler))
 					active_with_role["Botanist"]++
+=======
+				if(istype(R.module, /obj/item/robot_module/robot/engineering))
+					active_with_role[DEPARTMENT_ENGINEERING]++
+				else if(istype(R.module, /obj/item/robot_module/robot/security))
+					active_with_role[DEPARTMENT_SECURITY]++
+				else if(istype(R.module, /obj/item/robot_module/robot/medical))
+					active_with_role[DEPARTMENT_MEDICAL]++
+				else if(istype(R.module, /obj/item/robot_module/robot/research))
+					active_with_role[DEPARTMENT_RESEARCH]++
+				else if(istype(R.module, /obj/item/robot_module/robot/janitor))
+					active_with_role[JOB_JANITOR]++
+				else if(istype(R.module, /obj/item/robot_module/robot/clerical/butler))
+					active_with_role[JOB_BOTANIST]++
+				//CHOMPAdd Start
+				else if(istype(R.module, /obj/item/robot_module/robot/miner))
+					active_with_role[DEPARTMENT_CARGO]++
+				//CHOMPAdd End
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 
 		if(M.mind.assigned_role in SSjob.get_job_titles_in_department(DEPARTMENT_ENGINEERING))
 			active_with_role["Engineer"]++

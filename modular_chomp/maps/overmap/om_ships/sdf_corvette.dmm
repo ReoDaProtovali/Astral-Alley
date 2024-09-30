@@ -8,7 +8,7 @@
 /obj/structure/closet/walllocker_double/emergency_engi/north,
 /obj/fiftyspawner/steel/hull,
 /obj/fiftyspawner/rglass,
-/obj/item/weapon/storage/toolbox/mechanical,
+/obj/item/storage/toolbox/mechanical,
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
 "bn" = (
@@ -63,7 +63,7 @@
 	dir = 4
 	},
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
-/obj/item/weapon/storage/toolbox/electrical,
+/obj/item/storage/toolbox/electrical,
 /obj/structure/closet/walllocker_double/emergency_engi/north,
 /obj/machinery/button/remote/airlock{
 	dir = 4;
@@ -341,6 +341,26 @@
 /obj/machinery/sleeper{
 	dir = 8
 	},
+<<<<<<< HEAD
+=======
+/obj/item/gun/projectile/automatic/serdy/m4a1,
+/obj/item/ammo_magazine/medium,
+/obj/item/ammo_magazine/medium,
+/obj/item/ammo_magazine/medium,
+/obj/item/ammo_magazine/medium,
+/obj/item/ammo_magazine/medium,
+/obj/item/clothing/suit/armor/pcarrier/medium,
+/obj/item/clothing/suit/armor/pcarrier/medium,
+/obj/item/clothing/suit/armor/pcarrier/medium,
+/obj/item/gun/projectile/automatic/serdy/m4a1,
+/obj/item/gun/projectile/automatic/serdy/m4a1,
+/obj/item/ammo_magazine/medium,
+/obj/item/ammo_magazine/medium,
+/obj/item/ammo_magazine/medium,
+/obj/item/clothing/head/helmet/combat,
+/obj/item/clothing/head/helmet/combat,
+/obj/item/clothing/head/helmet/combat,
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/sdf_corvette)
 "tt" = (
@@ -672,11 +692,16 @@
 /obj/effect/floor_decal/industrial/warning/corner{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/item/weapon/storage/firstaid{
 	pixel_x = 2;
 	pixel_y = 2
 	},
 /obj/item/weapon/storage/firstaid/o2{
+=======
+/obj/item/storage/firstaid/adv,
+/obj/item/storage/firstaid/o2{
+>>>>>>> 5ea698a0ef ([MIRROR] Removes /obj/item/weapon and /obj/item/device [MDB IGNORE] (#9084))
 	pixel_x = -2;
 	pixel_y = -2
 	},
