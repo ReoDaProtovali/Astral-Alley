@@ -51,8 +51,13 @@
 			qdel(src)
 	else if(thing.sharp)
 
+<<<<<<< HEAD
 		if(jobban_isbanned(user, "Graffiti"))
 			to_chat(user, SPAN_WARNING("You are banned from leaving persistent information across rounds."))
+=======
+		if(jobban_isbanned(user, JOB_GRAFFITI))
+			to_chat(user, span_warning("You are banned from leaving persistent information across rounds."))
+>>>>>>> 31407a0be3 ([MIRROR] First part of a span rework (#9120))
 			return
 
 		var/_message = sanitize(tgui_input_text(usr, "Enter an additional message to engrave.", "Graffiti"), trim = TRUE)
