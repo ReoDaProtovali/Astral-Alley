@@ -58,6 +58,11 @@
 @include meta.load-css('./interfaces/ExperimentConfigure.scss');
 @include meta.load-css('./interfaces/NuclearBomb.scss');
 @include meta.load-css('./interfaces/Paper.scss');
+<<<<<<< HEAD
+=======
+@include meta.load-css('./interfaces/Pda.scss');
+@include meta.load-css('./interfaces/ResleevingConsole.scss');
+>>>>>>> da6ab0be93 ([MIRROR] Medical UI fixes and tweaks (#9130))
 @include meta.load-css('./interfaces/Roulette.scss');
 @include meta.load-css('./interfaces/Safe.scss');
 @include meta.load-css('./interfaces/TachyonArray.scss');
