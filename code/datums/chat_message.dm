@@ -118,6 +118,16 @@ var/list/runechat_image_cache = list()
 		target.chat_color_darkened = colorize_string(target.name, 0.85, 0.85)
 		target.chat_color_name = target.name
 
+<<<<<<< HEAD
+=======
+		// Always force it back to a pref if they have one
+		if(ismob(target))
+			var/mob/M = target
+			if(M?.client?.prefs && M.client.prefs.runechat_color != COLOR_BLACK)
+				target.chat_color = M.client.prefs.runechat_color
+				target.chat_color_darkened = M.client.prefs.runechat_color
+
+>>>>>>> 58ab7a2d7b ([MIRROR] fix timer window (#9135))
 	// Get rid of any URL schemes that might cause BYOND to automatically wrap something in an anchor tag
 	var/static/regex/url_scheme = new(@"[A-Za-z][A-Za-z0-9+-\.]*:\/\/", "g")
 	text = replacetext(text, url_scheme, "")
