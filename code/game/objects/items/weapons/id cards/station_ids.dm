@@ -36,7 +36,7 @@
 	if(in_range(user, src))
 		tgui_interact(user) //Not chat related
 	else
-		. += "<span class='warning'>It is too far away to read.</span>"
+		. += span_warning("It is too far away to read.")
 
 /obj/item/weapon/card/id/proc/prevent_tracking()
 	return 0
@@ -350,7 +350,7 @@
 		name = user.name + "'s ID card" + " ([assignment] Contractor)"//Chompedit: Suffix contractor IDs
 
 	configured = 1
-	to_chat(user, "<span class='notice'>Card settings set.</span>")
+	to_chat(user, span_notice("Card settings set."))
 
 /obj/item/weapon/card/id/event/attackby(obj/item/I as obj, var/mob/user)
 	if(istype(I, /obj/item/weapon/card/id) && !accessset)
@@ -358,7 +358,7 @@
 		access |= O.access
 		desc = I.desc
 		rank = O.rank
-		to_chat(user, "<span class='notice'>You copy the access from \the [I] to \the [src].</span>")
+		to_chat(user, span_notice("You copy the access from \the [I] to \the [src]."))
 		user.drop_from_inventory(I)
 		qdel(I)
 		accessset = 1
@@ -565,7 +565,7 @@
 		var/guess = jobs_to_icon[user.job]
 
 		if(!guess)
-			to_chat(user, "<span class='notice'>ITG Cards do not seem to be able to accept the access codes for your ID.</span>")
+			to_chat(user, span_notice("ITG Cards do not seem to be able to accept the access codes for your ID."))
 			return
 		else
 			icon_state = guess
@@ -579,7 +579,7 @@
 		var/obj/item/weapon/card/id/O = I
 		var/list/itgdont = list("Site Manager", "Head of Personnel", "Command Secretary", "Head of Security", "Chief Engineer", "Chief Medical Officer", "Research Director", "Clown", "Mime", "Talon Captain") //If you're in as one of these you probably aren't representing ITG
 		if(O.rank in itgdont)
-			to_chat(user, "<span class='notice'>ITG Cards do not seem to be able to accept the access codes for your ID.</span>")
+			to_chat(user, span_notice("ITG Cards do not seem to be able to accept the access codes for your ID."))
 			return
 	. = ..()
 	desc = "A small card designating affiliation with the Ironcrest Transport Group. It has a NanoTrasen insignia and a lot of very small print on the back to do with practices and regulations for contractors to use."

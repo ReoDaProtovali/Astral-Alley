@@ -11,8 +11,13 @@
 	var/activated = FALSE
 
 /obj/structure/ghost_pod/manual/attack_ghost(var/mob/observer/dead/user)
+<<<<<<< HEAD
 	if(jobban_isbanned(user, "GhostRoles"))
 		to_chat(user, "<span class='warning'>You cannot inhabit this creature because you are banned from playing ghost roles.</span>")
+=======
+	if(jobban_isbanned(user, JOB_GHOSTROLES))
+		to_chat(user, span_warning("You cannot inhabit this creature because you are banned from playing ghost roles."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 
 	//No OOC notes
@@ -23,11 +28,11 @@
 		return
 
 	if(!activated)
-		to_chat(user, "<span class='warning'>\The [src] has not yet been activated.  Sorry.</span>")
+		to_chat(user, span_warning("\The [src] has not yet been activated.  Sorry."))
 		return
 
 	if(used)
-		to_chat(user, "<span class='warning'>Another spirit appears to have gotten to \the [src] before you.  Sorry.</span>")
+		to_chat(user, span_warning("Another spirit appears to have gotten to \the [src] before you.  Sorry."))
 		return
 
 	busy = TRUE
@@ -38,7 +43,7 @@
 		return
 
 	else if(used)
-		to_chat(user, "<span class='warning'>Another spirit appears to have gotten to \the [src] before you.  Sorry.</span>")
+		to_chat(user, span_warning("Another spirit appears to have gotten to \the [src] before you.  Sorry."))
 		busy = FALSE
 		return
 

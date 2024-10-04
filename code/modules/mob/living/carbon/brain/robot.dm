@@ -15,8 +15,13 @@
 /obj/item/device/mmi/digital/robot/transfer_identity(var/mob/living/carbon/H)
 	..()
 	if(brainmob.mind)
+<<<<<<< HEAD
 		brainmob.mind.assigned_role = "Robotic Intelligence"
 	to_chat(brainmob, "<span class='notify'>You feel slightly disoriented. That's normal when you're little more than a complex circuit.</span>")
+=======
+		brainmob.mind.assigned_role = JOB_ROBOTIC_INTELLIGENCE
+	to_chat(brainmob, span_notify("You feel slightly disoriented. That's normal when you're little more than a complex circuit."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	return
 
 /obj/item/device/mmi/digital/robot/attack_self(mob/user as mob)

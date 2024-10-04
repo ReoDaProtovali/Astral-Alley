@@ -136,7 +136,12 @@ var/warrant_uid = 0
 
 		if("editwarrantauth")
 			. = TRUE
+<<<<<<< HEAD
 			if(!(access_hos in I.access)) // VOREStation edit begin
 				to_chat(usr, "<span class='warning'>You don't have the access to do this!</span>")
+=======
+			if(!(access_hos in I.GetAccess())) // VOREStation edit begin
+				to_chat(usr, span_warning("You don't have the access to do this!"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 				return // VOREStation edit end
 			activewarrant.fields["auth"] = "[I.registered_name] - [I.assignment ? I.assignment : "(Unknown)"]"

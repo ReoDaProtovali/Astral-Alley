@@ -35,7 +35,7 @@
 			else
 				icon = 'icons/obj/props/decor.dmi'
 			icon_state = icon_state_on
-			src.visible_message("<span class='notice'>[text_activated]</span>")
+			src.visible_message(span_notice("[text_activated]"))
 			update_icon()
 			if(effect == 1)
 				var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
@@ -76,7 +76,19 @@
 					O.Weaken(flash_time)
 			if(effect == 4)
 				var/atom/o = new object(get_turf(src))
+<<<<<<< HEAD
 				src.visible_message("<span class='notice'>[src] has produced [o]!</span>")
+=======
+				src.visible_message(span_notice("[src] has produced [o]!"))
+			if(effect == 5)
+				for (var/mob/O in viewers(src, null))
+					if(get_dist(src, O) > 7)
+						continue
+
+					if(istype(O, /mob/living/carbon/human))
+						var/mob/living/carbon/human/H = O
+						H.fear = 200
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 			if(sound_activated)
 				playsound(src, sound_activated, 50, 1)
 		else if(togglable)
@@ -89,13 +101,17 @@
 				icon = icon_off
 			else
 				icon = 'icons/obj/props/decor.dmi'
-			src.visible_message("<span class='notice'>[text_deactivated]</span>")
+			src.visible_message(span_notice("[text_deactivated]"))
 			update_icon()
 	return ..()
 
 /obj/structure/generic_structure/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(wrenchable && W.has_tool_quality(TOOL_WRENCH))
 		add_fingerprint(user)
+<<<<<<< HEAD
+=======
+		to_chat(user, span_notice("You [anchored? "un" : ""]secured \the [src]!"))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		anchored = !anchored
 		to_chat(user, "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>")
 

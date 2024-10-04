@@ -48,8 +48,13 @@
 /obj/item/device/mmi/digital/posibrain/transfer_identity(var/mob/living/carbon/H)
 	..()
 	if(brainmob.mind)
+<<<<<<< HEAD
 		brainmob.mind.assigned_role = "Positronic Brain"
 	to_chat(brainmob, "<span class='notify'>You feel slightly disoriented. That's normal when you're just a metal cube.</span>")
+=======
+		brainmob.mind.assigned_role = JOB_POSITRONIC_BRAIN
+	to_chat(brainmob, span_notify("You feel slightly disoriented. That's normal when you're just a metal cube."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 	icon_state = "posibrain-occupied"
 	return
 
