@@ -63,7 +63,7 @@
 
 /mob/proc/say_dead(var/message)
 	if(say_disabled)	//This is here to try to identify lag problems
-		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
+		to_chat(usr, span_danger("Speech is currently admin-disabled."))
 		return
 
 	if(!client)
@@ -71,11 +71,16 @@
 
 	if(!client.holder)
 		if(!CONFIG_GET(flag/dsay_allowed)) // CHOMPEdit
-			to_chat(src, "<span class='danger'>Deadchat is globally muted.</span>")
+			to_chat(src, span_danger("Deadchat is globally muted."))
 			return
 
+<<<<<<< HEAD
 	if(!is_preference_enabled(/datum/client_preference/show_dsay))
 		to_chat(usr, "<span class='danger'>You have deadchat muted.</span>")
+=======
+	if(!client?.prefs?.read_preference(/datum/preference/toggle/show_dsay))
+		to_chat(usr, span_danger("You have deadchat muted."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return
 
 	message = encode_html_emphasis(message)

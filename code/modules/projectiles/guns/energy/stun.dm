@@ -152,8 +152,13 @@
 	var/mob/M = usr
 	if(!M.mind)	return 0
 	var/job = M.mind.assigned_role
+<<<<<<< HEAD
 	if(job != "Detective" && job != "Security Officer" && job != "Warden" && job != "Head of Security")
 		to_chat(M, "<span class='notice'>You don't feel cool enough to name this gun, chump.</span>")
+=======
+	if(job != JOB_DETECTIVE  && job != JOB_SECURITY_OFFICER && job != JOB_WARDEN  && job != JOB_HEAD_OF_SECURITY )
+		to_chat(M, span_notice("You don't feel cool enough to name this gun, chump."))
+>>>>>>> ab154b48b2 ([MIRROR] refactors most spans (#9139))
 		return 0
 
 	var/input = sanitizeSafe(input("What do you want to name the gun?", ,""), MAX_NAME_LEN)
