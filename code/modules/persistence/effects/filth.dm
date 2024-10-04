@@ -17,7 +17,30 @@
 
 /datum/persistent/filth/CreateEntryInstance(var/turf/creating, var/list/token)
 	var/_path = token["path"]
+<<<<<<< HEAD
 	new _path(creating, token["age"]+1)
+=======
+	if (isspace(creating) || iswall(creating) ||isopenspace(creating))
+		return
+	// CHOMPEdit Start
+	// new _path(creating, token["age"]+1)
+	var/atom/inst
+	if(ispath(_path, /obj/effect/decal/cleanable/crayon))
+		if(!findtext(token["art_color"], GLOB.is_color) || !findtext(token["art_shade"], GLOB.is_color) || !istext(token["art_type"]))
+			return
+		inst = new _path(creating, token["art_color"], token["art_shade"], token["art_type"], token["age"]+1)
+	else
+		if (saves_dirt)
+			new _path(creating, token["age"]+1, token["dirt"])
+		else
+			new _path(creating, token["age"]+1)
+	if(inst)
+		if(token["pixel_x"])
+			inst.pixel_x = token["pixel_x"]
+		if(token["pixel_y"])
+			inst.pixel_y = token["pixel_y"]
+	// CHOMPEdit End
+>>>>>>> 2d753d59fc (color check that (#9150))
 
 /datum/persistent/filth/GetEntryAge(var/atom/entry)
 	var/obj/effect/decal/cleanable/filth = entry

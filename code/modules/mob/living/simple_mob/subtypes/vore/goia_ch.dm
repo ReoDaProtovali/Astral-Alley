@@ -275,6 +275,7 @@
 	add_verb(src,/mob/living/simple_mob/vore/zorgoia/proc/appearance_switch)
 	add_verb(src,/mob/living/simple_mob/vore/zorgoia/proc/recolor)
 	add_verb(src,/mob/living/proc/injection) //Poison sting c:
+<<<<<<< HEAD
 	src.trait_injection_reagents += "microcillin"		// get small
 	src.trait_injection_reagents += "macrocillin"		// get BIG
 	src.trait_injection_reagents += "normalcillin"	// normal
@@ -287,6 +288,22 @@
 	src.trait_injection_reagents += "paralysistoxin" 	// Paralysis!
 	src.trait_injection_reagents += "painenzyme"		// Pain INCREASER
 	src.trait_injection_reagents += "aphrodisiac"		// Horni
+=======
+	add_verb(src,/mob/living/simple_mob/vore/zorgoia/proc/export_style)
+	add_verb(src,/mob/living/simple_mob/vore/zorgoia/proc/import_style)
+	src.trait_injection_reagents += "microcillin"			// get small
+	src.trait_injection_reagents += "macrocillin"			// get BIG
+	src.trait_injection_reagents += "normalcillin"			// normal
+	src.trait_injection_reagents += "numbenzyme"			// no feelings
+	src.trait_injection_reagents += "change_drug_male"		// -> MALE
+	src.trait_injection_reagents += "change_drug_female"	// -> FEMALE
+	src.trait_injection_reagents += "change_drug_intersex"	// -> PLURAL
+	src.trait_injection_reagents += "stoxin"				// night night chem
+	src.trait_injection_reagents += "rainbowtoxin" 			// Funny flashing lights.
+	src.trait_injection_reagents += "paralysistoxin" 		// Paralysis!
+	src.trait_injection_reagents += "painenzyme"			// Pain INCREASER
+	src.trait_injection_reagents += "aphrodisiac"			// Horni
+>>>>>>> 2d753d59fc (color check that (#9150))
 
 /mob/living/simple_mob/vore/zorgoia/update_icon()
 	..()
