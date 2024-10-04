@@ -432,7 +432,13 @@
 			/obj/item/weapon/reagent_containers/food/snacks/donkpocket/spicy,
 			/obj/item/weapon/reagent_containers/food/snacks/donkpocket/teriyaki,
 			/obj/item/toy/figure,
+<<<<<<< HEAD
 			/obj/item/contraband
+=======
+			/obj/item/contraband,
+			/obj/item/tool/screwdriver/sdriver,
+			/obj/item/storage/briefcase/target_toy
+>>>>>>> b23e47aafb (Removes a default object from junk mail (#9146))
 		))
 
 	var/list/junk_names = list(
