@@ -162,8 +162,16 @@
 		else
 			to_chat(user, "<span class='warning'>You need to attach a flash to it first!</span>")
 
+<<<<<<< HEAD
 	if(istype(W, /obj/item/device/mmi))
 		var/obj/item/device/mmi/M = W
+=======
+	if(istype(W, /obj/item/mmi))
+		var/obj/item/mmi/M = W
+		if (isshell(user) && istype(W, /obj/item/mmi/inert/ai_remote))
+			to_chat(user, span_warning("Your hardware prohibits you from self-replicating."))
+			return
+>>>>>>> d6cb0e004d ([MIRROR] Enable research module / prevent AI shells from building more AI shells (#9167))
 		if(check_completion())
 			if(!istype(loc,/turf))
 				to_chat(user, "<span class='warning'>You can't put \the [W] in, the frame has to be standing on the ground to be perfectly precise.</span>")
