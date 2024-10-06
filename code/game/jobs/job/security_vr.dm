@@ -1,7 +1,7 @@
 /datum/job/hos
 	disallow_jobhop = TRUE
 	pto_type = PTO_SECURITY
-	dept_time_required = 60
+	dept_time_required = 120 // CHOMPEdit
 
 	access = list(access_security, access_eva, access_sec_doors, access_brig, access_armory,
 			            access_forensics_lockers, access_morgue, access_maint_tunnels, access_all_personal_lockers,
@@ -22,8 +22,13 @@
 
 /datum/job/warden
 	pto_type = PTO_SECURITY
+<<<<<<< HEAD
 	dept_time_required = 20
 	alt_titles = list("Brig Sentry" = /datum/alt_title/brig_sentry, "Armory Superintendent" = /datum/alt_title/armory_superintendent)
+=======
+	dept_time_required = 60 // CHOMPEdit
+	alt_titles = list(JOB_ALT_BRIG_SENTRY = /datum/alt_title/brig_sentry, JOB_ALT_ARMORY_SUPERINTENDENT = /datum/alt_title/armory_superintendent, JOB_ALT_MASTERATARMS = /datum/alt_title/master_at_arms)
+>>>>>>> c2d07ac951 (Job whitelist removal (#9163))
 
 /datum/alt_title/brig_sentry
 	title = "Brig Sentry"
