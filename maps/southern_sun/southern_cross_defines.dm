@@ -7,23 +7,24 @@ so those just need to be updated every time someone rearranges the level load or
 but they don't actually change anything about the load order
 */
 //TO DO: Reorganize all #include for z-levels into one file
-#define Z_LEVEL_STATION_MAINTS			1
-#define Z_LEVEL_STATION_ONE				2
-#define Z_LEVEL_STATION_TWO				3
-#define Z_LEVEL_STATION_THREE			4
-#define Z_LEVEL_SURFACE					5
-#define Z_LEVEL_SURFACE_MINE			6
-#define Z_LEVEL_MISC					7 //Carrier, actually
-#define Z_LEVEL_CENTCOM					8
-#define Z_LEVEL_TRANSIT					9
-#define Z_LEVEL_SURFACE_WILD			10
-//#define Z_LEVEL_SURFACE_VALLEY 			11 //CHOMpedit: Repalcing with Tyr
-#define Z_LEVEL_VR_REALM                11
-#define Z_LEVEL_FUELDEPOT				12
-#define Z_LEVEL_JUNGLE					13
-#define Z_LEVEL_DEATH_VALLEY			14
-#define Z_LEVEL_GATEWAY					15
 
+#define Z_LEVEL_STATION_ONE				1
+#define Z_LEVEL_STATION_TWO				2
+#define Z_LEVEL_STATION_THREE			3
+#define Z_LEVEL_SURFACE					4
+#define Z_LEVEL_SURFACE_MINE			5
+#define Z_LEVEL_MISC					6 //Carrier, actually
+#define Z_LEVEL_CENTCOM					7
+#define Z_LEVEL_TRANSIT					8
+#define Z_LEVEL_SURFACE_WILD			9
+//#define Z_LEVEL_SURFACE_VALLEY 			10 Re comment once valley is added
+#define Z_LEVEL_VR_REALM                10
+#define Z_LEVEL_FUELDEPOT				11
+#define Z_LEVEL_JUNGLE					12
+#define Z_LEVEL_DEATH_VALLEY			13
+#define Z_LEVEL_GATEWAY					14
+
+//#define Z_LEVEL_STATION_MAINTS		//CHOMPedit Deck 0 maints removal due to new station.
 //#define Z_LEVEL_SURFACE_SKYLANDS		//Sky islands removal due to lack of use
 //#define Z_LEVEL_AEROSTAT			//Disabled due to lack of use
 //#define Z_LEVEL_NS_MINE				//Disabled due to lack of use
@@ -105,15 +106,15 @@ but they don't actually change anything about the load order
 							NETWORK_SUPPLY
 							)
 	usable_email_tlds = list("freemail.nt")
-	allowed_spawns = list("Arrivals Shuttle","Gateway", "Cryogenic Storage", "Cyborg Storage", "Station gateway", "Sif plains", "Fuel Depot", "Tyr Wreckage")
+	allowed_spawns = list("Arrivals Shuttle","Gateway", "Cryogenic Storage", "Cyborg Storage", "Station gateway", "Sif plains")
 	default_skybox = /datum/skybox_settings/southern_cross
 	unit_test_exempt_areas = list(/area/ninja_dojo, /area/shuttle/ninja)
-	unit_test_exempt_from_atmos = list(/area/tcomm/chamber)
+	unit_test_exempt_from_atmos = list(/area/SouthernCrossV2/Engineering/Telecomms_Network, /area/SouthernCrossV2/Security/Transit_Turrets)
 
 	planet_datums_to_make = list(/datum/planet/sif,/datum/planet/thor, /datum/planet/tyr) //This must be added to load maps at round start otherwise they will have weather or sun.
 
 	map_levels = list(
-			Z_LEVEL_STATION_MAINTS,
+			//Z_LEVEL_STATION_MAINTS, (Removed for new map. KAS)
 			Z_LEVEL_STATION_ONE,
 			Z_LEVEL_STATION_TWO,
 			Z_LEVEL_STATION_THREE,
@@ -180,6 +181,9 @@ but they don't actually change anything about the load order
 	// Wilderness is next.
 	seed_submaps(list(Z_LEVEL_SURFACE_WILD), 240, /area/surface/outside/wilderness/normal, /datum/map_template/surface/wilderness/normal)  //CHOMPEdit bumped up from 60 to 150
 	seed_submaps(list(Z_LEVEL_SURFACE_WILD), 240, /area/surface/outside/wilderness/deep, /datum/map_template/surface/wilderness/deep)  //CHOMPEdit bumped up from 60 to 150
+	// seed_submaps(list(Z_LEVEL_SURFACE_VALLEY), 200, /area/surface/outside/valley/walls, /datum/map_template/surface/valley/walls) //CHOMPedit UNCOMMENT THESE IF YOU WANT VALLEY BACK
+	// seed_submaps(list(Z_LEVEL_SURFACE_VALLEY), 200, /area/surface/outside/valley/inner, /datum/map_template/surface/valley/inner)
+	// seed_submaps(list(Z_LEVEL_SURFACE_VALLEY), 200, /area/surface/outside/valley/end, /datum/map_template/surface/valley/end)
 	// If Space submaps are made, add a line to make them here as well.
 
 	// Now for the tunnels. (This decides the load order of ore generation and cave generation. Check Random_Map to see % )
@@ -192,40 +196,40 @@ but they don't actually change anything about the load order
 /datum/skybox_settings/southern_cross
 	icon_state = "dyable"
 	random_color = TRUE
-// For making the 6-in-1 holomap, we calculate some offsets
-#define SOUTHERN_CROSS_MAP_SIZE 160 // Width and height of compiled in Southern Cross z levels.
+// For making the 4-in-1 holomap, we calculate some offsets
+#define SOUTHERN_CROSS_MAP_SIZE 200 // Width and height of compiled in Southern Cross z levels.
 #define SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER 40 // 40px central gutter between columns
 #define SOUTHERN_CROSS_HOLOMAP_MARGIN_X ((HOLOMAP_ICON_SIZE - (2*SOUTHERN_CROSS_MAP_SIZE) - SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER) / 2) // 100
-#define SOUTHERN_CROSS_HOLOMAP_MARGIN_Y ((HOLOMAP_ICON_SIZE - (3*SOUTHERN_CROSS_MAP_SIZE)) / 2) // 60
+#define SOUTHERN_CROSS_HOLOMAP_MARGIN_Y ((HOLOMAP_ICON_SIZE - (2*SOUTHERN_CROSS_MAP_SIZE)) / 2) // 60
 
 /datum/map_z_level/southern_cross/station
-	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
-	holomap_legend_x = 220
-	holomap_legend_y = 160
+    flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
+    holomap_legend_x = 220
+    holomap_legend_y = 160
 
 /datum/map_z_level/southern_cross/station/station_one
-	z = Z_LEVEL_STATION_ONE
-	name = "Deck 1"
-	base_turf = /turf/space
-	transit_chance = 15
-	holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - 40
-	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*0
+    z = Z_LEVEL_STATION_ONE
+    name = "Deck 1"
+    base_turf = /turf/space
+    transit_chance = 15
+    holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER / 2
+    holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*0
 
 /datum/map_z_level/southern_cross/station/station_two
-	z = Z_LEVEL_STATION_TWO
-	name = "Deck 2"
-	base_turf = /turf/simulated/open
-	transit_chance = 15
-	holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - 40
-	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
+    z = Z_LEVEL_STATION_TWO
+    name = "Deck 2"
+    base_turf = /turf/simulated/open
+    transit_chance = 15
+    holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER / 2
+    holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
 
 /datum/map_z_level/southern_cross/station/station_three
-	z = Z_LEVEL_STATION_THREE
-	name = "Deck 3"
-	base_turf = /turf/simulated/open
-	transit_chance = 15
-	holomap_offset_x = HOLOMAP_ICON_SIZE - SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_MAP_SIZE - 40
-	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
+    z = Z_LEVEL_STATION_THREE
+    name = "Deck 3"
+    base_turf = /turf/simulated/open
+    transit_chance = 15
+    holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X + SOUTHERN_CROSS_MAP_SIZE + SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER / 2
+    holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
 
 /* //CHOMPedit: Disabling empty space map level as overmap generation now generates this as needed.
 /datum/map_z_level/southern_cross/empty_space
@@ -259,7 +263,7 @@ but they don't actually change anything about the load order
 	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES
 	base_turf = /turf/simulated/open
 */
-/* Replaced with Tyr
+/* CHOMPedit, uncomment this to add the valley back
 /datum/map_z_level/southern_cross/surface_valley
 	z = Z_LEVEL_SURFACE_VALLEY
 	name = "Valley"
@@ -301,8 +305,8 @@ but they don't actually change anything about the load order
 	name = "Desert Valley"
 	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED
 	base_turf = /turf/simulated/floor/outdoors/rocks
-
-// Deck 0 Z-Level
+/*
+// Deck 0 Z-Level (Removed for new map. KAS)
 /datum/map_z_level/southern_cross/station/station_maintenance
 	z = Z_LEVEL_STATION_MAINTS
 	name = "Maintenance Deck"
@@ -310,7 +314,7 @@ but they don't actually change anything about the load order
 	transit_chance = 15
 	holomap_offset_x = HOLOMAP_ICON_SIZE - SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_MAP_SIZE - 40
 	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
-
+*/
 /*
  KSC 9/29/20 = No longer relevant code as we have nonencludian portals to jump between outpost,caves and wilderness
 //Teleport to Mine
@@ -346,9 +350,8 @@ but they don't actually change anything about the load order
 	expected_z_levels = list(
 		Z_LEVEL_SURFACE,
 		Z_LEVEL_SURFACE_MINE,
-		Z_LEVEL_SURFACE_WILD,
+		Z_LEVEL_SURFACE_WILD
 		//Z_LEVEL_SURFACE_SKYLANDS, //Sky islands removal due to lack of use
-		//Z_LEVEL_SURFACE_VALLEY //Replaced with Tyr
 	)
 //Z_LEVEL_SURFACE_CASINO //CHOMPedit - KSC = So there is weather on the Casino. //Move this into /datum/planet/sif and remember to add a coma for the new entry, for when you need the casino again
 
