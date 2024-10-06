@@ -52,8 +52,13 @@
 
 /datum/job/qm
 	pto_type = PTO_CARGO
+<<<<<<< HEAD
 	dept_time_required = 20
 	alt_titles = list("Supply Chief" = /datum/alt_title/supply_chief, "Logistics Manager" = /datum/alt_title/logistics_manager, "Cargo Supervisor" = /datum/alt_title/cargo_supervisor)
+=======
+	dept_time_required = 60 // CHOMPEdit
+	alt_titles = list(JOB_ALT_SUPPLY_CHIEF = /datum/alt_title/supply_chief, JOB_ALT_LOGISTICS_MANAGER = /datum/alt_title/logistics_manager, JOB_ALT_CARGO_SUPERVISOR = /datum/alt_title/cargo_supervisor)
+>>>>>>> c2d07ac951 (Job whitelist removal (#9163))
 
 /datum/alt_title/logistics_manager
 	title = "Logistics Manager"
