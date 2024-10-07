@@ -426,8 +426,13 @@
 	desc = "A bag for storing pills, patches, and bottles."
 	max_storage_space = 200
 	w_class = ITEMSIZE_LARGE
+<<<<<<< HEAD
 	slowdown = 3
 	can_hold = list(/obj/item/weapon/reagent_containers/pill,/obj/item/weapon/reagent_containers/glass/beaker,/obj/item/weapon/reagent_containers/glass/bottle, /obj/item/weapon/reagent_containers/hypospray/autoinjector/) // CHOMPEdit - Adds autoinjectors to the bag
+=======
+	slowdown = 1 //you probably shouldn't be running with chemicals
+	can_hold = list(/obj/item/reagent_containers/pill,/obj/item/reagent_containers/glass/beaker,/obj/item/reagent_containers/glass/bottle, /obj/item/reagent_containers/hypospray/autoinjector/) // CHOMPEdit - Adds autoinjectors to the bag
+>>>>>>> f1b420c1cb ([MIRROR] lightens the slowdown from chemistry bags (#9142))
 
 // -----------------------------
 //           Xeno Bag
