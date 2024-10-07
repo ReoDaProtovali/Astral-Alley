@@ -178,8 +178,13 @@
 
 /obj/item/weapon/cell/device/weapon/recharge/alien/attack_self(var/mob/user)
 	user.remove_from_mob(src)
+<<<<<<< HEAD
 	to_chat(user, "<span class='notice'>You swap [src] to 'machinery cell' mode.</span>")
 	var/obj/item/weapon/cell/newcell = new swaps_to(null)
+=======
+	to_chat(user, span_notice("You swap [src] to 'machinery cell' mode."))
+	var/obj/item/cell/newcell = new swaps_to(null)
+>>>>>>> a92a42b85b (converts our spans (#9185))
 	user.put_in_active_hand(newcell)
 	var/percentage = charge/maxcharge
 	newcell.charge = newcell.maxcharge * percentage
@@ -192,7 +197,7 @@
 	origin_tech = list(TECH_POWER = 8, TECH_ENGINEERING = 6)
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "cell"
-	maxcharge = 10000 
+	maxcharge = 10000
 	charge_amount = 500
 	self_recharge = TRUE
 	charge_delay = 50
@@ -202,8 +207,13 @@
 
 /obj/item/weapon/cell/void/attack_self(var/mob/user)
 	user.remove_from_mob(src)
+<<<<<<< HEAD
 	to_chat(user, "<span class='notice'>You swap [src] to 'device cell' mode.</span>")
 	var/obj/item/weapon/cell/newcell = new swaps_to(null)
+=======
+	to_chat(user, span_notice("You swap [src] to 'device cell' mode."))
+	var/obj/item/cell/newcell = new swaps_to(null)
+>>>>>>> a92a42b85b (converts our spans (#9185))
 	user.put_in_active_hand(newcell)
 	var/percentage = charge/maxcharge
 	newcell.charge = newcell.maxcharge * percentage
