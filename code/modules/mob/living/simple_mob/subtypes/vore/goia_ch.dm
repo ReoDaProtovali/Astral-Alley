@@ -386,7 +386,7 @@
 				if(M.zone_sel.selecting == BP_GROIN)
 					if(M.vore_bellyrub(src))
 						return
-				M.visible_message("<span class='notice'>[M] [response_help] \the [src].</span>")
+				M.visible_message(span_notice("[M] [response_help] \the [src]."))
 				if(has_AI())
 					var/datum/ai_holder/AI = ai_holder
 					AI.set_stance(STANCE_IDLE)
@@ -437,3 +437,97 @@
 	.=..()
 	if(new_holder.tamed)
 		hostile = FALSE
+<<<<<<< HEAD
+=======
+
+/mob/living/simple_mob/vore/zorgoia/proc/export_style()
+	set name = "Export style string"
+	set desc = "Export a string of text that can be used to instantly get the current style back using the import style verb"
+	set category = "Abilities.Settings"
+	var/output_style = jointext(list(
+		goia_overlays["zorgoia_main"],
+		goia_overlays["main"], // No alt styles for it currently
+		goia_overlays["zorgoia_ears"],
+		goia_overlays["ears"],
+		goia_overlays["zorgoia_spots"],
+		goia_overlays["spots"],
+		goia_overlays["zorgoia_claws"],
+		goia_overlays["claws"],
+		goia_overlays["zorgoia_spines"],
+		goia_overlays["spines"],
+		goia_overlays["zorgoia_fluff"],
+		goia_overlays["fluff"],
+		goia_overlays["zorgoia_underbelly"],
+		goia_overlays["underbelly"],
+		goia_overlays["zorgoia_eyes"],
+		goia_overlays["eyes"],
+		goia_overlays["zorgoia_spike"],
+		goia_overlays["spike"],
+		goia_overlays["zorgoia_belly"],
+		goia_overlays["belly"]), ";")
+	to_chat(src, span_notice("Exported style string is \" [output_style] \". Use this to get the same style in the future with import style"))
+
+/mob/living/simple_mob/vore/zorgoia/proc/import_style()
+	set name = "Import style string"
+	set desc = "Import a string of text that was made using the import style verb to get back that style"
+	set category = "Abilities.Settings"
+	var/input_style
+	input_style = sanitizeSafe(input(src,"Paste the style string you exported with Export Style.", "Style loading","") as text, MAX_MESSAGE_LEN)
+	if(input_style)
+		var/list/input_style_list = splittext(input_style, ";")
+		if((LAZYLEN(input_style_list) == 20) /* && (input_style_list[2] in main_styles) */ \
+					&& (input_style_list[4] in ear_styles) && (input_style_list[6] in spots_styles) && (input_style_list[8] in claws_styles) \
+					&& (input_style_list[10] in spines_styles) && (input_style_list[12] in fluff_styles) && (input_style_list[14] in underbelly_styles) \
+					&& (input_style_list[16] in eyes_styles) && (input_style_list[18] in spiky_styles) &&  (input_style_list[20] in belly_styles))
+			try
+				if(rgb2num(input_style_list[1]))
+					goia_overlays["zorgoia_main"] = input_style_list[1]
+			catch
+			// goia_overlays["main"] = input_style_list[2] // We only have one yet
+			try
+				if(rgb2num(input_style_list[3]))
+					goia_overlays["zorgoia_ears"] = input_style_list[3]
+			catch
+			goia_overlays["ears"] = input_style_list[4]
+			try
+				if(rgb2num(input_style_list[5]))
+					goia_overlays["zorgoia_spots"] = input_style_list[5]
+			catch
+			goia_overlays["spots"] = input_style_list[6]
+			try
+				if(rgb2num(input_style_list[7]))
+					goia_overlays["zorgoia_claws"] = input_style_list[7]
+			catch
+			goia_overlays["claws"] = input_style_list[8]
+			try
+				if(rgb2num(input_style_list[9]))
+					goia_overlays["zorgoia_spines"] = input_style_list[9]
+			catch
+			goia_overlays["spines"] = input_style_list[10]
+			try
+				if(rgb2num(input_style_list[11]))
+					goia_overlays["zorgoia_fluff"] = input_style_list[11]
+			catch
+			goia_overlays["fluff"] = input_style_list[12]
+			try
+				if(rgb2num(input_style_list[13]))
+					goia_overlays["zorgoia_underbelly"] = input_style_list[13]
+			catch
+			goia_overlays["underbelly"] = input_style_list[14]
+			try
+				if(rgb2num(input_style_list[15]))
+					goia_overlays["zorgoia_eyes"] = input_style_list[15]
+			catch
+			goia_overlays["eyes"] = input_style_list[16]
+			try
+				if(rgb2num(input_style_list[17]))
+					goia_overlays["zorgoia_spike"] = input_style_list[17]
+			catch
+			input_style_list["spike"] = input_style_list[18]
+			try
+				if(rgb2num(input_style_list[19]))
+					goia_overlays["zorgoia_belly"] = input_style_list[19]
+			catch
+			goia_overlays["belly"] = input_style_list[20]
+			update_icon()
+>>>>>>> a92a42b85b (converts our spans (#9185))
