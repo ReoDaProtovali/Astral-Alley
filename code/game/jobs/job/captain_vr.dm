@@ -2,8 +2,13 @@
 	disallow_jobhop = TRUE
 	pto_type = PTO_CIVILIAN
 	dept_time_required = 80 //Pending something more complicated
+<<<<<<< HEAD
 	alt_titles = list("Overseer"= /datum/alt_title/overseer, "Facility Director" = /datum/alt_title/facility_director, "Chief Supervisor" = /datum/alt_title/chief_supervisor,
 						"Captain" = /datum/alt_title/captain)
+=======
+	alt_titles = list(JOB_ALT_OVERSEER= /datum/alt_title/overseer, JOB_ALT_FACILITY_DIRECTOR = /datum/alt_title/facility_director, JOB_ALT_CHIEF_SUPERVISOR = /datum/alt_title/chief_supervisor,
+						JOB_ALT_CAPTAIN = /datum/alt_title/captain)
+>>>>>>> 8b40b9cca9 (Required time adjustments (#9196))
 
 /datum/alt_title/facility_director
 	title = "Facility Director"

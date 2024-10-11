@@ -23,7 +23,11 @@
 /datum/job/warden
 	pto_type = PTO_SECURITY
 	dept_time_required = 20
+<<<<<<< HEAD
 	alt_titles = list("Brig Sentry" = /datum/alt_title/brig_sentry, "Armory Superintendent" = /datum/alt_title/armory_superintendent)
+=======
+	alt_titles = list(JOB_ALT_BRIG_SENTRY = /datum/alt_title/brig_sentry, JOB_ALT_ARMORY_SUPERINTENDENT = /datum/alt_title/armory_superintendent, JOB_ALT_MASTERATARMS = /datum/alt_title/master_at_arms)
+>>>>>>> 8b40b9cca9 (Required time adjustments (#9196))
 
 /datum/alt_title/brig_sentry
 	title = "Brig Sentry"

@@ -53,7 +53,11 @@
 /datum/job/qm
 	pto_type = PTO_CARGO
 	dept_time_required = 20
+<<<<<<< HEAD
 	alt_titles = list("Supply Chief" = /datum/alt_title/supply_chief, "Logistics Manager" = /datum/alt_title/logistics_manager, "Cargo Supervisor" = /datum/alt_title/cargo_supervisor)
+=======
+	alt_titles = list(JOB_ALT_SUPPLY_CHIEF = /datum/alt_title/supply_chief, JOB_ALT_LOGISTICS_MANAGER = /datum/alt_title/logistics_manager, JOB_ALT_CARGO_SUPERVISOR = /datum/alt_title/cargo_supervisor)
+>>>>>>> 8b40b9cca9 (Required time adjustments (#9196))
 
 /datum/alt_title/logistics_manager
 	title = "Logistics Manager"
@@ -167,8 +171,14 @@
 /datum/job/lawyer
 	disallow_jobhop = TRUE
 	pto_type = PTO_CIVILIAN
+<<<<<<< HEAD
 	alt_titles = list("Internal Affairs Liaison" = /datum/alt_title/ia_liaison, "Internal Affairs Delegate" = /datum/alt_title/ia_delegate,
 						"Internal Affairs Investigator" = /datum/alt_title/ia_investigator)
+=======
+	alt_titles = list(JOB_ALT_INTERNAL_AFFAIRS_LIAISON = /datum/alt_title/ia_liaison, JOB_ALT_INTERNAL_AFFAIRS_DELEGATE = /datum/alt_title/ia_delegate,
+						JOB_ALT_INTERNAL_AFFAIRS_INVESTIGATOR = /datum/alt_title/ia_investigator)
+	dept_time_required = 20 // CHOMPEdit
+>>>>>>> 8b40b9cca9 (Required time adjustments (#9196))
 
 /datum/alt_title/ia_liaison
 	title = "Internal Affairs Liaison"
