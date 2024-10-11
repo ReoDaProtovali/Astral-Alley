@@ -16,22 +16,37 @@
 
 /datum/supply_pack/eng/smescoil
 	name = "Superconducting Magnetic Coil"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/smes_coil)
 	cost = 75
+=======
+	contains = list(/obj/item/smes_coil)
+	cost = 20 //CHOMPEdit - Reduced cost from 75 to 20 to be more in line with the rest of the engineering supplies
+>>>>>>> c8cb6bb30e (SMES coil price reduction plus some new reactions (#9174))
 	containertype = /obj/structure/closet/crate/focalpoint
 	containername = "Superconducting Magnetic Coil crate"
 
 /datum/supply_pack/eng/smescoil/super_capacity
 	name = "Superconducting Capacitance Coil"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/smes_coil/super_capacity)
 	cost = 90
+=======
+	contains = list(/obj/item/smes_coil/super_capacity)
+	cost = 35 //CHOMPEdit - Reduced cost from 90 to 35 to be more in line with the rest of the engineering supplies
+>>>>>>> c8cb6bb30e (SMES coil price reduction plus some new reactions (#9174))
 	containertype = /obj/structure/closet/crate/focalpoint
 	containername = "Superconducting Capacitance Coil crate"
 
 /datum/supply_pack/eng/smescoil/super_io
 	name = "Superconducting Transmission Coil"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/smes_coil/super_io)
 	cost = 90
+=======
+	contains = list(/obj/item/smes_coil/super_io)
+	cost = 35 //CHOMPEdit - Reduced cost from 90 to 35 to be more in line with the rest of the engineering supplies
+>>>>>>> c8cb6bb30e (SMES coil price reduction plus some new reactions (#9174))
 	containertype = /obj/structure/closet/crate/focalpoint
 	containername = "Superconducting Transmission Coil crate"
 
