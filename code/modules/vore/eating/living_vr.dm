@@ -1330,27 +1330,37 @@
 /mob/living/proc/display_voreprefs(mob/user)	//Called by Topic() calls on instances of /mob/living (and subtypes) containing vore_prefs as an argument
 	if(!user)
 		CRASH("display_voreprefs() was called without an associated user.")
+<<<<<<< HEAD
 	var/dispvoreprefs = "<b>[src]'s vore preferences</b><br><br><br>"
 	if(client && client.prefs)
 		if("CHAT_OOC" in client.prefs.preferences_disabled)
 			dispvoreprefs += "<font color='red'><b>OOC DISABLED</b></font><br>"
 		if("CHAT_LOOC" in client.prefs.preferences_disabled)
 			dispvoreprefs += "<font color='red'><b>LOOC DISABLED</b></font><br>"
+=======
+
+	var/dat = "<br>" + span_bold("[src]'s vore preferences") + "<br><br>"
+	if(!client?.prefs?.read_preference(/datum/preference/toggle/show_ooc))
+		dat += span_red(span_bold("OOC DISABLED")) + "<br>"
+	if(!client?.prefs?.read_preference(/datum/preference/toggle/show_looc))
+		dat += span_red(span_bold("LOOC DISABLED")) + "<br>"
+>>>>>>> 858d92dab4 ([MIRROR] Dark-mode color-coded mechanical vore preferences UI (#9207))
 	//CHOMPEdit Start
-	dispvoreprefs += "<b>Devourable:</b> [devourable ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
+	dat += span_bold("Devourable:") + " [devourable ? span_green("Enabled") : span_red("Disabled")]<br>"
 	if(devourable)
-		dispvoreprefs += "<b>Healbelly permission:</b> [permit_healbelly ? "<font color='green'>Allowed</font>" : "<font color='red'>Disallowed</font>"]<br>"
-		dispvoreprefs += "<b>Digestable:</b> [digestable ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
-		dispvoreprefs += "<b>Absorption Permission:</b> [absorbable ? "<font color='green'>Allowed</font>" : "<font color='red'>Disallowed</font>"]<br>"
-		dispvoreprefs += "<b>Selective Mode Pref:</b> [src.selective_preference]<br>"
-		dispvoreprefs += "<b>Mob Vore:</b> [allowmobvore ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
-		dispvoreprefs += "<b>Autotransferable:</b> [autotransferable ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
-		dispvoreprefs += "<b>Can be stripped:</b> [strip_pref ? "<font color='green'>Allowed</font>" : "<font color='red'>Disallowed</font>"]<br>"
-		dispvoreprefs += "<b>Applying reagents:</b> [apply_reagents ? "<font color='green'>Allowed</font>" : "<font color='red'>Disallowed</font>"]<br>"
-		dispvoreprefs += "<b>Leaves Remains:</b> [digest_leave_remains ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
-	dispvoreprefs += "<b>Spontaneous vore prey:</b> [can_be_drop_prey ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
-	dispvoreprefs += "<b>Spontaneous vore pred:</b> [can_be_drop_pred ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
+		dat += span_bold("Healbelly permission:") + " [permit_healbelly ? span_green("Allowed") : span_red("Disallowed")]<br>"
+		dat += span_bold("Digestable:") + " [digestable ? span_green("Enabled") : span_red("Disabled")]<br>"
+		dat += span_bold("Absorption Permission:") + " [absorbable ? span_green("Allowed") : span_red("Disallowed")]<br>"
+		dat += span_bold("Selective Mode Pref:") + " [src.selective_preference]<br>"
+		dat += span_bold("Mob Vore:") + " [allowmobvore ? span_green("Enabled") : span_red("Disabled")]<br>"
+		dat += span_bold("Autotransferable:") + " [autotransferable ? span_green("Enabled") : span_red("Disabled")]<br>"
+		dat += span_bold("Can be stripped:") + " [strip_pref ? span_green("Allowed") : span_red("Disallowed")]<br>"
+		dat += span_bold("Applying reagents:") + " [apply_reagents ? span_green("Allowed") : span_red("Disallowed")]<br>"
+		dat += span_bold("Leaves Remains:") + " [digest_leave_remains ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Spontaneous vore prey:") + " [can_be_drop_prey ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Spontaneous vore pred:") + " [can_be_drop_pred ? span_green("Enabled") : span_red("Disabled")]<br>"
 	if(can_be_drop_prey || can_be_drop_pred)
+<<<<<<< HEAD
 		dispvoreprefs += "<b>Drop Vore:</b> [drop_vore ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
 		dispvoreprefs += "<b>Slip Vore:</b> [slip_vore ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
 		dispvoreprefs += "<b>Stumble Vore:</b> [stumble_vore ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
@@ -1366,18 +1376,36 @@
 	dispvoreprefs += "<b>Receiving liquids:</b> [receive_reagents ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
 	dispvoreprefs += "<b>Giving liquids:</b> [give_reagents ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
 	dispvoreprefs += "<b>Late join spawn point belly:</b> [latejoin_vore ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
+=======
+		dat += span_bold("Drop Vore:") + " [drop_vore ? span_green("Enabled") : span_red("Disabled")]<br>"
+		dat += span_bold("Slip Vore:") + " [slip_vore ? span_green("Enabled") : span_red("Disabled")]<br>"
+		dat += span_bold("Stumble Vore:") + " [stumble_vore ? span_green("Enabled") : span_red("Disabled")]<br>"
+		dat += span_bold("Throw vore:") + " [throw_vore ? span_green("Enabled") : span_red("Disabled")]<br>"
+		dat += span_bold("Food Vore:") + " [food_vore ? span_green("Enabled") : span_red("Disabled")]<br>"
+		dat += span_bold("Phase Vore:") + " [phase_vore ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Can be stepped on/over:") + " [step_mechanics_pref ? span_green("Allowed") : span_red("Disallowed")]<br>"
+	dat += span_bold("Can be picked up:") + " [pickup_pref ? span_green("Allowed") : span_red("Disallowed")]<br>"
+	dat += span_bold("Can be resized:") + " [resizable ? span_green("Allowed") : span_red("Disallowed")]<br>"
+	dat += span_bold("Spontaneous transformation:") + " [allow_spontaneous_tf ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Mind transfer:") + " [allow_mind_transfer ? span_green("Allowed") : span_red("Disallowed")]<br>"
+	dat += span_bold("Allow Mimicry:") + " [allow_mimicry ? span_green("Yes") : span_red("No")]<br>"
+	dat += span_bold("Feedable:") + " [feeding ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Receiving liquids:") + " [receive_reagents ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Giving liquids:") + " [give_reagents ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Late join spawn point belly:") + " [latejoin_vore ? span_green("Enabled") : span_red("Disabled")]<br>"
+>>>>>>> 858d92dab4 ([MIRROR] Dark-mode color-coded mechanical vore preferences UI (#9207))
 	if(latejoin_vore)
-		dispvoreprefs += "<b>Late join spawn auto accept:</b> [no_latejoin_vore_warning ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
-	dispvoreprefs += "<b>Can be late join prey:</b> [latejoin_prey ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
+		dat += span_bold("Late join spawn auto accept:") + " [no_latejoin_vore_warning ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Can be late join prey:") + " [latejoin_prey ? span_green("Enabled") : span_red("Disabled")]<br>"
 	if(latejoin_prey)
-		dispvoreprefs += "<b>Late join prey auto accept:</b> [no_latejoin_prey_warning ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
-	dispvoreprefs += "<b>Global Vore Privacy is:</b> [eating_privacy_global ? "<font color='green'>Subtle</font>" : "<font color='red'>Loud</font>"]<br>"
-	dispvoreprefs += "<b>Current active belly:</b> [vore_selected ? vore_selected.name : "None"]<br>"
-	dispvoreprefs += "<b>Belly rub target:</b> [belly_rub_target ? belly_rub_target : (vore_selected ? vore_selected.name : "None")]<br>"
+		dat += span_bold("Late join prey auto accept:") + " [no_latejoin_prey_warning ? span_green("Enabled") : span_red("Disabled")]<br>"
+	dat += span_bold("Global Vore Privacy is:") + " [eating_privacy_global ? span_green("Subtle") : span_red("Loud")]<br>"
+	dat += span_bold("Current active belly:") + " [vore_selected ? vore_selected.name : "None"]<br>"
+	dat += span_bold("Belly rub target:") + " [belly_rub_target ? belly_rub_target : (vore_selected ? vore_selected.name : "None")]<br>"
 	//CHOMPEdit End
-	user << browse("<html><head><title>Vore prefs: [src]</title></head><body><center>[dispvoreprefs]</center></body></html>", "window=[name]mvp;size=300x400;can_resize=1;can_minimize=0")
-	onclose(user, "[name]")
-	return
+	var/datum/browser/popup = new(user, "[name]mvp", "Vore Prefs: [src]", 300, 700, src)
+	popup.set_content(dat)
+	popup.open()
 
 // Full screen belly overlays!
 /obj/screen/fullscreen/belly
