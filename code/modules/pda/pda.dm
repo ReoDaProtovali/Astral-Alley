@@ -80,7 +80,11 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	var/list/notifying_programs = list()
 	var/retro_mode = 0
 
+<<<<<<< HEAD
 /obj/item/device/pda/examine(mob/user)
+=======
+/obj/item/pda/examine(mob/user)
+>>>>>>> 5e55cd47fe ([MIRROR] gunshot residue should only be on clothing/human (#9222))
 	. = ..()
 	if(Adjacent(user))
 		. += "The time [stationtime2text()] is displayed in the corner of the screen."
