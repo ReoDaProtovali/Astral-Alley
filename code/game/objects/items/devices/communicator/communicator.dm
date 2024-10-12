@@ -461,7 +461,10 @@ var/global/list/obj/item/device/communicator/all_communicators = list()
 	icon = 'icons/obj/device.dmi'
 	icon_state = "commwatch"
 	slot_flags = SLOT_GLOVES | SLOT_ID | SLOT_BELT //CHOMPEDIT, Commwatches and Wrtist PDAs can go on ID and belt slots
+<<<<<<< HEAD
 	var/gunshot_residue	//CHOMPEDIT - Fixes a bug where guns cannot be operated while wearing a watch
+=======
+>>>>>>> 5e55cd47fe ([MIRROR] gunshot residue should only be on clothing/human (#9222))
 
 /obj/item/device/communicator/watch/update_icon()
 	if(video_source)
