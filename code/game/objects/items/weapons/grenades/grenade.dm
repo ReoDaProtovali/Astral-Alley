@@ -16,7 +16,14 @@
 	var/hud_state = "grenade_he" // TGMC Ammo HUD Port
 	var/hud_state_empty = "grenade_empty" // TGMC Ammo HUD Port
 
+<<<<<<< HEAD
 /obj/item/weapon/grenade/proc/clown_check(var/mob/living/user)
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/grenade/proc/clown_check(var/mob/living/user)
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	if((CLUMSY in user.mutations) && prob(50))
 		to_chat(user, "<span class='warning'>Huh? How does this thing work?</span>")
 

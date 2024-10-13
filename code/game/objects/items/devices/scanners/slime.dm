@@ -8,6 +8,8 @@
 	throw_speed = 3
 	throw_range = 7
 	matter = list(MAT_STEEL = 30,MAT_GLASS = 20)
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
 
 /obj/item/device/slime_scanner/attack(mob/living/M as mob, mob/living/user as mob)
 	if(!istype(M, /mob/living/simple_mob/slime/xenobio))

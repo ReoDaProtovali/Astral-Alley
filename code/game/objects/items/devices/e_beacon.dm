@@ -5,7 +5,13 @@
 	icon_state = "e_beacon_off"
 	var/beacon_active = FALSE
 	var/list/levels_for_distress
+<<<<<<< HEAD
 	var/obj/item/device/gps/gps = null
+=======
+	var/obj/item/gps/gps = null
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 
 /obj/item/device/emergency_beacon/New()
 	gps = new/obj/item/device/gps/emergency_beacon(src)

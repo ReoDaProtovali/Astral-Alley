@@ -32,7 +32,14 @@
 
 	var/cell_type = /obj/item/weapon/cell/device
 
+<<<<<<< HEAD
 /obj/item/device/flash/Initialize()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/flash/Initialize()
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	. = ..()
 	power_supply = new cell_type(src)
 

@@ -12,7 +12,14 @@
 	var/radiation_count = 0
 	var/datum/looping_sound/geiger/soundloop
 
+<<<<<<< HEAD
 /obj/item/device/geiger/Initialize()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/geiger/Initialize()
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	soundloop = new(list(src), FALSE)
 	return ..()
 

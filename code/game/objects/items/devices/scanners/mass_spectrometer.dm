@@ -15,7 +15,14 @@
 	var/details = 0
 	var/recent_fail = 0
 
+<<<<<<< HEAD
 /obj/item/device/mass_spectrometer/New()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/mass_spectrometer/New()
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	..()
 	var/datum/reagents/R = new/datum/reagents(5)
 	reagents = R

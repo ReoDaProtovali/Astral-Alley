@@ -17,7 +17,14 @@
 	var/obj/machinery/camera/bug/camera
 	var/camtype = /obj/machinery/camera/bug
 
+<<<<<<< HEAD
 /obj/item/device/camerabug/New()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/camerabug/New()
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	..()
 //	radio = new(src)
 	camera = new camtype(src)
@@ -55,6 +62,9 @@
 	throw_range = 15
 	throw_speed = 3
 	origin_tech = list(TECH_ENGINEERING = 1)
+
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
 
 /obj/item/brokenbug/spy
 	name = "broken bug"
@@ -157,6 +167,10 @@
 //	var/obj/item/device/radio/bug/radio
 	var/obj/machinery/camera/bug/selected_camera
 	var/list/obj/machinery/camera/bug/cameras = new()
+
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
 /*
 /obj/item/device/bug_monitor/New()
 	radio = new(src)
