@@ -17,8 +17,15 @@
 	origin_tech = list(TECH_BIO = 4, TECH_POWER = 2)
 	action_button_name = "Remove/Replace Paddles"
 
+<<<<<<< HEAD
 	var/obj/item/weapon/shockpaddles/linked/paddles
 	var/obj/item/weapon/cell/bcell = null
+=======
+	var/obj/item/shockpaddles/linked/paddles
+	var/obj/item/cell/bcell = null
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 
 /obj/item/device/defib_kit/get_cell()
 	return bcell

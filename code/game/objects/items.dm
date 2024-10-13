@@ -814,6 +814,7 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	else
 		return FALSE
 
+<<<<<<< HEAD
 
 // My best guess as to why this is here would be that it does so little. Still, keep it under all the procs, for sanity's sake.
 /obj/item/device
@@ -821,6 +822,8 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 	pickup_sound = 'sound/items/pickup/device.ogg'
 	drop_sound = 'sound/items/drop/device.ogg'
 
+=======
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 //Worn icon generation for on-mob sprites
 /obj/item/proc/make_worn_icon(var/body_type,var/slot_name,var/inhands,var/default_icon,var/default_layer,var/icon/clip_mask = null)
 	//Get the required information about the base icon

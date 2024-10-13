@@ -10,7 +10,14 @@
 	var/spamcheck = 0
 	var/insults
 
+<<<<<<< HEAD
 /obj/item/device/hailer/verb/set_message()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/hailer/verb/set_message()
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	set name = "Set Hailer Message"
 	set category = "Object"
 	set desc = "Alter the message shouted by your hailer."

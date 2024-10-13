@@ -33,6 +33,8 @@
 	var/cell_type = /obj/item/weapon/cell/device
 	var/power_usage = 1
 	var/power_use = 1
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
 
 /obj/item/device/flashlight/Initialize()
 	. = ..()

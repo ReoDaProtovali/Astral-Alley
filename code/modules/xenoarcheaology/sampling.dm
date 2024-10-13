@@ -90,7 +90,13 @@
 
 	var/sampled_turf = ""
 	var/num_stored_bags = 10
+<<<<<<< HEAD
 	var/obj/item/weapon/evidencebag/filled_bag
+=======
+	var/obj/item/evidencebag/filled_bag
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 
 /obj/item/device/core_sampler/examine(var/mob/user)
 	. = ..()

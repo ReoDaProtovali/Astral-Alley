@@ -12,7 +12,14 @@
 	var/obj/item/weapon/disk/nuclear/the_disk = null
 	var/active = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/pinpointer/Destroy()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/pinpointer/Destroy()
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	active = 0
 	STOP_PROCESSING(SSobj, src)
 	return ..()

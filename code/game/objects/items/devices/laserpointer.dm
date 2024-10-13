@@ -17,7 +17,13 @@
 	var/last_used_time = 0
 	var/recharging = 0
 	var/recharge_locked = 0
+<<<<<<< HEAD
 	var/obj/item/weapon/stock_parts/micro_laser/diode //used for upgrading!
+=======
+	var/obj/item/stock_parts/micro_laser/diode //used for upgrading!
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 
 
 /obj/item/device/laser_pointer/red

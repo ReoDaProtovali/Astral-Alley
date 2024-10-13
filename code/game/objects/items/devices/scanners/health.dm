@@ -17,7 +17,14 @@
 	var/showadvscan = 1
 	var/guide = FALSE
 
+<<<<<<< HEAD
 /obj/item/device/healthanalyzer/New()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/healthanalyzer/New()
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	if(advscan >= 1)
 		verbs += /obj/item/device/healthanalyzer/proc/toggle_adv
 	..()

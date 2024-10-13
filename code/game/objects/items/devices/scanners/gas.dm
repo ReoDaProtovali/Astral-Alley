@@ -13,7 +13,14 @@
 
 	origin_tech = list(TECH_MAGNET = 1, TECH_ENGINEERING = 1)
 
+<<<<<<< HEAD
 /obj/item/device/analyzer/atmosanalyze(var/mob/user)
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/analyzer/atmosanalyze(var/mob/user)
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	var/air = user.return_air()
 	if (!air)
 		return

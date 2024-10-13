@@ -19,7 +19,14 @@
 
 	var/global/list/overlay_cache = list() //cache recent overlays
 
+<<<<<<< HEAD
 /obj/item/device/t_scanner/update_icon()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/t_scanner/update_icon()
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	icon_state = "t-ray[on]"
 
 /obj/item/device/t_scanner/attack_self(mob/user)

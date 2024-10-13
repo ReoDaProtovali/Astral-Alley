@@ -15,7 +15,14 @@
 	var/saved_icon_state = "cigbutt"
 	var/saved_overlays
 
+<<<<<<< HEAD
 /obj/item/device/chameleon/dropped()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/chameleon/dropped()
+>>>>>>> 4bb30c42f0 ([MIRROR] Restores the sounds for all the items (#9226))
 	disrupt()
 	..()
 

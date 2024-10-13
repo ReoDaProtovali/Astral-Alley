@@ -10,6 +10,8 @@
 	var/obj/item/device/radio/radio
 	var/datum/weakref/showing
 	var/showing_name
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
 
 /obj/item/device/tvcamera/New()
 	..()
