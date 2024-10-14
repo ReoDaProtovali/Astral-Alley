@@ -156,8 +156,11 @@
 /area/submap/Blackshuttledown)
 "ax" = (
 /obj/structure/table/steel,
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/automatic/wt550,
 /obj/item/weapon/gun/projectile/automatic/p90,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /obj/random/rigsuit/chancetofail,
 /turf/simulated/floor/tiled/steel_grid,
 /area/submap/Blackshuttledown)
@@ -260,7 +263,6 @@
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
-/obj/random/contraband/nofail,
 /turf/simulated/floor/tiled/steel,
 /area/submap/Blackshuttledown)
 "aP" = (
@@ -308,7 +310,10 @@
 /area/submap/Blackshuttledown)
 "aV" = (
 /obj/structure/table/standard,
+<<<<<<< HEAD
 /obj/item/weapon/storage/firstaid/surgery,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /obj/effect/floor_decal/corner/green/border{
 	dir = 10;
 	icon_state = "bordercolor"
@@ -488,7 +493,6 @@
 /area/submap/Blackshuttledown)
 "bv" = (
 /obj/structure/table/steel,
-/obj/random/projectile,
 /turf/simulated/floor/tiled/yellow,
 /area/submap/Blackshuttledown)
 "bw" = (
@@ -565,13 +569,11 @@
 /turf/simulated/floor/tiled/yellow,
 /area/submap/Blackshuttledown)
 "bI" = (
-/obj/item/stolenpackage,
 /obj/structure/closet/crate,
 /obj/random/material/precious,
 /obj/random/material/precious,
 /obj/random/material/precious,
 /obj/random/rigsuit/chancetofail,
-/obj/random/projectile,
 /turf/simulated/floor/tiled/yellow,
 /area/submap/Blackshuttledown)
 "bJ" = (
@@ -658,9 +660,6 @@
 /area/submap/Blackshuttledown)
 "bV" = (
 /obj/structure/table/steel,
-/obj/random/rigsuit/chancetofail,
-/obj/random/projectile,
-/obj/random/projectile,
 /turf/simulated/floor/tiled/steel_grid,
 /area/submap/Blackshuttledown)
 "bW" = (
@@ -701,7 +700,10 @@
 /area/submap/Blackshuttledown)
 "cc" = (
 /obj/structure/table/steel,
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/pistol,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /obj/machinery/light/small{
 	dir = 4;
 	pixel_y = 0
@@ -734,7 +736,6 @@
 /area/submap/Blackshuttledown)
 "ch" = (
 /obj/structure/table/steel,
-/obj/random/energy/highend,
 /obj/random/energy/highend,
 /obj/random/rigsuit/chancetofail,
 /turf/simulated/floor/tiled/steel_grid,
@@ -771,7 +772,6 @@
 /area/submap/Blackshuttledown)
 "cl" = (
 /obj/structure/table/woodentable,
-/obj/random/projectile,
 /turf/simulated/floor/tiled/steel,
 /area/submap/Blackshuttledown)
 "cm" = (
@@ -782,7 +782,7 @@
 /area/submap/Blackshuttledown)
 "cn" = (
 /obj/structure/table/woodentable,
-/obj/random/contraband/nofail,
+/obj/random/contraband,
 /turf/simulated/floor/tiled/steel,
 /area/submap/Blackshuttledown)
 "co" = (
@@ -830,7 +830,11 @@
 /area/submap/Blackshuttledown)
 "DG" = (
 /obj/structure/table/steel,
-/obj/random/contraband/nofail,
+/obj/random/contraband,
+/turf/simulated/floor/tiled/steel,
+/area/submap/Blackshuttledown)
+"Fp" = (
+/obj/structure/table/steel,
 /turf/simulated/floor/tiled/steel,
 /area/submap/Blackshuttledown)
 "RP" = (
@@ -1564,7 +1568,7 @@ aj
 bl
 jW
 bB
-DG
+Fp
 jW
 bl
 aj

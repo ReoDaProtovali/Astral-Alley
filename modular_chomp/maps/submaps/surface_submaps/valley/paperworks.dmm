@@ -58,6 +58,7 @@
 /obj/machinery/light/poi,
 /turf/simulated/floor/tiled/steel,
 /area/submap/paperworks)
+<<<<<<< HEAD
 "E" = (
 /obj/structure/closet/crate,
 /obj/item/weapon/paper{
@@ -66,6 +67,8 @@
 	},
 /turf/simulated/floor/tiled/steel,
 /area/submap/paperworks)
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 "F" = (
 /turf/simulated/wall/rplastihull,
 /area/submap/paperworks)
@@ -85,7 +88,12 @@
 /area/submap/paperworks)
 "O" = (
 /obj/structure/table/gold,
+<<<<<<< HEAD
 /obj/item/device/soulstone,
+=======
+/obj/item/soulstone,
+/obj/item/salvage/ruin/nanotrasen,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/steel,
 /area/submap/paperworks)
 "Q" = (
@@ -102,10 +110,14 @@
 /area/submap/paperworks)
 "X" = (
 /obj/structure/closet/crate,
+<<<<<<< HEAD
 /obj/item/weapon/paper{
 	info = "What is fact, fiction, and soon to be fact. It is a great deal of importance is it not. What realms can we traverse, and what are nothing but in our minds. And what can we force out of our minds, and into reality. This is one of our goals to find out.";
 	name = "Fact and Fiction."
 	},
+=======
+/obj/item/salvage/ruin/nanotrasen,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/steel,
 /area/submap/paperworks)
 "Z" = (
@@ -394,7 +406,7 @@ a
 F
 y
 F
-E
+X
 F
 f
 F

@@ -50,13 +50,19 @@
 "bF" = (
 /obj/structure/table/rack,
 /obj/random/projectile/shotgun,
+<<<<<<< HEAD
 /obj/random/projectile/shotgun,
 /obj/item/weapon/gun/projectile/shotgun/pump/combat,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /obj/item/ammo_magazine/ammo_box/b12g/flechette,
 /obj/item/ammo_magazine/ammo_box/b12g/flechette,
 /obj/item/ammo_magazine/ammo_box/b12g/flechette,
 /obj/item/ammo_magazine/ammo_box/b12g/flechette,
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/quad,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "bS" = (
@@ -112,6 +118,7 @@
 /area/submap/DugOutMercs)
 "dI" = (
 /obj/structure/table/rack,
+<<<<<<< HEAD
 /obj/item/weapon/gun/energy/vepr,
 /obj/item/weapon/gun/energy/laser,
 /obj/random/energy,
@@ -120,6 +127,11 @@
 /obj/item/weapon/cell/device/weapon,
 /obj/item/weapon/cell/device/weapon,
 /obj/item/weapon/cell/device/weapon,
+=======
+/obj/item/gun/energy/laser,
+/obj/item/cell/device/weapon,
+/obj/item/cell/device/weapon,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "eg" = (
@@ -164,6 +176,7 @@
 	nitrogen = 93.7835
 	},
 /area/submap/DugOutMercs)
+<<<<<<< HEAD
 "fx" = (
 /obj/effect/floor_decal/corner/mauve/diagonal,
 /obj/structure/table/standard,
@@ -172,6 +185,8 @@
 /obj/item/weapon/archaeological_find,
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 "fL" = (
 /obj/effect/floor_decal/corner/mauve/diagonal,
 /obj/structure/table/standard,
@@ -207,7 +222,6 @@
 "hZ" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/item/stolenpackage,
 /turf/simulated/floor/tiled,
 /area/submap/DugOutMercs)
 "iq" = (
@@ -242,15 +256,6 @@
 	},
 /obj/machinery/light,
 /turf/simulated/floor/tiled,
-/area/submap/DugOutMercs)
-"jz" = (
-/obj/structure/table/rack,
-/obj/item/clothing/suit/armor/laserproof,
-/obj/item/clothing/head/helmet/laserproof,
-/obj/item/clothing/gloves/arm_guard/laserproof,
-/obj/item/clothing/shoes/leg_guard/laserproof,
-/obj/item/clothing/suit/armor/pcarrier/laserproof,
-/turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "kg" = (
 /obj/effect/floor_decal/corner/blue/border{
@@ -290,7 +295,8 @@
 "lq" = (
 /obj/effect/floor_decal/corner/mauve/diagonal,
 /mob/living/simple_mob/animal/space/carp/large/huge{
-	faction = "syndicate"
+	faction = "syndicate";
+	loot_list = list(/obj/item/salvage/ruin/carp = 100)
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
@@ -361,7 +367,6 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 9
 	},
-/obj/random/energy,
 /obj/item/clothing/suit/space/syndicate/black/blue,
 /obj/item/clothing/head/helmet/space/syndicate/black/blue,
 /obj/item/weapon/tank/oxygen/welded,
@@ -393,6 +398,7 @@
 /obj/random/maintenance/research,
 /obj/random/maintenance/research,
 /obj/random/toolbox,
+/obj/item/gun/magnetic/gasthrower,
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "pg" = (
@@ -445,7 +451,7 @@
 "rl" = (
 /obj/structure/table/reinforced,
 /obj/effect/floor_decal/corner/red/diagonal,
-/obj/random/cash/huge,
+/obj/random/cash,
 /turf/simulated/floor/tiled,
 /area/submap/DugOutMercs)
 "rn" = (
@@ -540,6 +546,7 @@
 /obj/random/maintenance/research,
 /obj/random/maintenance/research,
 /obj/item/clothing/head/wizard/amp,
+/obj/item/cell/device/weapon/recharge/alien/omni,
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "ul" = (
@@ -590,7 +597,6 @@
 /obj/effect/floor_decal/corner/blue/border{
 	dir = 5
 	},
-/obj/random/energy,
 /obj/item/clothing/suit/space/syndicate/black/blue,
 /obj/item/clothing/head/helmet/space/syndicate/black/blue,
 /obj/item/weapon/tank/oxygen/welded,
@@ -609,8 +615,6 @@
 "xC" = (
 /obj/effect/floor_decal/corner/mauve/diagonal,
 /obj/structure/table/standard,
-/obj/random/maintenance/research,
-/obj/random/maintenance/research,
 /obj/random/janusmodule,
 /obj/item/weapon/surgical/bone_clamp/alien,
 /obj/machinery/light{
@@ -624,11 +628,6 @@
 /area/submap/DugOutMercs)
 "yr" = (
 /obj/structure/table/rack,
-/obj/item/clothing/suit/armor/pcarrier/laserproof,
-/obj/item/clothing/suit/armor/laserproof,
-/obj/item/clothing/head/helmet/laserproof,
-/obj/item/clothing/gloves/arm_guard/laserproof,
-/obj/item/clothing/shoes/leg_guard/laserproof,
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "yA" = (
@@ -684,9 +683,13 @@
 "Ca" = (
 /obj/effect/floor_decal/corner/mauve/diagonal,
 /obj/structure/table/standard,
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/revolver/nova,
 /obj/machinery/light,
 /obj/item/weapon/archaeological_find,
+=======
+/obj/machinery/light,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "Cl" = (
@@ -782,11 +785,11 @@
 /area/submap/DugOutMercs)
 "Ex" = (
 /obj/structure/table/rack/shelf,
-/obj/random/firstaid,
 /obj/effect/floor_decal/corner/red/diagonal,
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled,
 /area/submap/DugOutMercs)
 "EQ" = (
@@ -878,6 +881,7 @@
 /obj/structure/railing/grey,
 /turf/simulated/floor/outdoors/rocks,
 /area/submap/DugOutMercs)
+<<<<<<< HEAD
 "Ig" = (
 /obj/effect/floor_decal/corner/mauve/diagonal,
 /obj/structure/table/standard,
@@ -885,6 +889,8 @@
 /obj/item/weapon/archaeological_find,
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 "IM" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
@@ -912,8 +918,8 @@
 /area/submap/DugOutMercs)
 "Jp" = (
 /obj/structure/table/woodentable,
-/obj/random/cash/big,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
+/obj/random/cash,
 /turf/simulated/floor/tiled,
 /area/submap/DugOutMercs)
 "Jz" = (
@@ -949,15 +955,18 @@
 	dir = 9
 	},
 /obj/structure/table/rack,
+<<<<<<< HEAD
 /obj/item/weapon/rig/pmc/security,
 /obj/item/weapon/rig/pmc/medical,
+=======
+/obj/item/rig/pmc/security,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "Lg" = (
 /obj/machinery/light,
 /obj/effect/floor_decal/corner/paleblue/diagonal,
 /obj/structure/table/woodentable,
-/obj/item/stolenpackage,
 /turf/simulated/floor/tiled,
 /area/submap/DugOutMercs)
 "Mh" = (
@@ -1055,7 +1064,7 @@
 /obj/structure/table/standard,
 /obj/random/maintenance/research,
 /obj/random/maintenance/research,
-/obj/random/medical,
+/obj/item/telecube/randomized,
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "QM" = (
@@ -1095,9 +1104,13 @@
 "Sn" = (
 /obj/effect/floor_decal/corner/mauve/diagonal,
 /obj/structure/table/standard,
+<<<<<<< HEAD
 /obj/item/weapon/gun/magnetic/gasthrower,
 /obj/item/weapon/cell/device/weapon/recharge/alien/omni,
 /obj/item/weapon/archaeological_find,
+=======
+/obj/item/archaeological_find,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "SN" = (
@@ -1199,8 +1212,12 @@
 	dir = 10
 	},
 /obj/structure/table/rack,
+<<<<<<< HEAD
 /obj/item/weapon/rig/pmc/security,
 /obj/item/weapon/rig/pmc/medical,
+=======
+/obj/item/rig/pmc/security,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "Wx" = (
@@ -1248,7 +1265,9 @@
 /area/submap/DugOutMercs)
 "YE" = (
 /obj/effect/floor_decal/corner/mauve/diagonal,
-/mob/living/simple_mob/humanoid/merc/ranged/technician,
+/mob/living/simple_mob/humanoid/merc/ranged/technician{
+	loot_list = list(/obj/item/gun/projectile/dartgun = 100, /obj/item/gun/launcher/grenade = 100, /obj/item/grenade/spawnergrenade/manhacks/mercenary = 50, /obj/item/grenade/spawnergrenade/manhacks/mercenary = 30, /obj/item/gun/projectile/revolver/nova = 50)
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "YF" = (
@@ -1264,15 +1283,18 @@
 /area/submap/DugOutMercs)
 "YK" = (
 /obj/effect/floor_decal/corner/mauve/diagonal,
+<<<<<<< HEAD
 /obj/item/weapon/archaeological_find,
 /obj/item/weapon/archaeological_find,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /obj/structure/table/standard,
 /turf/simulated/floor/tiled/techmaint,
 /area/submap/DugOutMercs)
 "YW" = (
 /obj/structure/table/rack/shelf,
-/obj/random/medical,
 /obj/effect/floor_decal/corner/red/diagonal,
+/obj/random/pottedplant,
 /turf/simulated/floor/tiled,
 /area/submap/DugOutMercs)
 "Zg" = (
@@ -2101,7 +2123,7 @@ pf
 WY
 CQ
 WY
-fx
+Ca
 uv
 De
 go
@@ -2227,7 +2249,7 @@ my
 wU
 WY
 WY
-Ig
+Sn
 uv
 Qf
 go
@@ -2256,7 +2278,7 @@ FZ
 VX
 VX
 uv
-jz
+yr
 Ks
 Mi
 Vl
@@ -2310,7 +2332,7 @@ uv
 YW
 Pe
 Pe
-iL
+Pe
 Pe
 uv
 Qf

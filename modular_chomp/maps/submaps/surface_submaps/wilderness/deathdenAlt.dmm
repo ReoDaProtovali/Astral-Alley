@@ -389,7 +389,6 @@
 	},
 /area/submap/DeathDen)
 "CJ" = (
-/obj/random/maintenance/medical,
 /obj/random/junk,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/engineering,
@@ -568,7 +567,10 @@
 /obj/structure/window/reinforced/tinted/frosted{
 	dir = 8
 	},
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/sawn,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/freezer,
 /area/submap/DeathDen)
 "Mz" = (

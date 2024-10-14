@@ -206,8 +206,12 @@
 /area/submap/FrostOasis)
 "EW" = (
 /obj/structure/table/standard,
+<<<<<<< HEAD
 /obj/item/weapon/gift,
 /obj/item/weapon/gun/energy/temperature,
+=======
+/obj/item/gift,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/wood/broken,
 /area/submap/FrostOasis)
 "Fl" = (
