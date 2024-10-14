@@ -31,7 +31,11 @@
 	set name = "Me verb"
 	set category = "IC.TGUI Say" //CHOMPEdit
 
+<<<<<<< HEAD
 	if(is_preference_enabled(/datum/client_preference/tgui_say))
+=======
+	if(client?.prefs?.read_preference(/datum/preference/toggle/tgui_say) && client?.prefs?.read_preference(/datum/preference/toggle/tgui_say_emotes))
+>>>>>>> 695e58e981 ([MIRROR] Improve tgui say experience with extra control prefs (#9230))
 		winset(src, null, "command=[client.tgui_say_create_open_command(ME_CHANNEL)]")
 		return
 
@@ -65,7 +69,11 @@
 	set category = "IC.TGUI Say" //CHOMPEdit
 	set desc = "Emote to nearby people (and your pred/prey)"
 
+<<<<<<< HEAD
 	if(is_preference_enabled(/datum/client_preference/tgui_say))
+=======
+	if(client?.prefs?.read_preference(/datum/preference/toggle/tgui_say) && client?.prefs?.read_preference(/datum/preference/toggle/tgui_say_emotes))
+>>>>>>> 695e58e981 ([MIRROR] Improve tgui say experience with extra control prefs (#9230))
 		winset(src, null, "command=[client.tgui_say_create_open_command(SUBTLE_CHANNEL)]")
 		return
 
