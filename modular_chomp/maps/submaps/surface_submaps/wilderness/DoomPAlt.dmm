@@ -355,11 +355,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/submap/DoomP)
-"tP" = (
-/obj/structure/table/standard,
-/obj/item/stolenpackage,
-/turf/simulated/floor/tiled,
-/area/submap/DoomP)
 "tX" = (
 /obj/item/weapon/mine/phoron,
 /turf/simulated/floor/wood{
@@ -996,14 +991,15 @@
 /area/submap/DoomP)
 "Ya" = (
 /obj/structure/table/rack,
+<<<<<<< HEAD
 /obj/item/weapon/cell/device/weapon,
 /obj/item/weapon/cell/device/weapon,
 /obj/item/weapon/cell/device/weapon,
 /obj/item/weapon/cell/device/weapon,
+=======
+/obj/item/cell/device/weapon,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /obj/random/energy,
-/obj/random/energy,
-/obj/random/energy/highend,
-/obj/random/energy/highend,
 /turf/simulated/floor/tiled/techfloor,
 /area/submap/DoomP)
 "Yi" = (
@@ -1018,11 +1014,6 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/white,
-/area/submap/DoomP)
-"YL" = (
-/obj/structure/table/standard,
-/obj/random/firstaid,
-/turf/simulated/floor/tiled,
 /area/submap/DoomP)
 "YM" = (
 /obj/effect/floor_decal/corner/lime{
@@ -2576,7 +2567,7 @@ Hw
 Yl
 ZH
 zO
-tP
+CT
 KR
 RT
 HL
@@ -2700,7 +2691,7 @@ bK
 Yl
 jH
 zO
-YL
+CT
 KR
 Yl
 Yl

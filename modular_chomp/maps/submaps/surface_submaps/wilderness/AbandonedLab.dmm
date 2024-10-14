@@ -92,6 +92,7 @@
 "dI" = (
 /obj/item/weapon/material/shard,
 /obj/effect/decal/cleanable/dirt,
+/mob/living/simple_mob/mechanical/hivebot/ranged_damage/siege/emp,
 /turf/simulated/floor/tiled/steel,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -99,7 +100,7 @@
 "dO" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
-/obj/random/maintenance/research,
+/mob/living/simple_mob/mechanical/hivebot/ranged_damage/laser,
 /turf/simulated/floor/tiled/dark,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -163,7 +164,11 @@
 	requires_power = 0
 	})
 "gP" = (
-/mob/living/simple_mob/mechanical/hivebot/ranged_damage/strong,
+/mob/living/simple_mob/mechanical/hivebot/ranged_damage/strong{
+	size_multiplier = 1.2;
+	health = 240;
+	loot_list = list(/obj/item/gun/energy/laser = 5, /obj/item/gun/energy/laser/sleek = 5, /obj/item/gun/energy/gun = 5, /obj/item/gun/energy/sniperrifle = 5)
+	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -201,9 +206,14 @@
 	},
 /obj/random/projectile/shotgun,
 /obj/random/ammo,
+<<<<<<< HEAD
 /obj/random/ammo,
 /obj/item/weapon/storage/box/empslite,
 /obj/item/weapon/storage/box/handcuffs,
+=======
+/obj/item/storage/box/empslite,
+/obj/item/storage/box/handcuffs,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/steel,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -232,7 +242,6 @@
 /obj/machinery/light/poi{
 	dir = 1
 	},
-/obj/effect/landmark/loot_spawn/low,
 /obj/structure/table/rack,
 /turf/simulated/floor/tiled/dark,
 /area/submap/AbandonedLab{
@@ -262,7 +271,6 @@
 	})
 "iA" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/maintenance/research,
 /turf/simulated/floor/reinforced,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -296,13 +304,6 @@
 "jE" = (
 /obj/effect/wingrille_spawn,
 /turf/simulated/wall/iron,
-/area/submap/AbandonedLab{
-	requires_power = 0
-	})
-"jN" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/random/contraband/nofail,
-/turf/simulated/floor/tiled/hydro,
 /area/submap/AbandonedLab{
 	requires_power = 0
 	})
@@ -367,7 +368,6 @@
 /obj/effect/floor_decal/borderfloorblack{
 	dir = 1
 	},
-/obj/random/maintenance/cargo,
 /turf/simulated/floor/tiled/dark,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -385,7 +385,6 @@
 /obj/effect/floor_decal/industrial/danger{
 	dir = 1
 	},
-/obj/random/maintenance/research,
 /turf/simulated/floor/tiled/dark,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -513,8 +512,6 @@
 	})
 "rs" = (
 /obj/structure/closet/cabinet,
-/obj/random/contraband,
-/obj/random/contraband,
 /obj/random/maintenance/medical,
 /obj/random/cash,
 /turf/simulated/floor/tiled/steel,
@@ -571,7 +568,6 @@
 	})
 "uu" = (
 /obj/structure/table/rack/shelf/steel,
-/obj/random/energy,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -700,7 +696,9 @@
 "AB" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
-/mob/living/simple_mob/mechanical/hivebot/ranged_damage/rapid,
+/mob/living/simple_mob/mechanical/hivebot/ranged_damage/rapid{
+	loot_list = list(/obj/item/reagent_containers/glass/beaker/bluespace = 25)
+	},
 /turf/simulated/floor,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -726,13 +724,6 @@
 /area/submap/AbandonedLab{
 	requires_power = 0
 	})
-"Bb" = (
-/obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/loot_spawn/low,
-/turf/simulated/floor/reinforced,
-/area/submap/AbandonedLab{
-	requires_power = 0
-	})
 "BC" = (
 /turf/simulated/wall/iron,
 /area/submap/AbandonedLab{
@@ -740,7 +731,6 @@
 	})
 "BD" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/loot_spawn/low,
 /turf/simulated/floor/tiled/old_tile/green,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -762,7 +752,6 @@
 	maxHealth = 15
 	},
 /obj/effect/decal/cleanable/dirt,
-/obj/random/projectile/scrapped_gun,
 /obj/item/ammo_casing/a10mm{
 	dir = 6
 	},
@@ -809,8 +798,12 @@
 	})
 "DR" = (
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< HEAD
 /obj/random/maintenance/security,
 /obj/item/weapon/material/shard,
+=======
+/obj/item/material/shard,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/reinforced,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -871,7 +864,10 @@
 "FN" = (
 /obj/structure/table/rack/shelf/steel,
 /obj/item/stolenpackage,
+<<<<<<< HEAD
 /obj/item/weapon/storage/backpack/holding,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -908,7 +904,10 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
 /obj/effect/decal/remains/human,
+<<<<<<< HEAD
 /obj/item/weapon/broken_gun/ionrifle,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/dark,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -924,7 +923,6 @@
 /obj/structure/table/standard{
 	name = "plastic table frame"
 	},
-/obj/effect/landmark/loot_spawn/low,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -958,7 +956,6 @@
 "Iz" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/generic,
-/obj/effect/landmark/loot_spawn/low,
 /turf/simulated/floor/tiled/dark,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -966,8 +963,12 @@
 "IE" = (
 /obj/structure/table/glass,
 /obj/effect/decal/cleanable/dirt,
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/dropper,
 /obj/item/weapon/reagent_containers/glass/beaker/bluespace,
+=======
+/obj/item/reagent_containers/dropper,
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/steel,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -1010,9 +1011,12 @@
 	})
 "JC" = (
 /obj/structure/table/rack/shelf/steel,
+<<<<<<< HEAD
 /obj/item/weapon/spacecash/c500,
 /obj/item/weapon/spacecash/c500,
 /obj/item/weapon/spacecash/c500,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /obj/structure/window/reinforced/survival_pod,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/submap/AbandonedLab{
@@ -1058,7 +1062,6 @@
 	})
 "KR" = (
 /obj/structure/table/rack/shelf/steel,
-/obj/item/stolenpackage,
 /obj/item/stolenpackage,
 /obj/structure/window/reinforced/survival_pod,
 /turf/simulated/floor/tiled/techfloor/grid,
@@ -1123,7 +1126,6 @@
 	})
 "ML" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/maintenance/security,
 /obj/structure/table/steel,
 /obj/effect/decal/cleanable/generic,
 /turf/simulated/floor/tiled/steel,
@@ -1243,7 +1245,6 @@
 	})
 "QA" = (
 /obj/effect/decal/cleanable/cobweb2,
-/obj/random/maintenance/cargo,
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust{
 	pixel_y = 1
@@ -1300,7 +1301,6 @@
 	})
 "Ta" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/random/maintenance/security,
 /obj/structure/table/steel,
 /turf/simulated/floor/tiled/steel,
 /area/submap/AbandonedLab{
@@ -1387,11 +1387,15 @@
 	})
 "Xo" = (
 /obj/effect/floor_decal/rust,
+<<<<<<< HEAD
 /obj/item/weapon/storage/pill_bottle/vermicetol,
 /obj/item/weapon/storage/pill_bottle/dermaline,
 /obj/item/weapon/storage/pill_bottle/dexalin_plus,
 /obj/item/weapon/storage/pill_bottle/carthatoline,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /obj/structure/closet/crate,
+/obj/random/medical/pillbottle,
 /turf/simulated/floor/tiled/steel,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -1445,7 +1449,6 @@
 	})
 "Za" = (
 /obj/effect/floor_decal/rust,
-/obj/effect/landmark/loot_spawn/low,
 /turf/simulated/floor/tiled/steel,
 /area/submap/AbandonedLab{
 	requires_power = 0
@@ -1467,7 +1470,6 @@
 /area/template_noop)
 "Zr" = (
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/landmark/loot_spawn/low,
 /obj/effect/floor_decal/rust{
 	pixel_y = 1
 	},
@@ -1573,7 +1575,7 @@ ku
 sb
 gk
 oI
-jN
+bI
 ot
 SB
 WZ
@@ -1771,7 +1773,7 @@ ie
 LL
 yS
 mQ
-Bb
+iA
 mu
 ku
 Dh

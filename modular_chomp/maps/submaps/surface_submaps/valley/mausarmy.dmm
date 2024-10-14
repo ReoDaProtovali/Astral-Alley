@@ -78,7 +78,6 @@
 /obj/random/maintenance/clean,
 /obj/random/maintenance/engineering,
 /obj/random/maintenance/medical,
-/obj/random/contraband,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
 "mQ" = (
@@ -88,6 +87,7 @@
 "oS" = (
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/structure/closet/crate/secure/lootsafe/numberlock,
+/obj/random/cash,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
 "pB" = (
@@ -148,7 +148,6 @@
 /obj/random/maintenance/clean,
 /obj/random/maintenance/medical,
 /obj/random/maintenance/security,
-/obj/random/contraband,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
 "we" = (
@@ -187,9 +186,11 @@
 /obj/structure/table/fancyblack,
 /obj/random/cash,
 /obj/random/cash,
-/obj/random/cash,
 /obj/item/stolenpackage,
+<<<<<<< HEAD
 /obj/item/weapon/card/emag/used,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
 "zV" = (
@@ -237,10 +238,10 @@
 /area/submap/mausarmy)
 "Do" = (
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
-/obj/effect/landmark/loot_spawn,
 /obj/machinery/light/poi{
 	dir = 4
 	},
+/obj/effect/landmark/loot_spawn/low,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
 "DU" = (
@@ -249,7 +250,6 @@
 /obj/random/maintenance/clean,
 /obj/random/maintenance/engineering,
 /obj/random/maintenance/research,
-/obj/random/contraband,
 /obj/random/rigsuit/chancetofail,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
@@ -272,8 +272,6 @@
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/structure/table/fancyblack,
 /obj/random/cash,
-/obj/random/cash,
-/obj/random/cash,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
 "FO" = (
@@ -286,9 +284,7 @@
 "Hr" = (
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
 /obj/random/crate,
-/obj/item/stolenpackage,
 /obj/random/maintenance/clean,
-/obj/random/maintenance/medical,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
 "JM" = (
@@ -326,7 +322,6 @@
 "OJ" = (
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
 /obj/random/crate,
-/obj/item/stolenpackage,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/engineering,
 /obj/random/maintenance/research,
@@ -340,15 +335,12 @@
 /obj/effect/floor_decal/corner/blue/diagonal,
 /obj/structure/table/fancyblack,
 /obj/random/cash,
-/obj/random/cash,
-/obj/random/cash,
 /obj/random/rigsuit,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
 "Qd" = (
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
 /obj/random/crate,
-/obj/item/stolenpackage,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/security,
 /turf/simulated/floor/tiled/asteroid_steel,
@@ -356,9 +348,7 @@
 "Qj" = (
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
 /obj/random/crate,
-/obj/item/stolenpackage,
 /obj/random/maintenance/clean,
-/obj/random/maintenance/medical,
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
@@ -396,10 +386,8 @@
 "VC" = (
 /obj/effect/floor_decal/corner_techfloor_gray/diagonal,
 /obj/random/crate,
-/obj/item/stolenpackage,
 /obj/random/maintenance/clean,
 /obj/random/maintenance/research,
-/obj/random/contraband,
 /turf/simulated/floor/tiled/asteroid_steel,
 /area/submap/mausarmy)
 "VE" = (
@@ -695,8 +683,8 @@ Ev
 vj
 Ev
 Ev
-Rp
-Rp
+Ev
+Ev
 Rx
 Rx
 Rx
@@ -742,12 +730,12 @@ Zm
 NM
 Rx
 vp
-Rp
+Ev
 Ev
 Ev
 vI
 Ev
-xm
+Ev
 Ev
 Ev
 BV
@@ -831,7 +819,7 @@ DU
 Hr
 Ev
 ra
-Rp
+Ev
 Rx
 ht
 CB
@@ -851,7 +839,7 @@ CB
 Rx
 Qd
 Ev
-Rp
+xm
 Do
 Ev
 vj

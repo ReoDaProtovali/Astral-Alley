@@ -4,8 +4,13 @@
 /turf/simulated/floor/outdoors/dirt,
 /area/template_noop)
 "aE" = (
+<<<<<<< HEAD
 /obj/item/weapon/storage/firstaid/bonemed,
 /turf/simulated/floor/outdoors/rocks{
+=======
+/obj/item/storage/firstaid,
+/turf/simulated/floor/outdoors/dirt{
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 	outdoors = 0
 	},
 /area/submap/Chasm)
@@ -113,7 +118,8 @@
 /mob/living/simple_mob/vore/jelly{
 	health = 150;
 	maxHealth = 150;
-	name = "Cavern jelly blob"
+	name = "Cavern jelly blob";
+	loot_list = list(/obj/item/storage/firstaid/bonemed = 10)
 	},
 /turf/simulated/floor/plating,
 /area/submap/Chasm)
@@ -362,12 +368,6 @@
 /obj/random/humanoidremains,
 /turf/simulated/floor/plating,
 /area/submap/Chasm)
-"DH" = (
-/mob/living/simple_mob/vore/jelly,
-/turf/simulated/floor/outdoors/rocks{
-	outdoors = 0
-	},
-/area/submap/Chasm)
 "DI" = (
 /obj/random/junk,
 /turf/simulated/floor/outdoors/dirt,
@@ -520,7 +520,6 @@
 /obj/structure/cliff/automatic/corner{
 	dir = 6
 	},
-/obj/effect/landmark/loot_spawn,
 /turf/simulated/floor/outdoors/rocks{
 	outdoors = 0
 	},
@@ -661,12 +660,17 @@
 	},
 /area/submap/Chasm)
 "Zn" = (
+/obj/item/bone/skull,
 /mob/living/simple_mob/vore/jelly{
 	health = 150;
 	maxHealth = 150;
-	name = "Cavern jelly blob"
+	name = "Cavern jelly blob";
+	loot_list = list(/obj/item/storage/firstaid/bonemed = 10)
 	},
+<<<<<<< HEAD
 /obj/item/weapon/bone/skull,
+=======
+>>>>>>> 8e6b360d0d (Reduces the amount of guns in PoIs, adds salvage items (#9198))
 /turf/simulated/floor/outdoors/rocks{
 	outdoors = 0
 	},
@@ -675,7 +679,8 @@
 /mob/living/simple_mob/vore/jelly{
 	health = 150;
 	maxHealth = 150;
-	name = "Cavern jelly blob"
+	name = "Cavern jelly blob";
+	loot_list = list(/obj/item/storage/firstaid/bonemed = 10)
 	},
 /turf/simulated/floor/outdoors/rocks{
 	outdoors = 0
@@ -776,7 +781,7 @@ pk
 ua
 ua
 Sc
-DH
+ZS
 Kz
 DI
 cj
@@ -791,7 +796,7 @@ Sc
 Sc
 ua
 ua
-Lt
+aE
 Kv
 Tp
 Aq
@@ -820,7 +825,7 @@ Kv
 Tp
 NU
 Rz
-aE
+Rz
 BU
 Za
 Kv
@@ -1088,7 +1093,7 @@ hR
 hR
 Ee
 Kv
-DH
+ZS
 Sc
 Sc
 ua
@@ -1126,7 +1131,7 @@ ua
 ua
 ua
 Sc
-DH
+ZS
 Kv
 Ee
 cj
