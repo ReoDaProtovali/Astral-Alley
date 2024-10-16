@@ -145,7 +145,18 @@
 
 /area/survivalpod/superpose/XenoBotanySetup
 
+<<<<<<< HEAD
 /obj/item/device/survivalcapsule/superpose
+=======
+/area/survivalpod/superpose/secondlifebar
+	limit_mob_size = FALSE //Second life bars dont have ceilings
+
+/area/survivalpod/superpose/secondlifebar/dorms
+	icon_state = "toilet"
+	soundproofed = TRUE
+
+/obj/item/survivalcapsule/superpose
+>>>>>>> 78afaf3710 (A new outsider pod, the second life bar (#9231))
 	name = "superposed surfluid shelter capsule"
 	desc = "A proprietary hyperstructure of many three-dimensional spaces superposed around a supermatter nano crystal; right-click to reset the pod. There's a license for use printed on the bottom."
 	description_info = "The capsule contains pockets of compressed space in a super position stabilized by a miniscule supermatter crystal. \
