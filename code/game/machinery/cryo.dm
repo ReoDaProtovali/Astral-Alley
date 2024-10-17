@@ -303,7 +303,11 @@
 	M.loc = src
 	M.ExtinguishMob()
 	if(M.health > -100 && (M.health < 0 || M.sleeping))
+<<<<<<< HEAD
 		to_chat(M, "<span class='notice'><b>You feel a cold liquid surround you. Your skin starts to freeze up.</b></span>")
+=======
+		to_chat(M, span_boldnotice("You feel a cold liquid surround you. Your skin starts to freeze up."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	occupant = M
 	occupant.cozyloop.start() // CHOMPStation Add: Cozy Music
 	buckle_mob(occupant, forced = TRUE, check_loc = FALSE)

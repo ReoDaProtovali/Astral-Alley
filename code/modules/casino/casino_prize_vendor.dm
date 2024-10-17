@@ -265,7 +265,7 @@
 /obj/machinery/casino_prize_dispenser/proc/pay_with_chips(var/obj/item/weapon/spacecasinocash/cashmoney, mob/user, var/price)
 	//"cashmoney_:[cashmoney] user:[user] currently_vending:[currently_vending]"
 	if(price > cashmoney.worth)
-		to_chat(usr, "[icon2html(cashmoney, user.client)] <span class='warning'>That is not enough chips.</span>") //CHOMPEdit
+		to_chat(usr, "[icon2html(cashmoney, user.client)] " + span_warning("That is not enough chips."))
 		return 0
 
 	if(istype(cashmoney, /obj/item/weapon/spacecasinocash))
@@ -404,7 +404,11 @@
 		return
 
 	for(var/mob/O in hearers(src, null))
+<<<<<<< HEAD
 		O.show_message("<span class='npcsay'><span class='name'>\The [src]</span> beeps, \"[message]\"</span>",2)
+=======
+		O.show_message(span_npc_say(span_name("\The [src]") + " beeps, \"[message]\""),2)
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	return
 
 /obj/machinery/casino_prize_dispenser/process() //Might not need this, but just to be safe for now

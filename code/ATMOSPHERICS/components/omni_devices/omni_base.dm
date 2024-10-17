@@ -91,8 +91,13 @@
 	playsound(src, W.usesound, 50, 1)
 	if(do_after(user, 40 * W.toolspeed))
 		user.visible_message( \
+<<<<<<< HEAD
 			"<b>\The [user]</b> unfastens \the [src].", \
 			"<span class='notice'>You have unfastened \the [src].</span>", \
+=======
+			span_infoplain(span_bold("\The [user]") + "unfastens \the [src]."), \
+			span_notice("You have unfastened \the [src]."), \
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			"You hear a ratchet.")
 		deconstruct()
 

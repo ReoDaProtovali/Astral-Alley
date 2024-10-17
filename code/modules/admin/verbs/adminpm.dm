@@ -173,10 +173,17 @@
 				if(!recipient.current_ticket)
 					new /datum/ticket(msg, recipient, TRUE, 0) // CHOMPedit - Ticket System
 
+<<<<<<< HEAD
 				to_chat(recipient, "<span class='pm warning' size='4'><b>-- Administrator private message --</b></span>")
 				to_chat(recipient, "<span class='pm warning'>Admin PM from-<b>[key_name(src, recipient, 0)]</b>: [msg]</span>")
 				to_chat(recipient, "<span class='pm warning'><i>Click on the administrator's name to reply.</i></span>")
 				to_chat(src, "<span class='pm notice'>Admin PM to-<b>[key_name(recipient, src, 1)]</b>: [msg]</span>")
+=======
+				to_chat(recipient, span_admin_pm_warning(span_huge(span_bold("-- Administrator private message --"))))
+				to_chat(recipient, span_admin_pm_warning("Admin PM from-<b>[key_name(src, recipient, 0)]</b>: [msg]"))
+				to_chat(recipient, span_admin_pm_warning(span_italics("Click on the administrator's name to reply.")))
+				to_chat(src, span_admin_pm_notice("Admin PM to-<b>[key_name(recipient, src, 1)]</b>: [msg]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 				admin_ticket_log(recipient, "<span class='pm notice'>PM From [key_name_admin(src)]: [keywordparsedmsg]</span>")
 
@@ -205,7 +212,11 @@
 		for(var/client/X in GLOB.admins)
 			if(!check_rights(R_ADMIN|R_SERVER, 0, X)) //CHOMPEdit
 				continue
+<<<<<<< HEAD
 			to_chat(X, "<span class='pm notice'><B>PM: [key_name(src, X, 0)]-&gt;IRC:</B> [keywordparsedmsg]</span>")
+=======
+			to_chat(X, span_admin_pm_notice(span_bold("PM: [key_name(src, X, 0)]-&gt;IRC:") + " [keywordparsedmsg]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		log_admin("PM: [key_name(src)]->[key_name(recipient)]: [rawmsg]")
 		//we don't use message_admins here because the sender/receiver might get it too
@@ -213,7 +224,11 @@
 			if(!check_rights(R_ADMIN|R_SERVER, 0, X)) //CHOMPEdit
 				continue
 			if(X.key!=key && X.key!=recipient.key)	//check client/X is an admin and isn't the sender or recipient
+<<<<<<< HEAD
 				to_chat(X, "<span class='pm notice'><B>PM: [key_name(src, X, 0)]-&gt;[key_name(recipient, X, 0)]:</B> [keywordparsedmsg]</span>" )
+=======
+				to_chat(X, span_admin_pm_notice(span_bold("PM: [key_name(src, X, 0)]-&gt;[key_name(recipient, X, 0)]:") + " [keywordparsedmsg]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /proc/IrcPm(target,msg,sender)
 	var/client/C = GLOB.directory[target]
@@ -262,9 +277,15 @@
 	message_admins("IRC message from [sender] to [key_name_admin(C)] : [msg]")
 	log_admin("IRC PM: [sender] -> [key_name(C)] : [msg]")
 
+<<<<<<< HEAD
 	to_chat(C, "<span class='pm warning'><font size='4'><b>-- Administrator private message --</b></font></span>")
 	to_chat(C, "<span class='pm warning'>Admin PM from-<b><a href='?priv_msg=[stealthkey]'>[adminname]</A></b>: [msg]</span>")
 	to_chat(C, "<span class='pm warning'><i>Click on the administrator's name to reply.</i></span>")
+=======
+	to_chat(C, span_admin_pm_warning(span_huge(span_bold("-- Administrator private message --"))))
+	to_chat(C, span_admin_pm_warning("Admin PM from-<b><a href='?priv_msg=[stealthkey]'>[adminname]</A></b>: [msg]"))
+	to_chat(C, span_admin_pm_warning(span_italics("Click on the administrator's name to reply.")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	admin_ticket_log(C, "<span class='pm notice'>PM From [irc_tagged]: [msg]</span>")
 

@@ -24,8 +24,13 @@
 
 /obj/item/device/camerabug/attack_self(mob/user)
 	if(user.a_intent == I_HURT)
+<<<<<<< HEAD
 		to_chat(user, "<span class='notice'>You crush the [src] under your foot, breaking it.</span>")
 		visible_message("[user.name] crushes the [src] under their foot, breaking it!</span>")
+=======
+		to_chat(user, span_notice("You crush the [src] under your foot, breaking it."))
+		visible_message(span_notice("[user.name] crushes the [src] under their foot, breaking it!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		new brokentype(get_turf(src))
 		spawn(0)
 		qdel(src)
@@ -41,7 +46,7 @@
 	linkedmonitor = null
 	qdel(camera)
 	camera = new camtype(src)
-	to_chat(usr, "<span class='notice'>You turn the [src] off and on again, delinking it from any monitors.")
+	to_chat(usr, span_notice("You turn the [src] off and on again, delinking it from any monitors."))
 
 /obj/item/brokenbug
 	name = "broken mobile camera pod"

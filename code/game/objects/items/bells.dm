@@ -16,7 +16,7 @@
 /obj/item/weapon/deskbell/examine(mob/user)
 	. = ..()
 	if(broken)
-		. += "<b>It looks damaged, the ringer is stuck firmly inside.</b>"
+		. += span_bold("It looks damaged, the ringer is stuck firmly inside.")
 
 /obj/item/weapon/deskbell/attack(mob/target as mob, mob/living/user as mob)
 	if(!broken)

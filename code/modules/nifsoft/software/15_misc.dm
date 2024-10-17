@@ -105,11 +105,19 @@
 
 /datum/nifsoft/compliance/activate()
 	if((. = ..()))
+<<<<<<< HEAD
 		to_chat(nif.human,"<span class='danger'>You are compelled to follow these rules: </span>\n<span class='notify'>[laws]</span>")
 
 /datum/nifsoft/compliance/install()
 	if((. = ..()))
 		to_chat(nif.human,"<span class='danger'>You feel suddenly compelled to follow these rules: </span>\n<span class='notify'>[laws]</span>")
+=======
+		to_chat(nif.human,span_danger("You are compelled to follow these rules:") + "\n" + span_notify("[laws]"))
+
+/datum/nifsoft/compliance/install()
+	if((. = ..()))
+		to_chat(nif.human,span_danger("You feel suddenly compelled to follow these rules:") + "\n" + span_notify("[laws]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /datum/nifsoft/compliance/uninstall()
 	nif.notify("ERROR! Unable to comply!",TRUE)

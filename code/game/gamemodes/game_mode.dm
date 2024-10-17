@@ -117,11 +117,15 @@ var/global/list/additional_antag_types = list()
 				return
 
 /datum/game_mode/proc/announce() //to be called when round starts
+<<<<<<< HEAD
 	to_world("<B>The current game mode is [capitalize(name)]!</B>")
+=======
+	to_world(span_world("The current game mode is [capitalize(name)]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	if(round_description)
-		to_world("[round_description]")
+		to_world(span_filter_system("[round_description]"))
 	if(round_autoantag)
-		to_world("Antagonists will be added to the round automagically as needed.")
+		to_world(span_filter_system("Antagonists will be added to the round automagically as needed."))
 	if(antag_templates && antag_templates.len)
 		var/antag_summary = "<b>Possible antagonist types:</b> "
 		var/i = 1
@@ -135,7 +139,7 @@ var/global/list/additional_antag_types = list()
 			i++
 		antag_summary += "."
 		if(antag_templates.len > 1 && master_mode != "secret")
-			to_world("[antag_summary]")
+			to_world(span_filter_system("[antag_summary]"))
 		else
 			message_admins("[antag_summary]")
 
@@ -357,11 +361,17 @@ var/global/list/additional_antag_types = list()
 
 	var/text = ""
 	if(surviving_total > 0)
+<<<<<<< HEAD
 		text += "<br>There [surviving_total>1 ? "were <b>[surviving_total] survivors</b>" : "was <b>one survivor</b>"]"
 		text += " (<b>[escaped_total>0 ? escaped_total : "none"] [emergency_shuttle.evac ? "escaped" : "transferred"]</b>) and <b>[ghosts] ghosts</b>.<br>"
+=======
+		text += "<br>There [surviving_total>1 ? ("were " + span_bold("[surviving_total] survivors")) : ("was " + span_bold("one survivor"))] ("
+		text += span_bold("[escaped_total>0 ? escaped_total : "none"] [emergency_shuttle.evac ? "escaped" : "transferred"]") + ") and " + span_bold("[ghosts] ghosts")
+		text += ".<br>"
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
-		text += "There were <b>no survivors</b> (<b>[ghosts] ghosts</b>)."
-	to_world(text)
+		text += "There were " + span_bold("no survivors") + " (" + span_bold("[ghosts] ghosts") + ")."
+	to_world(span_filter_system(text))
 
 	if(clients > 0)
 		feedback_set("round_end_clients",clients)
@@ -582,7 +592,11 @@ var/global/list/additional_antag_types = list()
 		return
 
 	if(master_mode != "secret")
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'><b>The roundtype is [capitalize(ticker.mode.name)]</b></span>")
+=======
+		to_chat(usr, span_boldnotice("The roundtype is [capitalize(ticker.mode.name)]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		if(ticker.mode.round_description)
 			to_chat(usr, "<span class='notice'><i>[ticker.mode.round_description]</i></span>")
 		if(ticker.mode.extended_round_description)

@@ -18,8 +18,13 @@
 		playsound(src, I.usesound, 50, 1)
 		var/actual_time = I.toolspeed * 170
 		user.visible_message( \
+<<<<<<< HEAD
 			"<b>\The [user]</b> begins salvaging from \the [src].", \
 			"<span class='notice'>You start salvaging from \the [src].</span>")
+=======
+			span_infoplain(span_bold("\The [user]") + " begins salvaging from \the [src]."), \
+			span_notice("You start salvaging from \the [src]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		if(do_after(user, actual_time, target = src))
 			user.visible_message( \
 				"<span class='notice'>\The [user] has salvaged \the [src].</span>", \

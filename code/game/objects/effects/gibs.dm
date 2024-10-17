@@ -18,7 +18,11 @@
 
 /obj/effect/gibspawner/proc/Gib(atom/location, var/datum/dna/MobDNA = null)
 	if(gibtypes.len != gibamounts.len || gibamounts.len != gibdirections.len)
+<<<<<<< HEAD
 		to_world("<span class='warning'>Gib list length mismatch!</span>")
+=======
+		to_world(span_filter_system(span_warning("Gib list length mismatch!")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		return
 
 	var/obj/effect/decal/cleanable/blood/gibs/gib = null

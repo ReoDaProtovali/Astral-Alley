@@ -77,6 +77,7 @@
 			for(var/mob/living/L as anything in buckled_mobs)
 				if(!(user in buckled_mobs))
 					L.visible_message(\
+<<<<<<< HEAD
 					"<b>\The [user]</b> frees \the [L] from \the [src].",\
 					"<b>\The [user]</b> frees you from \the [src].",\
 					"<span class='warning'>You hear shredding and ripping.</span>")
@@ -85,6 +86,16 @@
 					"<b>\The [L]</b> struggles free of \the [src].",\
 					"<span class='notice'>You untangle \the [src] from around yourself.</span>",\
 					"<span class='warning'>You hear shredding and ripping.</span>")
+=======
+					span_infoplain(span_bold("\The [user]") + " frees \the [L] from \the [src]."),\
+					span_infoplain(span_bold("\The [user]") + " frees you from \the [src]."),\
+					span_warning("You hear shredding and ripping."))
+				else
+					L.visible_message(\
+					span_infoplain(span_bold("\The [L]") + " struggles free of \the [src]."),\
+					span_notice("You untangle \the [src] from around yourself."),\
+					span_warning("You hear shredding and ripping."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				unbuckle()
 		else
 			user.setClickCooldown(user.get_attack_speed())

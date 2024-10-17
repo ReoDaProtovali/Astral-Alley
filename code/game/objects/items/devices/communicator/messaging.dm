@@ -34,8 +34,8 @@
 			if(src in comm.voice_invites)
 				comm.open_connection(src)
 				return
-			to_chat(src, "<span class='notice'>[icon2html(origin_atom,src.client)] Receiving communicator request from [origin_atom].  To answer, use the <b>Call Communicator</b> \
-			verb, and select that name to answer the call.</span>")
+			to_chat(src, span_notice("[icon2html(origin_atom,src.client)] Receiving communicator request from [origin_atom].  To answer, use the " + span_bold("Call Communicator") + "\
+			verb, and select that name to answer the call."))
 			src << 'sound/machines/defib_SafetyOn.ogg'
 			comm.voice_invites |= src
 	if(message == "ping")
@@ -44,9 +44,13 @@
 			random = random / 10
 			exonet.send_message(origin_address, "64 bytes received from [exonet.address] ecmp_seq=1 ttl=51 time=[random] ms")
 	if(message == "text")
+<<<<<<< HEAD
 		to_chat(src, "<span class='notice'>[icon2html(origin_atom,src.client)] Received text message from [origin_atom]: <b>\"[text]\"</b></span>")
+=======
+		to_chat(src, span_notice("[icon2html(origin_atom,src.client)] Received text message from [origin_atom]: " + span_bold("\"[text]\"")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		src << 'sound/machines/defib_safetyOff.ogg'
-		exonet_messages.Add("<b>From [origin_atom]:</b><br>[text]")
+		exonet_messages.Add(span_bold("From [origin_atom]:") + "<br>[text]")
 		return
 
 // Proc: request_im()
@@ -135,8 +139,8 @@
 
 	var/obj/machinery/exonet_node/E = get_exonet_node()
 	if(!E || !E.on || !E.allow_external_communicators)
-		to_chat(src, "<span class='danger'>The Exonet node at telecommunications is down at the moment, or is actively blocking you, \
-		so your call can't go through.</span>")
+		to_chat(src, span_danger("The Exonet node at telecommunications is down at the moment, or is actively blocking you, \
+		so your call can't go through."))
 		return
 
 	var/list/choices = list()
@@ -157,8 +161,13 @@
 		if(text_message && O.exonet)
 			O.exonet.send_message(chosen_communicator.exonet.address, "text", text_message)
 
+<<<<<<< HEAD
 			to_chat(src, "<span class='notice'>You have sent '[text_message]' to [chosen_communicator].</span>")
 			exonet_messages.Add("<b>To [chosen_communicator]:</b><br>[text_message]")
+=======
+			to_chat(src, span_notice("You have sent '[text_message]' to [chosen_communicator]."))
+			exonet_messages.Add(span_bold("To [chosen_communicator]:") + "<br>[text_message]")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			log_pda("(DCOMM: [src]) sent \"[text_message]\" to [chosen_communicator]", src)
 			for(var/mob/M in player_list)
 				if(M.stat == DEAD && M.is_preference_enabled(/datum/client_preference/ghost_ears))

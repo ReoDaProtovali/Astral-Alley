@@ -741,7 +741,11 @@ GLOBAL_LIST_EMPTY(apcs)
 
 		if(H.species.can_shred(H))
 			user.setClickCooldown(user.get_attack_speed())
+<<<<<<< HEAD
 			user.visible_message("<span call='warning'>[user.name] slashes at the [name]!</span>", "<span class='notice'>You slash at the [name]!</span>")
+=======
+			user.visible_message(span_warning("[user.name] slashes at the [name]!"), span_notice("You slash at the [name]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			playsound(src, 'sound/weapons/slash.ogg', 100, 1)
 
 			var/allcut = wires.is_all_cut()
@@ -749,12 +753,12 @@ GLOBAL_LIST_EMPTY(apcs)
 			if(beenhit >= pick(3, 4) && wiresexposed != 1)
 				wiresexposed = 1
 				update_icon()
-				visible_message("<span call='warning'>The [name]'s cover flies open, exposing the wires!</span>")
+				visible_message(span_warning("The [name]'s cover flies open, exposing the wires!"))
 
 			else if(wiresexposed == 1 && allcut == 0)
 				wires.cut_all()
 				update_icon()
-				visible_message("<span call='warning'>The [name]'s wires are shredded!</span>")
+				visible_message(span_warning("The [name]'s wires are shredded!"))
 			else
 				beenhit += 1
 			return

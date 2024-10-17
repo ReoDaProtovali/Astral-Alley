@@ -213,7 +213,11 @@ GLOBAL_LIST_BOILERPLATE(all_singularities, /obj/singularity)
 			if(chained)
 				overlays = "chain_s9"
 			if(growing)
+<<<<<<< HEAD
 				visible_message("<span class='danger'><font size='2'>The singularity has grown out of control!</font></span>")
+=======
+				visible_message(span_danger(span_normal("The singularity has grown out of control!")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			else
 				visible_message("<span class='warning'>The singularity miraculously reduces in size and loses its supermatter properties.</span>")
 		if(STAGE_SUPER)//SUPERSINGULO
@@ -230,10 +234,14 @@ GLOBAL_LIST_BOILERPLATE(all_singularities, /obj/singularity)
 			event_chance = 25 //Events will fire off more often.
 			if(chained)
 				overlays = "chain_s9"
+<<<<<<< HEAD
 			visible_message("<span class='sinister'><font size='3'>You witness the creation of a destructive force that cannot possibly be stopped by human hands.</font></span>")
+=======
+			visible_message(span_sinister(span_large("You witness the creation of a destructive force that cannot possibly be stopped by human hands.")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	if (current_size == allowed_size)
-		investigate_log("<font color='red'>grew to size [current_size].</font>", I_SINGULO)
+		investigate_log(span_red("grew to size [current_size]."), I_SINGULO)
 		return 1
 	else if (current_size < (--temp_allowed_size) && current_size != STAGE_SUPER)
 		expand(temp_allowed_size)
@@ -427,11 +435,16 @@ GLOBAL_LIST_BOILERPLATE(all_singularities, /obj/singularity)
 			if (istype(M,/mob/living/carbon/human))
 				var/mob/living/carbon/human/H = M
 				if(istype(H.glasses,/obj/item/clothing/glasses/meson) && current_size != STAGE_SUPER)
-					to_chat(H, "<span class=\"notice\">You look directly into The [src.name], good thing you had your protective eyewear on!</span>")
+					to_chat(H, span_notice("You look directly into The [src.name], good thing you had your protective eyewear on!"))
 					return
 				else
+<<<<<<< HEAD
 					to_chat(H, "<span class=\"warning\">You look directly into The [src.name], but your eyewear does absolutely nothing to protect you from it!</span>")
 		to_chat(M, "<span class='danger'>You look directly into The [src.name] and feel [current_size == STAGE_SUPER ? "helpless" : "weak"].</span>")
+=======
+					to_chat(H, span_warning("You look directly into The [src.name], but your eyewear does absolutely nothing to protect you from it!"))
+		to_chat(M, span_danger("You look directly into The [src.name] and feel [current_size == STAGE_SUPER ? "helpless" : "weak"]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		M.apply_effect(3, STUN)
 		for(var/mob/O in viewers(M, null))
 			O.show_message(text("<span class='danger'>[] stares blankly at The []!</span>", M, src), 1)
@@ -445,11 +458,11 @@ GLOBAL_LIST_BOILERPLATE(all_singularities, /obj/singularity)
 /obj/singularity/proc/smwave()
 	for(var/mob/living/M in view(10, src.loc))
 		if(prob(67))
-			to_chat(M, "<span class=\"warning\">You hear an uneartly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat.</span>")
-			to_chat(M, "<span class=\"notice\">Miraculously, it fails to kill you.</span>")
+			to_chat(M, span_warning("You hear an uneartly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat."))
+			to_chat(M, span_notice("Miraculously, it fails to kill you."))
 		else
-			to_chat(M, "<span class=\"danger\">You hear an uneartly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat.</span>")
-			to_chat(M, "<span class=\"danger\">You don't even have a moment to react as you are reduced to ashes by the intense radiation.</span>")
+			to_chat(M, span_danger("You hear an uneartly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat."))
+			to_chat(M, span_danger("You don't even have a moment to react as you are reduced to ashes by the intense radiation."))
 			M.dust()
 	SSradiation.radiate(src, rand(energy))
 	return

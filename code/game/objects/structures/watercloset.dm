@@ -525,7 +525,7 @@
 		to_chat(usr, "<span class='warning'>\The [thing] is empty.</span>")
 		return
 	// Clear the vessel.
-	visible_message("<b>\The [usr]</b> tips the contents of \the [thing] into \the [src].")
+	visible_message(span_infoplain(span_bold("\The [usr]") + " tips the contents of \the [thing] into \the [src]."))
 	thing.reagents.clear_reagents()
 	thing.update_icon()
 

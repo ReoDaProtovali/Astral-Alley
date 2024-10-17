@@ -54,8 +54,13 @@
 
 	loaded = "\the [loading]"
 	user.visible_message( \
+<<<<<<< HEAD
 		"<b>\The [user]</b> scoops up some of [loaded] with \the [src]!",
 		SPAN_NOTICE("You scoop up some of [loaded] with \the [src]!")
+=======
+		span_infoplain(span_bold("\The [user]") + " scoops up some of [loaded] with \the [src]!"),
+		span_notice("You scoop up some of [loaded] with \the [src]!")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	)
 	loading.bitecount++
 	loading.reagents.trans_to_obj(src, min(loading.reagents.total_volume, scoop_volume))
@@ -108,12 +113,12 @@
 		if(M == user)
 			if(!M.can_eat(loaded))
 				return
-			M.visible_message("<b>\The [user]</b> eats some of [loaded] with \the [src].")
+			M.visible_message(span_bold("\The [user]") + "eats some of [loaded] with \the [src].")
 		else
 			user.visible_message(SPAN_WARNING("\The [user] begins to feed \the [M]!"))
 			if(!(M.can_force_feed(user, loaded) && do_mob(user, M, 5 SECONDS)))
 				return
-			M.visible_message("<b>\The [user]</b> feeds some of [loaded] to \the [M] with \the [src].")
+			M.visible_message(span_bold("\The [user]") + "feeds some of [loaded] to \the [M] with \the [src].")
 		playsound(src,'sound/items/eatfood.ogg', rand(10,40), 1)
 		loaded = null
 		update_icon()

@@ -108,8 +108,13 @@
 	var/dissonance_spread = 1
 	var/material = "unknown"
 
+<<<<<<< HEAD
 /obj/item/device/depth_scanner/proc/scan_atom(var/mob/user, var/atom/A)
 	user.visible_message("<b>\The [user]</b> scans \the [A], the air around them humming gently.")
+=======
+/obj/item/depth_scanner/proc/scan_atom(var/mob/user, var/atom/A)
+	user.visible_message(span_bold("\The [user]") + " scans \the [A], the air around them humming gently.")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	if(istype(A, /turf/simulated/mineral))
 		var/turf/simulated/mineral/M = A

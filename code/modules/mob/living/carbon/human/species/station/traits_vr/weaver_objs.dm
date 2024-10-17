@@ -102,9 +102,15 @@
 		var/mob/living/L = AM
 		if(L.m_intent == "run")
 			L.visible_message(
+<<<<<<< HEAD
 				"<span class='danger'>[L] steps on \the [src].</span>",
 				"<span class='danger'>You step on \the [src]!</span>",
 				"<b>You hear a squishy noise!</b>"
+=======
+				span_danger("[L] steps on \the [src]."),
+				span_danger("You step on \the [src]!"),
+				span_infoplain(span_bold("You hear a squishy noise!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				)
 			set_dir(L.dir)
 			buckle_mob(L)

@@ -38,7 +38,11 @@
 	var/opts = clickprops["shift"]
 
 	if(opts)
+<<<<<<< HEAD
 		to_chat(my_kin,"<span class='notice'><b>[name]</b> (Cost: [cost]%) - [desc]</span>")
+=======
+		to_chat(my_kin,span_notice(span_bold("[name]") + " (Cost: [cost]%) - [desc]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		do_ability(my_kin)
 

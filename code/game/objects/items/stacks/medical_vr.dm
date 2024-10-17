@@ -63,7 +63,7 @@
 
 	var/healmessage = "<span class='notice'>You spray [src] onto [H], sealing [clotted ? clotted : "no"] wounds.</span>"
 	if(too_far_gone)
-		healmessage += " <span class='warning'>You can see some wounds that are too large where the spray is not taking effect.</span>"
+		healmessage += " " + span_warning("You can see some wounds that are too large where the spray is not taking effect.")
 
 	to_chat(user, healmessage)
 	use(1)

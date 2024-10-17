@@ -141,7 +141,11 @@
 		if(new_recharge_state != last_recharge_state)
 			last_recharge_state = new_recharge_state
 			if(last_recharge_state)
+<<<<<<< HEAD
 				to_chat(src, SPAN_NOTICE("<b>Your integrated solar panels begin recharging your battery.</b>"))
+=======
+				to_chat(src, span_boldnotice("Your integrated solar panels begin recharging your battery."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			else
 				to_chat(src, SPAN_DANGER("Your integrated solar panels cease recharging your battery."))
 
@@ -166,4 +170,4 @@
 
 			if(!recharge_complete && recharging_atom.percent() >= 100)
 				recharge_complete = TRUE
-				visible_message("<b>\The [src]</b> beeps and flashes a green light above \his recharging port.")
+				visible_message(span_infoplain("[span_bold("\The [src]")] beeps and flashes a green light above \his recharging port."))

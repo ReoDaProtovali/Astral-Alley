@@ -14,7 +14,7 @@
 		var/datum/sprite_accessory/hair/hair_style = hair_styles_list[h_style]
 		var/selected_string
 		if(!(hair_style.flags & HAIR_TIEABLE))
-			to_chat(src, "<span class ='warning'>Your hair isn't long enough to tie.</span>")
+			to_chat(src, span_warning("Your hair isn't long enough to tie."))
 			return
 		else
 			var/list/datum/sprite_accessory/hair/valid_hairstyles = list()
@@ -31,7 +31,7 @@
 			regenerate_icons()
 			visible_message("<span class='notice'>[src] pauses a moment to style their hair.</span>")
 		else
-			to_chat(src, "<span class ='notice'>You're already using that style.</span>")
+			to_chat(src, span_notice("You're already using that style."))
 
 /mob/living/carbon/human/proc/tackle()
 	set category = "Abilities.General" //CHOMPEdit
@@ -42,7 +42,7 @@
 		return
 
 	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
-		to_chat(src, "You cannot tackle someone in your current state.")
+		to_chat(src, span_notice("You cannot tackle someone in your current state."))
 		return
 
 	var/list/choices = list()
@@ -61,7 +61,11 @@
 		return
 
 	if(stat || paralysis || stunned || weakened || lying || restrained() || buckled)
+<<<<<<< HEAD
 		to_chat(src, "<span class='filter_notice'>You cannot tackle in your current state.</span>")
+=======
+		to_chat(src, span_notice("You cannot tackle in your current state."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		return
 
 	last_special = world.time + 50
@@ -78,7 +82,11 @@
 
 	for(var/mob/O in viewers(src, null))
 		if ((O.client && !( O.blinded )))
+<<<<<<< HEAD
 			O.show_message("<span class='filter_warning'>[span_red("<B>[src] [failed ? "tried to tackle" : "has tackled"] down [T]!</B>")]</span>", 1)
+=======
+			O.show_message(span_warning(span_red(span_bold("[src] [failed ? "tried to tackle" : "has tackled"] down [T]!"))), 1)
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /mob/living/carbon/human/proc/commune()
 	set category = "Abilities.General" //CHOMPEdit
@@ -126,7 +134,11 @@
 			if(M in stomach_contents)
 				stomach_contents.Remove(M)
 				M.loc = loc
+<<<<<<< HEAD
 		src.visible_message("<span class='filter_warning'>[span_red("<B>[src] hurls out the contents of their stomach!</B>")]</span>")
+=======
+		src.visible_message(span_filter_warning(span_red(span_bold("[src] hurls out the contents of their stomach!"))))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	return
 
 /mob/living/carbon/human/proc/psychic_whisper(mob/M as mob in oview())
@@ -211,7 +223,11 @@
 	to_chat(src, "<span class='notice'>Performing self-diagnostic, please wait...</span>")
 
 	spawn(50)
+<<<<<<< HEAD
 		var/output = "<span class='filter_notice'><span class='notice'>Self-Diagnostic Results:\n</span>"
+=======
+		var/output = span_filter_notice("Self-Diagnostic Results:\n")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 		output += "Internal Temperature: [convert_k2c(bodytemperature)] Degrees Celsius\n"
 
@@ -220,24 +236,24 @@
 
 			var/toxDam = getToxLoss()
 			if(toxDam)
-				output += "System Instability: <span class='warning'>[toxDam > 25 ? "Severe" : "Moderate"]</span>. Seek charging station for cleanup.\n"
+				output += "System Instability: " + span_warning("[toxDam > 25 ? "Severe" : "Moderate"]") + ". Seek charging station for cleanup.\n"
 			else
-				output += "System Instability: <span style='color:green;'>OK</span>\n"
+				output += "System Instability: " + span_green("OK") + "\n"
 
 		for(var/obj/item/organ/external/EO in organs)
 			if(EO.robotic >= ORGAN_ASSISTED)
 				if(EO.brute_dam || EO.burn_dam)
-					output += "[EO.name] - <span class='warning'>[EO.burn_dam + EO.brute_dam > EO.min_broken_damage ? "Heavy Damage" : "Light Damage"]</span>\n" //VOREStation Edit - Makes robotic limb damage scalable
+					output += "[EO.name] - " + span_warning("[EO.burn_dam + EO.brute_dam > EO.min_broken_damage ? "Heavy Damage" : "Light Damage"]") + "\n" //VOREStation Edit - Makes robotic limb damage scalable
 				else
-					output += "[EO.name] - <span style='color:green;'>OK</span>\n"
+					output += "[EO.name] - " + span_green("OK") + "\n"
 
 		for(var/obj/item/organ/IO in internal_organs)
 			if(IO.robotic >= ORGAN_ASSISTED)
 				if(IO.damage)
-					output += "[IO.name] - <span class='warning'>[IO.damage > 10 ? "Heavy Damage" : "Light Damage"]</span>\n"
+					output += "[IO.name] - " + span_warning("[IO.damage > 10 ? "Heavy Damage" : "Light Damage"]") + "\n"
 				else
-					output += "[IO.name] - <span style='color:green;'>OK</span>\n"
-		output += "</span>"
+					output += "[IO.name] - " + span_green("OK") + "\n"
+		output = span_notice(output)
 
 		to_chat(src,output)
 
@@ -267,7 +283,7 @@
 			continue
 		heard_something = TRUE
 		var/feedback = list()
-		feedback += "<span class='notice'>There are noises of movement "
+		feedback += "There are noises of movement "
 		var/direction = get_dir(src, L)
 		if(direction)
 			feedback += "towards the [dir2text(direction)], "
@@ -284,8 +300,7 @@
 					feedback += "far away."
 		else // No need to check distance if they're standing right on-top of us
 			feedback += "right on top of you."
-		feedback += "</span>"
-		to_chat(src,jointext(feedback,null))
+		to_chat(src,span_notice(jointext(feedback,null)))
 	if(!heard_something)
 		to_chat(src, "<span class='notice'>You hear no movement but your own.</span>")
 
@@ -303,7 +318,11 @@
 		return
 	else
 		active_regen = TRUE
+<<<<<<< HEAD
 		src.visible_message("<span class='filter_notice'><B>[src]</B>'s flesh begins to mend...</span>")
+=======
+		src.visible_message(span_filter_notice(span_bold("[src]") + "'s flesh begins to mend..."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	var/delay_length = round(active_regen_delay * species.active_regen_mult)
 	if(do_after(src,delay_length))

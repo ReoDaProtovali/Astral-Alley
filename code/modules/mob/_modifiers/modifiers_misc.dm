@@ -175,9 +175,15 @@ the artifact triggers the rage.
 	client_color = "#FF0000" // Make everything red!
 	mob_overlay_state = "berserk"
 
+<<<<<<< HEAD
 	on_created_text = "<span class='danger'>You feel an intense and overwhelming rage overtake you as you go berserk! \
 	Unfortunately, your lifeless body cannot benefit from this. You feel reckless...</span>"
 	on_expired_text = "<span class='notice'>The blaze of rage inside your mind has ran out.</span>"
+=======
+	on_created_text = span_danger("You feel an intense and overwhelming rage overtake you as you go berserk! \
+	Unfortunately, your lifeless body cannot benefit from this. You feel reckless...")
+	on_expired_text = span_notice("The blaze of rage inside your mind has ran out.")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	stacks = MODIFIER_STACK_EXTEND
 
 	// Just being mad isn't gonna overclock your body when you're a beepboop.

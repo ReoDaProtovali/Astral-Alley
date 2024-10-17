@@ -18,10 +18,17 @@
 	if(M.mind)
 		M.mind.transfer_to(R)
 	// Description for new larva, so they understand what to expect.
+<<<<<<< HEAD
 	to_chat(M, "<span class='notice'>You are a <b>Xenomorph Larva</b>, freshly slithered out of their egg to serve the hive.</span>")
 	to_chat(M, "<span class='notice'><b>Be sure to carefully listen to your queen, as xenomorph egg spawns may act different to loner xenomorph spawns.</b></span>")
 	to_chat(M, "<span class='warning'><b>Remember, you are technically a antagonist. Be sure to learn the context of your existence via IC or ahelp to prevent headaches, and follow the orders of your queen to the letter.</b></span>")
 	to_chat(M, "<span class='notice'> Your life for the hive!</span>")
+=======
+	to_chat(M, span_notice("You are a <b>Xenomorph Larva</b>, freshly slithered out of their egg to serve the hive."))
+	to_chat(M, span_boldnotice("Be sure to carefully listen to your queen, as xenomorph egg spawns may act different to loner xenomorph spawns."))
+	to_chat(M, span_boldwarning("Remember, you are technically a antagonist. Be sure to learn the context of your existence via IC or ahelp to prevent headaches, and follow the orders of your queen to the letter."))
+	to_chat(M, span_notice(" Your life for the hive!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	R.ckey = M.ckey
 	visible_message("<span class='warning'>\the [src] peels open, and a fresh larva slithers out!</span>")
 	..()

@@ -7,8 +7,13 @@
 	name = "cloning sickness"
 	desc = "You feel rather weak, having been cloned not so long ago."
 
+<<<<<<< HEAD
 	on_created_text = "<span class='warning'><font size='3'>You feel really weak.</font></span>"
 	on_expired_text = "<span class='notice'><font size='3'>You feel your strength returning to you.</font></span>"
+=======
+	on_created_text = span_warning(span_large("You feel really weak."))
+	on_expired_text = span_notice(span_large("You feel your strength returning to you."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	max_health_percent = 0.6				// -40% max health.
 	incoming_damage_percent = 1.1			// 10% more incoming damage.
@@ -52,8 +57,13 @@
 	name = "reformation sickness"
 	desc = "Your core feels damaged, as you were reformed with the improper machinery."
 
+<<<<<<< HEAD
 	on_created_text = "<span class='warning'><font size='3'>Your core aches.</font></span>"
 	on_expired_text = "<span class='notice'><font size='3'>You feel your core's strength returning to normal.</font></span>"
+=======
+	on_created_text = span_warning(span_large("Your core aches."))
+	on_expired_text = span_notice(span_large("You feel your core's strength returning to normal."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	incoming_damage_percent = 1 //Level the incoming damage from the parent modifier. They already take 200% burn.
 	incoming_brute_damage_percent = 1.5 //150% incoming brute damage. Decreases the effectiveness of their 0.75 modifier.
@@ -70,8 +80,13 @@
 	name = "surgically attached brain"
 	desc = "You feel weak, as your central nervous system is still recovering from being repaired."
 
+<<<<<<< HEAD
 	on_created_text = "<span class='warning'><font size='3'>You feel... off, and your head hurts.</font></span>"
 	on_expired_text = "<span class='notice'><font size='3'>You feel some strength returning to you.</font></span>"
+=======
+	on_created_text = span_warning(span_large("You feel... off, and your head hurts."))
+	on_expired_text = span_notice(span_large("You feel some strength returning to you."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	max_health_percent = 0.9				// -10% max health.
 	incoming_damage_percent = 1.1			// 10% more incoming damage.
@@ -107,8 +122,13 @@
 	name = "neural recovery"
 	desc = "You feel out of touch, as your central nervous system is still recovering from being repaired."
 
+<<<<<<< HEAD
 	on_created_text = "<span class='warning'><font size='3'>You feel... off. Everything is fuzzy.</font></span>"
 	on_expired_text = "<span class='notice'><font size='3'>You feel your senses returning to you.</font></span>"
+=======
+	on_created_text = span_warning(span_large("You feel... off. Everything is fuzzy."))
+	on_expired_text = span_notice(span_large("You feel your senses returning to you."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	incoming_hal_damage_percent = 1.5		// 50% more halloss damage.
 	disable_duration_percent = 1.25			// Stuns last 25% longer.

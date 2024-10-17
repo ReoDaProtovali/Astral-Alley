@@ -173,8 +173,13 @@
 			if(safety)
 				to_chat(usr, "<span class='danger'>Self-destruct aborted - safety active</span>")
 				return
+<<<<<<< HEAD
 			message_admins("<span class='notice'>[key_name_admin(usr)] detonated all cyborgs!</span>")
 			log_game("\<span class='notice'>[key_name(usr)] detonated all cyborgs!</span>")
+=======
+			message_admins(span_notice("[key_name_admin(usr)] detonated all cyborgs!"))
+			log_game(span_notice("[key_name(usr)] detonated all cyborgs!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			for(var/mob/living/silicon/robot/R in mob_list)
 				if(istype(R, /mob/living/silicon/robot/drone))
 					continue
@@ -196,9 +201,15 @@
 				. = TRUE
 				return
 			var/turf/T = get_turf(R)
+<<<<<<< HEAD
 			message_admins("<span class='notice'>[key_name_admin(usr)] detonated [key_name_admin(R)] ([ADMIN_COORDJMP(T)])!</span>")
 			log_game("\<span class='notice'>[key_name(usr)] detonated [key_name(R)]!</span>")
 			to_chat(R, "<span class='danger'>Self-destruct command received.</span>")
+=======
+			message_admins(span_notice("[key_name_admin(usr)] detonated [key_name_admin(R)] ([ADMIN_COORDJMP(T)])!"))
+			log_game(span_notice("[key_name(usr)] detonated [key_name(R)]!"))
+			to_chat(R, span_danger("Self-destruct command received."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			if(R.connected_ai)
 				to_chat(R.connected_ai, "<br><br><span class='alert'>ALERT - Cyborg detonation detected: [R.name]</span><br>")
 			R.self_destruct()

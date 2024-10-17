@@ -1054,13 +1054,21 @@
 
 	to_chat(user, span("warning", "You flip the switch on the underside of [src]."))
 	active = 1
+<<<<<<< HEAD
 	src.visible_message(span("notice", "[src] softly beeps and whirs to life!"))
 	src.audible_message("<b>\The [src]</b> says, 'This is ship ID #[rand(1,1000)] to Orion Port Authority. We're coming in for landing, over.'")
 	sleep(20)
 	src.visible_message(span("warning", "[src] begins to vibrate..."))
 	src.audible_message("<b>\The [src]</b> says, 'Uh, Port? Having some issues with our reactor, could you check it out? Over.'")
+=======
+	src.visible_message(span_notice("[src] softly beeps and whirs to life!"))
+	src.audible_message(span_bold("\The [src]") + " says, 'This is ship ID #[rand(1,1000)] to Orion Port Authority. We're coming in for landing, over.'")
+	sleep(20)
+	src.visible_message(span_warning("[src] begins to vibrate..."))
+	src.audible_message(span_bold("\The [src]") + " says, 'Uh, Port? Having some issues with our reactor, could you check it out? Over.'")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	sleep(30)
-	src.audible_message("<b>\The [src]</b> says, 'Oh, God! Code Eight! CODE EIGHT! IT'S GONNA BL-'")
+	src.audible_message(span_bold("\The [src]") + " says, 'Oh, God! Code Eight! CODE EIGHT! IT'S GONNA BL-'")
 	sleep(3.6)
 	src.visible_message(span("danger", "[src] explodes!"))
 	explosion(src.loc, 1,2,4)

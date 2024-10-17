@@ -282,7 +282,11 @@
 /obj/structure/flora/pottedplant/examine(mob/user)
 	. = ..()
 	if(in_range(user, src) && stored_item)
+<<<<<<< HEAD
 		. += "<span class='filter_notice'><i>You can see something in there...</i></span>"
+=======
+		. += span_filter_notice(span_italics("You can see something in there..."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /obj/structure/flora/pottedplant/attackby(obj/item/I, mob/user)
 	if(issilicon(user))
@@ -308,7 +312,11 @@
 
 /obj/structure/flora/pottedplant/attack_hand(mob/user)
 	if(!stored_item)
+<<<<<<< HEAD
 		to_chat(user, "<span class='filter_notice'><b>You see nothing of interest in [src]...</b></span>")
+=======
+		to_chat(user, span_filter_notice(span_bold("You see nothing of interest in [src]...")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		if(do_after(user, 10))
 			to_chat(user, "<span class='filter_notice'>You find [icon2html(stored_item, user.client)] [stored_item] in [src]!</span>")

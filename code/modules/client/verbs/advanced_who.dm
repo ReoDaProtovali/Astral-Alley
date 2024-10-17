@@ -4,7 +4,7 @@
 	set name = "Advanced Who"
 	set category = "OOC.Resources" //CHOMPEdit
 
-	var/msg = "<b>Current Players:</b>\n"
+	var/msg = span_bold("Current Players:") + "\n"
 
 	var/list/Lines = list()
 
@@ -12,14 +12,18 @@
 		for(var/client/C in GLOB.clients)
 			var/entry = "<tr><td>[C.key]"
 			if(C.holder && C.holder.fakekey)
-				entry += " <i>(as [C.holder.fakekey])</i>"
+				entry += " " + span_italics("(as [C.holder.fakekey])")
 
 			entry += "</td><td>"
 
 			if(C.mob.real_name)
 				switch(C.mob.stat)
 					if(UNCONSCIOUS)
+<<<<<<< HEAD
 						entry += "<span class='darkgray'><b>Unconscious</b></span>" // these are literally all spans so I can apply .inverted to them because black on dark grey isn't legible
+=======
+						entry += span_darkgray(span_bold("Unconscious")) // these are literally all spans so I can apply .inverted to them because black on dark grey isn't legible
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 					if(DEAD)
 						if(isobserver(C.mob))
@@ -27,7 +31,11 @@
 							if(O.started_as_observer)
 								entry += "<span class='gray'>Observing</span>"
 							else
+<<<<<<< HEAD
 								entry += "<span class='black'><b>Died</b></span>"
+=======
+								entry += span_black(span_bold("Died"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 					else
 						entry += "<span class='green'>Playing</span>"
@@ -35,7 +43,11 @@
 				entry += " as [C.mob.real_name]"
 
 			else if(isnewplayer(C.mob))
+<<<<<<< HEAD
 				entry += "<span class='blue'><b>In lobby</b></span>"
+=======
+				entry += span_blue(span_bold("In lobby"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 			entry += "</td><td>"
 
@@ -46,9 +58,15 @@
 				age = 0
 
 			if(age <= 1)
+<<<<<<< HEAD
 				age = "<span class='red'><b>[age]</b></span>"
 			else if(age < 10)
 				age = "<span class='orange'><b>[age]</b></span>"
+=======
+				age = span_red(span_bold("[age]"))
+			else if(age < 10)
+				age = span_orange(span_bold("[age]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 			entry += "Age: [age]"
 			entry += "</td><td>"
@@ -93,7 +111,12 @@
 	for(var/line in sortList(Lines))
 		msg += "[line]"
 	msg += "</table>"
+<<<<<<< HEAD
 	msg += "<b>Total Players: [length(Lines)]</b>"
 	msg = "<span class='filter_notice'>" + msg + "</span>"
+=======
+	msg += span_bold("Total Players: [length(Lines)]")
+	msg = span_filter_notice(msg)
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	to_chat(src, msg)
 YW EDIT STOP*/

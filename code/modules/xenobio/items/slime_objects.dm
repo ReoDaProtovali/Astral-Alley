@@ -52,8 +52,13 @@
 	src.searching = 2
 	var/mob/living/carbon/human/S = new(get_turf(src))
 	S.client = candidate.client
+<<<<<<< HEAD
 	to_chat(S, "<b>You are a promethean, brought into existence on [station_name()].</b>")
 	S.mind.assigned_role = "Promethean"
+=======
+	to_chat(S, span_infoplain(span_bold("You are a promethean, brought into existence on [station_name()].")))
+	S.mind.assigned_role = JOB_PROMETHEAN
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	S.set_species("Promethean")
 	S.shapeshifter_set_colour("#2398FF")
 	visible_message("<span class='warning'>The monkey cube suddenly takes the shape of a humanoid!</span>")

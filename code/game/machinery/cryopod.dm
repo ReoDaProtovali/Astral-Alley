@@ -615,7 +615,11 @@
 		return
 
 	if(occupant)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'><B>\The [src] is in use.</B></span>")
+=======
+		to_chat(usr, span_boldnotice("\The [src] is in use."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		return
 
 	if(isliving(usr))
@@ -632,7 +636,11 @@
 			return
 
 		if(occupant)
+<<<<<<< HEAD
 			to_chat(usr, "<span class='notice'><B>\The [src] is in use.</B></span>")
+=======
+			to_chat(usr, span_boldnotice("\The [src] is in use."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			return
 
 		usr.stop_pulling()
@@ -648,8 +656,13 @@
 
 		icon_state = occupied_icon_state
 
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>[on_enter_occupant_message]</span>")
 		to_chat(usr, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
+=======
+		to_chat(usr, span_notice("[on_enter_occupant_message]"))
+		to_chat(usr, span_boldnotice("If you ghost, log out or close your client now, your character will shortly be permanently removed from the round."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 		time_entered = world.time
 
@@ -735,8 +748,13 @@
 
 		icon_state = occupied_icon_state
 
+<<<<<<< HEAD
 		to_chat(M, "<span class='notice'>[on_enter_occupant_message]</span>")
 		to_chat(M, "<span class='notice'><b>If you ghost, log out or close your client now, your character will shortly be permanently removed from the round.</b></span>")
+=======
+		to_chat(M, span_notice("[on_enter_occupant_message]"))
+		to_chat(M, span_boldnotice("If you ghost, log out or close your client now, your character will shortly be permanently removed from the round."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		set_occupant(M)
 		time_entered = world.time
 		if(ishuman(M) && applies_stasis)

@@ -66,8 +66,13 @@ TGUI frontend path: tgui\packages\tgui\interfaces\TraitTutorial.tsx
 	if(UI_choice == "To Chat")
 		var/to_chat_choice = tgui_input_list(usr, "Please choose the trait to be explained", "Print to Chat", trait_names, null)
 		if(to_chat_choice)
+<<<<<<< HEAD
 			to_chat(usr,SPAN_NOTICE("<b>Name:</b> [to_chat_choice] \n <b>Category:</b> [trait_category[to_chat_choice]] \n <b>Description:</b> [trait_desc[to_chat_choice]] \n \
 			<b>Guide:</b> \n [trait_tutorial[to_chat_choice]]"))
+=======
+			to_chat(usr,span_notice(span_bold("Name:") + " [to_chat_choice] \n " + span_bold("Category:")  + " [trait_category[to_chat_choice]] \n " + span_bold("Description:")  + " [trait_desc[to_chat_choice]] \n \
+			" + span_bold("Guide:")  + " \n [trait_tutorial[to_chat_choice]]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 
 	else if(UI_choice == "TGUI")

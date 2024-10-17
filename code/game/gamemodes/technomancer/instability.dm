@@ -282,9 +282,15 @@
 	amount = amount * armor_factor
 	if(amount && prob(10))
 		if(isSynthetic())
+<<<<<<< HEAD
 			to_chat(src, "<span class='cult'><font size='4'>Warning: Anomalous field detected.</font></span>")
 		else
 			to_chat(src, "<span class='cult'><font size='4'>The purple glow makes you feel strange...</font></span>")
+=======
+			to_chat(src, span_cult(span_huge("Warning: Anomalous field detected.")))
+		else
+			to_chat(src, span_cult(span_huge("The purple glow makes you feel strange...")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	adjust_instability(amount)
 
 #undef TECHNOMANCER_INSTABILITY_DECAY

@@ -38,9 +38,15 @@
 		if(25 to 45)
 			. += "<span class='warning'>It's heavily damaged.</span>"
 		if(2 to 25)
+<<<<<<< HEAD
 			. += "<span class='warning'><b>It's falling apart.</b></span>"
 		if(0 to 1)
 			. += "<span class='warning'><b>It is completely destroyed.</b></span>"
+=======
+			. += span_boldwarning("It's falling apart.")
+		if(0 to 1)
+			. += span_boldwarning("It is completely destroyed.")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /obj/item/mecha_parts/component/Initialize()
 	. = ..()

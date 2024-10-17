@@ -132,7 +132,11 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	user.visible_message("<span class='notice'>[user] scans the air.</span>", "<span class='notice'>You scan the air...</span>")
 
+<<<<<<< HEAD
 	to_chat(user, "<span class='notice'><B>Scan results:</B></span>")
+=======
+	to_chat(user, span_boldnotice("Scan results:"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	if(abs(pressure - ONE_ATMOSPHERE) < 10)
 		to_chat(user, "<span class='notice'>Pressure: [round(pressure,0.1)] kPa</span>")
 	else
@@ -157,7 +161,7 @@
 		var/dat = ""
 		if(O.reagents.reagent_list.len > 0)
 			for (var/datum/reagent/R in O.reagents.reagent_list)
-				dat += "\n \t <span class='notice'>[R]</span>"
+				dat += "\n \t " + span_notice("[R]")
 
 		if(dat)
 			to_chat(user, "<span class='notice'>Your BOOP module indicates: [dat]</span>")

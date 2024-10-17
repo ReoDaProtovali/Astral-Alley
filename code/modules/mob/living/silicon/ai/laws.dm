@@ -10,7 +10,11 @@
 		who = world
 	else
 		who = src
+<<<<<<< HEAD
 		to_chat(who, "<span class='filter_notice'><b>Obey these laws:</b></span>")
+=======
+		to_chat(who, span_filter_notice(span_bold("Obey these laws:")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	src.laws_sanity_check()
 	src.laws.show_laws(who)

@@ -99,7 +99,7 @@
 		return FALSE
 
 	if(italics)
-		message = "<i>[message]</i>"
+		message = span_italics("[message]")
 
 	message = encode_html_emphasis(message)
 
@@ -108,8 +108,13 @@
 		if(speaker_name != speaker.real_name && speaker.real_name)
 			speaker_name = "[speaker.real_name] ([speaker_name])"
 		track = "([ghost_follow_link(speaker, src)]) "
+<<<<<<< HEAD
 		if(is_preference_enabled(/datum/client_preference/ghost_ears) && (speaker in view(src)))
 			message = "<b>[message]</b>"
+=======
+		if(client?.prefs?.read_preference(/datum/preference/toggle/ghost_ears) && (speaker in view(src)))
+			message = span_bold("[message]")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	if(is_deaf() && stat != DEAD) //CHOMPEdit - Dead people should be able to hear stuff like ghosts can
 		if(speaker == src)
@@ -227,8 +232,13 @@
 	if(client.prefs.chat_timestamp)
 		time = say_timestamp()
 	var/final_message = "[part_b][speaker_name][part_c][formatted][part_d]"
+<<<<<<< HEAD
 	if(check_mentioned(formatted) && is_preference_enabled(/datum/client_preference/check_mention))
 		final_message = "[time][part_a]<font size='3'><b>[final_message]</b></font>[part_e]"
+=======
+	if(check_mentioned(formatted) && client?.prefs?.read_preference(/datum/preference/toggle/check_mention))
+		final_message = "[time][part_a]" + span_large(span_bold("[final_message]")) + "[part_e]"
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		final_message = "[time][part_a][final_message][part_e]"
 	to_chat(src, final_message)
@@ -238,8 +248,13 @@
 	if(client.prefs.chat_timestamp)
 		time = say_timestamp()
 	var/final_message = "[part_b][track][part_c][formatted][part_d]"
+<<<<<<< HEAD
 	if(check_mentioned(formatted) && is_preference_enabled(/datum/client_preference/check_mention))
 		final_message = "[time][part_a]<font size='3'><b>[final_message]</b></font>[part_e]"
+=======
+	if(check_mentioned(formatted) && client?.prefs?.read_preference(/datum/preference/toggle/check_mention))
+		final_message = "[time][part_a]" + span_large(span_bold("[final_message]")) + "[part_e]"
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		final_message = "[time][part_a][final_message][part_e]"
 	to_chat(src, final_message)
@@ -249,8 +264,13 @@
 	if(client.prefs.chat_timestamp)
 		time = say_timestamp()
 	var/final_message = "[part_b][speaker_name][part_c][formatted][part_d]"
+<<<<<<< HEAD
 	if(check_mentioned(formatted) && is_preference_enabled(/datum/client_preference/check_mention))
 		final_message = "[time][part_a]<font size='3'><b>[final_message]</b></font>[part_e]"
+=======
+	if(check_mentioned(formatted) && client?.prefs?.read_preference(/datum/preference/toggle/check_mention))
+		final_message = "[time][part_a]" + span_large(span_bold("[final_message]")) + "[part_e]"
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		final_message = "[time][part_a][final_message][part_e]"
 	to_chat(src, final_message)
@@ -260,8 +280,13 @@
 	if(client.prefs.chat_timestamp)
 		time = say_timestamp()
 	var/final_message = "[part_b][track][part_c][formatted][part_d]"
+<<<<<<< HEAD
 	if(check_mentioned(formatted) && is_preference_enabled(/datum/client_preference/check_mention))
 		final_message = "[time][part_a]<font size='3'><b>[final_message]</b></font>[part_e]"
+=======
+	if(check_mentioned(formatted) && client?.prefs?.read_preference(/datum/preference/toggle/check_mention))
+		final_message = "[time][part_a]" + span_large(span_bold("[final_message]")) + "[part_e]"
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		final_message = "[time][part_a][final_message][part_e]"
 	to_chat(src, final_message)
@@ -271,7 +296,11 @@
 		return
 
 	if(say_understands(speaker, language))
+<<<<<<< HEAD
 		message = "<span class='game say'><B>[speaker]</B> [verb_understood], \"[message]\"</span>"
+=======
+		message = span_game(span_say(span_bold("[speaker]") + " [verb_understood], \"[message]\""))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else if(!(language.ignore_adverb))
 		var/adverb
 		var/length = length(message) * pick(0.8, 0.9, 1.0, 1.1, 1.2)	//Adds a little bit of fuzziness
@@ -281,9 +310,15 @@
 			if(30 to 48)	adverb = " a message"
 			if(48 to 90)	adverb = " a lengthy message"
 			else			adverb = " a very lengthy message"
+<<<<<<< HEAD
 		message = "<span class='game say'><B>[speaker]</B> [verb][adverb].</span>"
 	else
 		message = "<span class='game say'><B>[speaker]</B> [verb].</span>"
+=======
+		message = span_game(span_say(span_bold("[speaker]") + " [verb][adverb]."))
+	else
+		message = span_game(span_say(span_bold("[speaker]") + " [verb]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	show_message(message, type = speech_type) // Type 1 is visual message
 
@@ -301,7 +336,11 @@
 		heard = "<span class='game say'>...You hear something about...[heardword]</span>"
 
 	else
+<<<<<<< HEAD
 		heard = "<span class='game say'>...<i>You almost hear someone talking</i>...</span>"
+=======
+		heard = span_game(span_say("..." + span_italics("You almost hear someone talking") + "..."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	to_chat(src, heard)
 

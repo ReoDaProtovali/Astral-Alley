@@ -280,7 +280,11 @@
 						inserted_human.drop_from_inventory(I)
 				inserted_mob.loc = src
 				stored_materials.Add(inserted_mob)
+<<<<<<< HEAD
 				src.visible_message("<span class='filter_notice'><b>\The [user]</b> inserts \the [inserted_mob] into \the [src].</span>")
+=======
+				src.visible_message(span_filter_notice(span_bold("\The [user]") + " inserts \the [inserted_mob] into \the [src]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				return
 		else
 			to_chat(user, "<span class='notice'>You cannot put \the [W] into the machine. ((The micro must be connected to the server.))</span>")
@@ -301,7 +305,11 @@
 			//Now that we've dropped all the items they have, let's shove them back into the micro holder.
 	W.loc = src
 	stored_materials.Add(W)
+<<<<<<< HEAD
 	src.visible_message("<span class='filter_notice'><b>\The [user]</b> inserts \the [W] into \the [src].</span>")
+=======
+	src.visible_message(span_filter_notice(span_bold("\The [user]") + " inserts \the [W] into \the [src]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /obj/machinery/replicator/vore/tgui_data(mob/user, datum/tgui/ui, datum/tgui_state/state)
 	var/list/data = ..()
@@ -548,7 +556,11 @@
 						inserted_human.drop_from_inventory(I)
 				inserted_mob.loc = src
 				stored_materials.Add(inserted_mob)
+<<<<<<< HEAD
 				src.visible_message("<span class='filter_notice'><b>\The [user]</b> inserts \the [inserted_mob] into \the [src].</span>")
+=======
+				src.visible_message(span_filter_notice(span_bold("\The [user]") + " inserts \the [inserted_mob] into \the [src]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				return
 		else
 			to_chat(user, "<span class='notice'>You cannot put \the [W] into the machine. ((They must be connected to the server.))</span>")
@@ -567,7 +579,11 @@
 			//Now that we've dropped all the items they have, let's shove them back into the micro holder.
 	W.loc = src
 	stored_materials.Add(W)
+<<<<<<< HEAD
 	src.visible_message("<span class='filter_notice'><b>\The [user]</b> inserts \the [W] into \the [src].</span>")
+=======
+	src.visible_message(span_filter_notice(span_bold("\The [user]") + " inserts \the [W] into \the [src]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 
 /obj/machinery/replicator/clothing/tgui_interact(mob/user, datum/tgui/ui) //This creates the menu.

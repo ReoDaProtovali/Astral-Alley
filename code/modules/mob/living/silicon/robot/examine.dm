@@ -6,12 +6,20 @@
 		if (src.getBruteLoss() < 75)
 			. += "<span class='warning'>It looks slightly dented.</span>"
 		else
+<<<<<<< HEAD
 			. += "<span class='warning'><B>It looks severely dented!</B></span>"
+=======
+			. += span_boldwarning("It looks severely dented!")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	if (src.getFireLoss())
 		if (src.getFireLoss() < 75)
 			. += "<span class='warning'>It looks slightly charred.</span>"
 		else
+<<<<<<< HEAD
 			. += "<span class='warning'><B>It looks severely burnt and heat-warped!</B></span>"
+=======
+			. += span_boldwarning("It looks severely burnt and heat-warped!")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	if(opened)
 		. += "<span class='warning'>Its cover is open and the power cell is [cell ? "installed" : "missing"].</span>"

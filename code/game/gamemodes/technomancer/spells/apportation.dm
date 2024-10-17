@@ -67,7 +67,11 @@
 					return
 
 				L.Weaken(3)
+<<<<<<< HEAD
 				user.visible_message("<span class='warning'><b>\The [user]</b> seizes [L]!</span>")
+=======
+				user.visible_message(span_warning(span_bold("\The [user]") + " seizes [L]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 				var/obj/item/weapon/grab/G = new(user,L)
 

@@ -91,11 +91,19 @@
 			to_chat(user, "<span class='notice'><b>Health report results:</b></span>"+health_report)
 		if("Backup Scan")
 			if(!our_db)
+<<<<<<< HEAD
 				to_chat(user, "<span class='notice'><b>Backup scan results:</b></span><br>DATABASE ERROR!")
 			else
 				var/scan_report = do_backup_scan(user)
 				to_chat(user, "<span class='notice'><b>Backup scan results:</b></span>"+scan_report)
 	
+=======
+				to_chat(user, span_notice(span_bold("Backup scan results:")) + "<br>DATABASE ERROR!")
+			else
+				var/scan_report = do_backup_scan(user)
+				to_chat(user, span_notice(span_bold("Backup scan results:"))+scan_report)
+
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	// Standby
 	suspend()
 
