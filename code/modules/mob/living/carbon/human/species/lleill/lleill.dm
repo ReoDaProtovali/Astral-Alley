@@ -185,3 +185,52 @@
 	if(!S || S.name == src.name)
 		return ..()
 	return S?.get_tail_hair(H)
+<<<<<<< HEAD
+=======
+
+/datum/species/lleill/New()
+	..()
+	for(var/power in lleill_abilities)
+		var/datum/power/lleill/LP = new power(src)
+		lleill_ability_datums.Add(LP)
+
+/datum/species/lleill/proc/add_lleill_abilities(var/mob/living/carbon/human/H)
+	if(!H.ability_master || !istype(H.ability_master, /obj/screen/movable/ability_master/lleill))
+		H.ability_master = null
+		H.ability_master = new /obj/screen/movable/ability_master/lleill(H)
+	for(var/datum/power/lleill/P in lleill_ability_datums)
+		if(!(P.verbpath in H.verbs))
+			add_verb(H, P.verbpath)
+			H.ability_master.add_lleill_ability(
+					object_given = H,
+					verb_given = P.verbpath,
+					name_given = P.name,
+					ability_icon_given = P.ability_icon_state,
+					arguments = list()
+					)
+	spawn (50)
+		if(H.lleill_display)
+			H.lleill_display.invisibility = 0
+			H.lleill_display.icon_state = "lleill-4"
+
+/datum/species/proc/update_lleill_hud(var/mob/living/carbon/human/H)
+	var/relative_energy = ((lleill_energy/lleill_energy_max)*100)
+	if(H.lleill_display)
+		H.lleill_display.invisibility = 0
+		switch(relative_energy)
+			if(0 to 24)
+				H.lleill_display.icon_state = "lleill-0"
+			if(25 to 49)
+				H.lleill_display.icon_state = "lleill-1"
+			if(50 to 74)
+				H.lleill_display.icon_state = "lleill-2"
+			if(75 to 99)
+				H.lleill_display.icon_state = "lleill-3"
+			if(100 to INFINITY)
+				H.lleill_display.icon_state = "lleill-4"
+	return
+
+/datum/species/lleill/add_inherent_verbs(var/mob/living/carbon/human/H)
+	..()
+	add_lleill_abilities(H)
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))

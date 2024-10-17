@@ -167,11 +167,19 @@ var/global/list/robot_modules = list(
 		R.camera.remove_networks(added_networks)
 	added_networks.Cut()
 
+<<<<<<< HEAD
 /obj/item/weapon/robot_module/proc/add_subsystems(var/mob/living/silicon/robot/R)
 	add_verb(R,subsystems) //CHOMPEdit TGPanel
 
 /obj/item/weapon/robot_module/proc/remove_subsystems(var/mob/living/silicon/robot/R)
 	remove_verb(R,subsystems)  //CHOMPEdit
+=======
+/obj/item/robot_module/proc/add_subsystems(var/mob/living/silicon/robot/R)
+	add_verb(R, subsystems)
+
+/obj/item/robot_module/proc/remove_subsystems(var/mob/living/silicon/robot/R)
+	remove_verb(R, subsystems)
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))
 
 /obj/item/weapon/robot_module/proc/apply_status_flags(var/mob/living/silicon/robot/R)
 	if(!can_be_pushed)

@@ -240,6 +240,7 @@ I think I covered everything.
 	. = ..()
 	if(!riding_datum)
 		riding_datum = new /datum/riding/simple_mob(src)
+<<<<<<< HEAD
 	add_verb(src,/mob/living/simple_mob/proc/animal_mount) //CHOMPEdit TGPanel
 	add_verb(src,/mob/living/proc/toggle_rider_reins) //CHOMPEdit TGPanel
 	add_verb(src,/mob/living/simple_mob/vore/bigdragon/proc/set_style) //CHOMPEdit TGPanel
@@ -250,6 +251,18 @@ I think I covered everything.
 	//verbs |= /mob/living/simple_mob/vore/bigdragon/proc/set_name //Implemented upstream
 	//verbs |= /mob/living/simple_mob/vore/bigdragon/proc/set_desc //Implemented upstream
 	faction = "neutral"
+=======
+	add_verb(src, /mob/living/simple_mob/proc/animal_mount)
+	add_verb(src, /mob/living/proc/toggle_rider_reins)
+	add_verb(src, /mob/living/simple_mob/vore/bigdragon/proc/set_style)
+	add_verb(src, /mob/living/simple_mob/vore/bigdragon/proc/toggle_glow)
+	add_verb(src, /mob/living/simple_mob/vore/bigdragon/proc/sprite_toggle)
+	add_verb(src, /mob/living/simple_mob/vore/bigdragon/proc/flame_toggle)
+	add_verb(src, /mob/living/simple_mob/vore/bigdragon/proc/special_toggle)
+	//add_verb(src, /mob/living/simple_mob/vore/bigdragon/proc/set_name) //Implemented upstream
+	//add_verb(src, /mob/living/simple_mob/vore/bigdragon/proc/set_desc) //Implemented upstream
+	faction = FACTION_NEUTRAL
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))
 
 /mob/living/simple_mob/vore/bigdragon/Initialize()
 	..()
