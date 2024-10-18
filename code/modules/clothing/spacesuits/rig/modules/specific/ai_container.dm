@@ -46,6 +46,7 @@
 		else
 			integrated_ai.get_rig_stats = 0
 
+<<<<<<< HEAD
 /mob/living/Stat()
 	. = ..()
 	if(. && get_rig_stats)
@@ -53,6 +54,8 @@
 		if(rig)
 			SetupStat(rig)
 
+=======
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))
 /obj/item/rig_module/ai_container/proc/update_verb_holder()
 	if(!verb_holder)
 		verb_holder = new(src)

@@ -79,6 +79,7 @@
     last_special = world.time + 2 SECONDS // Antispam.
     create_new_area(usr)
     return
+<<<<<<< HEAD
 
 /mob/living/carbon/human/update_misc_tabs()
 	..()
@@ -112,3 +113,5 @@
 		var/obj/item/weapon/rig/rig = get_rig()
 		if(rig)
 			RigPanel(rig)
+=======
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))

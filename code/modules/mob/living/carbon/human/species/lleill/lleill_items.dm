@@ -60,8 +60,13 @@
 
 /datum/reagent/glamour_scaling/affect_blood(var/mob/living/carbon/target, var/removed)
 	if(!(/mob/living/proc/set_size in target.verbs))
+<<<<<<< HEAD
 		to_chat(target, "<span class='warning'>You feel as though you could change size at any moment.</span>")
 		target.verbs |= /mob/living/proc/set_size
+=======
+		to_chat(target, span_warning("You feel as though you could change size at any moment."))
+		add_verb(target, /mob/living/proc/set_size)
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))
 	target.bloodstr.clear_reagents() //instantly clears reagents afterwards
 	target.ingested.clear_reagents()
 	target.touching.clear_reagents()

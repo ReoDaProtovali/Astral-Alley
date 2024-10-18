@@ -56,8 +56,13 @@
 
 			// Was dead, still dead.
 			else
+<<<<<<< HEAD
 				to_chat(src, "<span class='notice'>Consciousness begins to stir as your new body awakens, ready to hatch.</span>")
 				add_verb(src,/mob/living/carbon/human/proc/hatch) //CHOMPEdit TGPanel
+=======
+				to_chat(src, span_notice("Consciousness begins to stir as your new body awakens, ready to hatch."))
+				add_verb(src, /mob/living/carbon/human/proc/hatch)
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))
 				revive_ready = REVIVING_DONE
 				src << sound('sound/effects/mob_effects/xenochimera/hatch_notification.ogg',0,0,0,30)
 				clear_alert("regen")
@@ -78,8 +83,13 @@
 			if(stat != DEAD || hasnutriment())
 				to_chat(src, "<span class='notice'>Consciousness begins to stir as your new body awakens, ready to hatch..</span>")
 			else
+<<<<<<< HEAD
 				to_chat(src, "<span class='warning'>Consciousness begins to stir as your battered body struggles to recover from its ordeal..</span>")
 			add_verb(src,/mob/living/carbon/human/proc/hatch) //CHOMPEdit TGPanel
+=======
+				to_chat(src, span_warning("Consciousness begins to stir as your battered body struggles to recover from its ordeal.."))
+			add_verb(src, /mob/living/carbon/human/proc/hatch)
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))
 			revive_ready = REVIVING_DONE
 			src << sound('sound/effects/mob_effects/xenochimera/hatch_notification.ogg',0,0,0,30)
 			clear_alert("regen")
@@ -110,7 +120,7 @@
 
 	if(revive_ready != REVIVING_DONE)
 		//Hwhat?
-		remove_verb(src,/mob/living/carbon/human/proc/hatch) //CHOMPEdit TGPanel
+		remove_verb(src, /mob/living/carbon/human/proc/hatch)
 		return
 
 	var/confirm = tgui_alert(usr, "Are you sure you want to hatch right now? This will be very obvious to anyone in view.", "Confirm Regeneration", list("Yes", "No"))
@@ -138,8 +148,13 @@
 			clear_alert("hatch")
 
 /mob/living/carbon/human/proc/chimera_hatch()
+<<<<<<< HEAD
 	remove_verb(src,/mob/living/carbon/human/proc/hatch) //CHOMPEdit TGPanel
 	to_chat(src, "<span class='notice'>Your new body awakens, bursting free from your old skin.</span>")
+=======
+	remove_verb(src, /mob/living/carbon/human/proc/hatch)
+	to_chat(src, span_notice("Your new body awakens, bursting free from your old skin."))
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))
 	//Modify and record values (half nutrition and braindamage)
 	var/old_nutrition = nutrition
 	var/braindamage = min(5, max(0, (brainloss-1) * 0.5)) //brainloss is tricky to heal and might take a couple of goes to get rid of completely.

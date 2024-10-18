@@ -234,6 +234,7 @@
 /obj/item/rig_module/proc/accepts_item(var/obj/item/input_device)
 	return 0
 
+<<<<<<< HEAD
 /mob/living/carbon/human/Stat()
 	. = ..()
 
@@ -256,6 +257,8 @@
 					stat(SRM.module.interface_name,SRM)
 		}
 
+=======
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))
 /stat_rig_module
 	parent_type = /atom/movable
 	var/module_mode = ""

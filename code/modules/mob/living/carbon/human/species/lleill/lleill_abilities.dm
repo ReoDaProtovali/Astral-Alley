@@ -367,4 +367,336 @@
 		var/spawnloc = get_turf(usr)
 		var/obj/item/N = new transmute_product(spawnloc)
 		put_in_active_hand(N)
+<<<<<<< HEAD
 		LL.lleill_energy -= energy_cost
+=======
+		species.lleill_energy -= energy_cost
+	species.update_lleill_hud(src)
+
+/datum/power/lleill/beastform
+	name = "Beast Form (100)"
+	desc = "Take the form of a non-humanoid creature."
+	verbpath = /mob/living/carbon/human/proc/lleill_beast_form
+	ability_icon_state = "lleill_beast"
+
+/mob/living/carbon/human/proc/lleill_beast_form()
+	set name = "Beast Form (100)"
+	set desc = "Take the form of a non-humanoid creature."
+	set category = "Abilities.Lleill" //CHOMPEdit
+	if(!ishuman(src))
+		return //If you're not a human you don't have permission to do this.
+
+	var/energy_cost = 100
+
+	if(species.lleill_energy < energy_cost)
+		to_chat(src, span_warning("You do not have enough energy to do that! You currently have [species.lleill_energy] energy."))
+		return
+
+	var/list/beast_options = list("Rabbit" = /mob/living/simple_mob/vore/rabbit,
+									"Red Panda" = /mob/living/simple_mob/vore/redpanda,
+									"Fennec" = /mob/living/simple_mob/vore/fennec,
+									"Giant Frog" = /mob/living/simple_mob/vore/aggressive/frog,
+									"Giant Rat" = /mob/living/simple_mob/vore/aggressive/rat,
+									"Wolf" = /mob/living/simple_mob/vore/wolf,
+									"Dire Wolf" = /mob/living/simple_mob/vore/wolf/direwolf,
+									"Fox" = /mob/living/simple_mob/animal/passive/fox/beastmode,
+									"Panther" = /mob/living/simple_mob/vore/aggressive/panther,
+									"Giant Snake" = /mob/living/simple_mob/vore/aggressive/giant_snake,
+									"Otie" = /mob/living/simple_mob/vore/otie,
+									"Squirrel" = /mob/living/simple_mob/vore/squirrel,
+									"Raptor" = /mob/living/simple_mob/vore/raptor,
+									"Giant Bat" = /mob/living/simple_mob/vore/bat,
+									"Horse" = /mob/living/simple_mob/vore/horse,
+									"Horse (Big)" = /mob/living/simple_mob/vore/horse/big,
+									"Kelpie" = /mob/living/simple_mob/vore/horse/kelpie,
+									"Bear" = /mob/living/simple_mob/animal/space/bear/brown/beastmode,
+									"Seagull" = /mob/living/simple_mob/vore/seagull,
+									"Sheep" = /mob/living/simple_mob/vore/sheep,
+									"Azure Tit" = /mob/living/simple_mob/animal/passive/bird/azure_tit/beastmode,
+									"Robin" = /mob/living/simple_mob/animal/passive/bird/european_robin/beastmode,
+									"Cat" = /mob/living/simple_mob/animal/passive/cat/black/beastmode,
+									"Tamaskan Dog" = /mob/living/simple_mob/animal/passive/dog/tamaskan,
+									"Corgi" = /mob/living/simple_mob/animal/passive/dog/corgi,
+									"Bull Terrier" = /mob/living/simple_mob/animal/passive/dog/bullterrier,
+									"Duck" = /mob/living/simple_mob/animal/sif/duck,
+									"Cow" = /mob/living/simple_mob/animal/passive/cow,
+									"Chicken" = /mob/living/simple_mob/animal/passive/chicken,
+									"Goat" = /mob/living/simple_mob/animal/goat,
+									"Penguin" = /mob/living/simple_mob/animal/passive/penguin,
+									"Goose" = /mob/living/simple_mob/animal/space/goose
+									)
+
+	var/chosen_beast = tgui_input_list(src, "Which form would you like to take?", "Choose Beast Form", beast_options)
+
+	if(!chosen_beast)
+		return
+
+	if(species.lleill_energy < energy_cost)
+		to_chat(src, span_warning("You do not have enough energy to do that! You currently have [species.lleill_energy] energy."))
+		return
+
+	var/mob/living/M = src
+	log_debug("polymorph start")
+	if(!istype(M))
+		log_debug("polymorph istype")
+		return
+
+	if(M.stat)	//We can let it undo the TF, because the person will be dead, but otherwise things get weird.
+		log_debug("polymorph stat")
+		to_chat(src, span_warning("You can't do that in your condition."))
+		return
+
+	if(M.health <= 10)	//We can let it undo the TF, because the person will be dead, but otherwise things get weird.
+		log_debug("polymorph injured")
+		to_chat(src, span_warning("You are too injured to transform into a beast."))
+		return
+
+	visible_message("<b>\The [src]</b> begins significantly shifting their form.")
+	if(!do_after(src, 10 SECONDS, src, exclusive = TASK_USER_EXCLUSIVE))
+		visible_message("<b>\The [src]</b> ceases shifting their form.")
+		return 0
+
+	var/image/coolanimation = image('icons/obj/glamour.dmi', null, "animation")
+	coolanimation.plane = PLANE_LIGHTING_ABOVE
+	src.overlays += coolanimation
+	spawn(10)
+		src.overlays -= coolanimation
+
+		log_debug("polymorph not dead")
+		var/mob/living/new_mob = spawn_beast_mob(beast_options[chosen_beast])
+		new_mob.faction = M.faction
+
+		if(new_mob && isliving(new_mob))
+			species.lleill_energy -= energy_cost
+			log_debug("polymorph new_mob")
+			for(var/obj/belly/B as anything in new_mob.vore_organs)
+				log_debug("polymorph new_mob belly")
+				new_mob.vore_organs -= B
+				qdel(B)
+			new_mob.vore_organs = list()
+			new_mob.name = M.name
+			new_mob.real_name = M.real_name
+			add_verb(new_mob, /mob/living/proc/revert_beast_form)
+			add_verb(new_mob, /mob/living/proc/set_size)
+			for(var/lang in M.languages)
+				new_mob.languages |= lang
+			M.copy_vore_prefs_to_mob(new_mob)
+			new_mob.vore_selected = M.vore_selected
+			if(ishuman(M))
+				log_debug("polymorph ishuman part2")
+				var/mob/living/carbon/human/H = M
+				if(ishuman(new_mob))
+					log_debug("polymorph ishuman(newmob)")
+					var/mob/living/carbon/human/N = new_mob
+					N.gender = H.gender
+					N.identifying_gender = H.identifying_gender
+				else
+					log_debug("polymorph gender else")
+					new_mob.gender = H.gender
+			else
+				log_debug("polymorph gender else 2")
+				new_mob.gender = M.gender
+				if(ishuman(new_mob))
+					var/mob/living/carbon/human/N = new_mob
+					N.identifying_gender = M.gender
+
+			for(var/obj/belly/B as anything in M.vore_organs)
+				B.loc = new_mob
+				B.forceMove(new_mob)
+				B.owner = new_mob
+				M.vore_organs -= B
+				new_mob.vore_organs += B
+
+			new_mob.ckey = M.ckey
+			if(M.ai_holder && new_mob.ai_holder)
+				var/datum/ai_holder/old_AI = M.ai_holder
+				old_AI.set_stance(STANCE_SLEEP)
+				var/datum/ai_holder/new_AI = new_mob.ai_holder
+				new_AI.hostile = old_AI.hostile
+				new_AI.retaliate = old_AI.retaliate
+			M.loc = new_mob
+			M.forceMove(new_mob)
+			new_mob.tf_mob_holder = M
+			new_mob.visible_message("<b>\The [src]</b> has transformed into \the [chosen_beast]!")
+	species.update_lleill_hud(src)
+
+
+/mob/living/carbon/human/proc/spawn_beast_mob(var/chosen_beast)
+	log_debug("polymorph proc spawn mob")
+	var/tf_type = chosen_beast
+	log_debug("polymorph [tf_type]")
+	if(!ispath(tf_type))
+		log_debug("polymorph tf_type fail")
+		return
+	log_debug("polymorph tf_type pass")
+	var/new_mob = new tf_type(get_turf(src))
+	return new_mob
+
+/mob/living/proc/revert_beast_form()
+	set name = "Revert Beast Form"
+	set desc = "Return to your humanoid form."
+	set category = "Abilities.Lleill" //CHOMPEdit
+
+	if(stat)
+		to_chat(src, span_warning("You can't do that in your condition."))
+		return
+
+	visible_message("<b>\The [src]</b> begins significantly shifting their form.")
+	if(!do_after(src, 10 SECONDS, src, exclusive = TASK_USER_EXCLUSIVE))
+		visible_message("<b>\The [src]</b> ceases shifting their form.")
+		return 0
+	visible_message("<b>\The [src]</b> has reverted to their original form.")
+	revert_mob_tf()
+
+
+//Hanner variant
+
+/datum/power/lleill/beastform_hanner
+	name = "Beast Form (100)"
+	desc = "Take the form of a non-humanoid creature."
+	verbpath = /mob/living/carbon/human/proc/hanner_beast_form
+	ability_icon_state = "lleill_beast"
+
+/mob/living/carbon/human/proc/hanner_beast_form()
+	set name = "Beast Form (100)"
+	set desc = "Take the form of a non-humanoid creature."
+	set category = "Abilities.Lleill" //CHOMPEdit
+	if(!ishuman(src))
+		return //If you're not a human you don't have permission to do this.
+
+	var/energy_cost = 100
+
+	if(species.lleill_energy < energy_cost)
+		to_chat(src, span_warning("You do not have enough energy to do that! You currently have [species.lleill_energy] energy."))
+		return
+
+	var/list/beast_options = list("Rabbit" = /mob/living/simple_mob/vore/rabbit,
+									"Red Panda" = /mob/living/simple_mob/vore/redpanda,
+									"Fennec" = /mob/living/simple_mob/vore/fennec,
+									"Giant Frog" = /mob/living/simple_mob/vore/aggressive/frog,
+									"Giant Rat" = /mob/living/simple_mob/vore/aggressive/rat,
+									"Wolf" = /mob/living/simple_mob/vore/wolf,
+									"Dire Wolf" = /mob/living/simple_mob/vore/wolf/direwolf,
+									"Fox" = /mob/living/simple_mob/animal/passive/fox/beastmode,
+									"Panther" = /mob/living/simple_mob/vore/aggressive/panther,
+									"Giant Snake" = /mob/living/simple_mob/vore/aggressive/giant_snake,
+									"Otie" = /mob/living/simple_mob/vore/otie,
+									"Squirrel" = /mob/living/simple_mob/vore/squirrel,
+									"Raptor" = /mob/living/simple_mob/vore/raptor,
+									"Giant Bat" = /mob/living/simple_mob/vore/bat,
+									"Horse" = /mob/living/simple_mob/vore/horse,
+									"Horse (Big)" = /mob/living/simple_mob/vore/horse/big,
+									"Kelpie" = /mob/living/simple_mob/vore/horse/kelpie,
+									"Bear" = /mob/living/simple_mob/animal/space/bear/brown/beastmode,
+									"Seagull" = /mob/living/simple_mob/vore/seagull,
+									"Sheep" = /mob/living/simple_mob/vore/sheep,
+									"Azure Tit" = /mob/living/simple_mob/animal/passive/bird/azure_tit/beastmode,
+									"Robin" = /mob/living/simple_mob/animal/passive/bird/european_robin/beastmode,
+									"Cat" = /mob/living/simple_mob/animal/passive/cat/black/beastmode,
+									"Tamaskan Dog" = /mob/living/simple_mob/animal/passive/dog/tamaskan,
+									"Corgi" = /mob/living/simple_mob/animal/passive/dog/corgi,
+									"Bull Terrier" = /mob/living/simple_mob/animal/passive/dog/bullterrier,
+									"Duck" = /mob/living/simple_mob/animal/sif/duck,
+									"Cow" = /mob/living/simple_mob/animal/passive/cow,
+									"Chicken" = /mob/living/simple_mob/animal/passive/chicken,
+									"Goat" = /mob/living/simple_mob/animal/goat,
+									"Penguin" = /mob/living/simple_mob/animal/passive/penguin,
+									"Goose" = /mob/living/simple_mob/animal/space/goose
+									)
+
+	var/chosen_beast = tgui_input_list(src, "Which form would you like to take?", "Choose Beast Form", beast_options)
+
+	if(!chosen_beast)
+		return
+
+	if(species.lleill_energy < energy_cost)
+		to_chat(src, span_warning("You do not have enough energy to do that! You currently have [species.lleill_energy] energy."))
+		return
+
+	var/mob/living/M = src
+	log_debug("polymorph start")
+	if(!istype(M))
+		log_debug("polymorph istype")
+		return
+
+	if(M.stat)	//We can let it undo the TF, because the person will be dead, but otherwise things get weird.
+		log_debug("polymorph stat")
+		to_chat(src, span_warning("You can't do that in your condition."))
+		return
+
+	if(M.health <= 10)	//We can let it undo the TF, because the person will be dead, but otherwise things get weird.
+		log_debug("polymorph injured")
+		to_chat(src, span_warning("You are too injured to transform into a beast."))
+		return
+
+	visible_message("<b>\The [src]</b> begins significantly shifting their form.")
+	if(!do_after(src, 10 SECONDS, src, exclusive = TASK_USER_EXCLUSIVE))
+		visible_message("<b>\The [src]</b> ceases shifting their form.")
+		return 0
+
+	var/image/coolanimation = image('icons/obj/glamour.dmi', null, "animation")
+	coolanimation.plane = PLANE_LIGHTING_ABOVE
+	src.overlays += coolanimation
+	spawn(10)
+		src.overlays -= coolanimation
+
+		log_debug("polymorph not dead")
+		var/mob/living/simple_mob/new_mob = spawn_beast_mob(beast_options[chosen_beast])
+		new_mob.faction = M.faction
+
+		if(new_mob && isliving(new_mob))
+			species.lleill_energy -= energy_cost
+			log_debug("polymorph new_mob")
+			for(var/obj/belly/B as anything in new_mob.vore_organs)
+				log_debug("polymorph new_mob belly")
+				new_mob.vore_organs -= B
+				qdel(B)
+			new_mob.vore_organs = list()
+			new_mob.name = M.name
+			new_mob.real_name = M.real_name
+			add_verb(new_mob, /mob/living/proc/revert_beast_form)
+			add_verb(new_mob, /mob/living/proc/set_size)
+			new_mob.hasthermals = 0
+			new_mob.health = M.health
+			new_mob.maxHealth = M.health
+			for(var/lang in M.languages)
+				new_mob.languages |= lang
+			M.copy_vore_prefs_to_mob(new_mob)
+			new_mob.vore_selected = M.vore_selected
+			if(ishuman(M))
+				log_debug("polymorph ishuman part2")
+				var/mob/living/carbon/human/H = M
+				if(ishuman(new_mob))
+					log_debug("polymorph ishuman(newmob)")
+					var/mob/living/carbon/human/N = new_mob
+					N.gender = H.gender
+					N.identifying_gender = H.identifying_gender
+				else
+					log_debug("polymorph gender else")
+					new_mob.gender = H.gender
+			else
+				log_debug("polymorph gender else 2")
+				new_mob.gender = M.gender
+				if(ishuman(new_mob))
+					var/mob/living/carbon/human/N = new_mob
+					N.identifying_gender = M.gender
+
+			for(var/obj/belly/B as anything in M.vore_organs)
+				B.loc = new_mob
+				B.forceMove(new_mob)
+				B.owner = new_mob
+				M.vore_organs -= B
+				new_mob.vore_organs += B
+
+			new_mob.ckey = M.ckey
+			if(M.ai_holder && new_mob.ai_holder)
+				var/datum/ai_holder/old_AI = M.ai_holder
+				old_AI.set_stance(STANCE_SLEEP)
+				var/datum/ai_holder/new_AI = new_mob.ai_holder
+				new_AI.hostile = old_AI.hostile
+				new_AI.retaliate = old_AI.retaliate
+			M.loc = new_mob
+			M.forceMove(new_mob)
+			new_mob.tf_mob_holder = M
+			new_mob.visible_message("<b>\The [src]</b> has transformed into \the [chosen_beast]!")
+>>>>>>> 4d9879937f ([MIRROR] Port tg statpanel (#9242))
