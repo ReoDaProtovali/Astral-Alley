@@ -526,6 +526,7 @@
 		return
 
 	if(!parachute)	//This packs the parachute
+<<<<<<< HEAD
 		H.visible_message("<b>\The [H]</b> starts to pack \the [src]!", \
 					"<span class='notice'>You start to pack \the [src]!</span>", \
 					"You hear the shuffling of cloth.")
@@ -550,6 +551,32 @@
 		else
 			H.visible_message("<b>\The [src]</b> decides not to unpack \the [src]!", \
 					"<span class='notice'>You decide not to unpack \the [src]!</span>")
+=======
+		H.visible_message(span_infoplain(span_bold("\The [H]") + " starts to pack \the [src]!"), \
+					span_notice("You start to pack \the [src]!"), \
+					span_infoplain("You hear the shuffling of cloth."))
+		if(do_after(H, 50))
+			H.visible_message(span_infoplain(span_bold("\The [H]") + " finishes packing \the [src]!"), \
+					span_notice("You finish packing \the [src]!"), \
+					span_infoplain("You hear the shuffling of cloth."))
+			parachute = TRUE
+		else
+			H.visible_message(span_infoplain(span_bold("\The [src]") + " gives up on packing \the [src]!"), \
+					span_notice("You give up on packing \the [src]!"))
+			return
+	else			//This unpacks the parachute
+		H.visible_message(span_infoplain(span_bold("\The [src]") + " starts to unpack \the [src]!"), \
+					span_notice("You start to unpack \the [src]!"), \
+					span_infoplain("You hear the shuffling of cloth."))
+		if(do_after(H, 25))
+			H.visible_message(span_infoplain(span_bold("\The [src]") + " finishes unpacking \the [src]!"), \
+					span_notice("You finish unpacking \the [src]!"), \
+					span_infoplain("You hear the shuffling of cloth."))
+			parachute = FALSE
+		else
+			H.visible_message(span_infoplain(span_bold("\The [src]") + " decides not to unpack \the [src]!"), \
+					span_notice("You decide not to unpack \the [src]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	return
 
 /obj/item/weapon/storage/backpack/satchel/ranger

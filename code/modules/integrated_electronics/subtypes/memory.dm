@@ -109,8 +109,8 @@
 				to_chat(user, "<span class='notice'>You set \the [src]'s memory to [O.display_data(O.data)].</span>")
 		if("ref")
 			accepting_refs = 1
-			to_chat(user, "<span class='notice'>You turn \the [src]'s ref scanner on.  Slide it across \
-			an object for a ref of that object to save it in memory.</span>")
+			to_chat(user, span_notice("You turn \the [src]'s ref scanner on. Slide it across \
+			an object for a ref of that object to save it in memory."))
 		if("null")
 			O.data = null
 			to_chat(user, "<span class='notice'>You set \the [src]'s memory to absolutely nothing.</span>")
@@ -119,7 +119,13 @@
 	if(accepting_refs && proximity)
 		var/datum/integrated_io/O = outputs[1]
 		O.data = WEAKREF(target)
+<<<<<<< HEAD
 		visible_message("<span class='notice'>[user] slides \a [src]'s over \the [target].</span>")
 		to_chat(user, "<span class='notice'>You set \the [src]'s memory to a reference to [O.display_data(O.data)].  The ref scanner is \
 		now off.</span>")
+=======
+		visible_message(span_notice("[user] slides \a [src]'s over \the [target]."))
+		to_chat(user, span_notice("You set \the [src]'s memory to a reference to [O.display_data(O.data)]. The ref scanner is \
+		now off."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		accepting_refs = 0

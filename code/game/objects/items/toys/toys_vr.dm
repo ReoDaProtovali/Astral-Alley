@@ -442,7 +442,11 @@
 
 /obj/item/toy/chewtoy/attack_self(mob/user)
 	playsound(loc, 'sound/items/drop/plushie.ogg', 50, 1)
+<<<<<<< HEAD
 	user.visible_message("<span class='notice'><b>\The [user]</b> gnaws on [src]!</span>","<span class='notice'>You gnaw on [src]!</span>")
+=======
+	user.visible_message(span_notice(span_bold("\The [user]") + " gnaws on [src]!"),span_notice("You gnaw on [src]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /*
  * Cat toys
@@ -642,7 +646,11 @@
 			icon_state = "nuketoyidle"
 	else
 		var/timeleft = (cooldown - world.time)
+<<<<<<< HEAD
 		to_chat(user, "<span class='alert'>Nothing happens, and '</span>[round(timeleft/10)]<span class='alert'>' appears on a small display.</span>")
+=======
+		to_chat(user, span_warning("Nothing happens, and") + " '[round(timeleft/10)]' " + span_warning("appears on a small display."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /obj/item/toy/nuke/attackby(obj/item/I as obj, mob/living/user as mob)
 	if(istype(I, /obj/item/weapon/disk/nuclear))
@@ -684,7 +692,11 @@
 				O.forceMove(src)
 				stored_minature = O
 		else
+<<<<<<< HEAD
 			user.visible_message("<span class='notice'>You stop feeding \the [O] into \the [src].</span></span>","<span class='notice'>[user] stops feeding \the [O] into \the [src]!/span>")
+=======
+			user.visible_message(span_notice("You stop feeding \the [O] into \the [src]."),span_notice("[user] stops feeding \the [O] into \the [src]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	else ..()
 
@@ -1181,5 +1193,5 @@
 	if(M.stat)
 		to_chat(user, "<span class='notice'>\The [M] doesn't look like it's any condition to do that.</span>")
 		return
-	user.visible_message("<span class='danger'>\The [user] waves \the [src] in front of the [M]!</span>!")
+	user.visible_message(span_danger("\The [user] waves \the [src] in front of the [M]!"))
 	M.PounceTarget(user,100)

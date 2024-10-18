@@ -126,7 +126,11 @@ var/global/datum/controller/subsystem/ticker/ticker
 	var/list/runnable_modes = config.get_runnable_modes()
 	if((master_mode == "random") || (master_mode == "secret"))
 		if(!runnable_modes.len)
+<<<<<<< HEAD
 			to_world("<span class='danger'><B>Unable to choose playable game mode.</B> Reverting to pregame lobby.</span>")
+=======
+			to_world(span_filter_system(span_bold("Unable to choose playable game mode.") + " Reverting to pregame lobby."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			return 0
 		if(secret_force_mode != "secret")
 			src.mode = config.pick_mode(secret_force_mode)
@@ -139,7 +143,11 @@ var/global/datum/controller/subsystem/ticker/ticker
 		src.mode = config.pick_mode(master_mode)
 
 	if(!src.mode)
+<<<<<<< HEAD
 		to_world("<span class='danger'>Serious error in mode setup! Reverting to pregame lobby.</span>") //Uses setup instead of set up due to computational context.
+=======
+		to_world(span_boldannounce("Serious error in mode setup! Reverting to pregame lobby.")) //Uses setup instead of set up due to computational context.
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		return 0
 
 	job_master.ResetOccupations()
@@ -155,14 +163,22 @@ var/global/datum/controller/subsystem/ticker/ticker
 		return 0
 
 	if(hide_mode)
+<<<<<<< HEAD
 		to_world("<span class='notice'><B>The current game mode is - Secret!</B></span>")
+=======
+		to_world(span_world(span_notice("The current game mode is - Secret!")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		if(runnable_modes.len)
 			var/list/tmpmodes = new
 			for (var/datum/game_mode/M in runnable_modes)
 				tmpmodes+=M.name
 			tmpmodes = sortList(tmpmodes)
 			if(tmpmodes.len)
+<<<<<<< HEAD
 				to_world("<span class='info'><B>Possibilities:</B> [english_list(tmpmodes, and_text= "; ", comma_text = "; ")]</span>")
+=======
+				to_world(span_filter_system(span_bold("Possibilities:") + " [english_list(tmpmodes, and_text= "; ", comma_text = "; ")]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		src.mode.announce()
 	return 1
@@ -228,8 +244,13 @@ var/global/datum/controller/subsystem/ticker/ticker
 		end_game_state = END_GAME_MODE_FINISHED // Only do this cleanup once!
 		mode.cleanup()
 		//call a transfer shuttle vote
+<<<<<<< HEAD
 		to_world("<span class='danger'>The round has ended!</span>")
 		SSvote.autotransfer()
+=======
+		to_world(span_boldannounce("The round has ended!"))
+		SSvote.start_vote(new /datum/vote/crew_transfer)
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 // Called during GAME_STATE_FINISHED (RUNLEVEL_POSTGAME)
 /datum/controller/subsystem/ticker/proc/post_game_tick()
@@ -241,7 +262,11 @@ var/global/datum/controller/subsystem/ticker/ticker
 				feedback_set_details("end_proper", "nuke")
 				restart_timeleft = 1 MINUTE // No point waiting five minutes if everyone's dead.
 				if(!delay_end)
+<<<<<<< HEAD
 					to_world("<span class='notice'><b>Rebooting due to destruction of [station_name()] in [round(restart_timeleft/600)] minute\s.</b></span>")
+=======
+					to_world(span_boldannounce("Rebooting due to destruction of [station_name()] in [round(restart_timeleft/600)] minute\s."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 					last_restart_notify = world.time
 			else
 				feedback_set_details("end_proper", "proper completion")
@@ -255,6 +280,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 		if(END_GAME_ENDING)
 			restart_timeleft -= (world.time - last_fire)
 			if(delay_end)
+<<<<<<< HEAD
 				to_world("<span class='notice'><b>An admin has delayed the round end.</b></span>")
 				end_game_state = END_GAME_DELAYED
 			else if(restart_timeleft <= 0)
@@ -263,6 +289,16 @@ var/global/datum/controller/subsystem/ticker/ticker
 				world.Reboot()
 			else if (world.time - last_restart_notify >= 1 MINUTE)
 				to_world("<span class='notice'><b>Restarting in [round(restart_timeleft/600, 1)] minute\s.</b></span>")
+=======
+				to_world(span_boldannounce("An admin has delayed the round end."))
+				end_game_state = END_GAME_DELAYED
+			else if(restart_timeleft <= 0)
+				to_world(span_boldannounce("Restarting world!"))
+				sleep(5)
+				world.Reboot()
+			else if (world.time - last_restart_notify >= 1 MINUTE)
+				to_world(span_boldannounce("Restarting in [round(restart_timeleft/600, 1)] minute\s."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				last_restart_notify = world.time
 			return
 		if(END_GAME_DELAYED)
@@ -481,8 +517,13 @@ var/global/datum/controller/subsystem/ticker/ticker
 					if(!O.started_as_observer)
 						to_chat(Player, "<span class='filter_system'>[span_red("<b>You did not survive the events on [station_name()]...</b>")]</span>")
 				else
+<<<<<<< HEAD
 					to_chat(Player, "<span class='filter_system'>[span_red("<b>You did not survive the events on [station_name()]...</b>")]</span>")
 	to_world("<br>")
+=======
+					to_chat(Player, span_filter_system(span_red(span_bold("You did not survive the events on [station_name()]..."))))
+	to_world(span_filter_system("<br>"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	for (var/mob/living/silicon/ai/aiPlayer in mob_list)
 		if (aiPlayer.stat != 2)

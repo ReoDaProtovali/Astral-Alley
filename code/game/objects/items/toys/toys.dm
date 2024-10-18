@@ -706,9 +706,9 @@
 /obj/structure/plushie/examine(mob/user)
 	. = ..()
 	if(opened)
-		. += "<i>You notice an incision has been made on [src].</i>"
+		. += span_italics("You notice an incision has been made on [src].")
 		if(in_range(user, src) && stored_item)
-			. += "<i>You can see something in there...</i>"
+			. += span_italics("You can see something in there...")
 
 /obj/structure/plushie/attack_hand(mob/user)
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
@@ -725,6 +725,7 @@
 			searching = FALSE
 
 	if(user.a_intent == I_HELP)
+<<<<<<< HEAD
 		user.visible_message("<span class='notice'><b>\The [user]</b> hugs [src]!</span>","<span class='notice'>You hug [src]!</span>")
 	else if (user.a_intent == I_HURT)
 		user.visible_message("<span class='warning'><b>\The [user]</b> punches [src]!</span>","<span class='warning'>You punch [src]!</span>")
@@ -732,6 +733,15 @@
 		user.visible_message("<span class='warning'><b>\The [user]</b> attempts to strangle [src]!</span>","<span class='warning'>You attempt to strangle [src]!</span>")
 	else
 		user.visible_message("<span class='notice'><b>\The [user]</b> pokes the [src].</span>","<span class='notice'>You poke the [src].</span>")
+=======
+		user.visible_message(span_notice(span_bold("\The [user]") + " hugs [src]!"),span_notice("You hug [src]!"))
+	else if (user.a_intent == I_HURT)
+		user.visible_message(span_warning(span_bold("\The [user]") + " punches [src]!"),span_warning("You punch [src]!"))
+	else if (user.a_intent == I_GRAB)
+		user.visible_message(span_warning(span_bold("\The [user]") + " attempts to strangle [src]!"),span_warning("You attempt to strangle [src]!"))
+	else
+		user.visible_message(span_notice(span_bold("\The [user]") + " pokes the [src]."),span_notice("You poke the [src]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		visible_message("[src] says, \"[phrase]\"")
 
 
@@ -805,9 +815,9 @@
 /obj/item/toy/plushie/examine(mob/user)
 	. = ..()
 	if(opened)
-		. += "<i>You notice an incision has been made on [src].</i>"
+		. += span_italics("You notice an incision has been made on [src].")
 		if(in_range(user, src) && stored_item)
-			. += "<i>You can see something in there...</i>"
+			. += span_italics("You can see something in there...")
 
 /obj/item/toy/plushie/attack_self(mob/user as mob)
 	if(stored_item && opened && !searching)
@@ -824,6 +834,7 @@
 	if(world.time - last_message <= 1 SECOND)
 		return
 	if(user.a_intent == I_HELP)
+<<<<<<< HEAD
 		user.visible_message("<span class='notice'><b>\The [user]</b> hugs [src]!</span>","<span class='notice'>You hug [src]!</span>")
 	else if (user.a_intent == I_HURT)
 		user.visible_message("<span class='warning'><b>\The [user]</b> punches [src]!</span>","<span class='warning'>You punch [src]!</span>")
@@ -831,6 +842,15 @@
 		user.visible_message("<span class='warning'><b>\The [user]</b> attempts to strangle [src]!</span>","<span class='warning'>You attempt to strangle [src]!</span>")
 	else
 		user.visible_message("<span class='notice'><b>\The [user]</b> pokes [src].</span>","<span class='notice'>You poke [src].</span>")
+=======
+		user.visible_message(span_notice(span_bold("\The [user]") + " hugs [src]!"),span_notice("You hug [src]!"))
+	else if (user.a_intent == I_HURT)
+		user.visible_message(span_warning(span_bold("\The [user]") + " punches [src]!"),span_warning("You punch [src]!"))
+	else if (user.a_intent == I_GRAB)
+		user.visible_message(span_warning(span_bold("\The [user]") + " attempts to strangle [src]!"),span_warning("You attempt to strangle [src]!"))
+	else
+		user.visible_message(span_notice(span_bold("\The [user]") + " pokes [src]."),span_notice("You poke [src]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		playsound(src, 'sound/items/drop/plushie.ogg', 25, 0)
 		visible_message("[src] says, \"[pokephrase]\"")
 	last_message = world.time
@@ -1422,6 +1442,7 @@
 	user.setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 
 	if(user.a_intent == I_HELP)
+<<<<<<< HEAD
 		user.visible_message("<span class='notice'><b>\The [user]</b> pokes [src]!</span>","<span class='notice'>You poke [src]!</span>")
 	else if (user.a_intent == I_HURT)
 		user.visible_message("<span class='warning'><b>\The [user]</b> punches [src]!</span>","<span class='warning'>You punch [src]!</span>")
@@ -1429,6 +1450,15 @@
 		user.visible_message("<span class='warning'><b>\The [user]</b> attempts to pop [src]!</span>","<span class='warning'>You attempt to pop [src]!</span>")
 	else
 		user.visible_message("<span class='notice'><b>\The [user]</b> lightly bats the [src].</span>","<span class='notice'>You lightly bat the [src].</span>")
+=======
+		user.visible_message(span_notice(span_bold("\The [user]") + " pokes [src]!"),span_notice("You poke [src]!"))
+	else if (user.a_intent == I_HURT)
+		user.visible_message(span_warning(span_bold("\The [user]") + " punches [src]!"),span_warning("You punch [src]!"))
+	else if (user.a_intent == I_GRAB)
+		user.visible_message(span_warning(span_bold("\The [user]") + " attempts to pop [src]!"),span_warning("You attempt to pop [src]!"))
+	else
+		user.visible_message(span_notice(span_bold("\The [user]") + " lightly bats the [src]."),span_notice("You lightly bat the [src]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /obj/structure/balloon/bat
 	name = "giant bat balloon"

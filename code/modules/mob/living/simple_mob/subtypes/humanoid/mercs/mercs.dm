@@ -138,7 +138,7 @@
 /mob/living/simple_mob/humanoid/merc/melee/sword/bullet_act(var/obj/item/projectile/Proj)
 	if(!Proj)	return
 	if(prob(35))
-		visible_message(span_red("<B>[src] blocks [Proj] with its shield!</B>"))
+		visible_message(span_bolddanger("[src] blocks [Proj] with its shield!"))
 		if(Proj.firer)
 			ai_holder.react_to_attack(Proj.firer)
 		return
@@ -335,7 +335,11 @@
 	*/
 	if(ranged_cooldown_time) //If you have a non-zero number in a mob's variables, this pattern begins.
 		if(ranged_cooldown <= world.time) //Further down, a timer keeps adding to the ranged_cooldown variable automatically.
+<<<<<<< HEAD
 			visible_message("<span class='danger'><b>\The [src]</b> fires at \the [A]!</span>") //Leave notice of shooting.
+=======
+			visible_message(span_danger(span_bold("\The [src]") + " fires at \the [A]!")) //Leave notice of shooting.
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			shoot(A) //Perform the shoot action
 			if(casingtype) //If the mob is designated to leave casings...
 				new casingtype(loc) //... leave the casing.
@@ -343,7 +347,11 @@
 		return TRUE	//End these commands here.
 	// CHOMPAddition End
 
+<<<<<<< HEAD
 	visible_message("<span class='danger'><b>\The [src]</b> fires at \the [orig_targ]!</span>")
+=======
+	visible_message(span_danger(span_bold("\The [src]") + " fires at \the [orig_targ]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	shoot(A)
 	if(casingtype)
 		new casingtype(loc)

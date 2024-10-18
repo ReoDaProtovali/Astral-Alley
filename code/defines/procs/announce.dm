@@ -68,8 +68,13 @@
 	to_world("<h1 class='alert'>[message_title]</h1>")
 	to_world("<span class='alert'>[message]</span>")
 	if(announcer)
+<<<<<<< HEAD
 		to_world("<span class='alert'> -[html_encode(announcer)]</span>")
 	to_world("<br>")
+=======
+		to_world(span_alert(" -[html_encode(announcer)]"))
+	to_world(span_alert("<br>"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /datum/announcement/priority/command/Message(message as text, message_title as text, var/list/zlevels)
 	var/command

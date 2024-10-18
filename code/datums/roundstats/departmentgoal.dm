@@ -41,7 +41,11 @@ GLOBAL_LIST(active_department_goals)
 	for(var/category in GLOB.active_department_goals)
 		var/list/cat_goals = GLOB.active_department_goals[category]
 
+<<<<<<< HEAD
 		to_world("<span class='filter_system'><b>[category]</b></span>")
+=======
+		to_world(span_world("[category]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 		if(!LAZYLEN(cat_goals))
 			to_world("<span class='filter_system'>There were no assigned goals!</span>")

@@ -22,9 +22,15 @@
 		command_announcement.Announce(alert, new_sound = 'sound/misc/interference.ogg')
 	// AIs will always know if there's a comm blackout, rogue AIs could then lie about comm blackouts in the future while they shutdown comms
 	for(var/mob/living/silicon/ai/A in player_list)
+<<<<<<< HEAD
 		to_chat(A, "<br>")
 		to_chat(A, "<span class='warning'><b>[alert]</b></span>")
 		to_chat(A, "<br>")
+=======
+		to_chat(A, span_boldwarning("<br>"))
+		to_chat(A, span_boldwarning("[alert]"))
+		to_chat(A, span_boldwarning("<br>"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /datum/event2/event/comms_blackout/start()
 	if(prob(50))

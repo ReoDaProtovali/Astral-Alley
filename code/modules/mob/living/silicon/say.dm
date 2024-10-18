@@ -73,7 +73,11 @@
 		/*Radios "filter out" this conversation channel so we don't need to account for them.
 		This is another way of saying that we won't bother dealing with them.*/
 		var/list/combined = combine_message(message_pieces, verb, src)
+<<<<<<< HEAD
 		to_chat(src, "<span class='game say'><i>Holopad transmitted, <span class='name'>[real_name]</span> [combined["formatted"]]</i></span>")
+=======
+		to_chat(src, span_game(span_say(span_italics("Holopad transmitted, [span_name(real_name)] [combined["formatted"]]"))))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		to_chat(src, "<span class='filter_notice'>No holopad connected.</span>")
 		return 0
@@ -87,8 +91,13 @@
 
 	var/obj/machinery/hologram/holopad/T = src.holo
 	if(T && T.masters[src])
+<<<<<<< HEAD
 		var/rendered = "<span class='game say'><span class='name'>[name]</span> <span class='message'>[message]</span></span>"
 		to_chat(src, "<span class='game say'><i>Holopad action relayed, <span class='name'>[real_name]</span> <span class='message'>[message]</span></i></span>")
+=======
+		var/rendered = span_game(span_say(span_name(name) + " " + span_message(message)))
+		to_chat(src, span_game(span_say(span_italics("Holopad action relayed, [span_name(real_name)] [span_message(message)]"))))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		var/obj/effect/overlay/aiholo/hologram = T.masters[src] //VOREStation Add for people in the hologram to hear the messages
 
 		//var/obj/effect/overlay/hologram = T.masters[src] //VOREStation edit. Done above.

@@ -170,9 +170,15 @@
 		to_chat(user, "<span class='warning'>The slime is already unified!</span>")
 		return ..()
 
+<<<<<<< HEAD
 	to_chat(user, "<span class='notice'>You feed the slime the agent. It will now be friendly to all other slimes.</span>")
 	to_chat(M, "<span class='notice'>\The [user] feeds you \the [src], and you suspect that all the other slimes will be \
 	your friends, at least if you don't attack them first.</span>")
+=======
+	to_chat(user, span_notice("You feed the slime the agent. It will now be friendly to all other slimes."))
+	to_chat(M, span_notice("\The [user] feeds you \the [src], and you suspect that all the other slimes will be \
+	your friends, at least if you don't attack them first."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	M.unify()
 	playsound(src, 'sound/effects/bubbles.ogg', 50, 1)
 	qdel(src)

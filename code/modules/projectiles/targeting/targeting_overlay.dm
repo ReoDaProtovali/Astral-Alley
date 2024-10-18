@@ -109,8 +109,13 @@
 
 	if(!locked && lock_time <= world.time)
 		locked = 1
+<<<<<<< HEAD
 		to_chat(owner, "<span class ='notice'>You are locked onto your target.</span>")
 		to_chat(aiming_at, "<span class='danger'>The gun is trained on you!</span>")
+=======
+		to_chat(owner, span_notice("You are locked onto your target."))
+		to_chat(aiming_at, span_danger("The gun is trained on you!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		update_icon()
 
 	var/cancel_aim = 1
@@ -217,7 +222,7 @@
 	if(istype(aiming_with, /obj/item/weapon/gun))
 		playsound(owner, 'sound/weapons/TargetOff.ogg', 50,1)
 	if(!no_message)
-		owner.visible_message("<b>\The [owner]</b> lowers \the [aiming_with].")
+		owner.visible_message(span_infoplain(span_bold("\The [owner]") + " lowers \the [aiming_with]."))
 
 	aiming_with = null
 	aiming_at.aimed -= src

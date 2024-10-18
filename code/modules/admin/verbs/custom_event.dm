@@ -19,10 +19,17 @@
 
 	custom_event_msg = input
 
+<<<<<<< HEAD
 	to_world("<h1 class='alert'>Custom Event</h1>")
 	to_world("<h2 class='alert'>A custom event is starting. OOC Info:</h2>")
 	to_world("<span class='alert'>[custom_event_msg]</span>")
 	to_world("<br>")
+=======
+	to_world(span_filter_system("<h1>[span_alert("Custom Event")]</h1>"))
+	to_world(span_filter_system("<h2>[span_alert("A custom event is starting. OOC Info:")]</h2>"))
+	to_world(span_filter_system(span_alert("[custom_event_msg]")))
+	to_world(span_filter_system("<br>"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	SSwebhooks.send(
 		WEBHOOK_CUSTOM_EVENT,

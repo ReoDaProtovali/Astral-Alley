@@ -93,7 +93,11 @@
 		return
 
 	if(check_alien_ability(500,1,O_EGG))
+<<<<<<< HEAD
 		visible_message("<span class='alium'><B>[src] has laid an egg!</B></span>")
+=======
+		visible_message(span_alium(span_bold("[src] has laid an egg!")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		new /obj/structure/ghost_pod/automatic/xenomorph_egg(loc)
 
 	return
@@ -109,7 +113,11 @@
 		return
 
 	if(check_alien_ability(500))
+<<<<<<< HEAD
 		visible_message("<span class='alium'><B>[src] begins to twist and contort!</B></span>", "<span class='alium'>You begin to evolve!</span>")
+=======
+		visible_message(span_alium(span_bold("[src] begins to twist and contort!")), span_alium("You begin to evolve!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		src.set_species("Xenomorph Queen")
 
 	return
@@ -120,7 +128,11 @@
 	set category = "Abilities.Alien" //CHOMPEdit
 
 	if(check_alien_ability(50,1,O_RESIN))
+<<<<<<< HEAD
 		visible_message("<span class='alium'><B>[src] has planted some alien weeds!</B></span>")
+=======
+		visible_message(span_alium(span_bold("[src] has planted some alien weeds!")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		new /obj/effect/alien/weeds/node(get_turf(src), null, "#321D37")
 	return
 
@@ -179,7 +191,11 @@
 
 	if(check_alien_ability(200,0,O_ACID))
 		new /obj/effect/alien/acid(get_turf(O), O)
+<<<<<<< HEAD
 		visible_message("<span class='alium'><B>[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!</B></span>")
+=======
+		visible_message(span_alium(span_bold("[src] vomits globs of vile stuff all over [O]. It begins to sizzle and melt under the bubbling mess of acid!")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	return
 
@@ -269,7 +285,11 @@
 			else O = new /obj/item/stack/material/resin(targetLoc)
 
 	if(O)
+<<<<<<< HEAD
 		visible_message("<span class='warning'><B>[src] vomits up a thick purple substance and begins to shape it!</B></span>", "<span class='alium'>You shape a [choice].</span>")
+=======
+		visible_message(span_boldwarning("[src] vomits up a thick purple substance and begins to shape it!"), span_alium("You shape a [choice]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 //		O.color = "#321D37" // CHOMPedit: Removing colouration, adding predefined colour icons.
 		playsound(src, 'sound/effects/blobattack.ogg', 40, 1)
 
@@ -331,7 +351,11 @@
 		else
 			use_hand = "right"
 
+<<<<<<< HEAD
 	src.visible_message("<span class='warning'><b>\The [src]</b> seizes [T] aggressively!</span>")
+=======
+	src.visible_message(span_boldwarning("\The [src]") + " seizes [T] aggressively!")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	var/obj/item/weapon/grab/G = new(src,T)
 	if(use_hand == "left")
@@ -366,7 +390,11 @@
 
 	last_special = world.time + 50
 
+<<<<<<< HEAD
 	visible_message("<span class='warning'><b>\The [src]</b> rips viciously at \the [G.affecting]'s body with its claws!</span>")
+=======
+	visible_message(span_warning(span_bold("\The [src]") + " rips viciously at \the [G.affecting]'s body with its claws!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	if(istype(G.affecting,/mob/living/carbon/human))
 		var/mob/living/carbon/human/H = G.affecting

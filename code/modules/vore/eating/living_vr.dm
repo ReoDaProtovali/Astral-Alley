@@ -532,10 +532,17 @@
 
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(tasted == src) //CHOMPEdit Start
+<<<<<<< HEAD
 		visible_message("<span class='vwarning'>[src] licks themself!</span>","<span class='notice'>You lick yourself. You taste rather like [tasted.get_taste_message()].</span>")
 		balloon_alert_visible("Licks themself!", "Tastes like [tasted.get_taste_message()]")
 	else
 		visible_message("<span class='vwarning'>[src] licks [tasted]!</span>","<span class='notice'>You lick [tasted]. They taste rather like [tasted.get_taste_message()].</span>")
+=======
+		visible_message(span_vwarning("[src] licks themself!"),span_notice("You lick yourself. You taste rather like [tasted.get_taste_message()]."),span_infoplain(span_bold("Slurp!")))
+		balloon_alert_visible("Licks themself!", "Tastes like [tasted.get_taste_message()]")
+	else
+		visible_message(span_vwarning("[src] licks [tasted]!"),span_notice("You lick [tasted]. They taste rather like [tasted.get_taste_message()]."),span_infoplain(span_bold("Slurp!")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		balloon_alert_visible("Licks [tasted]!", "Tastes like [tasted.get_taste_message()]")
 		//CHOMPEdit End
 
@@ -577,10 +584,17 @@
 
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
 	if(smelled == src) //CHOMPEdit Start
+<<<<<<< HEAD
 		visible_message("<span class='vwarning'>[src] smells themself!</span>","<span class='notice'>You smell yourself. You smell like [smelled.get_smell_message()].</span>","<b>Sniff!</b>")
 		balloon_alert_visible("Smells themself!", "Smells like [smelled.get_smell_message()]")
 	else
 		visible_message("<span class='vwarning'>[src] smells [smelled]!</span>","<span class='notice'>You smell [smelled]. They smell like [smelled.get_smell_message()].</span>","<b>Sniff!</b>")
+=======
+		visible_message(span_vwarning("[src] smells themself!"),span_notice("You smell yourself. You smell like [smelled.get_smell_message()]."),span_infoplain(span_bold("Sniff!")))
+		balloon_alert_visible("Smells themself!", "Smells like [smelled.get_smell_message()]")
+	else
+		visible_message(span_vwarning("[src] smells [smelled]!"),span_notice("You smell [smelled]. They smell like [smelled.get_smell_message()]."),span_infoplain(span_bold("Sniff!")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		balloon_alert_visible("Smells [smelled]!", "Smells like [smelled.get_smell_message()]")
 		//CHOMPEdit End
 
@@ -934,7 +948,11 @@
 	//If they're passed out, the light won't help them. Same with buckled. Really, I think it's fine to do this whenever.
 	glow_toggle = !glow_toggle
 
+<<<<<<< HEAD
 	to_chat(src,"<span class='notice'>You <b>[glow_toggle ? "en" : "dis"]</b>able your body's glow.</span>")
+=======
+	to_chat(src,span_notice("You " + span_bold("[glow_toggle ? "en" : "dis"]") + "able your body's glow."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /mob/living/proc/glow_color()
 	set name = "Glow (Set Color)"
@@ -1077,9 +1095,15 @@
 			var/obj/item/device/paicard/ourcard = I
 			if(ourcard.pai && ourcard.pai.client && isbelly(ourcard.loc))
 				var/obj/belly/B = ourcard.loc
+<<<<<<< HEAD
 				to_chat(ourcard.pai, "<span class= 'notice'><B>[B.desc]</B></span>")
 		else if(istype(I,/obj/item/weapon/reagent_containers/food))
 			var/obj/item/weapon/reagent_containers/food/F = I
+=======
+				to_chat(ourcard.pai, span_boldnotice("[B.desc]"))
+		else if(istype(I,/obj/item/reagent_containers/food))
+			var/obj/item/reagent_containers/food/F = I
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			if(!F.reagents.total_volume)
 				to_chat(src, "<span class='notice'>You can taste the flavor of garbage and leftovers. Delicious?</span>")
 			else
@@ -1091,8 +1115,13 @@
 			if(C.bound_mob && (C.bound_mob in C.contents))
 				if(isbelly(C.loc))
 					//var/obj/belly/B = C.loc //CHOMPedit
+<<<<<<< HEAD
 					//to_chat(C.bound_mob, "<span class= 'notice'>Outside of your crystal, you can see; <B>[B.desc]</B></span>") //CHOMPedit: moved to modular_chomp capture_crystal.dm
 					to_chat(src, "<span class='notice'>You can taste the the power of command.</span>")
+=======
+					//to_chat(C.bound_mob, span_notice("Outside of your crystal, you can see; " + span_notice("[B.desc]"))) //CHOMPedit: moved to modular_chomp capture_crystal.dm
+					to_chat(src, span_notice("You can taste the the power of command."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		// CHOMPedit begin
 		else if(istype(I,/obj/item/device/starcaster_news))
 			to_chat(src, "<span class='notice'>You can taste the dry flavor of digital garbage, oh wait its just the news.</span>")
@@ -1290,7 +1319,7 @@
 /mob/living/examine(mob/user, infix, suffix)
 	. = ..()
 	if(custom_link)
-		. += "Custom link: <span class='linkify'>[custom_link]</span>"
+		. += "Custom link: " + span_linkify("[custom_link]")
 	if(ooc_notes)
 		. += "OOC Notes: <a href='?src=\ref[src];ooc_notes=1'>\[View\]</a> - <a href='?src=\ref[src];print_ooc_notes_to_chat=1'>\[Print\]</a>"
 	. += "<a href='?src=\ref[src];vore_prefs=1'>\[Mechanical Vore Preferences\]</a>"
@@ -1330,12 +1359,20 @@
 /mob/living/proc/display_voreprefs(mob/user)	//Called by Topic() calls on instances of /mob/living (and subtypes) containing vore_prefs as an argument
 	if(!user)
 		CRASH("display_voreprefs() was called without an associated user.")
+<<<<<<< HEAD
 	var/dispvoreprefs = "<b>[src]'s vore preferences</b><br><br><br>"
 	if(client && client.prefs)
 		if("CHAT_OOC" in client.prefs.preferences_disabled)
 			dispvoreprefs += "<font color='red'><b>OOC DISABLED</b></font><br>"
 		if("CHAT_LOOC" in client.prefs.preferences_disabled)
 			dispvoreprefs += "<font color='red'><b>LOOC DISABLED</b></font><br>"
+=======
+	var/dat = "<br>" + span_bold("[src]'s vore preferences") + "<br><br>"
+	if(!client?.prefs?.read_preference(/datum/preference/toggle/show_ooc))
+		dat += span_red(span_bold("OOC DISABLED")) + "<br>"
+	if(!client?.prefs?.read_preference(/datum/preference/toggle/show_looc))
+		dat += span_red(span_bold("LOOC DISABLED")) + "<br>"
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	//CHOMPEdit Start
 	dispvoreprefs += "<b>Devourable:</b> [devourable ? "<font color='green'>Enabled</font>" : "<font color='red'>Disabled</font>"]<br>"
 	if(devourable)
@@ -1419,6 +1456,7 @@
 		for(var/belly in vore_organs)
 			if(isbelly(belly))
 				var/obj/belly/B = belly
+<<<<<<< HEAD
 				to_chat(src, "<span class='chatexport'><b>Belly name:</b> [B.name]</span>")
 				to_chat(src, "<span class='chatexport'><b>Belly desc:</b> [B.desc]</span>")
 				to_chat(src, "<span class='chatexport'><b>Belly absorbed desc:</b> [B.absorbed_desc]</span>")
@@ -1537,6 +1575,126 @@
 				to_chat(src, "<span class='chatexport'><b>Emote lists:</b></span>")
 				for(var/EL in B.emote_lists)
 					to_chat(src, "<span class='chatexport'><b>[EL]:</b></span>")
+=======
+				to_chat(src, span_chatexport(span_bold("Belly name:") + " [B.name]"))
+				to_chat(src, span_chatexport(span_bold("Belly desc:") + " [B.desc]"))
+				to_chat(src, span_chatexport(span_bold("Belly absorbed desc:") + " [B.absorbed_desc]"))
+				to_chat(src, span_chatexport(span_bold("Vore verb:") + " [B.vore_verb]"))
+				to_chat(src, span_chatexport(span_bold("Struggle messages (outside):")))
+				for(var/msg in B.struggle_messages_outside)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Struggle messages (inside):")))
+				for(var/msg in B.struggle_messages_inside)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorbed struggle messages (outside):")))
+				for(var/msg in B.absorbed_struggle_messages_outside)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorbed struggle messages (inside):")))
+				for(var/msg in B.absorbed_struggle_messages_inside)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape attempt messages (owner):")))
+				for(var/msg in B.escape_attempt_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape attempt messages (prey):")))
+				for(var/msg in B.escape_attempt_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape messages (owner):")))
+				for(var/msg in B.escape_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape messages (prey):")))
+				for(var/msg in B.escape_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape messages (outside):")))
+				for(var/msg in B.escape_messages_outside)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape item messages (owner):")))
+				for(var/msg in B.escape_item_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape item messages (prey):")))
+				for(var/msg in B.escape_item_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape item messages (outside):")))
+				for(var/msg in B.escape_item_messages_outside)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape fail messages (owner):")))
+				for(var/msg in B.escape_fail_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Escape fail messages (prey):")))
+				for(var/msg in B.escape_fail_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorbed escape attempt messages (owner):")))
+				for(var/msg in B.escape_attempt_absorbed_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorbed escape attempt messages (prey):")))
+				for(var/msg in B.escape_attempt_absorbed_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorbed escape messages (owner):")))
+				for(var/msg in B.escape_absorbed_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorbed escape messages (prey):")))
+				for(var/msg in B.escape_absorbed_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorbed escape messages (outside):")))
+				for(var/msg in B.escape_absorbed_messages_outside)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorbed escape fail messages (owner):")))
+				for(var/msg in B.escape_fail_absorbed_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorbed escape fail messages (prey):")))
+				for(var/msg in B.escape_fail_absorbed_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Primary transfer messages (owner):")))
+				for(var/msg in B.primary_transfer_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Primary transfer messages (prey):")))
+				for(var/msg in B.primary_transfer_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Secondary transfer messages (owner):")))
+				for(var/msg in B.secondary_transfer_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Secondary transfer messages (prey):")))
+				for(var/msg in B.secondary_transfer_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Digest chance messages (owner):")))
+				for(var/msg in B.digest_chance_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Digest chance messages  (prey):")))
+				for(var/msg in B.digest_chance_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorb chance messages (owner):")))
+				for(var/msg in B.absorb_chance_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorb chance messages  (prey):")))
+				for(var/msg in B.absorb_chance_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Digest messages (owner):")))
+				for(var/msg in B.digest_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Digest messages (prey):")))
+				for(var/msg in B.digest_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorb messages (owner):")))
+				for(var/msg in B.absorb_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Absorb messages (prey):")))
+				for(var/msg in B.absorb_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Unabsorb messages (owner):")))
+				for(var/msg in B.unabsorb_messages_owner)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Unabsorb messages (prey):")))
+				for(var/msg in B.unabsorb_messages_prey)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Examine messages (when full):")))
+				for(var/msg in B.examine_messages)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Examine messages (with absorbed victims):")))
+				for(var/msg in B.examine_messages_absorbed)
+					to_chat(src, span_chatexport("[msg]"))
+				to_chat(src, span_chatexport(span_bold("Emote lists:")))
+				for(var/EL in B.emote_lists)
+					to_chat(src, span_chatexport(span_bold("[EL]:")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 					for(var/msg in B.emote_lists[EL])
 						to_chat(src, "<span class='chatexport'>[msg]</span>")
 

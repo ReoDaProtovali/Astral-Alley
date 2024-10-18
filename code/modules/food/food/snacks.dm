@@ -370,7 +370,11 @@
 				user.balloon_alert_visible("Crudely slices \the [src]", "Crudely sliced \the [src]") // CHOMPEdit
 				slices_lost = rand(1,min(1,round(slices_num/2)))
 			else
+<<<<<<< HEAD
 				user.visible_message("\The [user] slices \the [src]!", "You slice \the [src]!")
+=======
+				user.visible_message(span_notice(span_bold("\The [user]") + " slices \the [src]!"), span_notice("You slice \the [src]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				user.balloon_alert_visible("Slices \the [src]", "Sliced \the [src]!") // CHOMPEdit
 	// CHOMPEdit End - A long list of to_chat to balloon_alert
 			var/reagents_per_slice = reagents.total_volume/slices_num
@@ -443,7 +447,7 @@
 /obj/item/weapon/reagent_containers/food/snacks/attack_generic(var/mob/living/user)
 	if(!isanimal(user) && !isalien(user))
 		return
-	user.visible_message("[user] nibbles away at \the [src].","You nibble away at \the [src].")
+	user.visible_message(span_infoplain(span_bold("[user]") + " nibbles away at \the [src]."),span_info("You nibble away at \the [src]."))
 	user.balloon_alert_visible("Nibbles away at \the [src].","Nibbled away at \the [src].") // CHOMPEdit
 	bitecount++
 	if(reagents)
@@ -1984,8 +1988,13 @@
 	if(wrapped)
 		Unwrap(user)
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/monkeycube/proc/Expand()
 	src.visible_message("<b>\The [src]</b> expands!")
+=======
+/obj/item/reagent_containers/food/snacks/monkeycube/proc/Expand()
+	src.visible_message(span_infoplain(span_bold("\The [src]") + " expands!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	var/mob/living/carbon/human/H = new(get_turf(src))
 	H.set_species(monkey_type)
 	H.real_name = H.species.get_random_name()

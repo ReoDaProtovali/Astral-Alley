@@ -467,8 +467,13 @@
 /obj/item/weapon/reagent_containers/food/snacks/cube/Initialize()
 	. = ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/cube/proc/Expand()
 	src.visible_message("<b>\The [src]</b> expands!")
+=======
+/obj/item/reagent_containers/food/snacks/cube/proc/Expand()
+	src.visible_message(span_infoplain(span_bold("\The [src]") + " expands!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	new food_type(get_turf(src))
 	qdel(src)
 

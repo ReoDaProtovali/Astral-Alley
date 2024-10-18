@@ -397,7 +397,11 @@
 	user.visible_message("<span class='warning'>\The [user] begins to place [src] on [H]'s chest.</span>", "<span class='warning'>You begin to place [src] on [H]'s chest...</span>")
 	if(!do_after(user, 30, H))
 		return
+<<<<<<< HEAD
 	user.visible_message("<b>\The [user]</b> places [src] on [H]'s chest.", "<span class='warning'>You place [src] on [H]'s chest.</span>")
+=======
+	user.visible_message(span_infoplain(span_bold("\The [user]") + " places [src] on [H]'s chest."), span_warning("You place [src] on [H]'s chest."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	playsound(src, 'sound/machines/defib_charge.ogg', 50, 0)
 
 	var/error = can_defib(H)
@@ -474,7 +478,11 @@
 		playsound(src, 'sound/machines/defib_failed.ogg', 50, 0)
 		return
 
+<<<<<<< HEAD
 	user.visible_message("<span class='danger'><i>\The [user] shocks [H] with \the [src]!</i></span>", "<span class='warning'>You shock [H] with \the [src]!</span>")
+=======
+	user.visible_message(span_danger(span_italics("\The [user] shocks [H] with \the [src]!")), span_warning("You shock [H] with \the [src]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	playsound(src, 'sound/machines/defib_zap.ogg', 100, 1, -1)
 	playsound(src, 'sound/weapons/Egloves.ogg', 100, 1, -1)
 	set_cooldown(cooldowntime)
@@ -535,8 +543,13 @@
 
 	H.setBrainLoss(brain_damage)
 
+<<<<<<< HEAD
 /obj/item/weapon/shockpaddles/proc/make_announcement(var/message, var/msg_class)
 	audible_message("<b>\The [src]</b> [message]", "\The [src] vibrates slightly.", runemessage = "buzz")
+=======
+/obj/item/shockpaddles/proc/make_announcement(var/message, var/msg_class)
+	audible_message(span_bold(span_info("\The [src]") + " [message]"), span_info("\The [src] vibrates slightly."), runemessage = "buzz")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /obj/item/weapon/shockpaddles/emag_act(mob/user)
 	if(safety)
@@ -619,8 +632,13 @@
 /obj/item/weapon/shockpaddles/linked/checked_use(var/charge_amt)
 	return (base_unit.bcell && base_unit.bcell.checked_use(charge_amt))
 
+<<<<<<< HEAD
 /obj/item/weapon/shockpaddles/linked/make_announcement(var/message, var/msg_class)
 	base_unit.audible_message("<b>\The [base_unit]</b> [message]", "\The [base_unit] vibrates slightly.")
+=======
+/obj/item/shockpaddles/linked/make_announcement(var/message, var/msg_class)
+	base_unit.audible_message(span_infoplain(span_bold("\The [base_unit]") + " [message]"), span_info("\The [base_unit] vibrates slightly."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /*
 	Standalone Shockpaddles

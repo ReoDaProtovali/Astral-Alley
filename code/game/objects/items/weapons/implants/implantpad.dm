@@ -49,7 +49,7 @@
 
 /obj/item/weapon/implantpad/attack_self(mob/user as mob)
 	user.set_machine(src)
-	var/dat = "<B>Implant Mini-Computer:</B><HR>"
+	var/dat = span_bold("Implant Mini-Computer:") + "<HR>"
 	if (src.case)
 		if(src.case.imp)
 			if(istype(src.case.imp, /obj/item/weapon/implant))

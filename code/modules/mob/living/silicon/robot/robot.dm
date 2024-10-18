@@ -472,7 +472,7 @@
 	var/dat = "<HEAD><TITLE>[src.name] Self-Diagnosis Report</TITLE></HEAD><BODY>\n"
 	for (var/V in components)
 		var/datum/robot_component/C = components[V]
-		dat += "<b>[C.name]</b><br><table><tr><td>Brute Damage:</td><td>[C.brute_damage]</td></tr><tr><td>Electronics Damage:</td><td>[C.electronics_damage]</td></tr><tr><td>Powered:</td><td>[(!C.idle_usage || C.is_powered()) ? "Yes" : "No"]</td></tr><tr><td>Toggled:</td><td>[ C.toggled ? "Yes" : "No"]</td></table><br>"
+		dat += span_bold("[C.name]") + "<br><table><tr><td>Brute Damage:</td><td>[C.brute_damage]</td></tr><tr><td>Electronics Damage:</td><td>[C.electronics_damage]</td></tr><tr><td>Powered:</td><td>[(!C.idle_usage || C.is_powered()) ? "Yes" : "No"]</td></tr><tr><td>Toggled:</td><td>[ C.toggled ? "Yes" : "No"]</td></table><br>"
 
 	return dat
 
@@ -1121,7 +1121,7 @@
 
 	for (var/obj in module.modules)
 		if (!obj)
-			dat += text("<B>Resource depleted</B><BR>")
+			dat += span_bold("Resource depleted") + "<BR>"
 		else if(activated(obj))
 			dat += text("[obj]: <B>Activated</B><BR>")
 		else
@@ -1129,7 +1129,7 @@
 	if (emagged || emag_items)
 		for (var/obj in module.emag)
 			if (!obj)
-				dat += text("<B>Resource depleted</B><BR>")
+				dat += span_bold("Resource depleted") + "<BR>"
 			else if(activated(obj))
 				dat += text("[obj]: <B>Activated</B><BR>")
 			else
@@ -1422,6 +1422,7 @@
 		return // No point annoying the AI/s about renames and module resets for shells.
 	switch(notifytype)
 		if(ROBOT_NOTIFICATION_NEW_UNIT) //New Robot
+<<<<<<< HEAD
 			to_chat(connected_ai, "<span class='filter_notice'><br><br><span class='notice'>NOTICE - New [lowertext(braintype)] connection detected: <a href='byond://?src=\ref[connected_ai];track2=\ref[connected_ai];track=\ref[src]'>[name]</a></span><br></span>")
 		if(ROBOT_NOTIFICATION_NEW_MODULE) //New Module
 			to_chat(connected_ai, "<span class='filter_notice'><br><br><span class='notice'>NOTICE - [braintype] module change detected: [name] has loaded the [first_arg].</span><br></span>")
@@ -1432,6 +1433,18 @@
 				to_chat(connected_ai, "<span class='filter_notice'><br><br><span class='notice'>NOTICE - [braintype] reclassification detected: [first_arg] is now designated as [second_arg].</span><br></span>")
 		if(ROBOT_NOTIFICATION_AI_SHELL) //New Shell
 			to_chat(connected_ai, "<span class='filter_notice'><br><br><span class='notice'>NOTICE - New AI shell detected: <a href='?src=[REF(connected_ai)];track2=[html_encode(name)]'>[name]</a></span><br></span>")
+=======
+			to_chat(connected_ai, span_filter_notice("<br><br>" + span_notice("NOTICE - New [lowertext(braintype)] connection detected: <a href='byond://?src=\ref[connected_ai];track2=\ref[connected_ai];track=\ref[src]'>[name]</a>") + "<br>"))
+		if(ROBOT_NOTIFICATION_NEW_MODULE) //New Module
+			to_chat(connected_ai, span_filter_notice("<br><br>" + span_notice("NOTICE - [braintype] module change detected: [name] has loaded the [first_arg].") + "<br>"))
+		if(ROBOT_NOTIFICATION_MODULE_RESET)
+			to_chat(connected_ai, span_filter_notice("<br><br>" + span_notice("NOTICE - [braintype] module reset detected: [name] has unloaded the [first_arg].") + "<br>"))
+		if(ROBOT_NOTIFICATION_NEW_NAME) //New Name
+			if(first_arg != second_arg)
+				to_chat(connected_ai, span_filter_notice("<br><br>" + span_notice("NOTICE - [braintype] reclassification detected: [first_arg] is now designated as [second_arg].") + "<br>"))
+		if(ROBOT_NOTIFICATION_AI_SHELL) //New Shell
+			to_chat(connected_ai, span_filter_notice("<br><br>" + span_notice("NOTICE - New AI shell detected: <a href='?src=[REF(connected_ai)];track2=[html_encode(name)]'>[name]</a>") + "<br>"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /mob/living/silicon/robot/proc/disconnect_from_ai()
 	if(connected_ai)
@@ -1472,7 +1485,7 @@
 				log_game("[key_name(user)] assigned as operator on cyborg [key_name(src)]. Syndicate Operator change.")
 				var/datum/gender/TU = gender_datums[user.get_visible_gender()]
 				set_zeroth_law("Only [user.real_name] and people [TU.he] designate[TU.s] as being such are operatives.")
-				to_chat(src, "<b>Obey these laws:</b>")
+				to_chat(src, span_infoplain(span_bold("Obey these laws:")))
 				laws.show_laws(src)
 				to_chat(src, "<span class='danger'>ALERT: [user.real_name] is your new master. Obey your new laws and [TU.his] commands.</span>")
 			else
@@ -1523,8 +1536,13 @@
 				sleep(10)
 				to_chat(src, "<span class='danger'>> N</span>")
 				sleep(20)
+<<<<<<< HEAD
 				to_chat(src, "<span class='danger'>ERRORERRORERROR</span>")
 				to_chat(src, "<b>Obey these laws:</b>")
+=======
+				to_chat(src, span_danger("ERRORERRORERROR"))
+				to_chat(src, span_infoplain(span_bold("Obey these laws:")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				laws.show_laws(src)
 				to_chat(src, "<span class='danger'>ALERT: [user.real_name] is your new master. Obey your new laws and [TU.his] commands.</span>")
 				update_icon()

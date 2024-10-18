@@ -39,11 +39,16 @@
 
 /obj/structure/ghost_pod/manual/cursedblade/create_occupant(var/mob/M)
 	density = FALSE
+<<<<<<< HEAD
 	var/obj/item/weapon/melee/cursedblade/R = new(get_turf(src))
 	to_chat(M, "<span class='notice'>You are a <b>Cursed Sword</b>, discovered by a hapless explorer. \
+=======
+	var/obj/item/melee/cursedblade/R = new(get_turf(src))
+	to_chat(M, span_notice("You are a " + span_bold("Cursed Sword") + ", discovered by a hapless explorer. \
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	You were once an explorer yourself, when one day you discovered a strange sword made from a red crystal. As soon as you touched it,\
 	your body was reduced to ashes and your soul was cursed to remain trapped in the blade forever. \
-	Now it is up to you to decide whether you want to be a faithful companion, or a bitter prisoner of the blade.</span>")
+	Now it is up to you to decide whether you want to be a faithful companion, or a bitter prisoner of the blade."))
 	R.ghost_inhabit(M)
 	visible_message("<span class='warning'>The blade shines brightly for a brief moment as [usr] pulls it out of the stone!</span>")
 	log_and_message_admins("successfully acquired a cursed sword.")

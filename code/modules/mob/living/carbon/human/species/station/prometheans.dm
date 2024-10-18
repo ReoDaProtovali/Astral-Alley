@@ -181,8 +181,13 @@ var/datum/species/shapeshifter/promethean/prometheans
 			if(FEMALE)
 				t_him = "her"
 
+<<<<<<< HEAD
 	H.visible_message("<b>\The [H]</b> glomps [target] to make [t_him] feel better!", \
 					"<span class='notice'>You glomp [target] to make [t_him] feel better!</span>")
+=======
+	H.visible_message(span_infoplain(span_bold("\The [H]") + " glomps [target] to make [t_him] feel better!"), \
+					span_notice("You glomp [target] to make [t_him] feel better!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	H.apply_stored_shock_to(target)
 
 /datum/species/shapeshifter/promethean/handle_death(var/mob/living/carbon/human/H)

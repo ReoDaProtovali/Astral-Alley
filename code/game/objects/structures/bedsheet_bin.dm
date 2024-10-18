@@ -33,7 +33,11 @@ LINEN BINS
 
 /obj/item/weapon/bedsheet/attackby(obj/item/I, mob/user)
 	if(is_sharp(I))
+<<<<<<< HEAD
 		user.visible_message("<b>\The [user]</b> begins cutting up [src] with [I].", "<span class='notice'>You begin cutting up [src] with [I].</span>")
+=======
+		user.visible_message(span_infoplain(span_bold("\The [user]") + " begins cutting up [src] with [I]."), span_notice("You begin cutting up [src] with [I]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		if(do_after(user, 50))
 			to_chat(user, "<span class='notice'>You cut [src] into pieces!</span>")
 			for(var/i in 1 to rand(2,5))

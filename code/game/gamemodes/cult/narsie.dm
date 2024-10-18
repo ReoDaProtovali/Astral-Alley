@@ -43,7 +43,7 @@ var/global/list/narsie_list = list()
 /obj/singularity/narsie/large/New()
 	..()
 	if(announce)
-		to_world("<font size='15' color='red'><b>[uppertext(name)] HAS RISEN</b></font>")
+		to_world(span_world(span_narsie(span_red("[uppertext(name)] HAS RISEN"))))
 		world << sound('sound/effects/weather/old_wind/wind_5_1.ogg')
 
 	narsie_spawn_animation()
@@ -79,7 +79,11 @@ var/global/list/narsie_list = list()
 			if(M.status_flags & GODMODE)
 				continue
 			if(!iscultist(M))
+<<<<<<< HEAD
 				to_chat(M, "<span class='danger'> You feel your sanity crumble away in an instant as you gaze upon [src.name]...</span>")
+=======
+				to_chat(M, span_danger("You feel your sanity crumble away in an instant as you gaze upon [src.name]..."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				M.apply_effect(3, STUN)
 
 
@@ -313,7 +317,11 @@ var/global/list/narsie_list = list()
 /obj/singularity/narsie/proc/acquire(const/mob/food)
 	var/capname = uppertext(name)
 
+<<<<<<< HEAD
 	to_chat(target, "<span class='notice'><b>[capname] HAS LOST INTEREST IN YOU.</b></span>")
+=======
+	to_chat(target, span_boldnotice("[capname] HAS LOST INTEREST IN YOU."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	target = food
 
 	if (ishuman(target))

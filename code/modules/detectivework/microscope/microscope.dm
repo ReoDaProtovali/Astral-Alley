@@ -46,7 +46,7 @@
 		var/obj/item/weapon/forensics/swab/swab = sample
 
 		report.name = "GSR report #[++report_num]: [swab.name]"
-		report.info = "<b>Scanned item:</b><br>[swab.name]<br><br>"
+		report.info = span_bold("Scanned item:") + "<br>[swab.name]<br><br>"
 
 		if(swab.gsr)
 			report.info += "Residue from a [swab.gsr] bullet detected."
@@ -56,17 +56,22 @@
 	else if(istype(sample, /obj/item/weapon/sample/fibers))
 		var/obj/item/weapon/sample/fibers/fibers = sample
 		report.name = "Fiber report #[++report_num]: [fibers.name]"
-		report.info = "<b>Scanned item:</b><br>[fibers.name]<br><br>"
+		report.info = span_bold("Scanned item:") + "<br>[fibers.name]<br><br>"
 		if(fibers.evidence)
 			report.info = "Molecular analysis on provided sample has determined the presence of unique fiber strings.<br><br>"
 			for(var/fiber in fibers.evidence)
-				report.info += "<span class='notice'>Most likely match for fibers: [fiber]</span><br><br>"
+				report.info += span_notice("Most likely match for fibers: [fiber]") + "<br><br>"
 		else
 			report.info += "No fibers found."
 	else if(istype(sample, /obj/item/weapon/sample/print))
 		report.name = "Fingerprint report #[report_num]: [sample.name]"
+<<<<<<< HEAD
 		report.info = "<b>Fingerprint analysis report #[report_num]</b>: [sample.name]<br>"
 		var/obj/item/weapon/sample/print/card = sample
+=======
+		report.info = span_bold("Fingerprint analysis report #[report_num]") + ": [sample.name]<br>"
+		var/obj/item/sample/print/card = sample
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		if(card.evidence && card.evidence.len)
 			report.info += "Surface analysis has determined unique fingerprint strings:<br><br>"
 			for(var/prints in card.evidence)

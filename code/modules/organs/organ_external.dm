@@ -172,6 +172,7 @@
 /obj/item/organ/external/attackby(obj/item/weapon/W as obj, mob/living/user as mob)
 	switch(stage)
 		if(0)
+<<<<<<< HEAD
 			if(istype(W,/obj/item/weapon/surgical/scalpel))
 				user.visible_message("<span class='danger'><b>[user]</b> cuts [src] open with [W]!</span>")
 				stage++
@@ -179,6 +180,15 @@
 		if(1)
 			if(istype(W,/obj/item/weapon/surgical/retractor))
 				user.visible_message("<span class='danger'><b>[user]</b> cracks [src] open like an egg with [W]!</span>")
+=======
+			if(istype(W,/obj/item/surgical/scalpel))
+				user.visible_message(span_danger(span_bold("[user]") + " cuts [src] open with [W]!"))
+				stage++
+				return
+		if(1)
+			if(istype(W,/obj/item/surgical/retractor))
+				user.visible_message(span_danger(span_bold("[user]") + " cracks [src] open like an egg with [W]!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				stage++
 				return
 		if(2)
@@ -187,9 +197,15 @@
 					var/obj/item/removing = pick(contents)
 					removing.loc = get_turf(user.loc)
 					user.put_in_hands(removing)
+<<<<<<< HEAD
 					user.visible_message("<span class='danger'><b>[user]</b> extracts [removing] from [src] with [W]!</span>")
 				else
 					user.visible_message("<span class='danger'><b>[user]</b> fishes around fruitlessly in [src] with [W].</span>")
+=======
+					user.visible_message(span_danger(span_bold("[user]") + " extracts [removing] from [src] with [W]!"))
+				else
+					user.visible_message(span_danger(span_bold("[user]") + " fishes around fruitlessly in [src] with [W]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				return
 	..()
 
@@ -477,9 +493,9 @@
 		var/fix_verb = (damage_amount > repair_amount) ? "patches" : "finishes patching"
 		if(user == src.owner)
 			var/datum/gender/T = gender_datums[user.get_visible_gender()]
-			user.visible_message("<b>\The [user]</b> [fix_verb] [damage_desc] on [T.his] [src.name] with [tool].")
+			user.visible_message(span_infoplain(span_bold("\The [user]") + " [fix_verb] [damage_desc] on [T.his] [src.name] with [tool]."))
 		else
-			user.visible_message("<b>\The [user]</b> [fix_verb] [damage_desc] on [owner]'s [src.name] with [tool].")
+			user.visible_message(span_infoplain(span_bold("\The [user]") + " [fix_verb] [damage_desc] on [owner]'s [src.name] with [tool]."))
 
 	return 1
 

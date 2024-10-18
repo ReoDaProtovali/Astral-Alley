@@ -212,10 +212,17 @@
 /obj/item/device/radio/intercom/AIAltClick(var/mob/user)
 	if(frequency == AI_FREQ)
 		set_frequency(initial(frequency))
+<<<<<<< HEAD
 		to_chat(user, "<span class='notice'>\The [src]'s frequency is now set to [span_green("<b>Default</b>")].</span>")
 	else
 		set_frequency(AI_FREQ)
 		to_chat(user, "<span class='notice'>\The [src]'s frequency is now set to [span_pink("<b>AI Private</b>")].</span>")
+=======
+		to_chat(user, span_notice("\The [src]'s frequency is now set to [span_green(span_bold("Default"))]."))
+	else
+		set_frequency(AI_FREQ)
+		to_chat(user, span_notice("\The [src]'s frequency is now set to [span_pink(span_bold("AI Private"))]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 //VOREStation Add End
 /obj/item/device/radio/intercom/locked
     var/locked_frequency

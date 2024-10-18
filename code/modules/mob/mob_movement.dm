@@ -480,7 +480,11 @@
 /* CHOMPedit: Nuking slipping.
 	//Check to see if we slipped
 	if(prob(Process_Spaceslipping(5)) && !buckled)
+<<<<<<< HEAD
 		to_chat(src, "<span class='notice'><B>You slipped!</B></span>")
+=======
+		to_chat(src, span_boldnotice("You slipped!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		inertia_dir = last_move
 		step(src, src.inertia_dir) // Not using Move for smooth glide here because this is a 'slip' so should be sudden.
 		return 0

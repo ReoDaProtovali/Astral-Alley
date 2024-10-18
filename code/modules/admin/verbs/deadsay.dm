@@ -26,6 +26,10 @@
 	if (!msg)
 		return
 
+<<<<<<< HEAD
 	say_dead_direct("<span class='name'>[stafftype]([src.holder.fakekey ? src.holder.fakekey : src.key])</span> says, <span class='message'>\"[msg]\"</span>")
+=======
+	say_dead_direct(span_name("[stafftype]([src.holder.fakekey ? src.holder.fakekey : src.key])") + " says, " + span_message("\"[msg]\""))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	feedback_add_details("admin_verb","D") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

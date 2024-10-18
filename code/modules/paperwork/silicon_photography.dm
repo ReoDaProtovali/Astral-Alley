@@ -81,11 +81,11 @@
 
 /obj/item/device/camera/siliconcam/proc/camera_mode_off()
 	src.in_camera_mode = 0
-	to_chat(usr, "<B>Camera Mode deactivated</B>")
+	to_chat(usr, span_infoplain(span_bold("Camera Mode deactivated")))
 
 /obj/item/device/camera/siliconcam/proc/camera_mode_on()
 	src.in_camera_mode = 1
-	to_chat(usr, "<B>Camera Mode activated</B>")
+	to_chat(usr, span_infoplain(span_bold("Camera Mode activated")))
 
 /obj/item/device/camera/siliconcam/ai_camera/printpicture(mob/user, obj/item/weapon/photo/p)
 	injectaialbum(p)

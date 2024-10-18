@@ -49,7 +49,11 @@
 
 	playsound(src, O.usesound, 100, 1)
 
+<<<<<<< HEAD
 	user.visible_message("<b>\The [user]</b> opens \the [src] and modifies \the [O].","<span class='notice'>You open \the [src] and modify \the [O].</span>")
+=======
+	user.visible_message(span_infoplain(span_bold("\The [user]") + " opens \the [src] and modifies \the [O]."),span_notice("You open \the [src] and modify \the [O]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	I.refit_for_species(target_species)
 

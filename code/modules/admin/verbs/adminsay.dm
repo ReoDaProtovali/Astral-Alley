@@ -13,7 +13,11 @@
 
 	for(var/client/C in GLOB.admins)
 		if(check_rights(R_ADMIN, 0, C))
+<<<<<<< HEAD
 			to_chat(C, "<span class='admin_channel'>" + create_text_tag("admin", "ADMIN:", C) + " <span class='name'>[key_name(usr, 1)]</span>([admin_jump_link(mob, src)]): <span class='message'>[msg]</span></span>")
+=======
+			to_chat(C, span_admin_channel(create_text_tag("admin", "ADMIN:", C) + " " + span_name("[key_name(usr, 1)]") + "([admin_jump_link(mob, src)]): " + span_name("[msg]") ))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	feedback_add_details("admin_verb","M") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -36,7 +40,11 @@
 		sender_name = "<span class='admin'>[sender_name]</span>"
 	for(var/client/C in GLOB.admins)
 		if(check_rights(R_ADMIN|R_MOD|R_SERVER)) //VOREStation Edit
+<<<<<<< HEAD
 			to_chat(C, "<span class='mod_channel'>" + create_text_tag("mod", "MOD:", C) + " <span class='name'>[sender_name]</span>([admin_jump_link(mob, C.holder)]): <span class='message'>[msg]</span></span>")
+=======
+			to_chat(C, span_mod_channel(create_text_tag("mod", "MOD:", C) + " " + span_name("[sender_name]") + "([admin_jump_link(mob, C.holder)]): " + span_name("[msg]") ))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	feedback_add_details("admin_verb","MS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -58,6 +66,10 @@
 	if(check_rights(R_ADMIN, 0))
 		sender_name = "<span class='admin'>[sender_name]</span>"
 	for(var/client/C in GLOB.admins)
+<<<<<<< HEAD
 		to_chat(C, "<span class='event_channel'>" + create_text_tag("event", "EVENT:", C) + " <span class='name'>[sender_name]</span>([admin_jump_link(mob, C.holder)]): <span class='message'>[msg]</span></span>")
+=======
+		to_chat(C, span_event_channel(create_text_tag("event", "EVENT:", C) + " " + span_name("[sender_name]") + "([admin_jump_link(mob, C.holder)]): " + span_name("[msg]") ))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	feedback_add_details("admin_verb","GS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

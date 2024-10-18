@@ -576,12 +576,17 @@
 	if(istype(thing, /mob/observer)) //Ports CHOMPStation PR#3072
 		if(desc) //Ports CHOMPStation PR#4772
 			//Allow ghosts see where they are if they're still getting squished along inside.
+<<<<<<< HEAD
 			var/formatted_desc
 			formatted_desc = replacetext(desc, "%belly", lowertext(name)) //replace with this belly's name
 			formatted_desc = replacetext(formatted_desc, "%pred", owner) //replace with this belly's owner
 			formatted_desc = replacetext(formatted_desc, "%prey", thing) //replace with whatever mob entered into this belly
 			to_chat(thing, "<span class='vnotice'><B>[formatted_desc]</B></span>")
 		return
+=======
+			to_chat(thing, span_vnotice(span_bold("[belly_format_string(desc, thing)]")))
+
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	if(OldLoc in contents)
 		return //Someone dropping something (or being stripdigested)
 	if(istype(OldLoc, /mob/observer) || istype(OldLoc, /obj/item/device/mmi)) // Prevent reforming causing a lot of log spam/sounds
@@ -630,11 +635,15 @@
 		//Was there a description text? If so, it's time to format it!
 		if(raw_desc)
 			//Replace placeholder vars
+<<<<<<< HEAD
 			var/formatted_desc
 			formatted_desc = replacetext(raw_desc, "%belly", lowertext(name)) //replace with this belly's name
 			formatted_desc = replacetext(formatted_desc, "%pred", owner) //replace with this belly's owner
 			formatted_desc = replacetext(formatted_desc, "%prey", M) //replace with whatever mob entered into this belly
 			to_chat(M, "<span class='vnotice'><B>[formatted_desc]</B></span>")
+=======
+			to_chat(M, span_vnotice(span_bold("[belly_format_string(raw_desc, M)]")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 		var/taste
 		if(can_taste && M.loc == src && (taste = M.get_taste_message(FALSE))) //CHOMPEdit - Prevent indirect tasting
@@ -1112,7 +1121,11 @@
 
 	//Print notifications/sound if necessary
 	if(!silent && count)
+<<<<<<< HEAD
 		owner.visible_message("<span class='vnotice'>[span_green("<b>[owner] [release_verb] everything from their [lowertext(name)]!</b>")]</span>", range = privacy_range)
+=======
+		owner.visible_message(span_vnotice(span_green(span_bold("[owner] [release_verb] everything from their [lowertext(name)]!"))), range = privacy_range)
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		var/soundfile
 		if(!fancy_vore)
 			soundfile = classic_release_sounds[release_sound]
@@ -1200,7 +1213,11 @@
 	if(istype(M, /mob/observer)) //CHOMPEdit
 		silent = TRUE
 	if(!silent)
+<<<<<<< HEAD
 		owner.visible_message("<span class='vnotice'>[span_green("<b>[owner] [release_verb] [M] from their [lowertext(name)]!</b>")]</span>",range = privacy_range)
+=======
+		owner.visible_message(span_vnotice(span_green(span_bold("[owner] [release_verb] [M] from their [lowertext(name)]!"))),range = privacy_range)
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		var/soundfile
 		if(!fancy_vore)
 			soundfile = classic_release_sounds[release_sound]
@@ -1778,11 +1795,15 @@
 
 	if(absorbed_desc)
 		//Replace placeholder vars
+<<<<<<< HEAD
 		var/formatted_abs_desc
 		formatted_abs_desc = replacetext(absorbed_desc, "%belly", lowertext(name)) //replace with this belly's name
 		formatted_abs_desc = replacetext(formatted_abs_desc, "%pred", owner) //replace with this belly's owner
 		formatted_abs_desc = replacetext(formatted_abs_desc, "%prey", M) //replace with whatever mob entered into this belly
 		to_chat(M, "<span class='vnotice'><B>[formatted_abs_desc]</B></span>")
+=======
+		to_chat(M, span_vnotice(span_bold("[belly_format_string(absorbed_desc, M)]")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	//Update owner
 	owner.updateVRPanel()
@@ -1830,7 +1851,11 @@
 	to_chat(owner, "<span class='vnotice'>[unabsorb_alert_owner]</span>")
 
 	if(desc)
+<<<<<<< HEAD
 		to_chat(M, "<span class='vnotice'><B>[desc]</B></span>")
+=======
+		to_chat(M, span_vnotice(span_bold("[belly_format_string(desc, M)]")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	//Update owner
 	owner.updateVRPanel()

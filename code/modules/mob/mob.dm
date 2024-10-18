@@ -87,7 +87,11 @@
 					return
 	// Added voice muffling for Issue 41.
 	if(stat == UNCONSCIOUS || sleeping > 0)
+<<<<<<< HEAD
 		to_chat(src, "<span class='filter_notice'><I>... You can almost hear someone talking ...</I></span>")
+=======
+		to_chat(src, span_filter_notice(span_italics("... You can almost hear someone talking ...")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	else
 		if(client && client.prefs.chat_timestamp)
 			// TG-Chat filters latch directly to the spans, we no longer need that
@@ -336,7 +340,7 @@
 		if(length(msg) <= 40)
 			return "<span class='notice'>[msg]</span>"
 		else
-			return "<span class='notice'>[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</span></a>"
+			return span_notice("[copytext_preserve_html(msg, 1, 37)]... <a href='byond://?src=\ref[src];flavor_more=1'>More...</a>")
 
 /*
 /mob/verb/help()
@@ -384,7 +388,11 @@
 	set category = "OOC.Game" //CHOMPEdit
 
 	if(stat != DEAD || !ticker)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'><B>You must be dead to use this!</B></span>")
+=======
+		to_chat(usr, span_boldnotice("You must be dead to use this!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		return
 
 	// Final chance to abort "respawning"
@@ -638,7 +646,11 @@
 		playsound(src.loc, 'sound/weapons/thudswoosh.ogg', 25) //Quieter than hugging/grabbing but we still want some audio feedback
 
 		if(H.pull_damage())
+<<<<<<< HEAD
 			to_chat(src, "<span class='filter_notice'>[span_red("<B>Pulling \the [H] in their current condition would probably be a bad idea.</B>")]</span>")
+=======
+			to_chat(src, span_filter_notice("[span_red(span_bold("Pulling \the [H] in their current condition would probably be a bad idea."))]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	//Attempted fix for people flying away through space when cuffed and dragged.
 	if(ismob(AM))
@@ -1023,9 +1035,15 @@
 		return
 
 	if(self)
+<<<<<<< HEAD
 		visible_message("<span class='warning'><b>[src] rips [selection] out of their body.</b></span>","<span class='warning'><b>You rip [selection] out of your body.</b></span>")
 	else
 		visible_message("<span class='warning'><b>[usr] rips [selection] out of [src]'s body.</b></span>","<span class='warning'><b>[usr] rips [selection] out of your body.</b></span>")
+=======
+		visible_message(span_boldwarning("[src] rips [selection] out of their body."),span_boldwarning("You rip [selection] out of your body."))
+	else
+		visible_message(span_boldwarning("[usr] rips [selection] out of [src]'s body."),span_boldwarning("[usr] rips [selection] out of your body."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	valid_objects = get_visible_implants(0)
 	if(valid_objects.len == 1) //Yanking out last object - removing verb.
 		remove_verb(src,/mob/proc/yank_out_object)  //CHOMPEdit

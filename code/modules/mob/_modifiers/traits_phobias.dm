@@ -64,8 +64,13 @@
 	on_expired_text = "<span class='notice'>You feel that blood doesn't bother you, at least, as much as it used to.</span>"
 
 	zero_fear_up = list(
+<<<<<<< HEAD
 		"<span class='warning'><font size='3'>You see some blood nearby...</font></span>",
 		"<span class='warning'><font size='3'>You try to avoid looking at the blood nearby.</font></span>"
+=======
+		span_warning(span_large("You see some blood nearby...")),
+		span_warning(span_large("You try to avoid looking at the blood nearby."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	zero_fear_down = list(
 		"<span class='notice'>You feel better now, with no blood in sight.</span>",
@@ -74,8 +79,13 @@
 		)
 
 	half_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='3'>You're still near the blood!</font></span>",
 		"<span class='danger'><font size='3'>So much blood... You can't stand it.</font></span>"
+=======
+		span_danger(span_large("You're still near the blood!")),
+		span_danger(span_large("So much blood... You can't stand it."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	half_fear_down = list(
 		"<span class='warning'>The blood is gone now, but you're still worked up.</span>",
@@ -83,9 +93,15 @@
 		)
 
 	full_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='4'>The blood is too much!</font></span>",
 		"<span class='danger'><font size='4'>There is so much blood here, you need to leave!</font></span>",
 		"<span class='danger'><font size='4'>You gotta get away from the blood!</font></span>"
+=======
+		span_danger(span_huge("The blood is too much!")),
+		span_danger(span_huge("There is so much blood here, you need to leave!")),
+		span_danger(span_huge("You gotta get away from the blood!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	full_fear_down = list(
 		"<span class='danger'>The blood is gone, but you're still very anxious.</span>",
@@ -165,8 +181,13 @@
 	on_expired_text = "<span class='notice'>You feel that your fear of spiders has gone from 'crippling' to 'nope nope nope', which is still an improvement.</span>"
 
 	zero_fear_up = list(
+<<<<<<< HEAD
 		"<span class='warning'><font size='3'>You see a spider!</font></span>",
 		"<span class='warning'><font size='3'>Spider!</font></span>"
+=======
+		span_warning(span_large("You see a spider!")),
+		span_warning(span_large("Spider!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	zero_fear_down = list(
 		"<span class='notice'>Those evil spiders are finally gone.</span>",
@@ -175,9 +196,15 @@
 		)
 
 	half_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='3'>The spiders are gonna eat you!</font></span>",
 		"<span class='danger'><font size='3'>The spiders are still here!</font></span>",
 		"<span class='danger'><font size='3'>The spiders will lay eggs inside you if you don't run!</font></span>",
+=======
+		span_danger(span_large("The spiders are gonna eat you!")),
+		span_danger(span_large("The spiders are still here!")),
+		span_danger(span_large("The spiders will lay eggs inside you if you don't run!")),
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	half_fear_down = list(
 		"<span class='warning'>The spiders are gone... right?</span>",
@@ -185,9 +212,15 @@
 		)
 
 	full_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='4'>The chittering is driving you mad!</font></span>",
 		"<span class='danger'><font size='4'>You're gonna be spider-food if you don't run!</font></span>",
 		"<span class='danger'><font size='4'>The spiders are gonna feast on your eyes!</font></span>"
+=======
+		span_danger(span_huge("The chittering is driving you mad!")),
+		span_danger(span_huge("You're gonna be spider-food if you don't run!")),
+		span_danger(span_huge("The spiders are gonna feast on your eyes!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	full_fear_down = list(
 		"<span class='danger'>The spiders must surely be hiding somewhere...</span>",
@@ -238,8 +271,13 @@
 	var/fear_threshold = 0.5 // Average lighting needs to be below this to start increasing fear.
 
 	zero_fear_up = list(
+<<<<<<< HEAD
 		"<span class='warning'><font size='3'>It's so dark here!</font></span>",
 		"<span class='warning'><font size='3'>It's too dark!</font></span>"
+=======
+		span_warning(span_large("It's so dark here!")),
+		span_warning(span_large("It's too dark!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	zero_fear_down = list(
 		"<span class='notice'>You feel calmer, now that you're in the light.</span>",
@@ -248,9 +286,15 @@
 		)
 
 	half_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='3'>You need to escape this darkness!</font></span>",
 		"<span class='danger'><font size='3'>Something might be lurking near you, but you can't see in this darkness.</font></span>",
 		"<span class='danger'><font size='3'>You need to find a light!</font></span>",
+=======
+		span_danger(span_large("You need to escape this darkness!")),
+		span_danger(span_large("Something might be lurking near you, but you can't see in this darkness.")),
+		span_danger(span_large("You need to find a light!")),
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	half_fear_down = list(
 		"<span class='warning'>The darkness is gone, for now...</span>",
@@ -258,8 +302,13 @@
 		)
 
 	full_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='4'>What was that?</font></span>",
 		"<span class='danger'><font size='4'>Something is nearby...</font></span>"
+=======
+		span_danger(span_huge("What was that?")),
+		span_danger(span_huge("Something is nearby..."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	full_fear_down = list(
 		"<span class='danger'>Light, at last!</span>",
@@ -315,8 +364,13 @@
 	on_expired_text = "<span class='notice'>Small rooms aren't so bad now.</span>"
 
 	zero_fear_up = list(
+<<<<<<< HEAD
 		"<span class='warning'><font size='3'>This room is too small...</font></span>",
 		"<span class='warning'><font size='3'>The walls are too close together...</font></span>"
+=======
+		span_warning(span_large("This room is too small...")),
+		span_warning(span_large("The walls are too close together..."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	zero_fear_down = list(
 		"<span class='notice'>You feel calmer, now that you're in a larger room.</span>",
@@ -325,9 +379,15 @@
 		)
 
 	half_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='3'>Your surroundings look like they are closing in.</font></span>",
 		"<span class='danger'><font size='3'>Is the room getting smaller?</font></span>",
 		"<span class='danger'><font size='3'>You need to get out of here!</font></span>",
+=======
+		span_danger(span_large("Your surroundings look like they are closing in.")),
+		span_danger(span_large("Is the room getting smaller?")),
+		span_danger(span_large("You need to get out of here!")),
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	half_fear_down = list(
 		"<span class='warning'>Your surroundings seem to have stopped closing in.</span>",
@@ -335,8 +395,13 @@
 		)
 
 	full_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='4'>You need to escape!</font></span>",
 		"<span class='danger'><font size='4'>There's barely any room to move around!</font></span>"
+=======
+		span_danger(span_huge("You need to escape!")),
+		span_danger(span_huge("There's barely any room to move around!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	full_fear_down = list(
 		"<span class='danger'>The surroundings stop shrinking.</span>",
@@ -380,8 +445,13 @@
 	on_expired_text = "<span class='notice'>You feel more... okay with slime.</span>"
 
 	zero_fear_up = list(
+<<<<<<< HEAD
 		"<span class='warning'><font size='3'>That's some slime!</font></span>",
 		"<span class='warning'><font size='3'>There's slime right there!</font></span>"
+=======
+		span_warning(span_large("That's some slime!")),
+		span_warning(span_large("There's slime right there!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	zero_fear_down = list(
 		"<span class='notice'>The slime is out of sight and out of mind.</span>",
@@ -389,8 +459,13 @@
 		)
 
 	half_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='3'>The slimes might strike at any point!</font></span>",
 		"<span class='danger'><font size='3'>The slime is still there!</font></span>"
+=======
+		span_danger(span_large("The slimes might strike at any point!")),
+		span_danger(span_large("The slime is still there!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	half_fear_down = list(
 		"<span class='warning'>The slime is gone... right?</span>",
@@ -398,8 +473,13 @@
 		)
 
 	full_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='4'>The slime is everywhere!</font></span>",
 		"<span class='danger'><font size='4'>You're gonna get absorbed if you don't get out!</font></span>"
+=======
+		span_danger(span_huge("The slime is everywhere!")),
+		span_danger(span_huge("You're gonna get absorbed if you don't get out!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	full_fear_down = list(
 		"<span class='danger'>There must be more of that slime somewhere...</span>",
@@ -475,8 +555,13 @@
 
 
 	zero_fear_up = list(
+<<<<<<< HEAD
 		"<span class='warning'><font size='3'>That's a needle!</font></span>",
 		"<span class='warning'><font size='3'>There's a needle right there!</font></span>"
+=======
+		span_warning(span_large("That's a needle!")),
+		span_warning(span_large("There's a needle right there!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	zero_fear_down = list(
 		"<span class='notice'>The needle is gone, no need to worry.</span>",
@@ -484,8 +569,13 @@
 		)
 
 	half_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='3'>The needle could get you at any time!</font></span>",
 		"<span class='danger'><font size='3'>The needle is still there!</font></span>"
+=======
+		span_danger(span_large("The needle could get you at any time!")),
+		span_danger(span_large("The needle is still there!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	half_fear_down = list(
 		"<span class='warning'>There are no more needles... right?</span>",
@@ -493,8 +583,13 @@
 		)
 
 	full_fear_up = list(
+<<<<<<< HEAD
 		"<span class='danger'><font size='4'>The needles are going to pierce you!</font></span>",
 		"<span class='danger'><font size='4'>They could get you any second!</font></span>"
+=======
+		span_danger(span_huge("The needles are going to pierce you!")),
+		span_danger(span_huge("They could get you any second!"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		)
 	full_fear_down = list(
 		"<span class='danger'>There are more needles around, you can feel it...</span>",
@@ -586,7 +681,11 @@
 
 	if(xenos.len)
 		var/chosen_xeno = pick(xenos)
+<<<<<<< HEAD
 		to_chat(holder, "<span class='warning'><font size='3'>[make_message(chosen_xeno)]</font></span>")
+=======
+		to_chat(holder, span_warning(span_large("[make_message(chosen_xeno)]")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		return TRUE
 	else
 		return FALSE // No xenos in sight, so don't apply the cooldown.

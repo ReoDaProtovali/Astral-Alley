@@ -72,14 +72,14 @@
 
 /obj/item/weapon/gun/launcher/crossbow/bow/attack_hand(mob/living/user)
 	if(loc == user && bolt && !drawn)
-		user.visible_message("<b>[user]</b> removes [bolt] from [src].","You remove [bolt] from [src].")
+		user.visible_message(span_infoplain(span_bold("[user]") + " removes [bolt] from [src]."),span_infoplain("You remove [bolt] from [src]."))
 		unload(user)
 	else
 		return ..()
 
 /obj/item/weapon/gun/launcher/crossbow/bow/attack_self(mob/living/user)
 	if(drawn)
-		user.visible_message("<b>[user]</b> relaxes the tension on [src]'s string.","You relax the tension on [src]'s string.")
+		user.visible_message(span_infoplain(span_bold("[user]") + " relaxes the tension on [src]'s string."),span_infoplain("You relax the tension on [src]'s string."))
 		drawn = FALSE
 		update_icon()
 	else
@@ -87,24 +87,28 @@
 
 /obj/item/weapon/gun/launcher/crossbow/bow/draw(var/mob/user)
 	if(!bolt)
-		to_chat(user, "You don't have anything nocked to [src].")
+		to_chat(user, span_infoplain("You don't have anything nocked to [src]."))
 		return
 
 	if(user.restrained())
 		return
 
 	current_user = user
+<<<<<<< HEAD
 	user.visible_message("<b>[user]</b> begins to draw back the string of [src].","<span class='notice'>You begin to draw back the string of [src].</span>")
+=======
+	user.visible_message(span_infoplain(span_bold("[user]") + " begins to draw back the string of [src]."),span_notice("You begin to draw back the string of [src]."))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	if(do_after(user, 25, src, exclusive = TASK_ALL_EXCLUSIVE))
 		drawn = TRUE
-		user.visible_message("<b>[user]</b> draws the string on [src] back fully!", "You draw the string on [src] back fully!")
+		user.visible_message(span_infoplain(span_bold("[user]") + "draws the string on [src] back fully!"), span_infoplain("You draw the string on [src] back fully!"))
 	update_icon()
 
 /obj/item/weapon/gun/launcher/crossbow/bow/attackby(obj/item/W as obj, mob/user)
 	if(!bolt && istype(W,/obj/item/weapon/arrow/standard))
 		user.drop_from_inventory(W, src)
 		bolt = W
-		user.visible_message("[user] slides [bolt] into [src].","You slide [bolt] into [src].")
+		user.visible_message(span_infoplain("[user] slides [bolt] into [src]."),span_infoplain("You slide [bolt] into [src]."))
 		update_icon()
 
 /obj/item/weapon/gun/launcher/crossbow/bow/update_icon()
@@ -129,12 +133,17 @@
 
 /obj/item/weapon/gun/launcher/crossbow/bow/hardlight/attack_self(mob/living/user)
 	if(drawn)
-		user.visible_message("<b>[user]</b> relaxes the tension on [src]'s string.","You relax the tension on [src]'s string.")
+		user.visible_message(span_infoplain(span_bold("[user]") + " relaxes the tension on [src]'s string."),span_infoplain("You relax the tension on [src]'s string."))
 		drawn = FALSE
 		update_icon()
 	else if(!bolt)
+<<<<<<< HEAD
 		user.visible_message("<b>[user]</b> fabricates a new hardlight projectile with [src].","You fabricate a new hardlight projectile with [src].")
 		bolt = new /obj/item/weapon/arrow/energy(src)
+=======
+		user.visible_message(span_infoplain(span_bold("[user]") + " fabricates a new hardlight projectile with [src]."),span_infoplain("You fabricate a new hardlight projectile with [src]."))
+		bolt = new /obj/item/arrow/energy(src)
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		update_icon()
 	else
 		draw(user)

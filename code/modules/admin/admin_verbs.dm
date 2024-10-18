@@ -94,7 +94,11 @@
 			mob.alpha = max(mob.alpha + 100, 255)
 		else
 			mob.invisibility = INVISIBILITY_OBSERVER
+<<<<<<< HEAD
 			to_chat(mob, "<span class='filter_system notice'><b>Invisimin on. You are now as invisible as a ghost.</b></span>")
+=======
+			to_chat(mob, span_filter_system(span_boldnotice("Invisimin on. You are now as invisible as a ghost.")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 			mob.alpha = max(mob.alpha - 100, 0)
 
 
@@ -369,7 +373,11 @@
 		if(!msg)
 			return
 		for (var/mob/V in hearers(mob.control_object))
+<<<<<<< HEAD
 			V.show_message("<span class='filter_say'><b>[mob.control_object.name]</b> says: \"[msg]\"</span>", 2)
+=======
+			V.show_message(span_filter_say(span_bold("[mob.control_object.name]") + " says: \"[msg]\""), 2)
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	feedback_add_details("admin_verb","OT") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/kill_air() // -- TLE
@@ -377,7 +385,11 @@
 	set name = "Kill Air"
 	set desc = "Toggle Air Processing"
 	SSair.can_fire = !SSair.can_fire
+<<<<<<< HEAD
 	to_chat(usr, "<span class='filter_system'><b>[SSair.can_fire ? "En" : "Dis"]abled air processing.</b></span>")
+=======
+	to_chat(usr, span_filter_system(span_bold("[SSair.can_fire ? "En" : "Dis"]abled air processing.")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 	feedback_add_details("admin_verb","KA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_admin("[key_name(usr)] used 'kill air'.")
 	message_admins(span_blue("[key_name_admin(usr)] used 'kill air'."), 1)
@@ -412,7 +424,7 @@
 	if(!holder)	return
 	if(config)
 		CONFIG_SET(flag/log_hrefs, !CONFIG_GET(flag/log_hrefs)) // CHOMPEdit
-		message_admins("<b>[key_name_admin(usr)] [CONFIG_GET(flag/log_hrefs) ? "started" : "stopped"] logging hrefs</b>") // CHOMPEdit
+		message_admins(span_bold("[key_name_admin(usr)] [CONFIG_GET(flag/log_hrefs) ? "started" : "stopped"] logging hrefs")) // CHOMPEdit
 
 /client/proc/check_ai_laws()
 	set name = "Check AI Laws"
@@ -532,8 +544,13 @@
 
 	if(tgui_alert(usr, "Are you sure you want to tell them to man up?","Confirmation",list("Deal with it","No")) != "Deal with it") return
 
+<<<<<<< HEAD
 	to_chat(T, "<span class='filter_system notice'><b><font size=3>Man up and deal with it.</font></b></span>")
 	to_chat(T, "<span class='filter_system notice'>Move along.</span>")
+=======
+	to_chat(T, span_filter_system(span_boldnotice(span_large("Man up and deal with it."))))
+	to_chat(T, span_filter_system(span_notice("Move along.")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 	log_admin("[key_name(usr)] told [key_name(T)] to man up and deal with it.")
 	message_admins(span_blue("[key_name_admin(usr)] told [key_name(T)] to man up and deal with it."), 1)
@@ -546,7 +563,7 @@
 	if(tgui_alert(usr, "Are you sure you want to tell the whole server up?","Confirmation",list("Deal with it","No")) != "Deal with it") return
 
 	for (var/mob/T as mob in mob_list)
-		to_chat(T, "<br><center><span class='filter_system notice'><b><font size=4>Man up.<br> Deal with it.</font></b><br>Move along.</span></center><br>")
+		to_chat(T, "<br><center>" + span_filter_system(span_notice(span_bold(span_huge("Man up.<br> Deal with it.")) + "<br>Move along.")) + "</center><br>")
 		T << 'sound/voice/ManUp1.ogg'
 
 	log_admin("[key_name(usr)] told everyone to man up and deal with it.")

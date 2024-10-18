@@ -433,7 +433,11 @@
 		if(MEDBOT_PANIC_HIGH to MEDBOT_PANIC_FUCK)
 			. += "<span class='warning'>They are tipped over and visibly panicking!</span>"
 		if(MEDBOT_PANIC_FUCK to INFINITY)
+<<<<<<< HEAD
 			. += "<span class='warning'><b>They are freaking out from being tipped over!</b></span>"
+=======
+			. += span_boldwarning("They are freaking out from being tipped over!")
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 
 /mob/living/bot/medbot/confirmTarget(var/mob/living/carbon/human/H)
 	if(!..())

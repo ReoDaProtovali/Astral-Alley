@@ -73,14 +73,24 @@
 			var/choice = tgui_input_list(src,"Please select an IP address to remove from the ToR banlist:","Remove ToR ban", F.dir)
 			if(choice)
 				F.dir.Remove(choice)
+<<<<<<< HEAD
 				to_chat(src, "<span class='filter_adminlog'><b>Address removed</b></span>")
 		if("remove all")
 			to_chat(src, "<span class='filter_adminlog'><b>[TORFILE] was [fdel(TORFILE)?"":"not "]removed.</b></span>")
+=======
+				to_chat(src, span_filter_adminlog(span_bold("Address removed")))
+		if("remove all")
+			to_chat(src, span_filter_adminlog(span_bold("[TORFILE] was [fdel(TORFILE)?"":"not "]removed.")))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 		if("find")
 			var/input = tgui_input_text(src,"Please input an IP address to search for:","Find ToR ban",null)
 			if(input)
 				if(ToRban_isbanned(input))
+<<<<<<< HEAD
 					to_chat(src, "<span class='filter_adminlog'>[span_orange("<b>Address is a known ToR address</b>")]</span>")
+=======
+					to_chat(src, span_filter_adminlog("[span_orange(span_bold("Address is a known ToR address"))]"))
+>>>>>>> 7416cbea22 ([MIRROR] next set of spans (#9247))
 				else
 					to_chat(src, "<span class='filter_adminlog danger'>Address is not a known ToR address</span>")
 	return

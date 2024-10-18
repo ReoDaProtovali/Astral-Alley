@@ -30,14 +30,14 @@
 	log_pray(raw_msg, src)
 
 /proc/CentCom_announce(var/msg, var/mob/Sender, var/iamessage)
-	msg = span_blue("<b>" + span_orange("[uppertext(using_map.boss_short)]M[iamessage ? " IA" : ""]:") + "[key_name(Sender, 1)] [ADMIN_PP(Sender)] [ADMIN_VV(Sender)] [ADMIN_SM(Sender)] ([admin_jump_link(Sender)]) [ADMIN_CA(Sender)] [ADMIN_BSA(Sender)] [ADMIN_CENTCOM_REPLY(Sender)]:</b> [msg]")
+	msg = span_blue(span_bold(span_orange("[uppertext(using_map.boss_short)]M[iamessage ? " IA" : ""]:") + "[key_name(Sender, 1)] [ADMIN_PP(Sender)] [ADMIN_VV(Sender)] [ADMIN_SM(Sender)] ([admin_jump_link(Sender)]) [ADMIN_CA(Sender)] [ADMIN_BSA(Sender)] [ADMIN_CENTCOM_REPLY(Sender)]:") + " [msg]")
 	for(var/client/C in GLOB.admins) //VOREStation Edit - GLOB admins
 		if(R_ADMIN|R_EVENT & C.holder.rights)
 			to_chat(C,msg)
 			C << 'sound/machines/signal.ogg'
 
 /proc/Syndicate_announce(var/msg, var/mob/Sender)
-	msg = span_blue("<b>" + span_crimson("ILLEGAL:") + "[key_name(Sender, 1)] [ADMIN_PP(Sender)] [ADMIN_VV(Sender)] [ADMIN_SM(Sender)] ([admin_jump_link(Sender)]) [ADMIN_CA(Sender)] [ADMIN_BSA(Sender)] [ADMIN_SYNDICATE_REPLY(Sender)]:</b> [msg]")
+	msg = span_blue(span_bold(span_crimson("ILLEGAL:") + "[key_name(Sender, 1)] [ADMIN_PP(Sender)] [ADMIN_VV(Sender)] [ADMIN_SM(Sender)] ([admin_jump_link(Sender)]) [ADMIN_CA(Sender)] [ADMIN_BSA(Sender)] [ADMIN_SYNDICATE_REPLY(Sender)]:") + " [msg]")
 	for(var/client/C in GLOB.admins) //VOREStation Edit - GLOB admins
 		if(R_ADMIN|R_EVENT & C.holder.rights)
 			to_chat(C,msg)
