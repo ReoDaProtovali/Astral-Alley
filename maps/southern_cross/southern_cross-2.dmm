@@ -63996,6 +63996,847 @@
 /obj/effect/floor_decal/corner/green/bordercorner,
 /obj/item/device/radio/intercom{
 	name = "Station Intercom (General)";
+<<<<<<< HEAD
+=======
+	pixel_y = 21
+	},
+/obj/structure/closet/walllocker/emerglocker{
+	pixel_y = -32
+	},
+/turf/simulated/shuttle/floor,
+/area/shuttle/escape_pod3/station)
+"rxv" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/construction/firstdeck/construction3)
+"rxy" = (
+/obj/machinery/alarm{
+	pixel_y = 22
+	},
+/obj/structure/closet/emcloset{
+	anchored = 1
+	},
+/turf/simulated/floor,
+/area/tcomm/tcomstorage)
+"rxW" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor,
+/area/tcomm/tcomstorage)
+"ryn" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/teleporter/firstdeck)
+"ryB" = (
+/obj/structure/loot_pile/maint/junk,
+/turf/simulated/floor,
+/area/maintenance/firstdeck/aftport)
+"rzj" = (
+/obj/item/frame,
+/obj/machinery/light_construct,
+/obj/effect/floor_decal/rust,
+/turf/simulated/floor/tiled/steel_dirty,
+/area/maintenance/firstdeck/aftport)
+"rzp" = (
+/obj/structure/table/rack,
+/obj/item/circuitboard/telecomms/processor,
+/obj/item/circuitboard/telecomms/processor,
+/obj/item/circuitboard/telecomms/receiver,
+/obj/item/circuitboard/telecomms/server,
+/obj/item/circuitboard/telecomms/server,
+/obj/item/circuitboard/telecomms/bus,
+/obj/item/circuitboard/telecomms/bus,
+/obj/item/circuitboard/telecomms/broadcaster,
+/obj/item/circuitboard/telecomms/exonet_node,
+/obj/machinery/camera/network/telecom{
+	c_tag = "TCOMMS - Storage"
+	},
+/obj/item/circuitboard/telecomms/relay,
+/obj/item/circuitboard/telecomms/relay,
+/obj/item/circuitboard/teleporter,
+/obj/item/circuitboard/teleporter_hub,
+/obj/item/circuitboard/teleporter_station,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/stock_parts/micro_laser/high,
+/obj/item/stock_parts/capacitor,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/manipulator,
+/obj/item/stock_parts/micro_laser,
+/turf/simulated/floor,
+/area/tcomm/tcomstorage)
+"rzN" = (
+/obj/structure/cable/cyan{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/tcomm/tcomstorage)
+"rAi" = (
+/obj/machinery/porta_turret/stationary,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/item/radio/intercom{
+	dir = 4;
+	name = "Station Intercom (General)";
+	pixel_x = 21
+	},
+/turf/simulated/floor/tiled/dark,
+/area/tcomm/tcomstorage)
+"rBi" = (
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/hangar/two)
+"rBm" = (
+/obj/machinery/door/airlock/glass{
+	name = "Escape Pod"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor/tiled/steel_grid,
+/area/hallway/secondary/escape/firstdeck/ep_aftport)
+"rDa" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/starboard)
+"rDz" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 5
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/bordercorner2{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/starboard)
+"rEN" = (
+/obj/structure/table/steel,
+/obj/machinery/cell_charger,
+/obj/effect/floor_decal/industrial/warning/corner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/steel_dirty,
+/area/engineering/auxiliary_engineering)
+"rFk" = (
+/obj/effect/shuttle_landmark/southern_cross/large_escape_pod1/station,
+/turf/simulated/shuttle/floor,
+/area/shuttle/large_escape_pod1/station)
+"rFO" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/industrial/warning{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/elevator)
+"rGy" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/brown/border,
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
+"rGJ" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/firstdeck/starboard)
+"rIP" = (
+/obj/structure/closet/emcloset,
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/firstdeck/starboard)
+"rIX" = (
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/turf/simulated/floor/wood,
+/area/hallway/primary/firstdeck/vaultlobby)
+"rJn" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/yellow{
+	dir = 8
+	},
+/turf/simulated/wall/rthull,
+/area/shuttle/spacebus)
+"rJF" = (
+/turf/simulated/wall,
+/area/hallway/primary/firstdeck/starboard)
+"rJG" = (
+/obj/structure/table/darkglass,
+/obj/machinery/light{
+	dir = 8;
+	layer = 3
+	},
+/turf/simulated/floor/tiled/dark,
+/area/shuttle/spacebus)
+"rKj" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/hallway)
+"rKK" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/maintenance{
+	req_access = null;
+	req_one_access = null
+	},
+/turf/simulated/floor/plating,
+/area/storage/emergency_storage/firstdeck/as_emergency)
+"rKO" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/maintenance{
+	req_access = null;
+	req_one_access = null
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/forestarboard)
+"rLd" = (
+/obj/structure/sign/hangar/three,
+/turf/simulated/wall,
+/area/hangar/lockerroomthree)
+"rLx" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/starboard)
+"rOq" = (
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/machinery/porta_turret/industrial/teleport_defense{
+	req_one_access = list(17)
+	},
+/turf/simulated/floor/tiled/dark,
+/area/tcomm/entrance)
+"rOu" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/steel,
+/area/construction/firstdeck/construction3)
+"rOG" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hallway/primary/firstdeck/starboard)
+"rPl" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
+"rRc" = (
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/starboard)
+"rRh" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/door/airlock/engineering{
+	name = "Construction Area";
+	req_access = list(32)
+	},
+/turf/simulated/floor/plating,
+/area/construction/firstdeck/construction4)
+"rTV" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/alarm{
+	pixel_y = 22
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hangar/two)
+"rUh" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating,
+/area/storage/emergency_storage/firstdeck/aft_emergency)
+"rUl" = (
+/obj/structure/sign/directions/security{
+	dir = 4
+	},
+/obj/structure/sign/directions/shuttle_bay{
+	pixel_y = 10;
+	dir = 8
+	},
+/turf/simulated/wall,
+/area/construction/firstdeck/construction4)
+"rUr" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/hallway)
+"rUt" = (
+/obj/structure/sign/directions/engineering{
+	pixel_y = 10
+	},
+/obj/structure/sign/directions/cargo,
+/obj/structure/sign/directions/security{
+	pixel_y = -10
+	},
+/turf/simulated/wall/r_wall,
+/area/hallway/primary/firstdeck/ascenter)
+"rUK" = (
+/obj/machinery/door/airlock/multi_tile/glass{
+	dir = 1;
+	name = "Checkpoint Locker Room"
+	},
+/obj/machinery/door/firedoor/multi_tile{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/teleporter/firstdeck)
+"rVv" = (
+/obj/structure/sign/warning/secure_area,
+/turf/simulated/wall/r_wall,
+/area/tcomm/entrance)
+"rVE" = (
+/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/bordercorner2{
+	dir = 8
+	},
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -22
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/hallway)
+"rWn" = (
+/obj/machinery/atmospherics/pipe/manifold4w/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/hologram/holopad,
+/obj/effect/floor_decal/industrial/outline/grey,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/firstdeck/aft)
+"rWq" = (
+/obj/structure/sign/directions/bridge{
+	dir = 4;
+	pixel_y = 10
+	},
+/obj/structure/sign/directions/science{
+	dir = 1
+	},
+/turf/simulated/wall,
+/area/construction/firstdeck/construction4)
+"rXy" = (
+/obj/machinery/door/airlock/glass{
+	name = "Research Access"
+	},
+/obj/machinery/door/firedoor/border_only,
+/turf/simulated/floor/tiled/steel_grid,
+/area/hallway/secondary/firstdeck/research_access)
+"rXI" = (
+/obj/machinery/iv_drip,
+/obj/item/reagent_containers/blood/prelabeled/OMinus{
+	pixel_y = 6;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/blood/prelabeled/OMinus{
+	pixel_y = 3;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/blood/empty{
+	pixel_y = -1;
+	pixel_x = 8
+	},
+/obj/item/reagent_containers/blood/empty{
+	pixel_y = -5;
+	pixel_x = 8
+	},
+/obj/item/storage/quickdraw/syringe_case{
+	pixel_y = 4;
+	pixel_x = -8
+	},
+/obj/structure/closet/walllocker_double/medical/east,
+/turf/simulated/floor/tiled/white,
+/area/shuttle/spacebus)
+"rXV" = (
+/obj/structure/sign/directions/evac{
+	dir = 1
+	},
+/turf/simulated/wall/r_wall,
+/area/hallway/primary/firstdeck/apcenter)
+"rYc" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/glass{
+	name = "Research Access"
+	},
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor/tiled/steel_grid,
+/area/hallway/secondary/firstdeck/research_access)
+"rZP" = (
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/door/firedoor/border_only,
+/turf/simulated/floor/plating,
+/area/hallway/secondary/firstdeck/research_access)
+"sal" = (
+/turf/simulated/shuttle/wall,
+/area/shuttle/large_escape_pod1/station)
+"saC" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/teleporter/firstdeck)
+"saD" = (
+/obj/structure/closet/crate,
+/obj/item/storage/belt/champion,
+/obj/item/stack/material/gold{
+	amount = 6
+	},
+/obj/item/stack/material/silver{
+	amount = 6
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/item/instrument/violin/golden,
+/turf/simulated/floor/tiled/dark,
+/area/security/nuke_storage)
+"sbb" = (
+/obj/machinery/alarm{
+	pixel_y = 23
+	},
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/firstdeck/starboard)
+"sbE" = (
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/firstdeck/starboard)
+"sbH" = (
+/turf/simulated/wall/r_wall,
+/area/hallway/primary/firstdeck/starboard)
+"sbP" = (
+/turf/unsimulated/mask,
+/area/hallway/primary/firstdeck/starboard)
+"sbU" = (
+/obj/structure/loot_pile/maint/technical,
+/turf/simulated/floor/plating,
+/area/maintenance/firstdeck/centralstarboard)
+"sbZ" = (
+/obj/machinery/atmospherics/unary/vent_scrubber/on{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/purple/bordercorner{
+	dir = 1
+	},
+/obj/machinery/camera/network/research{
+	c_tag = "SCI - First Deck Research Hallway Aft";
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/research/firstdeck/hallway)
+"sdp" = (
+/turf/simulated/wall/r_wall,
+/area/hallway/primary/firstdeck/vaultcheckpoint)
+"sdx" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 5
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/green/border{
+	dir = 8
+	},
+/obj/machinery/camera/network/security{
+	c_tag = "CP - Quantum Pad";
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/teleporter/firstdeck)
+"sdN" = (
+/obj/structure/filingcabinet/chestdrawer,
+/obj/effect/floor_decal/borderfloor{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/red/border{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/security/checkpoint3)
+"sdT" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 1
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/danger{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
+"sdV" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/obj/structure/railing,
+/obj/item/tape/engineering,
+/turf/simulated/open,
+/area/hallway/primary/firstdeck/aft)
+"sea" = (
+/obj/effect/floor_decal/industrial/warning,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/starboard)
+"seX" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/wingrille_spawn/reinforced,
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/plating,
+/area/ai_monitored/storage/eva/aux)
+"sfL" = (
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/research/firstdeck/hallway)
+"sfM" = (
+/obj/structure/cable/green{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/borderfloorwhite/corner{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/purple/bordercorner{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/research/firstdeck/hallway)
+"shl" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on,
+/turf/simulated/floor/tiled,
+/area/hallway/primary/firstdeck/auxdockaft)
+"shm" = (
+/obj/structure/closet/secure_closet/miner,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/obj/item/radio/intercom{
+	dir = 8;
+	name = "Station Intercom (General)";
+	pixel_x = -21
+	},
+/turf/simulated/floor/tiled/steel,
+/area/quartermaster/mininglockerroom)
+"shA" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/brown/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
+"shN" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "xenobiocontainstation";
+	name = "Containment Blast Doors";
+	opacity = 0
+	},
+/obj/structure/cable/green{
+	d1 = 2;
+	d2 = 8;
+	icon_state = "2-8"
+	},
+/obj/structure/cable/green{
+	d1 = 1;
+	d2 = 8;
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	d2 = 8;
+	icon_state = "0-8"
+	},
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor/plating,
+/area/rnd/xenobiology)
+"sir" = (
+/obj/structure/table/standard,
+/obj/item/folder/red{
+	pixel_y = 3
+	},
+/obj/item/folder/blue{
+	pixel_x = 5
+	},
+/obj/effect/floor_decal/corner_steel_grid{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/rnd/xenobiology)
+"slp" = (
+/obj/structure/bed/chair/office/light{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/xenobiology)
+"slt" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/xenobiology)
+"smH" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/corner_steel_grid,
+/obj/effect/floor_decal/borderfloor/shifted,
+/turf/simulated/floor/tiled,
+/area/rnd/xenobiology)
+"smS" = (
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 4;
+	icon_state = "1-4"
+	},
+/turf/simulated/floor/tiled/monotile,
+/area/hangar/two)
+"sqX" = (
+/obj/effect/floor_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/shifted,
+/turf/simulated/floor/tiled,
+/area/rnd/xenobiology)
+"srX" = (
+/obj/structure/table/steel,
+/obj/random/tech_supply,
+/obj/random/tech_supply,
+/obj/random/tech_supply,
+/obj/random/maintenance/engineering,
+/obj/random/maintenance/engineering,
+/turf/simulated/floor/tiled/steel,
+/area/construction/firstdeck/construction3)
+"ssX" = (
+/obj/effect/floor_decal/borderfloorblack/corner,
+/obj/effect/floor_decal/industrial/danger/corner,
+/turf/simulated/floor/tiled,
+/area/hangar/two)
+"svz" = (
+/obj/structure/filingcabinet/medical{
+	desc = "A large cabinet with hard copy medical records.";
+	name = "Medical Records"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/security/nuke_storage)
+"svD" = (
+/obj/machinery/status_display{
+	pixel_y = -32
+	},
+/obj/structure/bed/chair{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/dark,
+/area/hallway/primary/firstdeck/ascenter)
+"swT" = (
+/obj/structure/table/standard,
+/obj/structure/window/reinforced{
+	dir = 1;
+	health = 1e+006
+	},
+/obj/item/melee/baton/slime/loaded,
+/obj/item/gun/energy/taser/xeno,
+/obj/effect/floor_decal/corner_steel_grid{
+	dir = 10
+	},
+/obj/effect/floor_decal/borderfloor/shifted,
+/turf/simulated/floor/tiled,
+/area/rnd/xenobiology)
+"sxk" = (
+/obj/machinery/alarm{
+	dir = 1;
+>>>>>>> 57f32e7437 (Revert "Revert "Fixes some map errors"" (#9263))
 	pixel_y = -22
 	},
 /turf/simulated/floor/tiled,
@@ -126717,7 +127558,72 @@ jyb
 vNi
 aaa
 aaa
+<<<<<<< HEAD
 aag
+=======
+aHn
+aLh
+aMv
+aRU
+aWn
+aLh
+aHn
+cEg
+dvW
+dVI
+dWq
+dXL
+dYE
+eaE
+eTN
+fxu
+gIx
+hVG
+jzn
+eHM
+moQ
+moQ
+pID
+moQ
+sbP
+sbP
+sbP
+sbP
+xIH
+moQ
+alI
+kcv
+moQ
+dHz
+dHz
+dHz
+dHz
+dHz
+dHz
+dHz
+hvg
+dHz
+dHz
+fiA
+aSu
+bWN
+lIC
+fRp
+aSu
+tvZ
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+>>>>>>> 57f32e7437 (Revert "Revert "Fixes some map errors"" (#9263))
 aaa
 aaa
 aaa
@@ -126891,7 +127797,60 @@ aaf
 cuR
 cuR
 aaf
+<<<<<<< HEAD
 wWX
+=======
+aHn
+aLh
+aMF
+aSb
+aMF
+aLh
+aHn
+aWk
+aWk
+dVI
+dWr
+dXL
+dYF
+eaF
+ePU
+fyf
+dVK
+hVG
+jAH
+lci
+moQ
+nSk
+pKG
+moQ
+sbP
+sbP
+sbP
+sbP
+sbP
+moQ
+jUv
+fVu
+bjM
+dHz
+hbK
+gAa
+ppt
+eTr
+ppt
+kJV
+uPj
+wHq
+aMP
+fiA
+sal
+wZo
+lIC
+jvo
+sal
+tvZ
+>>>>>>> 57f32e7437 (Revert "Revert "Fixes some map errors"" (#9263))
 aaa
 aaa
 aaa
@@ -127232,7 +128191,95 @@ xDM
 jOR
 vNi
 aaa
+<<<<<<< HEAD
 aaf
+=======
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+vYi
+aaa
+aaa
+aaa
+aHn
+aLh
+aLh
+aLh
+aLh
+aLh
+aHn
+aaa
+aaa
+dVH
+dWG
+dXL
+dYG
+eaG
+eTN
+fBB
+dVH
+icV
+jBc
+lfT
+moQ
+nVO
+pKG
+moQ
+sbP
+sbP
+sbP
+sbP
+sbP
+moQ
+axo
+fVu
+lrd
+dHz
+ybM
+iEb
+iEb
+iEb
+iEb
+iEb
+taP
+iEb
+uvG
+fiA
+sal
+poW
+lIC
+jMx
+sal
+tvZ
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+>>>>>>> 57f32e7437 (Revert "Revert "Fixes some map errors"" (#9263))
 aaa
 aaa
 aaa
@@ -127422,6 +128469,54 @@ aaa
 aaa
 aaa
 aaa
+<<<<<<< HEAD
+=======
+vYi
+aaa
+aaa
+dVH
+dWM
+dXL
+dYG
+eaG
+eVu
+fEB
+dVH
+ife
+jAH
+lhC
+moQ
+nZo
+pLm
+moQ
+sbP
+sbP
+sbP
+sbP
+sbP
+moQ
+asx
+bnA
+dLu
+dHz
+bJP
+yks
+tMg
+xgz
+tDq
+exY
+thk
+iEb
+iGI
+fiA
+sal
+qwb
+wnb
+qwb
+sal
+tvZ
+aaa
+>>>>>>> 57f32e7437 (Revert "Revert "Fixes some map errors"" (#9263))
 aaa
 aaa
 aaa
@@ -127748,7 +128843,70 @@ vNi
 vNi
 vNi
 aaf
+<<<<<<< HEAD
 aag
+=======
+aaa
+aaa
+aaa
+aaa
+aaa
+vYi
+aaa
+aaa
+dVJ
+dWr
+dXL
+dZd
+eaH
+eVQ
+fFB
+gIT
+ihk
+jDc
+lhU
+moQ
+nZZ
+pKG
+moQ
+sbP
+sbP
+sbP
+sbP
+sbP
+moQ
+upc
+wDG
+mGR
+dHz
+vhz
+iEb
+iEb
+iEb
+iEb
+iEb
+npi
+iEb
+uRT
+fiA
+jVV
+sal
+ghB
+sal
+jVV
+tvZ
+vYi
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+>>>>>>> 57f32e7437 (Revert "Revert "Fixes some map errors"" (#9263))
 aaa
 aaa
 aaa
@@ -127950,6 +129108,7 @@ aaa
 aaf
 aaa
 aaa
+<<<<<<< HEAD
 cBi
 cDb
 cEA
@@ -128003,6 +129162,67 @@ dtw
 vIn
 wlr
 vNi
+=======
+aaa
+aaf
+aaa
+aaa
+aaa
+aaa
+aaa
+aaf
+aaa
+aaa
+dVK
+dWN
+dXL
+dZe
+eaI
+eWc
+fGi
+gIW
+ije
+jDe
+dVs
+moQ
+oat
+pKG
+moQ
+moQ
+moQ
+moQ
+moQ
+moQ
+moQ
+dsS
+mRt
+moQ
+dHz
+kfy
+tYn
+tYn
+tYn
+fwG
+lRR
+ldt
+wYG
+fiA
+fiA
+jVV
+jVV
+jVV
+jVV
+jVV
+tvZ
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+>>>>>>> 57f32e7437 (Revert "Revert "Fixes some map errors"" (#9263))
 aaa
 aaa
 aaa
