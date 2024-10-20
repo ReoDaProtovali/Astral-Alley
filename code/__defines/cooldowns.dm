@@ -25,6 +25,13 @@
  * Cooldown system based on an datum-level associative lazylist using timers.
 */
 
+<<<<<<< HEAD
+=======
+// random cooldowns
+#define COOLDOWN_VENOM_MILKING "venom_milking"
+#define COOLDOWN_SHIP_REFRESH "ship_refresh"
+
+>>>>>>> 7a24e79ea4 ([MIRROR] ByondUI Overmap Navigation (#9267))
 // admin verb cooldowns
 #define COOLDOWN_INTERNET_SOUND "internet_sound"
 
