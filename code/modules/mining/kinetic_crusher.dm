@@ -349,8 +349,13 @@
 	name = "\improper mounted proto-kinetic gear"
 	var/obj/item/rig_module/gauntlets/storing_module
 
+<<<<<<< HEAD
 /obj/item/weapon/kinetic_crusher/machete/gauntlets/rig/dropped(mob/user)
 	. = ..()
+=======
+/obj/item/kinetic_crusher/machete/gauntlets/rig/dropped(mob/user)
+	. = ..(user)
+>>>>>>> 608075a2ae ([MIRROR] Fix a small runtime in actions when dropping rigs (#9271))
 	if(storing_module)
 		src.forceMove(storing_module)
 		storing_module.stored_gauntlets = src
