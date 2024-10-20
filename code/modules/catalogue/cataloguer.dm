@@ -326,7 +326,7 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 	Alt+click to highlight scannable objects around you."
 	icon = 'icons/obj/device_vr.dmi'
 	icon_state = "compact"
-	action_button_name = "Toggle Cataloguer"
+	actions_types = list(/datum/action/item_action/toggle_cataloguer)
 	var/deployed = TRUE
 	scan_range = 1
 	toolspeed = 1.2
@@ -346,7 +346,11 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 	else
 		icon_state = initial(icon_state)
 
+<<<<<<< HEAD
 /obj/item/device/cataloguer/compact/ui_action_click()
+=======
+/obj/item/cataloguer/compact/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	toggle()
 
 /obj/item/device/cataloguer/compact/verb/toggle()
@@ -368,7 +372,7 @@ GLOBAL_LIST_EMPTY(all_cataloguers)
 
 	if (ismob(usr))
 		var/mob/M = usr
-		M.update_action_buttons()
+		M.update_action_buttons_icon()
 
 /obj/item/device/cataloguer/compact/afterattack(atom/target, mob/user, proximity_flag)
 	if(!deployed)

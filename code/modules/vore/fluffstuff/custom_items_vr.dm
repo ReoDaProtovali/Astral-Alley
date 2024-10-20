@@ -686,7 +686,7 @@
 	slowdown = 0
 	taurtype = /datum/sprite_accessory/tail/taur/feline/tempest
 	no_message = "These saddlebags seem to be fitted for someone else, and keep slipping off!"
-	action_button_name = "Toggle Mlembulance Mode"
+	actions_types = list(/datum/action/item_action/toggle_mlembulance)
 	var/ambulance = FALSE
 	var/datum/looping_sound/ambulance/soundloop
 	var/ambulance_state = FALSE
@@ -700,7 +700,11 @@
 	QDEL_NULL(soundloop)
 	return ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/backpack/saddlebag/tempest/ui_action_click()
+=======
+/obj/item/storage/backpack/saddlebag/tempest/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	ambulance = !(ambulance)
 	if(ambulance)
 		START_PROCESSING(SSobj, src)

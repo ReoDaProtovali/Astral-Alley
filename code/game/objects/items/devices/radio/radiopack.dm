@@ -10,7 +10,7 @@
 	throwforce = 6
 	preserve_item = 1
 	w_class = ITEMSIZE_LARGE
-	action_button_name = "Remove/Replace Handset"
+	actions_types = list(/datum/action/item_action/remove_replace_handset)
 
 	var/obj/item/device/radio/bluespacehandset/linked/handset = /obj/item/device/radio/bluespacehandset/linked
 
@@ -23,7 +23,11 @@
 	. = ..()
 	QDEL_NULL(handset)
 
+<<<<<<< HEAD
 /obj/item/device/bluespaceradio/ui_action_click()
+=======
+/obj/item/bluespaceradio/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	toggle_handset()
 
 /obj/item/device/bluespaceradio/attack_hand(var/mob/user)

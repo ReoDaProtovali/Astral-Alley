@@ -329,7 +329,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 5, TECH_POWER = 4)
 	projectile_type = /obj/item/projectile/beam/sniper
 	slot_flags = SLOT_BACK
-	action_button_name = "Use Scope"
+	actions_types = list(/datum/action/item_action/use_scope)
 	//Begin CHOMPstation Edit for making this thing not trash
 	//battery_lock = 0
 	charge_cost = 360 
@@ -341,7 +341,11 @@
 	one_handed_penalty = 60 // The weapon itself is heavy, and the long barrel makes it hard to hold steady with just one hand.
 	//End CHOMP Edit.
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/energy/sniperrifle/ui_action_click()
+=======
+/obj/item/gun/energy/sniperrifle/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	scope()
 
 /obj/item/weapon/gun/energy/sniperrifle/verb/scope()
@@ -439,7 +443,7 @@
 	origin_tech = list(TECH_COMBAT = 6, TECH_MATERIAL = 4, TECH_POWER = 3)
 	projectile_type = /obj/item/projectile/beam/sniper
 	slot_flags = SLOT_BACK
-	action_button_name = "Aim Down Sights"
+	actions_types = list(/datum/action/item_action/aim_down_sights)
 	charge_cost = 2400
 	fire_delay = 20
 	force = 8
@@ -449,7 +453,11 @@
 	charge_meter = FALSE
 	var/scope_multiplier = 1.5
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/energy/monorifle/ui_action_click()
+=======
+/obj/item/gun/energy/monorifle/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	sights()
 
 /obj/item/weapon/gun/energy/monorifle/verb/sights()

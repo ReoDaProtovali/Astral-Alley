@@ -15,7 +15,7 @@
 	req_one_access = list()
 	req_access = list()
 	w_class = ITEMSIZE_HUGE
-	action_button_name = "Toggle Heatsink"
+	actions_types = list(/datum/action/item_action/toggle_heatsink)
 
 	// These values are passed on to all component pieces.
 	armor = list(melee = 40, bullet = 5, laser = 20,energy = 5, bomb = 35, bio = 100, rad = 20)
@@ -99,7 +99,7 @@
 	var/datum/mini_hud/rig/minihud
 
 	// Action button
-	action_button_name = "Hardsuit Interface"
+	actions_types = list(/datum/action/item_action/hardsuit_interface)
 
 /obj/item/weapon/rig/New()
 	..()
@@ -408,10 +408,14 @@
 		else
 			update_airtight(piece, 1) // Seal
 
+<<<<<<< HEAD
 /obj/item/weapon/rig/ui_action_click()
 	toggle_cooling(usr)
 
 /obj/item/weapon/rig/proc/toggle_cooling(var/mob/user)
+=======
+/obj/item/rig/proc/toggle_cooling(var/mob/user)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	if(cooling_on)
 		turn_cooling_off(user)
 	else

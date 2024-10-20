@@ -76,7 +76,8 @@
 	// Clothing assemblies can be triggered by clicking on the HUD. This allows that to occur.
 	action_circuit = new(src.IC)
 	IC.force_add_circuit(action_circuit)
-	action_button_name = "Activate [name]"
+
+	new /datum/action/item_action/activate(src, name)
 
 /obj/item/clothing/Destroy()
 	if(IC)
@@ -176,5 +177,10 @@
 	item_state = "circuitry"
 
 /obj/item/clothing/suit/circuitry/Initialize()
+<<<<<<< HEAD
 	setup_integrated_circuit(/obj/item/device/electronic_assembly/clothing/large)
 	return ..()
+=======
+	setup_integrated_circuit(/obj/item/electronic_assembly/clothing/large)
+	return ..()
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
