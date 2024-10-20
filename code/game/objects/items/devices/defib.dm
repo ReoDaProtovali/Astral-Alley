@@ -15,7 +15,7 @@
 	w_class = ITEMSIZE_LARGE
 	unacidable = TRUE
 	origin_tech = list(TECH_BIO = 4, TECH_POWER = 2)
-	action_button_name = "Remove/Replace Paddles"
+	actions_types = list(/datum/action/item_action/remove_replace_paddles)
 
 	var/obj/item/weapon/shockpaddles/linked/paddles
 	var/obj/item/weapon/cell/bcell = null
@@ -62,7 +62,11 @@
 	else
 		add_overlay("[initial(icon_state)]-nocell")
 
+<<<<<<< HEAD
 /obj/item/device/defib_kit/ui_action_click()
+=======
+/obj/item/defib_kit/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	toggle_paddles()
 
 /obj/item/device/defib_kit/attack_hand(mob/user)

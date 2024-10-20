@@ -141,7 +141,11 @@
 	action_sound = 'sound/weapons/riflebolt.ogg'
 	pump_animation = "scoped-boltaction-cycling"
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/shotgun/pump/rifle/ui_action_click()
+=======
+/obj/item/gun/projectile/shotgun/pump/rifle/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	scope()
 
 /obj/item/weapon/gun/projectile/shotgun/pump/rifle/verb/scope()

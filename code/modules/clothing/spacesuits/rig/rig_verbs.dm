@@ -10,9 +10,15 @@
 		tgui_interact(usr)
 
 // So the UI button clicks come here
+<<<<<<< HEAD
 /obj/item/weapon/rig/ui_action_click()
 	if(usr == wearer && (wearer.back == src || wearer.belt == src))
 		tgui_interact(usr)
+=======
+/obj/item/rig/ui_action_click(mob/user, actiontype)
+	if(user == wearer && (wearer.back == src || wearer.belt == src))
+		tgui_interact(user)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 
 /obj/item/weapon/rig/verb/toggle_vision()
 

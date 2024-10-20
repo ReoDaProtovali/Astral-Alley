@@ -17,7 +17,7 @@
 	var/on = 0.0
 	var/stabilization_on = 0
 	var/volume_rate = 500              //Needed for borg jetpack transfer
-	action_button_name = "Toggle Jetpack"
+	actions_types = list(/datum/action/item_action/toggle_jetpack)
 
 /obj/item/weapon/tank/jetpack/New()
 	..()
@@ -55,7 +55,7 @@
 	if (ismob(usr))
 		var/mob/M = usr
 		M.update_inv_back()
-		M.update_action_buttons()
+		M.update_action_buttons_icon()
 
 	to_chat(usr, "You toggle the thrusters [on? "on":"off"].")
 
@@ -81,7 +81,11 @@
 	fuel.remove(num)
 	return 1
 
+<<<<<<< HEAD
 /obj/item/weapon/tank/jetpack/ui_action_click()
+=======
+/obj/item/tank/jetpack/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	toggle()
 
 /obj/item/weapon/tank/jetpack/void

@@ -9,7 +9,7 @@
 	w_class = ITEMSIZE_HUGE // So it can't fit in a backpack.
 	force = 10
 	slot_flags = SLOT_BACK
-	action_button_name = "Use Scope"
+	actions_types = list(/datum/action/item_action/use_scope)
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
 	caliber = "14.5mm"
 	recoil = 5 //extra kickback
@@ -63,7 +63,11 @@
 		return
 	..()
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/heavysniper/ui_action_click()
+=======
+/obj/item/gun/projectile/heavysniper/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	scope()
 
 /obj/item/weapon/gun/projectile/heavysniper/verb/scope()
@@ -84,7 +88,7 @@
 	w_class = ITEMSIZE_HUGE // So it can't fit in a backpack.
 	force = 10
 	slot_flags = SLOT_BACK // Needs a sprite.
-	action_button_name = "Use Scope"
+	actions_types = list(/datum/action/item_action/use_scope)
 	origin_tech = list(TECH_COMBAT = 8, TECH_MATERIAL = 2, TECH_ILLEGAL = 8)
 	caliber = "7.62mm"
 	load_method = MAGAZINE
@@ -102,7 +106,11 @@
 	else
 		icon_state = "SVD-empty"
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/SVD/ui_action_click()
+=======
+/obj/item/gun/projectile/SVD/ui_action_click(mob/user, actiontype)
+>>>>>>> 45025bd128 ([MIRROR] Ports tgstation/tgstation/pull/15673 (#9270))
 	scope()
 
 /obj/item/weapon/gun/projectile/SVD/verb/scope()
