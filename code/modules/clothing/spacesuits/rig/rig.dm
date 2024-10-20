@@ -789,8 +789,13 @@
 	for(var/piece in list("helmet","gauntlets","chest","boots"))
 		toggle_piece(piece, H, ONLY_DEPLOY)
 
+<<<<<<< HEAD
 /obj/item/weapon/rig/dropped(var/mob/user)
 	..()
+=======
+/obj/item/rig/dropped(var/mob/user)
+	. = ..(user)
+>>>>>>> 608075a2ae ([MIRROR] Fix a small runtime in actions when dropping rigs (#9271))
 	for(var/piece in list("helmet","gauntlets","chest","boots"))
 		toggle_piece(piece, user, ONLY_RETRACT)
 	if(wearer && wearer.wearing_rig == src)
