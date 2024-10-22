@@ -91,7 +91,11 @@
 /datum/map_template/sc_lateload/vr_world
 	name = "VR World"
 	desc = "A dynamic, virtual world."
+<<<<<<< HEAD:maps/southern_cross/submaps/_southern_cross_submaps.dm
 	mappath = 'virtual_reality/constructVR.dmm'
+=======
+	mappath = 'modular_chomp/maps/virtual_reality/constructVR.dmm' //Use modular
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276)):modular_chomp/maps/southern_cross/submaps/_southern_cross_submaps.dm
 	associated_map_datum = /datum/map_z_level/sc_lateload/vr_world
 
 /datum/map_z_level/sc_lateload/vr_world
@@ -101,9 +105,22 @@
 /datum/map_template/sc_lateload/thor
 	name = "Thor Surface"
 	desc = "The jungle like surface of Sif's moon"
+<<<<<<< HEAD:maps/southern_cross/submaps/_southern_cross_submaps.dm
 	mappath = 'maps/southern_cross/overmap/planets/thor/thor.dmm'
 	associated_map_datum = /datum/planet/thor
 
+=======
+	mappath = 'modular_chomp/maps/southern_cross/overmap/planets/thor/thor.dmm'
+	associated_map_datum = /datum/planet/thor
+
+/datum/map_template/sc_lateload/tyr
+	name = "Desert Valley"
+	desc = "An anomalous valley within tyr"
+	mappath = 'modular_chomp/maps/southern_cross/overmap/planets/tyr/tyr.dmm'
+	associated_map_datum = /datum/planet/tyr
+
+
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276)):modular_chomp/maps/southern_cross/submaps/_southern_cross_submaps.dm
 //Space submaps/sectors/POIs/whatever you wanna freaking call it, go here.
 /* Pretty sure we don't use this.
 #include "../../expedition_vr/space/_fueldepot.dm"
