@@ -11,4 +11,22 @@
 
 /datum/tgui_module/crew_manifest/robot
 /datum/tgui_module/crew_manifest/robot/tgui_state(mob/user)
+<<<<<<< HEAD
 	return GLOB.tgui_self_state
+=======
+	return GLOB.tgui_self_state
+
+/datum/tgui_module/crew_manifest/new_player
+/datum/tgui_module/crew_manifest/new_player/tgui_state(mob/user)
+	return GLOB.tgui_always_state
+
+// Module that deletes itself when it's closed
+/datum/tgui_module/crew_manifest/self_deleting
+
+/datum/tgui_module/crew_manifest/self_deleting/tgui_close(mob/user)
+	. = ..()
+	qdel(src)
+
+/datum/tgui_module/crew_manifest/self_deleting/tgui_state(mob/user)
+	return GLOB.tgui_always_state
+>>>>>>> cc75d76c72 ([MIRROR] Fix crew manifest (#9279))
