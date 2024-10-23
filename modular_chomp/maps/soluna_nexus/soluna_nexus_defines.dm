@@ -7,21 +7,22 @@ so those just need to be updated every time someone rearranges the level load or
 but they don't actually change anything about the load order
 */
 //TO DO: Reorganize all #include for z-levels into one file
-#define Z_LEVEL_STATION_MAINTS			1
-#define Z_LEVEL_STATION_ONE				2
-#define Z_LEVEL_STATION_TWO				3
-#define Z_LEVEL_STATION_THREE			4
-#define Z_LEVEL_SURFACE					5
-#define Z_LEVEL_SURFACE_MINE			6
-#define Z_LEVEL_MISC					7 //Carrier, actually
-#define Z_LEVEL_CENTCOM					8
-#define Z_LEVEL_TRANSIT					9
-#define Z_LEVEL_SURFACE_WILD			10
-#define Z_LEVEL_SURFACE_VALLEY 			11
-#define Z_LEVEL_VR_REALM                12
-#define Z_LEVEL_FUELDEPOT				13
-#define Z_LEVEL_JUNGLE					14
-#define Z_LEVEL_GATEWAY					15
+
+#define Z_LEVEL_STATION_ONE				1
+#define Z_LEVEL_STATION_TWO				2
+#define Z_LEVEL_STATION_THREE			3
+#define Z_LEVEL_SURFACE					4
+#define Z_LEVEL_SURFACE_MINE			5
+#define Z_LEVEL_MISC					6 //Carrier, actually
+#define Z_LEVEL_CENTCOM					7
+#define Z_LEVEL_TRANSIT					8
+#define Z_LEVEL_SURFACE_WILD			9
+//#define Z_LEVEL_SURFACE_VALLEY 			10 Re comment once valley is added
+#define Z_LEVEL_VR_REALM                10
+#define Z_LEVEL_FUELDEPOT				11
+#define Z_LEVEL_JUNGLE					12
+#define Z_LEVEL_DEATH_VALLEY			13
+#define Z_LEVEL_GATEWAY					14
 
 //#define Z_LEVEL_SURFACE_SKYLANDS		//Sky islands removal due to lack of use
 //#define Z_LEVEL_AEROSTAT			//Disabled due to lack of use
@@ -32,10 +33,10 @@ but they don't actually change anything about the load order
 //#define Z_LEVEL_EMPTY_SPACE				xx //CHOMPedit: Disabling empty space as now the overmap generates empty space on demand.
 
 
-/datum/map/southern_cross
-	name = "Southern Cross"
-	full_name = "Southern Cross"
-	path = "southern_cross"
+/datum/map/soluna_nexus
+	name = "Soluna Nexus"
+	full_name = "Soluna Nexus"
+	path = "soluna_nexus"
 
 	lobby_icon = 'icons/misc/CHOMPSTATION.gif'	//CHOMPStation Edit
 	lobby_screens = list() //CHOMPStation Edit - CHOMPStation image
@@ -46,10 +47,10 @@ but they don't actually change anything about the load order
 		Z_LEVEL_STATION_TWO,
 		Z_LEVEL_STATION_THREE))
 
-	zlevel_datum_type = /datum/map_z_level/southern_cross
+	zlevel_datum_type = /datum/map_z_level/soluna_nexus
 
-	station_name  = "NLS Southern Cross"
-	station_short = "Southern Cross"
+	station_name  = "NLS Soluna Nexus"
+	station_short = "Soluna Nexus"
 	dock_name     = "NCS Northern Star" // Now we're the centcom!
 	boss_name     = "Central Command"
 	boss_short    = "Centcom"
@@ -104,15 +105,14 @@ but they don't actually change anything about the load order
 							NETWORK_SUPPLY
 							)
 	usable_email_tlds = list("freemail.nt")
-	allowed_spawns = list("Arrivals Shuttle","Gateway", "Cryogenic Storage", "Cyborg Storage", "Station gateway", "Sif plains", "Fuel Depot")
-	default_skybox = /datum/skybox_settings/southern_cross
+	allowed_spawns = list("Arrivals Shuttle","Gateway", "Cryogenic Storage", "Cyborg Storage", "Station gateway", "Sif plains")
+	default_skybox = /datum/skybox_settings/soluna_nexus
 	unit_test_exempt_areas = list(/area/ninja_dojo, /area/shuttle/ninja)
-	unit_test_exempt_from_atmos = list(/area/tcomm/chamber)
+	unit_test_exempt_from_atmos = list(/area/engineering/Telecomms_Network, /area/security/Transit_Turrets)
 
-	planet_datums_to_make = list(/datum/planet/sif,/datum/planet/thor) //This must be added to load maps at round start otherwise they will have weather or sun.
+	planet_datums_to_make = list(/datum/planet/sif,/datum/planet/thor, /datum/planet/tyr) //This must be added to load maps at round start otherwise they will have weather or sun.
 
 	map_levels = list(
-			Z_LEVEL_STATION_MAINTS,
 			Z_LEVEL_STATION_ONE,
 			Z_LEVEL_STATION_TWO,
 			Z_LEVEL_STATION_THREE,
@@ -125,7 +125,8 @@ but they don't actually change anything about the load order
 	lateload_z_levels = list(
 			list("VR World"),
 			list("Fuel Depot - Z1 Space"),
-			list("Thor Surface")
+			list("Thor Surface"),
+			list("Desert Valley")
 			//list("Kara Aerostat - Z1 Aerostat"), //Remove Kara Z layers
 			//list("Kara - Z1 Northern Star") //Remove Kara Z layers
 			)
@@ -146,7 +147,7 @@ but they don't actually change anything about the load order
 // Commented out due to causing a lot of bugs. The base proc plus overmap achieves this functionality anyways.
 /*
 // Short range computers see only the six main levels, others can see the surrounding surface levels.
-/datum/map/southern_cross/get_map_levels(var/srcz, var/long_range = TRUE)
+/datum/map/soluna_nexus/get_map_levels(var/srcz, var/long_range = TRUE)
 	if (long_range && (srcz in map_levels))
 		return map_levels
 	else if (srcz == Z_LEVEL_TRANSIT && !long_range)
@@ -167,7 +168,7 @@ but they don't actually change anything about the load order
 	else
 		return list(srcz) //prevents runtimes when using CMC. any Z-level not defined above will be 'isolated' and only show to GPSes/CMCs on that same Z (e.g. CentCom).
 */
-/datum/map/southern_cross/perform_map_generation()
+/datum/map/soluna_nexus/perform_map_generation()
 	// First, place a bunch of submaps. This comes before tunnel/forest generation as to not interfere with the submap.(This controls POI limit generation, increase or lower its values to have more or less POI's)
 
 	// Cave submaps are first.
@@ -178,9 +179,9 @@ but they don't actually change anything about the load order
 	// Wilderness is next.
 	seed_submaps(list(Z_LEVEL_SURFACE_WILD), 240, /area/surface/outside/wilderness/normal, /datum/map_template/surface/wilderness/normal)  //CHOMPEdit bumped up from 60 to 150
 	seed_submaps(list(Z_LEVEL_SURFACE_WILD), 240, /area/surface/outside/wilderness/deep, /datum/map_template/surface/wilderness/deep)  //CHOMPEdit bumped up from 60 to 150
-	seed_submaps(list(Z_LEVEL_SURFACE_VALLEY), 200, /area/surface/outside/valley/walls, /datum/map_template/surface/valley/walls)
-	seed_submaps(list(Z_LEVEL_SURFACE_VALLEY), 200, /area/surface/outside/valley/inner, /datum/map_template/surface/valley/inner)
-	seed_submaps(list(Z_LEVEL_SURFACE_VALLEY), 200, /area/surface/outside/valley/end, /datum/map_template/surface/valley/end)
+	// seed_submaps(list(Z_LEVEL_SURFACE_VALLEY), 200, /area/surface/outside/valley/walls, /datum/map_template/surface/valley/walls) //CHOMPedit UNCOMMENT THESE IF YOU WANT VALLEY BACK
+	// seed_submaps(list(Z_LEVEL_SURFACE_VALLEY), 200, /area/surface/outside/valley/inner, /datum/map_template/surface/valley/inner)
+	// seed_submaps(list(Z_LEVEL_SURFACE_VALLEY), 200, /area/surface/outside/valley/end, /datum/map_template/surface/valley/end)
 	// If Space submaps are made, add a line to make them here as well.
 
 	// Now for the tunnels. (This decides the load order of ore generation and cave generation. Check Random_Map to see % )
@@ -190,43 +191,43 @@ but they don't actually change anything about the load order
 	return 1
 
 // Skybox Settings
-/datum/skybox_settings/southern_cross
+/datum/skybox_settings/soluna_nexus
 	icon_state = "dyable"
 	random_color = TRUE
-// For making the 6-in-1 holomap, we calculate some offsets
-#define SOUTHERN_CROSS_MAP_SIZE 160 // Width and height of compiled in Southern Cross z levels.
+// For making the 4-in-1 holomap, we calculate some offsets
+#define SOUTHERN_CROSS_MAP_SIZE 200 // Width and height of compiled in Southern Cross z levels.
 #define SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER 40 // 40px central gutter between columns
 #define SOUTHERN_CROSS_HOLOMAP_MARGIN_X ((HOLOMAP_ICON_SIZE - (2*SOUTHERN_CROSS_MAP_SIZE) - SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER) / 2) // 100
-#define SOUTHERN_CROSS_HOLOMAP_MARGIN_Y ((HOLOMAP_ICON_SIZE - (3*SOUTHERN_CROSS_MAP_SIZE)) / 2) // 60
+#define SOUTHERN_CROSS_HOLOMAP_MARGIN_Y ((HOLOMAP_ICON_SIZE - (2*SOUTHERN_CROSS_MAP_SIZE)) / 2) // 60
 
-/datum/map_z_level/southern_cross/station
-	flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
-	holomap_legend_x = 220
-	holomap_legend_y = 160
+/datum/map_z_level/soluna_nexus/station
+    flags = MAP_LEVEL_STATION|MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
+    holomap_legend_x = 220
+    holomap_legend_y = 160
 
-/datum/map_z_level/southern_cross/station/station_one
-	z = Z_LEVEL_STATION_ONE
-	name = "Deck 1"
-	base_turf = /turf/space
-	transit_chance = 15
-	holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - 40
-	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*0
+/datum/map_z_level/soluna_nexus/station/station_one
+    z = Z_LEVEL_STATION_ONE
+    name = "Deck 1"
+    base_turf = /turf/space
+    transit_chance = 15
+    holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER / 2
+    holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*0
 
-/datum/map_z_level/southern_cross/station/station_two
-	z = Z_LEVEL_STATION_TWO
-	name = "Deck 2"
-	base_turf = /turf/simulated/open
-	transit_chance = 15
-	holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - 40
-	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
+/datum/map_z_level/soluna_nexus/station/station_two
+    z = Z_LEVEL_STATION_TWO
+    name = "Deck 2"
+    base_turf = /turf/simulated/open
+    transit_chance = 15
+    holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER / 2
+    holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
 
-/datum/map_z_level/southern_cross/station/station_three
-	z = Z_LEVEL_STATION_THREE
-	name = "Deck 3"
-	base_turf = /turf/simulated/open
-	transit_chance = 15
-	holomap_offset_x = HOLOMAP_ICON_SIZE - SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_MAP_SIZE - 40
-	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
+/datum/map_z_level/soluna_nexus/station/station_three
+    z = Z_LEVEL_STATION_THREE
+    name = "Deck 3"
+    base_turf = /turf/simulated/open
+    transit_chance = 15
+    holomap_offset_x = SOUTHERN_CROSS_HOLOMAP_MARGIN_X + SOUTHERN_CROSS_MAP_SIZE + SOUTHERN_CROSS_HOLOMAP_CENTER_GUTTER / 2
+    holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
 
 /* //CHOMPedit: Disabling empty space map level as overmap generation now generates this as needed.
 /datum/map_z_level/southern_cross/empty_space
@@ -235,19 +236,19 @@ but they don't actually change anything about the load order
 	flags = MAP_LEVEL_PLAYER
 	transit_chance = 60
 */
-/datum/map_z_level/southern_cross/surface
+/datum/map_z_level/soluna_nexus/surface
 	z = Z_LEVEL_SURFACE
 	name = "Plains"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
 	base_turf = /turf/simulated/floor/outdoors/rocks
 
-/datum/map_z_level/southern_cross/surface_mine
+/datum/map_z_level/soluna_nexus/surface_mine
 	z = Z_LEVEL_SURFACE_MINE
 	name = "Mountains"
 	flags = MAP_LEVEL_CONTACT|MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONSOLES
 	base_turf = /turf/simulated/floor/outdoors/rocks
 
-/datum/map_z_level/southern_cross/surface_wild
+/datum/map_z_level/soluna_nexus/surface_wild
 	z = Z_LEVEL_SURFACE_WILD
 	name = "Wilderness"
 	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES
@@ -260,13 +261,13 @@ but they don't actually change anything about the load order
 	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES
 	base_turf = /turf/simulated/open
 */
-
+/* CHOMPedit, uncomment this to add the valley back
 /datum/map_z_level/southern_cross/surface_valley
 	z = Z_LEVEL_SURFACE_VALLEY
 	name = "Valley"
 	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES
 	base_turf = /turf/simulated/floor/outdoors/rocks
-
+*/
 //CHOMPedit - KSC = So Christmas Casino has weather.
 /*/datum/map_z_level/southern_cross/surface_casino
 	z = Z_LEVEL_SURFACE_CASINO
@@ -274,164 +275,34 @@ but they don't actually change anything about the load order
 	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED|MAP_LEVEL_CONTACT|MAP_LEVEL_CONSOLES|MAP_LEVEL_VORESPAWN
 	base_turf = /turf/simulated/floor/outdoors/rocks
 */
-/datum/map_z_level/southern_cross/misc
+/datum/map_z_level/soluna_nexus/misc
 	z = Z_LEVEL_MISC
 	name = "Misc"
 	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_VORESPAWN
 	transit_chance = 15
 
-/datum/map_z_level/southern_cross/centcom
+/datum/map_z_level/soluna_nexus/centcom
 	z = Z_LEVEL_CENTCOM
 	name = "Centcom"
 	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_CONTACT
 
-/datum/map_z_level/southern_cross/transit
+/datum/map_z_level/soluna_nexus/transit
 	z = Z_LEVEL_TRANSIT
 	name = "Transit"
 	flags = MAP_LEVEL_ADMIN|MAP_LEVEL_SEALED|MAP_LEVEL_PLAYER|MAP_LEVEL_CONTACT
 
 //Thor Z-Level
-/datum/map_z_level/southern_cross/thor
+/datum/map_z_level/soluna_nexus/thor
 	z = Z_LEVEL_JUNGLE
 	name = "Thor Surface"
 	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED
 	base_turf = /turf/simulated/floor/outdoors/rocks
 
-// Deck 0 Z-Level
-/datum/map_z_level/southern_cross/station/station_maintenance
-	z = Z_LEVEL_STATION_MAINTS
-	name = "Maintenance Deck"
-	base_turf = /turf/simulated/open
-	transit_chance = 15
-	holomap_offset_x = HOLOMAP_ICON_SIZE - SOUTHERN_CROSS_HOLOMAP_MARGIN_X - SOUTHERN_CROSS_MAP_SIZE - 40
-	holomap_offset_y = SOUTHERN_CROSS_HOLOMAP_MARGIN_Y + SOUTHERN_CROSS_MAP_SIZE*1
-
-/*
- KSC 9/29/20 = No longer relevant code as we have nonencludian portals to jump between outpost,caves and wilderness
-//Teleport to Mine
-
-/obj/effect/step_trigger/teleporter/mine/to_mining/New()
-	..()
-	teleport_x = src.x
-	teleport_y = 2
-	teleport_z = Z_LEVEL_SURFACE_MINE
-
-/obj/effect/step_trigger/teleporter/mine/from_mining/New()
-	..()
-	teleport_x = src.x
-	teleport_y = world.maxy - 1
-	teleport_z = Z_LEVEL_SURFACE
-
-//Teleport to Wild
-
-/obj/effect/step_trigger/teleporter/wild/to_wild/New()
-	..()
-	teleport_x = src.x
-	teleport_y = 2
-	teleport_z = Z_LEVEL_SURFACE_WILD
-
-/obj/effect/step_trigger/teleporter/wild/from_wild/New()
-	..()
-	teleport_x = src.x
-	teleport_y = world.maxy - 1
-	teleport_z = Z_LEVEL_SURFACE_MINE
-*/
-
-/datum/planet/sif
-	expected_z_levels = list(
-		Z_LEVEL_SURFACE,
-		Z_LEVEL_SURFACE_MINE,
-		Z_LEVEL_SURFACE_WILD,
-		//Z_LEVEL_SURFACE_SKYLANDS, //Sky islands removal due to lack of use
-		Z_LEVEL_SURFACE_VALLEY
-	)
-//Z_LEVEL_SURFACE_CASINO //CHOMPedit - KSC = So there is weather on the Casino. //Move this into /datum/planet/sif and remember to add a coma for the new entry, for when you need the casino again
-
-/datum/planet/thor
-	expected_z_levels = list(
-		Z_LEVEL_JUNGLE
-	)
-
-/obj/effect/step_trigger/teleporter/bridge/east_to_west/Initialize()
-	teleport_x = src.x - 4
-	teleport_y = src.y
-	teleport_z = src.z
-	return ..()
-
-/obj/effect/step_trigger/teleporter/bridge/east_to_west/small/Initialize()
-	teleport_x = src.x - 3
-	teleport_y = src.y
-	teleport_z = src.z
-	return ..()
-
-/obj/effect/step_trigger/teleporter/bridge/west_to_east/Initialize()
-	teleport_x = src.x + 4
-	teleport_y = src.y
-	teleport_z = src.z
-	return ..()
-
-/obj/effect/step_trigger/teleporter/bridge/west_to_east/small/Initialize()
-	teleport_x = src.x + 3
-	teleport_y = src.y
-	teleport_z = src.z
-	return ..()
-
-/obj/effect/step_trigger/teleporter/bridge/north_to_south/Initialize()
-	teleport_x = src.x
-	teleport_y = src.y - 4
-	teleport_z = src.z
-	return ..()
-
-/obj/effect/step_trigger/teleporter/bridge/south_to_north/Initialize()
-	teleport_x = src.x
-	teleport_y = src.y + 4
-	teleport_z = src.z
-	return ..()
-
- /* KSC 9/29/20 = Adding these as we now have nonencludian portals */
-
-/obj/effect/map_effect/portal/master/side_a/plains_to_caves
-	portal_id = "plains_caves-normal"
-
-/obj/effect/map_effect/portal/master/side_b/caves_to_plains
-	portal_id = "plains_caves-normal"
-
-/obj/effect/map_effect/portal/master/side_a/plains_to_caves/river
-	portal_id = "plains_caves-river"
-
-/obj/effect/map_effect/portal/master/side_b/caves_to_plains/river
-	portal_id = "plains_caves-river"
-
-
-/obj/effect/map_effect/portal/master/side_a/caves_to_wilderness
-	portal_id = "caves_wilderness-normal"
-
-/obj/effect/map_effect/portal/master/side_b/wilderness_to_caves
-	portal_id = "caves_wilderness-normal"
-
-/obj/effect/map_effect/portal/master/side_a/caves_to_wilderness/river
-	portal_id = "caves_wilderness-river"
-
-/obj/effect/map_effect/portal/master/side_b/wilderness_to_caves/river
-	portal_id = "caves_wilderness-river"
-
-/obj/effect/map_effect/portal/master/side_a/wilderness_to_valley
-	portal_id = "wilderness_valley"
-
-/obj/effect/map_effect/portal/master/side_b/wilderness_to_valley
-	portal_id = "wilderness_valley"
-
-
-/*
-//CHOMPEdit this is very much necessary for us otherwise weather sounds play on other levels
-/datum/planet/sif
-	expected_z_levels = list(
-		Z_LEVEL_SURFACE,
-		Z_LEVEL_SURFACE_MINE,
-		Z_LEVEL_SURFACE_WILD
-	)
-*/
-//Suit Storage Units
+/datum/map_z_level/soluna_nexus/valley
+	z = Z_LEVEL_DEATH_VALLEY
+	name = "Desert Valley"
+	flags = MAP_LEVEL_PLAYER|MAP_LEVEL_SEALED
+	base_turf = /turf/simulated/floor/outdoors/rocks
 
 /obj/machinery/suit_cycler/exploration
 	name = "Explorer suit cycler"
@@ -444,7 +315,7 @@ but they don't actually change anything about the load order
 	req_access = null
 	req_one_access = list(access_pilot,access_explorer)
 
-/datum/map/southern_cross/get_map_info()
+/datum/map/soluna_nexus/get_map_info()
 	. = list()
 	. +=  "The NLS [full_name] is a small waystation in orbit of the frozen garden world of Sif, jewel of the Vir system.<br>"
 	. +=  "Though Vir is typically peaceful, the system has seen its fair share of conflict in the face of technological extremists, rogue drone intelligence, and worse.<br>"

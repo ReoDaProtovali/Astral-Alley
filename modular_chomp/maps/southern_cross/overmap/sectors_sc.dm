@@ -1,3 +1,4 @@
+<<<<<<< HEAD:maps/southern_cross/overmap/sectors.dm
 // Overmap object for Sif, hanging in the void of space
 /obj/effect/overmap/visitable/planet/Sif
 	name = "Sif"
@@ -49,6 +50,8 @@
 	tmp.pixel_y = skybox_offset_y
 	return tmp
 
+=======
+>>>>>>> a5b8cb92d1 (Soluna Nexus map fixes 1.0 (#9276)):modular_chomp/maps/southern_cross/overmap/sectors_sc.dm
 /obj/effect/overmap/visitable/sector/Southern_Cross
 	name = "Southern Cross"
 	icon = 'modular_chomp/icons/obj/overmap.dmi'
