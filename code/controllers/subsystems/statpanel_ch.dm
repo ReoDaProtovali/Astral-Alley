@@ -33,8 +33,13 @@ SUBSYSTEM_DEF(statpanels)
 			//"Next Map: -- Not Available --",
 			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
 			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
+<<<<<<< HEAD:code/controllers/subsystems/statpanel_ch.dm
 			"Round Time: [ROUND_TIME()]",
 			"Station Date: [stationdate2text()], [capitalize(GLOB.world_time_season)]",
+=======
+			"Round Time: [roundduration2text()]",
+			"Station Date: [stationdate2text()], [capitalize(GLOB.world_time_season)]", // CHOMPEdit
+>>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286)):code/controllers/subsystems/statpanel.dm
 			"Station Time: [stationtime2text()]",
 			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)"
 		)

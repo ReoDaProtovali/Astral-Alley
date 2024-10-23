@@ -221,7 +221,11 @@
 //	speak_chance = 1
 	a_intent = "harm"
 	var/corpse = /obj/effect/landmark/mobcorpse/tunnelclown
+<<<<<<< HEAD
 	var/weapon1 = /obj/item/weapon/twohanded/fireaxe
+=======
+	var/weapon1 = /obj/item/material/twohanded/fireaxe
+>>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 	stop_when_pulled = 0
 	maxHealth = 100
 	health = 100
