@@ -237,4 +237,12 @@
 
 	var/datum/focus //What receives our keyboard inputs. src by default
 
+<<<<<<< HEAD
+=======
+	/// dict of custom stat tabs with data
+	var/list/list/misc_tabs = list()
+
+	var/list/datum/action/actions
+
+>>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 	var/custom_footstep = FOOTSTEP_MOB_SHOE // CHOMPEdit

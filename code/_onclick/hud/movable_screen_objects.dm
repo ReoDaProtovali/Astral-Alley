@@ -11,7 +11,12 @@
 /obj/screen/movable
 	var/snap2grid = FALSE
 	var/moved = FALSE
+<<<<<<< HEAD
 	var/x_off = -16 
+=======
+	var/locked = FALSE
+	var/x_off = -16
+>>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 	var/y_off = -16
 
 //Snap Screen Object
@@ -22,7 +27,22 @@
 
 
 /obj/screen/movable/MouseDrop(over_object, src_location, over_location, src_control, over_control, params)
+<<<<<<< HEAD
 	var/list/PM = params2list(params)
+=======
+	if(locked) // no! i am locked! begone!
+		return
+	var/position = mouse_params_to_position(params)
+	if(!position)
+		return
+
+	screen_loc = position
+	moved = screen_loc
+
+/// Takes mouse parmas as input, returns a string representing the appropriate mouse position
+/obj/screen/movable/proc/mouse_params_to_position(params)
+	var/list/modifiers = params2list(params)
+>>>>>>> 3becf31cf4 (manually ports last upstream PRs (#9286))
 
 	//No screen-loc information? abort.
 	if(!PM || !PM["screen-loc"])
@@ -74,6 +94,8 @@
 		. = num+1
 	else if(findtext(X,"CENTER"))
 		. = view_dist+1
+	else
+		. = text2num(X)
 
 /obj/screen/movable/proc/encode_screen_Y(Y)
 	var/view_dist = world.view
@@ -102,6 +124,8 @@
 		. = num+1
 	else if(findtext(Y,"CENTER"))
 		. = view_dist+1
+	else
+		. = text2num(Y)
 
 //Debug procs
 /client/proc/test_movable_UI()
