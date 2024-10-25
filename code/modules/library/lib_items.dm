@@ -130,10 +130,17 @@ Book Cart End
 
 /obj/structure/bookcase/manuals/medical/New()
 	..()
+<<<<<<< HEAD
 	new /obj/item/weapon/book/manual/medical_cloning(src)
 	new /obj/item/weapon/book/manual/wiki/medical_diagnostics_manual(src) // CHOMPEdit
 	new /obj/item/weapon/book/manual/wiki/medical_diagnostics_manual(src) // CHOMPEdit
 	new /obj/item/weapon/book/manual/wiki/medical_diagnostics_manual(src) // CHOMPEdit
+=======
+	new /obj/item/book/manual/medical_cloning(src)
+	new /obj/item/book/manual/wiki/medical_diagnostics_manual(src)
+	new /obj/item/book/manual/wiki/medical_diagnostics_manual(src)
+	new /obj/item/book/manual/wiki/medical_diagnostics_manual(src)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	update_icon()
 
 
@@ -142,6 +149,7 @@ Book Cart End
 
 /obj/structure/bookcase/manuals/engineering/New()
 	..()
+<<<<<<< HEAD
 	new /obj/item/weapon/book/manual/wiki/engineering_construction(src) // CHOMPEdit
 	new /obj/item/weapon/book/manual/engineering_particle_accelerator(src)
 	new /obj/item/weapon/book/manual/wiki/engineering_hacking(src) // CHOMPEdit
@@ -149,6 +157,15 @@ Book Cart End
 	new /obj/item/weapon/book/manual/atmospipes(src)
 	new /obj/item/weapon/book/manual/engineering_singularity_safety(src)
 	new /obj/item/weapon/book/manual/evaguide(src)
+=======
+	new /obj/item/book/manual/wiki/engineering_construction(src)
+	new /obj/item/book/manual/engineering_particle_accelerator(src)
+	new /obj/item/book/manual/wiki/engineering_hacking(src)
+	new /obj/item/book/manual/wiki/engineering_guide(src)
+	new /obj/item/book/manual/atmospipes(src)
+	new /obj/item/book/manual/engineering_singularity_safety(src)
+	new /obj/item/book/manual/evaguide(src)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	update_icon()
 
 /obj/structure/bookcase/manuals/research_and_development
@@ -199,7 +216,7 @@ Book Cart End
 			to_chat(user, "<span class='notice'>The pages of [title] have been cut out!</span>")
 			return
 	if(src.dat)
-		display_content(user) // CHOMPEdit
+		display_content(user)
 		user.visible_message("[user] opens a book titled \"[src.title]\" and begins reading intently.")
 		playsound(src, 'sound/bureaucracy/bookopen.ogg', 50, 1)
 		onclose(user, "book")
@@ -207,11 +224,9 @@ Book Cart End
 	else
 		to_chat(user, "This book is completely blank!")
 
-// CHOMPEdit Start
 /// Proc that handles sending the book information to the user, as well as some housekeeping stuff.
 /obj/item/weapon/book/proc/display_content(mob/living/user)
 	user << browse("<TT><I>Penned by [author].</I></TT> <BR>" + "[dat]", "window=book")
-// CHOMPEdit End
 
 /obj/item/weapon/book/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(carved)
@@ -301,9 +316,15 @@ Book Cart End
 
 /obj/item/weapon/book/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	if(user.zone_sel.selecting == O_EYES)
+<<<<<<< HEAD
 		user.visible_message("<span class='notice'>You open up the book and show it to [M]. </span>", \
 			"<span class='notice'> [user] opens up a book and shows it to [M]. </span>")
 		display_content(M) // CHOMPEdit
+=======
+		user.visible_message(span_notice("You open up the book and show it to [M]."), \
+			span_notice(" [user] opens up a book and shows it to [M]."))
+		display_content(M)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN) //to prevent spam
 
 /*

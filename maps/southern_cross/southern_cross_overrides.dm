@@ -4,6 +4,7 @@
 /mob/living/silicon/robot/platform/cargo
 	req_access = list(access_cargo_bot)
 
+<<<<<<< HEAD
 /obj/item/weapon/card/id/platform/Initialize()
 	. = ..()
 	access |= access_explorer
@@ -29,3 +30,9 @@
 		to_chat(user, "<span class='danger'>\The [src] does not appear to work in VR! This is useless to you!</span>")
 		return
 	. = ..()
+=======
+/obj/item/card/id/platform/Initialize()
+	. = ..()
+	access |= access_explorer
+	access |= access_pilot
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))

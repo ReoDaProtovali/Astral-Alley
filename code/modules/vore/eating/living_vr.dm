@@ -426,11 +426,21 @@
 	var/name
 	var/nickname //vorestation edit - This set appends nicknames to the save slot
 	var/list/charlist = list()
+<<<<<<< HEAD
 	var/default //VOREStation edit
 	for(var/i=1, i<= CONFIG_GET(number/character_slots), i++) //CHOMPEdit
 		S.cd = "/character[i]"
 		S["real_name"] >> name
 		S["nickname"] >> nickname //vorestation edit
+=======
+
+	var/default
+	for(var/i in 1 to CONFIG_GET(number/character_slots))
+		var/list/save_data = savefile.get_entry("character[i]", list())
+		var/name = save_data["real_name"]
+		var/nickname = save_data["nickname"]
+
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		if(!name)
 			name = "[i] - \[Unused Slot\]"
 		else if(i == default_slot)

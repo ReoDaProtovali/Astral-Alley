@@ -34,7 +34,11 @@
 
 /// Hours
 /datum/config_entry/number/pto_cap
+<<<<<<< HEAD:code/controllers/configuration_ch/entries/vorestation.dm
 	default = 100
+=======
+	default = 200 // CHOMPEdit
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289)):code/controllers/configuration/entries/vorestation.dm
 	protection = CONFIG_ENTRY_LOCKED
 
 /datum/config_entry/flag/require_flavor

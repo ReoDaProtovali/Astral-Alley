@@ -143,10 +143,17 @@
 /area/submap/virgo2/DJOutpost1)
 "x" = (
 /obj/structure/bookcase,
+<<<<<<< HEAD
 /obj/item/weapon/book/codex/lore/vir,
 /obj/item/weapon/book/manual/excavation,
 /obj/item/weapon/book/manual/engineering_construction,
 /obj/item/weapon/storage/bible,
+=======
+/obj/item/book/codex/lore/vir,
+/obj/item/book/manual/excavation,
+/obj/item/book/manual/wiki/engineering_construction,
+/obj/item/storage/bible,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/wood,
 /area/submap/virgo2/DJOutpost1)
 "y" = (

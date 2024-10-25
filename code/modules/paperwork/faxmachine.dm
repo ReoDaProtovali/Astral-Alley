@@ -461,25 +461,38 @@ Extracted to its own procedure for easier logic handling with paper bundles.
 	if (istype(fax, /obj/item/weapon/paper))
 		var/obj/item/weapon/paper/P = fax
 		var/text = "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>";
+<<<<<<< HEAD
 		file("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html") << text; // CHOMPEdit
 	else if (istype(fax, /obj/item/weapon/photo))
 		var/obj/item/weapon/photo/H = fax
 		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png") // CHOMPEdit
+=======
+		file("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html") << text;
+	else if (istype(fax, /obj/item/photo))
+		var/obj/item/photo/H = fax
+		fcopy(H.img, "[CONFIG_GET(string/fax_export_dir)]/photo_[faxid].png")
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		var/text = "<html><head><title>[H.name]</title></head>" \
 			+ "<body style='overflow:hidden;margin:0;text-align:center'>" \
 			+ "<img src='photo_[faxid].png'>" \
 			+ "[H.scribble ? "<br>Written on the back:<br><i>[H.scribble]</i>" : ""]"\
 			+ "</body></html>"
+<<<<<<< HEAD
 		file("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html") << text // CHOMPEdit
 	else if (istype(fax, /obj/item/weapon/paper_bundle))
 		var/obj/item/weapon/paper_bundle/B = fax
+=======
+		file("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html") << text
+	else if (istype(fax, /obj/item/paper_bundle))
+		var/obj/item/paper_bundle/B = fax
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		var/data = ""
 		for (var/page = 1, page <= B.pages.len, page++)
 			var/obj/pageobj = B.pages[page]
 			var/page_faxid = export_fax(pageobj)
 			data += "<a href='fax_[page_faxid].html'>Page [page] - [pageobj.name]</a><br>"
 		var/text = "<html><head><title>[B.name]</title></head><body>[data]</body></html>"
-		file("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html") << text // CHOMPEdit
+		file("[CONFIG_GET(string/fax_export_dir)]/fax_[faxid].html") << text
 	return faxid
 
 
@@ -488,16 +501,16 @@ Extracted to its own procedure for easier logic handling with paper bundles.
  * Call the chat webhook to transmit a notification of an admin fax to the admin chat.
  */
 /obj/machinery/photocopier/faxmachine/proc/message_chat_admins(var/mob/sender, var/faxname, var/obj/item/sent, var/faxid, font_colour="#006100")
-	if (CONFIG_GET(string/chat_webhook_url)) // CHOMPEdit
+	if (CONFIG_GET(string/chat_webhook_url))
 		spawn(0)
 			var/query_string = "type=fax"
-			query_string += "&key=[url_encode(CONFIG_GET(string/chat_webhook_key))]" // CHOMPEdit
+			query_string += "&key=[url_encode(CONFIG_GET(string/chat_webhook_key))]"
 			query_string += "&faxid=[url_encode(faxid)]"
 			query_string += "&color=[url_encode(font_colour)]"
 			query_string += "&faxname=[url_encode(faxname)]"
 			query_string += "&sendername=[url_encode(sender.name)]"
 			query_string += "&sentname=[url_encode(sent.name)]"
-			world.Export("[CONFIG_GET(string/chat_webhook_url)]?[query_string]") // CHOMPEdit
+			world.Export("[CONFIG_GET(string/chat_webhook_url)]?[query_string]")
 
 
 
@@ -506,12 +519,12 @@ Extracted to its own procedure for easier logic handling with paper bundles.
  * Call the chat webhook to transmit a notification of a job request
  */
 /obj/machinery/photocopier/faxmachine/proc/message_chat_rolerequest(var/font_colour="#006100", var/role_to_ping, var/reason, var/jobname)
-	if(CONFIG_GET(string/chat_webhook_url)) // CHOMPEdit
+	if(CONFIG_GET(string/chat_webhook_url))
 		spawn(0)
 			var/query_string = "type=rolerequest"
-			query_string += "&key=[url_encode(CONFIG_GET(string/chat_webhook_key))]" // CHOMPEdit
+			query_string += "&key=[url_encode(CONFIG_GET(string/chat_webhook_key))]"
 			query_string += "&ping=[url_encode(role_to_ping)]"
 			query_string += "&color=[url_encode(font_colour)]"
 			query_string += "&reason=[url_encode(reason)]"
 			query_string += "&job=[url_encode(jobname)]"
-			world.Export("[CONFIG_GET(string/chat_webhook_url)]?[query_string]") // CHOMPEdit
+			world.Export("[CONFIG_GET(string/chat_webhook_url)]?[query_string]")

@@ -57,14 +57,14 @@
 
 	icon_state = "drone_fab_active"
 	var/elapsed = world.time - time_last_drone
-	drone_progress = round((elapsed / CONFIG_GET(number/drone_build_time)) * 100) // CHOMPEdit
+	drone_progress = round((elapsed / CONFIG_GET(number/drone_build_time)) * 100)
 
 	if(drone_progress >= 100)
 		visible_message("\The [src] voices a strident beep, indicating a drone chassis is prepared.")
 
 /obj/machinery/drone_fabricator/examine(mob/user)
 	. = ..()
-	if(produce_drones && drone_progress >= 100 && istype(user,/mob/observer/dead) && CONFIG_GET(flag/allow_drone_spawn) && count_drones() < CONFIG_GET(number/max_maint_drones)) // CHOMPEdit
+	if(produce_drones && drone_progress >= 100 && istype(user,/mob/observer/dead) && CONFIG_GET(flag/allow_drone_spawn) && count_drones() < CONFIG_GET(number/max_maint_drones))
 		. += "<br><B>A drone is prepared. Select 'Join As Drone' from the Ghost tab to spawn as a maintenance drone.</B>"
 
 /obj/machinery/drone_fabricator/proc/create_drone(var/client/player)
@@ -72,7 +72,7 @@
 	if(stat & NOPOWER)
 		return
 
-	if(!produce_drones || !CONFIG_GET(flag/allow_drone_spawn) || count_drones() >= CONFIG_GET(number/max_maint_drones)) // CHOMPEdit
+	if(!produce_drones || !CONFIG_GET(flag/allow_drone_spawn) || count_drones() >= CONFIG_GET(number/max_maint_drones))
 		return
 
 	if(player && !istype(player.mob,/mob/observer/dead))
@@ -102,8 +102,13 @@
 		to_chat(src, "<span class='danger'>The game hasn't started yet!</span>")
 		return
 
+<<<<<<< HEAD
 	if(!CONFIG_GET(flag/allow_drone_spawn)) // CHOMPEdit
 		to_chat(src, "<span class='danger'>That verb is not currently permitted.</span>")
+=======
+	if(!CONFIG_GET(flag/allow_drone_spawn))
+		to_chat(src, span_danger("That verb is not currently permitted."))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		return
 
 	if (!src.stat)
@@ -117,7 +122,7 @@
 		return
 
 	// VOREStation Addition Start
-	if(CONFIG_GET(flag/use_age_restriction_for_jobs) && isnum(src.client.player_age)) // CHOMPEdit
+	if(CONFIG_GET(flag/use_age_restriction_for_jobs) && isnum(src.client.player_age))
 		var/time_till_play = max(0, 3 - src.client.player_age)
 		if(time_till_play)
 			to_chat(usr, "<span class='danger'>You have not been playing on the server long enough to join as drone.</span>")

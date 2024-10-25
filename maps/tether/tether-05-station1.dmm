@@ -8192,10 +8192,17 @@
 "atZ" = (
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/structure/bookcase/manuals/engineering,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/engineering_construction,
 /obj/item/weapon/book/manual/atmospipes,
 /obj/item/weapon/book/manual/engineering_guide,
 /obj/item/weapon/book/manual/evaguide,
+=======
+/obj/item/book/manual/wiki/engineering_construction,
+/obj/item/book/manual/atmospipes,
+/obj/item/book/manual/wiki/engineering_guide,
+/obj/item/book/manual/evaguide,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/tiled,
 /area/engineering/break_room)
 "auc" = (

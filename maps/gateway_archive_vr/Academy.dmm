@@ -2101,7 +2101,11 @@
 /area/awaymission/academy/classrooms)
 "gc" = (
 /obj/structure/bookcase,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/engineering_hacking,
+=======
+/obj/item/book/manual/wiki/engineering_hacking,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/wood,
 /area/awaymission/academy/classrooms)
 "gd" = (
@@ -2330,9 +2334,15 @@
 /area/awaymission/academy/classrooms)
 "gH" = (
 /obj/structure/bookcase,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/barman_recipes,
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/security_space_law,
+=======
+/obj/item/book/manual/barman_recipes,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/wood,
 /area/awaymission/academy/classrooms)
 "gI" = (

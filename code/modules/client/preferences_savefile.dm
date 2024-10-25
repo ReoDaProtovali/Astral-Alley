@@ -61,6 +61,7 @@
 	return 1
 
 /datum/preferences/proc/load_character(slot)
+<<<<<<< HEAD
 	if(!path)				return 0
 	if(!fexists(path))		return 0
 	var/savefile/S = new /savefile(path)
@@ -72,6 +73,35 @@
 		if(slot != default_slot)
 			default_slot = slot
 			S["default_slot"] << slot
+=======
+	SHOULD_NOT_SLEEP(TRUE)
+	if(!slot)
+		slot = default_slot
+
+	slot = sanitize_integer(slot, 1, CONFIG_GET(number/character_slots), initial(default_slot))
+	if(slot != default_slot)
+		default_slot = slot
+		savefile.set_entry("default_slot", slot)
+
+	var/list/save_data = savefile.get_entry("character[slot]") // This is allowed to be null and will give a -1 in needs_update
+
+	var/needs_update = save_data_needs_update(save_data)
+	if(needs_update == -2) //fatal, can't load any data
+		return FALSE
+
+	// Read everything into cache (pre-migrations, as migrations should have access to deserialized data)
+	// Uses priority order as some values may rely on others for creating default values
+	for(var/datum/preference/preference as anything in get_preferences_in_priority_order())
+		if(preference.savefile_identifier != PREFERENCE_CHARACTER)
+			continue
+
+		value_cache -= preference.type
+		read_preference(preference.type)
+
+	// It has to be a list or load_character freaks out
+	if(!save_data)
+		player_setup.load_character(list())
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	else
 		S["default_slot"] << default_slot
 
@@ -108,8 +138,18 @@
 			nif_path = nif_durability = nif_savedata = null //VOREStation Add - Don't copy NIF
 			S["default_slot"] << slot
 
+<<<<<<< HEAD
 	else
 		S["default_slot"] << default_slot
+=======
+	// This basically just changes default_slot without loading the correct data, so the next save call will overwrite
+	// the slot
+	slot = sanitize_integer(slot, 1, CONFIG_GET(number/character_slots), initial(default_slot))
+	if(slot != default_slot)
+		default_slot = slot
+		nif_path = nif_durability = nif_savedata = null //VOREStation Add - Don't copy NIF
+		savefile.set_entry("default_slot", slot)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 	return 1
 

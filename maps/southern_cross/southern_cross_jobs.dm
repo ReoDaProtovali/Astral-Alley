@@ -29,7 +29,11 @@ var/const/access_explorer = 43
 	department = "Command"
 	head_position = 1
 	department_flag = ENGSEC
+<<<<<<< HEAD
 	faction = "Station"
+=======
+	faction = FACTION_STATION
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	total_positions = 1
 	spawn_positions = 1
 	supervisors = "company officials and Corporate Regulations"
@@ -50,6 +54,7 @@ var/const/access_explorer = 43
 	return get_all_station_access()
 */
 
+<<<<<<< HEAD
 /datum/job/pilot
 	title = "Pilot"
 	flag = PILOT
@@ -64,10 +69,34 @@ var/const/access_explorer = 43
 	access = list(access_eva, access_maint_tunnels, access_external_airlocks, access_pilot, access_cargo, access_mining, access_mining_station)
 	minimal_access = list(access_eva, access_maint_tunnels, access_external_airlocks, access_pilot, access_cargo, access_mining, access_mining_station)
 	outfit_type = /decl/hierarchy/outfit/job/pilot
+=======
+/datum/department/planetside
+	name = DEPARTMENT_PLANET
+	color = "#555555"
+	sorting_order = 2 // Same as cargo in importance.
+
+/datum/job/pilot
+	title = "Pilot"
+	flag = PILOT
+	departments = list(DEPARTMENT_PLANET)
+	department_flag = CIVILIAN
+	faction = FACTION_STATION
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Head of Personnel"
+	selection_color = "#515151"
+	economic_modifier = 4
+	access = list(access_pilot, access_cargo, access_mining, access_mining_station)
+	minimal_access = list(access_pilot, access_cargo, access_mining, access_mining_station)
+
+	outfit_type = /decl/hierarchy/outfit/job/pilot
+	job_description = "A Pilot flies one of the shuttles between the Southern Cross and the outpost on Sif."
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 /datum/job/explorer
 	title = "Explorer"
 	flag = EXPLORER
+<<<<<<< HEAD
 	department = "Civilian"
 	department_flag = CIVILIAN
 	faction = "Station"
@@ -75,27 +104,54 @@ var/const/access_explorer = 43
 	spawn_positions = 4
 	supervisors = "the explorer leader and the head of personnel"
 	selection_color = "#515151"
+=======
+	departments = list(DEPARTMENT_RESEARCH, DEPARTMENT_PLANET)
+	department_flag = MEDSCI
+	faction = FACTION_STATION
+	total_positions = 4
+	spawn_positions = 4
+	supervisors = "the Research Director"
+	selection_color =  "#633D63"
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	economic_modifier = 4
 	access = list(access_explorer, access_research)
 	minimal_access = list(access_explorer, access_research)
 	banned_job_species = list(SPECIES_ZADDAT)
 
 	outfit_type = /decl/hierarchy/outfit/job/explorer2
+<<<<<<< HEAD
 /*
 	alt_titles = list(
 		"Explorer Technician" = /decl/hierarchy/outfit/job/explorer2/technician,
 		"Explorer Medic" = /decl/hierarchy/outfit/job/explorer2/medic)
+=======
+	job_description = "An Explorer searches for interesting things on the surface of Sif, and returns them to the station."
+
+/*
+	alt_titles = list(
+		JOB_ALT_EXPLORERE_TECHNICIAN = /decl/hierarchy/outfit/job/explorer2/technician,
+		JOB_ALT_EXPLORER_MEDIC = /decl/hierarchy/outfit/job/explorer2/medic)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 */
 
 /datum/job/sar
 	title = "Search and Rescue"
 	flag = SAR
+<<<<<<< HEAD
 	department = "Medical"
 	department_flag = MEDSCI
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "the chief medical officer"
+=======
+	departments = list(DEPARTMENT_PLANET, DEPARTMENT_MEDICAL)
+	department_flag = MEDSCI
+	faction = FACTION_STATION
+	total_positions = 2
+	spawn_positions = 2
+	supervisors = "the Chief Medical Officer"
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	selection_color = "#515151"
 	economic_modifier = 4
 	access = list(access_medical, access_medical_equip, access_morgue, access_surgery, access_chemistry, access_virology, access_eva, access_maint_tunnels, access_external_airlocks, access_psychiatrist, access_explorer)

@@ -290,8 +290,13 @@
 	if(confirm != "Yes")
 		return
 
+<<<<<<< HEAD
 	if(CONFIG_GET(flag/antag_hud_restricted) && has_enabled_antagHUD == 1) // CHOMPEdit
 		to_chat(src, "<span class='danger'>You have used the antagHUD and cannot respawn or use communicators!</span>")
+=======
+	if(CONFIG_GET(flag/antag_hud_restricted) && has_enabled_antagHUD == 1)
+		to_chat(src, span_danger("You have used the antagHUD and cannot respawn or use communicators!"))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		return
 
 	for(var/mob/living/L in mob_list) //Simple check so you don't have dead people calling.

@@ -109,8 +109,13 @@
 	if(src.imprinted != "empty")
 		to_chat(U, "<span class='danger'>Capture failed!</span>: The soul stone has already been imprinted with [src.imprinted]'s mind!")
 		return
+<<<<<<< HEAD
 	if ((T.health + T.halloss) > CONFIG_GET(number/health_threshold_crit) && T.stat != DEAD) // CHOMPEdit
 		to_chat(U, "<span class='danger'>Capture failed!</span>: Kill or maim the victim first!")
+=======
+	if ((T.health + T.halloss) > CONFIG_GET(number/health_threshold_crit) && T.stat != DEAD)
+		to_chat(U, span_danger("Capture failed!") + ": Kill or maim the victim first!")
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		return
 	if(T.client == null)
 		to_chat(U, "<span class='danger'>Capture failed!</span>: The soul has already fled it's mortal frame.")

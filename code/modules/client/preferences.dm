@@ -344,8 +344,8 @@ var/list/preferences_datums = list()
 	if(!istype(user, /mob/new_player))	return
 
 	if(href_list["preference"] == "open_whitelist_forum")
-		if(CONFIG_GET(string/forumurl)) // CHOMPEdit
-			user << link(CONFIG_GET(string/forumurl)) // CHOMPEdit
+		if(CONFIG_GET(string/forumurl))
+			user << link(CONFIG_GET(string/forumurl))
 		else
 			to_chat(user, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
 			return
@@ -428,11 +428,19 @@ var/list/preferences_datums = list()
 	var/name
 	var/nickname //vorestation edit - This set appends nicknames to the save slot
 	var/list/charlist = list()
+<<<<<<< HEAD
 	var/default //VOREStation edit
 	for(var/i = 1, i <= CONFIG_GET(number/character_slots), i++) // CHOMPEdit
 		S.cd = "/character[i]"
 		S["real_name"] >> name
 		S["nickname"] >> nickname //vorestation edit
+=======
+
+	for(var/i in 1 to CONFIG_GET(number/character_slots))
+		var/list/save_data = savefile.get_entry("character[i]", list())
+		var/name = save_data["real_name"]
+		var/nickname = save_data["nickname"]
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		if(!name)
 			name = "[i] - \[Unused Slot\]"
 		else if(i == default_slot)
@@ -471,10 +479,19 @@ var/list/preferences_datums = list()
 	var/name
 	var/nickname //vorestation edit - This set appends nicknames to the save slot
 	var/list/charlist = list()
+<<<<<<< HEAD
 	for(var/i = 1, i <= CONFIG_GET(number/character_slots), i++) // CHOMPEdit
 		S.cd = "/character[i]"
 		S["real_name"] >> name
 		S["nickname"] >> nickname //vorestation edit
+=======
+
+	for(var/i in 1 to CONFIG_GET(number/character_slots))
+		var/list/save_data = savefile.get_entry("character[i]", list())
+		var/name = save_data["real_name"]
+		var/nickname = save_data["nickname"]
+
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		if(!name)
 			name = "[i] - \[Unused Slot\]"
 		if(i == default_slot)

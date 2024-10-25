@@ -1363,6 +1363,7 @@
 	return
 
 /mob/living/silicon/robot/proc/add_robot_verbs()
+<<<<<<< HEAD
 	add_verb(src,robot_verbs_default) //CHOMPEdit TGPanel
 	add_verb(src,silicon_subsystems) //CHOMPEdit TGPanel
 	if(CONFIG_GET(flag/allow_robot_recolor)) // CHOMPEdit
@@ -1373,6 +1374,18 @@
 	remove_verb(src,silicon_subsystems)  //CHOMPEdit
 	if(CONFIG_GET(flag/allow_robot_recolor)) // CHOMPEdit
 		remove_verb(src,/mob/living/silicon/robot/proc/ColorMate ) //ChompEDIT - probable copypaste error //CHOMPEdit
+=======
+	add_verb(src, robot_verbs_default)
+	add_verb(src, silicon_subsystems)
+	if(CONFIG_GET(flag/allow_robot_recolor))
+		add_verb(src, /mob/living/silicon/robot/proc/ColorMate)
+
+/mob/living/silicon/robot/proc/remove_robot_verbs()
+	remove_verb(src, robot_verbs_default)
+	remove_verb(src, silicon_subsystems)
+	if(CONFIG_GET(flag/allow_robot_recolor))
+		remove_verb(src, /mob/living/silicon/robot/proc/ColorMate)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 // Uses power from cyborg's cell. Returns 1 on success or 0 on failure.
 // Properly converts using CELLRATE now! Amount is in Joules.

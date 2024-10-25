@@ -105,14 +105,20 @@
 	if(leader_welcome_text && player == leader)
 		to_chat(player.current, "<span class='notice'>[leader_welcome_text]</span>")
 	else
+<<<<<<< HEAD
 		to_chat(player.current, "<span class='notice'>[welcome_text]</span>")
 	if (CONFIG_GET(flag/objectives_disabled)) // CHOMPEdit
 		to_chat(player.current, "<span class='notice'>[antag_text]</span>")
+=======
+		to_chat(player.current, span_notice("[welcome_text]"))
+	if (CONFIG_GET(flag/objectives_disabled))
+		to_chat(player.current, span_notice("[antag_text]"))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 	if((flags & ANTAG_HAS_NUKE) && !spawned_nuke)
 		create_nuke()
 
-	if (!CONFIG_GET(flag/objectives_disabled)) // CHOMPEdit
+	if (!CONFIG_GET(flag/objectives_disabled))
 		show_objectives(player)
 	return 1
 

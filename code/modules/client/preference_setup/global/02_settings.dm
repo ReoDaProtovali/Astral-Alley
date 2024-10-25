@@ -51,6 +51,7 @@
 
 	pref.lastchangelog	= sanitize_text(pref.lastchangelog, initial(pref.lastchangelog))
 	pref.lastnews		= sanitize_text(pref.lastnews, initial(pref.lastnews))
+<<<<<<< HEAD
 	pref.default_slot	= sanitize_integer(pref.default_slot, 1, CONFIG_GET(number/character_slots), initial(pref.default_slot)) // CHOMPEdit
 
 /datum/category_item/player_setup_item/player_global/settings/content(var/mob/user)
@@ -139,3 +140,6 @@
 		return FALSE
 
 	return client.set_preference(preference, set_preference)
+=======
+	pref.default_slot	= sanitize_integer(pref.default_slot, 1, CONFIG_GET(number/character_slots), initial(pref.default_slot))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))

@@ -49,8 +49,8 @@ var/global/datum/controller/subsystem/ticker/ticker
 	global.ticker = src // TODO - Remove this! Change everything to point at SSticker intead
 
 /datum/controller/subsystem/ticker/Initialize()
-	pregame_timeleft = CONFIG_GET(number/pregame_time) // CHOMPEdit
-	send2mainirc("Server lobby is loaded and open at byond://[CONFIG_GET(string/serverurl) ? CONFIG_GET(string/serverurl) : (CONFIG_GET(string/server) ? CONFIG_GET(string/server) : "[world.address]:[world.port]")]") // CHOMPEdit
+	pregame_timeleft = CONFIG_GET(number/pregame_time)
+	send2mainirc("Server lobby is loaded and open at byond://[CONFIG_GET(string/serverurl) ? CONFIG_GET(string/serverurl) : (CONFIG_GET(string/server) ? CONFIG_GET(string/server) : "[world.address]:[world.port]")]")
 	SSwebhooks.send(
 		WEBHOOK_ROUNDPREP,
 		list(
@@ -106,8 +106,13 @@ var/global/datum/controller/subsystem/ticker/ticker
 	round_start_time = world.time //otherwise round_start_time would be 0 for the signals
 	if(!setup_choose_gamemode())
 		// It failed, go back to lobby state and re-send the welcome message
+<<<<<<< HEAD
 		pregame_timeleft = CONFIG_GET(number/pregame_time) // CHOMPEdit
 		SSvote.gamemode_vote_called = FALSE // Allow another autogamemode vote
+=======
+		pregame_timeleft = CONFIG_GET(number/pregame_time)
+		// SSvote.gamemode_vote_called = FALSE // Allow another autogamemode vote
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		current_state = GAME_STATE_PREGAME
 		Master.SetRunLevel(RUNLEVEL_LOBBY)
 		pregame_welcome()
@@ -133,8 +138,8 @@ var/global/datum/controller/subsystem/ticker/ticker
 		if(!src.mode)
 			var/list/weighted_modes = list()
 			for(var/datum/game_mode/GM in runnable_modes)
-				weighted_modes[GM.config_tag] = CONFIG_GET(keyed_list/probabilities)[GM.config_tag] // CHOMPEdit
-			src.mode = config.gamemode_cache[pickweight(weighted_modes)] // CHOMPEdit
+				weighted_modes[GM.config_tag] = CONFIG_GET(keyed_list/probabilities)[GM.config_tag]
+			src.mode = config.gamemode_cache[pickweight(weighted_modes)]
 	else
 		src.mode = config.pick_mode(master_mode)
 
@@ -148,7 +153,11 @@ var/global/datum/controller/subsystem/ticker/ticker
 	job_master.DivideOccupations() // Apparently important for new antagonist system to register specific job antags properly.
 
 	if(!src.mode.can_start())
+<<<<<<< HEAD
 		to_world("<span class='danger'><B>Unable to start [mode.name].</B> Not enough players readied, [CONFIG_GET(keyed_list/player_requirements)[mode.config_tag]] players needed. Reverting to pregame lobby.</span>") // CHOMPEdit
+=======
+		to_world(span_filter_system(span_bold("Unable to start [mode.name].") + " Not enough players readied, [CONFIG_GET(keyed_list/player_requirements)[mode.config_tag]] players needed. Reverting to pregame lobby."))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		mode.fail_setup()
 		mode = null
 		job_master.ResetOccupations()
@@ -196,7 +205,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 	current_state = GAME_STATE_PLAYING
 	Master.SetRunLevel(RUNLEVEL_GAME)
 
-	if(CONFIG_GET(flag/sql_enabled)) // CHOMPEdit
+	if(CONFIG_GET(flag/sql_enabled))
 		statistic_cycle() // Polls population totals regularly and stores them in an SQL DB -- TLE
 
 	return 1
@@ -212,7 +221,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 	// Calculate if game and/or mode are finished (Complicated by the continuous_rounds config option)
 	var/game_finished = FALSE
 	var/mode_finished = FALSE
-	if (CONFIG_GET(flag/continuous_rounds)) // Game keeps going after mode ends. // CHOMPEdit
+	if (CONFIG_GET(flag/continuous_rounds)) // Game keeps going after mode ends.
 		game_finished = (emergency_shuttle.returned() || mode.station_was_nuked)
 		mode_finished = ((end_game_state >= END_GAME_MODE_FINISHED) || mode.check_finished()) // Short circuit if already finished.
 	else // Game ends when mode does

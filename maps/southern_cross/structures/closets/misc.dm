@@ -5,7 +5,11 @@
 	req_one_access = list(access_armory,access_captain)
 
 	starts_with = list(
+<<<<<<< HEAD
 		/obj/item/weapon/gun/energy/gun = 4)
+=======
+		/obj/item/gun/energy/gun = 4)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 
 /obj/structure/closet/secure_closet/guncabinet/rifle
@@ -14,6 +18,7 @@
 
 	starts_with = list(
 		/obj/item/ammo_magazine/clip/c762/hunter = 9,
+<<<<<<< HEAD
 		/obj/item/weapon/gun/projectile/shotgun/pump/rifle = 2)
 
 /obj/structure/closet/secure_closet/guncabinet/rifle/Initialize()
@@ -21,6 +26,15 @@
 		starts_with += /obj/item/weapon/gun/projectile/shotgun/pump/rifle
 	else
 		starts_with += /obj/item/weapon/gun/projectile/shotgun/pump/rifle/lever
+=======
+		/obj/item/gun/projectile/shotgun/pump/rifle = 2)
+
+/obj/structure/closet/secure_closet/guncabinet/rifle/Initialize()
+	if(prob(85))
+		starts_with += /obj/item/gun/projectile/shotgun/pump/rifle
+	else
+		starts_with += /obj/item/gun/projectile/shotgun/pump/rifle/lever
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	return ..()
 
 /obj/structure/closet/secure_closet/guncabinet/phase
@@ -28,9 +42,15 @@
 	req_one_access = list(access_explorer,access_brig)
 
 	starts_with = list(
+<<<<<<< HEAD
 		/obj/item/weapon/gun/energy/locked/phasegun = 2,
 		/obj/item/weapon/gun/energy/locked/phasegun/pistol,
 		/obj/item/weapon/cell/device/weapon = 2,
+=======
+		/obj/item/gun/energy/phasegun = 2,
+		/obj/item/gun/energy/phasegun/pistol,
+		/obj/item/cell/device/weapon = 2,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		/obj/item/clothing/accessory/permit/gun/planetside)
 
 //Explorer Lockers
@@ -45,6 +65,7 @@
 		/obj/item/clothing/head/helmet/explorer,
 		/obj/item/clothing/suit/storage/hooded/explorer,
 		/obj/item/clothing/mask/gas/explorer,
+<<<<<<< HEAD
 		/obj/item/weapon/storage/belt/explorer, //CHOMPADD
 		/obj/item/clothing/shoes/boots/winter/explorer,
 		/obj/item/clothing/gloves/black,
@@ -59,10 +80,24 @@
 		/obj/item/weapon/reagent_containers/food/snacks/liquidfood, //CHOMPADD
 		/obj/item/weapon/reagent_containers/food/snacks/liquidprotein, //CHOMPADD
 		/obj/item/device/cataloguer
+=======
+		/obj/item/clothing/shoes/boots/winter/explorer,
+		/obj/item/clothing/gloves/black,
+		/obj/item/radio/headset/explorer,
+		/obj/item/flashlight,
+		/obj/item/gps/explorer,
+		/obj/item/storage/box/flare,
+		/obj/item/geiger,
+		/obj/item/cell/device,
+		/obj/item/radio,
+		/obj/item/stack/marker_beacon/thirty,
+		/obj/item/cataloguer
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		)
 
 /obj/structure/closet/secure_closet/explorer/Initialize()
 	if(prob(50))
+<<<<<<< HEAD
 		starts_with += /obj/item/weapon/storage/backpack
 	else
 		starts_with += /obj/item/weapon/storage/backpack/satchel/norm
@@ -70,6 +105,17 @@
 		starts_with += /obj/item/weapon/material/knife/tacknife/survival
 	else
 		starts_with += /obj/item/weapon/material/knife/machete
+=======
+		starts_with += /obj/item/storage/backpack
+	else
+		starts_with += /obj/item/storage/backpack/satchel/norm
+	/* VOREStation Removal - Always give both
+	if(prob(75))
+		starts_with += /obj/item/material/knife/tacknife/survival
+	else
+		starts_with += /obj/item/material/knife/machete
+	*/ //VOREStation Removal End
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	return ..()
 
 //SAR Lockers
@@ -81,6 +127,7 @@
 	closet_appearance = /decl/closet_appearance/secure_closet/medical
 
 	starts_with = list(
+<<<<<<< HEAD
 		/obj/item/weapon/storage/backpack/dufflebag/emt,
 		/obj/item/weapon/storage/box/autoinjectors,
 		/obj/item/weapon/storage/box/syringes,
@@ -105,6 +152,32 @@
 		/obj/item/taperoll/medical,
 		/obj/item/device/gps,
 		/obj/item/device/geiger,
+=======
+		/obj/item/storage/backpack/dufflebag/emt,
+		/obj/item/storage/box/autoinjectors,
+		/obj/item/storage/box/syringes,
+		/obj/item/reagent_containers/glass/bottle/inaprovaline,
+		/obj/item/reagent_containers/glass/bottle/antitoxin,
+		/obj/item/storage/belt/medical/emt,
+		/obj/item/clothing/mask/gas,
+		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/sar,
+		/obj/item/clothing/shoes/boots/winter/explorer,
+		/obj/item/radio/headset/sar,
+		/obj/item/cartridge/medical,
+		/obj/item/flashlight,
+		/obj/item/tank/emergency/oxygen/engi,
+		/obj/item/clothing/glasses/hud/health,
+		/obj/item/healthanalyzer,
+		/obj/item/radio/off,
+		/obj/random/medical,
+		/obj/item/tool/crowbar,
+		/obj/item/extinguisher/mini,
+		/obj/item/storage/box/freezer,
+		/obj/item/clothing/accessory/storage/white_vest,
+		/obj/item/taperoll/medical,
+		/obj/item/gps,
+		/obj/item/geiger,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		/obj/item/bodybag/cryobag)
 
 //Pilot Locker
@@ -114,14 +187,20 @@
 	req_access = list(access_pilot)
 
 	starts_with = list(
+<<<<<<< HEAD
 		/obj/item/weapon/storage/backpack/parachute,
 		/obj/item/weapon/material/knife/tacknife/survival,
+=======
+		/obj/item/storage/backpack/parachute,
+		/obj/item/material/knife/tacknife/survival,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		/obj/item/clothing/head/pilot,
 		/obj/item/clothing/under/rank/pilot1,
 		/obj/item/clothing/suit/storage/toggle/bomber/pilot,
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/shoes/black,
 		/obj/item/clothing/gloves/fingerless,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/pilot/alt,
 		/obj/item/device/flashlight,
 		/obj/item/weapon/reagent_containers/food/snacks/liquidfood,
@@ -135,6 +214,21 @@
 		starts_with += /obj/item/weapon/storage/backpack
 	else
 		starts_with += /obj/item/weapon/storage/backpack/satchel/norm
+=======
+		/obj/item/radio/headset/pilot/alt,
+		/obj/item/flashlight,
+		/obj/item/reagent_containers/food/snacks/liquidfood,
+		/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+		/obj/item/storage/box/flare,
+		/obj/item/cell/device,
+		/obj/item/radio)
+
+/obj/structure/closet/secure_closet/pilot/Initialize()
+	if(prob(50))
+		starts_with += /obj/item/storage/backpack
+	else
+		starts_with += /obj/item/storage/backpack/satchel/norm
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	return ..()
 
 //Exotic Seeds Crate

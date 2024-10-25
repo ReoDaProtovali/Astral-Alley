@@ -58,11 +58,19 @@
 					/obj/fiftyspawner/platinum,
 					/obj/item/toy/nanotrasenballoon,
 					/obj/item/toy/syndicateballoon,
+<<<<<<< HEAD
 					/obj/item/weapon/aiModule/syndicate,
 					/obj/item/weapon/book/manual/wiki/engineering_hacking, // CHOMPEdit
 					/obj/item/weapon/card/emag,
 					/obj/item/weapon/card/emag_broken,
 					/obj/item/weapon/card/id/syndicate,
+=======
+					/obj/item/aiModule/syndicate,
+					/obj/item/book/manual/wiki/engineering_hacking,
+					/obj/item/card/emag,
+					/obj/item/card/emag_broken,
+					/obj/item/card/id/syndicate,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 					/obj/item/poster,
 					/obj/item/weapon/disposable_teleporter,
 					/obj/item/weapon/grenade/flashbang/clusterbang,

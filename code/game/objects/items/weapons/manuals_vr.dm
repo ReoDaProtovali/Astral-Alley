@@ -6,7 +6,11 @@
 	author = "NanoTrasen"
 	title = "Standard Operating Procedure"
 
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/standard_operating_procedure/New()
+=======
+/obj/item/book/manual/standard_operating_procedure/Initialize()
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	..()
 	dat = {"
 
@@ -29,7 +33,11 @@
 	author = "Jeremiah Acacius"
 	title = "Corporate Regulations"
 
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/command_guide/New()
+=======
+/obj/item/book/manual/command_guide/Initialize()
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	..()
 	dat = {"
 

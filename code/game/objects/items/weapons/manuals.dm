@@ -5,6 +5,7 @@
 	due_date = 0 // Game time in 1/10th seconds
 	unique = 1   // 0 - Normal book, 1 - Should not be treated as normal book, unable to be copied, unable to be modified
 
+<<<<<<< HEAD
 /* CHOMPEdit Start
 /obj/item/weapon/book/manual/engineering_construction
 	name = "Station Repairs and Construction"
@@ -30,6 +31,9 @@
 */ // CHOMPEdit End
 
 /obj/item/weapon/book/manual/engineering_particle_accelerator
+=======
+/obj/item/book/manual/engineering_particle_accelerator
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	name = "Particle Accelerator User's Guide"
 	icon_state ="bookParticleAccelerator"
 	item_state = "book15"
@@ -320,6 +324,7 @@
 				</body>
 			</html>"}			// CHOMPedit END : Updating the R-UST manual
 
+<<<<<<< HEAD
 /* CHOMPEdit Start
 /obj/item/weapon/book/manual/engineering_hacking
 	name = "Hacking"
@@ -345,6 +350,9 @@
 */ // CHOMPEdit End
 
 /obj/item/weapon/book/manual/engineering_singularity_safety
+=======
+/obj/item/book/manual/engineering_singularity_safety
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	name = "Singularity Safety in Special Circumstances"
 	icon_state ="bookEngineeringSingularitySafety"
 	item_state = "book15"
@@ -677,6 +685,7 @@
 			</html>
 			"}
 
+<<<<<<< HEAD
 /* CHOMPEdit Start
 /obj/item/weapon/book/manual/robotics_manual
 	name = "Guide to Robotics"
@@ -699,6 +708,10 @@
 
 /obj/item/weapon/book/manual/robotics_cyborgs
 	name = "Cyborgs for Dummies"
+=======
+/obj/item/book/manual/robotics_cyborgs
+	name = JOB_CYBORG + "s for Dummies"
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	icon_state = "borgbook"
 	item_state = "book1"
 	author = "XISC"
@@ -902,6 +915,7 @@
 			</html>
 		"}
 
+<<<<<<< HEAD
 
 /* CHOMPEdit Start
 /obj/item/weapon/book/manual/security_space_law
@@ -1002,6 +1016,10 @@
 
 /obj/item/weapon/book/manual/chef_recipes
 	name = "Chef Recipes"
+=======
+/obj/item/book/manual/chef_recipes
+	name = JOB_CHEF + " Recipes"
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	icon_state = "cooked_book"
 	item_state = "book16"
 	author = "Victoria Ponsonby"

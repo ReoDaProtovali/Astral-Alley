@@ -1743,9 +1743,15 @@
 /area/tether/surfacebase/security/upperhall)
 "acK" = (
 /obj/structure/bookcase,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/standard_operating_procedure,
 /obj/item/weapon/book/manual/command_guide,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/manual/command_guide,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
@@ -5825,8 +5831,13 @@
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
 	},
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/security_space_law,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/tether/surfacebase/security/lobby)
 "aiV" = (
@@ -13949,8 +13960,13 @@
 	desc = "There appears to be a shrine to WGW at the back...";
 	name = "Forbidden Knowledge"
 	},
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/engineering_hacking,
 /obj/item/weapon/book/manual/nuclear,
+=======
+/obj/item/book/manual/wiki/engineering_hacking,
+/obj/item/book/manual/nuclear,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/carpet,
 /area/tether/surfacebase/library/study)
 "axV" = (
@@ -19033,6 +19049,7 @@
 /obj/structure/bookcase{
 	name = "bookcase (Reference)"
 	},
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/hydroponics_pod_people,
 /obj/item/weapon/book/manual/mass_spectrometry,
 /obj/item/weapon/book/manual/materials_chemistry_analysis,
@@ -19048,6 +19065,23 @@
 /obj/item/weapon/book/manual/standard_operating_procedure,
 /obj/item/weapon/book/manual/stasis,
 /obj/item/weapon/book/manual/supermatter_engine,
+=======
+/obj/item/book/manual/hydroponics_pod_people,
+/obj/item/book/manual/mass_spectrometry,
+/obj/item/book/manual/materials_chemistry_analysis,
+/obj/item/book/manual/medical_cloning,
+/obj/item/book/manual/wiki/medical_diagnostics_manual,
+/obj/item/book/manual/research_and_development,
+/obj/item/book/manual/resleeving,
+/obj/item/book/manual/ripley_build_and_repair,
+/obj/item/book/manual/robotics_cyborgs,
+/obj/item/book/manual/wiki/robotics_manual,
+/obj/item/book/manual/rust_engine,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/manual/stasis,
+/obj/item/book/manual/supermatter_engine,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/wood,
 /area/library)
 "aGx" = (
@@ -19435,6 +19469,7 @@
 /obj/structure/bookcase{
 	name = "bookcase (Reference)"
 	},
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/anomaly_spectroscopy,
 /obj/item/weapon/book/manual/anomaly_testing,
 /obj/item/weapon/book/manual/atmospipes,
@@ -19449,6 +19484,22 @@
 /obj/item/weapon/book/manual/evaguide,
 /obj/item/weapon/book/manual/excavation,
 /obj/item/weapon/book/custom_library/reference/fistfulofd6splayersguide,
+=======
+/obj/item/book/manual/anomaly_spectroscopy,
+/obj/item/book/manual/anomaly_testing,
+/obj/item/book/manual/atmospipes,
+/obj/item/book/manual/barman_recipes,
+/obj/item/book/manual/chef_recipes,
+/obj/item/book/manual/command_guide,
+/obj/item/book/manual/detective,
+/obj/item/book/manual/wiki/engineering_construction,
+/obj/item/book/manual/wiki/engineering_guide,
+/obj/item/book/manual/engineering_particle_accelerator,
+/obj/item/book/manual/engineering_singularity_safety,
+/obj/item/book/manual/evaguide,
+/obj/item/book/manual/excavation,
+/obj/item/book/custom_library/reference/fistfulofd6splayersguide,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/wood,
 /area/library)
 "aHh" = (
@@ -30159,9 +30210,15 @@
 /area/crew_quarters/captain)
 "bbb" = (
 /obj/structure/bookcase,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/standard_operating_procedure,
 /obj/item/weapon/book/manual/command_guide,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/manual/command_guide,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
 "bbc" = (
@@ -34908,8 +34965,13 @@
 /area/rnd/robotics/surgeryroom1)
 "bkS" = (
 /obj/structure/table/standard,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/robotics_cyborgs,
 /obj/item/weapon/book/manual/robotics_manual,
+=======
+/obj/item/book/manual/robotics_cyborgs,
+/obj/item/book/manual/wiki/robotics_manual,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/item/clothing/glasses/omnihud/rnd,
 /obj/machinery/light{
 	dir = 8
@@ -36729,12 +36791,21 @@
 /area/tether/surfacebase/security/briefingroom)
 "crz" = (
 /obj/structure/bookcase,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/engineering_construction,
 /obj/item/weapon/book/manual/detective,
 /obj/item/weapon/book/manual/standard_operating_procedure,
 /obj/item/weapon/book/codex/lore/vir,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/engineering_construction,
+/obj/item/book/manual/detective,
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/codex/lore/vir,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/wood,
 /area/tether/surfacebase/entrepreneur/meeting)
 "csD" = (
@@ -43278,9 +43349,15 @@
 /area/tether/surfacebase/security/iaa/officeb)
 "tPE" = (
 /obj/structure/table/reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/codex,
 /obj/item/weapon/book/manual/security_space_law,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/codex,
+/obj/item/book/manual/wiki/security_space_law,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/effect/floor_decal/borderfloor{
 	dir = 9
 	},
@@ -43967,12 +44044,21 @@
 	dir = 1
 	},
 /obj/structure/bookcase,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/standard_operating_procedure,
 /obj/item/weapon/book/manual/standard_operating_procedure,
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/command_guide,
 /obj/item/weapon/book/manual/command_guide,
+=======
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/command_guide,
+/obj/item/book/manual/command_guide,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
@@ -44996,12 +45082,21 @@
 	dir = 1
 	},
 /obj/structure/bookcase,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/standard_operating_procedure,
 /obj/item/weapon/book/manual/standard_operating_procedure,
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/command_guide,
 /obj/item/weapon/book/manual/command_guide,
+=======
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/command_guide,
+/obj/item/book/manual/command_guide,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
