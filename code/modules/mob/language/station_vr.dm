@@ -111,6 +111,14 @@
 	exclaim_verb = "MARS"
 	colour = "shadekin"
 	key = "9"
+<<<<<<< HEAD
+=======
+	signlang_verb = list("shifts their ears", "mars subtly", "swivels their ears", "twitches their nose", "leers intently", "hackles their fur")
+	signlang_verb_understood = list("mars")
+	colour = "marish"
+	flags = INAUDIBLE
+	ignore_adverb = TRUE
+>>>>>>> 028669e00b (change kin language colour (#9297))
 	machine_understands = FALSE
 	syllables = list("mar", "mwrrr", "maaAr", "'aarrr", "wrurrl", "mmar")  // Placeholder syllables until someone else has a better idea!
 
