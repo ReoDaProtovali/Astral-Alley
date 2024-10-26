@@ -135,6 +135,7 @@
 	spark_system = new /datum/effect/effect/system/spark_spread()
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
+	robotact = new(src)
 
 	add_language("Robot Talk", 1)
 	add_language(LANGUAGE_GALCOM, 1)
@@ -318,6 +319,7 @@
 		revert_shell() // To get it out of the GLOB list.
 	qdel(wires)
 	wires = null
+	QDEL_NULL(robotact)
 	return ..()
 
 // CONTINUE CODING HERE
@@ -379,6 +381,7 @@
 	updatename()
 	hud_used.update_robot_modules_display()
 	notify_ai(ROBOT_NOTIFICATION_NEW_MODULE, module.name)
+	robotact?.update_static_data_for_all_viewers()
 
 /mob/living/silicon/robot/proc/update_braintype()
 	if(istype(mmi, /obj/item/device/mmi/digital/posibrain))
@@ -465,6 +468,7 @@
 
 	sprite_datum.handle_extra_customization(src)
 
+<<<<<<< HEAD
 /mob/living/silicon/robot/proc/self_diagnosis()
 	if(!is_component_functioning("diagnosis unit"))
 		return null
@@ -476,6 +480,8 @@
 
 	return dat
 
+=======
+>>>>>>> c85c19567e ([MIRROR] Replace most legacy robot interfaces with a unified interface (#9323))
 /mob/living/silicon/robot/verb/toggle_lights()
 	set category = "Abilities.Silicon" //ChompEDIT - TGPanel
 	set name = "Toggle Lights"
@@ -485,6 +491,7 @@
 	handle_light()
 	update_icon()
 
+<<<<<<< HEAD
 /mob/living/silicon/robot/verb/self_diagnosis_verb()
 	set category = "Abilities.Silicon" //ChompEDIT - TGPanel
 	set name = "Self Diagnosis"
@@ -523,6 +530,8 @@
 		C.toggled = 1
 		to_chat(src, span_red("You enable [C.name]."))
 
+=======
+>>>>>>> c85c19567e ([MIRROR] Replace most legacy robot interfaces with a unified interface (#9323))
 /mob/living/silicon/robot/verb/spark_plug() //So you can still sparkle on demand without violence.
 	set category = "Abilities.Silicon" //ChompEDIT - TGPanel
 	set name = "Emit Sparks"
@@ -858,6 +867,7 @@
 	module = null
 	updatename("Default")
 	has_recoloured = FALSE
+	robotact?.update_static_data_for_all_viewers()
 
 /mob/living/silicon/robot/proc/ColorMate()
 	set name = "Recolour Module"
@@ -1101,6 +1111,7 @@
 			add_overlay(open_overlay)
 
 /mob/living/silicon/robot/proc/installed_modules()
+<<<<<<< HEAD
 	if(weapon_lock)
 		to_chat(src, "<span class='filter_warning'>" + span_red("Weapon lock active, unable to use modules! Count:[weaponlock_time]") + "</span>")
 		return
@@ -1137,6 +1148,9 @@
 
 	src << browse(dat, "window=robotmod")
 
+=======
+	robotact.tgui_interact(src)
+>>>>>>> c85c19567e ([MIRROR] Replace most legacy robot interfaces with a unified interface (#9323))
 
 /mob/living/silicon/robot/Topic(href, href_list)
 	if(..())
@@ -1150,6 +1164,7 @@
 		subsystem_alarm_monitor()
 		return 1
 
+<<<<<<< HEAD
 	if (href_list["mod"])
 		var/obj/item/O = locate(href_list["mod"])
 		if (istype(O) && (O.loc == src))
@@ -1213,6 +1228,8 @@
 		return 1
 	return
 
+=======
+>>>>>>> c85c19567e ([MIRROR] Replace most legacy robot interfaces with a unified interface (#9323))
 /mob/living/silicon/robot/proc/radio_menu()
 	radio.interact(src)//Just use the radio's Topic() instead of bullshit special-snowflake code
 
@@ -1492,6 +1509,7 @@
 		sleep(6)
 		if(prob(50))
 			emagged = 1
+			robotact.update_static_data_for_all_viewers()
 			lawupdate = 0
 			disconnect_from_ai()
 			to_chat(user, "<span class='filter_notice'>You emag [src]'s interface.</span>")
@@ -1783,3 +1801,12 @@
 	return (has_basic_upgrade(given_type) || has_advanced_upgrade(given_type) || has_restricted_upgrade(given_type) || has_no_prod_upgrade(given_type))
 
 #undef CYBORG_POWER_USAGE_MULTIPLIER
+
+/mob/living/silicon/robot/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if(NAMEOF(src, emagged))
+			robotact?.update_static_data_for_all_viewers()
+		if(NAMEOF(src, emag_items))
+			robotact?.update_static_data_for_all_viewers()
+
+	. = ..()
