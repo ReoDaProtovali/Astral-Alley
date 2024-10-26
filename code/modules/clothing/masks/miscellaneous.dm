@@ -374,8 +374,13 @@
 	if(src && choice && !user.incapacitated() && in_range(user,src))
 		icon_state = options[choice]
 		user.update_inv_wear_mask()
+<<<<<<< HEAD
 		user.update_action_buttons()
 		to_chat(user, "<span class='notice'>Your paper mask now is now [choice].</span>")
+=======
+		user.update_mob_action_buttons()
+		to_chat(user, span_notice("Your paper mask now is now [choice]."))
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 		return 1
 
 /obj/item/clothing/mask/emotions
@@ -410,8 +415,13 @@
 	if(src && choice && !user.incapacitated() && in_range(user,src))
 		icon_state = options[choice]
 		user.update_inv_wear_mask()
+<<<<<<< HEAD
 		user.update_action_buttons()
 		to_chat(user, "<span class='notice'>Your [src] now displays a [choice] emotion.</span>")
+=======
+		user.update_mob_action_buttons()
+		to_chat(user, span_notice("Your [src] now displays a [choice] emotion."))
+>>>>>>> 09f82b6fff ([MIRROR] The final action buttons PR (#9324))
 		return 1
 
 /obj/item/clothing/mask/mouthwheat
