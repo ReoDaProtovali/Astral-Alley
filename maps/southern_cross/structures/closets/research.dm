@@ -13,8 +13,16 @@
 		/obj/item/clothing/under/rank/research_director/rdalt,
 		/obj/item/clothing/under/rank/research_director/dress_rd,
 		/obj/item/clothing/suit/storage/toggle/labcoat,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/rd,
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/shoes/laceup/brown,
 		/obj/item/clothing/gloves/sterile/latex,
 		/obj/item/device/radio/headset/heads/rd)
+=======
+		/obj/item/cartridge/rd,
+		/obj/item/clothing/shoes/white,
+		/obj/item/clothing/shoes/laceup/brown,
+		/obj/item/clothing/gloves/sterile/latex,
+		/obj/item/radio/headset/heads/rd)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))

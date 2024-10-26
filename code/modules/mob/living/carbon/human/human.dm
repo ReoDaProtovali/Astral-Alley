@@ -207,7 +207,7 @@
 	if(update)	UpdateDamageIcon()
 
 /mob/living/carbon/human/proc/implant_loyalty(override = FALSE) // Won't override by default.
-	if(!CONFIG_GET(flag/use_loyalty_implants) && !override) return // Nuh-uh. // CHOMPEdit
+	if(!CONFIG_GET(flag/use_loyalty_implants) && !override) return // Nuh-uh.
 
 	var/obj/item/weapon/implant/loyalty/L = new/obj/item/weapon/implant/loyalty(src)
 	if(L.handle_implant(src, BP_HEAD))
@@ -1753,7 +1753,7 @@
 	return ..()
 
 /mob/living/carbon/human/pull_damage()
-	if(((health - halloss) <= CONFIG_GET(number/health_threshold_softcrit))) // CHOMPEdit
+	if(((health - halloss) <= CONFIG_GET(number/health_threshold_softcrit)))
 		for(var/name in organs_by_name)
 			var/obj/item/organ/external/e = organs_by_name[name]
 			if(!e)

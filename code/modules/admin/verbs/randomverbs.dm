@@ -173,7 +173,7 @@
 
 /proc/cmd_admin_mute(mob/M as mob, mute_type, automute = 0)
 	if(automute)
-		if(!CONFIG_GET(flag/automute_on)) // CHOMPEdit
+		if(!CONFIG_GET(flag/automute_on))
 			return
 	else
 		if(!usr || !usr.client)
@@ -321,23 +321,35 @@ Ccomp's first proc.
 		return
 
 	var/action=""
-	if(CONFIG_GET(flag/antag_hud_allowed)) // CHOMPEdit
+	if(CONFIG_GET(flag/antag_hud_allowed))
 		for(var/mob/observer/dead/g in get_ghosts())
 			if(!g.client.holder)						//Remove the verb from non-admin ghosts
 				remove_verb(g, /mob/observer/dead/verb/toggle_antagHUD) //CHOMPEdit
 			if(g.antagHUD)
 				g.antagHUD = 0						// Disable it on those that have it enabled
 				g.has_enabled_antagHUD = 2				// We'll allow them to respawn
+<<<<<<< HEAD
 				to_chat(g, span_red("<B>The Administrator has disabled AntagHUD </B>"))
 		CONFIG_SET(flag/antag_hud_allowed, FALSE) // CHOMPEdit
 		to_chat(src, span_red("<B>AntagHUD usage has been disabled</B>"))
+=======
+				to_chat(g, span_boldwarning("The Administrator has disabled AntagHUD "))
+		CONFIG_SET(flag/antag_hud_allowed, FALSE)
+		to_chat(src, span_boldwarning("AntagHUD usage has been disabled"))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		action = "disabled"
 	else
 		for(var/mob/observer/dead/g in get_ghosts())
 			if(!g.client.holder)						// Add the verb back for all non-admin ghosts
+<<<<<<< HEAD
 				add_verb(g, /mob/observer/dead/verb/toggle_antagHUD) //CHOMPEdit
 			to_chat(g, span_blue("<B>The Administrator has enabled AntagHUD </B>"))	// Notify all observers they can now use AntagHUD
 		CONFIG_SET(flag/antag_hud_allowed, TRUE) // CHOMPEdit
+=======
+				add_verb(g, /mob/observer/dead/verb/toggle_antagHUD)
+			to_chat(g, span_boldnotice("The Administrator has enabled AntagHUD"))	// Notify all observers they can now use AntagHUD
+		CONFIG_SET(flag/antag_hud_allowed, TRUE)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		action = "enabled"
 		to_chat(src, span_blue("<B>AntagHUD usage has been enabled</B>"))
 
@@ -356,12 +368,17 @@ Ccomp's first proc.
 		return
 
 	var/action=""
-	if(CONFIG_GET(flag/antag_hud_restricted)) // CHOMPEdit
+	if(CONFIG_GET(flag/antag_hud_restricted))
 		for(var/mob/observer/dead/g in get_ghosts())
 			to_chat(g, span_blue("<B>The administrator has lifted restrictions on joining the round if you use AntagHUD</B>"))
 		action = "lifted restrictions"
+<<<<<<< HEAD
 		CONFIG_SET(flag/antag_hud_restricted, FALSE) // CHOMPEdit
 		to_chat(src, span_blue("<B>AntagHUD restrictions have been lifted</B>"))
+=======
+		CONFIG_SET(flag/antag_hud_restricted, FALSE)
+		to_chat(src, span_boldnotice("AntagHUD restrictions have been lifted"))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	else
 		for(var/mob/observer/dead/g in get_ghosts())
 			to_chat(g, span_red("<B>The administrator has placed restrictions on joining the round if you use AntagHUD</B>"))
@@ -369,8 +386,13 @@ Ccomp's first proc.
 			g.antagHUD = 0
 			g.has_enabled_antagHUD = 0
 		action = "placed restrictions"
+<<<<<<< HEAD
 		CONFIG_SET(flag/antag_hud_restricted, TRUE) // CHOMPEdit
 		to_chat(src, span_red("<B>AntagHUD restrictions have been enabled</B>"))
+=======
+		CONFIG_SET(flag/antag_hud_restricted, TRUE)
+		to_chat(src, span_boldwarning("AntagHUD restrictions have been enabled"))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 	log_admin("[key_name(usr)] has [action] on joining the round if they use AntagHUD")
 	message_admins("Admin [key_name_admin(usr)] has [action] on joining the round if they use AntagHUD", 1)
@@ -634,7 +656,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if(!istype(M))
 		tgui_alert_async(usr, "Cannot revive a ghost")
 		return
-	if(CONFIG_GET(flag/allow_admin_rev)) // CHOMPEdit
+	if(CONFIG_GET(flag/allow_admin_rev))
 		M.revive()
 
 		log_admin("[key_name(usr)] healed / revived [key_name(M)]")
@@ -1029,12 +1051,12 @@ Traitors and the like can also be revived with the previous role mostly intact.
 
 	if(!check_rights(R_SERVER))	return //VOREStation Edit
 
-	if(!CONFIG_GET(flag/allow_random_events)) // CHOMPEdit
-		CONFIG_SET(flag/allow_random_events, TRUE) // CHOMPEdit
+	if(!CONFIG_GET(flag/allow_random_events))
+		CONFIG_SET(flag/allow_random_events, TRUE)
 		to_chat(usr, "Random events enabled")
 		message_admins("Admin [key_name_admin(usr)] has enabled random events.", 1)
 	else
-		CONFIG_SET(flag/allow_random_events, FALSE) // CHOMPEdit
+		CONFIG_SET(flag/allow_random_events, FALSE)
 		to_chat(usr, "Random events disabled")
 		message_admins("Admin [key_name_admin(usr)] has disabled random events.", 1)
 	feedback_add_details("admin_verb","TRE") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

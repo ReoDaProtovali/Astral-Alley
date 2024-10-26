@@ -20,15 +20,24 @@
 		return
 
 	if(!holder)
+<<<<<<< HEAD
 		if(!CONFIG_GET(flag/ooc_allowed)) // CHOMPEdit
 			to_chat(src, "<span class='danger'>OOC is globally muted.</span>")
 			return
 		if(!CONFIG_GET(flag/dooc_allowed) && (mob.stat == DEAD)) // CHOMPEdit
 			to_chat(usr, "<span class='danger'>OOC for dead mobs has been turned off.</span>")
+=======
+		if(!CONFIG_GET(flag/ooc_allowed))
+			to_chat(src, span_danger("OOC is globally muted."))
+			return
+		if(!CONFIG_GET(flag/dooc_allowed) && (mob.stat == DEAD))
+			to_chat(usr, span_danger("OOC for dead mobs has been turned off."))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 			return
 		if(prefs.muted & MUTE_OOC)
 			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
 			return
+<<<<<<< HEAD
 		if(findtext(msg, "byond://") && !CONFIG_GET(flag/allow_byond_links)) // CHOMPEdit
 			to_chat(src, "<B>Advertising other servers is not allowed.</B>")
 			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
@@ -41,6 +50,20 @@
 			return
 		if((findtext(msg, "http://") || findtext(msg, "https://")) && !CONFIG_GET(flag/allow_url_links)) // CHOMPEdit
 			to_chat(src, "<B>Posting external links is not allowed.</B>")
+=======
+		if(findtext(msg, "byond://") && !CONFIG_GET(flag/allow_byond_links))
+			to_chat(src, span_bold("Advertising other servers is not allowed."))
+			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
+			message_admins("[key_name_admin(src)] has attempted to advertise in OOC: [msg]")
+			return
+		if(findtext(msg, "discord.gg") && !CONFIG_GET(flag/allow_discord_links))
+			to_chat(src, span_bold("Advertising discords is not allowed."))
+			log_admin("[key_name(src)] has attempted to advertise a discord server in OOC: [msg]")
+			message_admins("[key_name_admin(src)] has attempted to advertise a discord server in OOC: [msg]")
+			return
+		if((findtext(msg, "http://") || findtext(msg, "https://")) && !CONFIG_GET(flag/allow_url_links))
+			to_chat(src, span_bold("Posting external links is not allowed."))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 			log_admin("[key_name(src)] has attempted to post a link in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to post a link in OOC: [msg]")
 			return
@@ -76,8 +99,13 @@
 						display_name = "[holder.fakekey]/([src.key])"
 					else
 						display_name = holder.fakekey
+<<<<<<< HEAD
 			if(holder && !holder.fakekey && (holder.rights & R_ADMIN|R_FUN|R_EVENT) && CONFIG_GET(flag/allow_admin_ooccolor) && (src.prefs.ooccolor != initial(src.prefs.ooccolor))) // keeping this for the badmins // CHOMPEdit
 				to_chat(target, "<span class='ooc'><font color='[src.prefs.ooccolor]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> <span class='message'>[msg]</span></font></span>")
+=======
+			if(holder && !holder.fakekey && (holder.rights & R_ADMIN|R_FUN|R_EVENT) && CONFIG_GET(flag/allow_admin_ooccolor) && (src.prefs.ooccolor != initial(src.prefs.ooccolor))) // keeping this for the badmins
+				to_chat(target, span_ooc("<font color='[src.prefs.ooccolor]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> [span_message(msg)]</font>"))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 			else
 				to_chat(target, "<span class='ooc'><span class='[ooc_style]'>" + create_text_tag("ooc", "OOC:", target) + " <EM>[display_name]:</EM> <span class='message'>[msg]</span></span></span>")
 
@@ -106,15 +134,24 @@
 		return
 
 	if(!holder)
+<<<<<<< HEAD
 		if(!CONFIG_GET(flag/looc_allowed)) // CHOMPEdit
 			to_chat(src, "<span class='danger'>LOOC is globally muted.</span>")
 			return
 		if(!CONFIG_GET(flag/dooc_allowed) && (mob.stat == DEAD)) // CHOMPEdit
 			to_chat(usr, "<span class='danger'>OOC for dead mobs has been turned off.</span>")
+=======
+		if(!CONFIG_GET(flag/looc_allowed))
+			to_chat(src, span_danger("LOOC is globally muted."))
+			return
+		if(!CONFIG_GET(flag/dooc_allowed) && (mob.stat == DEAD))
+			to_chat(usr, span_danger("OOC for dead mobs has been turned off."))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 			return
 		if(prefs.muted & MUTE_LOOC)
 			to_chat(src, "<span class='danger'>You cannot use OOC (muted).</span>")
 			return
+<<<<<<< HEAD
 		if(findtext(msg, "byond://") && !CONFIG_GET(flag/allow_byond_links)) // CHOMPEdit
 			to_chat(src, "<B>Advertising other servers is not allowed.</B>")
 			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
@@ -127,6 +164,20 @@
 			return
 		if((findtext(msg, "http://") || findtext(msg, "https://")) && !CONFIG_GET(flag/allow_url_links)) // CHOMPEdit
 			to_chat(src, "<B>Posting external links is not allowed.</B>")
+=======
+		if(findtext(msg, "byond://") && !CONFIG_GET(flag/allow_byond_links))
+			to_chat(src, span_bold("Advertising other servers is not allowed."))
+			log_admin("[key_name(src)] has attempted to advertise in OOC: [msg]")
+			message_admins("[key_name_admin(src)] has attempted to advertise in OOC: [msg]")
+			return
+		if(findtext(msg, "discord.gg") && !CONFIG_GET(flag/allow_discord_links))
+			to_chat(src, span_bold("Advertising discords is not allowed."))
+			log_admin("[key_name(src)] has attempted to advertise a discord server in OOC: [msg]")
+			message_admins("[key_name_admin(src)] has attempted to advertise a discord server in OOC: [msg]")
+			return
+		if((findtext(msg, "http://") || findtext(msg, "https://")) && !CONFIG_GET(flag/allow_url_links))
+			to_chat(src, span_bold("Posting external links is not allowed."))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 			log_admin("[key_name(src)] has attempted to post a link in OOC: [msg]")
 			message_admins("[key_name_admin(src)] has attempted to post a link in OOC: [msg]")
 			return

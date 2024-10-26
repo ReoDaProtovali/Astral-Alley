@@ -2887,10 +2887,17 @@
 /obj/structure/cable/blue{
 	icon_state = "4-8"
 	},
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/command_guide,
 /obj/item/weapon/book/manual/standard_operating_procedure,
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/sd_guide,
+=======
+/obj/item/book/manual/command_guide,
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/sd_guide,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/structure/closet/walllocker_double/command/north,
 /turf/simulated/floor/wood,
 /area/crew_quarters/captain)
@@ -6058,9 +6065,15 @@
 "mH" = (
 /obj/structure/table/steel_reinforced,
 /obj/machinery/atmospherics/unary/vent_scrubber/on,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/folder/red,
 /obj/item/weapon/folder/blue,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/folder/red,
+/obj/item/folder/blue,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/machinery/power/apc/angled{
 	dir = 8;
 	name = "night shift APC";
@@ -22606,6 +22619,7 @@
 /area/medical/cmostore)
 "XZ" = (
 /obj/structure/bookcase,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/anomaly_spectroscopy,
 /obj/item/weapon/book/manual/anomaly_testing,
 /obj/item/weapon/book/manual/materials_chemistry_analysis,
@@ -22614,6 +22628,16 @@
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/command_guide,
 /obj/item/weapon/book/manual,
+=======
+/obj/item/book/manual/anomaly_spectroscopy,
+/obj/item/book/manual/anomaly_testing,
+/obj/item/book/manual/materials_chemistry_analysis,
+/obj/item/book/manual/resleeving,
+/obj/item/book/manual/standard_operating_procedure,
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/command_guide,
+/obj/item/book/manual,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 1
 	},

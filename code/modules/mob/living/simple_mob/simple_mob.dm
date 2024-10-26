@@ -205,8 +205,13 @@
 	if(organ_names)
 		organ_names = GET_DECL(organ_names)
 
+<<<<<<< HEAD
 	if(CONFIG_GET(flag/allow_simple_mob_recolor)) //CHOMPEdit
 		add_verb(src,/mob/living/simple_mob/proc/ColorMate) //CHOMPEdit TGPanel
+=======
+	if(CONFIG_GET(flag/allow_simple_mob_recolor))
+		add_verb(src, /mob/living/simple_mob/proc/ColorMate)
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 	AddElement(/datum/element/footstep, FOOTSTEP_MOB_SHOE, 1, -6) // CHOMPEdit - Giving them all shoe footsteps FOR NOW until I go through all of them and give appropiate ones
 
@@ -293,7 +298,7 @@
 		. += injury_level
 	// VOREStation Edit Stop
 
-	. += CONFIG_GET(number/animal_delay) // CHOMPEdit
+	. += CONFIG_GET(number/animal_delay)
 
 	. += ..()
 

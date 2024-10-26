@@ -7,6 +7,7 @@
 		return TRUE
 
 	//No Flavor Text
+<<<<<<< HEAD
 	if (CONFIG_GET(flag/require_flavor) && !(J.mob_type & JOB_SILICON) && (!client?.prefs?.flavor_texts["general"] || length(client.prefs.flavor_texts["general"]) < 30)) // CHOMPEdit
 		to_chat(src,"<span class='warning'>Please set your general flavor text to give a basic description of your character. Set it using the 'Set Flavor text' button on the 'General' tab in character setup, and choosing 'General' category.</span>")
 		pass = FALSE
@@ -14,6 +15,15 @@
 	//No OOC notes
 	if (CONFIG_GET(flag/allow_metadata) && (!client?.prefs?.metadata || length(client.prefs.metadata) < 15)) // CHOMPEdit
 		to_chat(src,"<span class='warning'>Please set informative OOC notes related to RP/ERP preferences. Set them using the 'OOC Notes' button on the 'General' tab in character setup.</span>")
+=======
+	if (CONFIG_GET(flag/require_flavor) && !(J.mob_type & JOB_SILICON) && (!client?.prefs?.flavor_texts["general"] || length(client.prefs.flavor_texts["general"]) < 30))
+		to_chat(src,span_warning("Please set your general flavor text to give a basic description of your character. Set it using the 'Set Flavor text' button on the 'General' tab in character setup, and choosing 'General' category."))
+		pass = FALSE
+
+	//No OOC notes
+	if (CONFIG_GET(flag/allow_metadata) && (!client?.prefs?.metadata || length(client.prefs.metadata) < 15))
+		to_chat(src,span_warning("Please set informative OOC notes related to RP/ERP preferences. Set them using the 'OOC Notes' button on the 'General' tab in character setup."))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		pass = FALSE
 
 	//Are they on the VERBOTEN LIST?

@@ -113,6 +113,7 @@
 
 	msg = "<b>Current Admins ([num_admins_online]):</b>\n" + msg
 
+<<<<<<< HEAD
 	if(CONFIG_GET(flag/show_mods)) // CHOMPEdit
 		msg += "\n<b> Current Moderators ([num_mods_online]):</b>\n" + modmsg	//YW EDIT
 
@@ -121,6 +122,16 @@
 
 	if(CONFIG_GET(flag/show_event_managers)) // CHOMPEdit
 		msg += "\n<b> Current Miscellaneous ([num_event_managers_online]):</b>\n" + eventMmsg
+=======
+	if(CONFIG_GET(flag/show_mods))
+		msg += "\n" + span_bold(" Current Moderators ([num_mods_online]):") + "\n" + modmsg // CHOMPEdit
+
+	if(CONFIG_GET(flag/show_devs))
+		msg += "\n" + span_bold(" Current Developers ([num_devs_online]):") + "\n" + devmsg
+
+	if(CONFIG_GET(flag/show_event_managers))
+		msg += "\n" + span_bold(" Current Miscellaneous ([num_event_managers_online]):") + "\n" + eventMmsg
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 	var/num_mentors_online = 0
 	var/mmsg = ""
@@ -141,8 +152,13 @@
 				mmsg += " (AFK - [round(seconds / 60)] minutes, [seconds % 60] seconds)"
 		mmsg += "\n"
 
+<<<<<<< HEAD
 	if(CONFIG_GET(flag/show_mentors)) // CHOMPEdit
 		msg += "\n<b> Current Mentors ([num_mentors_online]):</b>\n" + mmsg
+=======
+	if(CONFIG_GET(flag/show_mentors))
+		msg += "\n" + span_bold(" Current Mentors ([num_mentors_online]):") + "\n" + mmsg
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 	msg += "\n<span class='info'>Adminhelps are also sent to Discord. If no admins are available in game try anyway and an admin on Discord may see it and respond.</span>"
 

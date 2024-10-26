@@ -84,8 +84,13 @@
 		return ..()
 
 /obj/structure/trash_pile/attack_ghost(mob/observer/user as mob)
+<<<<<<< HEAD
 	if(CONFIG_GET(flag/disable_player_mice)) // CHOMPEdit
 		to_chat(user, "<span class='warning'>Spawning as a mouse is currently disabled.</span>")
+=======
+	if(CONFIG_GET(flag/disable_player_mice))
+		to_chat(user, span_warning("Spawning as a mouse is currently disabled."))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		return
 
 	//VOREStation Add Start
@@ -116,7 +121,7 @@
 	host = new /mob/living/simple_mob/animal/passive/mouse(get_turf(src))
 
 	if(host)
-		if(CONFIG_GET(flag/uneducated_mice)) // CHOMPEdit
+		if(CONFIG_GET(flag/uneducated_mice))
 			host.universal_understand = 0
 		announce_ghost_joinleave(src, 0, "They are now a mouse.")
 		host.ckey = user.ckey

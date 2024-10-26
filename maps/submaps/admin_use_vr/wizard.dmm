@@ -248,7 +248,11 @@
 /area/wizard_station)
 "aC" = (
 /obj/structure/table/woodentable,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"
@@ -814,8 +818,13 @@
 /area/wizard_station)
 "bS" = (
 /obj/structure/table/steel_reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/engineering_hacking,
 /obj/item/device/radio/intercom{
+=======
+/obj/item/book/manual/wiki/engineering_hacking,
+/obj/item/radio/intercom{
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	desc = "Talk through this. Evilly";
 	frequency = 1213;
 	name = "Subversive Intercom";

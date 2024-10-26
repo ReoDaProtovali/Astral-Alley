@@ -209,8 +209,13 @@
 				client.prefs.real_name = random_name(client.prefs.identifying_gender)
 			observer.real_name = client.prefs.real_name
 			observer.name = observer.real_name
+<<<<<<< HEAD
 			if(!client.holder && !CONFIG_GET(flag/antag_hud_allowed))           // For new ghosts we remove the verb from even showing up if it's not allowed. // CHOMPEdit
 				remove_verb(observer, /mob/observer/dead/verb/toggle_antagHUD) //CHOMPEdit        // Poor guys, don't know what they are missing!
+=======
+			if(!client.holder && !CONFIG_GET(flag/antag_hud_allowed))           // For new ghosts we remove the verb from even showing up if it's not allowed.
+				remove_verb(observer, /mob/observer/dead/verb/toggle_antagHUD)        // Poor guys, don't know what they are missing!
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 			observer.key = key
 			observer.set_respawn_timer(time_till_respawn()) // Will keep their existing time if any, or return 0 and pass 0 into set_respawn_timer which will use the defaults
 			observer.client.init_verbs()
@@ -470,8 +475,13 @@
 	if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
 		to_chat(usr, span_red("The round is either not ready, or has already finished..."))
 		return 0
+<<<<<<< HEAD
 	if(!CONFIG_GET(flag/enter_allowed)) // CHOMPEdit
 		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+=======
+	if(!CONFIG_GET(flag/enter_allowed))
+		to_chat(usr, span_notice("There is an administrative lock on entering the game!"))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 		return 0
 	if(!IsJobAvailable(rank))
 		tgui_alert_async(src,"[rank] is not available. Please try another.")

@@ -63,10 +63,17 @@
 		to_chat(user, "<span class='notice'>Attack Speed: [weapon_attack_speed]/s</span>")
 		to_chat(user, "<span class='notice'>\The [I] does <b>[DPS]</b> damage per second.</span>")
 		if(DPS > 0)
+<<<<<<< HEAD
 			to_chat(user, "<span class='notice'>At your maximum health ([user.getMaxHealth()]), it would take approximately;</span>")
 			to_chat(user, "<span class='notice'>[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_softcrit)) / DPS] seconds to softcrit you. ([CONFIG_GET(number/health_threshold_softcrit)] health)</span>") // CHOMPEdit
 			to_chat(user, "<span class='notice'>[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_crit)) / DPS] seconds to hardcrit you. ([CONFIG_GET(number/health_threshold_crit)] health)</span>") // CHOMPEdit
 			to_chat(user, "<span class='notice'>[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_dead)) / DPS] seconds to kill you. ([CONFIG_GET(number/health_threshold_dead)] health)</span>") // CHOMPEdit
+=======
+			to_chat(user, span_notice("At your maximum health ([user.getMaxHealth()]), it would take approximately;"))
+			to_chat(user, span_notice("[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_softcrit)) / DPS] seconds to softcrit you. ([CONFIG_GET(number/health_threshold_softcrit)] health)"))
+			to_chat(user, span_notice("[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_crit)) / DPS] seconds to hardcrit you. ([CONFIG_GET(number/health_threshold_crit)] health)"))
+			to_chat(user, span_notice("[(user.getMaxHealth() - CONFIG_GET(number/health_threshold_dead)) / DPS] seconds to kill you. ([CONFIG_GET(number/health_threshold_dead)] health)"))
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 
 	else
 		to_chat(user, "<span class='warning'>You need to be a living mob, with hands, and for an object to be in your active hand, to use this verb.</span>")
@@ -206,9 +213,9 @@
 	set category = "Server.Game" //CHOMPEdit
 	set name = "Toggle Aliens"
 
-	CONFIG_SET(flag/aliens_allowed, !CONFIG_GET(flag/aliens_allowed)) // CHOMPEdit
-	log_admin("[key_name(src)] has turned aliens [CONFIG_GET(flag/aliens_allowed) ? "on" : "off"].") // CHOMPEdit
-	message_admins("[key_name_admin(src)] has turned aliens [CONFIG_GET(flag/aliens_allowed) ? "on" : "off"].", 0) // CHOMPEdit
+	CONFIG_SET(flag/aliens_allowed, !CONFIG_GET(flag/aliens_allowed))
+	log_admin("[key_name(src)] has turned aliens [CONFIG_GET(flag/aliens_allowed) ? "on" : "off"].")
+	message_admins("[key_name_admin(src)] has turned aliens [CONFIG_GET(flag/aliens_allowed) ? "on" : "off"].", 0)
 	feedback_add_details("admin_verb","TAL") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/cmd_display_del_log()

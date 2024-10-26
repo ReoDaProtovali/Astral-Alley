@@ -2077,8 +2077,13 @@
 /area/centcom/holding)
 "gC" = (
 /obj/structure/table/reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/device/taperecorder,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/taperecorder,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/effect/floor_decal/borderfloorblack,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled/dark,
@@ -8473,7 +8478,11 @@
 /area/centcom/main_hall)
 "HN" = (
 /obj/structure/table/reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/tiled/dark,
 /area/centcom/security)
 "HO" = (
@@ -9832,7 +9841,11 @@
 /area/centcom/control)
 "KZ" = (
 /obj/structure/table/reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
 	},
@@ -10015,7 +10028,11 @@
 /area/centcom/restaurant)
 "Lw" = (
 /obj/structure/table/reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/tiled,
 /area/centcom/security)
 "Lx" = (
@@ -11240,8 +11257,13 @@
 /area/centcom/terminal/shuttlefluff)
 "Ou" = (
 /obj/structure/table/reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/gun/energy/taser,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/gun/energy/taser,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/blue/border,
 /turf/simulated/floor/tiled,
@@ -12793,8 +12815,13 @@
 	dir = 10
 	},
 /obj/structure/table/reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/security_space_law,
 /obj/item/weapon/book/manual/security_space_law,
+=======
+/obj/item/book/manual/wiki/security_space_law,
+/obj/item/book/manual/wiki/security_space_law,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/tiled/dark,
 /area/centcom/security{
 	name = "\improper CentCom Security Arrivals"

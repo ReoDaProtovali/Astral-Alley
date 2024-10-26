@@ -8709,7 +8709,11 @@
 /area/redgate/city/pizza)
 "luj" = (
 /obj/structure/table/woodentable,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/medical_diagnostics_manual{
+=======
+/obj/item/book/manual/wiki/medical_diagnostics_manual{
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 	pixel_y = 7
 	},
 /turf/simulated/floor/wood,

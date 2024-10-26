@@ -15804,7 +15804,11 @@
 /area/redgate/facility/cell29)
 "wmm" = (
 /obj/structure/table/steel_reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/robotics_manual,
+=======
+/obj/item/book/manual/wiki/robotics_manual,
+>>>>>>> 026253a175 (upstream-merge-16484 [MDB IGNORE] (#9289))
 /turf/simulated/floor/tiled/steel_grid,
 /area/redgate/facility/ne)
 "wmn" = (
