@@ -10,6 +10,7 @@
 
 /obj/screen/movable
 	var/snap2grid = FALSE
+	// TODO: Check if these can safely be deleted
 	var/moved = FALSE
 	var/x_off = -16 
 	var/y_off = -16
