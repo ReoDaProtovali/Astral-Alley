@@ -46,6 +46,17 @@ if [ $retVal -ne 0 ]; then
   FAILED=1
 fi
 
+<<<<<<< HEAD
+=======
+part "improperly pathed static lists"
+if $grep -i 'var/list/static/.*' $code_files; then
+	echo
+	echo -e "${RED}ERROR: Found incorrect static list definition 'var/list/static/', it should be 'var/static/list/' instead.${NC}"
+	st=1
+fi;
+
+part "changelog"
+>>>>>>> 196770e16f ([MIRROR] Fixed 2 static lists (#9321))
 #Checking for a change to html/changelogs/example.yml
 md5sum -c - <<< "0c56937110d88f750a32d9075ddaab8b *html/changelogs_ch/example.yml" # CHOMPedit - Better changelogs
 retVal=$?
