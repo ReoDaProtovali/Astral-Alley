@@ -1200,3 +1200,44 @@
 		flags_inv = HIDEHOLSTER
 		to_chat(user, "You adjust your poncho.")
 	update_clothing_icon()
+<<<<<<< HEAD
+=======
+
+/obj/item/clothing/accessory/belt
+	name = "Thin Belt"
+	desc = "A thin belt for holding your pants up."
+	icon = 'icons/inventory/accessory/item.dmi'
+	icon_override = 'icons/inventory/accessory/mob.dmi'
+	icon_state = "belt_thin"
+	item_state = "belt_thin"
+	slot_flags = SLOT_TIE | SLOT_BELT
+	slot = ACCESSORY_SLOT_DECOR
+
+/obj/item/clothing/accessory/belt/thick
+	name = "Thick Belt"
+	desc = "A thick belt for holding your pants up."
+	icon_state = "belt_thick"
+	item_state = "belt_thick"
+
+/obj/item/clothing/accessory/belt/strap
+	name = "Strap Belt"
+	desc = "A belt with no bucklet for holding your pants up."
+	icon_state = "belt_strap"
+	item_state = "belt_strap"
+
+/obj/item/clothing/accessory/belt/studded
+	name = "Studded Belt"
+	desc = "A studded belt for holding your pants up and looking cool."
+	icon_state = "belt_studded"
+	item_state = "belt_studded"
+
+/obj/item/clothing/accessory/bunny_tail
+	name = "Bunny Tail"
+	desc = "A little fluffy bunny tail to spice up your outfit."
+	icon = 'icons/inventory/accessory/item.dmi'
+	icon_override = 'icons/inventory/accessory/mob.dmi'
+	icon_state = "bunny_tail"
+	item_state = "bunny_tail"
+	slot_flags = SLOT_TIE | SLOT_BELT
+	slot = ACCESSORY_SLOT_DECOR
+>>>>>>> 20afa499ec ([MIRROR] Bunny suits (#9331))

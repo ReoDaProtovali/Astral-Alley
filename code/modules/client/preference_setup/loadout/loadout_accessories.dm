@@ -554,3 +554,30 @@ Talon pin
 	"Service - Echelons" = /obj/item/clothing/accessory/solgov/department/service/army
 	)
 	gear_tweaks += new/datum/gear_tweak/path(insignia)
+<<<<<<< HEAD
+=======
+
+/datum/gear/accessory/belt_selection
+	display_name = "belts (selection, colorable)"
+	path = /obj/item/clothing/accessory/belt
+
+/datum/gear/accessory/belt_selection/New()
+	..()
+	var/list/wristband_lists = list(
+	"Thin Belt" = /obj/item/clothing/accessory/belt,
+	"Thick Belt" = /obj/item/clothing/accessory/belt/thick,
+	"Strap Belt" = /obj/item/clothing/accessory/belt/strap,
+	"Studded Belt" = /obj/item/clothing/accessory/belt/studded
+	)
+	gear_tweaks += new/datum/gear_tweak/path(wristband_lists)
+	gear_tweaks += gear_tweak_free_color_choice
+
+/datum/gear/accessory/bunny_tail
+	display_name = "bunny tail, colorable"
+	path = /obj/item/clothing/accessory/bunny_tail
+
+/datum/gear/accessory/bunny_tail/New()
+	..()
+	gear_tweaks += gear_tweak_free_color_choice
+
+>>>>>>> 20afa499ec ([MIRROR] Bunny suits (#9331))
