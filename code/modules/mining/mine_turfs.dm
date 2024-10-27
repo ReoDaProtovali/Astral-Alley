@@ -679,7 +679,11 @@ var/list/mining_overlay_cache = list()
 	geologic_data = new /datum/geosample(src) //CHOMPEdit
 	var/obj/item/weapon/X
 	if(is_clean)
+<<<<<<< HEAD
 		X = new /obj/item/weapon/archaeological_find(src, new_item_type = F.find_type)
+=======
+		X = new /obj/item/archaeological_find(src, F.find_type) // CHOMPEdit
+>>>>>>> 3232c48e9d (Xenoarch order (#9326))
 	else
 		X = new /obj/item/weapon/strangerock(src, inside_item_type = F.find_type)
 		geologic_data.UpdateNearbyArtifactInfo(src)
