@@ -4,7 +4,12 @@
 	icon_state = "ano01"
 	var/find_type = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/archaeological_find/New(loc, var/new_item_type)
+=======
+/obj/item/archaeological_find/Initialize(mapload, var/new_item_type) // CHOMPEdit NEW -> Initialize
+	. = ..()
+>>>>>>> 3232c48e9d (Xenoarch order (#9326))
 	if(new_item_type)
 		find_type = new_item_type
 	else
