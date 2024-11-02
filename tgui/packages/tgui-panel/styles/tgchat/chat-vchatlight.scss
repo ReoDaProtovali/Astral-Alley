@@ -33,7 +33,7 @@ img {
   margin: 0;
   padding: 0;
   line-height: 1;
-  -ms-interpolation-mode: nearest-neighbor;
+  -ms-interpolation-mode: nearest-neighbor; // TODO: Remove with 516
   image-rendering: pixelated;
 }
 
@@ -192,12 +192,6 @@ a.popt {
 
 .filterMessages div {
   padding: 2px 0;
-}
-
-.filterMessages input {
-}
-
-.filterMessages label {
 }
 
 .icon-stack {
@@ -385,6 +379,7 @@ img.icon.bigicon {
   font-weight: bold;
 }
 
+<<<<<<< HEAD
 .say,
 .emote,
 .emotesubtle,
@@ -396,13 +391,18 @@ img.icon.bigicon {
 .warningplain,
 .chatexport,
 .body {
+=======
+.world {
+  font-weight: bold;
+}
+
+.warningplain {
+  font-style: italic;
+>>>>>>> 111e61a0a3 ([MIRROR] BYOND 516 Compatibility (#9382))
 }
 
 .hivemind {
   font-style: italic;
-}
-
-.nif {
 }
 
 .psay {
