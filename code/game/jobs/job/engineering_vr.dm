@@ -29,8 +29,13 @@
 
 /datum/job/engineer
 	pto_type = PTO_ENGINEERING
+<<<<<<< HEAD
 	alt_titles = list("Maintenance Technician" = /datum/alt_title/maint_tech, "Engine Technician" = /datum/alt_title/engine_tech,
 						"Electrician" = /datum/alt_title/electrician, "Construction Engineer" = /datum/alt_title/construction_engi, "Engineering Contractor" = /datum/alt_title/engineering_contractor)
+=======
+	alt_titles = list(JOB_ALT_MAINTENANCE_TECHNICIAN = /datum/alt_title/maint_tech, JOB_ALT_ENGINE_TECHNICIAN = /datum/alt_title/engine_tech,
+						JOB_ALT_ELECTRICIAN = /datum/alt_title/electrician, JOB_ALT_CONSTRUCTION_ENGINEER = /datum/alt_title/construction_engi, JOB_ALT_ENGINEERING_CONTRACTOR = /datum/alt_title/engineering_contractor,  JOB_ALT_COMPUTER_TECHNICIAN = /datum/alt_title/computer_tech)
+>>>>>>> a9188f20d7 ([MIRROR] Add two new alt titles: Software Engineer, Computer Technician (#9389))
 
 /datum/alt_title/construction_engi
 	title = "Construction Engineer"
@@ -44,8 +49,9 @@
 /datum/job/engineer/get_request_reasons()
 	return list("Engine setup", "Construction project", "Repairs necessary", "Assembling expedition team")
 
-
-
+/datum/alt_title/computer_tech
+	title = JOB_ALT_COMPUTER_TECHNICIAN
+	title_blurb = "A " + JOB_ALT_COMPUTER_TECHNICIAN + " fulfills similar duties to other engineers, but specializes in working with software and computers. They also often deal with integrated circuits."
 
 /datum/job/atmos
 	spawn_positions = 3
