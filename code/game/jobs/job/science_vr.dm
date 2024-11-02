@@ -87,7 +87,19 @@
 /datum/job/roboticist
 	total_positions = 3
 	pto_type = PTO_SCIENCE
+<<<<<<< HEAD
 	alt_titles = list("Assembly Technician" = /datum/alt_title/assembly_tech, "Biomechanical Engineer" = /datum/alt_title/biomech, "Mechatronic Engineer" = /datum/alt_title/mech_tech)
+=======
+	alt_titles = list(
+		JOB_ALT_ASSEMBLY_TECHNICIAN = /datum/alt_title/assembly_tech,
+		JOB_ALT_BIOMECHANICAL_ENGINEER = /datum/alt_title/biomech,
+		JOB_ALT_MECHATRONIC_ENGINEER = /datum/alt_title/mech_tech,
+		JOB_ALT_SOFTWARE_ENGINEER = /datum/alt_title/software_engi)
+
+/datum/alt_title/software_engi
+	title = JOB_ALT_SOFTWARE_ENGINEER
+	title_blurb = "A " + JOB_ALT_SOFTWARE_ENGINEER + " specializes in working with software and firmware. They also often deal with integrated circuits."
+>>>>>>> a9188f20d7 ([MIRROR] Add two new alt titles: Software Engineer, Computer Technician (#9389))
 
 /datum/alt_title/assembly_tech
 	title = "Assembly Technician"
