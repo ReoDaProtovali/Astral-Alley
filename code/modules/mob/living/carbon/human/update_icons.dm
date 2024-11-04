@@ -1378,6 +1378,36 @@ GLOBAL_LIST_EMPTY(damage_icon_parts) //see UpdateDamageIcon()
 		return ears_s
 	return null
 
+<<<<<<< HEAD
+=======
+	// todo: this is utterly horrible but i don't think i should be violently refactoring sprite acc rendering in a feature PR ~silicons
+	if(ear_secondary_style && !(head && (head.flags_inv & BLOCKHEADHAIR)))
+		var/icon/ears_s = new/icon("icon" = ear_secondary_style.icon, "icon_state" = ear_secondary_style.icon_state)
+		if(ear_secondary_style.do_colouration)
+			var/color = LAZYACCESS(ear_secondary_colors, 1)
+			if(color)
+				ears_s.Blend(color, ear_secondary_style.color_blend_mode)
+		if(ear_secondary_style.extra_overlay)
+			var/icon/overlay = new/icon("icon" = ear_secondary_style.icon, "icon_state" = ear_secondary_style.extra_overlay)
+			var/color = LAZYACCESS(ear_secondary_colors, 2)
+			if(color)
+				overlay.Blend(color, ear_secondary_style.color_blend_mode)
+			ears_s.Blend(overlay, ICON_OVERLAY)
+			qdel(overlay)
+		if(ear_secondary_style.extra_overlay2) //MORE COLOURS IS BETTERER
+			var/icon/overlay = new/icon("icon" = ear_secondary_style.icon, "icon_state" = ear_secondary_style.extra_overlay2)
+			var/color = LAZYACCESS(ear_secondary_colors, 3)
+			if(color)
+				overlay.Blend(color, ear_secondary_style.color_blend_mode)
+			ears_s.Blend(overlay, ICON_OVERLAY)
+			qdel(overlay)
+		if(!rendered)
+			rendered = ears_s
+		else
+			rendered.Blend(ears_s, ICON_OVERLAY)
+
+	return rendered
+>>>>>>> cb38cd05f5 ([MIRROR] sanity checks secondary ear colours (#9403))
 
 /mob/living/carbon/human/proc/get_tail_image()
 	//If you are FBP with tail style and didn't set a custom one
