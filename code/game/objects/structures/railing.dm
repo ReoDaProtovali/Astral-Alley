@@ -222,7 +222,11 @@
 
 	// Install
 	if(W.has_tool_quality(TOOL_SCREWDRIVER))
+<<<<<<< HEAD
 		user.visible_message(anchored ? "<b>\The [user]</b> begins unscrewing \the [src]." : "<b>\The [user]</b> begins fasten \the [src]." )
+=======
+		user.visible_message(span_info((anchored ? (span_bold("\The [user]") + " begins unscrewing \the [src].") : (span_bold("\The [user]") + "begins fasten \the [src]."))))
+>>>>>>> 8d25228ed5 ([MIRROR] prevent out of index access on tgui spamming the rd console (#9404))
 		playsound(src, W.usesound, 75, 1)
 		if(do_after(user, 10, src))
 			to_chat(user, (anchored ? "<span class='notice'>You have unfastened \the [src] from the floor.</span>" : "<span class='notice'>You have fastened \the [src] to the floor.</span>"))
