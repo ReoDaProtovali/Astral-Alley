@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useBackend } from '../../../backend';
+=======
+import { useBackend } from 'tgui/backend';
+>>>>>>> e292b0cb49 ([MIRROR] Make vore panel layout better for long belly descriptions in the insi… (#9409))
 import {
   Box,
   Button,
@@ -28,7 +32,11 @@ export const VoreSoulcatcher = (props: {
   });
 
   return (
+<<<<<<< HEAD
     <>
+=======
+    <Section scrollable fill>
+>>>>>>> e292b0cb49 ([MIRROR] Make vore panel layout better for long belly descriptions in the insi… (#9409))
       {soulcatcher && (
         <VoreSoulcatcherSection
           soulcatcher={soulcatcher}

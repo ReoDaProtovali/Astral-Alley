@@ -690,7 +690,11 @@ export const VoreUserPreferences = (props: {
   };
 
   return (
+<<<<<<< HEAD
     <Box nowrap>
+=======
+    <Section scrollable fill>
+>>>>>>> e292b0cb49 ([MIRROR] Make vore panel layout better for long belly descriptions in the insi… (#9409))
       <VoreUserPreferencesMechanical
         show_pictures={show_pictures}
         icon_overflow={icon_overflow}
