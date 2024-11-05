@@ -447,7 +447,7 @@
 
 /mob/living/carbon/human/verb/check_attacks()
 	set name = "Check Attacks"
-	set category = "IC.Game" //CHOMPEdit
+	set category = "IC.Game"
 	set src = usr
 
 	var/dat = "<b><font size = 5>Known Attacks</font></b><br/><br/>"

@@ -41,7 +41,11 @@
 			list(/obj/item/toy/syndicateballoon, 3) = 2,
 			list(/obj/item/clothing/suit/ianshirt, 3) = 2,
 			list(/obj/item/clothing/head/bearpelt, 4) = 2,
+<<<<<<< HEAD
 			//list(/obj/item/weapon/archaeological_find, 3) = 2, //ChompREMOVE - causes runtimes
+=======
+			//list(/obj/item/archaeological_find, 3) = 2, // Removed, causes runtimes
+>>>>>>> f72f2f8c89 ([MIRROR] Server maint subsystem (#9408))
 			list(pick(subtypesof(/obj/item/toy/mecha)), 4) = 2,
 			list(pick(subtypesof(/obj/item/toy/figure)), 4) = 2,
 			list(pick(subtypesof(/obj/item/toy/plushie)), 4) = 2,

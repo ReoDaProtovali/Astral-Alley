@@ -21,8 +21,13 @@
 	name = newname + " (" + ownjob + ")"
 
 //AI verb and proc for sending PDA messages.
+<<<<<<< HEAD
 /obj/item/device/pda/ai/verb/cmd_pda_open_ui()
 	set category = "Abilities.AI" //ChompEDIT - TGPanel
+=======
+/obj/item/pda/ai/verb/cmd_pda_open_ui()
+	set category = "Abilities.AI"
+>>>>>>> f72f2f8c89 ([MIRROR] Server maint subsystem (#9408))
 	set name = "Use PDA"
 	set src in usr
 

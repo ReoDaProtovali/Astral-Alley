@@ -399,7 +399,7 @@ SUBSYSTEM_DEF(vote)
 	usr.client.vote()
 
 /client/verb/vote()
-	set category = "OOC.Game" //CHOMPEdit
+	set category = "OOC.Game"
 	set name = "Vote"
 
 	if(SSvote)
