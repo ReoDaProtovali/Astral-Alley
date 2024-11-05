@@ -28,7 +28,12 @@
 	charge_delay = 50
 	matter = null
 	standard_overlays = FALSE
+<<<<<<< HEAD
 	var/swaps_to = /obj/item/weapon/cell/device/weapon/recharge/alien
+=======
+	var/swaps_to = /obj/item/cell/device/weapon/recharge/alien
+	robot_durability = 100
+>>>>>>> 302cc08221 ([MIRROR] Robot upgrades (#9412))
 
 /obj/item/weapon/cell/void/attack_self(var/mob/user)
 	user.remove_from_mob(src)
