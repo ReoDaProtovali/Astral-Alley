@@ -27,9 +27,16 @@
 			list(pick(subtypesof(/obj/item/weapon/storage/mre)), 2) = 3,
 			list(/obj/item/seeds/random, 2) = 3,
 			list(/obj/item/clothing/under/chameleon, 5) = 3,
+<<<<<<< HEAD
 			list(/obj/item/weapon/melee/classic_baton, 6) = 3,
 			list(/obj/item/weapon/rig/industrial, 6) = 3,
 			list(/obj/item/device/multitool/hacktool, 5) = 3,
+=======
+			list(/obj/item/melee/classic_baton, 6) = 3,
+			list(/obj/item/rig/industrial, 6) = 3,
+			list(/obj/item/multitool/hacktool, 5) = 3,
+			list(/obj/item/multitool/hacktool/modified, 4) = 4,
+>>>>>>> 5e6375b3b1 ([MIRROR] More small hacktool tweaks (#9426))
 			list(/obj/item/toy/katana, 1) = 2,
 			list(/obj/item/clothing/head/kitty, 1) = 2,
 			list(pick(subtypesof(/obj/item/weapon/soap)), 1) = 2,
