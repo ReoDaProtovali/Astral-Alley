@@ -92,8 +92,13 @@
 					/obj/item/weapon/gun/energy/ionrifle/pistol,
 					/obj/item/clothing/glasses/thermal/syndi,
 					/obj/item/ammo_magazine/m45/ap,
+<<<<<<< HEAD
 					/obj/item/weapon/material/knife/tacknife/combatknife,
 					/obj/item/device/multitool/hacktool
+=======
+					/obj/item/material/knife/tacknife/combatknife,
+					/obj/item/multitool/hacktool/modified
+>>>>>>> 5e6375b3b1 ([MIRROR] More small hacktool tweaks (#9426))
 					),
 			list( //the professional,
 					/obj/item/weapon/gun/energy/ionrifle/pistol,
