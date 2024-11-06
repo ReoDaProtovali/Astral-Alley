@@ -6,11 +6,16 @@
 	desc = "You can't top the plasma top." //TOTALLY TRADEMARK INFRINGEMENT
 	origin_tech = list(TECH_POWER = 0)
 	icon_state = "crap"
+	charge = 500
 	maxcharge = 500
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 40)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/crap/empty/Initialize() //ChompEDIT New --> Initialize
 	..()
+=======
+/obj/item/cell/crap/empty
+>>>>>>> 1d918c276f ([MIRROR] migrate power cells to initialize (#9423))
 	charge = 0
 
 /*
@@ -18,6 +23,7 @@
  */
 /obj/item/weapon/cell/robot_station
 	name = "standard robot power cell"
+	charge = 7500
 	maxcharge = 7500
 
 /*
@@ -27,6 +33,7 @@
 	name = "syndicate robot power cell"
 	description_fluff = "Almost as good as a hyper."
 	icon_state = "b_sup" //We don't want roboticists confuse it with a low standard cell
+	charge = 25000
 	maxcharge = 25000
 
 /*
@@ -36,13 +43,17 @@
 	name = "security borg rechargable D battery"
 	origin_tech = list(TECH_POWER = 0)
 	icon_state = "secborg"
+	charge = 2400
 	maxcharge = 2400	//who the hell thought 6 shots was enough for a dogborg taser?
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 40)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/secborg/empty/Initialize() //ChompEDIT New --> Initialize
 	..()
+=======
+/obj/item/cell/secborg/empty
+>>>>>>> 1d918c276f ([MIRROR] migrate power cells to initialize (#9423))
 	charge = 0
-	update_icon()
 
 /*
  * APC
@@ -51,6 +62,7 @@
 	name = "heavy-duty power cell"
 	origin_tech = list(TECH_POWER = 1)
 	icon_state = "apc"
+	charge = 5000
 	maxcharge = 5000
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 50)
 
@@ -61,13 +73,17 @@
 	name = "high-capacity power cell"
 	origin_tech = list(TECH_POWER = 2)
 	icon_state = "b_hi"
+	charge = 10000
 	maxcharge = 10000
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 60)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/high/empty/Initialize() //ChompEDIT New --> Initialize
 	..()
+=======
+/obj/item/cell/high/empty
+>>>>>>> 1d918c276f ([MIRROR] migrate power cells to initialize (#9423))
 	charge = 0
-	update_icon()
 
 /*
  * Super
@@ -76,13 +92,17 @@
 	name = "super-capacity power cell"
 	origin_tech = list(TECH_POWER = 5)
 	icon_state = "b_sup"
+	charge = 20000
 	maxcharge = 20000
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 70)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/super/empty/Initialize() //ChompEDIT New --> Initialize
 	..()
+=======
+/obj/item/cell/super/empty
+>>>>>>> 1d918c276f ([MIRROR] migrate power cells to initialize (#9423))
 	charge = 0
-	update_icon()
 
 /*
  * Hyper
@@ -91,13 +111,17 @@
 	name = "hyper-capacity power cell"
 	origin_tech = list(TECH_POWER = 6)
 	icon_state = "b_hy"
+	charge = 30000
 	maxcharge = 30000
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 80)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/hyper/empty/Initialize() //ChompEDIT New --> Initialize
 	..()
+=======
+/obj/item/cell/hyper/empty
+>>>>>>> 1d918c276f ([MIRROR] migrate power cells to initialize (#9423))
 	charge = 0
-	update_icon()
 
 /*
  * Giga
@@ -106,13 +130,17 @@
 	name = "giga-capacity power cell"
 	origin_tech = list(TECH_POWER = 8)
 	icon_state = "meb_b_hi"
+	charge = 40000
 	maxcharge = 40000
 	matter = list(MAT_STEEL = 1000, MAT_GLASS = 100)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/giga/empty/Initialize() //ChompEDIT New --> Initialize
 	..()
+=======
+/obj/item/cell/giga/empty
+>>>>>>> 1d918c276f ([MIRROR] migrate power cells to initialize (#9423))
 	charge = 0
-	update_icon()
 /*
  * Mecha
  */
@@ -146,6 +174,7 @@
 	name = "infinite-capacity power cell!"
 	icon_state = "infinite_b"
 	origin_tech =  null
+	charge = 30000
 	maxcharge = 30000 //determines how badly mobs get shocked
 	matter = list(MAT_STEEL = 700, MAT_GLASS = 80)
 
@@ -177,6 +206,7 @@
 	icon = 'icons/mob/slimes.dmi' //'icons/obj/harvest.dmi'
 	icon_state = "yellow slime extract" //"potato_battery"
 	description_info = "This 'cell' holds a max charge of 20k and self recharges over time."
+	charge = 20000
 	maxcharge = 20000
 	charge_amount = 500 // 2.5%.
 	matter = null
@@ -189,6 +219,7 @@
 /obj/item/weapon/cell/emergency_light
 	name = "miniature power cell"
 	desc = "A tiny power cell with a very low power capacity. Used in light fixtures to power them in the event of an outage."
+	charge = 120
 	maxcharge = 120 //Emergency lights use 0.2 W per tick, meaning ~10 minutes of emergency power from a cell
 	matter = list(MAT_GLASS = 20)
 	icon_state = "em_light"
