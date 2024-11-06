@@ -193,7 +193,6 @@ var/list/admin_verbs_spawn = list(
 	/client/proc/cmd_admin_droppod_spawn,
 	/client/proc/respawn_character,
 	/client/proc/spawn_character_mob,  //VOREStation Add,
-	/client/proc/virus2_editor,
 	/client/proc/spawn_chemdisp_cartridge,
 	/client/proc/map_template_load,
 	/client/proc/map_template_upload,
@@ -202,7 +201,9 @@ var/list/admin_verbs_spawn = list(
 	/client/proc/generic_structure, //VOREStation Add
 	/client/proc/generic_item, //VOREStation Add
 	/client/proc/create_gm_message,
-	/client/proc/remove_gm_message
+	/client/proc/remove_gm_message,
+	/client/proc/AdminCreateVirus,
+	/client/proc/ReleaseVirus
 	)
 
 var/list/admin_verbs_server = list(
@@ -580,6 +581,12 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/toggle_random_events,
 	/client/proc/modify_server_news,
 	/client/proc/toggle_spawning_with_recolour,
+<<<<<<< HEAD
+=======
+	/client/proc/start_vote,
+	/client/proc/AdminCreateVirus,
+	/client/proc/ReleaseVirus,
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 	/datum/admins/proc/quick_nif, //CHOMPStation Add,
 	/datum/admins/proc/quick_authentic_nif, //CHOMPStation add
 	/client/proc/reload_jobwhitelist, //ChompADD

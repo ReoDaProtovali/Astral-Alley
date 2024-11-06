@@ -245,12 +245,24 @@
 		/obj/item/clothing/gloves,
 		/obj/item/weapon/reagent_containers/hypospray,
 		/obj/item/clothing/glasses,
+<<<<<<< HEAD
 		/obj/item/weapon/tool/crowbar,
 		/obj/item/device/flashlight,
 		/obj/item/weapon/cell/device,
 		/obj/item/weapon/extinguisher/mini,
 		/obj/item/weapon/storage/quickdraw/syringe_case,
 		/obj/item/ammo_casing/macrobattery // CHOMPedit: Macrobatteries for the Curabitur can fit into medbelts.
+=======
+		/obj/item/tool/crowbar,
+		/obj/item/flashlight,
+		/obj/item/cell/device,
+		/obj/item/extinguisher/mini,
+		/obj/item/ammo_casing/macrobattery, // CHOMPedit: Macrobatteries for the Curabitur can fit into medbelts.
+		/obj/item/sleevemate,
+		/obj/item/mass_spectrometer,
+		/obj/item/surgical,
+		/obj/item/clothing/mask/chewable/candy/lolli // VOREstation edit end
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 		)
 
 /obj/item/weapon/storage/belt/medical/emt

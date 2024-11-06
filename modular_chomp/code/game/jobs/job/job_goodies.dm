@@ -514,12 +514,21 @@
 
 /datum/alt_title/virologist
 	mail_goodies = list(
+<<<<<<< HEAD
 		/obj/item/weapon/virusdish/random = 200,
 		/obj/item/weapon/storage/pill_bottle/spaceacillin = 150,
 		/obj/item/clothing/mask/surgical = 150,
 		/obj/item/clothing/gloves/sterile/latex = 150,
 		/obj/item/weapon/reagent_containers/hypospray/autoinjector/biginjector/toxin = 100,
 		/obj/item/weapon/reagent_containers/blood/OMinus = 100,
+=======
+		/obj/item/storage/pill_bottle/spaceacillin = 150,
+		/obj/item/clothing/mask/surgical = 150,
+		/obj/item/clothing/gloves/sterile/latex = 150,
+		/obj/item/reagent_containers/glass/bottle/culture/cold = 150,
+		/obj/item/reagent_containers/glass/bottle/culture/flu = 150,
+		/obj/item/reagent_containers/blood/OMinus = 100,
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 	)
 
 /datum/job/chemist

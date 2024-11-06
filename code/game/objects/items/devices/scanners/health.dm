@@ -210,6 +210,7 @@
 					for(var/d in touchunknownreagents)
 						dat += touchunknownreagents[d]
 				else
+<<<<<<< HEAD
 					dat += "<span class='warning'>Unknown substance[(unknown > 1)?"s":""] found in subject's dermis.</span><br>"
 		if(C.virus2.len)
 			for (var/ID in C.virus2)
@@ -218,6 +219,19 @@
 					dat += "<span class='warning'>Warning: Pathogen [V.fields["name"]] detected in subject's blood. Known antigen : [V.fields["antigen"]]</span><br>"
 				else
 					dat += "<span class='warning'>Warning: Unknown pathogen detected in subject's blood.</span><br>"
+=======
+					dat += span_warning("Unknown substance[(unknown > 1)?"s":""] found in subject's dermis.")
+					dat += "<br>"
+		if(C.resistances.len)
+			for (var/datum/disease/virus in C.GetViruses())
+				if(virus.visibility_flags & HIDDEN_SCANNER || virus.visibility_flags & HIDDEN_PANDEMIC)
+					continue
+				if(virus.discovered)
+					dat += span_warning("Warning: [virus.name] detected in subject's blood.")
+					dat += "<br>"
+					dat += span_warning("Severity: [virus.severity]")
+					dat += "<br>"
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 	if (M.getCloneLoss())
 		dat += "<span class='warning'>Subject appears to have been imperfectly cloned.</span><br>"
 //	if (M.reagents && M.reagents.get_reagent_amount("inaprovaline"))

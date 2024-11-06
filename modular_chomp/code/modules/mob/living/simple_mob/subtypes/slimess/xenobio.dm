@@ -267,7 +267,11 @@
 	required = /obj/item/slime_extract/plague
 
 /decl/chemical_reaction/instant/slime/virusdish/on_reaction(var/datum/reagents/holder)
+<<<<<<< HEAD
 	new /obj/item/weapon/virusdish(get_turf(holder.my_atom))
+=======
+	// new /obj/item/virusdish(get_turf(holder.my_atom))
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 	..()
 
 /decl/chemical_reaction/instant/slime/obj/item/slime_extract/plague_jelly

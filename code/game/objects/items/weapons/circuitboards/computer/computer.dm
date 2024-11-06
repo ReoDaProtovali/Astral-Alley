@@ -154,6 +154,7 @@
 	build_path = /obj/machinery/computer/operating
 	origin_tech = list(TECH_DATA = 2, TECH_BIO = 2)
 
+<<<<<<< HEAD
 /obj/item/weapon/circuitboard/curefab
 	name = T_BOARD("cure fabricator")
 	build_path = /obj/machinery/computer/curer
@@ -163,6 +164,9 @@
 	build_path = /obj/machinery/computer/diseasesplicer
 
 /obj/item/weapon/circuitboard/mining_shuttle
+=======
+/obj/item/circuitboard/mining_shuttle
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 	name = T_BOARD("mining shuttle console")
 	build_path = /obj/machinery/computer/shuttle_control/mining
 	origin_tech = list(TECH_DATA = 2)
