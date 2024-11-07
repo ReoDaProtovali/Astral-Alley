@@ -508,6 +508,7 @@ I said no!
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/icecreamsandwich
 
+<<<<<<< HEAD
 // Fuck Science!
 /datum/recipe/ruinedvirusdish
 	items = list(
@@ -516,6 +517,8 @@ I said no!
 	result = /obj/item/weapon/ruinedvirusdish
 
 
+=======
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 /datum/recipe/onionsoup
 	fruit = list("onion" = 1)
 	reagents = list("water" = 10)

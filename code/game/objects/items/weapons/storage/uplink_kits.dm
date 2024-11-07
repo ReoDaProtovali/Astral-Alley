@@ -300,7 +300,11 @@
 
 /obj/item/weapon/storage/box/syndie_kit/viral
 	starts_with = list(
+<<<<<<< HEAD
 		/obj/item/weapon/virusdish/random = 3
+=======
+		// /obj/item/virusdish/random = 3
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 		)
 
 /obj/item/weapon/storage/secure/briefcase/rifle

@@ -453,7 +453,11 @@
 	max_storage_space = ITEMSIZE_COST_SMALL * 12
 	max_w_class = ITEMSIZE_NORMAL
 	w_class = ITEMSIZE_SMALL
+<<<<<<< HEAD
 	can_hold = list(/obj/item/weapon/reagent_containers/glass/beaker/vial/,/obj/item/weapon/virusdish/)
+=======
+	can_hold = list(/obj/item/reagent_containers/glass/beaker/vial/)
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 
 // -----------------------------
 //           Food Bag

@@ -38,11 +38,9 @@
 		/obj/item/weapon/storage/secure/safe,
 		/obj/machinery/iv_drip,
 		/obj/structure/medical_stand, //VOREStation Add,
-		/obj/machinery/disease2/incubator,
 		/obj/machinery/disposal,
 		/mob/living/simple_mob/animal/passive/cow,
 		/mob/living/simple_mob/animal/goat,
-		/obj/machinery/computer/centrifuge,
 		/obj/machinery/sleeper,
 		/obj/machinery/smartfridge/,
 		/obj/machinery/biogenerator,
@@ -50,7 +48,13 @@
 		/obj/machinery/radiocarbon_spectrometer,
 		/obj/machinery/portable_atmospherics/powered/reagent_distillery,
 		/obj/machinery/feeder,
+<<<<<<< HEAD
 		/obj/machinery/chemical_synthesizer //CHOMPedit,
+=======
+		/obj/machinery/computer/pandemic,
+		/obj/machinery/chemical_synthesizer, //CHOMPedit,
+		/obj/machinery/food_replicator // CHOMPAdd
+>>>>>>> 6c05f5da45 ([MIRROR] Better Viro (#9421))
 		)
 //CHOMP Addition for feeder in the above list. I am paranoid about comments within lists so this is outside.
 

@@ -238,3 +238,5 @@
 	var/datum/focus //What receives our keyboard inputs. src by default
 
 	var/custom_footstep = FOOTSTEP_MOB_SHOE // CHOMPEdit
+	var/list/viruses
+	var/list/resistances
