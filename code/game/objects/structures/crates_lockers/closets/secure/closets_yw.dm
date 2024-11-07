@@ -44,9 +44,15 @@
 		/obj/item/clothing/suit/storage/toggle/yw/secjacket,
 		/obj/item/clothing/under/rank/khi/sec/pilot,
 		/obj/item/clothing/gloves/fingerless,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/security,
 		/obj/item/device/radio/headset/headset_sec/alt,
 		/obj/item/weapon/storage/belt/security,
+=======
+		/obj/item/cartridge/security,
+		/obj/item/radio/headset/alt/headset_sec,
+		/obj/item/storage/belt/security,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/weapon/storage/box/flare,
 		/obj/item/clothing/accessory/storage/webbing/combatpilot,
@@ -65,6 +71,12 @@
 	closet_appearance = /decl/closet_appearance/cabinet/secure
 
 	starts_with = list(
+<<<<<<< HEAD
 		/obj/item/device/radio/off,
 		/obj/item/device/gps
 		)
+=======
+		/obj/item/radio/off,
+		/obj/item/gps
+		)
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))

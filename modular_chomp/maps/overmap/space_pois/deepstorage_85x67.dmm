@@ -277,11 +277,19 @@
 /area/submap/deepstorage)
 "aA" = (
 /obj/structure/table/standard,
+<<<<<<< HEAD
 /obj/item/device/radio/headset/sar/alt,
 /obj/item/device/radio/headset/sar/alt{
 	pixel_x = 7
 	},
 /obj/item/device/radio/headset/sar/alt{
+=======
+/obj/item/radio/headset/alt/sar,
+/obj/item/radio/headset/alt/sar{
+	pixel_x = 7
+	},
+/obj/item/radio/headset/alt/sar{
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	pixel_y = 0;
 	pixel_x = -6
 	},

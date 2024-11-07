@@ -23,7 +23,13 @@
 
 	starts_with = list(
 		/obj/item/clothing/head/that = 2,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_service = 2,
+=======
+		/obj/item/radio/headset/service = 2,
+		/obj/item/radio/headset/alt/service = 2,
+		/obj/item/radio/headset/earbud/service = 2,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/head/pin/flower,
 		/obj/item/clothing/head/pin/flower/pink,
 		/obj/item/clothing/head/pin/flower/yellow,
@@ -51,8 +57,15 @@
 	starts_with = list(
 		/obj/item/clothing/under/sundress,
 		/obj/item/clothing/under/waiter = 2,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_service = 2,
 		/obj/item/weapon/storage/box/mousetraps = 2,
+=======
+		/obj/item/radio/headset/service = 2,
+		/obj/item/radio/headset/alt/service = 2,
+		/obj/item/radio/headset/earbud/service = 2,
+		/obj/item/storage/box/mousetraps = 2,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/under/rank/chef,
 		/obj/item/clothing/head/chefhat,
 		/obj/item/weapon/storage/bag/food = 2
@@ -69,8 +82,15 @@
 	starts_with = list(
 		/obj/item/clothing/under/rank/janitor,
 		/obj/item/clothing/under/dress/maid/janitor,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_service,
 		/obj/item/weapon/cartridge/janitor,
+=======
+		/obj/item/radio/headset/service,
+		/obj/item/radio/headset/alt/service,
+		/obj/item/radio/headset/earbud/service,
+		/obj/item/cartridge/janitor,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/suit/storage/hooded/wintercoat/janitor,
 		/obj/item/clothing/gloves/black,
 		/obj/item/clothing/head/soft/purple,

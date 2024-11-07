@@ -1,16 +1,34 @@
 /decl/hierarchy/outfit/job/medical
 	hierarchy_type = /decl/hierarchy/outfit/job/medical
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/headset_med
+=======
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	shoes = /obj/item/clothing/shoes/white
 	pda_type = /obj/item/device/pda/medical
 	pda_slot = slot_l_store
+<<<<<<< HEAD
 	backpack = /obj/item/weapon/storage/backpack/medic
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/med
 	messenger_bag = /obj/item/weapon/storage/backpack/messenger/med
+=======
+
+	backpack = /obj/item/storage/backpack/medic
+	satchel_one = /obj/item/storage/backpack/satchel/med
+	messenger_bag = /obj/item/storage/backpack/messenger/med
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
+
+	headset = /obj/item/radio/headset/headset_med
+	headset_alt = /obj/item/radio/headset/alt/headset_med
+	headset_earbud = /obj/item/radio/headset/earbud/headset_med
 
 /decl/hierarchy/outfit/job/medical/cmo
+<<<<<<< HEAD
 	name = OUTFIT_JOB_NAME("Chief Medical Officer")
 	l_ear  =/obj/item/device/radio/headset/heads/cmo
+=======
+	name = OUTFIT_JOB_NAME(JOB_CHIEF_MEDICAL_OFFICER)
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	uniform = /obj/item/clothing/under/rank/chief_medical_officer
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/cmo
 	shoes = /obj/item/clothing/shoes/brown
@@ -18,6 +36,10 @@
 	r_pocket = /obj/item/device/healthanalyzer
 	id_type = /obj/item/weapon/card/id/medical/head
 	pda_type = /obj/item/device/pda/heads/cmo
+
+	headset = /obj/item/radio/headset/heads/cmo
+	headset_alt = /obj/item/radio/headset/alt/heads/cmo
+	headset_earbud = /obj/item/radio/headset/earbud/heads/cmo
 
 /decl/hierarchy/outfit/job/medical/doctor
 	name = OUTFIT_JOB_NAME("Medical Doctor")

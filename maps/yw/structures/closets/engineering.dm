@@ -13,9 +13,15 @@
 		/obj/item/clothing/under/rank/chief_engineer/skirt,
 		/obj/item/clothing/head/hardhat/white,
 		/obj/item/clothing/shoes/brown,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/ce,
 		/obj/item/device/radio/headset/heads/ce,
 		/obj/item/device/radio/headset/heads/ce/alt,
+=======
+		/obj/item/cartridge/ce,
+		/obj/item/radio/headset/heads/ce,
+		/obj/item/radio/headset/alt/heads/ce,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
 		/obj/item/weapon/tank/emergency/oxygen/engi,

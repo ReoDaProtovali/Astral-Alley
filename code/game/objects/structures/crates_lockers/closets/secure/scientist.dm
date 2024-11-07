@@ -44,9 +44,16 @@
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/shoes/laceup/brown,
 		/obj/item/clothing/gloves/sterile/latex,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/heads/rd,
 		/obj/item/device/radio/headset/heads/rd/alt,
 		/obj/item/weapon/tank/air,
+=======
+		/obj/item/radio/headset/heads/rd,
+		/obj/item/radio/headset/alt/heads/rd,
+		/obj/item/radio/headset/earbud/heads/rd,
+		/obj/item/tank/air,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/mask/gas,
 		/obj/item/device/flash,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/science,

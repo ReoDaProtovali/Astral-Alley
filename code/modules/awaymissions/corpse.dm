@@ -237,7 +237,11 @@
 	random_species = TRUE
 
 /obj/effect/landmark/corpse/miner
+<<<<<<< HEAD
 	corpseradio = /obj/item/device/radio/headset/headset_cargo
+=======
+	corpseradio = /obj/item/radio/headset/miner
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	corpseuniform = /obj/item/clothing/under/rank/miner
 	corpsegloves = /obj/item/clothing/gloves/black
 	corpseback = /obj/item/weapon/storage/backpack/industrial

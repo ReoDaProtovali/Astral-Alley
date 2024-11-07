@@ -343,6 +343,7 @@
 					/obj/item/weapon/storage/box/syndie_kit/chameleon = 1,
 					/obj/item/clothing/mask/bandana = 1,
 					/obj/item/clothing/glasses/sunglasses = 1,
+<<<<<<< HEAD
 					/obj/item/device/radio/headset/syndicate/alt = 1,
 					/obj/item/device/pda = 1,
 					/obj/item/device/communicator = 1,
@@ -355,6 +356,20 @@
 					/obj/item/device/flash = 2,
 					/obj/item/weapon/pen/reagent/paralysis = 4,
 					/obj/item/device/perfect_tele/alien = 1
+=======
+					/obj/item/radio/headset/syndicate = 1,
+					/obj/item/pda = 1,
+					/obj/item/communicator = 1,
+					/obj/item/tape_roll = 2,
+					/obj/item/handcuffs = 4,
+					/obj/item/handcuffs/legcuffs = 4,
+					/obj/item/cell/device/weapon/recharge/alien = 2,
+					/obj/item/chameleon = 1,
+					/obj/item/storage/mre/menu11 = 2,
+					/obj/item/flash = 2,
+					/obj/item/pen/reagent/paralysis = 4,
+					/obj/item/perfect_tele/alien = 1
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 					)
 	vend_delay = 15
 

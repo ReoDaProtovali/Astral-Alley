@@ -19,8 +19,15 @@
 	uniform = /obj/item/clothing/under/color/white
 
 /decl/hierarchy/outfit/job/service
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/headset_service
+=======
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	hierarchy_type = /decl/hierarchy/outfit/job/service
+
+	headset = /obj/item/radio/headset/service
+	headset_alt = /obj/item/radio/headset/alt/service
+	headset_earbud = /obj/item/radio/headset/earbud/service
 
 /decl/hierarchy/outfit/job/service/bartender
 	name = OUTFIT_JOB_NAME("Bartender")
@@ -91,7 +98,10 @@
 
 /decl/hierarchy/outfit/job/internal_affairs_agent
 	name = OUTFIT_JOB_NAME("Internal affairs agent")
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/ia
+=======
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	uniform = /obj/item/clothing/under/rank/internalaffairs
 	suit = /obj/item/clothing/suit/storage/toggle/internalaffairs
 	shoes = /obj/item/clothing/shoes/brown
@@ -99,6 +109,10 @@
 	l_hand = /obj/item/weapon/clipboard
 	id_type = /obj/item/weapon/card/id/civilian/internal_affairs
 	pda_type = /obj/item/device/pda/lawyer
+
+	headset = /obj/item/radio/headset/ia
+	headset_alt = /obj/item/radio/headset/alt/ia
+	headset_earbud = /obj/item/radio/headset/earbud/ia
 
 /decl/hierarchy/outfit/job/chaplain
 	name = OUTFIT_JOB_NAME("Chaplain")
@@ -114,10 +128,23 @@
 	mask = /obj/item/clothing/mask/gas/explorer
 	suit = /obj/item/clothing/suit/storage/hooded/explorer
 	gloves = /obj/item/clothing/gloves/black
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset
+=======
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/exploration					//VOREStation Edit
 	pda_slot = slot_belt
+<<<<<<< HEAD
 	pda_type = /obj/item/device/pda/cargo // Brown looks more rugged
 	r_pocket = /obj/item/device/gps/explorer
 	id_pda_assignment = "Explorer"
+=======
+	pda_type = /obj/item/pda/cargo // Brown looks more rugged
+	r_pocket = /obj/item/gps/explorer
+	id_pda_assignment = JOB_EXPLORER
+
+	headset = /obj/item/radio/headset
+	headset_alt = /obj/item/radio/headset/alt
+	headset_earbud = /obj/item/radio/headset/earbud
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))

@@ -62,6 +62,7 @@
 		/obj/item/weapon/storage/belt/explorer,
 		/obj/item/clothing/shoes/boots/winter/explorer,
 		/obj/item/clothing/gloves/black,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/explorer,
 		/obj/item/device/radio/headset/explorer/alt,
 		/obj/item/weapon/cartridge/explorer,
@@ -71,6 +72,17 @@
 		/obj/item/device/geiger,
 		/obj/item/weapon/cell/device,
 		/obj/item/device/radio,
+=======
+		/obj/item/radio/headset/explorer,
+		/obj/item/radio/headset/alt/explorer,
+		/obj/item/cartridge/explorer,
+		/obj/item/flashlight,
+		/obj/item/gps/explorer,
+		/obj/item/storage/box/flare,
+		/obj/item/geiger,
+		/obj/item/cell/device,
+		/obj/item/radio,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/stack/marker_beacon/thirty,
 		/obj/item/weapon/material/knife/tacknife/survival,
 		/obj/item/weapon/material/knife/machete,
@@ -105,6 +117,7 @@
 		/obj/item/weapon/storage/belt/explorer/pathfinder,
 		/obj/item/clothing/shoes/boots/winter/explorer,
 		/obj/item/clothing/gloves/black,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/pathfinder,
 		/obj/item/device/radio/headset/pathfinder/alt,
 		/obj/item/weapon/cartridge/explorer,
@@ -115,6 +128,18 @@
 		/obj/item/device/geiger,
 		/obj/item/weapon/cell/device,
 		/obj/item/device/radio,
+=======
+		/obj/item/radio/headset/pathfinder,
+		/obj/item/radio/headset/alt/pathfinder,
+		/obj/item/cartridge/explorer,
+		/obj/item/flashlight,
+		/obj/item/gps/explorer,
+		/obj/item/storage/box/flare,
+		/obj/item/storage/box/explorerkeys,
+		/obj/item/geiger,
+		/obj/item/cell/device,
+		/obj/item/radio,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/stack/marker_beacon/thirty,
 		/obj/item/weapon/material/knife/tacknife/survival,
 		/obj/item/weapon/material/knife/machete/deluxe,
@@ -156,11 +181,19 @@
 		/obj/item/clothing/suit/storage/hooded/explorer/medic,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/sar,
 		/obj/item/clothing/shoes/boots/winter/explorer,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/sar,
 		/obj/item/device/radio/headset/sar/alt,
 		/obj/item/weapon/cartridge/sar,
 		/obj/item/device/flashlight,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
+=======
+		/obj/item/radio/headset/sar,
+		/obj/item/radio/headset/alt/sar,
+		/obj/item/cartridge/sar,
+		/obj/item/flashlight,
+		/obj/item/tank/emergency/oxygen/engi,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/device/healthanalyzer,
 		/obj/item/device/radio/off,
@@ -205,6 +238,7 @@
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/shoes/black,
 		/obj/item/clothing/gloves/fingerless,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/pilot,
 		/obj/item/device/radio/headset/pilot/alt,
 		/obj/item/device/flashlight,
@@ -217,6 +251,20 @@
 		/obj/item/device/gps/explorer,
 		/obj/item/device/cataloguer/compact, //CHOMP edit
 	//	/obj/item/weapon/gun/energy/gun/protector/pilotgun/locked, //CHOMP Removed
+=======
+		/obj/item/radio/headset/pilot,
+		/obj/item/radio/headset/alt/pilot,
+		/obj/item/flashlight,
+		/obj/item/reagent_containers/food/snacks/liquidfood,
+		/obj/item/reagent_containers/food/snacks/liquidprotein,
+		/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+		/obj/item/storage/box/flare,
+		/obj/item/cell/device,
+		/obj/item/radio,
+		/obj/item/gps/explorer,
+		/obj/item/cataloguer/compact, //CHOMP edit
+	//	/obj/item/gun/energy/gun/protector/pilotgun/locked, //CHOMP Removed
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/gloves/watch/survival,
 		/obj/item/clothing/accessory/storage/webbing/pilot1,
 		/obj/item/clothing/accessory/storage/webbing/pilot2,

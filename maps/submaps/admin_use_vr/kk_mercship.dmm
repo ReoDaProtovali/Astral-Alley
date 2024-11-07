@@ -6590,6 +6590,7 @@
 /area/ship/manta/atmos)
 "Db" = (
 /obj/structure/table/standard,
+<<<<<<< HEAD
 /obj/item/device/radio/headset/syndicate,
 /obj/item/device/radio/headset/syndicate,
 /obj/item/device/radio/headset/syndicate,
@@ -6598,6 +6599,16 @@
 /obj/item/device/radio/headset/syndicate/alt,
 /obj/item/device/radio/headset/syndicate/alt,
 /obj/item/device/radio/headset/syndicate/alt,
+=======
+/obj/item/radio/headset/syndicate,
+/obj/item/radio/headset/syndicate,
+/obj/item/radio/headset/syndicate,
+/obj/item/radio/headset/syndicate,
+/obj/item/radio/headset/alt/syndicate,
+/obj/item/radio/headset/alt/syndicate,
+/obj/item/radio/headset/alt/syndicate,
+/obj/item/radio/headset/alt/syndicate,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 /obj/effect/floor_decal/techfloor{
 	dir = 10
 	},

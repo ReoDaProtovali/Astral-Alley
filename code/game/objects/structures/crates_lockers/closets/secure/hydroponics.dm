@@ -7,8 +7,15 @@
 		/obj/item/weapon/storage/bag/plants,
 		/obj/item/clothing/under/rank/hydroponics,
 		/obj/item/clothing/gloves/botanic_leather,
+<<<<<<< HEAD
 		/obj/item/device/analyzer/plant_analyzer,
 		/obj/item/device/radio/headset/headset_service,
+=======
+		/obj/item/analyzer/plant_analyzer,
+		/obj/item/radio/headset/service,
+		/obj/item/radio/headset/alt/service,
+		/obj/item/radio/headset/earbud/service,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/head/greenbandana,
 		/obj/item/weapon/shovel/spade,
 		/obj/item/weapon/material/minihoe,

@@ -7,6 +7,7 @@
 		/obj/item/weapon/storage/backpack/dufflebag/captain,
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/suit/storage/vest,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/captain,
 		/obj/item/weapon/storage/lockbox/medal,
 		/obj/item/device/radio/headset/heads/captain,
@@ -15,6 +16,17 @@
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/flash,
 		/obj/item/weapon/storage/box/ids)
+=======
+		/obj/item/cartridge/captain,
+		/obj/item/storage/lockbox/medal,
+		/obj/item/radio/headset/heads/captain,
+		/obj/item/radio/headset/alt/heads/captain,
+		/obj/item/radio/headset/earbud/heads/captain,
+		/obj/item/gun/energy/gun,
+		/obj/item/melee/telebaton,
+		/obj/item/flash,
+		/obj/item/storage/box/ids)
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 
 
 /obj/structure/closet/secure_closet/hop
@@ -25,6 +37,7 @@
 	starts_with = list(
 		/obj/item/clothing/suit/storage/vest,
 		/obj/item/clothing/head/helmet,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/hop,
 		/obj/item/device/radio/headset/heads/hop,
 		/obj/item/device/radio/headset/heads/hop/alt,
@@ -33,6 +46,17 @@
 		/obj/item/weapon/storage/box/commandkeys,
 		/obj/item/weapon/storage/box/servicekeys,
 		/obj/item/device/flash)
+=======
+		/obj/item/cartridge/hop,
+		/obj/item/radio/headset/heads/hop,
+		/obj/item/radio/headset/alt/heads/hop,
+		/obj/item/radio/headset/earbud/heads/hop,
+		/obj/item/storage/box/ids = 2,
+		/obj/item/gun/energy/gun/compact,
+		/obj/item/storage/box/commandkeys,
+		/obj/item/storage/box/servicekeys,
+		/obj/item/flash)
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 
 /obj/structure/closet/secure_closet/hop2
 	name = "head of personnel's attire"
@@ -88,9 +112,16 @@
 		/obj/item/clothing/suit/storage/vest/hoscoat/jensen,
 		/obj/item/clothing/suit/storage/vest/hoscoat,
 		/obj/item/clothing/head/helmet/dermal,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/hos,
 		/obj/item/device/radio/headset/heads/hos,
 		/obj/item/device/radio/headset/heads/hos/alt,
+=======
+		/obj/item/cartridge/hos,
+		/obj/item/radio/headset/heads/hos,
+		/obj/item/radio/headset/alt/heads/hos,
+		/obj/item/radio/headset/earbud/heads/hos,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/weapon/shield/riot,
@@ -151,9 +182,16 @@
 		/obj/item/clothing/suit/storage/vest/wardencoat/neo_bluewarden,
 		/obj/item/clothing/suit/storage/vest/wardencoat/neo_warden_heavy,
 		/obj/item/clothing/under/rank/neo_sec_gorka,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/security,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
+=======
+		/obj/item/cartridge/security,
+		/obj/item/radio/headset/headset_sec,
+		/obj/item/radio/headset/alt/headset_sec,
+		/obj/item/radio/headset/earbud/headset_sec,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/clothing/accessory/badge/holo/warden,
@@ -197,6 +235,7 @@
 		/obj/item/clothing/suit/storage/vest/officer,
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/mask/gas/sechailer/swat/officer, //CHOMP ADD
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/security,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
@@ -205,6 +244,17 @@
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/weapon/grenade/flashbang,
 		/obj/item/weapon/melee/baton/loaded,
+=======
+		/obj/item/cartridge/security,
+		/obj/item/radio/headset/headset_sec,
+		/obj/item/radio/headset/alt/headset_sec,
+		/obj/item/radio/headset/earbud/headset_sec,
+		/obj/item/storage/belt/security,
+		/obj/item/flash,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/grenade/flashbang,
+		/obj/item/melee/baton/loaded,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/device/hailer,
@@ -271,10 +321,18 @@
 		/obj/item/clothing/gloves/forensic, //CHOMP Edit replaces black gloves
 		/obj/item/gunbox, //CHOMP Edit undoes vorestation removal and adds back gunbox
 		/obj/item/gunbox/stun,
+<<<<<<< HEAD
 		/obj/item/weapon/storage/belt/detective,
 		/obj/item/weapon/storage/box/evidence,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
+=======
+		/obj/item/storage/belt/detective,
+		/obj/item/storage/box/evidence,
+		/obj/item/radio/headset/headset_sec,
+		/obj/item/radio/headset/alt/headset_sec,
+		/obj/item/radio/headset/earbud/headset_sec,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/suit/storage/vest/detective,
 		/obj/item/taperoll/police,
 		/obj/item/clothing/accessory/holster/armpit,

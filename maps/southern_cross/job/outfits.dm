@@ -43,7 +43,11 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	suit = /obj/item/clothing/suit/storage/toggle/bomber/pilot
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/fakesunglasses/aviator
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/pilot/alt
+=======
+	l_ear = /obj/item/radio/headset/alt/pilot
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	uniform_accessories = list(/obj/item/clothing/accessory/storage/webbing/pilot1 = 1)
 	id_slot = slot_wear_id
 	pda_slot = slot_belt

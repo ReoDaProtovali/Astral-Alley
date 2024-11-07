@@ -36,9 +36,16 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/modern,
 		/obj/item/clothing/suit/storage/toggle/fr_jacket,
 		/obj/item/clothing/shoes/white,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/medical,
 		/obj/item/device/radio/headset/headset_med,
 		/obj/item/device/radio/headset/headset_med/alt,
+=======
+		/obj/item/cartridge/medical,
+		/obj/item/radio/headset/headset_med,
+		/obj/item/radio/headset/alt/headset_med,
+		/obj/item/radio/headset/earbud/headset_med,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/alt,
 		/obj/item/clothing/shoes/boots/winter/medical,
@@ -107,11 +114,21 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/emt,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/para,
 		/obj/item/clothing/shoes/boots/winter/medical,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_med/alt,
 		/obj/item/weapon/cartridge/medical,
 		/obj/item/weapon/storage/briefcase/inflatable,
 		/obj/item/device/flashlight,
 		/obj/item/weapon/tank/emergency/oxygen/engi,
+=======
+		/obj/item/radio/headset/headset_med,
+		/obj/item/radio/headset/alt/headset_med,
+		/obj/item/radio/headset/earbud/headset_med,
+		/obj/item/cartridge/medical,
+		/obj/item/storage/briefcase/inflatable,
+		/obj/item/flashlight,
+		/obj/item/tank/emergency/oxygen/engi,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/hud/health,
 		/obj/item/device/healthanalyzer,
 		/obj/item/device/radio/off,
@@ -141,10 +158,18 @@
 		/obj/item/clothing/under/rank/neo_cmo_turtle,
 		/obj/item/clothing/under/rank/neo_cmo_turtle_skirt,
 		/obj/item/clothing/under/rank/neo_cmo_gorka,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/heads/cmo,
 		/obj/item/device/radio/headset/heads/cmo/alt,
 		/obj/item/device/flash,
 		/obj/item/weapon/reagent_containers/hypospray/vial,
+=======
+		/obj/item/radio/headset/heads/cmo,
+		/obj/item/radio/headset/alt/heads/cmo,
+		/obj/item/radio/headset/earbud/heads/cmo,
+		/obj/item/flash,
+		/obj/item/reagent_containers/hypospray/vial,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/cmo,
 		/obj/item/clothing/shoes/boots/winter/medical,

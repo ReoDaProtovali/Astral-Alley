@@ -18,10 +18,18 @@
 		///obj/item/clothing/head/welding,	//VOREStation Removal: Locker bloat, grr. They get fancy goggles or can raid the welding supplies locker for one of these.
 		/obj/item/clothing/gloves/heavy_engineer,	//VOREStation Edit: chief gets the good shit
 		/obj/item/clothing/shoes/brown,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/ce,
 		/obj/item/device/radio/headset/heads/ce,
 		/obj/item/device/radio/headset/heads/ce/alt,
 		/obj/item/weapon/storage/toolbox/mechanical,
+=======
+		/obj/item/cartridge/ce,
+		/obj/item/radio/headset/heads/ce,
+		/obj/item/radio/headset/alt/heads/ce,
+		/obj/item/radio/headset/earbud/heads/ce,
+		/obj/item/storage/toolbox/mechanical,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/suit/storage/hazardvest,
 		///obj/item/clothing/mask/gas,	//VOREStation Removal: Locker bloat, grr. The fancy one below functions as a mask & helmet combined.
 		/obj/item/clothing/head/hardhat/firefighter/chief, //VOREStation Add: replaces the bog-standard gas mask
@@ -93,9 +101,16 @@
 
 	starts_with = list(
 		/obj/item/clothing/accessory/storage/brown_vest,
+<<<<<<< HEAD
 		/obj/item/weapon/storage/toolbox/mechanical,
 		/obj/item/device/radio/headset/headset_eng,
 		/obj/item/device/radio/headset/headset_eng/alt,
+=======
+		/obj/item/storage/toolbox/mechanical,
+		/obj/item/radio/headset/headset_eng,
+		/obj/item/radio/headset/alt/headset_eng,
+		/obj/item/radio/headset/earbud/headset_eng,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/suit/storage/hazardvest,
 		/obj/item/clothing/mask/gas,
 		/obj/item/clothing/glasses/meson,
@@ -131,8 +146,14 @@
 		/obj/item/device/flashlight,
 		/obj/item/weapon/extinguisher/atmo,
 		///obj/item/clamp,	//VOREStation Removal: without leaks those are pointless,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_eng,
 		/obj/item/device/radio/headset/headset_eng/alt,
+=======
+		/obj/item/radio/headset/headset_eng,
+		/obj/item/radio/headset/alt/headset_eng,
+		/obj/item/radio/headset/earbud/headset_eng,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/suit/storage/hazardvest/atmos,	//VOREStation edit. Eng locker gets regular haz-vest, atmos gets the themed one of their own
 		/obj/item/clothing/mask/gas,
 		/obj/item/weapon/cartridge/atmos,
