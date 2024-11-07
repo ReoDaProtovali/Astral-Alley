@@ -18,7 +18,7 @@
 	var/emp_proof = FALSE
 	var/static/cell_uid = 1		// Unique ID of this power cell. Used to reduce bunch of uglier code in nanoUI.
 	var/c_uid
-	var/charge = 0	// note %age conveted to actual charge in New
+	var/charge = 1000	// maximum charge on spawn
 	var/maxcharge = 1000
 	var/rigged = 0		// true if rigged to explode
 	var/minor_fault = 0 //If not 100% reliable, it will build up faults.
@@ -35,11 +35,15 @@
 	var/standard_overlays = TRUE
 	var/last_overlay_state = null // Used to optimize update_icon() calls.
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/New()
 	..()
+=======
+/obj/item/cell/Initialize()
+	. = ..()
+>>>>>>> 1d918c276f ([MIRROR] migrate power cells to initialize (#9423))
 	c_uid = cell_uid++
-	charge = maxcharge
-	//update_icon() //CHOMPRemove
+	update_icon()
 	if(self_recharge)
 		START_PROCESSING(SSobj, src)
 
