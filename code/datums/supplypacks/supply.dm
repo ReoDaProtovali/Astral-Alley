@@ -119,7 +119,11 @@
 			/obj/item/weapon/storage/backpack/industrial,
 			/obj/item/weapon/storage/backpack/satchel/eng,
 			/obj/item/clothing/suit/storage/hooded/wintercoat/miner,
+<<<<<<< HEAD
 			/obj/item/device/radio/headset/headset_cargo,
+=======
+			/obj/item/radio/headset/miner,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 			/obj/item/clothing/under/rank/miner,
 			/obj/item/clothing/gloves/black,
 			/obj/item/clothing/shoes/black,
@@ -186,9 +190,15 @@
 /datum/supply_pack/pilotgear
 	name= "Pilot gear"
 	contains = list (
+<<<<<<< HEAD
 					/obj/item/weapon/storage/backpack/parachute,
 					/obj/item/device/radio/headset/pilot,
 					/obj/item/device/radio/headset/pilot/alt,
+=======
+					/obj/item/storage/backpack/parachute,
+					/obj/item/radio/headset/pilot,
+					/obj/item/radio/headset/alt/pilot,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 					/obj/item/clothing/mask/gas/half,
 					/obj/item/device/flashlight/glowstick,
 					/obj/item/stack/marker_beacon/thirty,

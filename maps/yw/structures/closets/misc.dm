@@ -117,6 +117,7 @@
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/shoes/black,
 		/obj/item/clothing/gloves/fingerless,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/pilot/alt,
 		/obj/item/device/flashlight,
 		/obj/item/weapon/reagent_containers/food/snacks/liquidfood,
@@ -124,6 +125,15 @@
 		/obj/item/weapon/storage/box/flare,
 		/obj/item/weapon/cell/device,
 		/obj/item/device/radio)
+=======
+		/obj/item/radio/headset/alt/pilot,
+		/obj/item/flashlight,
+		/obj/item/reagent_containers/food/snacks/liquidfood,
+		/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+		/obj/item/storage/box/flare,
+		/obj/item/cell/device,
+		/obj/item/radio)
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 
 /obj/structure/closet/secure_closet/pilot/Initialize()
 	if(prob(50))

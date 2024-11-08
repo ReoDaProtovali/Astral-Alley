@@ -30,8 +30,14 @@
 		/obj/item/clothing/suit/storage/vest/wardencoat/neo_armsco_trench,
 		/obj/item/clothing/head/helmet/HoS/hat/blue,
 		/obj/item/clothing/head/helmet/dermal,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/heads/hos,
 		/obj/item/device/radio/headset/heads/hos/alt,
+=======
+		/obj/item/radio/headset/heads/hos,
+		/obj/item/radio/headset/alt/heads/hos,
+		/obj/item/radio/headset/earbud/heads/hos,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/weapon/storage/belt/security,
 		/obj/item/clothing/accessory/holster/waist,
@@ -84,6 +90,7 @@
 	starts_with = list(
 		/obj/item/clothing/suit/storage/vest/nanotrasen,
 		/obj/item/clothing/head/helmet,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/security,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
@@ -92,6 +99,17 @@
 		/obj/item/weapon/reagent_containers/spray/pepper,
 		/obj/item/weapon/grenade/flashbang,
 		/obj/item/weapon/melee/baton/loaded,
+=======
+		/obj/item/cartridge/security,
+		/obj/item/radio/headset/headset_sec,
+		/obj/item/radio/headset/alt/headset_sec,
+		/obj/item/radio/headset/earbud/headset_sec,
+		/obj/item/storage/belt/security,
+		/obj/item/flash,
+		/obj/item/reagent_containers/spray/pepper,
+		/obj/item/grenade/flashbang,
+		/obj/item/melee/baton/loaded,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/device/hailer,
@@ -130,9 +148,16 @@
 		/obj/item/clothing/suit/storage/vest/hoscoat/jensen,
 		/obj/item/clothing/suit/storage/vest/hoscoat,
 		/obj/item/clothing/head/helmet/dermal,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/hos,
 		/obj/item/device/radio/headset/heads/hos,
 		/obj/item/device/radio/headset/heads/hos/alt,
+=======
+		/obj/item/cartridge/hos,
+		/obj/item/radio/headset/heads/hos,
+		/obj/item/radio/headset/alt/heads/hos,
+		/obj/item/radio/headset/earbud/heads/hos,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/weapon/shield/riot,
@@ -177,9 +202,16 @@
 		/obj/item/clothing/suit/storage/vest/wardencoat/alt,
 		/obj/item/clothing/suit/storage/vest/wardencoat/alt2,
 		/obj/item/clothing/head/helmet/warden,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/security,
 		/obj/item/device/radio/headset/headset_sec,
 		/obj/item/device/radio/headset/headset_sec/alt,
+=======
+		/obj/item/cartridge/security,
+		/obj/item/radio/headset/headset_sec,
+		/obj/item/radio/headset/alt/headset_sec,
+		/obj/item/radio/headset/earbud/headset_sec,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/sunglasses/sechud,
 		/obj/item/taperoll/police,
 		/obj/item/clothing/accessory/badge/holo/warden,
@@ -211,10 +243,18 @@
 		/obj/item/weapon/storage/backpack/dufflebag/captain,
 		/obj/item/clothing/head/helmet,
 		/obj/item/clothing/suit/storage/vest,
+<<<<<<< HEAD
 		/obj/item/weapon/cartridge/captain,
 		/obj/item/weapon/storage/lockbox/medal,
 		/obj/item/device/radio/headset/heads/captain,
 		/obj/item/device/radio/headset/heads/captain/alt,
+=======
+		/obj/item/cartridge/captain,
+		/obj/item/storage/lockbox/medal,
+		/obj/item/radio/headset/heads/captain,
+		/obj/item/radio/headset/alt/heads/captain,
+		/obj/item/radio/headset/earbud/heads/captain,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/gunbox/captain,
 		/obj/item/weapon/melee/telebaton,
 		/obj/item/device/flash,

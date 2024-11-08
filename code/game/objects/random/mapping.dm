@@ -222,10 +222,17 @@
 	icon_state = "rup"
 
 /obj/random/sfr/item_to_spawn()
+<<<<<<< HEAD
 	return pick(prob(25);/obj/item/device/radio/headset/heads/captain/sfr,
 				prob(25);/obj/item/device/radio/headset/headset_cargo/alt,
 				prob(25);/obj/item/device/radio/headset/headset_com/alt,
 				prob(25);/obj/item/device/radio/headset)
+=======
+	return pick(prob(25);/obj/item/radio/headset/heads/captain/sfr,
+				prob(25);/obj/item/radio/headset/alt/cargo,
+				prob(25);/obj/item/radio/headset/alt/headset_com,
+				prob(25);/obj/item/radio/headset)
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 
 // Mining Goodies
 /obj/random/multiple/minevault

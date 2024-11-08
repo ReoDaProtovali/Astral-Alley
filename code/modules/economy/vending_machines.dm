@@ -1649,7 +1649,11 @@
 		/obj/item/clothing/head/soft/purple = 5,
 		/obj/item/clothing/head/beret/purple = 5,
 		/obj/item/clothing/head/headband/maid = 5,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_service = 5,
+=======
+		/obj/item/radio/headset/service = 5,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/under/rank/janitor = 5,
 		/obj/item/clothing/under/dress/maid/janitor = 5,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/janitor = 5,

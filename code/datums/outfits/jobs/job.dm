@@ -3,7 +3,10 @@
 	hierarchy_type = /decl/hierarchy/outfit/job
 
 	uniform = /obj/item/clothing/under/color/grey
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset
+=======
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	shoes = /obj/item/clothing/shoes/black
 
 	id_slot = slot_wear_id
@@ -12,6 +15,10 @@
 	pda_type = /obj/item/device/pda
 
 	flags = OUTFIT_HAS_BACKPACK
+
+	headset = /obj/item/radio/headset
+	headset_alt = /obj/item/radio/headset/alt
+	headset_earbud = /obj/item/radio/headset/earbud
 
 /decl/hierarchy/outfit/job/equip_id(mob/living/carbon/human/H, rank, assignment)
 	var/obj/item/weapon/card/id/C = ..()

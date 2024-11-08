@@ -126,7 +126,11 @@
 	to_wear_helmet = /obj/item/clothing/head/helmet/dermal
 	to_wear_glasses = /obj/item/clothing/glasses/goggles
 	to_wear_mask = /obj/item/clothing/mask/gas/half
+<<<<<<< HEAD
 	to_wear_l_radio = /obj/item/device/radio/headset/headset_rob
+=======
+	to_wear_l_radio = /obj/item/radio/headset
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 	to_wear_r_radio = null
 	to_wear_uniform = /obj/item/clothing/under/color/grey
 	to_wear_suit = /obj/item/clothing/suit/armor/vest

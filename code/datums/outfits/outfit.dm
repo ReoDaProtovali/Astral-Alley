@@ -52,12 +52,25 @@ var/list/outfits_decls_by_type_
 
 	var/id_pda_assignment
 
+<<<<<<< HEAD
 	var/backpack = /obj/item/weapon/storage/backpack
 	var/satchel_one  = /obj/item/weapon/storage/backpack/satchel/norm
 	var/satchel_two  = /obj/item/weapon/storage/backpack/satchel
 	var/messenger_bag = /obj/item/weapon/storage/backpack/messenger
 	var/sports_bag = /obj/item/weapon/storage/backpack/sport
 	var/satchel_three = /obj/item/weapon/storage/backpack/satchel/strapless
+=======
+	var/headset = /obj/item/radio/headset
+	var/headset_alt = /obj/item/radio/headset/alt
+	var/headset_earbud = /obj/item/radio/headset/earbud
+
+	var/backpack = /obj/item/storage/backpack
+	var/satchel_one  = /obj/item/storage/backpack/satchel/norm
+	var/satchel_two  = /obj/item/storage/backpack/satchel
+	var/messenger_bag = /obj/item/storage/backpack/messenger
+	var/sports_bag = /obj/item/storage/backpack/sport
+	var/satchel_three = /obj/item/storage/backpack/satchel/strapless
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 
 	var/flags // Specific flags
 
@@ -72,7 +85,11 @@ var/list/outfits_decls_by_type_
 	dd_insertObjectList(outfits_decls_, src)
 
 /decl/hierarchy/outfit/proc/pre_equip(mob/living/carbon/human/H)
-	if(flags & OUTFIT_HAS_BACKPACK)
+	switch(H.headset)
+		if(1) l_ear = headset
+		if(2) l_ear = headset_alt
+		if(3) l_ear = headset_earbud
+	if(flags && OUTFIT_HAS_BACKPACK)
 		switch(H.backbag)
 			if(2) back = backpack
 			if(3) back = satchel_one

@@ -424,7 +424,11 @@
 		/obj/item/clothing/under/rank/centcom,
 		/obj/item/clothing/under/ert,
 		/obj/item/clothing/under/syndicate/combat,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/ert/alt,
+=======
+		/obj/item/radio/headset/alt/ert,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/glasses/sunglasses,
 		/obj/item/clothing/shoes/boots/swat,
 		/obj/item/clothing/gloves/swat,

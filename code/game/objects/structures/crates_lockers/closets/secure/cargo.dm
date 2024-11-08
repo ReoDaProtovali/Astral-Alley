@@ -11,8 +11,14 @@
 		/obj/item/clothing/suit/storage/hooded/wintercoat/cargo,
 		/obj/item/clothing/shoes/boots/winter/supply,
 		/obj/item/clothing/shoes/black,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_cargo,
 		/obj/item/device/radio/headset/headset_cargo/alt,
+=======
+		/obj/item/radio/headset/cargo,
+		/obj/item/radio/headset/alt/cargo,
+		/obj/item/radio/headset/earbud/cargo,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/gloves/black,
 		/obj/item/clothing/gloves/fingerless,
 		/obj/item/clothing/head/soft)
@@ -37,8 +43,14 @@
 		/obj/item/clothing/under/rank/cargo/jeans,
 		/obj/item/clothing/under/rank/cargo/jeans/female,
 		/obj/item/clothing/shoes/brown,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_qm, //VOREStation Edit,
 		/obj/item/device/radio/headset/headset_qm/alt, //VOREStation Edit,
+=======
+		/obj/item/radio/headset/qm,
+		/obj/item/radio/headset/alt/qm,
+		/obj/item/radio/headset/earbud/qm,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/under/rank/neo_qm,
 		/obj/item/clothing/under/rank/neo_qm_skirt,
 		/obj/item/clothing/under/rank/neo_qm_jacket,
@@ -73,7 +85,11 @@
 	closet_appearance = /decl/closet_appearance/secure_closet/mining
 
 	starts_with = list(
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_mine,
+=======
+		/obj/item/radio/headset/miner,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/under/rank/miner,
 		/obj/item/clothing/gloves/black,
 		/obj/item/clothing/shoes/black,
@@ -104,7 +120,11 @@
 	closet_appearance = /decl/closet_appearance/secure_closet/lumber
 
 	starts_with = list(
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_mine,
+=======
+		/obj/item/radio/headset/miner,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 		/obj/item/clothing/under/overalls,
 		/obj/item/clothing/gloves/light_brown,
 		/obj/item/clothing/gloves/black,
@@ -122,5 +142,10 @@
 	if(prob(50))
 		starts_with += /obj/item/weapon/storage/backpack/industrial
 	else
+<<<<<<< HEAD
 		starts_with += /obj/item/weapon/storage/backpack/satchel/eng
 	return ..()
+=======
+		starts_with += /obj/item/storage/backpack/satchel/eng
+	return ..()
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))

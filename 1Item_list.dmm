@@ -19426,7 +19426,11 @@
 	},
 /area/survivalpod)
 "fLV" = (
+<<<<<<< HEAD
 /obj/item/device/radio/headset/explorer/alt,
+=======
+/obj/item/radio/headset/alt/explorer,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},

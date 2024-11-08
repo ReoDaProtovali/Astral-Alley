@@ -444,7 +444,11 @@
 	contains = list(
 			/obj/item/weapon/storage/belt/security = 3,
 			/obj/item/clothing/glasses/sunglasses/sechud = 3,
+<<<<<<< HEAD
 			/obj/item/device/radio/headset/headset_sec/alt = 3,
+=======
+			/obj/item/radio/headset/alt/headset_sec = 3,
+>>>>>>> 61a5f758ac ([MIRROR] Headset Refactor and Selection (#9438))
 			/obj/item/clothing/suit/storage/hooded/wintercoat/security = 3,
 			/obj/item/clothing/glasses/sunglasses/sechud/tactical_sec_vis = 3
 			)
