@@ -43,6 +43,7 @@
 	if(self_recharge)
 		START_PROCESSING(SSobj, src)
 
+<<<<<<< HEAD
 //CHOMPAdd Start
 /obj/item/weapon/cell/Initialize()
 	. = ..()
@@ -50,6 +51,9 @@
 //CHOMPAdd End
 
 /obj/item/weapon/cell/Destroy()
+=======
+/obj/item/cell/Destroy()
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	if(self_recharge)
 		STOP_PROCESSING(SSobj, src)
 	return ..()

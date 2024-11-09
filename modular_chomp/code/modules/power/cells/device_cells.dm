@@ -11,15 +11,19 @@
 	force = 0
 	throw_speed = 5
 	throw_range = 7
+	charge = 480
 	maxcharge = 480
 	charge_amount = 5
 	matter = list(MAT_STEEL = 350, MAT_GLASS = 50)
 	preserve_item = 1
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/device/empty/Initialize()
 	. = ..()
+=======
+/obj/item/cell/device/empty
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	charge = 0
-	update_icon()
 
 /*
  * EMP Proof Device
@@ -32,10 +36,13 @@
 	emp_proof = TRUE
 	origin_tech = list(TECH_POWER = 3)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/device/empproof/empty/Initialize()
 	. = ..()
+=======
+/obj/item/cell/device/empproof/empty
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	charge = 0
-	update_icon()
 
 /*
  * Weapon
@@ -44,27 +51,35 @@
 	name = "advanced device power cell" //This was a yawn change. I quite like this, makes more sense.
 	desc = "A small upgraded power cell designed to power handheld devices."
 	icon_state = "m_sup"
+	charge = 2400
 	maxcharge = 2400
 	charge_amount = 20
 	origin_tech = list(TECH_POWER = 2)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/device/weapon/empty/Initialize()
 	. = ..()
+=======
+/obj/item/cell/device/weapon/empty
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	charge = 0
-	update_icon()
 
 /obj/item/weapon/cell/device/super
 	name = "super device power cell"
 	desc = "A small upgraded power cell designed to power handheld devices."
-	icon_state = "m_hy" //CHOMP Add
+	icon_state = "m_hy"
+	charge = 3600
 	maxcharge = 3600
 	charge_amount = 20
 	origin_tech = list(TECH_POWER = 3)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/device/super/empty/Initialize()
 	. = ..()
+=======
+/obj/item/cell/device/super/empty
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	charge = 0
-	update_icon()
 
 /*
  * Hyper
@@ -72,15 +87,19 @@
 /obj/item/weapon/cell/device/hyper
 	name = "hyper device power cell"
 	desc = "A small upgraded power cell designed to hold much more power for handheld devices."
-	icon_state = "meb_m_st" //CHOMP Add
+	icon_state = "meb_m_st"
+	charge = 4800
 	maxcharge = 4800
 	charge_amount = 20
 	origin_tech = list(TECH_POWER = 4)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/device/hyper/empty/Initialize()
 	. = ..()
+=======
+/obj/item/cell/device/hyper/empty
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	charge = 0
-	update_icon()
 
 /*
  * Giga
@@ -89,14 +108,18 @@
 	name = "giga device power cell"
 	desc = "A small power cell that holds a blistering amount of energy, constructed by clever scientists using secrets gleaned from alien technology."
 	icon_state = "meb_m_hi"
+	charge = 10000
 	maxcharge = 10000
 	charge_amount = 20
 	origin_tech = list(TECH_POWER = 8)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/device/giga/empty/Initialize()
 	. = ..()
+=======
+/obj/item/cell/device/giga/empty
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	charge = 0
-	update_icon()
 
 /*
  * EMP Proof Weapon
@@ -105,16 +128,20 @@
 	name = "shielded weapon power cell"
 	desc = "A small power cell designed to power handheld weaponry. Shielded from EMPs."
 	icon_state = "s_hi"
+	charge = 2400
 	maxcharge = 2400
 	charge_amount = 20
 	matter = list(MAT_STEEL = 400, MAT_GLASS = 60)
 	emp_proof = TRUE
 	origin_tech = list(TECH_POWER = 4)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/device/weapon/empproof/empty/Initialize()
 	. = ..()
+=======
+/obj/item/cell/device/weapon/empproof/empty
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	charge = 0
-	update_icon()
 
 /*
  * Self-charging Weapon
@@ -161,6 +188,7 @@
 	catalogue_data = list(/datum/category_item/catalogue/anomalous/precursor_a/alien_void_cell)
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "cell"
+	charge = 5000
 	maxcharge = 5000
 	charge_amount = 130 // 2.5%.
 	charge_delay = 50 // Every five seconds, bit faster than the default.
@@ -192,7 +220,12 @@
 	origin_tech = list(TECH_POWER = 8, TECH_ENGINEERING = 6)
 	icon = 'icons/obj/abductor.dmi'
 	icon_state = "cell"
+<<<<<<< HEAD
 	maxcharge = 10000 
+=======
+	charge = 10000
+	maxcharge = 10000
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	charge_amount = 500
 	self_recharge = TRUE
 	charge_delay = 50
@@ -226,11 +259,16 @@
 	name = "omni weapon power cell"
 	desc = "A mix between alien technology and phoron-based tech. Not quite as good as a true void cell though."
 	charge_amount = 90 // 2.5%.
+	charge = 3600
 	maxcharge = 3600
 	charge_delay = 50
 	swaps_to = null
 	origin_tech = list(TECH_POWER = 8, TECH_ENGINEERING = 6, TECH_PHORON = 6, TECH_ARCANE = 1, TECH_PRECURSOR = 1)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/device/weapon/recharge/alien/omni/empty/Initialize()
 	. = ..()
+=======
+/obj/item/cell/device/weapon/recharge/alien/omni/empty
+>>>>>>> cb8aaf1d98 (bunch of more cells (#9444))
 	charge = 0
