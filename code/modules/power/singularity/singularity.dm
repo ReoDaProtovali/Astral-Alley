@@ -445,11 +445,19 @@ GLOBAL_LIST_BOILERPLATE(all_singularities, /obj/singularity)
 /obj/singularity/proc/smwave()
 	for(var/mob/living/M in view(10, src.loc))
 		if(prob(67))
+<<<<<<< HEAD
 			to_chat(M, "<span class=\"warning\">You hear an uneartly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat.</span>")
 			to_chat(M, "<span class=\"notice\">Miraculously, it fails to kill you.</span>")
 		else
 			to_chat(M, "<span class=\"danger\">You hear an uneartly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat.</span>")
 			to_chat(M, "<span class=\"danger\">You don't even have a moment to react as you are reduced to ashes by the intense radiation.</span>")
+=======
+			to_chat(M, span_warning("You hear an unearthly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat."))
+			to_chat(M, span_notice("Miraculously, it fails to kill you."))
+		else
+			to_chat(M, span_danger("You hear an unearthly ringing, then what sounds like a shrilling kettle as you are washed with a wave of heat."))
+			to_chat(M, span_danger("You don't even have a moment to react as you are reduced to ashes by the intense radiation."))
+>>>>>>> 97e7e37aab (Update singularity.dm (#9439))
 			M.dust()
 	SSradiation.radiate(src, rand(energy))
 	return
