@@ -1,6 +1,7 @@
 /obj/structure/reagent_dispensers
 	name = "Dispenser"
 	desc = "..."
+	description_info = "The input can be opened by Alt-clicking it, allowing you to pour reagents inside."
 	icon = 'icons/obj/chemical_tanks.dmi'
 	icon_state = "tank"
 	layer = TABLE_LAYER
@@ -16,7 +17,13 @@
 	var/amount_per_transfer_from_this = 10
 	var/possible_transfer_amounts = list(10,25,50,100)
 
+<<<<<<< HEAD
 /obj/structure/reagent_dispensers/attackby(obj/item/weapon/W as obj, mob/user as mob)
+=======
+	var/open_top = FALSE
+
+/obj/structure/reagent_dispensers/attackby(obj/item/W as obj, mob/user as mob)
+>>>>>>> ea25826355 ([MIRROR] Allow pouring stuff into tanks (#9459))
 	return
 
 /obj/structure/reagent_dispensers/Destroy()
@@ -78,6 +85,19 @@
 
 /obj/structure/reagent_dispensers/blob_act()
 	qdel(src)
+
+/obj/structure/reagent_dispensers/AltClick(mob/user)
+	if(!Adjacent(user))
+		return
+
+	if(flags & OPENCONTAINER)
+		to_chat(user, span_notice("You close the input on \the [src]"))
+		flags -= OPENCONTAINER
+		open_top = FALSE
+	else
+		to_chat(user, span_notice("You open the input on \the [src], allowing you to pour reagents in."))
+		flags |= OPENCONTAINER
+		open_top = TRUE
 
 /*
  * Tanks
