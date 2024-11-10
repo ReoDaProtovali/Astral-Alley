@@ -253,20 +253,28 @@
 	set_status(!src.status)
 	if (!(src.status))
 		if(user)
+<<<<<<< HEAD
 			visible_message("<span class='notice'> [user] has deactivated [src]!</span>")
+=======
+			visible_message(span_notice(" [user] has deactivated [src]!"))
+			add_hiddenprint(user)
+>>>>>>> 6eafc8c9d0 ([MIRROR] maptest redgate (#9462))
 		else
 			visible_message("<span class='notice'> [src] clicks and shuts down. </span>")
 		playsound(src, 'sound/items/Wirecutter.ogg', 100, 1)
 		icon_state = "[initial(icon_state)]1"
-		add_hiddenprint(user)
 	else
 		if(user)
+<<<<<<< HEAD
 			visible_message("<span class='notice'> [user] has reactivated [src]!</span>")
+=======
+			visible_message(span_notice(" [user] has reactivated [src]!"))
+			add_hiddenprint(user)
+>>>>>>> 6eafc8c9d0 ([MIRROR] maptest redgate (#9462))
 		else
 			visible_message("<span class='notice'> [src] clicks and reactivates itself. </span>")
 		playsound(src, 'sound/items/Wirecutter.ogg', 100, 1)
 		icon_state = initial(icon_state)
-		add_hiddenprint(user)
 
 /obj/machinery/camera/take_damage(var/force, var/message)
 	//prob(25) gives an average of 3-4 hits
