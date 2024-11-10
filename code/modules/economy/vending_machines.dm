@@ -416,11 +416,24 @@
 					/obj/item/stack/medical/advanced/bruise_pack = 6,
 					/obj/item/stack/medical/advanced/ointment = 6,
 					/obj/item/stack/medical/splint = 4,
+<<<<<<< HEAD
 					/obj/item/weapon/storage/pill_bottle/carbon = 2,
 					/obj/item/clothing/mask/chewable/candy/lolli = 15)
 	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3,
 					/obj/item/weapon/reagent_containers/pill/stox = 4,
 					/obj/item/weapon/reagent_containers/pill/antitox = 6)
+=======
+					/obj/item/storage/pill_bottle/carbon = 2,
+					/obj/item/clothing/mask/chewable/candy/lolli = 15,
+					/obj/item/storage/box/khcrystal = 4,
+					/obj/item/backup_implanter = 3,
+					/obj/item/clothing/glasses/omnihud/med = 4,
+					/obj/item/glasses_kit = 1,
+					/obj/item/storage/quickdraw/syringe_case = 4)
+	contraband = list(/obj/item/reagent_containers/pill/tox = 3,
+					/obj/item/reagent_containers/pill/stox = 4,
+					/obj/item/reagent_containers/pill/antitox = 6)
+>>>>>>> e1018db650 ([MIRROR] cleanup vendor lists (#9446))
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	req_log_access = access_cmo
 	has_logs = 1
@@ -449,11 +462,20 @@
 	density = FALSE //It is wall-mounted, and thus, not dense. --Superxpdude
 	products = list(/obj/item/stack/medical/bruise_pack = 2,
 				/obj/item/stack/medical/ointment = 2,
+<<<<<<< HEAD
 				/obj/item/weapon/reagent_containers/hypospray/autoinjector = 4,
 				/obj/item/device/healthanalyzer = 1)
 	contraband = list(/obj/item/weapon/reagent_containers/syringe/antitoxin = 4,
 				/obj/item/weapon/reagent_containers/syringe/antiviral = 4,
 				/obj/item/weapon/reagent_containers/pill/tox = 1)
+=======
+				/obj/item/reagent_containers/hypospray/autoinjector = 4,
+				/obj/item/healthanalyzer = 1,
+				/obj/item/bodybag/cryobag = 2)
+	contraband = list(/obj/item/reagent_containers/syringe/antitoxin = 4,
+				/obj/item/reagent_containers/syringe/antiviral = 4,
+				/obj/item/reagent_containers/pill/tox = 1)
+>>>>>>> e1018db650 ([MIRROR] cleanup vendor lists (#9446))
 	req_log_access = access_cmo
 	has_logs = 1
 	can_rotate = 0
@@ -469,14 +491,28 @@
 				/obj/item/weapon/reagent_containers/syringe/antitoxin = 3,
 				/obj/item/stack/medical/bruise_pack = 3,
 				/obj/item/stack/medical/ointment =3,
+<<<<<<< HEAD
 				/obj/item/device/healthanalyzer = 3)
 	contraband = list(/obj/item/weapon/reagent_containers/pill/tox = 3)
+=======
+				/obj/item/healthanalyzer = 3,
+				/obj/item/bodybag/cryobag = 3)
+	contraband = list(/obj/item/reagent_containers/pill/tox = 3)
+>>>>>>> e1018db650 ([MIRROR] cleanup vendor lists (#9446))
 	req_log_access = access_cmo
 	has_logs = 1
 	can_rotate = 0
 
 /obj/machinery/vending/wallmed1/public
+<<<<<<< HEAD
 	products = list(/obj/item/stack/medical/bruise_pack = 8,/obj/item/stack/medical/ointment = 8,/obj/item/weapon/reagent_containers/hypospray/autoinjector = 16,/obj/item/device/healthanalyzer = 4)
+=======
+	products = list(/obj/item/stack/medical/bruise_pack = 8,
+					/obj/item/stack/medical/ointment = 8,
+					/obj/item/reagent_containers/hypospray/autoinjector = 16,
+					/obj/item/healthanalyzer = 4,
+					/obj/item/bodybag/cryobag = 4)
+>>>>>>> e1018db650 ([MIRROR] cleanup vendor lists (#9446))
 
 /obj/machinery/vending/security
 	name = "SecTech"
@@ -485,6 +521,7 @@
 	product_ads = "Crack capitalist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
 	icon_state = "sec"
 	req_access = list(access_security)
+<<<<<<< HEAD
 	products = list(/obj/item/weapon/handcuffs = 8,
 					/obj/item/weapon/grenade/flashbang = 4,
 					/obj/item/device/flash = 5,
@@ -494,6 +531,23 @@
 					/obj/item/clothing/accessory/bodycam = 10) // CHOMPEdit
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 					/obj/item/weapon/storage/box/donut = 2)
+=======
+	products = list(/obj/item/handcuffs = 8,
+					/obj/item/grenade/flashbang = 4,
+					/obj/item/flash = 5,
+					/obj/item/reagent_containers/food/snacks/donut/plain = 6,
+					/obj/item/reagent_containers/food/snacks/donut/plain/jelly = 6,
+					/obj/item/storage/box/evidence = 6,
+					/obj/item/gun/energy/taser = 8,
+					/obj/item/gun/energy/stunrevolver = 4,
+					/obj/item/reagent_containers/spray/pepper = 6,
+					/obj/item/taperoll/police = 6,
+					/obj/item/clothing/glasses/omnihud/sec = 6,
+					/obj/item/clothing/accessory/bodycam = 10) // CHOMPAdd
+	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
+					/obj/item/storage/box/donut = 2,
+					/obj/item/implanter/compliance = 1)
+>>>>>>> e1018db650 ([MIRROR] cleanup vendor lists (#9446))
 	req_log_access = access_armory
 	has_logs = 1
 
@@ -556,7 +610,9 @@
 					/obj/item/seeds/pumpkinseed = 3,
 					/obj/item/seeds/cherryseed = 3,
 					/obj/item/seeds/plastiseed = 3,
-					/obj/item/seeds/riceseed = 3)
+					/obj/item/seeds/riceseed = 3,
+					/obj/item/seeds/shrinkshroom = 3,
+					/obj/item/seeds/megashroom = 3)
 	contraband = list(/obj/item/seeds/amanitamycelium = 2,
 					/obj/item/seeds/glowshroom = 2,
 					/obj/item/seeds/libertymycelium = 2,
@@ -643,6 +699,7 @@
 	icon_state = "tool"
 	//req_access = list(access_maint_tunnels) //Maintenance access
 	products = list(/obj/item/stack/cable_coil/random = 10,
+<<<<<<< HEAD
 					/obj/item/weapon/tool/crowbar = 5,
 					/obj/item/weapon/weldingtool = 3,
 					/obj/item/weapon/tool/wirecutters = 5,
@@ -657,6 +714,23 @@
 					/obj/item/device/flashlight/glowstick/orange =3,
 					/obj/item/device/flashlight/glowstick/yellow = 3)
 	contraband = list(/obj/item/weapon/weldingtool/hugetank = 2,
+=======
+					/obj/item/tool/crowbar = 5,
+					/obj/item/weldingtool = 3,
+					/obj/item/tool/wirecutters = 5,
+					/obj/item/tool/wrench = 5,
+					/obj/item/analyzer = 5,
+					/obj/item/t_scanner = 5,
+					/obj/item/tool/screwdriver = 5,
+					/obj/item/extinguisher/mini = 3,
+					/obj/item/flashlight/glowstick = 3,
+					/obj/item/flashlight/glowstick/red = 3,
+					/obj/item/flashlight/glowstick/blue = 3,
+					/obj/item/flashlight/glowstick/orange =3,
+					/obj/item/flashlight/glowstick/yellow = 3,
+					/obj/item/reagent_containers/spray/windowsealant = 5)
+	contraband = list(/obj/item/weldingtool/hugetank = 2,
+>>>>>>> e1018db650 ([MIRROR] cleanup vendor lists (#9446))
 					/obj/item/clothing/gloves/fyellow = 2)
 	premium = list(/obj/item/clothing/gloves/heavy_engineer = 1) //VOREStation Edit - yellow gloves are common in engineering, let's make "premium" actually mean something
 	req_log_access = access_ce
@@ -669,6 +743,7 @@
 	req_access = list(access_engine_equip)
 	products = list(/obj/item/device/geiger = 4,
 					/obj/item/clothing/glasses/meson = 2,
+<<<<<<< HEAD
 					/obj/item/device/multitool = 4,
 					/obj/item/weapon/cell/high = 10,
 					/obj/item/weapon/airlock_electronics = 10,
@@ -701,6 +776,42 @@
 					/obj/item/weapon/circuitboard/dna_analyzer)
 	contraband = list(/obj/item/weapon/cell/potato = 3)
 	premium = list(/obj/item/weapon/storage/belt/utility = 3)
+=======
+					/obj/item/multitool = 4,
+					/obj/item/cell/high = 10,
+					/obj/item/airlock_electronics = 10,
+					/obj/item/module/power_control = 10,
+					/obj/item/circuitboard/airalarm = 10,
+					/obj/item/circuitboard/firealarm = 10,
+					/obj/item/circuitboard/status_display = 2,
+					/obj/item/circuitboard/ai_status_display = 2,
+					/obj/item/circuitboard/newscaster = 2,
+					/obj/item/circuitboard/holopad = 2,
+					/obj/item/circuitboard/intercom = 4,
+					/obj/item/circuitboard/security/telescreen/entertainment = 4,
+					/obj/item/stock_parts/motor = 2,
+					/obj/item/stock_parts/spring = 2,
+					/obj/item/stock_parts/gear = 2,
+					/obj/item/circuitboard/atm,
+					/obj/item/circuitboard/guestpass,
+					/obj/item/circuitboard/keycard_auth,
+					/obj/item/circuitboard/geiger,
+					/obj/item/circuitboard/photocopier,
+					/obj/item/circuitboard/fax,
+					/obj/item/circuitboard/request,
+					/obj/item/circuitboard/microwave,
+					/obj/item/circuitboard/washing,
+					/obj/item/circuitboard/scanner_console,
+					/obj/item/circuitboard/sleeper_console,
+					/obj/item/circuitboard/body_scanner,
+					/obj/item/circuitboard/medical_kiosk,
+					/obj/item/circuitboard/sleeper,
+					/obj/item/circuitboard/dna_analyzer,
+					/obj/item/clothing/glasses/omnihud/eng = 6)
+	contraband = list(/obj/item/cell/potato = 3,
+						/obj/item/rms = 5)
+	premium = list(/obj/item/storage/belt/utility = 3)
+>>>>>>> e1018db650 ([MIRROR] cleanup vendor lists (#9446))
 	product_records = list()
 	req_log_access = access_ce
 	has_logs = 1
