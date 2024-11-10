@@ -5,7 +5,7 @@
 /obj/item/clothing/accessory/choker //A colorable, tagless choker
 	name = "plain choker"
 	slot_flags = SLOT_TIE | SLOT_OCLOTHING
-	desc = "A simple, plain choker. Or maybe it's a collar? Use in-hand to customize it."
+	desc = "A simple, plain choker. Or maybe it's a collar?"
 	icon = 'icons/inventory/accessory/item_vr.dmi'
 	icon_override = 'icons/inventory/accessory/mob_vr.dmi'
 	icon_state = "choker_cst"
@@ -44,6 +44,7 @@
 /obj/item/clothing/accessory/choker/dropped()
 	icon_override = icon_previous_override
 
+<<<<<<< HEAD
 /obj/item/clothing/accessory/choker/attack_self(mob/user as mob)
 	if(!customized)
 		var/design = tgui_input_list(user,"Descriptor?","Pick descriptor","Descriptor", list("plain","simple","ornate","elegant","opulent"))
@@ -56,6 +57,8 @@
 	else
 		to_chat(usr,"<span class='notice'>[src] has already been customized!</span>")
 
+=======
+>>>>>>> 72e7f4a247 ([MIRROR] Choker tweak (#9461))
 /obj/item/clothing/accessory/collar
 	slot_flags = SLOT_TIE | SLOT_OCLOTHING
 	icon = 'icons/inventory/accessory/item_vr.dmi'
