@@ -48,6 +48,9 @@
 	if(!istype(target))
 		return 0
 
+	if(target.open_top)
+		return 0
+
 	if(!target.reagents || !target.reagents.total_volume)
 		// to_chat(user, "<span class='notice'>[target] is empty.</span>")
 		balloon_alert(user, "[target] is empty.") // CHOMPEdit - Changed to balloon alert
