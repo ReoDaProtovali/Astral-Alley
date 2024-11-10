@@ -108,12 +108,20 @@
 		if(M == user)
 			if(!M.can_eat(loaded))
 				return
+<<<<<<< HEAD
 			M.visible_message("<b>\The [user]</b> eats some of [loaded] with \the [src].")
+=======
+			M.visible_message(span_bold("\The [user]") + " eats some of [loaded] with \the [src].")
+>>>>>>> 6eafc8c9d0 ([MIRROR] maptest redgate (#9462))
 		else
 			user.visible_message(SPAN_WARNING("\The [user] begins to feed \the [M]!"))
 			if(!(M.can_force_feed(user, loaded) && do_mob(user, M, 5 SECONDS)))
 				return
+<<<<<<< HEAD
 			M.visible_message("<b>\The [user]</b> feeds some of [loaded] to \the [M] with \the [src].")
+=======
+			M.visible_message(span_bold("\The [user]") + " feeds some of [loaded] to \the [M] with \the [src].")
+>>>>>>> 6eafc8c9d0 ([MIRROR] maptest redgate (#9462))
 		playsound(src,'sound/items/eatfood.ogg', rand(10,40), 1)
 		loaded = null
 		update_icon()
