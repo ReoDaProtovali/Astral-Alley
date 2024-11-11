@@ -4152,6 +4152,10 @@
 #include "code\modules\reagents\reagent_containers\spray_vr.dm"
 #include "code\modules\reagents\reagent_containers\syringes.dm"
 #include "code\modules\reagents\reagent_containers\unidentified_hypospray.dm"
+<<<<<<< HEAD
+=======
+#include "code\modules\reagents\reagent_containers\virology.dm"
+>>>>>>> 6a40ebd547 (Adds Angelic Halo as wearable hat in headgear loadout (#9466))
 #include "code\modules\reagents\reagent_containers\food\drinks\bluespacecoffee.dm"
 #include "code\modules\reagents\reagents\_helpers.dm"
 #include "code\modules\reagents\reagents\_reagents.dm"
