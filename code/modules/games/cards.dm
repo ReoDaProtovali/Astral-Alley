@@ -211,8 +211,13 @@
 
 	..()
 
+<<<<<<< HEAD
 /obj/item/weapon/deck/attack_self()
 	shuffle()
+=======
+/obj/item/deck/attack_self(mob/user)
+	shuffle(user)
+>>>>>>> 4ad41869ea ([MIRROR] Fluff item (#9494))
 
 
 /obj/item/weapon/deck/verb/verb_shuffle()
@@ -220,10 +225,14 @@
 	set name = "Shuffle"
 	set desc = "Shuffle the cards in the deck."
 	set src in view(1)
-	shuffle()
+	shuffle(usr)
 
+<<<<<<< HEAD
 /obj/item/weapon/deck/proc/shuffle()
 	var/mob/living/user = usr
+=======
+/obj/item/deck/proc/shuffle(mob/user)
+>>>>>>> 4ad41869ea ([MIRROR] Fluff item (#9494))
 	if (cooldown < world.time - 10) // 15 ticks cooldown
 		var/list/newcards = list()
 		while(cards.len)
