@@ -3282,6 +3282,11 @@
 #include "code\modules\mob\living\silicon\robot\robot_items.dm"
 #include "code\modules\mob\living\silicon\robot\robot_movement.dm"
 #include "code\modules\mob\living\silicon\robot\robot_remote_control.dm"
+<<<<<<< HEAD
+=======
+#include "code\modules\mob\living\silicon\robot\robot_ui.dm"
+#include "code\modules\mob\living\silicon\robot\robot_ui_module.dm"
+>>>>>>> 7f2914d757 ([MIRROR] Moving robot module and icon selection to tgui (#9492))
 #include "code\modules\mob\living\silicon\robot\dogborg\dog_modules_vr.dm"
 #include "code\modules\mob\living\silicon\robot\dogborg\dog_modules_yw.dm"
 #include "code\modules\mob\living\silicon\robot\dogborg\dog_sleeper_vr.dm"

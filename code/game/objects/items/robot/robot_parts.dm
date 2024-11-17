@@ -222,7 +222,6 @@
 
 			feedback_inc("cyborg_birth",1)
 			callHook("borgify", list(O))
-			O.namepick()
 
 			qdel(src)
 		else
