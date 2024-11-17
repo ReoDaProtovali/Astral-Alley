@@ -141,8 +141,13 @@
 		to_chat(user, "<span class='notice'>\the [src] is too full to possibly fit anything else inside of it.</span>")
 		return
 
+<<<<<<< HEAD
 	if (istype(W, /obj/item/weapon/ore))
 		var/obj/item/weapon/ore/ore = W
+=======
+	if (istype(W, /obj/item/ore) && !istype(W, /obj/item/ore/slag))
+		var/obj/item/ore/ore = W
+>>>>>>> 3db911b824 ([MIRROR] Ports grindable ores (#9495))
 		stored_ore[ore.material]++
 		current_capacity++
 		user.remove_from_mob(W)
@@ -178,7 +183,13 @@
 		if(current_pickup >= max_pickup)
 			max_pickup_reached = 1
 			break
+<<<<<<< HEAD
 		var/obj/item/weapon/ore/ore = O
+=======
+		if(istype(O, /obj/item/ore/slag))
+			continue
+		var/obj/item/ore/ore = O
+>>>>>>> 3db911b824 ([MIRROR] Ports grindable ores (#9495))
 		stored_ore[ore.material]++
 		current_capacity++
 		current_pickup++
