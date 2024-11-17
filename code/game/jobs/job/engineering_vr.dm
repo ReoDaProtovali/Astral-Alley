@@ -47,6 +47,10 @@
 
 
 
+/datum/alt_title/salvage_tech
+	title = JOB_ALT_SALVAGE_TECHNICIAN
+	title_blurb = "A " + JOB_ALT_SALVAGE_TECHNICIAN + " is responsible for breaking down debris and obsolete equipment to recover useful components and materials."
+
 /datum/job/atmos
 	spawn_positions = 3
 	pto_type = PTO_ENGINEERING
