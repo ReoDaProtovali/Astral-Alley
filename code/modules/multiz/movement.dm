@@ -19,6 +19,13 @@
 		var/obj/mecha/mech = loc
 		return mech.relaymove(src,direction)
 
+	var/swim_modifier = 1
+	var/climb_modifier = 1
+	if(istype(src,/mob/living/carbon/human))
+		var/mob/living/carbon/human/MS = src
+		swim_modifier = MS.species.swim_mult
+		climb_modifier = MS.species.climb_mult
+
 	if(!can_ztravel())
 		to_chat(src, "<span class='warning'>You lack means of travel in that direction.</span>")
 		return
@@ -49,9 +56,15 @@
 	if(direction == DOWN)
 		var/turf/simulated/floor/water/deep/ocean/diving/sink = start
 		if(istype(sink) && !destination.density)
+<<<<<<< HEAD
 			var/pull_up_time = max(3 SECONDS + (src.movement_delay() * 10), 1)
 			to_chat(src, "<span class='notice'>You start diving underwater...</span>")
 			src.audible_message("<span class='notice'>[src] begins to dive under the water.</span>", runemessage = "splish splosh")
+=======
+			var/pull_up_time = max((3 SECONDS + (src.movement_delay() * 10) * swim_modifier), 1)
+			to_chat(src, span_notice("You start diving underwater..."))
+			src.audible_message(span_notice("[src] begins to dive under the water."), runemessage = "splish splosh")
+>>>>>>> 6fb99431fa ([MIRROR] Climbing/Swimming Trait Tweaks (#9488))
 			if(do_after(src, pull_up_time))
 				to_chat(src, "<span class='notice'>You reach the sea floor.</span>")
 			else
@@ -75,9 +88,15 @@
 			var/turf/simulated/floor/water/deep/ocean/diving/surface = destination
 
 			if(lattice)
+<<<<<<< HEAD
 				var/pull_up_time = max(5 SECONDS + (src.movement_delay() * 10), 1)
 				to_chat(src, "<span class='notice'>You grab \the [lattice] and start pulling yourself upward...</span>")
 				src.audible_message("<span class='notice'>[src] begins climbing up \the [lattice].</span>", runemessage = "clank clang")
+=======
+				var/pull_up_time = max((5 SECONDS + (src.movement_delay() * 10) * climb_modifier), 1)
+				to_chat(src, span_notice("You grab \the [lattice] and start pulling yourself upward..."))
+				src.audible_message(span_notice("[src] begins climbing up \the [lattice]."), runemessage = "clank clang")
+>>>>>>> 6fb99431fa ([MIRROR] Climbing/Swimming Trait Tweaks (#9488))
 				if(do_after(src, pull_up_time))
 					to_chat(src, "<span class='notice'>You pull yourself up.</span>")
 				else
@@ -85,9 +104,15 @@
 					return 0
 
 			else if(istype(surface))
+<<<<<<< HEAD
 				var/pull_up_time = max(5 SECONDS + (src.movement_delay() * 10), 1)
 				to_chat(src, "<span class='notice'>You start swimming upwards...</span>")
 				src.audible_message("<span class='notice'>[src] begins to swim towards the surface.</span>", runemessage = "splish splosh")
+=======
+				var/pull_up_time = max((5 SECONDS + (src.movement_delay() * 10) * swim_modifier), 1)
+				to_chat(src, span_notice("You start swimming upwards..."))
+				src.audible_message(span_notice("[src] begins to swim towards the surface."), runemessage = "splish splosh")
+>>>>>>> 6fb99431fa ([MIRROR] Climbing/Swimming Trait Tweaks (#9488))
 				if(do_after(src, pull_up_time))
 					to_chat(src, "<span class='notice'>You reach the surface.</span>")
 				else
@@ -95,8 +120,13 @@
 					return 0
 
 			else if(catwalk?.hatch_open)
+<<<<<<< HEAD
 				var/pull_up_time = max(5 SECONDS + (src.movement_delay() * 10), 1)
 				to_chat(src, "<span class='notice'>You grab the edge of \the [catwalk] and start pulling yourself upward...</span>")
+=======
+				var/pull_up_time = max((5 SECONDS + (src.movement_delay() * 10) * climb_modifier), 1)
+				to_chat(src, span_notice("You grab the edge of \the [catwalk] and start pulling yourself upward..."))
+>>>>>>> 6fb99431fa ([MIRROR] Climbing/Swimming Trait Tweaks (#9488))
 				var/old_dest = destination
 				destination = get_step(destination, dir) // mob's dir
 				if(!destination?.Enter(src, old_dest))
