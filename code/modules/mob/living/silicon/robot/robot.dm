@@ -794,14 +794,26 @@
 				to_chat(user, "<span class='filter_notice'>You [ locked ? "lock" : "unlock"] [src]'s interface.</span>")
 				update_icon()
 			else
+<<<<<<< HEAD
 				to_chat(user, "<span class='filter_notice'>[span_red("Access denied.")]</span>")
+=======
+				to_chat(user, span_filter_notice("[span_red("Access denied.")]"))
+				if(user == src) //RS edit: No self-unlocking.
+					to_chat(user, span_filter_notice("You are not allowed to manipulate your own lock."))
+>>>>>>> b8078f543d ([MIRROR] Removes ability for research cyborgs to self-upgrade (#9491))
 
 	else if(istype(W, /obj/item/borg/upgrade/))
 		var/obj/item/borg/upgrade/U = W
 		if(!opened)
 			to_chat(usr, "<span class='filter_notice'>You must access the borgs internals!</span>")
 		else if(!src.module && U.require_module)
+<<<<<<< HEAD
 			to_chat(usr, "<span class='filter_notice'>The borg must choose a module before it can be upgraded!</span>")
+=======
+			to_chat(usr, span_filter_notice("The borg must choose a module before it can be upgraded!"))
+		else if(user == src) //RS edit: No self-upgrading.
+			to_chat(usr, span_warning("You lack the reach to be able to upgrade yourself."))
+>>>>>>> b8078f543d ([MIRROR] Removes ability for research cyborgs to self-upgrade (#9491))
 		else if(U.locked)
 			to_chat(usr, "<span class='filter_notice'>The upgrade is locked and cannot be used yet!</span>")
 		else
@@ -960,8 +972,16 @@
 			return 1
 	else if(istype(M, /mob/living/silicon/robot))
 		var/mob/living/silicon/robot/R = M
+<<<<<<< HEAD
 		if(check_access(R.get_active_hand()) || istype(R.get_active_hand(), /obj/item/weapon/card/robot))
 			return 1
+=======
+		if(check_access(R.get_active_hand()) || istype(R.get_active_hand(), /obj/item/card/robot))
+			if(R == src) //RS edit: No self-unlocking.
+				return FALSE
+			else
+				return TRUE
+>>>>>>> b8078f543d ([MIRROR] Removes ability for research cyborgs to self-upgrade (#9491))
 	return 0
 
 /mob/living/silicon/robot/proc/check_access(obj/item/I)
