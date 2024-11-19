@@ -794,14 +794,24 @@
 				to_chat(user, "<span class='filter_notice'>You [ locked ? "lock" : "unlock"] [src]'s interface.</span>")
 				update_icon()
 			else
+<<<<<<< HEAD
 				to_chat(user, "<span class='filter_notice'>[span_red("Access denied.")]</span>")
+=======
+				to_chat(user, span_filter_notice("[span_red("Access denied.")]"))
+>>>>>>> 3c1135df1d ([MIRROR] Potential partial revert to borg self-upgrading restrictions (#9499))
 
 	else if(istype(W, /obj/item/borg/upgrade/))
 		var/obj/item/borg/upgrade/U = W
 		if(!opened)
 			to_chat(usr, "<span class='filter_notice'>You must access the borgs internals!</span>")
 		else if(!src.module && U.require_module)
+<<<<<<< HEAD
 			to_chat(usr, "<span class='filter_notice'>The borg must choose a module before it can be upgraded!</span>")
+=======
+			to_chat(usr, span_filter_notice("The borg must choose a module before it can be upgraded!"))
+		else if(user == src && istype(W,/obj/item/borg/upgrade/utility/reset))
+			to_chat(usr, span_warning("You are restricted from reseting your own module."))
+>>>>>>> 3c1135df1d ([MIRROR] Potential partial revert to borg self-upgrading restrictions (#9499))
 		else if(U.locked)
 			to_chat(usr, "<span class='filter_notice'>The upgrade is locked and cannot be used yet!</span>")
 		else
@@ -960,8 +970,13 @@
 			return 1
 	else if(istype(M, /mob/living/silicon/robot))
 		var/mob/living/silicon/robot/R = M
+<<<<<<< HEAD
 		if(check_access(R.get_active_hand()) || istype(R.get_active_hand(), /obj/item/weapon/card/robot))
 			return 1
+=======
+		if(check_access(R.get_active_hand()) || istype(R.get_active_hand(), /obj/item/card/robot))
+			return TRUE
+>>>>>>> 3c1135df1d ([MIRROR] Potential partial revert to borg self-upgrading restrictions (#9499))
 	return 0
 
 /mob/living/silicon/robot/proc/check_access(obj/item/I)
