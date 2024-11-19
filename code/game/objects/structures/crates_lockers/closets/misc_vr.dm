@@ -205,6 +205,7 @@
 		/obj/item/clothing/mask/gas/half,
 		/obj/item/clothing/shoes/black,
 		/obj/item/clothing/gloves/fingerless,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/pilot,
 		/obj/item/device/radio/headset/pilot/alt,
 		/obj/item/device/flashlight,
@@ -218,6 +219,21 @@
 		/obj/item/device/cataloguer/compact, //CHOMP edit
 	//	/obj/item/weapon/gun/energy/gun/protector/pilotgun/locked, //CHOMP Removed
 		/obj/item/clothing/gloves/watch/survival,
+=======
+		/obj/item/radio/headset/pilot,
+		/obj/item/radio/headset/alt/pilot,
+		/obj/item/flashlight,
+		/obj/item/reagent_containers/food/snacks/liquidfood,
+		/obj/item/reagent_containers/food/snacks/liquidprotein,
+		/obj/item/reagent_containers/food/drinks/cans/waterbottle,
+		/obj/item/storage/box/flare,
+		/obj/item/cell/device,
+		/obj/item/radio,
+		/obj/item/gps/explorer,
+		/obj/item/cataloguer/compact, //CHOMP edit
+	//	/obj/item/gun/energy/gun/protector/pilotgun/locked, //CHOMP Removed
+		/obj/item/clothing/accessory/watch/survival,
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 		/obj/item/clothing/accessory/storage/webbing/pilot1,
 		/obj/item/clothing/accessory/storage/webbing/pilot2,
 		/obj/item/device/emergency_beacon

@@ -622,15 +622,21 @@
 			user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info_links][stamps]</BODY></HTML>", "window=[name]")
 		return
 
+<<<<<<< HEAD
 	else if(istype(P, /obj/item/weapon/stamp) || istype(P, /obj/item/clothing/gloves/ring/seal))
 		if(istype(P, /obj/item/weapon/stamp))
 			var/obj/item/weapon/stamp/the_stamp = P
+=======
+	else if(istype(P, /obj/item/stamp) || istype(P, /obj/item/clothing/accessory/ring/seal))
+		if(istype(P, /obj/item/stamp))
+			var/obj/item/stamp/the_stamp = P
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 			if(the_stamp.stamptext)
 				stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>[the_stamp.stamptext]</i>"
 			else
 				stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [the_stamp.name].</i>"
 		else
-			var/obj/item/clothing/gloves/ring/seal/the_stamp = P
+			var/obj/item/clothing/accessory/ring/seal/the_stamp = P
 			if(the_stamp.stamptext)
 				stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>[the_stamp.stamptext]</i>"
 			else

@@ -176,7 +176,7 @@
 					/obj/item/weapon/material/knife/tacknife/survival,
 					/obj/item/weapon/material/knife/machete,
 			 		/obj/item/clothing/accessory/holster/machete,
-					/obj/item/clothing/gloves/watch/survival
+					/obj/item/clothing/accessory/watch/survival
 					)
 	cost=25
 	containertype = /obj/structure/closet/crate/secure/xion
@@ -201,8 +201,13 @@
 					/obj/item/weapon/material/knife/tacknife/survival,
 					/obj/item/clothing/head/pilot_vr,
 					/obj/item/clothing/under/rank/pilot1,
+<<<<<<< HEAD
 					/obj/item/weapon/gun/energy/gun/protector/pilotgun/locked,
 					/obj/item/clothing/gloves/watch/survival
+=======
+					/obj/item/gun/energy/gun/protector/pilotgun/locked,
+					/obj/item/clothing/accessory/watch/survival
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 					)
 	cost=20
 	containertype = /obj/structure/closet/crate/secure/xion
@@ -236,9 +241,15 @@
 					/obj/item/weapon/material/knife/tacknife/survival,
 					/obj/item/weapon/material/knife/machete/deluxe,
 			 		/obj/item/clothing/accessory/holster/machete,
+<<<<<<< HEAD
 					/obj/item/weapon/storage/box/explorerkeys,
 					/obj/item/device/mapping_unit,
 					/obj/item/clothing/gloves/watch/survival
+=======
+					/obj/item/storage/box/explorerkeys,
+					/obj/item/mapping_unit,
+					/obj/item/clothing/accessory/watch/survival
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 					)
 	cost = 75
 	containertype = /obj/structure/closet/crate/secure/xion

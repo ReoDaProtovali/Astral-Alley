@@ -8030,8 +8030,13 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/template_noop)
 "fGT" = (
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/glass/rag,
 /obj/item/clothing/gloves/ring/engagement,
+=======
+/obj/item/reagent_containers/glass/rag,
+/obj/item/clothing/accessory/ring/engagement,
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 /obj/structure/table/wooden_reinforced,
 /turf/simulated/floor/wood,
 /area/survivalpod/superpose/LoneHome)
@@ -25622,7 +25627,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
 "qFp" = (
-/obj/item/clothing/gloves/ring/material/gold,
+/obj/item/clothing/accessory/ring/material/gold,
 /obj/item/clothing/ears/earring/stud/gold,
 /obj/item/weapon/gun/projectile/deagle/gold{
 	pixel_x = -11;
