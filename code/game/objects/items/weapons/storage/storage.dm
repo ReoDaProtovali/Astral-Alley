@@ -797,8 +797,13 @@
 	var/open = 0
 	storage_slots = 1
 	can_hold = list(
+<<<<<<< HEAD
 		/obj/item/clothing/gloves/ring,
 		/obj/item/weapon/coin,
+=======
+		/obj/item/clothing/accessory/ring,
+		/obj/item/coin,
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 		/obj/item/clothing/accessory/medal
 		)
 	var/open_state
@@ -811,7 +816,7 @@
 
 		if(contents.len >= 1)
 			var/contained_image = null
-			if(istype(contents[1],  /obj/item/clothing/gloves/ring))
+			if(istype(contents[1],  /obj/item/clothing/accessory/ring))
 				contained_image = "ring_trinket"
 			else if(istype(contents[1], /obj/item/weapon/coin))
 				contained_image = "coin_trinket"

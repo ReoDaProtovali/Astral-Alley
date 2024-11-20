@@ -147,6 +147,7 @@
 	spawn_nothing_percentage = 0
 
 /obj/random/cargopod/item_to_spawn()
+<<<<<<< HEAD
 	return pick(prob(10);/obj/item/poster,\
 				prob(8);/obj/item/weapon/haircomb,\
 				prob(6);/obj/item/weapon/storage/pill_bottle/paracetamol,\
@@ -164,6 +165,25 @@
 				prob(1);/obj/item/weapon/handcuffs,\
 				prob(1);/obj/item/weapon/handcuffs/legcuffs,\
 				prob(1);/obj/item/weapon/reagent_containers/syringe/steroid)
+=======
+	return pick(prob(10);/obj/item/poster,
+				prob(8);/obj/item/haircomb,
+				prob(6);/obj/item/storage/pill_bottle/paracetamol,
+				prob(6);/obj/item/material/butterflyblade,
+				prob(6);/obj/item/material/butterflyhandle,
+				prob(4);/obj/item/storage/pill_bottle/happy,
+				prob(4);/obj/item/storage/pill_bottle/zoom,
+				prob(4);/obj/item/material/butterfly,
+				prob(2);/obj/item/material/butterfly/switchblade,
+				prob(2);/obj/item/clothing/accessory/knuckledusters,
+				prob(2);/obj/item/reagent_containers/syringe/drugs,
+				prob(1);/obj/item/material/knife/tacknife,
+				prob(1);/obj/item/clothing/suit/storage/vest/heavy/merc,
+				prob(1);/obj/item/beartrap,
+				prob(1);/obj/item/handcuffs,
+				prob(1);/obj/item/handcuffs/legcuffs,
+				prob(1);/obj/item/reagent_containers/syringe/steroid)
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 
 //A random thing so that the spawn_nothing_percentage can be used w/o duplicating code.
 /obj/random/trash_pile

@@ -88,6 +88,7 @@
 	if(proximity && istype(usr, /mob/living/carbon/human) && do_after(usr, 1 SECOND, A))
 		return pickpocket(usr, A, proximity)
 	return 0
+<<<<<<< HEAD
 
 // Buzzer Ring - Traitor, Merc.
 /obj/item/clothing/gloves/ring/buzzer
@@ -155,3 +156,5 @@
 	H.updatehealth()
 
 	battery.emp_act(1)
+=======
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))

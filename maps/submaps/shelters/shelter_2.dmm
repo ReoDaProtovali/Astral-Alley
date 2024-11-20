@@ -32,6 +32,7 @@
 /area/survivalpod)
 "f" = (
 /obj/machinery/smartfridge/survival_pod,
+<<<<<<< HEAD
 /obj/item/weapon/storage/mre/random,
 /obj/item/weapon/storage/mre/random,
 /obj/item/weapon/storage/mre/random,
@@ -57,6 +58,33 @@
 /obj/item/device/emergency_beacon,
 /obj/item/device/healthanalyzer,
 /obj/item/weapon/storage/pill_bottle/dice_nerd,
+=======
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/random,
+/obj/item/storage/mre/menu9,
+/obj/item/storage/mre/menu9,
+/obj/item/storage/mre/menu10,
+/obj/item/storage/mre/menu10,
+/obj/item/storage/mre/menu11,
+/obj/item/storage/mre/menu11,
+/obj/item/fbp_backup_cell,
+/obj/item/fbp_backup_cell,
+/obj/item/fbp_backup_cell,
+/obj/item/fbp_backup_cell,
+/obj/item/fbp_backup_cell,
+/obj/item/storage/firstaid/fire,
+/obj/item/storage/firstaid/toxin,
+/obj/item/storage/firstaid/o2,
+/obj/item/storage/box/survival/space,
+/obj/item/clothing/accessory/watch/survival,
+/obj/item/emergency_beacon,
+/obj/item/healthanalyzer,
+/obj/item/storage/pill_bottle/dice_nerd,
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 /turf/simulated/shuttle/floor/voidcraft,
 /area/survivalpod)
 "g" = (

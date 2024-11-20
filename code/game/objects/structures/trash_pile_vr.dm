@@ -300,10 +300,17 @@
 					prob(4);/obj/item/weapon/gun/energy/sizegun,
 					prob(4);/obj/item/device/slow_sizegun,
 					prob(4);/obj/item/clothing/accessory/collar/shock/bluespace,
+<<<<<<< HEAD
 					prob(3);/obj/item/weapon/cracker,
 					prob(3);/obj/item/weapon/material/butterfly,
 					prob(3);/obj/item/weapon/material/butterfly/switchblade,
 					prob(3);/obj/item/clothing/gloves/knuckledusters,
+=======
+					prob(3);/obj/item/cracker,
+					prob(3);/obj/item/material/butterfly,
+					prob(3);/obj/item/material/butterfly/switchblade,
+					prob(3);/obj/item/clothing/accessory/knuckledusters,
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 					prob(3);/obj/item/clothing/gloves/heavy_engineer,
 					prob(3);/obj/item/weapon/reagent_containers/syringe/drugs,
 					prob(2);/obj/item/weapon/implanter/sizecontrol,

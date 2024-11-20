@@ -22,8 +22,13 @@
 							/obj/item/toy/redbutton									= 2,
 							/obj/item/toy/gnome										= 2,
 							/obj/item/toy/AI										= 2,
+<<<<<<< HEAD
 							/obj/item/clothing/gloves/ring/buzzer/toy				= 2,
 							/obj/item/weapon/storage/box/handcuffs/fake				= 2,
+=======
+							/obj/item/clothing/gloves/ring/buzzer/toy				= 2, // CHOMPAdd
+							/obj/item/storage/box/handcuffs/fake				= 2,
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 							/obj/item/toy/nuke										= 2,
 							/obj/item/toy/minigibber								= 2,
 							/obj/item/toy/toy_xeno									= 2,

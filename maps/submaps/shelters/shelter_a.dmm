@@ -73,11 +73,19 @@
 /obj/item/weapon/storage/box/survival/comp{
 	starts_with = list(/obj/item/weapon/tool/prybar/red,/obj/item/clothing/glasses/goggles,/obj/item/weapon/reagent_containers/hypospray/autoinjector,/obj/item/stack/medical/bruise_pack,/obj/item/device/flashlight/glowstick,/obj/item/weapon/reagent_containers/food/snacks/candy/proteinbar,/obj/item/clothing/mask/breath,/obj/item/weapon/tank/emergency/oxygen/engi)
 	},
+<<<<<<< HEAD
 /obj/item/weapon/storage/box/survival/space,
 /obj/item/clothing/gloves/watch/survival,
 /obj/item/device/emergency_beacon,
 /obj/item/weapon/extinguisher/mini,
 /obj/item/device/radio{
+=======
+/obj/item/storage/box/survival/space,
+/obj/item/clothing/accessory/watch/survival,
+/obj/item/emergency_beacon,
+/obj/item/extinguisher/mini,
+/obj/item/radio{
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 	icon_state = "walkietalkiebay";
 	name = "emergency radio"
 	},

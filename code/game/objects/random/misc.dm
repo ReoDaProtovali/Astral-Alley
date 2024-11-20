@@ -257,6 +257,7 @@
 	spawn_nothing_percentage = 50
 
 /obj/random/contraband/item_to_spawn()
+<<<<<<< HEAD
 	return pick(prob(6);/obj/item/weapon/storage/pill_bottle/paracetamol, //VOREStation Edit,
 				prob(4);/obj/item/weapon/storage/pill_bottle/happy,
 				prob(4);/obj/item/weapon/storage/pill_bottle/zoom,
@@ -266,6 +267,17 @@
 				prob(2);/obj/item/weapon/material/butterfly/switchblade,
 				prob(2);/obj/item/clothing/gloves/knuckledusters,
 				prob(1);/obj/item/weapon/material/knife/tacknife,
+=======
+	return pick(prob(6);/obj/item/storage/pill_bottle/paracetamol, //VOREStation Edit,
+				prob(4);/obj/item/storage/pill_bottle/happy,
+				prob(4);/obj/item/storage/pill_bottle/zoom,
+				prob(4);/obj/item/material/butterfly,
+				prob(6);/obj/item/material/butterflyblade,
+				prob(6);/obj/item/material/butterflyhandle,
+				prob(2);/obj/item/material/butterfly/switchblade,
+				prob(2);/obj/item/clothing/accessory/knuckledusters,
+				prob(1);/obj/item/material/knife/tacknife,
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 				prob(1);/obj/item/clothing/suit/storage/vest/heavy/merc,
 				prob(1);/obj/item/weapon/beartrap,
 				prob(1);/obj/item/weapon/handcuffs,

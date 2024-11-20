@@ -9996,12 +9996,21 @@
 /obj/machinery/recharger/wallcharger{
 	pixel_y = 20
 	},
+<<<<<<< HEAD
 /obj/item/clothing/gloves/knuckledusters,
 /obj/item/clothing/gloves/knuckledusters,
 /obj/item/device/flash,
 /obj/item/device/flash,
 /obj/item/device/laser_pointer/upgraded,
 /obj/item/device/laser_pointer/upgraded,
+=======
+/obj/item/clothing/accessory/knuckledusters,
+/obj/item/clothing/accessory/knuckledusters,
+/obj/item/flash,
+/obj/item/flash,
+/obj/item/laser_pointer/upgraded,
+/obj/item/laser_pointer/upgraded,
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
 /obj/effect/floor_decal/techfloor{
 	dir = 9
 	},

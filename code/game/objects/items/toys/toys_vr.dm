@@ -564,6 +564,7 @@
 	cooldown = 0
 
 /*
+<<<<<<< HEAD
  * Hand buzzer
  */
 /obj/item/clothing/gloves/ring/buzzer/toy
@@ -593,6 +594,8 @@
 	return 0
 
 /*
+=======
+>>>>>>> f7e9f8d12b ([MIRROR] Ring/Watch Accessory Transfer (#9489))
  * Toy cuffs
  */
 /obj/item/weapon/handcuffs/fake
