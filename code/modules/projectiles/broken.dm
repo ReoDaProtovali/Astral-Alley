@@ -98,6 +98,7 @@
 
 /obj/item/weapon/broken_gun/proc/can_repair_with(obj/item/I, mob/user)
 	for(var/path in material_needs)
+<<<<<<< HEAD
 		if(ispath(path) && istype(I, path))
 			if(material_needs[path] > 0)
 				if(istype(I, /obj/item/stack))
@@ -109,10 +110,25 @@
 				else
 					return TRUE
 
+=======
+		if(!ispath(path) || !istype(I, path))
+			continue
+		if(material_needs[path] <= 0)
+			continue
+		if(istype(I, /obj/item/stack))
+			var/obj/item/stack/S = I
+			if(S.can_use(material_needs[path]))
+				return TRUE
+			else
+				to_chat(user, span_notice("You do not have enough [I] to continue repairs."))
+		else
+			return TRUE
+>>>>>>> 1166e69eb4 ([MIRROR] Planet time debug uncapping and broken weapon chat output (#9556))
 	return FALSE
 
 /obj/item/weapon/broken_gun/proc/repair_with(obj/item/I, mob/user)
 	for(var/path in material_needs)
+<<<<<<< HEAD
 		if(ispath(path) && istype(I, path))
 			if(material_needs[path] > 0)
 				if(istype(I, /obj/item/stack))
@@ -126,6 +142,23 @@
 					user.drop_from_inventory(I)
 					to_chat(user, "<span class='notice'>You repair some damage on \the [src] with \the [I].</span>")
 					qdel(I)
+=======
+		if(!ispath(path) || !istype(I, path))
+			continue
+		if(material_needs[path] <= 0)
+			continue
+		if(istype(I, /obj/item/stack))
+			var/obj/item/stack/S = I
+			if(S.can_use(material_needs[path]))
+				S.use(material_needs[path])
+				material_needs[path] = 0
+				to_chat(user, span_notice("You repair some damage on \the [src] with \the [S]."))
+		else
+			material_needs[path] = max(0, material_needs[path] - 1)
+			user.drop_from_inventory(I)
+			to_chat(user, span_notice("You repair some damage on \the [src] with \the [I]."))
+			qdel(I)
+>>>>>>> 1166e69eb4 ([MIRROR] Planet time debug uncapping and broken weapon chat output (#9556))
 
 	check_complete_repair(user)
 
