@@ -1287,6 +1287,7 @@ var/datum/announcement/minor/admin_min_announcer = new
 	if(!ai_number)
 		to_chat(usr, "<b>No AIs located</b>") //Just so you know the thing is actually working and not just ignoring you.
 
+<<<<<<< HEAD
 /datum/admins/proc/show_skills()
 	set category = "Admin.Investigate" //CHOMPEdit
 	set name = "Show Skills"
@@ -1304,6 +1305,8 @@ var/datum/announcement/minor/admin_min_announcer = new
 
 	return
 
+=======
+>>>>>>> af9049155b ([MIRROR] Completely merk all traces of the skill system (#9546))
 /client/proc/update_mob_sprite(mob/living/carbon/human/H as mob)
 	set category = "Admin.Game" //CHOMPEdit
 	set name = "Update Mob Sprite"
