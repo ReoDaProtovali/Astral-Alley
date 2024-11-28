@@ -1,4 +1,5 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+<<<<<<< HEAD
 "aa" = (
 /obj/structure/table/woodentable,
 /obj/item/weapon/cell/hyper,
@@ -16,6 +17,8 @@
 /obj/random/trash,
 /turf/simulated/floor/carpet/purcarpet,
 /area/submap/oldhotel)
+=======
+>>>>>>> 59646ea376 ([MIRROR] Fix Two active edges (#9560))
 "aJ" = (
 /obj/item/weapon/towel/random,
 /obj/item/weapon/towel/random,
@@ -121,10 +124,26 @@
 /obj/item/trash/tray,
 /turf/simulated/floor/wood,
 /area/submap/oldhotel)
+<<<<<<< HEAD
 "ja" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/random/junk,
 /turf/simulated/floor/carpet/purcarpet,
+=======
+"je" = (
+/obj/structure/closet/cabinet,
+/obj/item/binoculars/spyglass,
+/obj/random/contraband,
+/obj/random/contraband,
+/obj/random/maintenance/medical,
+/obj/random/cash,
+/obj/random/drinkbottle,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/maintenance,
+/obj/random/maintenance,
+/turf/simulated/floor/wood/virgo3b,
+>>>>>>> 59646ea376 ([MIRROR] Fix Two active edges (#9560))
 /area/submap/oldhotel)
 "jO" = (
 /obj/structure/bed/chair/oldsofa,
@@ -307,7 +326,7 @@
 /area/submap/oldhotel)
 "yM" = (
 /obj/item/stack/cable_coil,
-/turf/simulated/floor/carpet/purcarpet,
+/turf/simulated/floor/carpet/sblucarpet/virgo3b,
 /area/submap/oldhotel)
 "zs" = (
 /obj/effect/decal/cleanable/dirt,
@@ -549,9 +568,6 @@
 "Sy" = (
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/asteroid_steel,
-/area/submap/oldhotel)
-"SG" = (
-/turf/simulated/floor/carpet/purcarpet,
 /area/submap/oldhotel)
 "SL" = (
 /obj/item/weapon/material/shard,
@@ -816,9 +832,15 @@ Vj
 SZ
 hQ
 RM
+<<<<<<< HEAD
 ai
 ja
 qg
+=======
+ES
+cZ
+TU
+>>>>>>> 59646ea376 ([MIRROR] Fix Two active edges (#9560))
 hQ
 PO
 Pd
@@ -843,7 +865,7 @@ cZ
 SZ
 hQ
 TU
-SG
+Vj
 yM
 Wy
 ZG
