@@ -39,7 +39,12 @@
 	icon = 'icons/obj/pillows.dmi'
 	icon_state = "pillowpile_large_pink"
 	var/pillowpilefront = "/obj/structure/bed/pillowpilefront"
+<<<<<<< HEAD
 	var/sourcepillow = "/obj/item/weapon/bedsheet/pillow"
+=======
+	var/sourcepillow = "/obj/item/bedsheet/pillow"
+	flippable = FALSE
+>>>>>>> 29616c340c ([MIRROR] Flippable beds and sheets (#9534))
 
 /obj/structure/bed/pillowpilefront
 	name = "pillow pile"

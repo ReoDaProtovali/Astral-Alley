@@ -42,7 +42,28 @@ LINEN BINS
 		return
 	..()
 
+<<<<<<< HEAD
 /obj/item/weapon/bedsheet/blue
+=======
+/obj/item/bedsheet/verb/turn_around()
+	set name = "Turn Around"
+	set category = "Object"
+	set src in oview(1)
+
+	if(!usr || !isturf(usr.loc))
+		return
+	if(usr.stat || usr.restrained())
+		return
+	if(ismouse(usr) || (isobserver(usr) && !CONFIG_GET(flag/ghost_interaction)))
+		return
+
+	if(dir >= 2)
+		src.set_dir(1)
+	else
+		src.set_dir(2)
+
+/obj/item/bedsheet/blue
+>>>>>>> 29616c340c ([MIRROR] Flippable beds and sheets (#9534))
 	icon_state = "sheetblue"
 	dream_messages = list("blue")
 
