@@ -71,6 +71,7 @@
 
 /obj/item/weapon/storage/firstaid/surgery
 	can_hold = list(
+<<<<<<< HEAD
 		/obj/item/weapon/surgical/bonesetter,
 		/obj/item/weapon/surgical/cautery,
 		/obj/item/weapon/surgical/circular_saw,
@@ -80,6 +81,18 @@
 		/obj/item/weapon/surgical/surgicaldrill,
 		/obj/item/weapon/surgical/bonegel,
 		/obj/item/weapon/surgical/FixOVein,
+=======
+		/obj/item/surgical/bone_clamp,
+		/obj/item/surgical/bonesetter,
+		/obj/item/surgical/cautery,
+		/obj/item/surgical/circular_saw,
+		/obj/item/surgical/hemostat,
+		/obj/item/surgical/retractor,
+		/obj/item/surgical/scalpel,
+		/obj/item/surgical/surgicaldrill,
+		/obj/item/surgical/bonegel,
+		/obj/item/surgical/FixOVein,
+>>>>>>> dca8f66537 ([MIRROR] surgery firstaid bags can carry bone clamps (#9532))
 		/obj/item/stack/medical/advanced/bruise_pack,
 		/obj/item/stack/nanopaste,
 		/obj/item/device/healthanalyzer,
