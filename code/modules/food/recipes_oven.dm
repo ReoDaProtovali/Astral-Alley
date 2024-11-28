@@ -33,6 +33,7 @@
 	reagent_mix = RECIPE_REAGENT_REPLACE
 	result = /obj/item/weapon/reagent_containers/food/snacks/ribplate
 
+/* OLD RECIPE
 /datum/recipe/turkey
 	appliance = OVEN
 	reagents = list("sodiumchloride" = 1, "blackpepper" = 1)
@@ -40,7 +41,22 @@
 		/obj/item/weapon/reagent_containers/food/snacks/meat/chicken,
 		/obj/item/weapon/reagent_containers/food/snacks/stuffing
 		)
+<<<<<<< HEAD
 	result = /obj/item/weapon/reagent_containers/food/snacks/sliceable/turkey
+=======
+	result = /obj/item/reagent_containers/food/snacks/sliceable/turkey
+*/
+
+/datum/recipe/turkey
+	appliance = OVEN
+	fruit = list("potato" = 1)
+	reagents = list("sodiumchloride" = 1, "blackpepper" = 1)
+	items = list(
+		/obj/item/reagent_containers/food/snacks/rawturkey,
+		/obj/item/reagent_containers/food/snacks/stuffing
+		)
+	result = /obj/item/reagent_containers/food/snacks/sliceable/turkey
+>>>>>>> 9c41fc4b92 ([MIRROR] Adds a turkey mob and reworks regular Turkey recipe (#9548))
 
 /datum/recipe/tofurkey
 	appliance = OVEN

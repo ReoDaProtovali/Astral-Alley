@@ -137,7 +137,21 @@
 	reagents.add_reagent("spidertoxin",6)
 	reagents.remove_reagent("pacid",6)
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/meat/fox
+=======
+/obj/item/reagent_containers/food/snacks/rawturkey
+	name = "raw turkey"
+	desc = "Naked and hollow."
+	icon_state = "rawturkey"
+	bitesize = 2.5
+
+/obj/item/reagent_containers/food/snacks/rawturkey/Initialize()
+	. = ..()
+	reagents.add_reagent("protein", 10)
+
+/obj/item/reagent_containers/food/snacks/meat/fox
+>>>>>>> 9c41fc4b92 ([MIRROR] Adds a turkey mob and reworks regular Turkey recipe (#9548))
 	name = "foxmeat"
 	desc = "The fox doesn't say a goddamn thing, now."
 
