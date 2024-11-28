@@ -5785,8 +5785,17 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/lobby)
 "lC" = (
+<<<<<<< HEAD
 /obj/item/weapon/bedsheet/bluedouble,
 /obj/structure/bed/double/padded,
+=======
+/obj/item/bedsheet/bluedouble{
+	dir = 1
+	},
+/obj/structure/bed/double/padded{
+	dir = 1
+	},
+>>>>>>> 29616c340c ([MIRROR] Flippable beds and sheets (#9534))
 /obj/structure/curtain/black,
 /turf/simulated/floor/carpet,
 /area/stellardelight/deck1/dorms/dorm8)
@@ -12846,8 +12855,17 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/assembly/robotics)
 "AP" = (
+<<<<<<< HEAD
 /obj/item/weapon/bedsheet/bluedouble,
 /obj/structure/bed/double/padded,
+=======
+/obj/item/bedsheet/bluedouble{
+	dir = 1
+	},
+/obj/structure/bed/double/padded{
+	dir = 1
+	},
+>>>>>>> 29616c340c ([MIRROR] Flippable beds and sheets (#9534))
 /obj/structure/curtain/black,
 /turf/simulated/floor/carpet,
 /area/stellardelight/deck1/dorms/dorm5)
@@ -21253,8 +21271,17 @@
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck1/exploration)
 "Tc" = (
+<<<<<<< HEAD
 /obj/item/weapon/bedsheet/orangedouble,
 /obj/structure/bed/double/padded,
+=======
+/obj/item/bedsheet/orangedouble{
+	dir = 1
+	},
+/obj/structure/bed/double/padded{
+	dir = 1
+	},
+>>>>>>> 29616c340c ([MIRROR] Flippable beds and sheets (#9534))
 /obj/structure/curtain/black,
 /turf/simulated/floor/carpet/purcarpet,
 /area/stellardelight/deck1/dorms/dorm7)
@@ -21582,8 +21609,17 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/armoury)
 "TN" = (
+<<<<<<< HEAD
 /obj/item/weapon/bedsheet/orangedouble,
 /obj/structure/bed/double/padded,
+=======
+/obj/item/bedsheet/orangedouble{
+	dir = 1
+	},
+/obj/structure/bed/double/padded{
+	dir = 1
+	},
+>>>>>>> 29616c340c ([MIRROR] Flippable beds and sheets (#9534))
 /obj/structure/curtain/black,
 /turf/simulated/floor/carpet/purcarpet,
 /area/stellardelight/deck1/dorms/dorm6)
