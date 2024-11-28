@@ -9,7 +9,11 @@
 	icon_rest = "wah_rest"
 	icon = 'icons/mob/vore.dmi'
 
+<<<<<<< HEAD
 	faction = "redpanda" //stop naming stuff vaguely
+=======
+	faction = FACTION_REDPANDA
+>>>>>>> 9c41fc4b92 ([MIRROR] Adds a turkey mob and reworks regular Turkey recipe (#9548))
 	maxHealth = 30
 	health = 30
 
