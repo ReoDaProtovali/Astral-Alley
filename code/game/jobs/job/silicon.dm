@@ -19,6 +19,9 @@
 	has_headset = FALSE
 	assignable = FALSE
 	mob_type = JOB_SILICON_AI
+	disallow_jobhop = TRUE
+	pto_type = PTO_CIVILIAN
+	dept_time_required = 20 // CHOMPEdit
 	outfit_type = /decl/hierarchy/outfit/job/silicon/ai
 	job_description = "The AI oversees the operation of the station and its crew, but has no real authority over them. \
 						The AI is required to follow its Laws, and Lawbound Synthetics that are linked to it are expected to follow \
@@ -45,10 +48,19 @@
 	flag = CYBORG
 	departments = list(DEPARTMENT_SYNTHETIC)
 	department_flag = ENGSEC
+<<<<<<< HEAD
 	faction = "Station"
 	total_positions = 2
 	spawn_positions = 2
 	supervisors = "your Laws and the AI"	//Nodrak
+=======
+	faction = FACTION_STATION
+	pto_type = PTO_CYBORG
+	minimal_player_age = 3		//1 day is a little too little time
+	total_positions = 8 		//Along with one able to spawn later in the round. // CHOMPedit: Doubles total spawn positions for cyborgs.
+	spawn_positions = 6 		//Let's have 3 able to spawn in roundstart // CHOMPedit: Doubles total spawn positions for cyborgs.
+	supervisors = "your Laws and the " + JOB_AI	//Nodrak
+>>>>>>> c94594fe77 ([MIRROR] Jobs _vr files crunch (#9541))
 	selection_color = "#254C25"
 	minimal_player_age = 1
 	account_allowed = 0
