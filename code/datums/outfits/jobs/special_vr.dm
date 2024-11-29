@@ -4,23 +4,37 @@
 	gloves = /obj/item/clothing/gloves/white
 	shoes = /obj/item/clothing/shoes/laceup
 	head = /obj/item/clothing/head/beret/centcom/officer
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/centcom
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/omnihud/all
 	id_type = /obj/item/weapon/card/id/centcom
 	pda_type = /obj/item/device/pda/centcom
 	flags = OUTFIT_EXTENDED_SURVIVAL|OUTFIT_COMPREHENSIVE_SURVIVAL
+
+	headset = /obj/item/radio/headset/centcom
+	headset_alt = /obj/item/radio/headset/centcom
+	headset_earbud = /obj/item/radio/headset/centcom
 
 /decl/hierarchy/outfit/job/emergency_responder
 	name = OUTFIT_JOB_NAME("Emergency Responder")
 	uniform = /obj/item/clothing/under/ert
 	shoes = /obj/item/clothing/shoes/boots/swat
 	gloves = /obj/item/clothing/gloves/swat
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/ert
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/sunglasses
 	back = /obj/item/weapon/storage/backpack/satchel
 	id_type = /obj/item/weapon/card/id/centcom/ERT
 	pda_type = /obj/item/device/pda/centcom
 	flags = OUTFIT_EXTENDED_SURVIVAL|OUTFIT_COMPREHENSIVE_SURVIVAL
+
+	headset = /obj/item/radio/headset/ert
+	headset_alt = /obj/item/radio/headset/ert
+	headset_earbud = /obj/item/radio/headset/ert
 
 /decl/hierarchy/outfit/job/emergency_responder/post_equip(var/mob/living/carbon/human/H)
 	..()

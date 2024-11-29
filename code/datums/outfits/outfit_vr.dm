@@ -3,7 +3,10 @@
 	uniform = /obj/item/clothing/under/solgov/utility/army/urban
 	shoes = /obj/item/clothing/shoes/boots/jackboots
 	gloves = /obj/item/clothing/gloves/combat
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/centcom
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	r_pocket = /obj/item/ammo_magazine/m95
 	l_pocket = /obj/item/ammo_magazine/m95
 	l_hand = /obj/item/ammo_magazine/m95
@@ -14,6 +17,10 @@
 	head = /obj/item/clothing/head/helmet/combat/USDF
 	suit = /obj/item/clothing/suit/armor/combat/USDF
 	belt = /obj/item/weapon/storage/belt/security/tactical
+
+	headset = /obj/item/radio/headset/centcom
+	headset_alt = /obj/item/radio/headset/centcom
+	headset_earbud = /obj/item/radio/headset/centcom
 
 /decl/hierarchy/outfit/USDF/Marine/equip_id(mob/living/carbon/human/H)
 	var/obj/item/weapon/card/id/C = ..()
@@ -29,7 +36,10 @@
 	name = "USDF officer"
 	head = /obj/item/clothing/head/dress/army/command
 	shoes = /obj/item/clothing/shoes/boots/jackboots
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/centcom
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	uniform = /obj/item/clothing/under/solgov/mildress/army/command
 	back = /obj/item/weapon/storage/backpack/satchel
 	belt = /obj/item/weapon/gun/projectile/revolver/consul
@@ -37,6 +47,10 @@
 	r_pocket = /obj/item/ammo_magazine/s44
 	r_hand = /obj/item/clothing/accessory/holster/hip
 	l_hand = /obj/item/clothing/accessory/tie/black
+
+	headset = /obj/item/radio/headset/centcom
+	headset_alt = /obj/item/radio/headset/centcom
+	headset_earbud = /obj/item/radio/headset/centcom
 
 /decl/hierarchy/outfit/USDF/Officer/equip_id(mob/living/carbon/human/H)
 	var/obj/item/weapon/card/id/C = ..()
@@ -51,13 +65,20 @@
 /decl/hierarchy/outfit/solcom/representative
 	name = "SolGov Representative" //YW EDIT: SolGov
 	shoes = /obj/item/clothing/shoes/laceup
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/centcom
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	uniform = /obj/item/clothing/under/suit_jacket/navy
 	back = /obj/item/weapon/storage/backpack/satchel
 	l_pocket = /obj/item/weapon/pen/blue
 	r_pocket = /obj/item/weapon/pen/red
 	r_hand = /obj/item/device/pda/centcom
 	l_hand = /obj/item/weapon/clipboard
+
+	headset = /obj/item/radio/headset/centcom
+	headset_alt = /obj/item/radio/headset/centcom
+	headset_earbud = /obj/item/radio/headset/centcom
 
 /decl/hierarchy/outfit/solcom/representative/equip_id(mob/living/carbon/human/H)
 	var/obj/item/weapon/card/id/C = ..()
@@ -74,7 +95,10 @@
 	head = /obj/item/clothing/head/helmet/combat/imperial
 	shoes =/obj/item/clothing/shoes/leg_guard/combat/imperial
 	gloves = /obj/item/clothing/gloves/arm_guard/combat/imperial
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/syndicate
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	uniform = /obj/item/clothing/under/imperial
 	mask = /obj/item/clothing/mask/gas/imperial
 	suit = /obj/item/clothing/suit/armor/combat/imperial
@@ -86,12 +110,19 @@
 	l_hand = /obj/item/weapon/shield/energy/imperial
 	suit_store = /obj/item/weapon/gun/energy/imperial
 
+	headset = /obj/item/radio/headset/syndicate
+	headset_alt = /obj/item/radio/headset/syndicate
+	headset_earbud = /obj/item/radio/headset/syndicate
+
 /decl/hierarchy/outfit/imperial/officer
 	name = "Imperial officer"
 	head = /obj/item/clothing/head/helmet/combat/imperial/centurion
 	shoes = /obj/item/clothing/shoes/leg_guard/combat/imperial
 	gloves = /obj/item/clothing/gloves/arm_guard/combat/imperial
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/syndicate
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	uniform = /obj/item/clothing/under/imperial
 	mask = /obj/item/clothing/mask/gas/imperial
 	suit = /obj/item/clothing/suit/armor/combat/imperial/centurion
@@ -101,6 +132,10 @@
 	r_hand = /obj/item/weapon/melee/energy/sword/imperial
 	l_hand = /obj/item/weapon/shield/energy/imperial
 	suit_store = /obj/item/weapon/gun/energy/imperial
+
+	headset = /obj/item/radio/headset/syndicate
+	headset_alt = /obj/item/radio/headset/syndicate
+	headset_earbud = /obj/item/radio/headset/syndicate
 
 /*
 SOUTHERN CROSS OUTFITS

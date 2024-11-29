@@ -29,7 +29,10 @@
 /decl/hierarchy/outfit/soviet_soldier/admiral
 	name = "Soviet admiral"
 	head = /obj/item/clothing/head/hgpiratecap
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/heads/captain
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/thermal/plain/eyepatch
 	suit = /obj/item/clothing/suit/hgpirate
 
@@ -37,16 +40,27 @@
 	id_type = /obj/item/weapon/card/id/centcom	//station
 	id_pda_assignment = "Admiral"
 
+	headset = /obj/item/radio/headset/heads/captain
+	headset_alt = /obj/item/radio/headset/heads/captain
+	headset_earbud = /obj/item/radio/headset/heads/captain
+
 /decl/hierarchy/outfit/merchant
 	name = "Merchant"
 	shoes = /obj/item/clothing/shoes/black
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	uniform = /obj/item/clothing/under/color/grey
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/civilian	//merchant
 	pda_slot = slot_r_store
 	pda_type = /obj/item/device/pda/chef //cause I like the look
 	id_pda_assignment = "Merchant"
+
+	headset = /obj/item/radio/headset
+	headset_alt = /obj/item/radio/headset
+	headset_earbud = /obj/item/radio/headset
 
 /decl/hierarchy/outfit/merchant/vox
 	name = "Merchant - Vox"
