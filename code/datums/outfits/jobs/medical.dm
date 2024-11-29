@@ -70,7 +70,11 @@
 	pda_type = /obj/item/device/pda/chemist
 
 /decl/hierarchy/outfit/job/medical/geneticist
+<<<<<<< HEAD
 	name = OUTFIT_JOB_NAME("Geneticist")
+=======
+	name = OUTFIT_JOB_NAME(JOB_GENETICIST)
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	uniform = /obj/item/clothing/under/rank/geneticist
 	suit = /obj/item/clothing/suit/storage/toggle/labcoat/genetics
 	backpack = /obj/item/weapon/storage/backpack/genetics
@@ -78,6 +82,12 @@
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/gen
 	id_type = /obj/item/weapon/card/id/medical/geneticist
 	pda_type = /obj/item/device/pda/geneticist
+
+	// CHOMPAdd Start - Geneticists get their cool headset
+	headset = /obj/item/radio/headset/headset_medsci
+	headset_alt = /obj/item/radio/headset/headset_medsci
+	headset_earbud = /obj/item/radio/headset/headset_medsci
+	// CHOMPAdd End
 
 /decl/hierarchy/outfit/job/medical/psychiatrist
 	name = OUTFIT_JOB_NAME("Psychiatrist")

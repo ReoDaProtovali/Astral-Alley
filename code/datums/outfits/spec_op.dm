@@ -2,7 +2,10 @@
 	name = "Special ops - Officer"
 	uniform = /obj/item/clothing/under/syndicate/combat
 	suit = /obj/item/clothing/suit/armor/swat/officer
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/ert
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/thermal/plain/eyepatch
 	mask = /obj/item/clothing/mask/smokable/cigarette/cigar/havana
 	head = /obj/item/clothing/head/beret	//deathsquad
@@ -15,6 +18,10 @@
 	id_type = /obj/item/weapon/card/id/centcom/ERT
 	id_desc = "Special operations ID."
 	id_pda_assignment = "Special Operations Officer"
+
+	headset = /obj/item/radio/headset/ert
+	headset_alt = /obj/item/radio/headset/ert
+	headset_earbud = /obj/item/radio/headset/ert
 
 /decl/hierarchy/outfit/spec_op_officer/space
 	name = "Special ops - Officer in space"
@@ -29,13 +36,21 @@
 	uniform = /obj/item/clothing/under/ert
 	shoes = /obj/item/clothing/shoes/boots/swat
 	gloves = /obj/item/clothing/gloves/swat
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/ert
 	belt = /obj/item/weapon/gun/energy/gun
+=======
+	belt = /obj/item/gun/energy/gun
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/sunglasses
 	back = /obj/item/weapon/storage/backpack/satchel
 
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/centcom/ERT
+
+	headset = /obj/item/radio/headset/ert
+	headset_alt = /obj/item/radio/headset/ert
+	headset_earbud = /obj/item/radio/headset/ert
 
 /decl/hierarchy/outfit/death_command
 	name = "Spec ops - Death commando"
@@ -55,8 +70,12 @@
 	name = "Spec ops - Mercenary"
 	uniform = /obj/item/clothing/under/syndicate
 	shoes = /obj/item/clothing/shoes/boots/combat
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/syndicate
 	belt = /obj/item/weapon/storage/belt/security
+=======
+	belt = /obj/item/storage/belt/security
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/sunglasses
 	gloves = /obj/item/clothing/gloves/swat
 
@@ -65,5 +84,9 @@
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/syndicate
 	id_pda_assignment = "Mercenary"
+
+	headset = /obj/item/radio/headset/syndicate
+	headset_alt = /obj/item/radio/headset/alt/syndicate
+	headset_earbud = /obj/item/radio/headset/earbud/syndicate
 
 	flags = OUTFIT_HAS_BACKPACK

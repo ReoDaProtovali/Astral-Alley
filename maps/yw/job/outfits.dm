@@ -8,7 +8,10 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	name = OUTFIT_JOB_NAME("Explorer")
 	shoes = /obj/item/clothing/shoes/boots/winter/explorer
 	uniform = /obj/item/clothing/under/explorer
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/explorer
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	id_slot = slot_wear_id
 	pda_slot = slot_l_store
 	pda_type = /obj/item/device/pda/explorer //VORESTation Edit - Better Brown
@@ -17,6 +20,10 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_COMPREHENSIVE_SURVIVAL
 	backpack_contents = list(/obj/item/clothing/accessory/permit/gun/planetside = 1)
 
+	headset = /obj/item/radio/headset/explorer
+	headset_alt = /obj/item/radio/headset/explorer
+	headset_earbud = /obj/item/radio/headset/explorer
+
 /decl/hierarchy/outfit/job/explorer2/post_equip(mob/living/carbon/human/H)
 	..()
 	for(var/obj/item/clothing/accessory/permit/gun/planetside/permit in H.back.contents)
@@ -41,32 +48,50 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	suit = /obj/item/clothing/suit/storage/toggle/bomber/pilot
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/fakesunglasses/aviator
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/pilot/alt
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	id_slot = slot_wear_id
 	pda_slot = slot_belt
 	pda_type = /obj/item/device/pda //VOREStation Edit - Civilian
 	id_pda_assignment = "Pilot"
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_COMPREHENSIVE_SURVIVAL
 
+	headset = /obj/item/radio/headset/alt/pilot
+	headset_alt = /obj/item/radio/headset/alt/pilot
+	headset_earbud = /obj/item/radio/headset/alt/pilot
+
 /decl/hierarchy/outfit/job/medical/sar
 	name = OUTFIT_JOB_NAME("Field Medic") //VOREStation Edit
 	uniform = /obj/item/clothing/under/utility/blue
 	//suit = /obj/item/clothing/suit/storage/hooded/wintercoat/medical/sar //VOREStation Edit
 	shoes = /obj/item/clothing/shoes/boots/winter/explorer
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/sar
 	l_hand = /obj/item/weapon/storage/firstaid/regular
 	belt = /obj/item/weapon/storage/belt/medical/emt
+=======
+	l_hand = /obj/item/storage/firstaid/regular
+	belt = /obj/item/storage/belt/medical/emt
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	pda_slot = slot_l_store
 	pda_type = /obj/item/device/pda/sar //VOREStation Add
 	id_pda_assignment = "Field Medic" //VOREStation Edit
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL|OUTFIT_COMPREHENSIVE_SURVIVAL
 
+	headset = /obj/item/radio/headset/sar
+	headset_alt = /obj/item/radio/headset/sar
+	headset_earbud = /obj/item/radio/headset/sar
 
 /decl/hierarchy/outfit/job/explorer2
 	name = OUTFIT_JOB_NAME("Explorer")
 	shoes = /obj/item/clothing/shoes/boots/winter/explorer
 	uniform = /obj/item/clothing/under/explorer
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/explorer
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	id_slot = slot_wear_id
 	pda_slot = slot_l_store
 	pda_type = /obj/item/device/pda/explorer //VORESTation Edit - Better Brown
@@ -75,6 +100,10 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_COMPREHENSIVE_SURVIVAL
 	backpack_contents = list(/obj/item/clothing/accessory/permit/gun/planetside = 1)
 
+	headset = /obj/item/radio/headset/explorer
+	headset_alt = /obj/item/radio/headset/explorer
+	headset_earbud = /obj/item/radio/headset/explorer
+
 /decl/hierarchy/outfit/job/explorer2/post_equip(mob/living/carbon/human/H)
 	..()
 	for(var/obj/item/clothing/accessory/permit/gun/planetside/permit in H.back.contents)
@@ -99,7 +128,10 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	suit = /obj/item/clothing/suit/storage/toggle/bomber/pilot
 	gloves = /obj/item/clothing/gloves/fingerless
 	glasses = /obj/item/clothing/glasses/fakesunglasses/aviator
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/pilot/alt
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	id_slot = slot_wear_id
 	pda_slot = slot_belt
 	pda_type = /obj/item/device/pda //VOREStation Edit - Civilian
@@ -107,26 +139,42 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	id_pda_assignment = "Pilot"
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_COMPREHENSIVE_SURVIVAL
 
+	headset = /obj/item/radio/headset/alt/pilot
+	headset_alt = /obj/item/radio/headset/alt/pilot
+	headset_earbud = /obj/item/radio/headset/alt/pilot
+
 /decl/hierarchy/outfit/job/medical/sar
 	name = OUTFIT_JOB_NAME("Field Medic") //VOREStation Edit
 	uniform = /obj/item/clothing/under/utility/blue
 	//suit = /obj/item/clothing/suit/storage/hooded/wintercoat/medical/sar //VOREStation Edit
 	shoes = /obj/item/clothing/shoes/boots/winter/explorer
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/sar
 	l_hand = /obj/item/weapon/storage/firstaid/regular
 	belt = /obj/item/weapon/storage/belt/medical/emt
+=======
+	l_hand = /obj/item/storage/firstaid/regular
+	belt = /obj/item/storage/belt/medical/emt
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	pda_slot = slot_l_store
 	pda_type = /obj/item/device/pda/sar //VOREStation Add
 	id_type = /obj/item/weapon/card/id/medical/sar
 	id_pda_assignment = "Field Medic" //VOREStation Edit
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL|OUTFIT_COMPREHENSIVE_SURVIVAL
 
+	headset = /obj/item/radio/headset/sar
+	headset_alt = /obj/item/radio/headset/sar
+	headset_earbud = /obj/item/radio/headset/sar
+
 
 /decl/hierarchy/outfit/job/pathfinder
 	name = OUTFIT_JOB_NAME("Pathfinder")
 	shoes = /obj/item/clothing/shoes/boots/winter/explorer
 	uniform = /obj/item/clothing/under/explorer //TODO: Uniforms.
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/explorer
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	id_slot = slot_wear_id
 	pda_slot = slot_l_store
 	pda_type = /obj/item/device/pda/pathfinder
@@ -134,6 +182,10 @@ Keep outfits simple. Spawn with basic uniforms and minimal gear. Gear instead go
 	id_pda_assignment = "Pathfinder"
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL|OUTFIT_COMPREHENSIVE_SURVIVAL
 	backpack_contents = list(/obj/item/clothing/accessory/permit/gun/planetside = 1)
+
+	headset = /obj/item/radio/headset/explorer
+	headset_alt = /obj/item/radio/headset/explorer
+	headset_earbud = /obj/item/radio/headset/explorer
 
 /decl/hierarchy/outfit/job/pathfinder/post_equip(mob/living/carbon/human/H)
 	..()

@@ -6,12 +6,19 @@
 	r_pocket = /obj/item/weapon/spacecash/ewallet
 	l_pocket = /obj/item/device/survivalcapsule/superpose
 
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/outsider
 
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	id_slot = slot_wear_id
 	id_type = /obj/item/weapon/card/id/external // No access, allows activating PDA's.
 
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL|OUTFIT_COMPREHENSIVE_SURVIVAL
+
+	headset = /obj/item/radio/headset/outsider
+	headset_alt = /obj/item/radio/headset/outsider
+	headset_earbud = /obj/item/radio/headset/outsider
 
 /decl/hierarchy/outfit/noncrew/post_equip(mob/living/carbon/human/H)
 	..()

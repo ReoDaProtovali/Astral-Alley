@@ -180,14 +180,21 @@
 	id_type = /obj/item/weapon/card/id/talon/captain
 	id_slot = slot_wear_id
 	pda_type = null
+<<<<<<< HEAD
 
 	l_ear = /obj/item/device/radio/headset/talon
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/sunglasses
 	uniform = /obj/item/clothing/under/rank/talon/command
 	shoes = /obj/item/clothing/shoes/brown
 	backpack = /obj/item/weapon/storage/backpack/talon
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/talon
 	messenger_bag = /obj/item/weapon/storage/backpack/messenger/talon
+
+	headset = /obj/item/radio/headset/talon
+	headset_alt = /obj/item/radio/headset/talon
+	headset_earbud = /obj/item/radio/headset/talon
 
 /decl/hierarchy/outfit/job/talon_pilot
 	name = OUTFIT_JOB_NAME("Talon Pilot")
@@ -198,7 +205,10 @@
 	pda_type = null
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_COMPREHENSIVE_SURVIVAL
 
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/talon
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	shoes = /obj/item/clothing/shoes/black
 	head = /obj/item/clothing/head/pilot_vr/talon
 	uniform = /obj/item/clothing/under/rank/talon/pilot
@@ -210,6 +220,10 @@
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/talon
 	messenger_bag = /obj/item/weapon/storage/backpack/messenger/talon
 
+	headset = /obj/item/radio/headset/talon
+	headset_alt = /obj/item/radio/headset/talon
+	headset_earbud = /obj/item/radio/headset/talon
+
 /decl/hierarchy/outfit/job/talon_doctor
 	name = OUTFIT_JOB_NAME("Talon Doctor")
 	hierarchy_type = /decl/hierarchy/outfit/job
@@ -218,7 +232,10 @@
 	id_slot = slot_wear_id
 	pda_type = null
 
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/talon
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	shoes = /obj/item/clothing/shoes/white
 	backpack = /obj/item/weapon/storage/backpack/medic
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/med
@@ -231,6 +248,10 @@
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/talon
 	messenger_bag = /obj/item/weapon/storage/backpack/messenger/talon
 
+	headset = /obj/item/radio/headset/talon
+	headset_alt = /obj/item/radio/headset/talon
+	headset_earbud = /obj/item/radio/headset/talon
+
 /decl/hierarchy/outfit/job/talon_security
 	name = OUTFIT_JOB_NAME("Talon Security")
 	hierarchy_type = /decl/hierarchy/outfit/job
@@ -240,7 +261,10 @@
 	pda_type = null
 	backpack_contents = list(/obj/item/weapon/handcuffs = 1)
 
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/talon
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	gloves = /obj/item/clothing/gloves/black
 	shoes = /obj/item/clothing/shoes/boots/jackboots
 	backpack = /obj/item/weapon/storage/backpack/security
@@ -252,6 +276,10 @@
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/talon
 	messenger_bag = /obj/item/weapon/storage/backpack/messenger/talon
 
+	headset = /obj/item/radio/headset/talon
+	headset_alt = /obj/item/radio/headset/talon
+	headset_earbud = /obj/item/radio/headset/talon
+
 /decl/hierarchy/outfit/job/talon_engineer
 	name = OUTFIT_JOB_NAME("Talon Engineer")
 	hierarchy_type = /decl/hierarchy/outfit/job
@@ -261,8 +289,12 @@
 	pda_type = null
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/talon
 	belt = /obj/item/weapon/storage/belt/utility/full
+=======
+	belt = /obj/item/storage/belt/utility/full
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	shoes = /obj/item/clothing/shoes/boots/workboots
 	r_pocket = /obj/item/device/t_scanner
 	backpack = /obj/item/weapon/storage/backpack/industrial
@@ -274,6 +306,10 @@
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/talon
 	messenger_bag = /obj/item/weapon/storage/backpack/messenger/talon
 
+	headset = /obj/item/radio/headset/talon
+	headset_alt = /obj/item/radio/headset/talon
+	headset_earbud = /obj/item/radio/headset/talon
+
 /decl/hierarchy/outfit/job/talon_miner
 	name = OUTFIT_JOB_NAME("Talon Miner")
 	hierarchy_type = /decl/hierarchy/outfit/job
@@ -283,11 +319,24 @@
 	pda_type = null
 	flags = OUTFIT_HAS_BACKPACK|OUTFIT_EXTENDED_SURVIVAL
 
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset/talon
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	shoes = /obj/item/clothing/shoes/boots/workboots
 	r_pocket = /obj/item/weapon/storage/bag/ore
 	l_pocket = /obj/item/weapon/tool/crowbar
 	uniform = /obj/item/clothing/under/rank/talon/basic
+<<<<<<< HEAD
 	backpack = /obj/item/weapon/storage/backpack/talon
 	satchel_one = /obj/item/weapon/storage/backpack/satchel/talon
 	messenger_bag = /obj/item/weapon/storage/backpack/messenger/talon
+=======
+	backpack = /obj/item/storage/backpack/talon
+	satchel_one = /obj/item/storage/backpack/satchel/talon
+	messenger_bag = /obj/item/storage/backpack/messenger/talon
+
+	headset = /obj/item/radio/headset/talon
+	headset_alt = /obj/item/radio/headset/talon
+	headset_earbud = /obj/item/radio/headset/talon
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))

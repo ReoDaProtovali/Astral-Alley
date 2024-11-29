@@ -5,7 +5,10 @@
 	gloves = /obj/item/clothing/gloves/black
 	mask = /obj/item/clothing/mask/gas/clown_hat
 	head = /obj/item/clothing/head/chaplain_hood
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/thermal/plain/monocle
 	suit = /obj/item/clothing/suit/storage/hooded/chaplain_hoodie
 	r_pocket = /obj/item/weapon/bikehorn
@@ -15,6 +18,10 @@
 	id_type = /obj/item/weapon/card/id/syndicate/station_access
 	id_pda_assignment = "Tunnel Clown!"
 
+	headset = /obj/item/radio/headset
+	headset_alt = /obj/item/radio/headset/alt
+	headset_earbud = /obj/item/radio/headset/earbud
+
 /decl/hierarchy/outfit/masked_killer
 	name = "Masked Killer"
 	uniform = /obj/item/clothing/under/overalls
@@ -22,12 +29,19 @@
 	gloves = /obj/item/clothing/gloves/sterile/latex
 	mask = /obj/item/clothing/mask/surgical
 	head = /obj/item/clothing/head/welding
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/thermal/plain/monocle
 	suit = /obj/item/clothing/suit/storage/apron
 	l_pocket = /obj/item/weapon/material/knife/tacknife
 	r_pocket = /obj/item/weapon/surgical/scalpel
 	r_hand = /obj/item/weapon/material/twohanded/fireaxe
+
+	headset = /obj/item/radio/headset
+	headset_alt = /obj/item/radio/headset/alt
+	headset_earbud = /obj/item/radio/headset/earbud
 
 /decl/hierarchy/outfit/masked_killer/post_equip(var/mob/living/carbon/human/H)
 	var/victim = get_mannequin(H.ckey)
@@ -39,7 +53,10 @@
 	uniform = /obj/item/clothing/under/suit_jacket{ starting_accessories=list(/obj/item/clothing/accessory/wcoat) }
 	shoes = /obj/item/clothing/shoes/black
 	gloves = /obj/item/clothing/gloves/black
+<<<<<<< HEAD
 	l_ear = /obj/item/device/radio/headset
+=======
+>>>>>>> 800252c62b ([MIRROR] Headset Option Fixes (#9540))
 	glasses = /obj/item/clothing/glasses/sunglasses
 	l_pocket = /obj/item/weapon/melee/energy/sword
 	mask = /obj/item/clothing/mask/gas/clown_hat
@@ -48,6 +65,10 @@
 	id_type = /obj/item/weapon/card/id/syndicate/station_access
 	pda_slot = slot_belt
 	pda_type = /obj/item/device/pda/heads
+
+	headset = /obj/item/radio/headset
+	headset_alt = /obj/item/radio/headset/alt
+	headset_earbud = /obj/item/radio/headset/earbud
 
 /decl/hierarchy/outfit/professional/post_equip(var/mob/living/carbon/human/H)
 	var/obj/item/weapon/storage/secure/briefcase/sec_briefcase = new(H)
