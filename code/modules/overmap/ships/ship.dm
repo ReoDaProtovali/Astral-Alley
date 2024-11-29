@@ -38,8 +38,6 @@
 	var/engines_state = 0 //global on/off toggle for all engines
 	var/thrust_limit = 1  //global thrust limit for all engines, 0..1
 	var/halted = 0        //admin halt or other stop.
-	var/skill_needed = SKILL_ADEPT  //piloting skill needed to steer it without going in random dir
-	var/operator_skill
 	//VOREStation add
 	var/last_sound = 0 //The last time a ship sound was played		//VOREStation add
 	var/sound_cooldown = 10 SECONDS		//VOREStation add
@@ -65,7 +63,6 @@
 
 /obj/effect/overmap/visitable/ship/relaymove(mob/user, direction, accel_limit)
 	accelerate(direction, accel_limit)
-	operator_skill = user.get_skill_value(/datum/skill/pilot)
 
 /obj/effect/overmap/visitable/ship/proc/is_still()
 	return !MOVING(speed[1]) && !MOVING(speed[2])
@@ -280,9 +277,6 @@
 /obj/effect/overmap/visitable/ship/proc/unhalt()
 	if(!SSshuttles.overmap_halted)
 		halted = 0
-
-/obj/effect/overmap/visitable/ship/proc/get_helm_skill()//delete this mover operator skill to overmap obj
-	return operator_skill
 
 /obj/effect/overmap/visitable/ship/populate_sector_objects()
 	..()
