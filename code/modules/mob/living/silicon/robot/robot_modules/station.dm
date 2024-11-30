@@ -214,12 +214,21 @@ var/global/list/robot_modules = list(
 	T.water = water
 	src.modules += T
 	//CHOMPEdit End
+<<<<<<< HEAD
 	src.modules += new /obj/item/device/gps/robot(src)
 	src.modules += new /obj/item/device/boop_module(src)
 	src.modules += new /obj/item/device/flash/robot(src)
 	src.modules += new /obj/item/weapon/extinguisher(src)
 	src.modules += new /obj/item/weapon/gripper/scene(src) //CHOMPEdit - Give all borgs a scene gripper
 	src.modules += new /obj/item/weapon/tool/crowbar/cyborg(src)
+=======
+	src.modules += new /obj/item/gps/robot(src)
+	src.modules += new /obj/item/boop_module(src)
+	src.modules += new /obj/item/flash/robot(src)
+	src.modules += new /obj/item/extinguisher(src)
+	src.modules += new /obj/item/tool/crowbar/cyborg(src)
+	src.modules += new /obj/item/gripper/scene(src)
+>>>>>>> 03e4547819 ([MIRROR] up ports misc gripper, gargoyle, petrification, some message fixes (#9566))
 
 /obj/item/weapon/robot_module/robot/standard
 	name = "standard robot module"

@@ -83,7 +83,11 @@
 
 	var/decl/emote/use_emote = get_emote_by_key(act)
 	if(!istype(use_emote))
+<<<<<<< HEAD
 		to_chat(src, SPAN_WARNING("Unknown emote '[act]'. Type <b>say *help</b> for a list of usable emotes. ([act] [message])")) //CHOMPEdit - Add full message in the event you used * instead of ! or something like that
+=======
+		to_chat(src, span_warning("Unknown emote '[act]'. Type " + span_bold("say *help") + " for a list of usable emotes. ([act] [message])")) // Add full message in the event you used * instead of ! or something like that
+>>>>>>> 03e4547819 ([MIRROR] up ports misc gripper, gargoyle, petrification, some message fixes (#9566))
 		return
 
 	if(!use_emote.mob_can_use(src))
@@ -225,13 +229,18 @@
 					if(isobserver(M))
 						message = "<span class='emote'><B>[src]</B> ([ghost_follow_link(src, M)]) [input]</span>"
 					if(usr && usr.client && M && !(get_z(usr) == get_z(M)))
+<<<<<<< HEAD
 						message = "<span class='multizsay'>[message]</span>"
 					//CHOMPEdit Start - If you are in the same tile, right next to, or being held by a person doing an emote, you should be able to see it while blind
 					if(m_type != AUDIBLE_MESSAGE && (src.Adjacent(M) || (istype(src.loc, /obj/item/weapon/holder) && src.loc.loc == M)))
+=======
+						message = span_multizsay("[message]")
+					// If you are in the same tile, right next to, or being held by a person doing an emote, you should be able to see it while blind
+					if(m_type != AUDIBLE_MESSAGE && (src.Adjacent(M) || (istype(src.loc, /obj/item/holder) && src.loc.loc == M)))
+>>>>>>> 03e4547819 ([MIRROR] up ports misc gripper, gargoyle, petrification, some message fixes (#9566))
 						M.show_message(message)
 					else
 						M.show_message(message, m_type)
-					//CHOMPEdit End
 					M.create_chat_message(src, "[runemessage]", FALSE, list("emote"), (m_type == AUDIBLE_MESSAGE))
 
 		for(var/obj/O as anything in o_viewers)

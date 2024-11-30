@@ -561,7 +561,28 @@
 
 	user.clean_blood()
 	if(ishuman(user))
+<<<<<<< HEAD
 		user:update_inv_gloves()
+=======
+		var/mob/living/carbon/human/H = user
+		H.gunshot_residue = null
+		if(H.gloves)
+			H.gloves.clean_blood()
+			H.update_inv_gloves()
+			H.gloves.germ_level = 0
+		else
+			if(H.r_hand)
+				H.r_hand.clean_blood()
+			if(H.l_hand)
+				H.l_hand.clean_blood()
+			H.bloody_hands = 0
+			H.germ_level = 0
+			H.hand_blood_color = null
+			LAZYCLEARLIST(H.blood_DNA)
+		H.update_bloodied()
+	else
+		user.clean_blood()
+>>>>>>> 03e4547819 ([MIRROR] up ports misc gripper, gargoyle, petrification, some message fixes (#9566))
 	for(var/mob/V in viewers(src, null))
 		V.show_message("<span class='notice'>[user] washes their hands using \the [src].</span>")
 
