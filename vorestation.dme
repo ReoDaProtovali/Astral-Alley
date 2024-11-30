@@ -2034,6 +2034,11 @@
 #include "code\modules\asset_cache\assets\fontawesome.dm"
 #include "code\modules\asset_cache\assets\icon_ref_map.dm"
 #include "code\modules\asset_cache\assets\jquery.dm"
+<<<<<<< HEAD
+=======
+#include "code\modules\asset_cache\assets\kitchen_recipes.dm"
+#include "code\modules\asset_cache\assets\preferences.dm"
+>>>>>>> 91f903f9d3 ([MIRROR] Make the microwave preview what it'll (probably) create (#9565))
 #include "code\modules\asset_cache\assets\tgfont.dm"
 #include "code\modules\asset_cache\assets\tgui.dm"
 #include "code\modules\asset_cache\transports\asset_transport.dm"
