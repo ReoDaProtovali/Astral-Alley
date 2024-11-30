@@ -368,9 +368,15 @@ var/list/channel_to_radio_key = new
 
 			if(M && src) //If we still exist, when the spawn processes
 				//VOREStation Add - Ghosts don't hear whispers
+<<<<<<< HEAD
 				if(whispering && isobserver(M) && (!M.is_preference_enabled(/datum/client_preference/ghost_see_whisubtle) || \
 				(!(is_preference_enabled(/datum/client_preference/whisubtle_vis) || (isbelly(M.loc) && src == M.loc:owner))  && !M.client?.holder))) // CHOMPedit
 					M.show_message("<span class='game say'><span class='name'>[src.name]</span> [w_not_heard].</span>", 2)
+=======
+				if(whispering && isobserver(M) && (!M.client?.prefs?.read_preference(/datum/preference/toggle/ghost_see_whisubtle) || \
+				(!(client?.prefs?.read_preference(/datum/preference/toggle/whisubtle_vis) || (isbelly(M.loc) && src == M.loc:owner))  && !M.client?.holder)))
+					M.show_message(span_game(span_say(span_name(src.name) + " [w_not_heard].")), 2)
+>>>>>>> 03e4547819 ([MIRROR] up ports misc gripper, gargoyle, petrification, some message fixes (#9566))
 					return
 				//VOREStation Add End
 
@@ -432,7 +438,11 @@ var/list/channel_to_radio_key = new
 /mob/living/proc/say_signlang(var/message, var/verb="gestures", var/verb_understood="gestures", var/datum/language/language, var/type = 1)
 	var/turf/T = get_turf(src)
 	//We're in something, gesture to people inside the same thing
+<<<<<<< HEAD
 	if(loc != T && !istype(loc, /obj/item/weapon/holder)) //CHOMPEdit - Partially fixes sign language while being held.
+=======
+	if(loc != T && !istype(loc, /obj/item/holder)) // Partially fixes sign language while being held.
+>>>>>>> 03e4547819 ([MIRROR] up ports misc gripper, gargoyle, petrification, some message fixes (#9566))
 		for(var/mob/M in loc)
 			M.hear_signlang(message, verb, verb_understood, language, src, type)
 

@@ -1,9 +1,8 @@
 /mob/proc/say(var/message, var/datum/language/speaking = null, var/whispering = 0)
 	return
 
-/mob/verb/whisper(message as text)  //CHOMPEdit
+/mob/verb/whisper(message as text)
 	set name = "Whisper"
-	// set category = "IC.Subtle" //CHOMPEdit
 	set hidden = 1
 	//VOREStation Addition Start
 	if(forced_psay)
@@ -13,10 +12,8 @@
 
 	usr.say(message,whispering=1)
 
-/mob/verb/say_verb(message as text) //CHOMPEdit
+/mob/verb/say_verb(message as text)
 	set name = "Say"
-	// set category = "IC.Chat" //CHOMPEdit
-	set instant = TRUE // CHOMPEdit
 	set hidden = 1
 	//VOREStation Addition Start
 	if(forced_psay)
@@ -32,9 +29,8 @@
 		QUEUE_OR_CALL_VERB_FOR(VERB_CALLBACK(src, TYPE_PROC_REF(/mob, say), message), SSspeech_controller)
 	// CHOMPEdit End
 
-/mob/verb/me_verb(message as message) //CHOMPEdit
+/mob/verb/me_verb(message as message)
 	set name = "Me"
-	// set category = "IC.Chat" //CHOMPEdit
 	set desc = "Emote to nearby people (and your pred/prey)"
 	set hidden = 1
 
@@ -118,11 +114,17 @@
 	if(speaking.flags & NONVERBAL)
 		if(sdisabilities & BLIND || blinded)
 			return FALSE
-		if(!other) //CHOMPEdit - Fixes seeing non-verbal languages while being held
+		if(!other)
 			return FALSE
+<<<<<<< HEAD
 		//CHOMPEdit Start - Fixes seeing non-verbal languages while being held
 		if(istype(other.loc, /obj/item/weapon/holder))
 			if(istype(src.loc, /obj/item/weapon/holder))
+=======
+		// Fixes seeing non-verbal languages while being held
+		if(istype(other.loc, /obj/item/holder))
+			if(istype(src.loc, /obj/item/holder))
+>>>>>>> 03e4547819 ([MIRROR] up ports misc gripper, gargoyle, petrification, some message fixes (#9566))
 				if(!(other.loc in view(src.loc.loc)))
 					return FALSE
 			else if(!(other.loc in view(src)))
@@ -132,7 +134,6 @@
 				return FALSE
 		else if((!other) in view(src))
 			return FALSE
-		//CHOMPEdit End
 
 	//Language check.
 	for(var/datum/language/L in languages)
