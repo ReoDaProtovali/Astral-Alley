@@ -179,14 +179,7 @@
 	if(length(holdingitems))
 		options["grind"] = radial_grind
 
-	var/choice
-	if(length(options) < 1)
-		return
-	if(length(options) == 1)
-		for(var/key in options)
-			choice = key
-	else
-		choice = show_radial_menu(user, src, options, require_near = !issilicon(user))
+	var/choice = show_radial_menu(user, src, options, require_near = !issilicon(user), autopick_single_option = FALSE)
 
 	// post choice verification
 	if(inuse || (isAI(user) && stat & NOPOWER) || user.incapacitated())
