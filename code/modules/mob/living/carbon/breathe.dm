@@ -2,7 +2,11 @@
 
 //Start of a breath chain, calls breathe()
 /mob/living/carbon/handle_breathing()
+<<<<<<< HEAD
 	if(air_master.current_cycle%4==2 || failed_last_breath || (health < CONFIG_GET(number/health_threshold_crit))) 	//First, resolve location and get a breath // CHOMPEdit
+=======
+	if(SSair.current_cycle%4==2 || failed_last_breath || (health < CONFIG_GET(number/health_threshold_crit))) 	//First, resolve location and get a breath
+>>>>>>> a7e4ef7dad ([MIRROR] Some ZAS tweaks and minor optimizations (#9544))
 		breathe()
 
 /mob/living/carbon/proc/breathe()

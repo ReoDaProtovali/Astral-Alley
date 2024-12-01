@@ -101,10 +101,13 @@
 			dirtoverlay.alpha = min((dirt - 50) * 5, 255)
 
 /turf/simulated/Entered(atom/A, atom/OL)
+<<<<<<< HEAD
 	if(movement_disabled && usr.ckey != movement_disabled_exception)
 		to_chat(usr, "<span class='danger'>Movement is admin-disabled.</span>") //This is to identify lag problems
 		return
 
+=======
+>>>>>>> a7e4ef7dad ([MIRROR] Some ZAS tweaks and minor optimizations (#9544))
 	if (istype(A,/mob/living))
 		var/dirtslip = FALSE	//CHOMPEdit
 		var/mob/living/M = A

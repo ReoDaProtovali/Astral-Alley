@@ -154,8 +154,13 @@ var/list/channel_to_radio_key = new
 	if(client)
 		if(message)
 			client.handle_spam_prevention(MUTE_IC)
+<<<<<<< HEAD
 			if((client.prefs.muted & MUTE_IC) || say_disabled)
 				to_chat(src, "<span class='warning'>You cannot speak in IC (Muted).</span>")
+=======
+			if((client.prefs.muted & MUTE_IC))
+				to_chat(src, span_warning("You cannot speak in IC (Muted)."))
+>>>>>>> a7e4ef7dad ([MIRROR] Some ZAS tweaks and minor optimizations (#9544))
 				return
 
 	//Redirect to say_dead if talker is dead
