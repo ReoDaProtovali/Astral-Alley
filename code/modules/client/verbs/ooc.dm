@@ -3,9 +3,12 @@
 	set name = "OOC"
 	set category = "OOC.Chat" //CHOMPEdit
 
+<<<<<<< HEAD
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='warning'>Speech is currently admin-disabled.</span>")
 		return
+=======
+>>>>>>> a7e4ef7dad ([MIRROR] Some ZAS tweaks and minor optimizations (#9544))
 
 	if(!mob)	return
 	if(IsGuestKey(key))
@@ -86,10 +89,13 @@
 	set desc = "Local OOC, seen only by those in view."
 	set category = "OOC.Chat" //CHOMPEdit
 
+<<<<<<< HEAD
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 
+=======
+>>>>>>> a7e4ef7dad ([MIRROR] Some ZAS tweaks and minor optimizations (#9544))
 	if(!mob)
 		return
 

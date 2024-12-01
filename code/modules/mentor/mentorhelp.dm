@@ -420,10 +420,13 @@ GLOBAL_DATUM_INIT(mhelp_tickets, /datum/mentor_help_tickets, new)
 	set category = "Admin"
 	set name = "Mentorhelp"
 
+<<<<<<< HEAD
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, "<span class='danger'>Speech is currently admin-disabled.</span>")
 		return
 
+=======
+>>>>>>> a7e4ef7dad ([MIRROR] Some ZAS tweaks and minor optimizations (#9544))
 	//handle muting and automuting
 	if(prefs.muted & MUTE_ADMINHELP)
 		to_chat(src, "<span class='danger'>Error: Mentor-PM: You cannot send adminhelps (Muted).</span>")
