@@ -221,11 +221,11 @@
 
 	return data
 
-/datum/entity_narrate/tgui_act(action, list/params)
+/datum/entity_narrate/tgui_act(action, list/params, datum/tgui/ui)
 	. = ..()
 
 	if(.)	return
-	if(!check_rights_for(usr.client, R_FUN)) return
+	if(!check_rights_for(ui.user.client, R_FUN)) return
 
 	switch(action)
 		if("change_mode_multi")
@@ -260,7 +260,11 @@
 					var/datum/weakref/wref = entity_refs[tgui_selected_id]
 					tgui_selected_refs = wref.resolve()
 					if(!tgui_selected_refs)
+<<<<<<< HEAD
 						to_chat(usr, SPAN_NOTICE("[tgui_selected_id] has invalid reference, deleting"))
+=======
+						to_chat(ui.user, span_notice("[tgui_selected_id] has invalid reference, deleting"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 						entity_names -= tgui_selected_id
 						entity_refs -= tgui_selected_id
 						tgui_selected_id = ""
@@ -281,9 +285,15 @@
 						tgui_selected_name = A.name
 		if("narrate")
 			if(world.time < (tgui_last_message + 0.5 SECONDS))
+<<<<<<< HEAD
 				to_chat(usr, SPAN_NOTICE("You can't messages that quickly! Wait at least half a second"))
 			else
 				to_chat(usr, SPAN_NOTICE("Message successfully sent!"))
+=======
+				to_chat(ui.user, span_notice("You can't messages that quickly! Wait at least half a second"))
+			else
+				to_chat(ui.user, span_notice("Message successfully sent!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				tgui_last_message = world.time
 				var/message = params["message"] //Sanitizing before speaking it
 				if(tgui_selection_mode)
@@ -291,7 +301,11 @@
 						var/datum/weakref/wref = entity_refs[entity]
 						var/ref = wref.resolve()
 						if(!ref)
+<<<<<<< HEAD
 							to_chat(usr, SPAN_NOTICE("[entity] has invalid reference, deleting"))
+=======
+							to_chat(ui.user, span_notice("[entity] has invalid reference, deleting"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 							entity_names -= entity
 							entity_refs -= entity
 							tgui_selected_id_multi -= entity
@@ -299,7 +313,7 @@
 						if(istype(ref, /mob/living))
 							var/mob/living/L = ref
 							if(L.client)
-								log_and_message_admins("used entity-narrate to speak through [L.ckey]'s mob", usr)
+								log_and_message_admins("used entity-narrate to speak through [L.ckey]'s mob", ui.user)
 							narrate_tgui_mob(L, message)
 						else if(istype(ref, /atom))
 							var/atom/A = ref
@@ -308,7 +322,11 @@
 					var/datum/weakref/wref = entity_refs[tgui_selected_id]
 					var/ref = wref.resolve()
 					if(!ref)
+<<<<<<< HEAD
 						to_chat(usr, SPAN_NOTICE("[tgui_selected_id] has invalid reference, deleting"))
+=======
+						to_chat(ui.user, span_notice("[tgui_selected_id] has invalid reference, deleting"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 						entity_names -= tgui_selected_id
 						entity_refs -= tgui_selected_id
 						tgui_selected_id = ""
@@ -319,7 +337,7 @@
 					if(istype(ref, /mob/living))
 						var/mob/living/L = ref
 						if(L.client)
-							log_and_message_admins("used entity-narrate to speak through [L.ckey]'s mob", usr)
+							log_and_message_admins("used entity-narrate to speak through [L.ckey]'s mob", ui.user)
 						narrate_tgui_mob(L, message)
 					else if(istype(ref, /atom))
 						var/atom/A = ref

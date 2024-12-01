@@ -250,7 +250,7 @@
 	var/obj/item/weapon/card/id/I = W.GetID()
 	// Awaiting payment state
 	if(state == 2)
-		if(process_payment(I,W))
+		if(process_payment(user, I,W))
 			fabricate_and_recalc_price(1)
 			if((devtype == 1) && fabricated_laptop)
 				if(fabricated_laptop.battery_module)
@@ -274,18 +274,26 @@
 	return ..()
 
 // Simplified payment processing, returns 1 on success.
+<<<<<<< HEAD
 /obj/machinery/lapvend/proc/process_payment(var/obj/item/weapon/card/id/I, var/obj/item/ID_container)
 	if(I==ID_container || ID_container == null)
 		visible_message("<span class='info'>\The [usr] swipes \the [I] through \the [src].</span>")
 	else
 		visible_message("<span class='info'>\The [usr] swipes \the [ID_container] through \the [src].</span>")
+=======
+/obj/machinery/lapvend/proc/process_payment(mob/user, var/obj/item/card/id/I, var/obj/item/ID_container)
+	if(I==ID_container || ID_container == null)
+		visible_message(span_info("\The [user] swipes \the [I] through \the [src]."))
+	else
+		visible_message(span_info("\The [user] swipes \the [ID_container] through \the [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	var/datum/money_account/customer_account = get_account(I.associated_account_number)
 	if (!customer_account || customer_account.suspended)
 		ping("Connection error. Unable to connect to account.")
 		return 0
 
 	if(customer_account.security_level != 0) //If card requires pin authentication (ie seclevel 1 or 2)
-		var/attempt_pin = tgui_input_number(usr, "Enter pin code", "Vendor transaction")
+		var/attempt_pin = tgui_input_number(user, "Enter pin code", "Vendor transaction")
 		customer_account = attempt_account_access(I.associated_account_number, attempt_pin, 2)
 
 		if(!customer_account)

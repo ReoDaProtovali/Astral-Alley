@@ -64,7 +64,7 @@
 
 	return data
 
-/obj/machinery/computer/drone_control/tgui_act(action, params)
+/obj/machinery/computer/drone_control/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -75,10 +75,17 @@
 				return
 
 			drone_call_area = t_area
+<<<<<<< HEAD
 			to_chat(usr, "<span class='notice'>You set the area selector to [drone_call_area].</span>")
 
 		if("ping")
 			to_chat(usr, "<span class='notice'>You issue a maintenance request for all active drones, highlighting [drone_call_area].</span>")
+=======
+			to_chat(ui.user, span_notice("You set the area selector to [drone_call_area]."))
+
+		if("ping")
+			to_chat(ui.user, span_notice("You issue a maintenance request for all active drones, highlighting [drone_call_area]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			for(var/mob/living/silicon/robot/drone/D in player_list)
 				if(D.stat == 0)
 					to_chat(D, "-- Maintenance drone presence requested in: [drone_call_area].")
@@ -87,16 +94,26 @@
 			var/mob/living/silicon/robot/drone/D = locate(params["ref"])
 
 			if(D.stat != 2)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>You issue a law synchronization directive for the drone.</span>")
+=======
+				to_chat(ui.user, span_danger("You issue a law synchronization directive for the drone."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				D.law_resync()
 
 		if("shutdown")
 			var/mob/living/silicon/robot/drone/D = locate(params["ref"])
 
 			if(D.stat != 2)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>You issue a kill command for the unfortunate drone.</span>")
 				message_admins("[key_name_admin(usr)] issued kill order for drone [key_name_admin(D)] from control console.")
 				log_game("[key_name(usr)] issued kill order for [key_name(src)] from control console.")
+=======
+				to_chat(ui.user, span_danger("You issue a kill command for the unfortunate drone."))
+				message_admins("[key_name_admin(ui.user)] issued kill order for drone [key_name_admin(D)] from control console.")
+				log_game("[key_name(ui.user)] issued kill order for [key_name(src)] from control console.")
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				D.shut_down()
 
 		if("search_fab")
@@ -108,10 +125,17 @@
 					continue
 
 				dronefab = fab
+<<<<<<< HEAD
 				to_chat(usr, "<span class='notice'>Drone fabricator located.</span>")
 				return
 
 			to_chat(usr, "<span class='danger'>Unable to locate drone fabricator.</span>")
+=======
+				to_chat(ui.user, span_notice("Drone fabricator located."))
+				return
+
+			to_chat(ui.user, span_danger("Unable to locate drone fabricator."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 		if("toggle_fab")
 			if(!dronefab)
@@ -119,8 +143,16 @@
 
 			if(get_dist(src,dronefab) > 3)
 				dronefab = null
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>Unable to locate drone fabricator.</span>")
 				return
 
 			dronefab.produce_drones = !dronefab.produce_drones
 			to_chat(usr, "<span class='notice'>You [dronefab.produce_drones ? "enable" : "disable"] drone production in the nearby fabricator.</span>")
+=======
+				to_chat(ui.user, span_danger("Unable to locate drone fabricator."))
+				return
+
+			dronefab.produce_drones = !dronefab.produce_drones
+			to_chat(ui.user, span_notice("You [dronefab.produce_drones ? "enable" : "disable"] drone production in the nearby fabricator."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))

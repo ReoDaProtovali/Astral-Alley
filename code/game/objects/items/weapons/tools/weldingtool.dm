@@ -330,17 +330,29 @@
 		if(H.nif && H.nif.flag_check(NIF_V_UVFILTER,NIF_FLAGS_VISION)) return //VOREStation Add - NIF
 		switch(safety)
 			if(1)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='warning'>Your eyes sting a little.</span>")
+=======
+				to_chat(user, span_warning("Your eyes sting a little."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				E.damage += rand(1, 2)
 				if(E.damage > 12)
 					user.eye_blurry += rand(3,6)
 			if(0)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='warning'>Your eyes burn.</span>")
+=======
+				to_chat(user, span_warning("Your eyes burn."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				E.damage += rand(2, 4)
 				if(E.damage > 10)
 					E.damage += rand(4,10)
 			if(-1)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>Your thermals intensify the welder's glow. Your eyes itch and burn severely.</span>")
+=======
+				to_chat(user, span_danger("Your thermals intensify the welder's glow. Your eyes itch and burn severely."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				user.eye_blurry += rand(12,20)
 				E.damage += rand(12, 16)
 		if(safety<2)

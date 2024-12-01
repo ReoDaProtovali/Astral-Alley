@@ -92,8 +92,13 @@
 		if(container.reagents.total_volume < container.volume)
 			var/container_name = container.name
 			if(rimplant.reagents.trans_to(container, amount = rimplant.transfer_amount))
+<<<<<<< HEAD
 				user.visible_message("<span class='notice'>[usr] [pick(rimplant.emote_descriptor)] into \the [container_name].</span>",
 									"<span class='notice'>You [pick(rimplant.self_emote_descriptor)] some [rimplant.reagent_name] into \the [container_name].</span>")
+=======
+				user.visible_message(span_notice("[user] [pick(rimplant.emote_descriptor)] into \the [container_name]."),
+									span_notice("You [pick(rimplant.self_emote_descriptor)] some [rimplant.reagent_name] into \the [container_name]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				if(prob(5))
 					src.visible_message("<span class='notice'>[src] [pick(rimplant.random_emote)].</span>") // M-mlem.
 			if(rimplant.reagents.total_volume == rimplant.reagents.maximum_volume * 0.05)

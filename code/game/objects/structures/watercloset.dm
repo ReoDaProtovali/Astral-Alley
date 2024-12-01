@@ -18,8 +18,13 @@
 
 /obj/structure/toilet/attack_hand(mob/living/user as mob)
 	if(swirlie)
+<<<<<<< HEAD
 		usr.setClickCooldown(user.get_attack_speed())
 		usr.visible_message("<span class='danger'>[user] slams the toilet seat onto [swirlie.name]'s head!</span>", "<span class='notice'>You slam the toilet seat onto [swirlie.name]'s head!</span>", "You hear reverberating porcelain.")
+=======
+		user.setClickCooldown(user.get_attack_speed())
+		user.visible_message(span_danger("[user] slams the toilet seat onto [swirlie.name]'s head!"), span_notice("You slam the toilet seat onto [swirlie.name]'s head!"), "You hear reverberating porcelain.")
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		swirlie.adjustBruteLoss(5)
 		return
 
@@ -519,13 +524,20 @@
 	..()
 	if(!istype(thing) || !thing.is_open_container())
 		return ..()
-	if(!usr.Adjacent(src))
+	if(!user.Adjacent(src))
 		return ..()
 	if(!thing.reagents || thing.reagents.total_volume == 0)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='warning'>\The [thing] is empty.</span>")
 		return
 	// Clear the vessel.
 	visible_message("<b>\The [usr]</b> tips the contents of \the [thing] into \the [src].")
+=======
+		to_chat(user, span_warning("\The [thing] is empty."))
+		return
+	// Clear the vessel.
+	visible_message(span_infoplain(span_bold("\The [user]") + " tips the contents of \the [thing] into \the [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	thing.reagents.clear_reagents()
 	thing.update_icon()
 
@@ -549,13 +561,21 @@
 		to_chat(user, "<span class='warning'>Someone's already washing here.</span>")
 		return
 
+<<<<<<< HEAD
 	to_chat(usr, "<span class='notice'>You start washing your hands.</span>")
+=======
+	to_chat(user, span_notice("You start washing your hands."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	playsound(src, 'sound/effects/sink_long.ogg', 75, 1)
 
 	busy = 1
 	if(!do_after(user, 40, src))
 		busy = 0
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>You stop washing your hands.</span>")
+=======
+		to_chat(user, span_notice("You stop washing your hands."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		return
 	busy = 0
 
@@ -613,12 +633,20 @@
 		if(J.water.energy < J.water.max_energy) return
 	//CHOMPAdd End
 
+<<<<<<< HEAD
 	to_chat(usr, "<span class='notice'>You start washing \the [I].</span>")
+=======
+	to_chat(user, span_notice("You start washing \the [I]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 	busy = 1
 	if(!do_after(user, 40, src))
 		busy = 0
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>You stop washing \the [I].</span>")
+=======
+		to_chat(user, span_notice("You stop washing \the [I]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		return
 	busy = 0
 

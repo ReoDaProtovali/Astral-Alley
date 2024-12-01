@@ -61,6 +61,7 @@ GLOBAL_LIST_BOILERPLATE(all_pai_cards, /obj/item/device/paicard)
 	if(pai != null) //Have a person in them already?
 		return ..()
 	if(is_damage_critical())
+<<<<<<< HEAD
 		to_chat(usr, "<span class='warning'>That card is too damaged to activate!</span>")
 		return
 	var/time_till_respawn = user.time_till_respawn()
@@ -71,11 +72,27 @@ GLOBAL_LIST_BOILERPLATE(all_pai_cards, /obj/item/device/paicard)
 		return
 	if(jobban_isbanned(usr, "pAI"))
 		to_chat(usr,"<span class='warning'>You cannot join a pAI card when you are banned from playing as a pAI.</span>")
+=======
+		to_chat(user, span_warning("That card is too damaged to activate!"))
+		return
+	var/time_till_respawn = user.time_till_respawn()
+	if(time_till_respawn == -1) // Special case, never allowed to respawn
+		to_chat(user, span_warning("Respawning is not allowed!"))
+	else if(time_till_respawn) // Nonzero time to respawn
+		to_chat(user, span_warning("You can't do that yet! You died too recently. You need to wait another [round(time_till_respawn/10/60, 0.1)] minutes."))
+		return
+	if(jobban_isbanned(user, JOB_PAI))
+		to_chat(user,span_warning("You cannot join a pAI card when you are banned from playing as a pAI."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		return
 
 	for(var/ourkey in paikeys)
 		if(ourkey == user.ckey)
+<<<<<<< HEAD
 			to_chat(usr, "<span class='warning'>You can't just rejoin any old pAI card!!! Your card still exists.</span>")
+=======
+			to_chat(user, span_warning("You can't just rejoin any old pAI card!!! Your card still exists."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			return
 
 	var/choice = tgui_alert(user, "You sure you want to inhabit this PAI, or submit yourself to being recruited?", "Confirmation", list("Inhabit", "Recruit", "Cancel"))

@@ -318,11 +318,11 @@
 	if(..())
 		return TRUE
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 	. = TRUE
 	switch(action)
 		if("rename")
-			var/new_name = sanitizeSafe(tgui_input_text(usr,"Please enter your name.","Communicator",usr.name) )
+			var/new_name = sanitizeSafe(tgui_input_text(ui.user,"Please enter your name.","Communicator",ui.user.name) )
 			if(new_name)
 				register_device(new_name)
 
@@ -341,7 +341,7 @@
 			ringer = !ringer
 
 		if("set_ringer_tone")
-			var/ringtone = tgui_input_text(usr, "Set Ringer Tone", "Ringer")
+			var/ringtone = tgui_input_text(ui.user, "Set Ringer Tone", "Ringer")
 			if(ringtone)
 				ttone = ringtone
 
@@ -360,7 +360,11 @@
 
 		if("dial")
 			if(!get_connection_to_tcomms())
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>Error: Cannot connect to Exonet node.</span>")
+=======
+				to_chat(ui.user, span_danger("Error: Cannot connect to Exonet node."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return FALSE
 			var/their_address = params["dial"]
 			exonet.send_message(their_address, "voice")
@@ -373,16 +377,26 @@
 
 		if("message")
 			if(!get_connection_to_tcomms())
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>Error: Cannot connect to Exonet node.</span>")
+=======
+				to_chat(ui.user, span_danger("Error: Cannot connect to Exonet node."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return FALSE
 			var/their_address = params["message"]
-			var/text = sanitizeSafe(tgui_input_text(usr,"Enter your message.","Text Message"))
+			var/text = sanitizeSafe(tgui_input_text(ui.user,"Enter your message.","Text Message"))
 			if(text)
 				exonet.send_message(their_address, "text", text)
 				im_list += list(list("address" = exonet.address, "to_address" = their_address, "im" = text))
+<<<<<<< HEAD
 				log_pda("(COMM: [src]) sent \"[text]\" to [exonet.get_atom_from_address(their_address)]", usr)
 				var/obj/item/device/communicator/comm = exonet.get_atom_from_address(their_address)
 				to_chat(usr, "<span class='notice'>[icon2html(src, usr.client)] Sent message to [istype(comm, /obj/item/device/communicator) ? comm.owner : comm.name], <b>\"[text]\"</b> (<a href='?src=\ref[src];action=Reply;target=\ref[exonet.get_atom_from_address(comm.exonet.address)]'>Reply</a>)</span>")
+=======
+				log_pda("(COMM: [src]) sent \"[text]\" to [exonet.get_atom_from_address(their_address)]", ui.user)
+				var/obj/item/communicator/comm = exonet.get_atom_from_address(their_address)
+				to_chat(ui.user, span_notice("[icon2html(src, ui.user.client)] Sent message to [istype(comm, /obj/item/communicator) ? comm.owner : comm.name], <b>\"[text]\"</b> (<a href='?src=\ref[src];action=Reply;target=\ref[exonet.get_atom_from_address(comm.exonet.address)]'>Reply</a>)"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				for(var/mob/M in player_list)
 					if(M.stat == DEAD && M.is_preference_enabled(/datum/client_preference/ghost_ears))
 						if(istype(M, /mob/new_player) || M.forbid_seeing_deadchat)
@@ -395,16 +409,21 @@
 			var/name_to_disconnect = params["disconnect"]
 			for(var/mob/living/voice/V in contents)
 				if(name_to_disconnect == sanitize(V.name))
+<<<<<<< HEAD
 					close_connection(usr, V, "[usr] hung up")
 			for(var/obj/item/device/communicator/comm in communicating)
+=======
+					close_connection(ui.user, V, "[ui.user] hung up")
+			for(var/obj/item/communicator/comm in communicating)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				if(name_to_disconnect == sanitize(comm.name))
-					close_connection(usr, comm, "[usr] hung up")
+					close_connection(ui.user, comm, "[ui.user] hung up")
 
 		if("startvideo")
 			var/ref_to_video = params["startvideo"]
 			var/obj/item/device/communicator/comm = locate(ref_to_video)
 			if(comm)
-				connect_video(usr, comm)
+				connect_video(ui.user, comm)
 
 		if("endvideo")
 			if(video_source)
@@ -418,15 +437,21 @@
 
 		if("hang_up")
 			for(var/mob/living/voice/V in contents)
+<<<<<<< HEAD
 				close_connection(usr, V, "[usr] hung up")
 			for(var/obj/item/device/communicator/comm in communicating)
 				close_connection(usr, comm, "[usr] hung up")
+=======
+				close_connection(ui.user, V, "[ui.user] hung up")
+			for(var/obj/item/communicator/comm in communicating)
+				close_connection(ui.user, comm, "[ui.user] hung up")
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 		if("switch_tab")
 			selected_tab = params["switch_tab"]
 
 		if("edit")
-			var/n = tgui_input_text(usr, "Please enter message", name, notehtml, multiline = TRUE, prevent_enter = TRUE)
+			var/n = tgui_input_text(ui.user, "Please enter message", name, notehtml, multiline = TRUE, prevent_enter = TRUE)
 			n = sanitizeSafe(n, extra = 0)
 			if(n)
 				note = html_decode(n)

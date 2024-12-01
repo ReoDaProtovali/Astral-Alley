@@ -173,13 +173,18 @@
 			break
 	return data
 
-/obj/machinery/door_timer/tgui_act(action, params)
+/obj/machinery/door_timer/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return
 	. = TRUE
 
+<<<<<<< HEAD
 	if(!allowed(usr))
 		to_chat(usr, "<span class='warning'>Access denied.</span>")
+=======
+	if(!allowed(ui.user))
+		to_chat(ui.user, span_warning("Access denied."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		return FALSE
 
 	switch(action)

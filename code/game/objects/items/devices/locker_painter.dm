@@ -117,8 +117,13 @@
 		to_chat(user, "<span class='warning'>\The [src] flashes an error light. You might need to reconfigure it.</span>")
 		return
 
+<<<<<<< HEAD
 /obj/item/device/closet_painter/attack_self(var/mob/user)
 	var/choice = tgui_alert(usr, "Do you wish to change the regular closet color or the secure closet color?", "Color Selection", list("Regular Closet Colour","Cancel","Secure Closet Colour"))
+=======
+/obj/item/closet_painter/attack_self(var/mob/user)
+	var/choice = tgui_alert(user, "Do you wish to change the regular closet color or the secure closet color?", "Color Selection", list("Regular Closet Colour","Cancel","Secure Closet Colour"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	if(choice == "Regular Closet Colour")
 		choose_colour()
 	else if(choice == "Secure Closet Colour")

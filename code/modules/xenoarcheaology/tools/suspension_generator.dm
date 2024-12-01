@@ -78,13 +78,17 @@
 					if(anchored)
 						activate()
 					else
+<<<<<<< HEAD
 						to_chat(usr, "<span class='warning'>You are unable to activate [src] until it is properly secured on the ground.</span>")
+=======
+						to_chat(ui.user, span_warning("You are unable to activate [src] until it is properly secured on the ground."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			else
 				deactivate()
 			return TRUE
 
 		if("lock")
-			if(allowed(usr))
+			if(allowed(ui.user))
 				locked = !locked
 				return TRUE
 

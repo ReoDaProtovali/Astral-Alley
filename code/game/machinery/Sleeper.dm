@@ -296,10 +296,14 @@
 /obj/machinery/sleeper/tgui_act(action, params, datum/tgui/ui, datum/tgui_state/state)
 	if(..())
 		return TRUE
-	if(!controls_inside && usr == occupant)
+	if(!controls_inside && ui.user == occupant)
 		return
 	if(panel_open)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>Close the maintenance panel first.</span>")
+=======
+		to_chat(ui.user, span_notice("Close the maintenance panel first."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		return
 
 	. = TRUE
@@ -309,16 +313,24 @@
 				return
 			if(occupant.stat == DEAD)
 				var/datum/gender/G = gender_datums[occupant.get_visible_gender()]
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>This person has no life to preserve anymore. Take [G.him] to a department capable of reanimating [G.him].</span>")
+=======
+				to_chat(ui.user, span_danger("This person has no life to preserve anymore. Take [G.him] to a department capable of reanimating [G.him]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 			var/chemical = params["chemid"]
 			var/amount = text2num(params["amount"])
 			if(!length(chemical) || amount <= 0)
 				return
 			if(occupant.health > min_health) //|| (chemical in emergency_chems))
-				inject_chemical(usr, chemical, amount)
+				inject_chemical(ui.user, chemical, amount)
 			else
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>This person is not in good enough condition for sleepers to be effective! Use another means of treatment, such as cryogenics!</span>")
+=======
+				to_chat(ui.user, span_danger("This person is not in good enough condition for sleepers to be effective! Use another means of treatment, such as cryogenics!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		if("removebeaker")
 			remove_beaker()
 		if("togglefilter")
@@ -328,7 +340,7 @@
 		if("ejectify")
 			go_out()
 		if("changestasis")
-			var/new_stasis = tgui_input_list(usr, "Levels deeper than 50% stasis level will render the patient unconscious.","Stasis Level", stasis_choices)
+			var/new_stasis = tgui_input_list(ui.user, "Levels deeper than 50% stasis level will render the patient unconscious.","Stasis Level", stasis_choices)
 			if(new_stasis)
 				stasis_level = stasis_choices[new_stasis]
 		if("auto_eject_dead_on")
@@ -337,7 +349,7 @@
 			auto_eject_dead = FALSE
 		else
 			return FALSE
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 /obj/machinery/sleeper/process()
 	if(stat & (NOPOWER|BROKEN))

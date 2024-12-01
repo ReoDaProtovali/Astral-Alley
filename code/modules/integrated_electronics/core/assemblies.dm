@@ -103,17 +103,25 @@
 	switch(action)
 		// Actual assembly actions
 		if("rename")
-			rename(usr)
+			rename(ui.user)
 			return TRUE
 
 		if("remove_cell")
 			if(!battery)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='warning'>There's no power cell to remove from \the [src].</span>")
+=======
+				to_chat(ui.user, span_warning("There's no power cell to remove from \the [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return FALSE
 			var/turf/T = get_turf(src)
 			battery.forceMove(T)
 			playsound(T, 'sound/items/Crowbar.ogg', 50, 1)
+<<<<<<< HEAD
 			to_chat(usr, "<span class='notice'>You pull \the [battery] out of \the [src]'s power supplier.</span>")
+=======
+			to_chat(ui.user, span_notice("You pull \the [battery] out of \the [src]'s power supplier."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			battery = null
 			return TRUE
 
@@ -122,7 +130,7 @@
 			var/obj/item/integrated_circuit/C = locate(params["ref"]) in contents
 			if(!istype(C))
 				return
-			C.tgui_interact(usr, null, ui)
+			C.tgui_interact(ui.user, null, ui)
 			return TRUE
 
 		if("rename_circuit")
@@ -150,7 +158,7 @@
 			var/obj/item/integrated_circuit/C = locate(params["ref"]) in contents
 			if(!istype(C))
 				return
-			C.remove(usr)
+			C.remove(ui.user)
 			return TRUE
 
 		if("bottom_circuit")

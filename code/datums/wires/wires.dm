@@ -153,24 +153,27 @@
 	data["status"] = status
 	return data
 
-/datum/wires/tgui_act(action, list/params)
+/datum/wires/tgui_act(action, list/params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
-	var/mob/user = usr
-	if(!interactable(user))
+	if(!interactable(ui.user))
 		return
 
-	var/obj/item/I = user.get_active_hand()
+	var/obj/item/I = ui.user.get_active_hand()
 	var/color = lowertext(params["wire"])
-	holder.add_hiddenprint(user)
+	holder.add_hiddenprint(ui.user)
 
 	switch(action)
 		 // Toggles the cut/mend status.
 		if("cut")
 			// if(!I.has_tool_quality(TOOL_WIRECUTTER) && !user.can_admin_interact())
 			if(!istype(I) || !I.has_tool_quality(TOOL_WIRECUTTER))
+<<<<<<< HEAD
 				to_chat(user, "<span class='error'>You need wirecutters!</span>")
+=======
+				to_chat(ui.user, span_warning("You need wirecutters!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
 			playsound(holder, I.usesound, 20, 1)
@@ -181,7 +184,11 @@
 		if("pulse")
 			// if(!I.has_tool_quality(TOOL_MULTITOOL) && !user.can_admin_interact())
 			if(!istype(I) || !I.has_tool_quality(TOOL_MULTITOOL))
+<<<<<<< HEAD
 				to_chat(user, "<span class='error'>You need a multitool!</span>")
+=======
+				to_chat(ui.user, span_warning("You need a multitool!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
 			playsound(holder, 'sound/weapons/empty.ogg', 20, 1)
@@ -189,7 +196,7 @@
 
 			// If they pulse the electrify wire, call interactable() and try to shock them.
 			if(get_wire(color) == WIRE_ELECTRIFY)
-				interactable(user)
+				interactable(ui.user)
 
 			return TRUE
 
@@ -198,18 +205,27 @@
 			if(is_attached(color))
 				var/obj/item/O = detach_assembly(color)
 				if(O)
-					user.put_in_hands(O)
+					ui.user.put_in_hands(O)
 					return TRUE
 
+<<<<<<< HEAD
 			if(!istype(I, /obj/item/device/assembly/signaler))
 				to_chat(user, "<span class='error'>You need a remote signaller!</span>")
+=======
+			if(!istype(I, /obj/item/assembly/signaler))
+				to_chat(ui.user, span_warning("You need a remote signaller!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
-			if(user.unEquip(I))
+			if(ui.user.unEquip(I))
 				attach_assembly(color, I)
 				return TRUE
 			else
+<<<<<<< HEAD
 				to_chat(user, "<span class='warning'>[I] is stuck to your hand!</span>")
+=======
+				to_chat(ui.user, span_warning("[I] is stuck to your hand!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 /**
  * Proc called to determine if the user can see wire define information, such as "Contraband", "Door Bolts", etc.

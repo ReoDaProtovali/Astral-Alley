@@ -205,8 +205,13 @@
 	if(W.has_tool_quality(TOOL_WRENCH) && !anchored)
 		playsound(src, W.usesound, 50, 1)
 		if(do_after(user, 20, src))
+<<<<<<< HEAD
 			user.visible_message("<b>\The [user]</b> dismantles \the [src].", "<span class='notice'>You dismantle \the [src].</span>")
 			new /obj/item/stack/material/steel(get_turf(usr), 2)
+=======
+			user.visible_message(span_infoplain(span_bold("\The [user]") + " dismantles \the [src]."), span_notice("You dismantle \the [src]."))
+			new /obj/item/stack/material/steel(get_turf(user), 2)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			qdel(src)
 			return
 
@@ -285,7 +290,11 @@
 	if(!can_climb(user))
 		return
 
+<<<<<<< HEAD
 	usr.visible_message("<span class='warning'>[user] starts climbing onto \the [src]!</span>")
+=======
+	user.visible_message(span_warning("[user] starts climbing onto \the [src]!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	LAZYDISTINCTADD(climbers, user)
 
 	if(!do_after(user,(issmall(user) ? 20 : 34)))
@@ -297,11 +306,15 @@
 		return
 
 	if(get_turf(user) == get_turf(src))
-		usr.forceMove(get_step(src, src.dir))
+		user.forceMove(get_step(src, src.dir))
 	else
-		usr.forceMove(get_turf(src))
+		user.forceMove(get_turf(src))
 
+<<<<<<< HEAD
 	usr.visible_message("<span class='warning'>[user] climbed over \the [src]!</span>")
+=======
+	user.visible_message(span_warning("[user] climbed over \the [src]!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	if(!anchored)	take_damage(maxhealth) // Fatboy
 	LAZYREMOVE(climbers, user)
 

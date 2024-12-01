@@ -200,6 +200,7 @@
 	data["modal"] = tgui_modal_data(src)
 	return data
 
+<<<<<<< HEAD
 /obj/machinery/computer/transhuman/resleeving/tgui_act(action, params)
 	if(..())
 		return TRUE
@@ -220,6 +221,12 @@
 			// 	else
 			// 		set_temp("Access denied.", "danger")
 			return
+=======
+/obj/machinery/computer/transhuman/resleeving/tgui_act(action, params, datum/tgui/ui)
+	. = ..()
+	if(.)
+		return
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 	switch(action)
 		if("view_b_rec")
@@ -390,7 +397,7 @@
 								subtargets += H
 							if(subtargets.len)
 								var/oc_sanity = sleever.occupant
-								override = tgui_input_list(usr,"Multiple bodies detected. Select target for resleeving of [active_mr.mindname] manually. Sleeving of primary body is unsafe with sub-contents, and is not listed.", "Resleeving Target", subtargets)
+								override = tgui_input_list(ui.user,"Multiple bodies detected. Select target for resleeving of [active_mr.mindname] manually. Sleeving of primary body is unsafe with sub-contents, and is not listed.", "Resleeving Target", subtargets)
 								if(!override || oc_sanity != sleever.occupant || !(override in sleever.occupant))
 									set_temp("Error: Target selection aborted.", "danger")
 									tgui_modal_clear(src)

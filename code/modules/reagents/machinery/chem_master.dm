@@ -303,7 +303,11 @@
 					var/amount_per_pill = CLAMP(reagents.total_volume / count, 0, MAX_UNITS_PER_PILL)
 					while(count--)
 						if(reagents.total_volume <= 0)
+<<<<<<< HEAD
 							to_chat(usr, "<span class='notice'>Not enough reagents to create these pills!</span>")
+=======
+							to_chat(ui.user, span_notice("Not enough reagents to create these pills!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 							return
 
 						var/obj/item/weapon/reagent_containers/pill/P = new(loc)
@@ -339,7 +343,11 @@
 					// var/is_medical_patch = chemical_safety_check(reagents)
 					while(count--)
 						if(reagents.total_volume <= 0)
+<<<<<<< HEAD
 							to_chat(usr, "<span class='notice'>Not enough reagents to create these patches!</span>")
+=======
+							to_chat(ui.user, span_notice("Not enough reagents to create these patches!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 							return
 
 						var/obj/item/weapon/reagent_containers/pill/patch/P = new(loc)
@@ -366,7 +374,11 @@
 					var/amount_per_bottle = CLAMP(reagents.total_volume / count, 0, MAX_UNITS_PER_BOTTLE)
 					while(count--)
 						if(reagents.total_volume <= 0)
+<<<<<<< HEAD
 							to_chat(usr, "<span class='notice'>Not enough reagents to create these bottles!</span>")
+=======
+							to_chat(ui.user, span_notice("Not enough reagents to create these bottles!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 							return
 						var/obj/item/weapon/reagent_containers/glass/bottle/P = new(loc)
 						P.name = "[answer] bottle"
@@ -396,8 +408,8 @@
 	if(tgui_act_modal(action, params, ui, state))
 		return TRUE
 
-	add_fingerprint(usr)
-	usr.set_machine(src)
+	add_fingerprint(ui.user)
+	ui.user.set_machine(src)
 
 	. = TRUE
 	switch(action)
@@ -406,8 +418,8 @@
 		if("ejectp")
 			if(loaded_pill_bottle)
 				loaded_pill_bottle.forceMove(get_turf(src))
-				if(Adjacent(usr) && !issilicon(usr))
-					usr.put_in_hands(loaded_pill_bottle)
+				if(Adjacent(ui.user) && !issilicon(ui.user))
+					ui.user.put_in_hands(loaded_pill_bottle)
 				loaded_pill_bottle = null
 		if("print")
 			if(printing || condi)
@@ -466,8 +478,8 @@
 			if(!beaker)
 				return
 			beaker.forceMove(get_turf(src))
-			if(Adjacent(usr) && !issilicon(usr))
-				usr.put_in_hands(beaker)
+			if(Adjacent(ui.user) && !issilicon(ui.user))
+				ui.user.put_in_hands(beaker)
 			beaker = null
 			reagents.clear_reagents()
 			update_icon()

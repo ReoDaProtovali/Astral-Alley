@@ -59,27 +59,39 @@
 
 	return data
 
+<<<<<<< HEAD
 /obj/item/device/aicard/tgui_act(action, params)
+=======
+/obj/item/aicard/tgui_act(action, params, datum/tgui/ui)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	if(..())
 		return TRUE
 
 	if(!carded_ai)
 		return
 
-	var/user = usr
 	switch(action)
 		if("wipe")
-			msg_admin_attack("[key_name_admin(user)] wiped [key_name_admin(AI)] with \the [src].")
-			add_attack_logs(user,carded_ai,"Purged from AI Card")
+			msg_admin_attack("[key_name_admin(ui.user)] wiped [key_name_admin(AI)] with \the [src].")
+			add_attack_logs(ui.user,carded_ai,"Purged from AI Card")
 			INVOKE_ASYNC(src, PROC_REF(wipe_ai))
 		if("radio")
 			carded_ai.aiRadio.disabledAi = !carded_ai.aiRadio.disabledAi
+<<<<<<< HEAD
 			to_chat(carded_ai, "<span class='warning'>Your Subspace Transceiver has been [carded_ai.aiRadio.disabledAi ? "disabled" : "enabled"]!</span>")
 			to_chat(user, "<span class='notice'>You [carded_ai.aiRadio.disabledAi ? "disable" : "enable"] the AI's Subspace Transceiver.</span>")
 		if("wireless")
 			carded_ai.control_disabled = !carded_ai.control_disabled
 			to_chat(carded_ai, "<span class='warning'>Your wireless interface has been [carded_ai.control_disabled ? "disabled" : "enabled"]!</span>")
 			to_chat(user, "<span class='notice'>You [carded_ai.control_disabled ? "disable" : "enable"] the AI's wireless interface.</span>")
+=======
+			to_chat(carded_ai, span_warning("Your Subspace Transceiver has been [carded_ai.aiRadio.disabledAi ? "disabled" : "enabled"]!"))
+			to_chat(ui.user, span_notice("You [carded_ai.aiRadio.disabledAi ? "disable" : "enable"] the AI's Subspace Transceiver."))
+		if("wireless")
+			carded_ai.control_disabled = !carded_ai.control_disabled
+			to_chat(carded_ai, span_warning("Your wireless interface has been [carded_ai.control_disabled ? "disabled" : "enabled"]!"))
+			to_chat(ui.user, span_notice("You [carded_ai.control_disabled ? "disable" : "enable"] the AI's wireless interface."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			if(carded_ai.control_disabled && carded_ai.deployed_shell)
 				carded_ai.disconnect_shell("Disconnecting from remote shell due to [src] wireless access interface being disabled.")
 			update_icon()

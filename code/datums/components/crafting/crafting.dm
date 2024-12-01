@@ -452,26 +452,33 @@
 	data["crafting_recipes"] = crafting_recipes
 	return data
 
-/datum/component/personal_crafting/tgui_act(action, params)
+/datum/component/personal_crafting/tgui_act(action, params, datum/tgui/ui)
 	. = ..()
 	if(.)
 		return
 	switch(action)
 		if("make")
-			var/mob/user = usr
 			var/datum/crafting_recipe/TR = locate(params["recipe"]) in GLOB.crafting_recipes
 			busy = TRUE
-			tgui_interact(user)
-			var/atom/movable/result = construct_item(user, TR)
+			tgui_interact(ui.user)
+			var/atom/movable/result = construct_item(ui.user, TR)
 			if(!istext(result)) //We made an item and didn't get a fail message
-				if(ismob(user) && isitem(result)) //In case the user is actually possessing a non mob like a machine
-					user.put_in_hands(result)
+				if(ismob(ui.user) && isitem(result)) //In case the user is actually possessing a non mob like a machine
+					ui.user.put_in_hands(result)
 				else
+<<<<<<< HEAD
 					result.forceMove(user.drop_location())
 				to_chat(user, "<span class='notice'>[TR.name] constructed.</span>")
 				TR.on_craft_completion(user, result)
 			else
 				to_chat(user, "<span class='warning'>Construction failed[result]</span>")
+=======
+					result.forceMove(ui.user.drop_location())
+				to_chat(ui.user, span_notice("[TR.name] constructed."))
+				TR.on_craft_completion(ui.user, result)
+			else
+				to_chat(ui.user, span_warning("Construction failed[result]"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			busy = FALSE
 		if("toggle_recipes")
 			display_craftable_only = !display_craftable_only

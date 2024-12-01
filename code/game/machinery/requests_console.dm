@@ -137,18 +137,18 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	data["announceAuth"] = announceAuth
 	return data
 
-/obj/machinery/requests_console/tgui_act(action, list/params)
+/obj/machinery/requests_console/tgui_act(action, list/params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 	switch(action)
 		if("write")
 			if(reject_bad_text(params["write"]))
 				recipient = params["write"] //write contains the string of the receiving department's name
 
-				var/new_message = sanitize(tgui_input_text(usr, "Write your message:", "Awaiting Input", ""))
+				var/new_message = sanitize(tgui_input_text(ui.user, "Write your message:", "Awaiting Input", ""))
 				if(new_message)
 					message = new_message
 					screen = RCS_MESSAUTH
@@ -164,7 +164,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 				. = TRUE
 
 		if("writeAnnouncement")
-			var/new_message = sanitize(tgui_input_text(usr, "Write your message:", "Awaiting Input", ""))
+			var/new_message = sanitize(tgui_input_text(ui.user, "Write your message:", "Awaiting Input", ""))
 			if(new_message)
 				message = new_message
 			else
@@ -232,10 +232,15 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 /obj/machinery/requests_console/attackby(var/obj/item/weapon/O as obj, var/mob/user as mob)
 	if(computer_deconstruction_screwdriver(user, O))
 		return
+<<<<<<< HEAD
 	if(istype(O, /obj/item/device/multitool))
 		var/input = sanitize(tgui_input_text(usr, "What Department ID would you like to give this request console?", "Multitool-Request Console Interface", department))
+=======
+	if(istype(O, /obj/item/multitool))
+		var/input = sanitize(tgui_input_text(user, "What Department ID would you like to give this request console?", "Multitool-Request Console Interface", department))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		if(!input)
-			to_chat(usr, "No input found. Please hang up and try your call again.")
+			to_chat(user, "No input found. Please hang up and try your call again.")
 			return
 		department = input
 		announcement.title = "[department] announcement"

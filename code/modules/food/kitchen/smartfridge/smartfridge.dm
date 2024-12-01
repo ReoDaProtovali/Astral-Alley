@@ -231,20 +231,20 @@
 	.["locked"] = locked
 	.["secure"] = is_secure
 
-/obj/machinery/smartfridge/tgui_act(action, params)
+/obj/machinery/smartfridge/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 	switch(action)
 		if("Release")
 			var/amount = 0
 			if(params["amount"])
 				amount = params["amount"]
 			else
-				amount = tgui_input_number(usr, "How many items?", "How many items would you like to take out?", 1)
+				amount = tgui_input_number(ui.user, "How many items?", "How many items would you like to take out?", 1)
 
-			if(QDELETED(src) || QDELETED(usr) || !usr.Adjacent(src))
+			if(QDELETED(src) || QDELETED(ui.user) || !ui.user.Adjacent(src))
 				return FALSE
 
 			var/index = text2num(params["index"])
@@ -280,11 +280,17 @@
 /*
  * Secure Smartfridges
  */
-/obj/machinery/smartfridge/secure/tgui_act(action, params)
+/obj/machinery/smartfridge/secure/tgui_act(action, params, datum/tgui/ui)
 	if(stat & (NOPOWER|BROKEN))
 		return TRUE
+<<<<<<< HEAD
 	if(usr.contents.Find(src) || (in_range(src, usr) && istype(loc, /turf)))
 		if((!allowed(usr) && scan_id) && !emagged && locked != -1 && action == "Release")
 			to_chat(usr, "<span class='warning'>Access denied.</span>")
+=======
+	if(ui.user.contents.Find(src) || (in_range(src, ui.user) && istype(loc, /turf)))
+		if((!allowed(ui.user) && scan_id) && !emagged && locked != -1 && action == "Release")
+			to_chat(ui.user, span_warning("Access denied."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			return TRUE
 	return ..()

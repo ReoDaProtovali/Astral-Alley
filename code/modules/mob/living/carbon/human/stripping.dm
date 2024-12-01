@@ -27,7 +27,11 @@
 				toggle_sensors(user)
 			return
 		if("internals")
+<<<<<<< HEAD
 			visible_message("<span class='danger'>\The [usr] is trying to set \the [src]'s internals!</span>")
+=======
+			visible_message(span_danger("\The [user] is trying to set \the [src]'s internals!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			if(do_after(user,HUMAN_STRIP_DELAY,src))
 				toggle_internals(user)
 			return
@@ -38,7 +42,11 @@
 			var/obj/item/clothing/accessory/A = suit.accessories[1]
 			if(!istype(A))
 				return
+<<<<<<< HEAD
 			visible_message("<span class='danger'>\The [usr] is trying to remove \the [src]'s [A.name]!</span>")
+=======
+			visible_message(span_danger("\The [user] is trying to remove \the [src]'s [A.name]!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 			if(!do_after(user,HUMAN_STRIP_DELAY,src))
 				return

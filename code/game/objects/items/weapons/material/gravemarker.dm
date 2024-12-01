@@ -65,14 +65,19 @@
 		to_chat(user, "<span class='warning'>There's already something there.</span>")
 		return 0
 	else
+<<<<<<< HEAD
 		to_chat(user, "<span class='notice'>You begin to place \the [src.name].</span>")
 		if(!do_after(usr, 10))
+=======
+		to_chat(user, span_notice("You begin to place \the [src.name]."))
+		if(!do_after(user, 10))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			return 0
 		var/obj/structure/gravemarker/G = new /obj/structure/gravemarker/(user.loc, src.get_material())
 		to_chat(user, "<span class='notice'>You place \the [src.name].</span>")
 		G.grave_name = grave_name
 		G.epitaph = epitaph
-		G.add_fingerprint(usr)
+		G.add_fingerprint(user)
 		G.dir = user.dir
 		QDEL_NULL(src)
 	return

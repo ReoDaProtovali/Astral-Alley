@@ -296,7 +296,7 @@
 	if(..())
 		return TRUE
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 	switch(action)
 		// Queue management can be done even while busy
 		if("queue")
@@ -330,7 +330,11 @@
 			return TRUE
 
 	if(busy)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>[src] is busy. Please wait for completion of previous operation.</span>")
+=======
+		to_chat(ui.user, span_notice("[src] is busy. Please wait for completion of previous operation."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		return
 
 	switch(action)

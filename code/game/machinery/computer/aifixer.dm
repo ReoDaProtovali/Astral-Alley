@@ -80,7 +80,7 @@
 
 	return data
 
-/obj/machinery/computer/aifixer/tgui_act(action, params)
+/obj/machinery/computer/aifixer/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 	if(!occupier)
@@ -92,7 +92,11 @@
 	switch(action)
 		if("PRG_beginReconstruction")
 			if(occupier?.health < 100)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='notice'>Reconstruction in progress. This will take several minutes.</span>")
+=======
+				to_chat(ui.user, span_notice("Reconstruction in progress. This will take several minutes."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				playsound(src, 'sound/machines/terminal_prompt_confirm.ogg', 25, FALSE)
 				restoring = TRUE
 				var/mob/observer/dead/ghost = occupier.get_ghost()

@@ -242,7 +242,11 @@ var/global/list/default_medbay_channels = list(
 		return STATUS_CLOSE
 	return ..()
 
+<<<<<<< HEAD
 /obj/item/device/radio/tgui_act(action, params)
+=======
+/obj/item/radio/tgui_act(action, params, datum/tgui/ui)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	if(..())
 		return TRUE
 
@@ -253,8 +257,8 @@ var/global/list/default_medbay_channels = list(
 				new_frequency = sanitize_frequency(new_frequency)
 			set_frequency(new_frequency)
 			if(hidden_uplink)
-				if(hidden_uplink.check_trigger(usr, frequency, traitor_frequency))
-					usr << browse(null, "window=radio")
+				if(hidden_uplink.check_trigger(ui.user, frequency, traitor_frequency))
+					ui.user << browse(null, "window=radio")
 			. = TRUE
 		if("broadcast")
 			ToggleBroadcast()
@@ -271,7 +275,7 @@ var/global/list/default_medbay_channels = list(
 			. = TRUE
 		if("specFreq")
 			var/freq = params["channel"]
-			if(has_channel_access(usr, freq))
+			if(has_channel_access(ui.user, freq))
 				set_frequency(text2num(freq))
 			. = TRUE
 		if("subspace")
@@ -279,10 +283,17 @@ var/global/list/default_medbay_channels = list(
 				subspace_transmission = !subspace_transmission
 				if(!subspace_transmission)
 					channels = list()
+<<<<<<< HEAD
 					to_chat(usr, "<span class='notice'>Subspace Transmission is disabled</span>")
 				else
 					recalculateChannels()
 					to_chat(usr, "<span class='notice'>Subspace Transmission is enabled</span>")
+=======
+					to_chat(ui.user, span_notice("Subspace Transmission is disabled"))
+				else
+					recalculateChannels()
+					to_chat(ui.user, span_notice("Subspace Transmission is enabled"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				. = TRUE
 		if("toggleLoudspeaker")
 			if(!subspace_switchable)
@@ -290,12 +301,18 @@ var/global/list/default_medbay_channels = list(
 			loudspeaker = !loudspeaker
 
 			if(loudspeaker)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='notice'>Loadspeaker enabled.</span>")
 			else
 				to_chat(usr, "<span class='notice'>Loadspeaker disabled.</span>")
+=======
+				to_chat(ui.user, span_notice("Loadspeaker enabled."))
+			else
+				to_chat(ui.user, span_notice("Loadspeaker disabled."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			. = TRUE
 
-	if(. && iscarbon(usr))
+	if(. && iscarbon(ui.user))
 		playsound(src, "button", 10)
 
 GLOBAL_DATUM(autospeaker, /mob/living/silicon/ai/announcer)

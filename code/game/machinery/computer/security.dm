@@ -185,7 +185,7 @@
 	data["modal"] = tgui_modal_data(src)
 	return data
 
-/obj/machinery/computer/secure_data/tgui_act(action, params)
+/obj/machinery/computer/secure_data/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -204,13 +204,19 @@
 		if("scan")
 			if(scan)
 				scan.forceMove(loc)
-				if(ishuman(usr) && !usr.get_active_hand())
-					usr.put_in_hands(scan)
+				if(ishuman(ui.user) && !ui.user.get_active_hand())
+					ui.user.put_in_hands(scan)
 				scan = null
 			else
+<<<<<<< HEAD
 				var/obj/item/I = usr.get_active_hand()
 				if(istype(I, /obj/item/weapon/card/id))
 					usr.drop_item()
+=======
+				var/obj/item/I = ui.user.get_active_hand()
+				if(istype(I, /obj/item/card/id))
+					ui.user.drop_item()
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 					I.forceMove(src)
 					scan = I
 		if("login")
@@ -219,12 +225,21 @@
 				if(check_access(scan))
 					authenticated = scan.registered_name
 					rank = scan.assignment
+<<<<<<< HEAD
 			else if(login_type == LOGIN_TYPE_AI && isAI(usr))
 				authenticated = usr.name
 				rank = "AI"
 			else if(login_type == LOGIN_TYPE_ROBOT && isrobot(usr))
 				authenticated = usr.name
 				var/mob/living/silicon/robot/R = usr
+=======
+			else if(login_type == LOGIN_TYPE_AI && isAI(ui.user))
+				authenticated = ui.user.name
+				rank = JOB_AI
+			else if(login_type == LOGIN_TYPE_ROBOT && isrobot(ui.user))
+				authenticated = ui.user.name
+				var/mob/living/silicon/robot/R = ui.user
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				rank = "[R.modtype] [R.braintype]"
 			if(authenticated)
 				active1 = null
@@ -242,8 +257,8 @@
 			if("logout")
 				if(scan)
 					scan.forceMove(loc)
-					if(ishuman(usr) && !usr.get_active_hand())
-						usr.put_in_hands(scan)
+					if(ishuman(ui.user) && !ui.user.get_active_hand())
+						ui.user.put_in_hands(scan)
 					scan = null
 				authenticated = null
 				screen = null
@@ -338,12 +353,12 @@
 					SStgui.update_uis(src)
 					addtimer(CALLBACK(src, PROC_REF(print_finish)), 5 SECONDS)
 			if("photo_front")
-				var/icon/photo = get_photo(usr)
+				var/icon/photo = get_photo(ui.user)
 				if(photo && active1)
 					active1.fields["photo_front"] = photo
 					active1.fields["photo-south"] = "'data:image/png;base64,[icon2base64(photo)]'"
 			if("photo_side")
-				var/icon/photo = get_photo(usr)
+				var/icon/photo = get_photo(ui.user)
 				if(photo && active1)
 					active1.fields["photo_side"] = photo
 					active1.fields["photo-west"] = "'data:image/png;base64,[icon2base64(photo)]'"
@@ -474,8 +489,13 @@
 		var/obj/item/weapon/photo/photo = user.get_active_hand()
 		return photo.img
 	if(istype(user, /mob/living/silicon))
+<<<<<<< HEAD
 		var/mob/living/silicon/tempAI = usr
 		var/obj/item/weapon/photo/selection = tempAI.GetPicture()
+=======
+		var/mob/living/silicon/tempAI = user
+		var/obj/item/photo/selection = tempAI.GetPicture()
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		if (selection)
 			return selection.img
 

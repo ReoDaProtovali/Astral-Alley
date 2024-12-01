@@ -99,11 +99,11 @@
 	if(..())
 		return
 	tgui_interact(user)
-	// src.add_fingerprint(usr)
+	// src.add_fingerprint(user)
 	// if(!src.allowed(user))
 	// 	to_chat(user, "<span class='warning'>Access denied.</span>")
 	// 	return
-	// usr.set_machine(src)
+	// user.set_machine(src)
 	// var/list/node_connects = get_node_connect_dirs()
 	// var/dat = {"<b>Power: </b><a href='?src=\ref[src];power=1'>[use_power?"On":"Off"]</a><br>
 	// 			<b>Set Flow Rate Limit: </b>
