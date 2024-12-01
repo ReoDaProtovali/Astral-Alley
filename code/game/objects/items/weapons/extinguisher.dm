@@ -99,7 +99,11 @@
 
 	if (!safety)
 		if (src.reagents.total_volume < 1)
+<<<<<<< HEAD
 			to_chat(usr, "<span class='notice'>\The [src] is empty.</span>")
+=======
+			to_chat(user, span_notice("\The [src] is empty."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			return
 
 		if (world.time < src.last_use + 20)
@@ -136,7 +140,11 @@
 				W.set_color()
 				W.set_up(my_target)
 
+<<<<<<< HEAD
 		if((istype(usr.loc, /turf/space)) || (usr.lastarea.has_gravity == 0))
+=======
+		if((istype(user.loc, /turf/space)) || (user.lastarea.get_gravity() == 0))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			user.inertia_dir = get_dir(target, user)
 			step(user, user.inertia_dir)
 	else

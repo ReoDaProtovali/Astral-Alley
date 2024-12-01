@@ -135,14 +135,14 @@
 		ui = new(user, src, "Biogenerator", name)
 		ui.open()
 
-/obj/machinery/biogenerator/tgui_act(action, params)
+/obj/machinery/biogenerator/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return
 
 	. = TRUE
 	switch(action)
 		if("activate")
-			INVOKE_ASYNC(src, PROC_REF(activate))
+			INVOKE_ASYNC(src, PROC_REF(activate), ui.user)
 			return TRUE
 		if("detach")
 			if(beaker)
@@ -166,11 +166,19 @@
 					return
 				var/cost = round(br.cost / build_eff)
 				if(cost > points)
+<<<<<<< HEAD
 					to_chat(usr, "<span class='danger'>Insufficient biomass.</span>")
 					return
 				var/amt_to_actually_dispense = round(min(beaker.reagents.get_free_space(), br.reagent_amt))
 				if(amt_to_actually_dispense <= 0)
 					to_chat(usr, "<span class='danger'>The loaded beaker is full!</span>")
+=======
+					to_chat(ui.user, span_danger("Insufficient biomass."))
+					return
+				var/amt_to_actually_dispense = round(min(beaker.reagents.get_free_space(), br.reagent_amt))
+				if(amt_to_actually_dispense <= 0)
+					to_chat(ui.user, span_danger("The loaded beaker is full!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 					return
 				points -= (cost * (amt_to_actually_dispense / br.reagent_amt))
 				beaker.reagents.add_reagent(br.reagent_id, amt_to_actually_dispense)
@@ -179,7 +187,11 @@
 
 			var/cost = round(bi.cost / build_eff)
 			if(cost > points)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>Insufficient biomass.</span>")
+=======
+				to_chat(ui.user, span_danger("Insufficient biomass."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
 			points -= cost
@@ -263,13 +275,17 @@
 		return
 	tgui_interact(user)
 
-/obj/machinery/biogenerator/proc/activate()
-	if(usr.stat)
+/obj/machinery/biogenerator/proc/activate(mob/user)
+	if(user.stat)
 		return
 	if(stat) //NOPOWER etc
 		return
 	if(processing)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>The biogenerator is in the process of working.</span>")
+=======
+		to_chat(user, span_notice("The biogenerator is in the process of working."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		return
 	var/S = 0
 	for(var/obj/item/weapon/reagent_containers/food/snacks/grown/I in contents)
@@ -289,7 +305,11 @@
 		playsound(src, 'sound/machines/biogenerator_end.ogg', 40, 1)
 		update_icon()
 	else
+<<<<<<< HEAD
 		to_chat(usr, "<span class='warning'>Error: No growns inside. Please insert growns.</span>")
+=======
+		to_chat(user, span_warning("Error: No growns inside. Please insert growns."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	return
 
 /obj/machinery/biogenerator/RefreshParts()

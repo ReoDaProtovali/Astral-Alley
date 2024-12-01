@@ -45,9 +45,15 @@
 		src.pixel_y = rand(0, 16)
 	..()
 
+<<<<<<< HEAD
 /obj/item/weapon/tool/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
 	if(istype(C) && user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/weapon/handcuffs/cable)))
 		usr.visible_message("\The [usr] cuts \the [C]'s restraints with \the [src]!",\
+=======
+/obj/item/tool/wirecutters/attack(mob/living/carbon/C as mob, mob/user as mob)
+	if(istype(C) && user.a_intent == I_HELP && (C.handcuffed) && (istype(C.handcuffed, /obj/item/handcuffs/cable)))
+		user.visible_message("\The [user] cuts \the [C]'s restraints with \the [src]!",\
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		"You cut \the [C]'s restraints with \the [src]!",\
 		"You hear cable being cut.")
 		C.handcuffed = null

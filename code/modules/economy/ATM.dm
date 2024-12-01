@@ -93,7 +93,7 @@ log transactions
 
 		var/obj/item/weapon/card/id/idcard = I
 		if(!held_card)
-			usr.drop_item()
+			user.drop_item()
 			idcard.loc = src
 			held_card = idcard
 			if(authenticated_account && held_card.associated_account_number != authenticated_account.account_number)
@@ -129,6 +129,7 @@ log transactions
 		return
 	if(get_dist(src,user) <= 1)
 
+<<<<<<< HEAD
 		//js replicated from obj/machinery/computer/card
 		var/dat = "<h1>Automatic Teller Machine</h1>"
 		dat += "For all your monetary needs!<br>"
@@ -208,6 +209,54 @@ log transactions
 							dat += "<A href='?src=\ref[src];choice=view_screen;view_screen=3'>View transaction log</a><br>"
 							dat += "<A href='?src=\ref[src];choice=balance_statement'>Print balance statement</a><br>"
 							dat += "<A href='?src=\ref[src];choice=logout'>Logout</a><br>"
+=======
+	switch(action)
+		// This is also a logout
+		if("insert_card")
+			if(held_card)
+				release_held_id(ui.user)
+			else
+				if(emagged > 0)
+					to_chat(ui.user, span_boldwarning("[icon2html(src, ui.user.client)] The ATM card reader rejected your ID because this machine has been sabotaged!"))
+				else
+					var/obj/item/I = ui.user.get_active_hand()
+					if(istype(I, /obj/item/card/id))
+						ui.user.drop_item(src)
+						held_card = I
+			. = TRUE
+
+		if("logout")
+			if(held_card)
+				release_held_id(ui.user)
+			authenticated_account = null
+			. = TRUE
+
+		// Balance statement
+		if("balance_statement")
+			if(!authenticated_account)
+				return
+
+			var/obj/item/paper/R = new(loc)
+			R.name = "Account balance: [authenticated_account.owner_name]"
+			R.info = span_bold("NT Automated Teller Account Statement") + "<br><br>"
+			R.info += span_italics("Account holder:") + " [authenticated_account.owner_name]<br>"
+			R.info += span_italics("Account number:") + " [authenticated_account.account_number]<br>"
+			R.info += span_italics("Balance:") + " $[authenticated_account.money]<br>"
+			R.info += span_italics("Date and time:") + " [stationtime2text()], [current_date_string]<br><br>"
+			R.info += span_italics("Service terminal ID:") + " [machine_id]<br>"
+
+			//stamp the paper
+			var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+			stampoverlay.icon_state = "paper_stamp-cent"
+			if(!R.stamped)
+				R.stamped = new
+			R.stamped += /obj/item/stamp
+			R.add_overlay(stampoverlay)
+			R.stamps += "<HR>" + span_italics("This paper has been stamped by the Automatic Teller Machine.")
+
+			if(prob(50))
+				playsound(src, 'sound/items/polaroid1.ogg', 50, 1)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			else
 				dat += "<form name='atm_auth' action='?src=\ref[src]' method='get'>"
 				dat += "<input type='hidden' name='src' value='\ref[src]'>"
@@ -237,7 +286,54 @@ log transactions
 							to_chat(usr, "[icon2html(src, usr.client)]<span class='info'>Funds transfer successful.</span>")
 							authenticated_account.money -= transfer_amount
 
+<<<<<<< HEAD
 							//create an entry in the account transaction log
+=======
+			//stamp the paper
+			var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
+			stampoverlay.icon_state = "paper_stamp-cent"
+			if(!R.stamped)
+				R.stamped = new
+			R.stamped += /obj/item/stamp
+			R.add_overlay(stampoverlay)
+			R.stamps += "<HR>" + span_italics("This paper has been stamped by the Automatic Teller Machine.")
+
+			if(prob(50))
+				playsound(src, 'sound/items/polaroid1.ogg', 50, 1)
+			else
+				playsound(src, 'sound/items/polaroid2.ogg', 50, 1)
+			. = TRUE
+
+		if("change_security_level")
+			if(authenticated_account)
+				var/new_sec_level = clamp(text2num(params["new_security_level"]), 0, 2)
+				authenticated_account.security_level = new_sec_level
+			. = TRUE
+
+		if("attempt_auth")
+			if(ticks_left_locked_down)
+				return
+			var/tried_account_num = held_card ? held_card.associated_account_number : text2num(params["account_num"])
+			var/tried_pin = text2num(params["account_pin"])
+
+			// check if they have low security enabled
+			if(!tried_account_num)
+				scan_user(ui.user)
+			else
+				authenticated_account = attempt_account_access(tried_account_num, tried_pin, held_card && held_card.associated_account_number == tried_account_num ? 2 : 1)
+
+			if(!authenticated_account)
+				number_incorrect_tries++
+				if(previous_account_number == tried_account_num)
+					if(number_incorrect_tries > max_pin_attempts)
+						//lock down the atm
+						ticks_left_locked_down = 30
+						playsound(src, 'sound/machines/buzz-two.ogg', 50, 1)
+
+						//create an entry in the account transaction log
+						var/datum/money_account/failed_account = get_account(tried_account_num)
+						if(failed_account)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 							var/datum/transaction/T = new()
 							T.target_name = "Account #[target_account_number]"
 							T.purpose = transfer_purpose
@@ -250,6 +346,7 @@ log transactions
 							to_chat(usr, "[icon2html(src, usr.client)]<span class='warning'>Funds transfer failed.</span>")
 
 					else
+<<<<<<< HEAD
 						to_chat(usr, "[icon2html(src, usr.client)]<span class='warning'>You don't have enough funds to do that!</span>")
 			if("view_screen")
 				view_screen = text2num(href_list["view_screen"])
@@ -414,6 +511,18 @@ log transactions
 						R.info += "<td>[T.source_terminal]</td>"
 						R.info += "</tr>"
 					R.info += "</table>"
+=======
+						to_chat(ui.user, span_warning("[icon2html(src, ui.user.client)] Incorrect pin/account combination entered, [max_pin_attempts - number_incorrect_tries] attempts remaining."))
+						previous_account_number = tried_account_num
+						playsound(src, 'sound/machines/buzz-sigh.ogg', 50, 1)
+				else
+					to_chat(ui.user, span_warning("[icon2html(src, ui.user.client)] incorrect pin/account combination entered."))
+					number_incorrect_tries = 0
+			else
+				playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
+				ticks_left_timeout = 120
+				view_screen = NO_SCREEN
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 					//stamp the paper
 					var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
@@ -424,6 +533,7 @@ log transactions
 					R.add_overlay(stampoverlay)
 					R.stamps += "<HR><i>This paper has been stamped by the Automatic Teller Machine.</i>"
 
+<<<<<<< HEAD
 				if(prob(50))
 					playsound(src, 'sound/items/polaroid1.ogg', 50, 1)
 				else
@@ -447,6 +557,115 @@ log transactions
 				//usr << browse(null,"window=atm")
 
 	src.attack_hand(usr)
+=======
+				to_chat(ui.user, span_notice("[icon2html(src, ui.user.client)] Access granted. Welcome user '[authenticated_account.owner_name].'"))
+
+			previous_account_number = tried_account_num
+			. = TRUE
+
+		if("transfer")
+			if(!authenticated_account)
+				return
+			var/transfer_amount = text2num(params["funds_amount"])
+			transfer_amount = round(transfer_amount, 0.01)
+			if(transfer_amount <= 0)
+				tgui_alert_async(ui.user, "That is not a valid amount.")
+			else if(transfer_amount <= authenticated_account.money)
+				var/target_account_number = text2num(params["target_acc_number"])
+				var/transfer_purpose = params["purpose"]
+				if(charge_to_account(target_account_number, authenticated_account.owner_name, transfer_purpose, machine_id, transfer_amount))
+					to_chat(ui.user, "[icon2html(src, ui.user.client)]" + span_info("Funds transfer successful."))
+					authenticated_account.money -= transfer_amount
+
+					//create an entry in the account transaction log
+					var/datum/transaction/T = new()
+					T.target_name = "Account #[target_account_number]"
+					T.purpose = transfer_purpose
+					T.source_terminal = machine_id
+					T.date = current_date_string
+					T.time = stationtime2text()
+					T.amount = "([transfer_amount])"
+					authenticated_account.transaction_log.Add(T)
+				else
+					to_chat(ui.user, "[icon2html(src, ui.user.client)]" + span_warning("Funds transfer failed."))
+
+			else
+				to_chat(ui.user, "[icon2html(src, ui.user.client)]" + span_warning("You don't have enough funds to do that!"))
+			. = TRUE
+
+		if("e_withdrawal")
+			var/amount = max(text2num(params["funds_amount"]),0)
+			amount = round(amount, 0.01)
+			if(amount <= 0)
+				tgui_alert_async(ui.user, "That is not a valid amount.")
+				return
+
+			if(!authenticated_account)
+				return
+
+			if(amount <= authenticated_account.money)
+				playsound(src, 'sound/machines/chime.ogg', 50, 1)
+
+				//remove the money
+				authenticated_account.money -= amount
+
+				//	spawn_money(amount,src.loc)
+				spawn_ewallet(amount,src.loc,ui.user)
+
+				//create an entry in the account transaction log
+				var/datum/transaction/T = new()
+				T.target_name = authenticated_account.owner_name
+				T.purpose = "Credit withdrawal"
+				T.amount = "([amount])"
+				T.source_terminal = machine_id
+				T.date = current_date_string
+				T.time = stationtime2text()
+				authenticated_account.transaction_log.Add(T)
+			else
+				to_chat(ui.user, "[icon2html(src, ui.user.client)]" + span_warning("You don't have enough funds to do that!"))
+			. = TRUE
+
+		if("withdrawal")
+			var/amount = max(text2num(params["funds_amount"]),0)
+			amount = round(amount, 0.01)
+			if(amount <= 0)
+				tgui_alert_async(ui.user, "That is not a valid amount.")
+				return
+
+			if(!authenticated_account)
+				return
+
+			if(amount <= authenticated_account.money)
+				playsound(src, 'sound/machines/chime.ogg', 50, 1)
+
+				//remove the money
+				authenticated_account.money -= amount
+
+				spawn_money(amount,src.loc,ui.user)
+
+				//create an entry in the account transaction log
+				var/datum/transaction/T = new()
+				T.target_name = authenticated_account.owner_name
+				T.purpose = "Credit withdrawal"
+				T.amount = "([amount])"
+				T.source_terminal = machine_id
+				T.date = current_date_string
+				T.time = stationtime2text()
+				authenticated_account.transaction_log.Add(T)
+			else
+				to_chat(ui.user, "[icon2html(src, ui.user.client)]" + span_warning("You don't have enough funds to do that!"))
+			. = TRUE
+
+	if(.)
+		playsound(src, "keyboard", 50, TRUE)
+
+/obj/machinery/atm/attack_hand(mob/user as mob)
+	if(istype(user, /mob/living/silicon))
+		to_chat (user, span_warning("A firewall prevents you from interfacing with this device!"))
+		return
+	if(get_dist(src,user) <= 1)
+		tgui_interact(user)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 //stolen wholesale and then edited a bit from newscasters, which are awesome and by Agouri
 /obj/machinery/atm/proc/scan_user(mob/living/carbon/human/human_user as mob)

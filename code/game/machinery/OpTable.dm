@@ -43,8 +43,13 @@
 	return
 
 /obj/machinery/optable/attack_hand(mob/user as mob)
+<<<<<<< HEAD
 	if(HULK in usr.mutations)
 		visible_message("<span class='danger'>\The [usr] destroys \the [src]!</span>")
+=======
+	if(HULK in user.mutations)
+		visible_message(span_danger("\The [user] destroys \the [src]!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		density = FALSE
 		qdel(src)
 	return

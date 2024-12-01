@@ -24,9 +24,13 @@
 
 /obj/structure/foodcart/attack_hand(var/mob/user as mob)
 	if(contents.len)
+<<<<<<< HEAD
 		var/obj/item/weapon/reagent_containers/food/choice = tgui_input_list(usr, "What would you like to grab from the cart?", "Grab Choice", contents)
+=======
+		var/obj/item/reagent_containers/food/choice = tgui_input_list(user, "What would you like to grab from the cart?", "Grab Choice", contents)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		if(choice)
-			if(!usr.canmove || usr.stat || usr.restrained() || !in_range(loc, usr))
+			if(!user.canmove || user.stat || user.restrained() || !in_range(loc, user))
 				return
 			if(ishuman(user))
 				if(!user.get_active_hand())

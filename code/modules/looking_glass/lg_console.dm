@@ -112,14 +112,19 @@
 			my_area.toggle_optional(immersion)
 			return TRUE
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 /obj/machinery/computer/looking_glass/emag_act(var/remaining_charges, var/mob/user as mob)
 	if (!emagged)
 		playsound(src, 'sound/effects/sparks4.ogg', 75, 1)
 		emagged = 1
+<<<<<<< HEAD
 		to_chat(user, "<span class='notice'>You unlock several programs that were hidden somewhere in memory.</span>")
 		log_game("[key_name(usr)] emagged the [name]")
+=======
+		to_chat(user, span_notice("You unlock several programs that were hidden somewhere in memory."))
+		log_game("[key_name(user)] emagged the [name]")
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		return 1
 	return
 

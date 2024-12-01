@@ -206,7 +206,7 @@
 /obj/machinery/atmospherics/binary/passive_gate/attack_hand(user as mob)
 	if(..())
 		return
-	add_fingerprint(usr)
+	add_fingerprint(user)
 	if(!allowed(user))
 		to_chat(user, "<span class='warning'>Access denied.</span>")
 		return
@@ -238,7 +238,7 @@
 	return data
 
 
-/obj/machinery/atmospherics/binary/passive_gate/tgui_act(action, params)
+/obj/machinery/atmospherics/binary/passive_gate/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -261,7 +261,7 @@
 				if("max")
 					target_pressure = max_pressure_setting
 				if("set")
-					var/new_pressure = tgui_input_number(usr,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure Control",src.target_pressure,max_pressure_setting,0)
+					var/new_pressure = tgui_input_number(ui.user,"Enter new output pressure (0-[max_pressure_setting]kPa)","Pressure Control",src.target_pressure,max_pressure_setting,0)
 					src.target_pressure = between(0, new_pressure, max_pressure_setting)
 
 		if("set_flow_rate")
@@ -272,11 +272,11 @@
 				if("max")
 					set_flow_rate = air1.volume
 				if("set")
-					var/new_flow_rate = tgui_input_number(usr,"Enter new flow rate limit (0-[air1.volume]L/s)","Flow Rate Control",src.set_flow_rate,air1.volume,0)
+					var/new_flow_rate = tgui_input_number(ui.user,"Enter new flow rate limit (0-[air1.volume]L/s)","Flow Rate Control",src.set_flow_rate,air1.volume,0)
 					src.set_flow_rate = between(0, new_flow_rate, air1.volume)
 
 	update_icon()
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 /obj/machinery/atmospherics/binary/passive_gate/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob)
 	if (!W.has_tool_quality(TOOL_WRENCH))

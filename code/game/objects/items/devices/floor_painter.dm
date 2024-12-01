@@ -104,8 +104,13 @@
 
 	new painting_decal(F, painting_dir, painting_colour)
 
+<<<<<<< HEAD
 /obj/item/device/floor_painter/attack_self(var/mob/user)
 	var/choice = tgui_alert(usr, "Do you wish to change the decal type, paint direction, or paint colour?", "Modify What?", list("Decal","Direction","Colour","Cancel"))
+=======
+/obj/item/floor_painter/attack_self(var/mob/user)
+	var/choice = tgui_alert(user, "Do you wish to change the decal type, paint direction, or paint colour?", "Modify What?", list("Decal","Direction","Colour","Cancel"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	if(choice == "Cancel")
 		return
 	else if(choice == "Decal")

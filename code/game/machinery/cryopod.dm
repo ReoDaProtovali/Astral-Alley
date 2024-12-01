@@ -114,7 +114,7 @@
 	if(..())
 		return
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 	return FALSE // VOREStation Edit - prevent topic exploits
 	/* VOREStation Edit - Unreachable due to above
@@ -124,12 +124,20 @@
 				return
 
 			if(!LAZYLEN(frozen_items))
+<<<<<<< HEAD
 				to_chat(usr, "<span class='notice'>There is nothing to recover from storage.</span>")
+=======
+				to_chat(ui.user, span_notice("There is nothing to recover from storage."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
 			var/obj/item/I = locate(params["ref"]) in frozen_items
 			if(!I)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='notice'>\The [I] is no longer in storage.</span>")
+=======
+				to_chat(ui.user, span_notice("\The [I] is no longer in storage."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
 			visible_message("<span class='notice'>The console beeps happily as it disgorges [I].</span>")
@@ -141,7 +149,11 @@
 				return
 
 			if(!LAZYLEN(frozen_items))
+<<<<<<< HEAD
 				to_chat(usr, "<span class='notice'>There is nothing to recover from storage.</span>")
+=======
+				to_chat(ui.user, span_notice("There is nothing to recover from storage."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
 			visible_message("<span class='notice'>The console beeps happily as it disgorges the desired objects.</span>")
@@ -718,7 +730,7 @@
 
 	if(willing)
 		if(M == user)
-			visible_message("[usr] [on_enter_visible_message] [src].", 3)
+			visible_message("[user] [on_enter_visible_message] [src].", 3)
 		else
 			visible_message("\The [user] starts putting [M] into \the [src].", 3)
 

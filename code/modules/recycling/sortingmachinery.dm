@@ -39,10 +39,15 @@
 		else
 			to_chat(user, "<span class='warning'>You need to set a destination first!</span>")
 
+<<<<<<< HEAD
 	else if(istype(W, /obj/item/weapon/pen))
 		switch(tgui_alert(usr, "What would you like to alter?","Select Alteration",list("Title","Description","Cancel")))
+=======
+	else if(istype(W, /obj/item/pen))
+		switch(tgui_alert(user, "What would you like to alter?","Select Alteration",list("Title","Description","Cancel")))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			if("Title")
-				var/str = sanitizeSafe(tgui_input_text(usr,"Label text?","Set label","", MAX_NAME_LEN), MAX_NAME_LEN)
+				var/str = sanitizeSafe(tgui_input_text(user,"Label text?","Set label","", MAX_NAME_LEN), MAX_NAME_LEN)
 				if(!str || !length(str))
 					to_chat(user, "<span class='warning'> Invalid text.</span>")
 					return
@@ -57,7 +62,7 @@
 				else
 					nameset = 1
 			if("Description")
-				var/str = sanitize(tgui_input_text(usr,"Label text?","Set label",""))
+				var/str = sanitize(tgui_input_text(user,"Label text?","Set label",""))
 				if(!str || !length(str))
 					to_chat(user, span_red("Invalid text."))
 					return
@@ -150,10 +155,15 @@
 		else
 			to_chat(user, "<span class='warning'>You need to set a destination first!</span>")
 
+<<<<<<< HEAD
 	else if(istype(W, /obj/item/weapon/pen))
 		switch(tgui_alert(usr, "What would you like to alter?","Select Alteration",list("Title","Description","Cancel")))
+=======
+	else if(istype(W, /obj/item/pen))
+		switch(tgui_alert(user, "What would you like to alter?","Select Alteration",list("Title","Description","Cancel")))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			if("Title")
-				var/str = sanitizeSafe(tgui_input_text(usr,"Label text?","Set label","", MAX_NAME_LEN), MAX_NAME_LEN)
+				var/str = sanitizeSafe(tgui_input_text(user,"Label text?","Set label","", MAX_NAME_LEN), MAX_NAME_LEN)
 				if(!str || !length(str))
 					to_chat(user, "<span class='warning'> Invalid text.</span>")
 					return
@@ -169,7 +179,7 @@
 					nameset = 1
 
 			if("Description")
-				var/str = sanitize(tgui_input_text(usr,"Label text?","Set label",""))
+				var/str = sanitize(tgui_input_text(user,"Label text?","Set label",""))
 				if(!str || !length(str))
 					to_chat(user, span_red("Invalid text."))
 					return
@@ -268,9 +278,9 @@
 			if(i > 5)
 				P.icon_state = "deliverycrate5"
 				P.name = "huge parcel"
-			P.add_fingerprint(usr)
-			O.add_fingerprint(usr)
-			src.add_fingerprint(usr)
+			P.add_fingerprint(user)
+			O.add_fingerprint(user)
+			src.add_fingerprint(user)
 			src.amount -= 1
 			user.visible_message("\The [user] wraps \a [target] with \a [src].",\
 			"<span class='notice'>You wrap \the [target], leaving [amount] units of paper on \the [src].</span>",\
@@ -371,10 +381,14 @@
 /obj/item/device/destTagger/attack_self(mob/user as mob)
 	tgui_interact(user)
 
+<<<<<<< HEAD
 /obj/item/device/destTagger/tgui_act(action, params)
+=======
+/obj/item/destTagger/tgui_act(action, params, datum/tgui/ui)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	if(..())
 		return TRUE
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 	switch(action)
 		if("set_tag")
 			var/new_tag = params["tag"]

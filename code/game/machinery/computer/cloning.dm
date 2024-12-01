@@ -196,7 +196,7 @@
 
 	return data
 
-/obj/machinery/computer/cloning/tgui_act(action, params)
+/obj/machinery/computer/cloning/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -204,8 +204,13 @@
 	switch(tgui_modal_act(src, action, params))
 		if(TGUI_MODAL_ANSWER)
 			if(params["id"] == "del_rec" && active_record)
+<<<<<<< HEAD
 				var/obj/item/weapon/card/id/C = usr.get_active_hand()
 				if(!istype(C) && !istype(C, /obj/item/device/pda))
+=======
+				var/obj/item/card/id/C = ui.user.get_active_hand()
+				if(!istype(C) && !istype(C, /obj/item/pda))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 					set_temp("ID not in hand.", "danger")
 					return
 				if(check_access(C))
@@ -360,16 +365,16 @@
 			else
 				scan_mode = FALSE
 		if("eject")
-			if(usr.incapacitated() || !scanner || loading)
+			if(ui.user.incapacitated() || !scanner || loading)
 				return
-			scanner.eject_occupant(usr)
-			scanner.add_fingerprint(usr)
+			scanner.eject_occupant(ui.user)
+			scanner.add_fingerprint(ui.user)
 		if("cleartemp")
 			temp = null
 		else
 			return FALSE
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 
 /obj/machinery/computer/cloning/proc/scan_mob(mob/living/carbon/human/subject as mob, var/scan_brain = 0)
 	if(stat & NOPOWER)

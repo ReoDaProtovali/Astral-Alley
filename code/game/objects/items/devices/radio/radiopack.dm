@@ -64,8 +64,13 @@
 	if(!slot_check())
 		to_chat(user, "<span class='warning'>You need to equip [src] before taking out [handset].</span>")
 	else
+<<<<<<< HEAD
 		if(!usr.put_in_hands(handset)) //Detach the handset into the user's hands
 			to_chat(user, "<span class='warning'>You need a free hand to hold the handset!</span>")
+=======
+		if(!user.put_in_hands(handset)) //Detach the handset into the user's hands
+			to_chat(user, span_warning("You need a free hand to hold the handset!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		update_icon() //success
 
 //checks that the base unit is in the correct slot to be used

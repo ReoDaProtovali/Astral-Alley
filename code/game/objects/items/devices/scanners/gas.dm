@@ -24,7 +24,11 @@
 	if (user.stat)
 		return
 	if (!user.IsAdvancedToolUser())
+<<<<<<< HEAD
 		to_chat(usr, "<span class='warning'>You don't have the dexterity to do this!</span>")
+=======
+		to_chat(user, span_warning("You don't have the dexterity to do this!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		return
 
 	analyze_gases(src, user)

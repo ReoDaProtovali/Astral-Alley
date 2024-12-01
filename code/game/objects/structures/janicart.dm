@@ -149,8 +149,13 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 			to_chat(user, "<span class='notice'>There is no bucket mounted here to dip [I] into!</span>")
 		return 1
 
+<<<<<<< HEAD
 	else if (istype(I, /obj/item/weapon/reagent_containers/glass/bucket) && mybucket)
 		I.afterattack(mybucket, usr, 1)
+=======
+	else if (istype(I, /obj/item/reagent_containers/glass/bucket) && mybucket)
+		I.afterattack(mybucket, user, 1)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		update_icon()
 		return 1
 
@@ -188,12 +193,21 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 //Altclick the cart with a reagent container to pour things into the bucket without putting the bottle in trash
 /obj/structure/janitorialcart/AltClick(mob/living/user)
 	if(user.incapacitated() || !Adjacent(user))	return
+<<<<<<< HEAD
 	var/obj/I = usr.get_active_hand()
 	if(istype(I, /obj/item/weapon/mop))
 		equip_janicart_item(user, I)
 	else if(istype(I, /obj/item/weapon/reagent_containers) && mybucket)
 		var/obj/item/weapon/reagent_containers/C = I
 		C.afterattack(mybucket, usr, 1)
+=======
+	var/obj/I = user.get_active_hand()
+	if(istype(I, /obj/item/mop))
+		equip_janicart_item(user, I)
+	else if(istype(I, /obj/item/reagent_containers) && mybucket)
+		var/obj/item/reagent_containers/C = I
+		C.afterattack(mybucket, user, 1)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		update_icon()
 
 
@@ -225,53 +239,79 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 	if(..())
 		return TRUE
 
-	var/obj/item/I = usr.get_active_hand()
+	var/obj/item/I = ui.user.get_active_hand()
 
 	switch(action)
 		if("bag")
 			if(mybag)
+<<<<<<< HEAD
 				usr.put_in_hands(mybag)
 				to_chat(usr, "<span class='notice'>You take [mybag] from [src].</span>")
+=======
+				ui.user.put_in_hands(mybag)
+				to_chat(ui.user, span_notice("You take [mybag] from [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				mybag = null
 				nullTguiIcon("mybag")
 			else if(is_type_in_typecache(I, equippable_item_whitelist))
-				equip_janicart_item(usr, I)
+				equip_janicart_item(ui.user, I)
 		if("mop")
 			if(mymop)
+<<<<<<< HEAD
 				usr.put_in_hands(mymop)
 				to_chat(usr, "<span class='notice'>You take [mymop] from [src].</span>")
+=======
+				ui.user.put_in_hands(mymop)
+				to_chat(ui.user, span_notice("You take [mymop] from [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				mymop = null
 				nullTguiIcon("mymop")
 			else if(is_type_in_typecache(I, equippable_item_whitelist))
-				equip_janicart_item(usr, I)
+				equip_janicart_item(ui.user, I)
 		if("spray")
 			if(myspray)
+<<<<<<< HEAD
 				usr.put_in_hands(myspray)
 				to_chat(usr, "<span class='notice'>You take [myspray] from [src].</span>")
+=======
+				ui.user.put_in_hands(myspray)
+				to_chat(ui.user, span_notice("You take [myspray] from [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				myspray = null
 				nullTguiIcon("myspray")
 			else if(is_type_in_typecache(I, equippable_item_whitelist))
-				equip_janicart_item(usr, I)
+				equip_janicart_item(ui.user, I)
 		if("replacer")
 			if(myreplacer)
+<<<<<<< HEAD
 				usr.put_in_hands(myreplacer)
 				to_chat(usr, "<span class='notice'>You take [myreplacer] from [src].</span>")
+=======
+				ui.user.put_in_hands(myreplacer)
+				to_chat(ui.user, span_notice("You take [myreplacer] from [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				myreplacer = null
 				nullTguiIcon("myreplacer")
 			else if(is_type_in_typecache(I, equippable_item_whitelist))
-				equip_janicart_item(usr, I)
+				equip_janicart_item(ui.user, I)
 		if("sign")
 			if(istype(I, /obj/item/clothing/suit/caution) && signs < 4)
-				equip_janicart_item(usr, I)
+				equip_janicart_item(ui.user, I)
 			else if(signs)
 				var/obj/item/clothing/suit/caution/sign = locate() in src
 				if(sign)
+<<<<<<< HEAD
 					usr.put_in_hands(sign)
 					to_chat(usr, "<span class='notice'>You take \a [sign] from [src].</span>")
+=======
+					ui.user.put_in_hands(sign)
+					to_chat(ui.user, span_notice("You take \a [sign] from [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 					signs--
 					if(!signs)
 						nullTguiIcon("signs")
 			else
+<<<<<<< HEAD
 				to_chat(usr, "<span class='notice'>[src] doesn't have any signs left.</span>")
 		if("bucket")
 			if(mybucket)
@@ -281,6 +321,17 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 				nullTguiIcon("mybucket")
 			else
 				to_chat(usr, "<span class='notice'>((Drag and drop a mop bucket onto [src] to equip it.))</span>")
+=======
+				to_chat(ui.user, span_notice("[src] doesn't have any signs left."))
+		if("bucket")
+			if(mybucket)
+				mybucket.forceMove(get_turf(ui.user))
+				to_chat(ui.user, span_notice("You unmount [mybucket] from [src]."))
+				mybucket = null
+				nullTguiIcon("mybucket")
+			else
+				to_chat(ui.user, span_notice("((Drag and drop a mop bucket onto [src] to equip it.))"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return FALSE
 		else
 			return FALSE

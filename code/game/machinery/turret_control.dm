@@ -95,8 +95,13 @@
 	if(stat & BROKEN)
 		return
 
+<<<<<<< HEAD
 	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))
 		if(allowed(usr))
+=======
+	if(istype(W, /obj/item/card/id)||istype(W, /obj/item/pda))
+		if(allowed(user))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			if(emagged)
 				to_chat(user, "<span class='notice'>The turret control is unresponsive.</span>")
 			else
@@ -149,10 +154,10 @@
 	)
 	return data
 
-/obj/machinery/turretid/tgui_act(action, params)
+/obj/machinery/turretid/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return
-	if(isLocked(usr))
+	if(isLocked(ui.user))
 		return
 
 	. = TRUE

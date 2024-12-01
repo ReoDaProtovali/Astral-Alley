@@ -127,12 +127,12 @@
 			creating_new_account = 1
 
 		if("add_funds")
-			var/amount = tgui_input_number(usr, "Enter the amount you wish to add", "Silently add funds")
+			var/amount = tgui_input_number(ui.user, "Enter the amount you wish to add", "Silently add funds")
 			if(detailed_account_view)
 				detailed_account_view.money = min(detailed_account_view.money + amount, fund_cap)
 
 		if("remove_funds")
-			var/amount = tgui_input_number(usr, "Enter the amount you wish to remove", "Silently remove funds")
+			var/amount = tgui_input_number(ui.user, "Enter the amount you wish to remove", "Silently remove funds")
 			if(detailed_account_view)
 				detailed_account_view.money = max(detailed_account_view.money - amount, -fund_cap)
 
@@ -164,15 +164,22 @@
 			if(held_card)
 				held_card.loc = src.loc
 
-				if(ishuman(usr) && !usr.get_active_hand())
-					usr.put_in_hands(held_card)
+				if(ishuman(ui.user) && !ui.user.get_active_hand())
+					ui.user.put_in_hands(held_card)
 				held_card = null
 
 			else
+<<<<<<< HEAD
 				var/obj/item/I = usr.get_active_hand()
 				if(istype(I, /obj/item/weapon/card/id))
 					var/obj/item/weapon/card/id/C = I
 					usr.drop_item()
+=======
+				var/obj/item/I = ui.user.get_active_hand()
+				if(istype(I, /obj/item/card/id))
+					var/obj/item/card/id/C = I
+					ui.user.drop_item()
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 					C.loc = src
 					held_card = C
 

@@ -161,12 +161,12 @@ a creative player the means to solve many problems.  Circuits are held inside an
 	if(params["link"])
 		linked = locate(params["link"]) in pin.linked
 
-	var/obj/held_item = usr.get_active_hand()
+	var/obj/held_item = ui.user.get_active_hand()
 
 	. = TRUE
 	switch(action)
 		if("rename")
-			rename_component(usr)
+			rename_component(ui.user)
 			return
 
 		if("wire", "pin_name", "pin_data", "pin_unwire")
@@ -174,37 +174,47 @@ a creative player the means to solve many problems.  Circuits are held inside an
 				var/obj/item/device/multitool/M = held_item
 				switch(action)
 					if("pin_name")
-						M.wire(pin, usr)
+						M.wire(pin, ui.user)
 					if("pin_data")
 						var/datum/integrated_io/io = pin
-						io.ask_for_pin_data(usr, held_item) // The pins themselves will determine how to ask for data, and will validate the data.
+						io.ask_for_pin_data(ui.user, held_item) // The pins themselves will determine how to ask for data, and will validate the data.
 					if("pin_unwire")
-						M.unwire(pin, linked, usr)
+						M.unwire(pin, linked, ui.user)
 
 			else if(istype(held_item, /obj/item/device/integrated_electronics/wirer))
 				var/obj/item/device/integrated_electronics/wirer/wirer = held_item
 				if(linked)
-					wirer.wire(linked, usr)
+					wirer.wire(linked, ui.user)
 				else if(pin)
-					wirer.wire(pin, usr)
+					wirer.wire(pin, ui.user)
 
 			else if(istype(held_item, /obj/item/device/integrated_electronics/debugger))
 				var/obj/item/device/integrated_electronics/debugger/debugger = held_item
 				if(pin)
-					debugger.write_data(pin, usr)
+					debugger.write_data(pin, ui.user)
 			else
+<<<<<<< HEAD
 				to_chat(usr, "<span class='warning'>You can't do a whole lot without the proper tools.</span>")
+=======
+				to_chat(ui.user, span_warning("You can't do a whole lot without the proper tools."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			return
 
 		if("scan")
 			if(istype(held_item, /obj/item/device/integrated_electronics/debugger))
 				var/obj/item/device/integrated_electronics/debugger/D = held_item
 				if(D.accepting_refs)
-					D.afterattack(src, usr, TRUE)
+					D.afterattack(src, ui.user, TRUE)
 				else
+<<<<<<< HEAD
 					to_chat(usr, "<span class='warning'>The Debugger's 'ref scanner' needs to be on.</span>")
 			else
 				to_chat(usr, "<span class='warning'>You need a multitool/debugger set to 'ref' mode to do that.</span>")
+=======
+					to_chat(ui.user, span_warning("The Debugger's 'ref scanner' needs to be on."))
+			else
+				to_chat(ui.user, span_warning("You need a multitool/debugger set to 'ref' mode to do that."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			return
 
 
@@ -212,12 +222,12 @@ a creative player the means to solve many problems.  Circuits are held inside an
 			var/obj/item/integrated_circuit/examined = locate(params["ref"])
 			if(istype(examined) && (examined.loc == loc))
 				if(ui.parent_ui)
-					examined.tgui_interact(usr, null, ui.parent_ui)
+					examined.tgui_interact(ui.user, null, ui.parent_ui)
 				else
-					examined.tgui_interact(usr)
+					examined.tgui_interact(ui.user)
 
 		if("remove")
-			remove(usr)
+			remove(ui.user)
 			return
 	return FALSE
 

@@ -84,12 +84,16 @@
 				return
 			else
 				// insert cell
+<<<<<<< HEAD
 				var/obj/item/weapon/cell/C = usr.get_active_hand()
+=======
+				var/obj/item/cell/C = user.get_active_hand()
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				if(istype(C))
 					user.drop_item()
 					cell = C
 					C.loc = src
-					C.add_fingerprint(usr)
+					C.add_fingerprint(user)
 
 					user.visible_message("<span class='notice'>[user] inserts a power cell into [src].</span>", "<span class='notice'>You insert the power cell into [src].</span>")
 					power_change()
@@ -146,7 +150,7 @@
 
 	return data
 
-/obj/machinery/space_heater/tgui_act(action, params)
+/obj/machinery/space_heater/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -160,11 +164,16 @@
 			. = TRUE
 
 		if("cellremove")
+<<<<<<< HEAD
 			if(cell && !usr.get_active_hand())
 				usr.visible_message("<span class='notice'>[usr] removes [cell] from [src].</span>", "<span class='notice'>You remove [cell] from [src].</span>")
+=======
+			if(cell && !ui.user.get_active_hand())
+				ui.user.visible_message(span_notice("[ui.user] removes [cell] from [src]."), span_notice("You remove [cell] from [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				cell.update_icon()
-				usr.put_in_hands(cell)
-				cell.add_fingerprint(usr)
+				ui.user.put_in_hands(cell)
+				cell.add_fingerprint(ui.user)
 				cell = null
 				power_change()
 				. = TRUE
@@ -172,14 +181,22 @@
 
 		if("cellinstall")
 			if(!cell)
+<<<<<<< HEAD
 				var/obj/item/weapon/cell/C = usr.get_active_hand()
+=======
+				var/obj/item/cell/C = ui.user.get_active_hand()
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				if(istype(C))
-					usr.drop_item()
+					ui.user.drop_item()
 					cell = C
 					C.loc = src
-					C.add_fingerprint(usr)
+					C.add_fingerprint(ui.user)
 					power_change()
+<<<<<<< HEAD
 					usr.visible_message("<span class='notice'>[usr] inserts \the [C] into \the [src].</span>", "<span class='notice'>You insert \the [C] into \the [src].</span>")
+=======
+					ui.user.visible_message(span_notice("[ui.user] inserts \the [C] into \the [src]."), span_notice("You insert \the [C] into \the [src]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				. = TRUE
 
 /obj/machinery/space_heater/process()

@@ -36,7 +36,11 @@ MRE Stuff
 
 /obj/item/weapon/storage/mre/open(mob/user)
 	if(!opened)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>You tear open the bag, breaking the vacuum seal.</span>")
+=======
+		to_chat(user, span_notice("You tear open the bag, breaking the vacuum seal."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		opened = 1
 		update_icon()
 	. = ..()
@@ -236,7 +240,11 @@ MRE Stuff
 
 /obj/item/weapon/storage/mrebag/open(mob/user)
 	if(!opened && !isobserver(user))
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>The pouch heats up as you break the vacuum seal.</span>")
+=======
+		to_chat(user, span_notice("The pouch heats up as you break the vacuum seal."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		opened = 1
 		update_icon()
 	. = ..()

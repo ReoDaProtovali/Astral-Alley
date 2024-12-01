@@ -104,7 +104,11 @@
 	if (!can_climb(user))
 		return
 
+<<<<<<< HEAD
 	usr.visible_message("<span class='warning'>[user] starts climbing onto \the [src]!</span>")
+=======
+	user.visible_message(span_warning("[user] starts climbing onto \the [src]!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	LAZYDISTINCTADD(climbers, user)
 
 	if(!do_after(user,(issmall(user) ? climb_delay * 0.6 : climb_delay)))
@@ -115,10 +119,14 @@
 		LAZYREMOVE(climbers, user)
 		return
 
-	usr.forceMove(climb_to(user))
+	user.forceMove(climb_to(user))
 
 	if (get_turf(user) == get_turf(src))
+<<<<<<< HEAD
 		usr.visible_message("<span class='warning'>[user] climbs onto \the [src]!</span>")
+=======
+		user.visible_message(span_warning("[user] climbs onto \the [src]!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	LAZYREMOVE(climbers, user)
 
 /obj/structure/proc/climb_to(var/mob/living/user)

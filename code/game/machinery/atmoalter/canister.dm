@@ -320,7 +320,7 @@ update_flag
 
 	return data
 
-/obj/machinery/portable_atmospherics/canister/tgui_act(action, params)
+/obj/machinery/portable_atmospherics/canister/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -336,7 +336,7 @@ update_flag
 					"\[Air\]" = "grey", \
 					"\[CAUTION\]" = "yellow", \
 				)
-				var/label = tgui_input_list(usr, "Choose canister label", "Gas canister", colors)
+				var/label = tgui_input_list(ui.user, "Choose canister label", "Gas canister", colors)
 				if(label)
 					canister_color = colors[label]
 					icon_state = colors[label]
@@ -353,7 +353,7 @@ update_flag
 				pressure = 10*ONE_ATMOSPHERE
 				. = TRUE
 			else if(pressure == "input")
-				pressure = tgui_input_number(usr, "New release pressure ([ONE_ATMOSPHERE/10]-[10*ONE_ATMOSPHERE] kPa):", name, release_pressure, 10*ONE_ATMOSPHERE, ONE_ATMOSPHERE/10)
+				pressure = tgui_input_number(ui.user, "New release pressure ([ONE_ATMOSPHERE/10]-[10*ONE_ATMOSPHERE] kPa):", name, release_pressure, 10*ONE_ATMOSPHERE, ONE_ATMOSPHERE/10)
 				if(!isnull(pressure) && !..())
 					. = TRUE
 			else if(text2num(pressure) != null)
@@ -364,6 +364,7 @@ update_flag
 		if("valve")
 			if(valve_open)
 				if(holding)
+<<<<<<< HEAD
 					release_log += "Valve was <b>closed</b> by [usr] ([usr.ckey]), stopping the transfer into the [holding]<br>"
 				else
 					release_log += "Valve was <b>closed</b> by [usr] ([usr.ckey]), stopping the transfer into the <font color='red'><b>air</b></font><br>"
@@ -372,6 +373,16 @@ update_flag
 					release_log += "Valve was <b>opened</b> by [usr] ([usr.ckey]), starting the transfer into the [holding]<br>"
 				else
 					release_log += "Valve was <b>opened</b> by [usr] ([usr.ckey]), starting the transfer into the <font color='red'><b>air</b></font><br>"
+=======
+					release_log += "Valve was " + span_bold("closed") + " by [ui.user] ([ui.user.ckey]), stopping the transfer into the [holding]<br>"
+				else
+					release_log += "Valve was " + span_bold("closed") + " by [ui.user] ([ui.user.ckey]), stopping the transfer into the " + span_red(span_bold("air")) + "<br>"
+			else
+				if(holding)
+					release_log += "Valve was " + span_bold("opened") + " by [ui.user] ([ui.user.ckey]), starting the transfer into the [holding]<br>"
+				else
+					release_log += "Valve was " + span_bold("opened") + " by [ui.user] ([ui.user.ckey]), starting the transfer into the " + span_red(span_bold("air")) + "<br>"
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 					log_open()
 			valve_open = !valve_open
 			. = TRUE
@@ -379,14 +390,20 @@ update_flag
 			if(holding)
 				if(valve_open)
 					valve_open = 0
+<<<<<<< HEAD
 					release_log += "Valve was <b>closed</b> by [usr] ([usr.ckey]), stopping the transfer into the [holding]<br>"
 				if(istype(holding, /obj/item/weapon/tank))
 					holding.manipulated_by = usr.real_name
+=======
+					release_log += "Valve was " + span_bold("closed") + " by [ui.user] ([ui.user.ckey]), stopping the transfer into the [holding]<br>"
+				if(istype(holding, /obj/item/tank))
+					holding.manipulated_by = ui.user.real_name
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				holding.loc = loc
 				holding = null
 			. = TRUE
 
-	add_fingerprint(usr)
+	add_fingerprint(ui.user)
 	update_icon()
 
 /obj/machinery/portable_atmospherics/canister/phoron/Initialize() //ChompEDIT New --> Initialize

@@ -1058,10 +1058,17 @@
 /obj/item/weapon/toy/desk/AltClick(mob/user)
 	activate(user)
 
+<<<<<<< HEAD
 /obj/item/weapon/toy/desk/MouseDrop(mob/user as mob) // Code from Paper bin, so you can still pick up the deck
 	if((user == usr && (!( usr.restrained() ) && (!( usr.stat ) && (usr.contents.Find(src) || in_range(src, usr))))))
 		if(!istype(usr, /mob/living/simple_mob))
 			if( !usr.get_active_hand() )		//if active hand is empty
+=======
+/obj/item/toy/desk/MouseDrop(mob/user as mob) // Code from Paper bin, so you can still pick up the deck
+	if((user == usr && (!( user.restrained() ) && (!( user.stat ) && (user.contents.Find(src) || in_range(src, user))))))
+		if(!istype(user, /mob/living/simple_mob))
+			if(!user.get_active_hand())		//if active hand is empty
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				var/mob/living/carbon/human/H = user
 				var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 

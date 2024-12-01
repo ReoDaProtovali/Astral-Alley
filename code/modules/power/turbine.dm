@@ -123,8 +123,13 @@
 		return
 	if(default_deconstruction_crowbar(user, W))
 		return
+<<<<<<< HEAD
 	if(istype(W, /obj/item/device/multitool))
 		var/new_ident = tgui_input_text(usr, "Enter a new ident tag.", name, comp_id, MAX_NAME_LEN)
+=======
+	if(istype(W, /obj/item/multitool))
+		var/new_ident = tgui_input_text(user, "Enter a new ident tag.", name, comp_id, MAX_NAME_LEN)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		new_ident = sanitize(new_ident,MAX_NAME_LEN)
 		if(new_ident && user.Adjacent(src))
 			comp_id = new_ident
@@ -337,8 +342,13 @@
 			doors += P
 
 /obj/machinery/computer/turbine_computer/attackby(obj/item/W, mob/user)
+<<<<<<< HEAD
 	if(istype(W, /obj/item/device/multitool))
 		var/new_ident = tgui_input_text(usr, "Enter a new ident tag.", name, id, MAX_NAME_LEN)
+=======
+	if(istype(W, /obj/item/multitool))
+		var/new_ident = tgui_input_text(user, "Enter a new ident tag.", name, id, MAX_NAME_LEN)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 		new_ident = sanitize(new_ident,MAX_NAME_LEN)
 		if(new_ident && user.Adjacent(src))
 			id = new_ident

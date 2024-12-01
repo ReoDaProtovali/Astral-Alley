@@ -357,7 +357,7 @@ GLOBAL_LIST_EMPTY(suit_cycler_typecache)
 
 	return data
 
-/obj/machinery/suit_cycler/tgui_act(action, params)
+/obj/machinery/suit_cycler/tgui_act(action, params, datum/tgui/ui)
 	if(..())
 		return TRUE
 
@@ -409,20 +409,28 @@ GLOBAL_LIST_EMPTY(suit_cycler_typecache)
 			. = TRUE
 
 		if("lock")
-			if(allowed(usr))
+			if(allowed(ui.user))
 				locked = !locked
-				to_chat(usr, "You [locked ? "" : "un"]lock \the [src].")
+				to_chat(ui.user, "You [locked ? "" : "un"]lock \the [src].")
 			else
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>Access denied.</span>")
+=======
+				to_chat(ui.user, span_danger("Access denied."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			. = TRUE
 
 		if("eject_guy")
-			eject_occupant(usr)
+			eject_occupant(ui.user)
 			. = TRUE
 
 		if("uv")
 			if(safeties && occupant)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='danger'>The cycler has detected an occupant. Please remove the occupant before commencing the decontamination cycle.</span>")
+=======
+				to_chat(ui.user, span_danger("The cycler has detected an occupant. Please remove the occupant before commencing the decontamination cycle."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
 			active = 1

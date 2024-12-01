@@ -327,27 +327,31 @@
 	if(..())
 		return TRUE
 
+<<<<<<< HEAD
 	add_fingerprint(usr)
 	usr.set_machine(src)
+=======
+	add_fingerprint(ui.user)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 	switch(action)
 		if("search")
 			search = params["search"]
-			update_tgui_static_data(usr, ui)
+			update_tgui_static_data(ui.user, ui)
 			return TRUE
 		if("design_page")
 			if(params["reset"])
 				design_page = 0
 			else
 				design_page = max(design_page + (1 * params["reverse"]), 0)
-			update_tgui_static_data(usr, ui)
+			update_tgui_static_data(ui.user, ui)
 			return TRUE
 		if("builder_page")
 			if(params["reset"])
 				builder_page = 0
 			else
 				builder_page = max(builder_page + (1 * params["reverse"]), 0)
-			update_tgui_static_data(usr, ui)
+			update_tgui_static_data(ui.user, ui)
 			return TRUE
 
 		if("updt_tech") //Update the research holder with information from the technology disk.
@@ -357,7 +361,7 @@
 				files.AddTech2Known(t_disk.stored)
 				files.RefreshResearch()
 				griefProtection() //Update CentCom too
-				update_tgui_static_data(usr, ui)
+				update_tgui_static_data(ui.user, ui)
 			return TRUE
 
 		if("clear_tech") //Erase data on the technology disk.
@@ -382,7 +386,7 @@
 				busy_msg = null
 				files.AddDesign2Known(d_disk.blueprint)
 				griefProtection() //Update CentCom too
-				update_tgui_static_data(usr, ui)
+				update_tgui_static_data(ui.user, ui)
 			return TRUE
 
 		if("clear_design") //Erases data on the design disk.
@@ -404,7 +408,11 @@
 		if("eject_item") //Eject the item inside the destructive analyzer.
 			if(linked_destroy)
 				if(linked_destroy.busy)
+<<<<<<< HEAD
 					to_chat(usr, "<span class='notice'>The destructive analyzer is busy at the moment.</span>")
+=======
+					to_chat(ui.user, span_notice("The destructive analyzer is busy at the moment."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 					return FALSE
 
 				if(linked_destroy.loaded_item)
@@ -418,7 +426,11 @@
 				return FALSE
 
 			if(linked_destroy.busy)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='notice'>The destructive analyzer is busy at the moment.</span>")
+=======
+				to_chat(ui.user, span_notice("The destructive analyzer is busy at the moment."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
 			if(tgui_alert(usr, "Proceeding will destroy loaded item. Continue?", "Destructive analyzer confirmation", list("Yes", "No")) != "Yes" || !linked_destroy)
@@ -431,7 +443,11 @@
 					linked_destroy.busy = 0
 					busy_msg = null
 					if(!linked_destroy.loaded_item)
+<<<<<<< HEAD
 						to_chat(usr, "<span class='notice'>The destructive analyzer appears to be empty.</span>")
+=======
+						to_chat(ui.user, span_notice("The destructive analyzer appears to be empty."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 						return
 
 					if(istype(linked_destroy.loaded_item,/obj/item/stack))//Only deconsturcts one sheet at a time instead of the entire stack
@@ -473,19 +489,23 @@
 
 					use_power(linked_destroy.active_power_usage)
 					files.RefreshResearch()
-					update_tgui_static_data(usr, ui)
+					update_tgui_static_data(ui.user, ui)
 			return TRUE
 
 		if("lock") //Lock the console from use by anyone without tox access.
-			if(!allowed(usr))
-				to_chat(usr, "Unauthorized Access.")
+			if(!allowed(ui.user))
+				to_chat(ui.user, "Unauthorized Access.")
 				return
 			locked = !locked
 			return TRUE
 
 		if("sync") //Sync the research holder with all the R&D consoles in the game that aren't sync protected.
 			if(!sync)
+<<<<<<< HEAD
 				to_chat(usr, "<span class='notice'>You must connect to the network first.</span>")
+=======
+				to_chat(ui.user, span_notice("You must connect to the network first."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				return
 
 			busy_msg = "Updating Database..."
@@ -511,7 +531,7 @@
 							S.produce_heat()
 					busy_msg = null
 					files.RefreshResearch()
-					update_tgui_static_data(usr, ui)
+					update_tgui_static_data(ui.user, ui)
 			return TRUE
 
 		if("togglesync") //Prevents the console from being synced by other consoles. Can still send data.
@@ -606,7 +626,7 @@
 			spawn(10)
 				busy_msg = null
 				SyncRDevices()
-				update_tgui_static_data(usr, ui)
+				update_tgui_static_data(ui.user, ui)
 			return TRUE
 
 		if("disconnect") //The R&D console disconnects with a specific device.
@@ -620,18 +640,18 @@
 				if("imprinter")
 					linked_imprinter.linked_console = null
 					linked_imprinter = null
-			update_tgui_static_data(usr, ui)
+			update_tgui_static_data(ui.user, ui)
 
 		if("reset") //Reset the R&D console's database.
 			griefProtection()
-			var/choice = tgui_alert(usr, "R&D Console Database Reset", "Are you sure you want to reset the R&D console's database? Data lost cannot be recovered.", list("Continue", "Cancel"))
+			var/choice = tgui_alert(ui.user, "R&D Console Database Reset", "Are you sure you want to reset the R&D console's database? Data lost cannot be recovered.", list("Continue", "Cancel"))
 			if(choice == "Continue")
 				busy_msg = "Updating Database..."
 				qdel(files)
 				files = new /datum/research(src)
 				spawn(20)
 					busy_msg = null
-					update_tgui_static_data(usr, ui)
+					update_tgui_static_data(ui.user, ui)
 
 		if("print") //Print research information
 			busy_msg = "Printing Research Information. Please Wait..."

@@ -192,8 +192,13 @@
 		if(P.get_amount() < amt)
 			to_chat(user, "<span class='warning'>You don't have enough sheets to repair this! You need at least [amt] sheets.</span>")
 			return
+<<<<<<< HEAD
 		to_chat(user, "<span class='notice'>You begin repairing [src]...</span>")
 		if(do_after(usr, 30))
+=======
+		to_chat(user, span_notice("You begin repairing [src]..."))
+		if(do_after(user, 30))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			if(P.use(amt))
 				to_chat(user, "<span class='notice'>You have repaired \The [src]</span>")
 				src.repair()

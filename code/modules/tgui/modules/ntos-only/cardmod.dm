@@ -119,8 +119,13 @@
 	if(!istype(computer))
 		return TRUE
 
+<<<<<<< HEAD
 	var/obj/item/weapon/card/id/user_id_card = usr.GetIdCard()
 	var/obj/item/weapon/card/id/id_card
+=======
+	var/obj/item/card/id/user_id_card = ui.user.GetIdCard()
+	var/obj/item/card/id/id_card
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	if(computer.card_slot)
 		id_card = computer.card_slot.stored_card
 
@@ -131,7 +136,7 @@
 		if("print")
 			if(computer && computer.nano_printer) //This option should never be called if there is no printer
 				if(!mod_mode)
-					if(program.can_run(usr, 1))
+					if(program.can_run(ui.user, 1))
 						var/contents = {"<h4>Access Report</h4>
 									<u>Prepared By:</u> [user_id_card.registered_name ? user_id_card.registered_name : "Unknown"]<br>
 									<u>For:</u> [id_card.registered_name ? id_card.registered_name : "Unregistered"]<br>
@@ -148,7 +153,11 @@
 								contents += "  [get_access_desc(A)]"
 
 						if(!computer.nano_printer.print_text(contents,"access report"))
+<<<<<<< HEAD
 							to_chat(usr, "<span class='notice'>Hardware error: Printer was unable to print the file. It may be out of paper.</span>")
+=======
+							to_chat(ui.user, span_notice("Hardware error: Printer was unable to print the file. It may be out of paper."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 							return
 						else
 							computer.visible_message("<b>\The [computer]</b> prints out paper.")
@@ -158,7 +167,11 @@
 									[data_core ? data_core.get_manifest(0) : ""]
 									"}
 					if(!computer.nano_printer.print_text(contents,text("crew manifest ([])", stationtime2text())))
+<<<<<<< HEAD
 						to_chat(usr, "<span class='notice'>Hardware error: Printer was unable to print the file. It may be out of paper.</span>")
+=======
+						to_chat(ui.user, span_notice("Hardware error: Printer was unable to print the file. It may be out of paper."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 						return
 					else
 						computer.visible_message("<b>\The [computer]</b> prints out paper.")
@@ -167,16 +180,16 @@
 			if(computer && computer.card_slot)
 				if(id_card)
 					data_core.manifest_modify(id_card.registered_name, id_card.assignment, id_card.rank)
-				computer.proc_eject_id(usr)
+				computer.proc_eject_id(ui.user)
 			. = TRUE
 		if("terminate")
-			if(computer && program.can_run(usr, 1))
+			if(computer && program.can_run(ui.user, 1))
 				id_card.assignment = "Dismissed"	//VOREStation Edit: setting adjustment
 				id_card.access = list()
 				callHook("terminate_employee", list(id_card))
 			. = TRUE
 		if("reg")
-			if(computer && program.can_run(usr, 1))
+			if(computer && program.can_run(ui.user, 1))
 				var/temp_name = sanitizeName(params["reg"], allow_numbers = TRUE)
 				if(temp_name)
 					id_card.registered_name = temp_name
@@ -184,15 +197,15 @@
 					computer.visible_message("<span class='notice'>[computer] buzzes rudely.</span>")
 			. = TRUE
 		if("account")
-			if(computer && program.can_run(usr, 1))
+			if(computer && program.can_run(ui.user, 1))
 				var/account_num = text2num(params["account"])
 				id_card.associated_account_number = account_num
 			. = TRUE
 		if("assign")
-			if(computer && program.can_run(usr, 1) && id_card)
+			if(computer && program.can_run(ui.user, 1) && id_card)
 				var/t1 = params["assign_target"]
 				if(t1 == "Custom")
-					var/temp_t = sanitize(tgui_input_text(usr, "Enter a custom job assignment.","Assignment", id_card.assignment, 45), 45)
+					var/temp_t = sanitize(tgui_input_text(ui.user, "Enter a custom job assignment.","Assignment", id_card.assignment, 45), 45)
 					//let custom jobs function as an impromptu alt title, mainly for sechuds
 					if(temp_t)
 						id_card.assignment = temp_t
@@ -208,7 +221,11 @@
 								jobdatum = J
 								break
 						if(!jobdatum)
+<<<<<<< HEAD
 							to_chat(usr, "<span class='warning'>No log exists for this job: [t1]</span>")
+=======
+							to_chat(ui.user, span_warning("No log exists for this job: [t1]"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 							return
 
 						access = jobdatum.get_access()
@@ -220,7 +237,7 @@
 				callHook("reassign_employee", list(id_card))
 			. = TRUE
 		if("access")
-			if(computer && program.can_run(usr, 1))
+			if(computer && program.can_run(ui.user, 1))
 				var/access_type = text2num(params["access_target"])
 				var/access_allowed = text2num(params["allowed"])
 				if(access_type in get_access_ids(ACCESS_TYPE_STATION|ACCESS_TYPE_CENTCOM))

@@ -181,6 +181,7 @@
 /obj/item/clothing/accessory/collar/shock/Topic(href, href_list)
 	if(usr.stat || usr.restrained())
 		return
+<<<<<<< HEAD:code/modules/clothing/under/accessories/accessory_vr.dm
 	if(((istype(usr, /mob/living/carbon/human) && ((!( ticker ) || (ticker && ticker.mode != "monkey")) && usr.contents.Find(src))) || (usr.contents.Find(master) || (in_range(src, usr) && istype(loc, /turf)))))
 		usr.set_machine(src)
 		if(href_list["freq"])
@@ -224,6 +225,67 @@
 		usr << browse(null, "window=radio")
 		return
 	return
+=======
+	tgui_interact(user)
+
+/obj/item/clothing/accessory/collar/shock/tgui_interact(mob/user, datum/tgui/ui, datum/tgui/parent_ui, custom_state)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ShockCollar", name)
+		ui.open()
+
+/obj/item/clothing/accessory/collar/shock/tgui_static_data(mob/user)
+	var/list/data = ..()
+
+	data["freq_min"] = PUBLIC_LOW_FREQ
+	data["freq_max"] = PUBLIC_HIGH_FREQ
+
+	data["code_min"] = 0
+	data["code_max"] = 100
+
+	return data
+
+/obj/item/clothing/accessory/collar/shock/tgui_data(mob/user, datum/tgui/ui, datum/tgui_state/state)
+	var/list/data = ..()
+
+	data["on"] = on
+	data["frequency"] = frequency
+	data["code"] = code
+
+	return data
+
+/obj/item/clothing/accessory/collar/shock/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	switch(action)
+		if("freq")
+			var/new_freq = sanitize_frequency(params["freq"])
+			set_frequency(new_freq)
+			. = TRUE
+		if("code")
+			code = CLAMP(text2num(params["code"]), 1, 100)
+			. = TRUE
+		if("power")
+			on = !on
+			icon_state = "collar_shk[on]"
+			. = TRUE
+		if("tag")
+			var/sanitized = tgui_input_text(ui.user, "Tag text?", "Set Tag", "", MAX_NAME_LEN, encode = TRUE)
+			if(isnull(sanitized))
+				return
+
+			if(!length(sanitized))
+				to_chat(ui.user, span_notice("[src]'s tag set to blank."))
+				name = initial(name)
+				desc = initial(desc)
+			else
+				to_chat(ui.user, span_notice("[src]'s tag set to '[sanitized]'."))
+				name = initial(name) + " ([sanitized])"
+				desc = initial(desc) + " The tag says \"[sanitized]\"."
+			. = TRUE
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552)):code/modules/clothing/accessories/accessory_vr.dm
 
 /obj/item/clothing/accessory/collar/shock/receive_signal(datum/signal/signal)
 	if(!signal || signal.encryption != code)
@@ -441,6 +503,7 @@
 		return
 	return
 
+<<<<<<< HEAD:code/modules/clothing/under/accessories/accessory_vr.dm
 /obj/item/clothing/accessory/collar/shock/bluespace/attack_self(mob/user as mob, flag1)
 	if(!istype(user, /mob/living/carbon/human))
 		return
@@ -468,6 +531,15 @@
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return
+=======
+	switch(action)
+		if("size")
+			target_size = clamp((params["size"]/100), RESIZE_MINIMUM_DORMS, RESIZE_MAXIMUM_DORMS)
+			to_chat(ui.user, span_notice("You set the size to [target_size * 100]%"))
+			if(target_size < RESIZE_MINIMUM || target_size > RESIZE_MAXIMUM)
+				to_chat(ui.user, span_notice("Note: Resizing limited to 25-200% automatically while outside dormatory areas.")) //hint that we clamp it in resize
+			. = TRUE
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552)):code/modules/clothing/accessories/accessory_vr.dm
 
 /obj/item/clothing/accessory/collar/shock/bluespace/receive_signal(datum/signal/signal)
 	if(!signal || signal.encryption != code)

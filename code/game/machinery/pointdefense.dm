@@ -66,7 +66,11 @@ GLOBAL_LIST_BOILERPLATE(pointdefense_turrets, /obj/machinery/pointdefense)
 			return FALSE
 
 		if(!(get_z(PD) in GetConnectedZlevels(get_z(src))))
+<<<<<<< HEAD
 			to_chat(usr, "<span class='warning'>[PD] is not within control range.</span>")
+=======
+			to_chat(ui.user, span_warning("[PD] is not within control range."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			return FALSE
 
 		if(!PD.Activate()) //Activate() whilst the device is active will return false.

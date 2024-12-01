@@ -80,7 +80,7 @@
 /obj/item/weapon/storage/fancy/egg_box/open(mob/user as mob)
 	if(open)
 		return
-	if (isobserver(usr))
+	if (isobserver(user))
 		return
 	open = TRUE
 	update_icon()

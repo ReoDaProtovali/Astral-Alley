@@ -319,7 +319,7 @@
 			return
 		if(W.loc != user) // This should stop mounted modules ending up outside the module.
 			return
-		usr.drop_item()
+		user.drop_item()
 		if(W)
 			W.forceMove(loc)
 	else if(istype(W, /obj/item/weapon/packageWrap))
@@ -387,7 +387,11 @@
 /obj/structure/closet/attack_self_tk(mob/user as mob)
 	add_fingerprint(user)
 	if(!toggle())
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>It won't budge!</span>")
+=======
+		to_chat(user, span_notice("It won't budge!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 /obj/structure/closet/verb/verb_toggleopen()
 	set src in oview(1)

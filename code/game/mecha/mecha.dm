@@ -1422,9 +1422,15 @@
 
 	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))
 		if(add_req_access || maint_access)
+<<<<<<< HEAD
 			if(internals_access_allowed(usr))
 				var/obj/item/weapon/card/id/id_card
 				if(istype(W, /obj/item/weapon/card/id))
+=======
+			if(internals_access_allowed(user))
+				var/obj/item/card/id/id_card
+				if(istype(W, /obj/item/card/id))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 					id_card = W
 				else
 					var/obj/item/device/pda/pda = W

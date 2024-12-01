@@ -31,8 +31,13 @@
 	toolspeed = 1
 	tool_qualities = list(TOOL_MULTITOOL)
 
+<<<<<<< HEAD
 /obj/item/device/multitool/attack_self(mob/living/user)
 	var/choice = tgui_alert(usr, "What do you want to do with \the [src]?", "Multitool Menu", list("Switch Mode", "Clear Buffers", "Cancel"))
+=======
+/obj/item/multitool/attack_self(mob/living/user)
+	var/choice = tgui_alert(user, "What do you want to do with \the [src]?", "Multitool Menu", list("Switch Mode", "Clear Buffers", "Cancel"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	switch(choice)
 		if("Clear Buffers")
 			to_chat(user,"<span class='notice'>You clear \the [src]'s memory.</span>")

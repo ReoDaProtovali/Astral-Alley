@@ -149,18 +149,28 @@
 					text_mode = "tank transfer valve detonation"
 				if(MODE_CANISTER)
 					text_mode = "canister-assisted single gas tank detonation"
+<<<<<<< HEAD
 			to_chat(usr, "<span class='notice'>[src] set to simulate a [text_mode].</span>")
+=======
+			to_chat(ui.user, span_notice("[src] set to simulate a [text_mode]."))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			return TRUE
 		
 		if("add_tank")
+<<<<<<< HEAD
 			if(istype(usr.get_active_hand(), /obj/item/weapon/tank))
 				var/obj/item/weapon/tank/T = usr.get_active_hand()
+=======
+			if(istype(ui.user.get_active_hand(), /obj/item/tank))
+				var/obj/item/tank/T = ui.user.get_active_hand()
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 				var/slot = params["slot"]
 				if(slot == 1 && !tank1)
 					tank1 = T
 				else if(slot == 2 && !tank2)
 					tank2 = T
 				else
+<<<<<<< HEAD
 					to_chat(usr, "<span class='warning'>Slot [slot] is full.</span>")
 					return
 				
@@ -169,6 +179,16 @@
 				return TRUE
 			else
 				to_chat(usr, "<span class='warning'>You must be wielding a tank to insert it!</span>")
+=======
+					to_chat(ui.user, span_warning("Slot [slot] is full."))
+					return
+
+				ui.user.drop_item(T)
+				T.forceMove(src)
+				return TRUE
+			else
+				to_chat(ui.user, span_warning("You must be wielding a tank to insert it!"))
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 
 		if("remove_tank")
 			var/obj/item/weapon/tank/T = locate(params["ref"]) in list(tank1, tank2)

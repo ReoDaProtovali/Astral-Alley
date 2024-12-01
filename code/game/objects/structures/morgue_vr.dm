@@ -14,8 +14,13 @@
 			M.show_message("<span class='warning'>You hear a hollow crackle.</span>", 1)
 			return
 	else
+<<<<<<< HEAD
 		if(!isemptylist(src.search_contents_for(/obj/item/weapon/disk/nuclear)))
 			to_chat(usr, "You get the feeling that you shouldn't cremate one of the items in the cremator.")
+=======
+		if(!isemptylist(src.search_contents_for(/obj/item/disk/nuclear)))
+			to_chat(user, "You get the feeling that you shouldn't cremate one of the items in the cremator.")
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			return
 
 		for(var/I in contents)

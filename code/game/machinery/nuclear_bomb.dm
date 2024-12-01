@@ -85,8 +85,13 @@ var/bomb_set
 		return
 
 	if(extended)
+<<<<<<< HEAD
 		if(istype(O, /obj/item/weapon/disk/nuclear))
 			usr.drop_item()
+=======
+		if(istype(O, /obj/item/disk/nuclear))
+			user.drop_item()
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 			O.loc = src
 			auth = O
 			add_fingerprint(user)

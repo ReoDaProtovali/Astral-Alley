@@ -38,8 +38,13 @@
 	else
 		..()
 
+<<<<<<< HEAD
 /obj/item/weapon/plastique/attack_self(mob/user as mob)
 	var/newtime = tgui_input_number(usr, "Please set the timer.", "Timer", 10, 60000, 10)
+=======
+/obj/item/plastique/attack_self(mob/user as mob)
+	var/newtime = tgui_input_number(user, "Please set the timer.", "Timer", 10, 60000, 10)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	if(user.get_active_hand() == src)
 		newtime = CLAMP(newtime, 10, 60000)
 		timer = newtime

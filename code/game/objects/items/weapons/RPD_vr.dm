@@ -112,10 +112,14 @@
 
 	return data
 
+<<<<<<< HEAD
 /obj/item/weapon/pipe_dispenser/tgui_act(action, params)
+=======
+/obj/item/pipe_dispenser/tgui_act(action, params, datum/tgui/ui)
+>>>>>>> 0180cc74c5 ([MIRROR] usr to user up to player effects (#9552))
 	if(..())
 		return TRUE
-	if(!usr.canmove || usr.stat || usr.restrained() || !in_range(loc, usr))
+	if(!ui.user.canmove || ui.user.stat || ui.user.restrained() || !in_range(loc, ui.user))
 		return TRUE
 	var/playeffect = TRUE
 	switch(action)
@@ -217,7 +221,7 @@
 						var/obj/item/pipe/P = new pipe_item_type(get_turf(A), path, queued_p_dir)
 
 						P.update()
-						P.add_fingerprint(usr)
+						P.add_fingerprint(user)
 						if(R.paintable)
 							P.color = pipe_colors[paint_color]
 						P.setPipingLayer(queued_piping_layer)
@@ -248,7 +252,7 @@
 
 					activate()
 
-					C.add_fingerprint(usr)
+					C.add_fingerprint(user)
 					C.update_icon()
 					if(mode & WRENCH_MODE)
 						do_wrench(C, user)
