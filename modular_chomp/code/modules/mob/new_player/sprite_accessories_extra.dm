@@ -214,6 +214,60 @@
 	name = "Reptile Breasts"
 	icon_state = "breasts_reptile"
 
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/marking/ch/dragon_upperjaw
+	name = "Dragon Upper Jaw"
+	icon_state = "dragon_upperjaw"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/dragon_lowerjaw
+	name = "Dragon Lower Jaw"
+	icon_state = "dragon_lowerjaw"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/hippo_upperjaw
+	name = "Hippo Upper Jaw"
+	icon_state = "hippo_upperjaw"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/hippo_lowerjaw
+	name = "Hippo Lower Jaw"
+	icon_state = "hippo_lowerjaw"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/trex_upperjaw
+	name = "T-Rex Upper Jaw"
+	icon_state = "trex_upperjaw"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/trex_lowerjaw
+	name = "T-Rex Lower Jaw"
+	icon_state = "trex_lowerjaw"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/crocodile_upperjaw
+	name = "Crocodile Upper Jaw"
+	icon_state = "crocodile_upperjaw"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/marking/ch/crocodile_lowerjaw
+	name = "Crocodile Lower Jaw"
+	icon_state = "crocodile_lowerjaw"
+	body_parts = list(BP_HEAD)
+	color_blend_mode = ICON_MULTIPLY
+
+
+
+
+>>>>>>> 201a06fb56 (Adds 2 New Sprites (Dragon Upper/Lower Jaw), Fixes VBO_maw26, and Improves Hippo upper/Lower Jaw (#9577))
 /// NEW XENOMORPH SPRITE_ACCESSORIES - Basesprites borrowed from Citadel and tidied up by Makkinindorn, should blend a bit more nicely. ///
 
 /datum/sprite_accessory/marking/ch/xenomorph // This is just here to create an easy-to-follow typepath.
