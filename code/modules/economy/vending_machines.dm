@@ -669,6 +669,7 @@
 	req_access = list(access_engine_equip)
 	products = list(/obj/item/device/geiger = 4,
 					/obj/item/clothing/glasses/meson = 2,
+<<<<<<< HEAD
 					/obj/item/device/multitool = 4,
 					/obj/item/weapon/cell/high = 10,
 					/obj/item/weapon/airlock_electronics = 10,
@@ -701,6 +702,43 @@
 					/obj/item/weapon/circuitboard/dna_analyzer)
 	contraband = list(/obj/item/weapon/cell/potato = 3)
 	premium = list(/obj/item/weapon/storage/belt/utility = 3)
+=======
+					/obj/item/multitool = 4,
+					/obj/item/cell/high = 10,
+					/obj/item/airlock_electronics = 10,
+					/obj/item/circuitboard/airlock_cycling = 20,
+					/obj/item/module/power_control = 10,
+					/obj/item/circuitboard/airalarm = 10,
+					/obj/item/circuitboard/firealarm = 10,
+					/obj/item/circuitboard/status_display = 2,
+					/obj/item/circuitboard/ai_status_display = 2,
+					/obj/item/circuitboard/newscaster = 2,
+					/obj/item/circuitboard/holopad = 2,
+					/obj/item/circuitboard/intercom = 4,
+					/obj/item/circuitboard/security/telescreen/entertainment = 4,
+					/obj/item/stock_parts/motor = 2,
+					/obj/item/stock_parts/spring = 2,
+					/obj/item/stock_parts/gear = 2,
+					/obj/item/circuitboard/atm,
+					/obj/item/circuitboard/guestpass,
+					/obj/item/circuitboard/keycard_auth,
+					/obj/item/circuitboard/geiger,
+					/obj/item/circuitboard/photocopier,
+					/obj/item/circuitboard/fax,
+					/obj/item/circuitboard/request,
+					/obj/item/circuitboard/microwave,
+					/obj/item/circuitboard/washing,
+					/obj/item/circuitboard/scanner_console,
+					/obj/item/circuitboard/sleeper_console,
+					/obj/item/circuitboard/body_scanner,
+					/obj/item/circuitboard/medical_kiosk,
+					/obj/item/circuitboard/sleeper,
+					/obj/item/circuitboard/dna_analyzer,
+					/obj/item/clothing/glasses/omnihud/eng = 6)
+	contraband = list(/obj/item/cell/potato = 3,
+						/obj/item/rms = 5)
+	premium = list(/obj/item/storage/belt/utility = 3)
+>>>>>>> 67fe8c3c8e ([MIRROR] Airlock Construction (#9580))
 	product_records = list()
 	req_log_access = access_ce
 	has_logs = 1
