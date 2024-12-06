@@ -163,8 +163,13 @@
 					return FALSE
 				if(!Adjacent(TR) || !Adjacent(TG))
 					return //No long distance transfer
+<<<<<<< HEAD
 				if(!TR.reagents.get_free_space())
 					to_chat(user, "<span class='vnotice'>[TB] is full!</span>")
+=======
+				if(!TB.reagents?.get_free_space())
+					to_chat(user, span_vnotice("[TB] is full!"))
+>>>>>>> c01568e213 (fix liquid transfer (#9581))
 					return FALSE
 
 				if(TG == user)
@@ -186,8 +191,13 @@
 					return FALSE
 				if(!Adjacent(TR) || !Adjacent(TG))
 					return //No long distance transfer
+<<<<<<< HEAD
 				if(!TR.reagents.get_free_space())
 					to_chat(user, "<span class='vnotice'>[TR]'s [lowertext(TB.name)] is full!</span>")
+=======
+				if(!TB.reagents?.get_free_space())
+					to_chat(user, span_vnotice("[TR]'s [lowertext(TB.name)] is full!"))
+>>>>>>> c01568e213 (fix liquid transfer (#9581))
 					return FALSE
 
 				if(TG == user)
