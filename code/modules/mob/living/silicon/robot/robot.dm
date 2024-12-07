@@ -337,6 +337,7 @@
 */
 /mob/living/silicon/robot/proc/pick_module()
 	if(module)
+<<<<<<< HEAD
 		return
 	var/list/modules = list()
 	//VOREStatation Edit Start: shell restrictions //CHOMPstaton change to blacklist
@@ -379,6 +380,18 @@
 	updatename()
 	hud_used.update_robot_modules_display()
 	notify_ai(ROBOT_NOTIFICATION_NEW_MODULE, module.name)
+=======
+		var/list/module_sprites = SSrobot_sprites.get_module_sprites(module, src)
+		if(module_sprites.len == 1 || !client)
+			if(!module_sprites.len)
+				return
+			sprite_datum = module_sprites[1]
+			sprite_datum.do_equipment_glamour(module)
+			return
+	if(!selecting_module)
+		var/datum/tgui_module/robot_ui_module/ui = new(src)
+		ui.tgui_interact(src)
+>>>>>>> f3b8ed9bef ([MIRROR] fix subtype handling for robot extra icons (#9593))
 
 /mob/living/silicon/robot/proc/update_braintype()
 	if(istype(mmi, /obj/item/device/mmi/digital/posibrain))
