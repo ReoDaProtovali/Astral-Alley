@@ -17648,6 +17648,16 @@
 /obj/machinery/alarm{
 	pixel_y = 22
 	},
+/obj/structure/closet/walllocker_double/kitchen/east,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/reagent_containers/food/drinks/glass2/square,
+/obj/item/storage/box/glasses/coffeecup,
+/obj/item/storage/box/glasses/coffeecup,
+/obj/item/storage/box/glasses/coffeecup,
+/obj/item/storage/box/glasses/coffeecup_tall,
+/obj/item/storage/box/glasses/coffeecup_grande,
+/obj/item/storage/box/glasses/coffeecup_venti,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/visitor_dining)
 "aEb" = (
@@ -18434,6 +18444,7 @@
 /area/crew_quarters/visitor_dining)
 "aFC" = (
 /obj/structure/table/marble,
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/glass2/square{
 	pixel_x = 8;
 	pixel_y = 8
@@ -18446,11 +18457,17 @@
 	pixel_x = 8;
 	pixel_y = 8
 	},
+=======
+>>>>>>> 7131e4602e ([MIRROR] Barista love (#9591))
 /obj/machinery/floor_light/prebuilt{
 	on = 1
 	},
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 8
+	},
+/obj/machinery/chemical_dispenser/bar_syrup/full{
+	dir = 8;
+	pixel_x = 8
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/visitor_dining)
@@ -19033,7 +19050,8 @@
 "aGy" = (
 /obj/structure/table/marble,
 /obj/machinery/chemical_dispenser/bar_coffee/full{
-	dir = 8
+	dir = 8;
+	pixel_x = 1
 	},
 /obj/machinery/floor_light/prebuilt{
 	on = 1
