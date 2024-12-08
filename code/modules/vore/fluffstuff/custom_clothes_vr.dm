@@ -814,6 +814,7 @@
 		var/mob/living/carbon/human/H = user
 		if(H.head == src)
 			H.update_inv_head()
+<<<<<<< HEAD
 /*
 /obj/item/weapon/rig/light/hacker/fluff/aronai
 	name = "KHI-99-AAR suit module"
@@ -833,6 +834,8 @@
 
 No. With a teleporter? Just *no*. - Hawk, YW
 */
+=======
+>>>>>>> 891d585ede ([MIRROR] Space Traffic Update, Cleanup, & KHI Removal (#9600))
 //Viveret:Keturah
 /obj/item/clothing/under/dress/maid
 	name = "Maid Outfit"
@@ -914,7 +917,6 @@ No. With a teleporter? Just *no*. - Hawk, YW
 /obj/item/clothing/under/rank/khi
 	name = "Delete Me"
 	desc = "Why did you spawn this one? Dork."
-	//catalogue_data = list(/datum/category_item/catalogue/information/organization/khi)
 	sensor_mode = 3
 
 	icon = 'icons/inventory/uniform/item_vr.dmi'

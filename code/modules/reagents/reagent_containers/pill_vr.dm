@@ -138,9 +138,15 @@
 	color = reagents.get_color()
 
 /*CHOMPStation removal begin
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/pill/sleevingcure
 	name = "Vey-Med Resleeving Booster pill" //YW Edit
 	desc = "A rare medication provided by Vey-Med that helps counteract negative side effects of using resleeving machinery. Numb tongue before swallowing." //YW Edit
+=======
+/obj/item/reagent_containers/pill/sleevingcure
+	name = "Resleeving Sickness Cure (1u)"
+	desc = "A rare cure provided by Vey-Med that helps counteract negative side effects of using imperfect resleeving machinery."
+>>>>>>> 891d585ede ([MIRROR] Space Traffic Update, Cleanup, & KHI Removal (#9600))
 	icon_state = "pill3"
 
 /obj/item/weapon/reagent_containers/pill/sleevingcure/Initialize()

@@ -1917,11 +1917,19 @@
 /area/aro2/airarea)
 "sB" = (
 /obj/structure/table/steel,
+<<<<<<< HEAD
 /obj/item/weapon/magnetic_ammo/pistol/khi{
 	pixel_x = 5;
 	pixel_y = 2
 	},
 /obj/item/weapon/magnetic_ammo/pistol/khi{
+=======
+/obj/item/magnetic_ammo/pistol{
+	pixel_x = 5;
+	pixel_y = 2
+	},
+/obj/item/magnetic_ammo/pistol{
+>>>>>>> 891d585ede ([MIRROR] Space Traffic Update, Cleanup, & KHI Removal (#9600))
 	pixel_x = -3;
 	pixel_y = 5
 	},
