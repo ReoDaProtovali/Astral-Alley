@@ -813,18 +813,23 @@
 		apply_danger_level(0)
 	update_icon()
 
-/obj/machinery/alarm/attackby(obj/item/W as obj, mob/user as mob)
+/obj/machinery/alarm/attackby(obj/item/W as obj, mob/user)
 	add_fingerprint(user)
 	if(alarm_deconstruction_screwdriver(user, W))
 		return
 	if(alarm_deconstruction_wirecutters(user, W))
 		return
 
+<<<<<<< HEAD
 	if(istype(W, /obj/item/weapon/card/id) || istype(W, /obj/item/device/pda))// trying to unlock the interface with an ID card
 		togglelock()
+=======
+	if(istype(W, /obj/item/card/id) || istype(W, /obj/item/pda))// trying to unlock the interface with an ID card
+		togglelock(user)
+>>>>>>> 983664d462 ([MIRROR] rework appearance changer (#9588))
 	return ..()
 
-/obj/machinery/alarm/verb/togglelock(mob/user as mob)
+/obj/machinery/alarm/proc/togglelock(mob/user)
 	if(stat & (NOPOWER|BROKEN))
 		to_chat(user, "It does nothing.")
 		return
@@ -836,9 +841,9 @@
 			to_chat(user, "<span class='warning'>Access denied.</span>")
 		return
 
-/obj/machinery/alarm/AltClick()
+/obj/machinery/alarm/AltClick(mob/user)
 	..()
-	togglelock()
+	togglelock(user)
 
 /obj/machinery/alarm/power_change()
 	..()
