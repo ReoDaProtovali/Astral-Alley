@@ -40,11 +40,14 @@
 //Shuttle madness!
 #define SHUTTLE_CRASHED 3 // Yup that can happen now
 
+<<<<<<< HEAD
 #define BLUE_SHIELDED 2 // Shield from bluespace teleportation (telescience)
 
 //Assistant/Visitor/Whatever
 #define USELESS_JOB "Visitor"
 
+=======
+>>>>>>> 893b4e2ac0 ([MIRROR] converts area booleans to flags (#9595))
 //Herm Gender
 #define HERM "herm"
 

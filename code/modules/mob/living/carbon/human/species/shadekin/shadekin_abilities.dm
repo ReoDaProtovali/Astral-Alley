@@ -45,7 +45,18 @@
 /mob/living/carbon/human/proc/phase_shift()
 	set name = "Phase Shift (100)"
 	set desc = "Shift yourself out of alignment with realspace to travel quickly to different areas."
+<<<<<<< HEAD
 	set category = "Abilities.Shadekin" //ChompEDIT - TGPanel
+=======
+	set category = "Abilities.Shadekin"
+
+	//RS Port #658 Start
+	var/area/A = get_area(src)
+	if(!client?.holder && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
+		to_chat(src, span_warning("You can't do that here!"))
+		return
+	//RS Port #658 End
+>>>>>>> 893b4e2ac0 ([MIRROR] converts area booleans to flags (#9595))
 
 	var/ability_cost = 100
 

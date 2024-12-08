@@ -13,6 +13,15 @@
 	if((get_area(src).flags & PHASE_SHIELDED))	//CHOMPAdd - Mapping tools to control phasing
 		to_chat(src,"<span class='warning'>This area is preventing you from phasing!</span>")
 		return FALSE
+<<<<<<< HEAD
+=======
+	//RS Port #658 Start
+	var/area/A = get_area(src)
+	if(!client?.holder && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
+		to_chat(src, span_warning("You can't do that here!"))
+		return FALSE
+	//RS Port #658 End
+>>>>>>> 893b4e2ac0 ([MIRROR] converts area booleans to flags (#9595))
 
 	if(ability_flags & AB_PHASE_SHIFTING)
 		return FALSE
