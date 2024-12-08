@@ -202,7 +202,14 @@ var/list/admin_verbs_spawn = list(
 	/client/proc/generic_structure, //VOREStation Add
 	/client/proc/generic_item, //VOREStation Add
 	/client/proc/create_gm_message,
+<<<<<<< HEAD
 	/client/proc/remove_gm_message
+=======
+	/client/proc/remove_gm_message,
+	/client/proc/AdminCreateVirus,
+	/client/proc/ReleaseVirus,
+	/client/proc/spawn_reagent
+>>>>>>> d3976b78a3 ([MIRROR] Virology Update 1 (#9586))
 	)
 
 var/list/admin_verbs_server = list(
@@ -292,6 +299,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/simple_DPS,
 	/datum/admins/proc/view_feedback,
 	/client/proc/stop_sounds,
+	/client/proc/spawn_reagent,
 	/datum/admins/proc/quick_nif, //CHOMPStation Add,
 	/datum/admins/proc/quick_authentic_nif, //CHOMPStation add
 	/client/proc/reload_jobwhitelist, //ChompADD
