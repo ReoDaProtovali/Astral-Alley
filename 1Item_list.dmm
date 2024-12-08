@@ -42123,7 +42123,11 @@
 	},
 /area/survivalpod)
 "mpy" = (
+<<<<<<< HEAD
 /obj/item/weapon/magnetic_ammo/pistol/khi,
+=======
+/obj/item/magnetic_ammo/pistol,
+>>>>>>> 891d585ede ([MIRROR] Space Traffic Update, Cleanup, & KHI Removal (#9600))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},

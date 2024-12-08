@@ -6,9 +6,14 @@
 /////// Grower Pod ///////
 /obj/machinery/clonepod/transhuman
 	name = "grower pod"
+<<<<<<< HEAD
 	catalogue_data = list(/datum/category_item/catalogue/information/organization/vey_med,
 						/datum/category_item/catalogue/technology/resleeving)
 	circuit = /obj/item/weapon/circuitboard/transhuman_clonepod
+=======
+	catalogue_data = list(/datum/category_item/catalogue/technology/resleeving)
+	circuit = /obj/item/circuitboard/transhuman_clonepod
+>>>>>>> 891d585ede ([MIRROR] Space Traffic Update, Cleanup, & KHI Removal (#9600))
 
 //A full version of the pod
 /obj/machinery/clonepod/transhuman/full/Initialize()
@@ -204,8 +209,7 @@
 /obj/machinery/transhuman/synthprinter
 	name = "SynthFab 3000"
 	desc = "A rapid fabricator for synthetic bodies."
-	catalogue_data = list(/datum/category_item/catalogue/information/organization/vey_med,
-						/datum/category_item/catalogue/technology/resleeving)
+	catalogue_data = list(/datum/category_item/catalogue/technology/resleeving)
 	icon = 'icons/obj/machines/synthpod.dmi'
 	icon_state = "pod_0"
 	circuit = /obj/item/weapon/circuitboard/transhuman_synthprinter
@@ -438,8 +442,7 @@
 /obj/machinery/transhuman/resleever
 	name = "resleeving pod"
 	desc = "Used to combine mind and body into one unit."
-	catalogue_data = list(/datum/category_item/catalogue/information/organization/vey_med,
-						/datum/category_item/catalogue/technology/resleeving)
+	catalogue_data = list(/datum/category_item/catalogue/technology/resleeving)
 	icon = 'icons/obj/machines/implantchair.dmi'
 	icon_state = "implantchair"
 	circuit = /obj/item/weapon/circuitboard/transhuman_resleever

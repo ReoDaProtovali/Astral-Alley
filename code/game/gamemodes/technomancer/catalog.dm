@@ -51,9 +51,15 @@ var/list/all_technomancer_assistance = subtypesof(/datum/technomancer/assistance
 //VOREStation Add
 /obj/item/weapon/technomancer_catalog/universal
 	name = "universal catalog"
+<<<<<<< HEAD
 	desc = "A catalog to be used with the KHI 'Universal Core', shamelessly \
 	copied by a Kitsuhana designer from some group of 'technomancers' or another.<br>\
 	The back of the book has <i>'Export Edition'</i> stamped on it."
+=======
+	desc = "A catalog to be used with the 'Universal Core', its contents shamelessly \
+	copied by an unknown designer from some group of 'technomancers' or another.<br>\
+	The back of the book has " + span_italics("'Export Edition'") + " stamped on it."
+>>>>>>> 891d585ede ([MIRROR] Space Traffic Update, Cleanup, & KHI Removal (#9600))
 	budget = 700
 	max_budget = 700
 	universal = TRUE
