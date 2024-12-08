@@ -81,4 +81,20 @@
 
 /obj/item/weapon/storage/box/glasses/coffeemug
 	name = "box of coffee mugs"
+<<<<<<< HEAD
 	starts_with = list(/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeemug = 7)
+=======
+	starts_with = list(/obj/item/reagent_containers/food/drinks/glass2/coffeemug = 7)
+
+/obj/item/storage/box/glasses/coffeecup_tall
+	name = "box of tall cups"
+	starts_with = list(/obj/item/reagent_containers/food/drinks/tall = 7)
+
+/obj/item/storage/box/glasses/coffeecup_grande
+	name = "box of grande cups"
+	starts_with = list(/obj/item/reagent_containers/food/drinks/grande = 7)
+
+/obj/item/storage/box/glasses/coffeecup_venti
+	name = "box of venti cups"
+	starts_with = list(/obj/item/reagent_containers/food/drinks/venti = 7)
+>>>>>>> 7131e4602e ([MIRROR] Barista love (#9591))

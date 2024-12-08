@@ -38,6 +38,16 @@
 	containername = "coffee dispenser crate"
 	group = "Reagents"
 
+/datum/supply_pack/syrup_dispenser
+	name = "Syrup dispenser"
+	contains = list(
+			/obj/machinery/chemical_dispenser/bar_syrup{anchored = FALSE}
+		)
+	cost = 25
+	containertype = /obj/structure/largecrate
+	containername = "Syrup dispenser crate"
+	group = "Reagents"
+
 /datum/supply_pack/reagents
 	name = "Chemistry dispenser refill"
 	contains = list(
@@ -105,6 +115,7 @@
 /datum/supply_pack/softdrink_reagents
 	name = "Bar soft drink dispenser refill"
 	contains = list(
+<<<<<<< HEAD
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/water,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/ice,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/coffee,
@@ -124,6 +135,28 @@
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/watermelon,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/lemon,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/grapesoda
+=======
+			/obj/item/reagent_containers/chem_disp_cartridge/water,
+			/obj/item/reagent_containers/chem_disp_cartridge/ice,
+			/obj/item/reagent_containers/chem_disp_cartridge/coffee,
+			/obj/item/reagent_containers/chem_disp_cartridge/cream,
+			/obj/item/reagent_containers/chem_disp_cartridge/tea,
+			/obj/item/reagent_containers/chem_disp_cartridge/icetea,
+			/obj/item/reagent_containers/chem_disp_cartridge/cola,
+			/obj/item/reagent_containers/chem_disp_cartridge/smw,
+			/obj/item/reagent_containers/chem_disp_cartridge/dr_gibb,
+			/obj/item/reagent_containers/chem_disp_cartridge/spaceup,
+			/obj/item/reagent_containers/chem_disp_cartridge/tonic,
+			/obj/item/reagent_containers/chem_disp_cartridge/sodawater,
+			/obj/item/reagent_containers/chem_disp_cartridge/lemon_lime,
+			/obj/item/reagent_containers/chem_disp_cartridge/sugar,
+			/obj/item/reagent_containers/chem_disp_cartridge/orange,
+			/obj/item/reagent_containers/chem_disp_cartridge/lime,
+			/obj/item/reagent_containers/chem_disp_cartridge/watermelon,
+			/obj/item/reagent_containers/chem_disp_cartridge/lemon,
+			/obj/item/reagent_containers/chem_disp_cartridge/grapesoda,
+			/obj/item/reagent_containers/chem_disp_cartridge/pineapple
+>>>>>>> 7131e4602e ([MIRROR] Barista love (#9591))
 		)
 	cost = 50
 	containertype = /obj/structure/closet/crate
@@ -133,6 +166,7 @@
 /datum/supply_pack/coffee_reagents
 	name = "Coffee machine dispenser refill"
 	contains = list(
+<<<<<<< HEAD
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/coffee,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/cafe_latte,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/soy_latte,
@@ -149,10 +183,62 @@
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/berry,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/greentea,
 			/obj/item/weapon/reagent_containers/chem_disp_cartridge/decaf
+=======
+			/obj/item/reagent_containers/chem_disp_cartridge/coffee,
+			/obj/item/reagent_containers/chem_disp_cartridge/drip_coffee,
+			/obj/item/reagent_containers/chem_disp_cartridge/cafe_latte,
+			/obj/item/reagent_containers/chem_disp_cartridge/soy_latte,
+			/obj/item/reagent_containers/chem_disp_cartridge/hot_coco,
+			/obj/item/reagent_containers/chem_disp_cartridge/milk,
+			/obj/item/reagent_containers/chem_disp_cartridge/cream,
+			/obj/item/reagent_containers/chem_disp_cartridge/milk_foam,
+			/obj/item/reagent_containers/chem_disp_cartridge/water,
+			/obj/item/reagent_containers/chem_disp_cartridge/sugar,
+			/obj/item/reagent_containers/chem_disp_cartridge/tea,
+			/obj/item/reagent_containers/chem_disp_cartridge/ice,
+			/obj/item/reagent_containers/chem_disp_cartridge/mint,
+			/obj/item/reagent_containers/chem_disp_cartridge/orange,
+			/obj/item/reagent_containers/chem_disp_cartridge/lemon,
+			/obj/item/reagent_containers/chem_disp_cartridge/lime,
+			/obj/item/reagent_containers/chem_disp_cartridge/berry,
+			/obj/item/reagent_containers/chem_disp_cartridge/greentea,
+			/obj/item/reagent_containers/chem_disp_cartridge/decaf,
+			/obj/item/reagent_containers/chem_disp_cartridge/chaitea,
+			/obj/item/reagent_containers/chem_disp_cartridge/decafchai
+>>>>>>> 7131e4602e ([MIRROR] Barista love (#9591))
 		)
 	cost = 50
 	containertype = /obj/structure/closet/crate
 	containername = "coffee drinks crate"
+	group = "Reagents"
+
+/datum/supply_pack/syrup_reagents
+	name = "Syrup machine dispenser refill"
+	contains = list(
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_pumpkin,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_caramel,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_scaramel,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_irish,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_almond,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_cinnamon,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_pistachio,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_vanilla,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_toffee,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_cherry,
+			/obj/item/reagent_containers/chem_disp_cartridge/grenadine,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_butterscotch,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_chocolate,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_wchocolate,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_strawberry,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_coconut,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_ginger,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_gingerbread,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_peppermint,
+			/obj/item/reagent_containers/chem_disp_cartridge/syrup_birthday
+		)
+	cost = 50
+	containertype = /obj/structure/closet/crate
+	containername = "Syrup crate"
 	group = "Reagents"
 
 /datum/supply_pack/dispenser_cartridges

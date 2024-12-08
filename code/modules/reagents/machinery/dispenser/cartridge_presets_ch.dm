@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/chem_disp_cartridge	
+=======
+/obj/item/reagent_containers/chem_disp_cartridge
+>>>>>>> 7131e4602e ([MIRROR] Barista love (#9591))
 	//CHOMP - Chems that are used but not meant for cargo supplies, at least for now. - Jack
 	champagne	spawn_reagent = "champagne"
 	singulo 	spawn_reagent = "singulo"
@@ -15,7 +19,6 @@
 	peanutbutter	spawn_reagent = "peanutbutter"
 	matcha_latte	spawn_reagent = "matcha_latte"
 	soymilk		spawn_reagent = "soymilk"
-	grenadine	spawn_reagent = "grenadine"
 	gingerale	spawn_reagent = "gingerale"
 	roy_rogers	spawn_reagent = "roy_rogers"
 	patron		spawn_reagent = "patron"
