@@ -2,10 +2,8 @@
 /area/submap
 	name = "Submap Area"
 	icon_state = "submap"
-	flags = RAD_SHIELDED
+	flags = RAD_SHIELDED | AREA_FORBID_EVENTS | AREA_SECRET_NAME
 	ambience = AMBIENCE_RUINS
-	secret_name = TRUE
-	forbid_events = TRUE
 	flags = AREA_FLAG_IS_NOT_PERSISTENT
 
 /area/submap/event //To be used for Events not for regular PoIs
@@ -125,6 +123,7 @@
 	name = "POI Wilderness - Field"
 	ambience = AMBIENCE_SIF
 
+<<<<<<< HEAD
 /area/submap/KururakDen
 	name = "POI Wilderness - Kururak Den"
 	ambience = AMBIENCE_SIF
@@ -232,3 +231,8 @@
 /area/submap/XenoHive
 	name = "POI Wilderness - Xeno Hive"
 	ambience = AMBIENCE_RUINS
+=======
+/area/submap/drgnplateu
+	name = "POI - Dragon Plateu"
+	ambience = AMBIENCE_SIF
+>>>>>>> 893b4e2ac0 ([MIRROR] converts area booleans to flags (#9595))

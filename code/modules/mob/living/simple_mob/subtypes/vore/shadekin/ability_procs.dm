@@ -7,6 +7,7 @@
 	if((get_area(src).flags & PHASE_SHIELDED))
 		to_chat(src,"<span class='warning'>This area is preventing you from phasing!</span>")
 		return FALSE
+<<<<<<< HEAD
 
 	forceMove(T)
 	var/original_canmove = canmove
@@ -18,6 +19,14 @@
 		pulledby.stop_pulling()
 	stop_pulling()
 	canmove = FALSE
+=======
+	//CHOMPAdd End
+	//RS Port #658 Start
+	if(!client?.holder && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
+		to_chat(src,span_warning("You can't use that here!"))
+		return FALSE
+	//RS Port #658 End
+>>>>>>> 893b4e2ac0 ([MIRROR] converts area booleans to flags (#9595))
 
 	//Shifting in
 	if(ability_flags & AB_PHASE_SHIFTED)
