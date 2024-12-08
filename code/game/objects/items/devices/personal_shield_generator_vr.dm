@@ -541,8 +541,13 @@
 
 //Misc belts. Admin-spawn only atm.
 
+<<<<<<< HEAD
 /obj/item/device/personal_shield_generator/belt/adminbus
 	desc = "You should not see this. You REALLY should not see this. If you do, you have either been blessed or are about to be the target of some sick prank."
+=======
+/obj/item/personal_shield_generator/belt/adminbus
+	desc = DEVELOPER_WARNING_NAME + " You REALLY should not see this. If you do, you have either been blessed or are about to be the target of some sick prank."
+>>>>>>> 983664d462 ([MIRROR] rework appearance changer (#9588))
 	modifier_type = /datum/modifier/shield_projection/admin
 	generator_hit_cost = 0
 	generator_active_cost = 0
