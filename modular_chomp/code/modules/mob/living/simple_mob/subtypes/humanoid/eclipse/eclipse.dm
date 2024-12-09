@@ -56,7 +56,7 @@
 
 	needs_reload = TRUE
 	reload_max = 7		// Not the best default, but it fits the pistol
-	ai_holder_type = /datum/ai_holder/simple_mob/merc/eclipse/ranged
+	ai_holder_type = /datum/ai_holder/hostile/ranged/robust/eclipse
 
 	loot_list = list(/obj/item/slime_extract/sepia  = 1,
 		/obj/item/weapon/bone/skull = 100
@@ -66,6 +66,7 @@
 	special_attack_min_range = 2
 	special_attack_max_range = 7
 	var/has_heal_droid = FALSE
+	var/specialattackprojectile = /obj/item/projectile/energy/phase/bolt
 
 //Want a self heal for a spefic dude, and to increase diffculty of some POIs
 /mob/living/simple_mob/humanoid/eclipse/handle_special()
@@ -85,9 +86,12 @@
 ////////////////////////////////
 //		Stealing Merc AI Types
 ////////////////////////////////
-/datum/ai_holder/simple_mob/merc/eclipse
-	threaten = FALSE
+/datum/ai_holder/hostile/ranged/robust/eclipse
 	vision_range = 7
+	conserve_ammo = TRUE
+	intelligence_level = AI_SMART
+	use_astar = TRUE
+	pointblank = TRUE
 
 /datum/ai_holder/simple_mob/merc/eclipse/hunter
 	vision_range = 7
@@ -889,3 +893,222 @@
 	dying_threshold = 0.3		// How low on health the holder needs to be before fleeing. Defaults to 30% or lower health.
 	flee_when_outmatched = TRUE	// If they should flee upon reaching a specific tension threshold.
 	outmatched_threshold = 300
+<<<<<<< HEAD
+=======
+
+//Some new eclipse folks for tyr, although one is a rework of the exsisting naga
+
+/mob/living/simple_mob/humanoid/eclipse/solar/disablernoodle //If you have a Nif, or are a borg you get hit with confusion and adds Edit, can't currently figure out NIF targeting
+	name = "Solar Eclipse Disabler Serpent"
+	desc = "A naga cladded in strange orange armor, seemingly guarded from lasers and energy based weaponry."
+	health = 120
+	maxHealth = 120
+	icon_state = "eclipse_disabler"
+	icon_living = "eclipse_disabler"
+	reload_max = 5
+	movement_cooldown = 1
+
+	special_attack_cooldown = 30 SECONDS
+	special_attack_min_range = 1
+	special_attack_max_range = 7
+
+	projectiletype = /obj/item/projectile/energy/electrode
+	specialattackprojectile = /obj/item/projectile/energy/flash
+
+/mob/living/simple_mob/humanoid/eclipse/solar/disablernoodle/do_special_attack(atom/A)
+	visible_message(span_warning("\The [src] begins to aim a flare gun!"))
+	Beam(A, icon_state = "sat_beam", time = 3 SECONDS, maxdistance = INFINITY)
+	addtimer(CALLBACK(src, PROC_REF(special_projectile), A), 3 SECONDS, TIMER_DELETE_ME)
+
+/mob/living/simple_mob/humanoid/eclipse/lunar/silvernoodle //Bouncing bullet extreme
+	name = "Lunar Eclipse Silver Serpent"
+	desc = "A hungry looking naga, their strange armor protecting them from ballistics and physical weaponry."
+	health = 120
+	maxHealth = 120
+	reload_max = 6
+	movement_cooldown = 1
+
+	icon_state = "eclipse_silver"
+	icon_living = "eclipse_silver"
+
+	projectiletype = /obj/item/projectile/bullet/pistol/medium
+	special_attack_cooldown = 30 SECONDS
+	special_attack_min_range = 1
+	special_attack_max_range = 7
+	specialattackprojectile = /obj/item/projectile/beam/energy_net
+
+/mob/living/simple_mob/humanoid/eclipse/lunar/silvernoodle/do_special_attack(atom/A) //I am bringing back the netgun attack. 4 seconds
+	visible_message(span_warning("\The [src] begins to create an energy net!"))
+	Beam(A, icon_state = "sat_beam", time = 3 SECONDS, maxdistance = INFINITY)
+	addtimer(CALLBACK(src, PROC_REF(special_projectile), A), 3 SECONDS, TIMER_DELETE_ME)
+
+
+/mob/living/simple_mob/humanoid/eclipse/solar/plant
+	name = "Solar Eclipse Bioexpirment"
+	desc = "A strange armored looking plant."
+	health = 120
+	maxHealth = 120
+	reload_max = 6
+	movement_cooldown = 1
+
+	icon_state = "eclipse_plant"
+	icon_living = "eclipse_plant"
+
+	projectiletype = /obj/item/projectile/bullet/thorn
+	special_attack_cooldown = 30 SECONDS
+	special_attack_min_range = 1
+	special_attack_max_range = 7
+
+/mob/living/simple_mob/humanoid/eclipse/solar/plant/do_special_attack(atom/A)
+	visible_message(span_warning("\The [src]'s vines spread out!"))
+	Beam(A, icon_state = "vine", time = 3 SECONDS, maxdistance = INFINITY)
+	if(ishuman(A))
+		addtimer(CALLBACK(src, PROC_REF(itemyoink), A), 3 SECONDS, TIMER_DELETE_ME)
+
+
+/mob/living/simple_mob/humanoid/eclipse/proc/itemyoink(mob/living/carbon/human/H)
+	if(!H)
+		return
+	var/obj/item/I = H.get_active_hand()
+	H.drop_item()
+	if(I)
+		I.throw_at(src, 2, 4) // Just yoinked.
+		src.visible_message(span_danger("The [name] heaves, pulling \the [H]'s weapon from their hands!"))
+
+/mob/living/simple_mob/humanoid/eclipse/lunar/experimenter
+	name = "Lunar Eclipse Experimenter"
+	desc = "A lizard cladded in strange red-purple armor, seemingly guarded from lasers and energy based weaponry."
+	health = 120
+	maxHealth = 120
+	icon_state = "eclipse_gravliz"
+	icon_living = "eclipse_gravliz"
+	reload_max = 1
+	movement_cooldown = 1
+
+	special_attack_cooldown = 30 SECONDS
+	special_attack_min_range = 1
+	special_attack_max_range = 7
+
+	projectiletype = /obj/item/projectile/energy/wp_shotgun //using the weapon found upon tyr
+
+/mob/living/simple_mob/humanoid/eclipse/lunar/experimenter/do_special_attack(atom/A)
+	visible_message(span_danger("The [src]'s gauntlet glows silver!"))
+	if(isliving(A))
+		addtimer(CALLBACK(src, PROC_REF(gravity_pull), A), 3 SECOND, TIMER_DELETE_ME)
+
+/mob/living/simple_mob/humanoid/eclipse/proc/gravity_pull(mob/living/L)
+	if(!L)
+		return
+	L.throw_at(src, 2, 4) // Just yoinked.
+
+//The Precursor intative big folks
+/mob/living/simple_mob/humanoid/eclipse/lunar/titanhunter //lunar melee unit
+	name = "Lunar Eclipse Titan Hunter"
+	health = 120
+	maxHealth = 120
+	desc = "A strange being with resistance to brunt force trauma."
+	icon_state = "eclipse_titan"
+	icon_living = "eclipse_titan"
+	melee_damage_lower = 20
+	melee_damage_upper = 20
+	attack_armor_pen = 20
+	projectiletype = null
+	ai_holder_type = /datum/ai_holder/simple_mob/intentional/adv_dark_gygax
+
+/mob/living/simple_mob/humanoid/eclipse/lunar/titanhunter/apply_melee_effects(atom/A)
+	if(isliving(A))
+		var/mob/living/L = A
+		L.add_modifier(/datum/modifier/deep_wounds, 10 SECONDS)
+		if(L.mob_size <= MOB_MEDIUM)
+			visible_message(span_danger("\The [src] sends \the [L] flying with the impact!"))
+			playsound(src, "punch", 50, 1)
+			L.Weaken(1)
+			var/throwdir = get_dir(src, L)
+			L.throw_at(get_edge_target_turf(L, throwdir), 3, 1, src)
+		else
+			to_chat(L, span_warning("\The [src] hits you with incredible force, but you remain in place."))
+			visible_message(span_danger("\The [src] hits \the [L] with incredible force, to no visible effect!"))
+			playsound(src, "punch", 50, 1)
+
+
+/mob/living/simple_mob/humanoid/eclipse/solar/nuclear
+	name = "Solar Eclipse Nuclear Technician"
+	health = 120
+	maxHealth = 120
+	desc = "A strange being wearing a burn resistaint coat."
+	icon_state = "eclipse_nuke"
+	projectiletype = /obj/item/projectile/energy/declone
+	special_attack_cooldown = 15 SECONDS
+	special_attack_min_range = 1
+	special_attack_max_range = 9
+	specialattackprojectile = /obj/item/projectile/arc/radioactive/weak
+
+
+/obj/item/projectile/arc/radioactive/weak
+	rad_power = 25
+
+/mob/living/simple_mob/humanoid/eclipse/solar/nuclear/do_special_attack(atom/A)
+	visible_message(span_warning("\The [src] begins to glow green!"))
+	Beam(A, icon_state = "sat_beam", time = 3 SECONDS, maxdistance = INFINITY)
+	addtimer(CALLBACK(src, PROC_REF(special_projectile), A), 3 SECONDS, TIMER_DELETE_ME)
+
+
+//Vistors of the other
+//One is a familiar shape from Sif, the other is new and anomalous based.
+/mob/living/simple_mob/humanoid/eclipse/solar/froststalker //teleporting stalker
+	name = "Solar Eclipse Froststalker"
+	health = 120
+	maxHealth = 120
+	desc = "A somewhat see through being wearing a burn resistaint coat."
+	melee_damage_lower = 10
+	melee_damage_upper = 10
+	attack_armor_pen = 40
+	special_attack_cooldown = 25 SECONDS
+	special_attack_min_range = 1
+	special_attack_max_range = 7
+	projectiletype = null
+	ai_holder_type = /datum/ai_holder/simple_mob/intentional/adv_dark_gygax
+	icon_state = "froststalker"
+	icon_living = "froststalker"
+	cold_resist = 1.0
+	melee_attack_delay = 1.5
+
+/mob/living/simple_mob/humanoid/eclipse/solar/froststalker/do_special_attack(atom/A)
+	teleport(A)
+
+/mob/living/simple_mob/humanoid/eclipse/lunar/abyssdiver
+	name = "Lunar Eclipse Abyss Diver"
+	health = 120
+	maxHealth = 120
+	desc = "A strange being wearing a blunt resistaint coat."
+	projectiletype = /obj/item/projectile/scatter/shotgun
+	icon_state = "eclipse_diver" //note to self try to redo this sprite sometime
+	reload_max = 1
+	reload_time = 2 SECONDS
+
+/mob/living/simple_mob/humanoid/eclipse/lunar/abyssdiver/do_special_attack(atom/A)
+	visible_message(span_danger("\The [src] begins to mess with a wrist mounted device."))
+	if(isrobot(A))
+		addtimer(CALLBACK(src, PROC_REF(remote_shutdown), A), 3 SECONDS, TIMER_DELETE_ME)
+	else if(istype(A, /obj/mecha))
+		addtimer(CALLBACK(src, PROC_REF(remote_eject), A), 3 SECONDS, TIMER_DELETE_ME)
+
+/mob/living/simple_mob/humanoid/eclipse/proc/remote_shutdown(var/mob/living/silicon/robot/L)
+	if(!L)
+		return
+	L.Weaken(10)
+
+
+/mob/living/simple_mob/humanoid/eclipse/proc/remote_eject(obj/mecha/M)
+	if(!M)
+		return
+	visible_message(span_critical("\The [M] is remotly hacked and ejects [M.occupant]!"))
+	M.go_out()
+
+
+/mob/living/simple_mob/humanoid/eclipse/proc/special_projectile(atom/A)
+	if(!A)
+		return
+	var/obj/item/projectile/P = new specialattackprojectile(get_turf(src))
+	P.launch_projectile(A, BP_TORSO, src)
+>>>>>>> a8d4d10c63 (Tyr Update Again (#9531))
