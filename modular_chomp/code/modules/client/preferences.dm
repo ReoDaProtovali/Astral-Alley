@@ -7,6 +7,7 @@
 	var/job_other_low = 0
 	var/job_other_med = 0
 	var/job_other_high = 0
+<<<<<<< HEAD
 
 /client/verb/toggle_random_emote_pitch()
 	set name = "Toggle Random Emote Pitch"
@@ -305,3 +306,5 @@
 	character.dna.ResetUIFrom(character)
 	character.force_update_limbs()
 	character.regenerate_icons()
+=======
+>>>>>>> 9d1fa79b33 ([MIRROR] Prot rig up port (#9585))

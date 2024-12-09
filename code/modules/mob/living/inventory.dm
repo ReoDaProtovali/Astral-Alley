@@ -26,9 +26,14 @@
 				newitem.forceMove(S)
 			return S
 
+<<<<<<< HEAD
 	//CHOMPedit - protean rigsuit integrated backpack, behold, jank!
 	if(istype(src.back,/obj/item/weapon/rig))	//This would be much cooler if we had componentized storage datums
 		var/obj/item/weapon/rig/R = src.back
+=======
+	if(istype(src.back,/obj/item/rig))	//This would be much cooler if we had componentized storage datums
+		var/obj/item/rig/R = src.back
+>>>>>>> 9d1fa79b33 ([MIRROR] Prot rig up port (#9585))
 		if(R.rig_storage)
 			var/obj/item/weapon/storage/backpack = R.rig_storage
 			if(backpack.can_be_inserted(newitem, 1))

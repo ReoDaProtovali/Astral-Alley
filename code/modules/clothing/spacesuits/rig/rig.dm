@@ -101,7 +101,16 @@
 	// Action button
 	action_button_name = "Hardsuit Interface"
 
+<<<<<<< HEAD
 /obj/item/weapon/rig/New()
+=======
+	// Protean
+	var/protean = 0
+	var/obj/item/storage/backpack/rig_storage
+	permeability_coefficient = 0  //Protect the squishies, after all this shit should be waterproof.
+
+/obj/item/rig/New()
+>>>>>>> 9d1fa79b33 ([MIRROR] Prot rig up port (#9585))
 	..()
 
 	suit_state = icon_state
@@ -542,7 +551,11 @@
 			offline = 0
 			if(istype(wearer) && !wearer.wearing_rig)
 				wearer.wearing_rig = src
+<<<<<<< HEAD
 			if(!istype(src,/obj/item/weapon/rig/protean))	//CHOMPEdit - Stupid snowflake protean special check for rig assimilation code
+=======
+			if(!istype(src,/obj/item/rig/protean))	// Stupid snowflake protean special check for rig assimilation code
+>>>>>>> 9d1fa79b33 ([MIRROR] Prot rig up port (#9585))
 				slowdown = initial(slowdown)
 
 	if(offline)
@@ -925,16 +938,16 @@
 	if(world.time < wearer_move_delay)
 		return
 
-	if(!wearer || !wearer.loc) //CHOMP Edit - Removed some stuff for protean living hardsuit
+	if(!wearer || !wearer.loc) // Removed some stuff for protean living hardsuit
 		return
 
-//CHOMP Addition - Added this for protean living hardsuit
+// Added this for protean living hardsuit
 	wearer_move_delay = world.time + 2
 	if(ai_moving)
 		if(!ai_can_move_suit(user, check_user_module = 1))
 			return
 		// AIs are a bit slower than regular and ignore move intent.
-		//CHOMPEdit - Moved this to where it's relevant
+		// Moved this to where it's relevant
 		wearer_move_delay = world.time + ai_controlled_move_delay
 
 	//This is sota the goto stop mobs from moving var
