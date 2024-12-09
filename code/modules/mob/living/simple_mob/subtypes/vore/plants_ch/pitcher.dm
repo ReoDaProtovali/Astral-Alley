@@ -309,14 +309,19 @@ GLOBAL_LIST_INIT(pitcher_plant_lure_messages, list(
 		qdel(src)
 	if(!(proximity && O.is_open_container()))
 		return
-	to_chat(user, "<span class='notice'>You squeeze \the [src], juicing it into \the [O].</span>")
+	to_chat(user, span_notice("You squeeze \the [src], juicing it into \the [O]."))
 	reagents.trans_to(O, reagents.total_volume)
 	user.drop_from_inventory(src)
 	pit.loc = user.loc
 	qdel(src)
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/pitcher_fruit/attack_self(mob/user)
 	to_chat(user, "<span class='notice'>You plant the fruit.</span>")
+=======
+/obj/item/reagent_containers/food/snacks/pitcher_fruit/attack_self(mob/user)
+	to_chat(user, span_notice("You plant the fruit."))
+>>>>>>> fe4b5ec2cb (finish up the spans (#9605))
 	new /obj/machinery/portable_atmospherics/hydroponics/soil/invisible(get_turf(user),src.seed)
 	GLOB.seed_planted_shift_roundstat++
 	qdel(src)

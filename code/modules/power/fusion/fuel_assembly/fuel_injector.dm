@@ -73,8 +73,13 @@ GLOBAL_LIST_EMPTY(fuel_injectors)
 			user.put_in_hands(cur_assembly)
 		cur_assembly = W
 		//CHOMPEdit Begin
+<<<<<<< HEAD
 		if(istype(W,/obj/item/weapon/fuel_assembly/blitz))
 			visible_message("<span class='warning'>The fuel injector begins to shake and whirr violently as it tries to accept the blitz rod!</span>")
+=======
+		if(istype(W,/obj/item/fuel_assembly/blitz))
+			visible_message(span_warning("The fuel injector begins to shake and whirr violently as it tries to accept the blitz rod!"))
+>>>>>>> fe4b5ec2cb (finish up the spans (#9605))
 			spawn(30)
 				explosion(loc,2,3,4,8)
 				qdel(src)
