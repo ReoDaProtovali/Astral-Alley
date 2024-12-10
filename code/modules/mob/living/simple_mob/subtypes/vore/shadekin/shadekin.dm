@@ -300,7 +300,7 @@
 		//Yay digestion... presumably...
 		var/obj/belly/belly = src.loc
 		add_attack_logs(belly.owner, src, "Digested in [lowertext(belly.name)]")
-		to_chat(belly.owner, "<span class='notice'>\The [src.name] suddenly vanishes within your [belly.name]</span>")
+		to_chat(belly.owner, span_notice("\The [src.name] suddenly vanishes within your [belly.name]"))
 		forceMove(pick(floors))
 		flick("tp_in",src)
 		respite_activating = FALSE
@@ -315,7 +315,7 @@
 		spawn(10 MINUTES)
 			ability_flags &= ~AB_DARK_RESPITE
 			movement_cooldown = initial(movement_cooldown)
-			to_chat(src, "<span class='notice'>You feel like you can leave the Dark again</span>")
+			to_chat(src, span_notice("You feel like you can leave the Dark again"))
 	else
 		spawn(1 SECOND)
 			respite_activating = FALSE
@@ -328,7 +328,7 @@
 		spawn(15 MINUTES)
 			ability_flags &= ~AB_DARK_RESPITE
 			movement_cooldown = initial(movement_cooldown)
-			to_chat(src, "<span class='notice'>You feel like you can leave the Dark again</span>")
+			to_chat(src, span_notice("You feel like you can leave the Dark again"))
 	//CHOMPEdit End
 
 /* //VOREStation AI Temporary Removal

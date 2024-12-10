@@ -30,10 +30,15 @@
 	if(!istype(src, /obj/item/device/communicator) && is_item_tf)
 		new_voice.item_tf = is_item_tf 					// allows items to use /me
 		new_voice.emote_type = 1
+<<<<<<< HEAD
 	if(istype(src, /obj/item/device/mindbinder))
 		to_chat(new_voice,"<span class='notice'>Your mind has been stored in [src]!</span>")
+=======
+	if(istype(src, /obj/item/mindbinder))
+		to_chat(new_voice,span_notice("Your mind has been stored in [src]!"))
+>>>>>>> fe4b5ec2cb (finish up the spans (#9605))
 	else
-		to_chat(new_voice,"<span class='notice'>You have become [src]!</span>")
+		to_chat(new_voice,span_notice("You have become [src]!"))
 	//CHOMPEdit End
 
 // Chomp edit

@@ -47,7 +47,7 @@
 	if(is_queen)
 		paralysis = 7998
 		playsound(src, 'sound/metroid/metroidgrow.ogg', 50, 1)
-		src.visible_message("<span class='notice'>\The [src] begins to lay an egg.</span>")
+		src.visible_message(span_notice("\The [src] begins to lay an egg."))
 		spawn(50)
 		new /obj/effect/metroid/egg(loc, src)
 		adjust_nutrition(-500)
@@ -76,8 +76,13 @@
 	L = new next(get_turf(src)) //Next is a variable defined by metTypes.dm that just points to the next metroid in the evolutionary stage.
 	if(mind)
 		src.mind.transfer_to(L)
+<<<<<<< HEAD
 	visible_message("<span class='warning'>\The [src] suddenly evolves!</span>")
 	qdel(src)	
+=======
+	visible_message(span_warning("\The [src] suddenly evolves!"))
+	qdel(src)
+>>>>>>> fe4b5ec2cb (finish up the spans (#9605))
 
 // Code for metroids attacking other things.
 // metroid attacks change based on intent.

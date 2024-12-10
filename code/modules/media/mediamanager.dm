@@ -141,7 +141,11 @@
 		return
 	if(!owner.is_preference_enabled(/datum/client_preference/play_jukebox) && url != "")
 		return // Don't send anything other than a cancel to people with SOUND_STREAMING pref disabled
+<<<<<<< HEAD
 	MP_DEBUG("<span class='good'>Sending update to mediapanel ([url], [(world.time - start_time) / 10], [volume * source_volume])...</span>")
+=======
+	MP_DEBUG(span_green("Sending update to mediapanel ([url], [(world.time - start_time) / 10], [volume * source_volume])..."))
+>>>>>>> fe4b5ec2cb (finish up the spans (#9605))
 	owner << output(list2params(list(url, (world.time - start_time) / 10, volume * source_volume)), "[WINDOW_ID]:SetMusic")
 
 /datum/media_manager/proc/push_music(var/targetURL, var/targetStartTime, var/targetVolume)
