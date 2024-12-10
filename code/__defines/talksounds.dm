@@ -1,11 +1,4 @@
 
-GLOBAL_LIST_INIT(shell_module_blacklist, list(
-	"Sci-borg", "Research"
-	))
-GLOBAL_LIST_EMPTY(latejoin_gatewaystation)
-GLOBAL_LIST_EMPTY(latejoin_plainspath)
-GLOBAL_LIST_EMPTY(latejoin_fueldepot)
-<<<<<<< HEAD
 
 var/list/talk_sound_map = rlist(
 								list(
@@ -23,7 +16,7 @@ var/list/talk_sound_map = rlist(
 									"goon speak pugg",
 									"goon speak roach",
 									"goon speak skelly",
-									"xeno speak" // CHOMPedit
+									"xeno speak" // CHOMPEnable
 								),
 								list(
 									talk_sound,
@@ -40,7 +33,7 @@ var/list/talk_sound_map = rlist(
 									goon_speak_pugg_sound,
 									goon_speak_roach_sound,
 									goon_speak_skelly_sound,
-									xeno_speak_sound // CHOMPedit
+									xeno_speak_sound // CHOMPEnable
 									)
 								)
 
@@ -68,19 +61,3 @@ var/list/talk_sound_map = rlist(
 	rlist += TRUE
 	rlist += i/2
 	return rlist
-
-
-/*RLIST standard
-/proc/read_rlist(var/list/rlist)
-	//Length
-	rlist[4]
-	//valid?
-	rlist[3]
-	//keys
-	rlist[1]
-	//Values
-	rlist[2]
-*/
-=======
-GLOBAL_LIST_EMPTY(latejoin_tyrvillage)
->>>>>>> 9d1fa79b33 ([MIRROR] Prot rig up port (#9585))
