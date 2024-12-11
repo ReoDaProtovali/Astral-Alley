@@ -180,6 +180,7 @@ li a:hover:not(.active) {
 	text-decoration: underline;
 }
 
+<<<<<<< HEAD
 .grid-item-text {
 	display: inline-block;
 	width: 100%;
@@ -190,6 +191,21 @@ li a:hover:not(.active) {
 	overflow: hidden;
 	text-overflow: ellipsis;
 	pointer-events: none;
+=======
+/* Dark theme colors */
+body.dark {
+	background-color: #131313;
+	color: #b2c4dd;
+	scrollbar-base-color: #1c1c1c;
+	scrollbar-face-color: #3b3b3b;
+	scrollbar-3dlight-color: #252525;
+	scrollbar-highlight-color: #252525;
+	scrollbar-track-color: #1c1c1c;
+	scrollbar-arrow-color: #929292;
+	scrollbar-shadow-color: #3b3b3b;
+	/* Edge */
+	scrollbar-color: #3b3b3b #1c1c1c;
+>>>>>>> 9a5c18aaae ([MIRROR] More 516 fixes (#9626))
 }
 
 .dark .grid-item-text {
