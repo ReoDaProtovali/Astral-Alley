@@ -86,11 +86,23 @@
 		/mob/living/carbon/human/proc/shapeshifter_select_tail,
 		/mob/living/carbon/human/proc/shapeshifter_select_ears,
 		/mob/living/proc/set_size,
+<<<<<<< HEAD
 		/mob/living/carbon/human/proc/lleill_invisibility,
 		/mob/living/carbon/human/proc/lleill_transmute,
 		/mob/living/carbon/human/proc/lleill_rings,
 		/mob/living/carbon/human/proc/lleill_contact,
 		/mob/living/carbon/human/proc/lleill_alchemy)
+=======
+		/mob/living/carbon/human/proc/shapeshifter_copy_body,
+		/mob/living/carbon/human/proc/shapeshifter_regenerate,
+//		/mob/living/carbon/human/proc/lleill_invisibility,
+//		/mob/living/carbon/human/proc/lleill_transmute,
+//		/mob/living/carbon/human/proc/lleill_rings,
+//		/mob/living/carbon/human/proc/lleill_contact,
+//		/mob/living/carbon/human/proc/lleill_alchemy,
+//		/mob/living/carbon/human/proc/lleill_beast_form
+		)
+>>>>>>> 61613bfceb ([MIRROR] Shapeshifter love (#9621))
 
 	//organs, going with just the basics for now
 
