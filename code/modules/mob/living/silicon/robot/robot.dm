@@ -1431,7 +1431,11 @@
 			if(first_arg != second_arg)
 				to_chat(connected_ai, "<span class='filter_notice'><br><br><span class='notice'>NOTICE - [braintype] reclassification detected: [first_arg] is now designated as [second_arg].</span><br></span>")
 		if(ROBOT_NOTIFICATION_AI_SHELL) //New Shell
+<<<<<<< HEAD
 			to_chat(connected_ai, "<span class='filter_notice'><br><br><span class='notice'>NOTICE - New AI shell detected: <a href='?src=[REF(connected_ai)];track2=[html_encode(name)]'>[name]</a></span><br></span>")
+=======
+			to_chat(connected_ai, span_filter_notice("<br><br>" + span_notice("NOTICE - New AI shell detected: <a href='byond://?src=[REF(connected_ai)];track2=[html_encode(name)]'>[name]</a>") + "<br>"))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 /mob/living/silicon/robot/proc/disconnect_from_ai()
 	if(connected_ai)

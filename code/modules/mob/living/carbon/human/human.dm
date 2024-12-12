@@ -413,6 +413,7 @@
 						if (R.fields["id"] == E.fields["id"])
 							if(hasHUD(usr,"security"))
 								var/list/security_hud_text = list()
+<<<<<<< HEAD
 								security_hud_text += "<b>Name:</b> [R.fields["name"]]	<b>Criminal Status:</b> [R.fields["criminal"]]"
 								security_hud_text += "<b>Species:</b> [R.fields["species"]]"
 								security_hud_text += "<b>Minor Crimes:</b> [R.fields["mi_crim"]]"
@@ -422,6 +423,17 @@
 								security_hud_text += "<b>Notes:</b> [R.fields["notes"]]"
 								security_hud_text += "<a href='?src=\ref[src];secrecordComment=`'>\[View Comment Log\]</a>"
 								to_chat(usr, "<span class='filter_notice'>[jointext(security_hud_text, "<br>")]</span>")
+=======
+								security_hud_text += span_bold("Name:") + " [R.fields["name"]]	" + span_bold("Criminal Status:") + " [R.fields["criminal"]]"
+								security_hud_text += span_bold("Species:") + " [R.fields["species"]]"
+								security_hud_text += span_bold("Minor Crimes:") + " [R.fields["mi_crim"]]"
+								security_hud_text += span_bold("Details:") + " [R.fields["mi_crim_d"]]"
+								security_hud_text += span_bold("Major Crimes:") + " [R.fields["ma_crim"]]"
+								security_hud_text += span_bold("Details:") + " [R.fields["ma_crim_d"]]"
+								security_hud_text += span_bold("Notes:") + " [R.fields["notes"]]"
+								security_hud_text += "<a href='byond://?src=\ref[src];secrecordComment=`'>\[View Comment Log\]</a>"
+								to_chat(usr, span_filter_notice("[jointext(security_hud_text, "<br>")]"))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 								read = 1
 
 			if(!read)
@@ -448,8 +460,13 @@
 									to_chat(usr, "[R.fields[text("com_[]", counter)]]")
 									counter++
 								if (counter == 1)
+<<<<<<< HEAD
 									to_chat(usr, "<span class='filter_notice'>No comment found.</span>")
 								to_chat(usr, "<span class='filter_notice'><a href='?src=\ref[src];secrecordadd=`'>\[Add comment\]</a></span>")
+=======
+									to_chat(usr, span_filter_notice("No comment found."))
+								to_chat(usr, span_filter_notice("<a href='byond://?src=\ref[src];secrecordadd=`'>\[Add comment\]</a>"))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 			if(!read)
 				to_chat(usr, "<span class='filter_notice'>[span_red("Unable to locate a data core entry for this person.")]</span>")
@@ -532,6 +549,7 @@
 						if (R.fields["id"] == E.fields["id"])
 							if(hasHUD(usr,"medical"))
 								var/list/medical_hud_text = list()
+<<<<<<< HEAD
 								medical_hud_text += "<b>Name:</b> [R.fields["name"]]	<b>Blood Type:</b> [R.fields["b_type"]]	<b>Blood Basis:</b> [R.fields["blood_reagent"]]"
 								medical_hud_text += "<b>Species:</b> [R.fields["species"]]"
 								medical_hud_text += "<b>DNA:</b> [R.fields["b_dna"]]"
@@ -542,6 +560,18 @@
 								medical_hud_text += "<b>Notes:</b> [R.fields["notes"]]"
 								medical_hud_text += "<a href='?src=\ref[src];medrecordComment=`'>\[View Comment Log\]</a>"
 								to_chat(usr, "<span class='filter_notice'>[jointext(medical_hud_text, "<br>")]</span>")
+=======
+								medical_hud_text += span_bold("Name:") + " [R.fields["name"]]	" + span_bold("Blood Type:") + " [R.fields["b_type"]]	" + span_bold("Blood Basis:") + " [R.fields["blood_reagent"]]"
+								medical_hud_text += span_bold("Species:") + " [R.fields["species"]]"
+								medical_hud_text += span_bold("DNA:") + " [R.fields["b_dna"]]"
+								medical_hud_text += span_bold("Minor Disabilities:") + " [R.fields["mi_dis"]]"
+								medical_hud_text += span_bold("Details:") + " [R.fields["mi_dis_d"]]"
+								medical_hud_text += span_bold("Major Disabilities:") + " [R.fields["ma_dis"]]"
+								medical_hud_text += span_bold("Details:") + " [R.fields["ma_dis_d"]]"
+								medical_hud_text += span_bold("Notes:") + " [R.fields["notes"]]"
+								medical_hud_text += "<a href='byond://?src=\ref[src];medrecordComment=`'>\[View Comment Log\]</a>"
+								to_chat(usr, span_filter_notice("[jointext(medical_hud_text, "<br>")]"))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 								read = 1
 
 			if(!read)
@@ -568,8 +598,13 @@
 									to_chat(usr, "[R.fields[text("com_[]", counter)]]")
 									counter++
 								if (counter == 1)
+<<<<<<< HEAD
 									to_chat(usr, "<span class='filter_notice'>No comment found.</span>")
 								to_chat(usr, "<span class='filter_notice'><a href='?src=\ref[src];medrecordadd=`'>\[Add comment\]</a></span>")
+=======
+									to_chat(usr, span_filter_notice("No comment found."))
+								to_chat(usr, span_filter_notice("<a href='byond://?src=\ref[src];medrecordadd=`'>\[Add comment\]</a>"))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 			if(!read)
 				to_chat(usr, "<span class='filter_notice'>[span_red("Unable to locate a data core entry for this person.")]</span>")
@@ -616,6 +651,7 @@
 						if (R.fields["id"] == E.fields["id"])
 							if(hasHUD(usr,"best"))
 								var/list/emp_hud_text = list()
+<<<<<<< HEAD
 								emp_hud_text += "<b>Name:</b> [R.fields["name"]]"
 								emp_hud_text += "<b>Species:</b> [R.fields["species"]]"
 								emp_hud_text += "<b>Assignment:</b> [R.fields["real_rank"]] ([R.fields["rank"]])"
@@ -628,6 +664,20 @@
 								emp_hud_text += "<b>Notes:</b> [R.fields["notes"]]"
 								emp_hud_text += "<a href='?src=\ref[src];emprecordComment=`'>\[View Comment Log\]</a>"
 								to_chat(usr, "<span class='filter_notice'>[jointext(emp_hud_text, "<br>")]</span>")
+=======
+								emp_hud_text += span_bold("Name:") + " [R.fields["name"]]"
+								emp_hud_text += span_bold("Species:") + " [R.fields["species"]]"
+								emp_hud_text += span_bold("Assignment:") + " [R.fields["real_rank"]] ([R.fields["rank"]])"
+								emp_hud_text += span_bold("Home System:") + " [R.fields["home_system"]]"
+								emp_hud_text += span_bold("Birthplace:") + " [R.fields["birthplace"]]"
+								emp_hud_text += span_bold("Citizenship:") + " [R.fields["citizenship"]]"
+								emp_hud_text += span_bold("Primary Employer:") + " [R.fields["personal_faction"]]"
+								emp_hud_text += span_bold("Religious Beliefs:") + " [R.fields["religion"]]"
+								emp_hud_text += span_bold("Known Languages:") + " [R.fields["languages"]]"
+								emp_hud_text += span_bold("Notes:") + " [R.fields["notes"]]"
+								emp_hud_text += "<a href='byond://?src=\ref[src];emprecordComment=`'>\[View Comment Log\]</a>"
+								to_chat(usr, span_filter_notice("[jointext(emp_hud_text, "<br>")]"))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 								read = 1
 
 			if(!read)
@@ -654,8 +704,13 @@
 									to_chat(usr, "[R.fields[text("com_[]", counter)]]")
 									counter++
 								if (counter == 1)
+<<<<<<< HEAD
 									to_chat(usr, "<span class='filter_notice'>No comment found.</span>")
 								to_chat(usr, "<span class='filter_notice'><a href='?src=\ref[src];emprecordadd=`'>\[Add comment\]</a></span>")
+=======
+									to_chat(usr, span_filter_notice("No comment found."))
+								to_chat(usr, span_filter_notice("<a href='byond://?src=\ref[src];emprecordadd=`'>\[Add comment\]</a>"))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 			if(!read)
 				to_chat(usr, "<span class='filter_notice'>[span_red("Unable to locate a data core entry for this person.")]</span>")

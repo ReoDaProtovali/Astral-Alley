@@ -264,8 +264,13 @@ var/list/mentor_verbs_default = list(
 			src.current_ticket.AddInteraction(interaction_message)
 	// CHOMPedit End
 
+<<<<<<< HEAD
 	to_chat(recipient, "<i><span class='mentor'>Mentor-PM from-<b><a href='?mentorhelp_msg=\ref[src]'>[src]</a></b>: [msg]</span></i>")
 	to_chat(src, "<i><span class='mentor'>Mentor-PM to-<b>[recipient]</b>: [msg]</span></i>")
+=======
+	to_chat(recipient, span_mentor(span_italics("Mentor-PM from-<b><a href='byond://?mentorhelp_msg=\ref[src]'>[src]</a></b>: [msg]")))
+	to_chat(src, span_mentor(span_italics("Mentor-PM to-<b>[recipient]</b>: [msg]")))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 	log_admin("[key_name(src)]->[key_name(recipient)]: [msg]")
 

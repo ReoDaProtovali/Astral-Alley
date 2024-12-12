@@ -70,5 +70,50 @@ if [ $retVal -ne 0 ]; then
   FAILED=1
 fi
 
+<<<<<<< HEAD
+=======
+if [ "$pcre2_support" -eq 1 ]; then
+	section "regexes requiring PCRE2"
+
+	part "tag"
+	#Checking for 'tag' set to something on maps
+	(! $grep -Pn '( |\t|;|{)tag( ?)=' $map_files)
+	retVal=$?
+	if [ $retVal -ne 0 ]; then
+		echo -e "${RED}A map has 'tag' set on an atom. It may cause problems and should be removed.${NC}"
+		FAILED=1
+	fi
+
+	part "broken html"
+	# echo -e "${RED}DISABLED"
+	#Checking for broken HTML tags (didn't close the quote for class)
+	(! $grep -Pn "<\s*span\s+class\s*=\s*('[^'>]+|[^'>]+')\s*>" $code_files)
+	retVal=$?
+	if [ $retVal -ne 0 ]; then
+		echo -e "${RED}A broken span tag class is present (check quotes).${NC}"
+		FAILED=1
+	fi
+
+	part "old style hrefs"
+	(! $grep -Pn "href[\s='\"\\ ]*\?" $code_files)
+	retVal=$?
+	if [ $retVal -ne 0 ]; then
+		echo -e "${RED}old-style hrefs detected, see ripgrep output.${NC}"
+		FAILED=1
+	fi
+else
+	echo -e "${RED}pcre2 not supported, skipping checks requiring pcre2"
+	echo -e "if you want to run these checks install ripgrep with pcre2 support.${NC}"
+fi
+
+if [ $FAILED = 0 ]; then
+    echo
+    echo -e "${GREEN}No errors found using $grep!${NC}"
+else
+    echo
+    echo -e "${RED}Errors found, please fix them and try again.${NC}"
+fi
+
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 # Quit with our status code
 exit $FAILED

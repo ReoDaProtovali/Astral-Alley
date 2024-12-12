@@ -43,8 +43,8 @@ var/prison_shuttle_timeleft = 0
 	else
 		dat += {"<BR><B>Prison Shuttle</B><HR>
 		\nLocation: [prison_shuttle_moving_to_station || prison_shuttle_moving_to_prison ? "Moving to station ([prison_shuttle_timeleft] Secs.)":prison_shuttle_at_station ? "Station":"Dock"]<BR>
-		[prison_shuttle_moving_to_station || prison_shuttle_moving_to_prison ? "\n*Shuttle already called*<BR>\n<BR>":prison_shuttle_at_station ? "\n<A href='?src=\ref[src];sendtodock=1'>Send to Dock</A><BR>\n<BR>":"\n<A href='?src=\ref[src];sendtostation=1'>Send to station</A><BR>\n<BR>"]
-		\n<A href='?src=\ref[user];mach_close=computer'>Close</A>"}
+		[prison_shuttle_moving_to_station || prison_shuttle_moving_to_prison ? "\n*Shuttle already called*<BR>\n<BR>":prison_shuttle_at_station ? "\n<A href='byond://?src=\ref[src];sendtodock=1'>Send to Dock</A><BR>\n<BR>":"\n<A href='byond://?src=\ref[src];sendtostation=1'>Send to station</A><BR>\n<BR>"]
+		\n<A href='byond://?src=\ref[user];mach_close=computer'>Close</A>"}
 
 	user << browse(dat, "window=computer;size=575x450")
 	onclose(user, "computer")
@@ -64,8 +64,13 @@ var/prison_shuttle_timeleft = 0
 			return
 		if(!prison_shuttle_at_station|| prison_shuttle_moving_to_station || prison_shuttle_moving_to_prison) return
 		post_signal("prison")
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>The prison shuttle has been called and will arrive in [(PRISON_MOVETIME/10)] seconds.</span>")
 		src.temp += "Shuttle sent.<BR><BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
+=======
+		to_chat(usr, span_notice("The prison shuttle has been called and will arrive in [(PRISON_MOVETIME/10)] seconds."))
+		src.temp += "Shuttle sent.<BR><BR><A href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 		src.updateUsrDialog()
 		prison_shuttle_moving_to_prison = 1
 		prison_shuttle_time = world.timeofday + PRISON_MOVETIME
@@ -78,8 +83,13 @@ var/prison_shuttle_timeleft = 0
 			return
 		if(prison_shuttle_at_station || prison_shuttle_moving_to_station || prison_shuttle_moving_to_prison) return
 		post_signal("prison")
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>The prison shuttle has been called and will arrive in [(PRISON_MOVETIME/10)] seconds.</span>")
 		src.temp += "Shuttle sent.<BR><BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
+=======
+		to_chat(usr, span_notice("The prison shuttle has been called and will arrive in [(PRISON_MOVETIME/10)] seconds."))
+		src.temp += "Shuttle sent.<BR><BR><A href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 		src.updateUsrDialog()
 		prison_shuttle_moving_to_station = 1
 		prison_shuttle_time = world.timeofday + PRISON_MOVETIME

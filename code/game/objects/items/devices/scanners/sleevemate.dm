@@ -147,7 +147,11 @@ var/global/mob/living/carbon/human/dummy/mannequin/sleevemate_mob
 	//Mind/body comparison
 	output += "<b>Sleeve Pair:</b> "
 	if(!H.ckey)
+<<<<<<< HEAD
 		output += "<span class='warning'>No mind in that body</span> [stored_mind != null ? "\[<a href='?src=\ref[src];target=\ref[H];mindupload=1'>Upload</a>\]" : null]<br>"
+=======
+		output += span_warning("No mind in that body") + " [stored_mind != null ? "\[<a href='byond://?src=\ref[src];target=\ref[H];mindupload=1'>Upload</a>\]" : null]<br>"
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 	else if(H.mind && ckey(H.mind.key) != H.ckey)
 		output += "<span class='warning'>May not be correct body</span><br>"
 	else if(H.mind && ckey(H.mind.key) == H.ckey)
@@ -157,15 +161,20 @@ var/global/mob/living/carbon/human/dummy/mannequin/sleevemate_mob
 
 	//Actions
 	output += "<br><b>-- Possible Actions --</b><br>"
+<<<<<<< HEAD
 	output += "<b>Mind-Scan (One Time): </b>\[<a href='?src=\ref[src];target=\ref[H];mindscan=1'>Perform</a>\]<br>"
 	output += "<b>Body-Scan (One Time): </b>\[<a href='?src=\ref[src];target=\ref[H];bodyscan=1'>Perform</a>\]<br>"
+=======
+	output += span_bold("Mind-Scan (One Time): ") + "\[<a href='byond://?src=\ref[src];target=\ref[H];mindscan=1'>Perform</a>\]<br>"
+	output += span_bold("Body-Scan (One Time): ") + "\[<a href='byond://?src=\ref[src];target=\ref[H];bodyscan=1'>Perform</a>\]<br>"
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 	//Saving a mind
 	output += "<b>Store Full Mind: </b>"
 	if(stored_mind)
 		output += "<span class='notice'>Already Stored</span> ([stored_mind.name])<br>"
 	else if(H.mind)
-		output += "\[<a href='?src=\ref[src];target=\ref[H];mindsteal=1'>Perform</a>\]<br>"
+		output += "\[<a href='byond://?src=\ref[src];target=\ref[H];mindsteal=1'>Perform</a>\]<br>"
 	else
 		output += "<span class='warning'>Unable</span><br>"
 
@@ -176,10 +185,17 @@ var/global/mob/living/carbon/human/dummy/mannequin/sleevemate_mob
 			output += "<br>"
 			output += "<b>Soulcatcher detected ([SC.brainmobs.len] minds)</b><br>"
 			for(var/mob/living/carbon/brain/caught_soul/mind in SC.brainmobs)
+<<<<<<< HEAD
 				output += "<i>[mind.name]: </i> [mind.transient == FALSE ? "\[<a href='?src=\ref[src];target=\ref[H];mindrelease=[mind.name]'>Load</a>\]" : "<span class='warning'>Incompatible</span>"]<br>"
 
 			if(stored_mind)
 				output += "<b>Store in Soulcatcher: </b>\[<a href='?src=\ref[src];target=\ref[H];mindput=1'>Perform</a>\]<br>"
+=======
+				output += "<i>[mind.name]: </i> [mind.transient == FALSE ? "\[<a href='byond://?src=\ref[src];target=\ref[H];mindrelease=[mind.name]'>Load</a>\]" : span_warning("Incompatible")]<br>"
+
+			if(stored_mind)
+				output += span_bold("Store in Soulcatcher: ") + "\[<a href='byond://?src=\ref[src];target=\ref[H];mindput=1'>Perform</a>\]<br>"
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 	to_chat(user,output)
 

@@ -110,9 +110,15 @@
 		if(mode == i)
 			t += "<b>[reagent_names[i]]</b>"
 		else
+<<<<<<< HEAD
 			t += "<a href='?src=\ref[src];reagent=[reagent_ids[i]]'>[reagent_names[i]]</a>"
 	t = "Available reagents: [t].</span>"
 	to_chat(user,t)
+=======
+			t += "<a href='byond://?src=\ref[src];reagent=[reagent_ids[i]]'>[reagent_names[i]]</a>"
+	t = "Available reagents: [t]."
+	to_chat(user,span_infoplain(t))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 	return
 

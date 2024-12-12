@@ -262,9 +262,15 @@
 	message_admins("IRC message from [sender] to [key_name_admin(C)] : [msg]")
 	log_admin("IRC PM: [sender] -> [key_name(C)] : [msg]")
 
+<<<<<<< HEAD
 	to_chat(C, "<span class='pm warning'><font size='4'><b>-- Administrator private message --</b></font></span>")
 	to_chat(C, "<span class='pm warning'>Admin PM from-<b><a href='?priv_msg=[stealthkey]'>[adminname]</A></b>: [msg]</span>")
 	to_chat(C, "<span class='pm warning'><i>Click on the administrator's name to reply.</i></span>")
+=======
+	to_chat(C, span_admin_pm_warning(span_huge(span_bold("-- Administrator private message --"))))
+	to_chat(C, span_admin_pm_warning("Admin PM from-<b><a href='byond://?priv_msg=[stealthkey]'>[adminname]</A></b>: [msg]"))
+	to_chat(C, span_admin_pm_warning(span_italics("Click on the administrator's name to reply.")))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 	admin_ticket_log(C, "<span class='pm notice'>PM From [irc_tagged]: [msg]</span>")
 

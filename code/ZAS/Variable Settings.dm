@@ -110,7 +110,11 @@ var/global/vs_control/vsc = new
 			vw = vars[ch]
 			if("[ch]_DESC" in vars) vw_desc = vars["[ch]_DESC"]
 			if("[ch]_NAME" in vars) vw_name = vars["[ch]_NAME"]
+<<<<<<< HEAD
 		dat += "<b>[vw_name] = [vw]</b> <A href='?src=\ref[src];[HrefToken()];changevar=[ch]'>\[Change\]</A><br>"
+=======
+		dat += span_bold("[vw_name] = [vw]") + " <A href='byond://?src=\ref[src];[HrefToken()];changevar=[ch]'>\[Change\]</A><br>"
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 		dat += "<i>[vw_desc]</i><br><br>"
 	user << browse(dat,"window=settings")
 
