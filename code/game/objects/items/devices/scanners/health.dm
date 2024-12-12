@@ -219,9 +219,16 @@
 				else
 					dat += "<span class='warning'>Warning: Unknown pathogen detected in subject's blood.</span><br>"
 	if (M.getCloneLoss())
+<<<<<<< HEAD
 		dat += "<span class='warning'>Subject appears to have been imperfectly cloned.</span><br>"
 //	if (M.reagents && M.reagents.get_reagent_amount("inaprovaline"))
 //		user.show_message("<span class='notice'>Bloodstream Analysis located [M.reagents:get_reagent_amount("inaprovaline")] units of rejuvenation chemicals.</span>")
+=======
+		dat += span_warning("Subject appears to have been imperfectly cloned.")
+		dat += "<br>"
+//	if (M.reagents && M.reagents.get_reagent_amount(REAGENT_ID_INAPROVALINE))
+//		user.show_message(span_notice("Bloodstream Analysis located [M.reagents:get_reagent_amount(REAGENT_ID_INAPROVALINE)] units of rejuvenation chemicals."))
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	if (M.has_brain_worms())
 		dat += "<span class='warning'>Subject suffering from aberrant brain activity. Recommend further scanning.</span><br>"
 	else if (M.getBrainLoss() >= 60 || !M.has_brain())
@@ -301,7 +308,7 @@
 
 		// Blood level
 		if(M:vessel)
-			var/blood_volume = H.vessel.get_reagent_amount("blood")
+			var/blood_volume = H.vessel.get_reagent_amount(REAGENT_ID_BLOOD)
 			var/blood_percent =  round((blood_volume / H.species.blood_volume)*100)
 			var/blood_type = H.dna.b_type
 			var/blood_reagent = H.species.blood_reagents

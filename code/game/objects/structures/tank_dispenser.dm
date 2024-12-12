@@ -57,7 +57,7 @@
 /obj/structure/dispenser/tgui_data(mob/user)
 	var/list/data = list()
 	data["oxygen"] = oxygentanks
-	data["plasma"] = phorontanks
+	data["phoron"] = phorontanks
 
 	return data
 
@@ -102,10 +102,17 @@
 	if(..())
 		return
 	switch(action)
+<<<<<<< HEAD
 		if("plasma")
 			var/obj/item/weapon/tank/phoron/tank = locate() in src
 			if(tank && Adjacent(usr))
 				usr.put_in_hands(tank)
+=======
+		if("phoron")
+			var/obj/item/tank/phoron/tank = locate() in src
+			if(tank && Adjacent(ui.user))
+				ui.user.put_in_hands(tank)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 				phorontanks--
 			. = TRUE
 			playsound(src, 'sound/items/drop/gascan.ogg', 100, 1, 1)

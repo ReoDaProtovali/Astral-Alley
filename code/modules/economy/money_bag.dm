@@ -67,6 +67,7 @@
 	if(href_list["remove"])
 		var/obj/item/weapon/coin/COIN
 		switch(href_list["remove"])
+<<<<<<< HEAD
 			if("gold")
 				COIN = locate(/obj/item/weapon/coin/gold,src.contents)
 			if("silver")
@@ -79,6 +80,20 @@
 				COIN = locate(/obj/item/weapon/coin/phoron,src.contents)
 			if("uranium")
 				COIN = locate(/obj/item/weapon/coin/uranium,src.contents)
+=======
+			if(MAT_GOLD)
+				COIN = locate(/obj/item/coin/gold,src.contents)
+			if(MAT_SILVER)
+				COIN = locate(/obj/item/coin/silver,src.contents)
+			if(MAT_IRON)
+				COIN = locate(/obj/item/coin/iron,src.contents)
+			if(MAT_DIAMOND)
+				COIN = locate(/obj/item/coin/diamond,src.contents)
+			if(MAT_URANIUM)
+				COIN = locate(/obj/item/coin/phoron,src.contents)
+			if(MAT_URANIUM)
+				COIN = locate(/obj/item/coin/uranium,src.contents)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		if(!COIN)
 			return
 		COIN.loc = src.loc

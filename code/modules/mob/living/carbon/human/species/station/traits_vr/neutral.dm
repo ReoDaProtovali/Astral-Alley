@@ -174,6 +174,7 @@
 
 /datum/trait/neutral/venom_bite/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
+<<<<<<< HEAD
 	//H.verbs |= /mob/living/proc/injection
 	add_verb(H,/mob/living/proc/injection) //CHOMPedit tgpanel
 	H.trait_injection_reagents += "microcillin"		// get small
@@ -188,6 +189,21 @@
 	H.trait_injection_reagents += "paralysistoxin" 	// Paralysis!
 	H.trait_injection_reagents += "painenzyme"		// Pain INCREASER
 	H.trait_injection_reagents += "aphrodisiac"		// Horni //CHOMPedit
+=======
+	add_verb(H, /mob/living/proc/injection)
+	H.trait_injection_reagents += REAGENT_ID_MICROCILLIN		// get small
+	H.trait_injection_reagents += REAGENT_ID_MACROCILLIN		// get BIG
+	H.trait_injection_reagents += REAGENT_ID_NORMALCILLIN	// normal
+	H.trait_injection_reagents += REAGENT_ID_NUMBENZYME		// no feelings
+	H.trait_injection_reagents += REAGENT_ID_ANDROROVIR 		// -> MALE
+	H.trait_injection_reagents += REAGENT_ID_GYNOROVIR 		// -> FEMALE
+	H.trait_injection_reagents += REAGENT_ID_ANDROGYNOROVIR 	// -> PLURAL
+	H.trait_injection_reagents += REAGENT_ID_STOXIN			// night night chem
+	H.trait_injection_reagents += REAGENT_ID_RAINBOWTOXIN 	// Funny flashing lights.
+	H.trait_injection_reagents += REAGENT_ID_PARALYSISTOXIN 	// Paralysis!
+	H.trait_injection_reagents += REAGENT_ID_PAINENZYME		// Pain INCREASER
+	H.trait_injection_reagents += REAGENT_ID_APHRODISIAC		// Horni //CHOMPedit
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/trait/neutral/long_vore
 	name = "Long Predatorial Reach"

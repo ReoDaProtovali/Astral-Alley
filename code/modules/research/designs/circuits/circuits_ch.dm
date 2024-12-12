@@ -32,8 +32,13 @@
 	id = "phazon_main"
 	req_tech = list(TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1)
 	materials = list(MAT_GLASS = 2000, MAT_GRAPHITE = 1250)
+<<<<<<< HEAD
 	chemicals = list("sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/mecha/phazon/main
+=======
+	chemicals = list(REAGENT_ID_SACID = 20)
+	build_path = /obj/item/circuitboard/mecha/phazon/main
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	sort_string = "PAADA"
 
 /datum/design/circuit/mecha/phazon_peri
@@ -41,8 +46,13 @@
 	id = "phazon_peri"
 	req_tech = list(TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1)
 	materials = list(MAT_GLASS = 2000, MAT_GRAPHITE = 1250)
+<<<<<<< HEAD
 	chemicals = list("sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/mecha/phazon/peripherals
+=======
+	chemicals = list(REAGENT_ID_SACID = 20)
+	build_path = /obj/item/circuitboard/mecha/phazon/peripherals
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	sort_string = "PAADB"
 
 /datum/design/circuit/mecha/phazon_targ
@@ -50,6 +60,11 @@
 	id = "phazon_targ"
 	req_tech = list(TECH_BLUESPACE = 5, TECH_MAGNET = 6, TECH_PHORON = 3, TECH_ARCANE = 1, TECH_COMBAT = 5)
 	materials = list(MAT_GLASS = 2000, MAT_GRAPHITE = 1250)
+<<<<<<< HEAD
 	chemicals = list("sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/mecha/phazon/targeting
+=======
+	chemicals = list(REAGENT_ID_SACID = 20)
+	build_path = /obj/item/circuitboard/mecha/phazon/targeting
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	sort_string = "PAADC"

@@ -339,9 +339,9 @@
 	if(c_data)
 		data = c_data
 	else
-		data = pick("bicaridine", "kelotane", "anti_toxin", "inaprovaline", "bliss", "sugar",
-					"tramadol", "dexalin", "cryptobiolin", "impedrezene", "hyperzine", "ethylredoxrazine",
-					"mindbreaker", "glucose")
+		data = pick(REAGENT_ID_BICARIDINE, REAGENT_ID_KELOTANE, REAGENT_ID_ANTITOXIN, REAGENT_ID_INAPROVALINE, REAGENT_ID_BINMANBLISS, REAGENT_ID_SUGAR,
+					REAGENT_ID_TRAMADOL, REAGENT_ID_DEXALIN, REAGENT_ID_CRYPTOBIOLIN, REAGENT_ID_IMPEDREZENE, REAGENT_ID_HYPERZINE, REAGENT_ID_ETHYLREDOXRAZINE,
+					REAGENT_ID_MINDBREAKER, REAGENT_ID_GLUCOSE)
 	var/datum/reagent/R = SSchemistry.chemical_reagents[data]
 	name = "[initial(name)] ([initial(R.name)])"
 
@@ -440,9 +440,15 @@
 	stage = 2
 
 /datum/disease2/effect/stimulant/activate(var/mob/living/carbon/mob,var/multiplier)
+<<<<<<< HEAD
 	to_chat(mob, "<span class='notice'>You feel a rush of energy inside you!</span>")
 	if (mob.reagents.get_reagent_amount("hyperzine") < 10)
 		mob.reagents.add_reagent("hyperzine", 4)
+=======
+	to_chat(mob, span_notice("You feel a rush of energy inside you!"))
+	if (mob.reagents.get_reagent_amount(REAGENT_ID_HYPERZINE) < 10)
+		mob.reagents.add_reagent(REAGENT_ID_HYPERZINE, 4)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	if (prob(30))
 		mob.jitteriness += 10
 

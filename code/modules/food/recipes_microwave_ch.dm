@@ -1,11 +1,17 @@
 	//Imported food from old code
 /datum/recipe/sauerkraut
+<<<<<<< HEAD
 	reagents = list("sodiumchloride" = 3)
 	fruit = list("cabbage" = 1)
 	result = /obj/item/weapon/reagent_containers/food/snacks/sauerkraut
+=======
+	reagents = list(REAGENT_ID_SODIUMCHLORIDE = 3)
+	fruit = list(PLANT_CABBAGE = 1)
+	result = /obj/item/reagent_containers/food/snacks/sauerkraut
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/recipe/tamales
-	fruit = list("corn" = 1)
+	fruit = list(PLANT_CORN = 1)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/doughslice,
 		/obj/item/weapon/reagent_containers/food/snacks/doughslice,
@@ -15,8 +21,8 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/tamales
 
 /datum/recipe/bigos
-	reagents = list("flour" = 5, "water" = 5)
-	fruit = list("onion" = 1)
+	reagents = list(REAGENT_ID_FLOUR = 5, REAGENT_ID_WATER = 5)
+	fruit = list(PLANT_ONION = 1)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/sauerkraut,
 		/obj/item/weapon/reagent_containers/food/snacks/sausage
@@ -24,7 +30,7 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/bigos
 
 /datum/recipe/concha
-	reagents = list("berryjuice" = 5)
+	reagents = list(REAGENT_ID_BERRYJUICE = 5)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/dough,
 		/obj/item/weapon/reagent_containers/food/snacks/egg
@@ -32,7 +38,7 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/concha
 
 /datum/recipe/pandenata
-	reagents = list("sugar" = 10, "cream" = 5)
+	reagents = list(REAGENT_ID_SUGAR = 10, REAGENT_ID_CREAM = 5)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/doughslice,
 		/obj/item/weapon/reagent_containers/food/snacks/doughslice,
@@ -41,14 +47,14 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/pandenata
 
 /datum/recipe/tocino
-	reagents = list("sodiumchloride" = 5, "redwine" = 5)
+	reagents = list(REAGENT_ID_SODIUMCHLORIDE = 5, REAGENT_ID_REDWINE = 5)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/rawcutlet
 	)
 	result = /obj/item/weapon/reagent_containers/food/snacks/tocino
 
 /datum/recipe/garlicbread
-	fruit = list("onion" = 1)
+	fruit = list(PLANT_ONION = 1)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/cheesewedge,
 		/obj/item/weapon/reagent_containers/food/snacks/slice/bread
@@ -56,7 +62,7 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/garlicbread
 
 /datum/recipe/plumpburger
-	fruit = list("plumphelmet" = 1)
+	fruit = list(PLANT_PLUMPHELMET = 1)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/cheesewedge,
 		/obj/item/weapon/reagent_containers/food/snacks/bun
@@ -64,11 +70,16 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/plumpburger
 
 /datum/recipe/wataur
+<<<<<<< HEAD
 	reagents = list("water" = 100)
 	result = /obj/item/weapon/reagent_containers/food/drinks/cans/waterbottle/wataur
+=======
+	reagents = list(REAGENT_ID_WATER = 100)
+	result = /obj/item/reagent_containers/food/drinks/cans/waterbottle/wataur
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/recipe/bigbeanburrito
-	fruit = list("soybeans" = 3)
+	fruit = list(PLANT_SOYBEAN = 3)
 	items = list(
 	/obj/item/weapon/reagent_containers/food/snacks/meatburrito,
 	/obj/item/weapon/reagent_containers/food/snacks/rawcutlet,
@@ -77,7 +88,7 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/slice/bigbeanburrito
 
 /datum/recipe/supremoburrito
-	fruit = list("soybeans" = 3, "chili" = 1)
+	fruit = list(PLANT_SOYBEAN = 3, PLANT_CHILI = 1)
 	items = list(
 	/obj/item/weapon/reagent_containers/food/snacks/slice/bigbeanburrito,
 	/obj/item/weapon/reagent_containers/food/snacks/sliceable/cheesewheel,
@@ -87,8 +98,8 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/sliceable/supremoburrito
 
 /datum/recipe/steamtealeaf
-	reagents = list("water" = 5)
-	fruit = list("tea" = 1)
+	reagents = list(REAGENT_ID_WATER = 5)
+	fruit = list(PLANT_TEA = 1)
 
 	result = /obj/item/weapon/reagent_containers/food/snacks/steamtealeaf
 
@@ -99,7 +110,7 @@
 	result = /obj/item/weapon/reagent_containers/food/snacks/greentealeaf
 
 /datum/recipe/butterscotch
-	reagents = list("sugar" = 10, "cream" = 5)
+	reagents = list(REAGENT_ID_SUGAR = 10, REAGENT_ID_CREAM = 5)
 	reagent_mix = RECIPE_REAGENT_REPLACE //No actual reagents since it's meant to be a cooking item
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/spreads/butter
@@ -108,7 +119,7 @@
 	result_quantity = 2
 
 /datum/recipe/hotbuttericecream
-	reagents = list("ice" = 5, "cream" = 5)
+	reagents = list(REAGENT_ID_ICE = 5, REAGENT_ID_CREAM = 5)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/spreads/butter
 	)

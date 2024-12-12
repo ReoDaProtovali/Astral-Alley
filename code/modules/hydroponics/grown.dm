@@ -52,7 +52,7 @@
 				var/list/data = list()
 				if(reagent_data.len > 1 && potency > 0)
 					rtotal += round(potency/reagent_data[2])
-				if(rid == "nutriment")
+				if(rid == REAGENT_ID_NUTRIMENT)
 					data[seed.seed_name] = max(1,rtotal)
 
 				reagents.add_reagent(rid,max(1,rtotal),data)
@@ -70,33 +70,33 @@
 		desc = SSplants.product_descs["[seed.uid]"]
 	else
 		var/list/descriptors = list()
-		if(reagents.has_reagent("sugar") || reagents.has_reagent("cherryjelly") || reagents.has_reagent("honey") || reagents.has_reagent("berryjuice"))
+		if(reagents.has_reagent(REAGENT_ID_SUGAR) || reagents.has_reagent(REAGENT_ID_CHERRYJELLY) || reagents.has_reagent(REAGENT_ID_HONEY) || reagents.has_reagent(REAGENT_ID_BERRYJUICE))
 			descriptors |= "sweet"
-		if(reagents.has_reagent("anti_toxin"))
+		if(reagents.has_reagent(REAGENT_ID_ANTITOXIN))
 			descriptors |= "astringent"
-		if(reagents.has_reagent("frostoil"))
+		if(reagents.has_reagent(REAGENT_ID_FROSTOIL))
 			descriptors |= "numbing"
-		if(reagents.has_reagent("nutriment"))
+		if(reagents.has_reagent(REAGENT_ID_NUTRIMENT))
 			descriptors |= "nutritious"
-		if(reagents.has_reagent("condensedcapsaicin") || reagents.has_reagent("capsaicin"))
+		if(reagents.has_reagent(REAGENT_ID_CONDENSEDCAPSAICIN) || reagents.has_reagent(REAGENT_ID_CAPSAICIN))
 			descriptors |= "spicy"
-		if(reagents.has_reagent("coco"))
+		if(reagents.has_reagent(REAGENT_ID_COCO))
 			descriptors |= "bitter"
-		if(reagents.has_reagent("orangejuice") || reagents.has_reagent("lemonjuice") || reagents.has_reagent("limejuice"))
+		if(reagents.has_reagent(REAGENT_ID_ORANGEJUICE) || reagents.has_reagent(REAGENT_ID_LEMONJUICE) || reagents.has_reagent(REAGENT_ID_LIMEJUICE))
 			descriptors |= "sweet-sour"
-		if(reagents.has_reagent("radium") || reagents.has_reagent("uranium"))
+		if(reagents.has_reagent(REAGENT_ID_RADIUM) || reagents.has_reagent(REAGENT_ID_URANIUM))
 			descriptors |= "radioactive"
-		if(reagents.has_reagent("amatoxin") || reagents.has_reagent("toxin"))
+		if(reagents.has_reagent(REAGENT_ID_AMATOXIN) || reagents.has_reagent(REAGENT_ID_TOXIN))
 			descriptors |= "poisonous"
-		if(reagents.has_reagent("psilocybin") || reagents.has_reagent("bliss") || reagents.has_reagent("earthsblood"))
+		if(reagents.has_reagent(REAGENT_ID_PSILOCYBIN) || reagents.has_reagent(REAGENT_ID_BLISS) || reagents.has_reagent(REAGENT_ID_EARTHSBLOOD))
 			descriptors |= "hallucinogenic"
-		if(reagents.has_reagent("bicaridine") || reagents.has_reagent("earthsblood"))
+		if(reagents.has_reagent(REAGENT_ID_BICARIDINE) || reagents.has_reagent(REAGENT_ID_EARTHSBLOOD))
 			descriptors |= "medicinal"
-		if(reagents.has_reagent("gold") || reagents.has_reagent("earthsblood"))
+		if(reagents.has_reagent(REAGENT_ID_GOLD) || reagents.has_reagent(REAGENT_ID_EARTHSBLOOD))
 			descriptors |= "shiny"
-		if(reagents.has_reagent("lube"))
+		if(reagents.has_reagent(REAGENT_ID_LUBE))
 			descriptors |= "slippery"
-		if(reagents.has_reagent("pacid") || reagents.has_reagent("sacid"))
+		if(reagents.has_reagent(REAGENT_ID_PACID) || reagents.has_reagent(REAGENT_ID_SACID))
 			descriptors |= "acidic"
 		if(seed.get_trait(TRAIT_JUICY))
 			descriptors |= "juicy"
@@ -188,16 +188,26 @@
 
 		if(W.sharp)
 
+<<<<<<< HEAD
 			if(seed.kitchen_tag == "pumpkin") // Ugggh these checks are awful.
 				user.show_message("<span class='notice'>You carve a face into [src]!</span>", 1)
+=======
+			if(seed.kitchen_tag == PLANT_PUMPKIN) // Ugggh these checks are awful.
+				user.show_message(span_notice("You carve a face into [src]!"), 1)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 				new /obj/item/clothing/head/pumpkinhead (user.loc)
 				qdel(src)
 				return
 
 			if(seed.chems)
 
+<<<<<<< HEAD
 				if(W.sharp && W.edge && !isnull(seed.chems["woodpulp"]))
 					user.show_message("<span class='notice'>You make planks out of \the [src]!</span>", 1)
+=======
+				if(W.sharp && W.edge && !isnull(seed.chems[REAGENT_ID_WOODPULP]))
+					user.show_message(span_notice("You make planks out of \the [src]!"), 1)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 					playsound(src, 'sound/effects/woodcutting.ogg', 50, 1)
 					var/flesh_colour = seed.get_trait(TRAIT_FLESH_COLOUR)
 					if(!flesh_colour) flesh_colour = seed.get_trait(TRAIT_PRODUCT_COLOUR)
@@ -214,6 +224,7 @@
 					qdel(src)
 					return
 
+<<<<<<< HEAD
 				if(seed.kitchen_tag == "sunflower")
 					new /obj/item/weapon/reagent_containers/food/snacks/rawsunflower(get_turf(src))
 					to_chat(user, SPAN_NOTICE("You remove the seeds from the flower, slightly damaging them."))
@@ -241,6 +252,35 @@
 				if(!isnull(seed.chems["soymilk"]))
 					to_chat(user, "<span class='filter_notice'>You roughly chop up \the [src].</span>")
 					new /obj/item/weapon/reagent_containers/food/snacks/soydope(get_turf(src))
+=======
+				if(seed.kitchen_tag == PLANT_SUNFLOWERS)
+					new /obj/item/reagent_containers/food/snacks/rawsunflower(get_turf(src))
+					to_chat(user, span_notice("You remove the seeds from the flower, slightly damaging them."))
+					qdel(src)
+					return
+
+				if(seed.kitchen_tag == PLANT_POTATO || !isnull(seed.chems[REAGENT_ID_POTATOJUICE]))
+					to_chat(user, span_filter_notice("You slice \the [src] into sticks."))
+					new /obj/item/reagent_containers/food/snacks/rawsticks(get_turf(src))
+					qdel(src)
+					return
+
+				if(!isnull(seed.chems[REAGENT_ID_CARROTJUICE]))
+					to_chat(user, span_filter_notice("You slice \the [src] into sticks."))
+					new /obj/item/reagent_containers/food/snacks/carrotfries(get_turf(src))
+					qdel(src)
+					return
+
+				if(!isnull(seed.chems[REAGENT_ID_PINEAPPLEJUICE]))
+					to_chat(user, span_filter_notice("You slice \the [src] into rings."))
+					new /obj/item/reagent_containers/food/snacks/pineapple_ring(get_turf(src))
+					qdel(src)
+					return
+
+				if(!isnull(seed.chems[REAGENT_ID_SOYMILK]))
+					to_chat(user, span_filter_notice("You roughly chop up \the [src]."))
+					new /obj/item/reagent_containers/food/snacks/soydope(get_turf(src))
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 					qdel(src)
 					return
 
@@ -289,8 +329,13 @@
 		if(src) qdel(src)
 		return
 
+<<<<<<< HEAD
 	if(seed.kitchen_tag == "grass")
 		user.show_message("<span class='notice'>You make a grass tile out of \the [src]!</span>", 1)
+=======
+	if(seed.kitchen_tag == PLANT_GRASS)
+		user.show_message(span_notice("You make a grass tile out of \the [src]!"), 1)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		var/flesh_colour = seed.get_trait(TRAIT_FLESH_COLOUR)
 		if(!flesh_colour) flesh_colour = seed.get_trait(TRAIT_PRODUCT_COLOUR)
 		for(var/i=0,i<2,i++)
@@ -306,8 +351,13 @@
 		qdel(src)
 		return
 
+<<<<<<< HEAD
 	if(seed.kitchen_tag == "carpet")
 		user.show_message("<span class='notice'>You shape some carpet squares out of \the [src] fibers!</span>", 1)
+=======
+	if(seed.kitchen_tag == PLANT_CARPET)
+		user.show_message(span_notice("You shape some carpet squares out of \the [src] fibers!"), 1)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		for(var/i=0,i<2,i++)
 			var/obj/item/stack/tile/carpet/G = new (user.loc)
 			for (var/obj/item/stack/tile/carpet/NG in user.loc)
@@ -330,13 +380,13 @@
 	/*
 	if(seed.kitchen_tag)
 		switch(seed.kitchen_tag)
-			if("shand")
+			if(PLANT_SHAND)
 				var/obj/item/stack/medical/bruise_pack/tajaran/poultice = new /obj/item/stack/medical/bruise_pack/tajaran(user.loc)
 				poultice.heal_brute = potency
 				to_chat(user, "<span class='notice'>You mash the leaves into a poultice.</span>")
 				qdel(src)
 				return
-			if("mtear")
+			if(PLANT_MTEAR)
 				var/obj/item/stack/medical/ointment/tajaran/poultice = new /obj/item/stack/medical/ointment/tajaran(user.loc)
 				poultice.heal_burn = potency
 				to_chat(user, "<span class='notice'>You mash the petals into a poultice.</span>")
@@ -361,11 +411,19 @@
 
 // Predefined types for placing on the map.
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/grown/mushroom/libertycap
 	plantname = "libertycap"
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/ambrosiavulgaris
 	plantname = "ambrosia"
+=======
+/obj/item/reagent_containers/food/snacks/grown/mushroom/libertycap
+	plantname = PLANT_LIBERTYCAP
+
+/obj/item/reagent_containers/food/snacks/grown/ambrosiavulgaris
+	plantname = PLANT_AMBROSIA
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/reagent_containers/food/snacks/fruit_slice
 	name = "fruit slice"

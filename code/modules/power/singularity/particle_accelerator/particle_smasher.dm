@@ -270,8 +270,13 @@
  */
 
 /datum/particle_smasher_recipe
+<<<<<<< HEAD
 	var/list/reagents	// example: = list("pacid" = 5)
 	var/list/items		// example: = list(/obj/item/weapon/tool/crowbar, /obj/item/weapon/welder) Place /foo/bar before /foo. Do not include fruit. Maximum of 3 items.
+=======
+	var/list/reagents	// example: = list(REAGENT_ID_PACID = 5)
+	var/list/items		// example: = list(/obj/item/tool/crowbar, /obj/item/welder) Place /foo/bar before /foo. Do not include fruit. Maximum of 3 items.
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	var/recipe_type = PS_RESULT_STACK			// Are we producing a stack or an item?
 
 	var/result = /obj/item/stack/material/iron		// The sheet this will produce.
@@ -319,7 +324,7 @@
 	return .
 
 /datum/particle_smasher_recipe/deuterium_tritium
-	reagents = list("hydrogen" = 15)
+	reagents = list(REAGENT_ID_HYDROGEN = 15)
 
 	result = /obj/item/stack/material/tritium
 	required_material = /obj/item/stack/material/deuterium
@@ -349,7 +354,7 @@
 	probability = 10
 
 /datum/particle_smasher_recipe/osmium_lead
-	reagents = list("tungsten" = 10)
+	reagents = list(REAGENT_ID_TUNGSTEN = 10)
 
 	result = /obj/item/stack/material/lead
 	required_material = /obj/item/stack/material/osmium
@@ -362,7 +367,7 @@
 	probability = 50
 
 /datum/particle_smasher_recipe/phoron_valhollide
-	reagents = list("phoron" = 10, "pacid" = 10)
+	reagents = list(REAGENT_ID_PHORON = 10, REAGENT_ID_PACID = 10)
 
 	result = /obj/item/stack/material/valhollide
 	required_material = /obj/item/stack/material/phoron
@@ -375,7 +380,7 @@
 	probability = 10
 
 /datum/particle_smasher_recipe/valhollide_supermatter
-	reagents = list("phoron" = 300)
+	reagents = list(REAGENT_ID_PHORON = 300)
 
 	result = /obj/item/stack/material/supermatter
 	required_material = /obj/item/stack/material/valhollide
@@ -403,8 +408,13 @@
 	probability = 90
 
 /datum/particle_smasher_recipe/donkpockets_ascend
+<<<<<<< HEAD
 	items = list(/obj/item/weapon/reagent_containers/food/snacks/donkpocket)
 	reagents = list("phoron" = 120)
+=======
+	items = list(/obj/item/reagent_containers/food/snacks/donkpocket)
+	reagents = list(REAGENT_ID_PHORON = 120)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 	recipe_type = PS_RESULT_ITEM
 

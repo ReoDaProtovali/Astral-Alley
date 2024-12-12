@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/bottle/snaps
 	name = "Akvavit"
+=======
+/obj/item/reagent_containers/food/drinks/bottle/snaps
+	name = REAGENT_SNAPS
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	desc = "This could go well with lunch."
 	icon = 'modular_chomp/icons/obj/drinks.dmi'
 	icon_state = "snapsbottle"
@@ -8,4 +13,4 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/snaps/Initialize()
 	. = ..()
-	reagents.add_reagent("snaps", 100)
+	reagents.add_reagent(REAGENT_ID_SNAPS, 100)

@@ -196,7 +196,7 @@
 			return
 		var/obj/item/weapon/reagent_containers/glass/G = I
 		var/transferred = min(G.reagents.maximum_volume - G.reagents.total_volume, honey)
-		G.reagents.add_reagent("honey", transferred)
+		G.reagents.add_reagent(REAGENT_ID_HONEY, transferred)
 		honey -= transferred
 		user.visible_message(SPAN_NOTICE("[user] collects honey from \the [src] into \the [G]."), SPAN_NOTICE("You collect [transferred] units of honey from \the [src] into \the [G]."))
 		return 1

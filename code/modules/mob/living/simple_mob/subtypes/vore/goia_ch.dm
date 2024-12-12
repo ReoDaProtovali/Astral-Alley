@@ -275,6 +275,7 @@
 	add_verb(src,/mob/living/simple_mob/vore/zorgoia/proc/appearance_switch)
 	add_verb(src,/mob/living/simple_mob/vore/zorgoia/proc/recolor)
 	add_verb(src,/mob/living/proc/injection) //Poison sting c:
+<<<<<<< HEAD
 	src.trait_injection_reagents += "microcillin"		// get small
 	src.trait_injection_reagents += "macrocillin"		// get BIG
 	src.trait_injection_reagents += "normalcillin"	// normal
@@ -287,6 +288,47 @@
 	src.trait_injection_reagents += "paralysistoxin" 	// Paralysis!
 	src.trait_injection_reagents += "painenzyme"		// Pain INCREASER
 	src.trait_injection_reagents += "aphrodisiac"		// Horni
+=======
+	add_verb(src,/mob/living/simple_mob/vore/zorgoia/proc/export_style)
+	add_verb(src,/mob/living/simple_mob/vore/zorgoia/proc/import_style)
+	src.trait_injection_reagents += REAGENT_ID_MICROCILLIN			// get small
+	src.trait_injection_reagents += REAGENT_ID_MACROCILLIN			// get BIG
+	src.trait_injection_reagents += REAGENT_ID_NORMALCILLIN			// normal
+	src.trait_injection_reagents += REAGENT_ID_NUMBENZYME			// no feelings
+	src.trait_injection_reagents += REAGENT_ID_ANDROROVIR			// -> MALE
+	src.trait_injection_reagents += REAGENT_ID_GYNOROVIR			// -> FEMALE
+	src.trait_injection_reagents += REAGENT_ID_ANDROGYNOROVIR		// -> PLURAL
+	src.trait_injection_reagents += REAGENT_ID_STOXIN				// night night chem
+	src.trait_injection_reagents += REAGENT_ID_RAINBOWTOXIN			// Funny flashing lights.
+	src.trait_injection_reagents += REAGENT_ID_PARALYSISTOXIN 		// Paralysis!
+	src.trait_injection_reagents += REAGENT_ID_PAINENZYME			// Pain INCREASER
+	src.trait_injection_reagents += REAGENT_ID_APHRODISIAC			// Horni
+
+	var/list/goia_colors = list("#1a00ff", "#6c5bff", "#ff00fe", "#ff0000", "#00d3ff", "#00ff7c", "#00ff35", "#e1ff00", "#ff9f00", "#393939")
+	var/bodycolor = pick(goia_colors)
+	var/spines = pick(goia_colors)
+	goia_overlays["main"]= "zorgoia_main"
+	goia_overlays["zorgoia_main"] = bodycolor
+	goia_overlays["ears"] = pick(ear_styles)
+	goia_overlays["zorgoia_ears"] = bodycolor
+	goia_overlays["spots"] = pick(spots_styles)
+	goia_overlays["zorgoia_spots"] = pick(goia_colors)
+	goia_overlays["claws"] = pick(claws_styles)
+	goia_overlays["zorgoia_claws"] = spines
+	goia_overlays["spines"] = pick(spines_styles)
+	goia_overlays["zorgoia_spines"] = spines
+	goia_overlays["fluff"] = pick(fluff_styles)
+	goia_overlays["zorgoia_fluff"] = bodycolor
+	goia_overlays["underbelly"] = pick(underbelly_styles)
+	goia_overlays["zorgoia_underbelly"] = bodycolor
+	goia_overlays["eyes"] = pick(eyes_styles)
+	goia_overlays["zorgoia_eyes"] = "#[get_random_colour(1)]"
+	goia_overlays["spike"] = pick(spiky_styles)
+	goia_overlays["zorgoia_spike"] = "#[get_random_colour(0,0,255)]"
+	goia_overlays["belly"] = pick(belly_styles)
+	goia_overlays["zorgoia_belly"] = bodycolor
+	update_icon()
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /mob/living/simple_mob/vore/zorgoia/update_icon()
 	..()

@@ -49,7 +49,7 @@
 	var/datum/reagents/R = new/datum/reagents(max_fuel)
 	reagents = R
 	R.my_atom = src
-	R.add_reagent("fuel", max_fuel)
+	R.add_reagent(REAGENT_ID_FUEL, max_fuel)
 	update_icon()
 	if(always_process)
 		START_PROCESSING(SSobj, src)
@@ -184,8 +184,13 @@
 	setWelding(!welding, user)
 
 //Returns the amount of fuel in the welder
+<<<<<<< HEAD
 /obj/item/weapon/weldingtool/proc/get_fuel()
 	return reagents.get_reagent_amount("fuel")
+=======
+/obj/item/weldingtool/proc/get_fuel()
+	return reagents.get_reagent_amount(REAGENT_ID_FUEL)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/weldingtool/proc/get_max_fuel()
 	return max_fuel
@@ -197,7 +202,7 @@
 	if(amount)
 		burned_fuel_for = 0 // Reset the counter since we're removing fuel.
 	if(get_fuel() >= amount)
-		reagents.remove_reagent("fuel", amount)
+		reagents.remove_reagent(REAGENT_ID_FUEL, amount)
 		if(M)
 			eyecheck(M)
 		update_icon()
@@ -440,7 +445,7 @@
 
 /obj/item/weapon/weldingtool/alien/process()
 	if(get_fuel() <= get_max_fuel())
-		reagents.add_reagent("fuel", 1)
+		reagents.add_reagent(REAGENT_ID_FUEL, 1)
 	..()
 
 /obj/item/weapon/weldingtool/experimental
@@ -461,7 +466,7 @@
 	..()
 	if(get_fuel() < get_max_fuel() && nextrefueltick < world.time)
 		nextrefueltick = world.time + 10
-		reagents.add_reagent("fuel", 1)
+		reagents.add_reagent(REAGENT_ID_FUEL, 1)
 
 /obj/item/weapon/weldingtool/experimental/hybrid
 	name = "strange welding tool"

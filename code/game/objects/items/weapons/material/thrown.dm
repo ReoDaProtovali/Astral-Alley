@@ -20,5 +20,10 @@
 		var/mob/living/M = hit_atom
 		M.adjustToxLoss(rand(20,40))
 
+<<<<<<< HEAD
 /obj/item/weapon/material/star/ninja
 	default_material = "uranium"
+=======
+/obj/item/material/star/ninja
+	default_material = MAT_URANIUM
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

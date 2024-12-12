@@ -250,6 +250,24 @@
 	data["dirty"] = dirty == 100
 	data["items"] = get_items_list()
 
+<<<<<<< HEAD
+=======
+	var/list/reagents_data = list()
+	for(var/datum/reagent/R in reagents.reagent_list)
+		var/display_name = R.name
+		if(R.id == REAGENT_ID_CAPSAICIN)
+			display_name = "Hotsauce"
+		if(R.id == REAGENT_ID_FROSTOIL)
+			display_name = "Coldsauce"
+		UNTYPED_LIST_ADD(reagents_data, list(
+			"name" = display_name,
+			"amt" = R.volume,
+			"extra" = "unit[R.volume > 1 ? "s" : ""]",
+			"color" = R.color,
+		))
+	data["reagents"] = reagents_data
+
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	return data
 
 /obj/machinery/microwave/proc/get_items_list()
@@ -580,8 +598,8 @@
 				qdel(H.held_mob)
 		qdel(O)
 	src.reagents.clear_reagents()
-	ffuu.reagents.add_reagent("carbon", amount)
-	ffuu.reagents.add_reagent("toxin", amount/10)
+	ffuu.reagents.add_reagent(REAGENT_ID_CARBON, amount)
+	ffuu.reagents.add_reagent(REAGENT_ID_TOXIN, amount/10)
 	return ffuu
 
 /obj/machinery/microwave/verb/Eject()

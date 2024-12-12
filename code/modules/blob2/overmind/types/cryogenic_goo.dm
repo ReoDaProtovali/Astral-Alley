@@ -45,8 +45,13 @@
 	if(env)
 		env.add_thermal_energy(-10 * 1000)
 
+<<<<<<< HEAD
 /datum/blob_type/cryogenic_goo/on_chunk_tick(obj/item/weapon/blobcore_chunk/B)
 	B.reagents.add_reagent("cryoslurry", 0.5)
+=======
+/datum/blob_type/cryogenic_goo/on_chunk_tick(obj/item/blobcore_chunk/B)
+	B.reagents.add_reagent(REAGENT_ID_CRYOSLURRY, 0.5)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 	var/turf/simulated/T = get_turf(B)
 	if(!istype(T))

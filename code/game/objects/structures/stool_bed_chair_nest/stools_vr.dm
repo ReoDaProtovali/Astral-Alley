@@ -15,5 +15,10 @@
 /obj/item/weapon/stool/baystool/padded
 	icon_state = "bar_stool_padded_preview" //set for the map
 
+<<<<<<< HEAD
 /obj/item/weapon/stool/baystool/padded/New(var/newloc, var/new_material)
 	..(newloc, "steel", "carpet")
+=======
+/obj/item/stool/baystool/padded/New(var/newloc, var/new_material)
+	..(newloc, MAT_STEEL, MAT_CARPET)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

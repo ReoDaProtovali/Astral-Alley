@@ -13,7 +13,7 @@
 	thrown_force_divisor = 0.5
 	item_state = "shard-glass"
 	attack_verb = list("stabbed", "slashed", "sliced", "cut")
-	default_material = "glass"
+	default_material = MAT_GLASS
 	unbreakable = 1 //It's already broken.
 	drops_debris = 0
 
@@ -144,8 +144,16 @@
 			return
 
 // Preset types - left here for the code that uses them
+<<<<<<< HEAD
 /obj/item/weapon/material/shard/shrapnel/New(loc)
 	..(loc, "steel")
 
 /obj/item/weapon/material/shard/phoron/New(loc)
 	..(loc, "borosilicate glass")
+=======
+/obj/item/material/shard/shrapnel/New(loc)
+	..(loc, MAT_STEEL)
+
+/obj/item/material/shard/phoron/New(loc)
+	..(loc, MAT_PGLASS)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

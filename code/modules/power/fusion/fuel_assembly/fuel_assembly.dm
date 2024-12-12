@@ -7,7 +7,7 @@
 
 	var/percent_depleted = 1
 	var/list/rod_quantities = list()
-	var/fuel_type = "composite"
+	var/fuel_type = MAT_COMPOSITE
 	var/fuel_colour
 	var/radioactivity = 0
 	var/const/initial_amount = 3000000
@@ -53,6 +53,7 @@
 	return ..()
 
 // Mapper shorthand.
+<<<<<<< HEAD
 /obj/item/weapon/fuel_assembly/deuterium/New(var/newloc)
 	..(newloc, "deuterium")
 
@@ -64,3 +65,16 @@
 
 /obj/item/weapon/fuel_assembly/supermatter/New(var/newloc)
 	..(newloc, "supermatter")
+=======
+/obj/item/fuel_assembly/deuterium/New(var/newloc)
+	..(newloc, MAT_DEUTERIUM)
+
+/obj/item/fuel_assembly/tritium/New(var/newloc)
+	..(newloc, MAT_TRITIUM)
+
+/obj/item/fuel_assembly/phoron/New(var/newloc)
+	..(newloc, MAT_PHORON)
+
+/obj/item/fuel_assembly/supermatter/New(var/newloc)
+	..(newloc, MAT_SUPERMATTER)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

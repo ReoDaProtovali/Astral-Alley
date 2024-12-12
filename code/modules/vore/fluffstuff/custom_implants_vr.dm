@@ -1,8 +1,14 @@
 
 //WickedTempest: Chakat Tempest
+<<<<<<< HEAD
 /obj/item/weapon/implant/reagent_generator/tempest
 	generated_reagents = list("milk" = 2)
 	reagent_name = "milk"
+=======
+/obj/item/implant/reagent_generator/tempest
+	generated_reagents = list(REAGENT_ID_MILK = 2)
+	reagent_name = REAGENT_ID_MILK
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	usable_volume = 1000
 
 	empty_message = list("Your breasts are almost completely drained!")
@@ -18,9 +24,15 @@
 
 
 //Hottokeeki: Belle Day
+<<<<<<< HEAD
 /obj/item/weapon/implant/reagent_generator/belle
 	generated_reagents = list("milk" = 2)
 	reagent_name = "milk"
+=======
+/obj/item/implant/reagent_generator/belle
+	generated_reagents = list(REAGENT_ID_MILK = 2)
+	reagent_name = REAGENT_ID_MILK
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	usable_volume = 5000
 
 	empty_message = list("Your breasts and or udder feel almost completely drained!", "You're feeling a liittle on the empty side...")
@@ -39,8 +51,8 @@
 /obj/item/weapon/implant/reagent_generator/eldi
 	name = "lactation implant"
 	desc = "This is an implant that allows the user to lactate."
-	generated_reagents = list("milk" = 2)
-	reagent_name = "milk"
+	generated_reagents = list(REAGENT_ID_MILK = 2)
+	reagent_name = REAGENT_ID_MILK
 	usable_volume = 1000
 
 	empty_message = list("Your breasts feel unusually empty.", "Your chest feels lighter - your milk supply is empty!", "Your milk reserves have run dry.", "Your grateful nipples ache as the last of your milk leaves them.")
@@ -55,8 +67,13 @@
 	implant_type = /obj/item/weapon/implant/reagent_generator/eldi
 
 //Vorrarkul: Theodora Lindt
+<<<<<<< HEAD
 /obj/item/weapon/implant/reagent_generator/vorrarkul
 	generated_reagents = list("chocolate_milk" = 2)
+=======
+/obj/item/implant/reagent_generator/vorrarkul
+	generated_reagents = list(REAGENT_ID_CHOCOLATEMILK = 2)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	reagent_name = "chocalate milk"
 	usable_volume = 1000
 
@@ -72,9 +89,15 @@
 	implant_type = /obj/item/weapon/implant/reagent_generator/vorrarkul
 
 //Lycanthorph: Savannah Dixon
+<<<<<<< HEAD
 /obj/item/weapon/implant/reagent_generator/savannah
 	generated_reagents = list("milk" = 2)
 	reagent_name = "milk"
+=======
+/obj/item/implant/reagent_generator/savannah
+	generated_reagents = list(REAGENT_ID_MILK = 2)
+	reagent_name = REAGENT_ID_MILK
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	usable_volume = 1000
 
 	empty_message = list("Your nipples are sore from being milked!", "Your breasts feel drained, milk is no longer leaking from your nipples!")
@@ -95,7 +118,7 @@
 /obj/item/weapon/implant/reagent_generator/roiz
 	name = "egg laying implant"
 	desc = "This is an implant that allows the user to lay eggs."
-	generated_reagents = list("egg" = 2)
+	generated_reagents = list(REAGENT_ID_EGG = 2)
 	usable_volume = 500
 	transfer_amount = 50
 
@@ -164,7 +187,7 @@
 /obj/item/weapon/implant/reagent_generator/jasmine
 	name = "egg laying implant"
 	desc = "This is an implant that allows the user to lay eggs."
-	generated_reagents = list("egg" = 2)
+	generated_reagents = list(REAGENT_ID_EGG = 2)
 	usable_volume = 500
 	transfer_amount = 50
 
@@ -233,7 +256,7 @@
 /obj/item/weapon/implant/reagent_generator/yonra
 	name = "egg laying implant"
 	desc = "This is an implant that allows the user to lay eggs."
-	generated_reagents = list("egg" = 2)
+	generated_reagents = list(REAGENT_ID_EGG = 2)
 	usable_volume = 500
 	transfer_amount = 50
 
@@ -308,7 +331,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/teshari/New()
 	..()
-	reagents.add_reagent("egg", 10)
+	reagents.add_reagent(REAGENT_ID_EGG, 10)
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/teshari/tesh2
@@ -318,7 +341,7 @@
 /obj/item/weapon/implant/reagent_generator/rischi
 	name = "egg laying implant"
 	desc = "This is an implant that allows the user to lay eggs."
-	generated_reagents = list("egg" = 2)
+	generated_reagents = list(REAGENT_ID_EGG = 2)
 	usable_volume = 3000 //They requested 1 egg every ~30 minutes.
 	transfer_amount = 3000
 
@@ -384,9 +407,15 @@
 		rimplant.reagents.remove_any(rimplant.transfer_amount)
 
 /*
+<<<<<<< HEAD
 /obj/item/weapon/implant/reagent_generator/pumila_nectar //Bugged. Two implants at once messes things up.
 	generated_reagents = list("honey" = 2)
 	reagent_name = "honey"
+=======
+/obj/item/implant/reagent_generator/pumila_nectar //Bugged. Two implants at once messes things up.
+	generated_reagents = list(REAGENT_ID_HONEY = 2)
+	reagent_name = REAGENT_ID_HONEY
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	usable_volume = 5000
 
 	empty_message = list("You appear to be all out of nectar", "You feel as though you are lacking a majority of your nectar.")
@@ -411,7 +440,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/roiz/New()
 	..()
-	reagents.add_reagent("egg", 9)
+	reagents.add_reagent(REAGENT_ID_EGG, 9)
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/roiz/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -441,7 +470,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/friedegg/roiz/New()
 	..()
-	reagents.add_reagent("protein", 9)
+	reagents.add_reagent(REAGENT_ID_PROTEIN, 9)
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledegg/roiz
@@ -453,7 +482,7 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledegg/roiz/New()
 	..()
-	reagents.add_reagent("protein", 6)
+	reagents.add_reagent(REAGENT_ID_PROTEIN, 6)
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolateegg/roiz
@@ -463,14 +492,14 @@
 	icon_state = "chocolateegg_roiz"
 	filling_color = "#7D5F46"
 	nutriment_amt = 3
-	nutriment_desc = list("chocolate" = 5)
+	nutriment_desc = list(REAGENT_ID_CHOCOLATE = 5)
 	volume = 18
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolateegg/roiz/New()
 	..()
-	reagents.add_reagent("sugar", 6)
-	reagents.add_reagent("coco", 6)
-	reagents.add_reagent("milk", 2)
+	reagents.add_reagent(REAGENT_ID_SUGAR, 6)
+	reagents.add_reagent(REAGENT_ID_COCO, 6)
+	reagents.add_reagent(REAGENT_ID_MILK, 2)
 	bitesize = 2
 
 //SilverTalisman: Evian

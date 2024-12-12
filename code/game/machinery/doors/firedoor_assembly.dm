@@ -82,8 +82,13 @@
 					qdel(src)
 				return
 		else
+<<<<<<< HEAD
 			to_chat(user, "<span class='notice'>You need more welding fuel.</span>")
 	else if(istype(C, /obj/item/stack/material) && C.get_material_name() == "rglass" && !glass)
+=======
+			to_chat(user, span_notice("You need more welding fuel."))
+	else if(istype(C, /obj/item/stack/material) && C.get_material_name() == MAT_RGLASS && !glass)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		var/obj/item/stack/S = C
 		if (S.get_amount() >= 1)
 			playsound(src, 'sound/items/Crowbar.ogg', 100, 1)

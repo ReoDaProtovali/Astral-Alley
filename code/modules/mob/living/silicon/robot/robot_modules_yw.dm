@@ -12,6 +12,7 @@
 					)
 	can_be_pushed = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/robot_module/xenomaid/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/flash(src)
 	src.modules += new /obj/item/weapon/soap/nanotrasen(src)
@@ -20,6 +21,16 @@
 	src.modules += new /obj/item/device/lightreplacer(src)
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("lube", 250)
+=======
+/obj/item/robot_module/xenomaid/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/flash(src)
+	src.modules += new /obj/item/soap/nanotrasen(src)
+	src.modules += new /obj/item/storage/bag/trash(src)
+	src.modules += new /obj/item/mop(src)
+	src.modules += new /obj/item/lightreplacer(src)
+	src.emag = new /obj/item/reagent_containers/spray(src)
+	src.emag.reagents.add_reagent(REAGENT_ID_LUBE, 250)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	src.emag.name = "Lube spray"
 	R.icon 		 = 'icons/mob/robots_yw.dmi'
 	R.hands.icon = 'icons/mob/screen1_robot_vr.dmi'
@@ -77,6 +88,7 @@
 	src.modules += new /obj/item/device/dogborg/tongue(src) //Clean up bloody items by licking them, and eat rubbish for
 	src.modules += new /obj/item/device/dogborg/sleeper(src) //So they can nom people and heal them
 	src.modules += new /obj/item/borg/sight/hud/med(src)
+<<<<<<< HEAD
 	src.modules += new /obj/item/device/healthanalyzer(src)
 	src.modules += new /obj/item/weapon/reagent_containers/borghypo/surgeon(src)
 	src.modules += new /obj/item/weapon/surgical/scalpel(src)
@@ -96,6 +108,27 @@
 	src.modules += new /obj/item/weapon/surgical/bioregen(src) //chompstation addition in case this borg is ever added
 	src.emag = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag.reagents.add_reagent("pacid", 250)
+=======
+	src.modules += new /obj/item/healthanalyzer(src)
+	src.modules += new /obj/item/reagent_containers/borghypo/surgeon(src)
+	src.modules += new /obj/item/surgical/scalpel(src)
+	src.modules += new /obj/item/surgical/hemostat(src)
+	src.modules += new /obj/item/surgical/retractor(src)
+	src.modules += new /obj/item/surgical/cautery(src)
+	src.modules += new /obj/item/surgical/bonegel(src)
+	src.modules += new /obj/item/surgical/FixOVein(src)
+	src.modules += new /obj/item/surgical/bonesetter(src)
+	src.modules += new /obj/item/surgical/circular_saw(src)
+	src.modules += new /obj/item/surgical/surgicaldrill(src)
+	src.modules += new /obj/item/gripper/no_use/organ(src)
+	src.modules += new /obj/item/gripper/medical(src)
+	src.modules += new /obj/item/shockpaddles/robot(src)
+	src.modules += new /obj/item/reagent_containers/dropper(src) // Allows surgeon borg to fix necrosis
+	src.modules += new /obj/item/sleevemate(src)
+	src.modules += new /obj/item/surgical/bioregen(src) //chompstation addition in case this borg is ever added
+	src.emag = new /obj/item/reagent_containers/spray(src)
+	src.emag.reagents.add_reagent(REAGENT_ID_PACID, 250)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	src.emag.name = "Polyacid spray"
 
 	src.modules += new /obj/item/weapon/dogborg/pounce(src) //CHOMPEdit - Switch to the more balanced pounce module.
@@ -122,6 +155,11 @@
 
 /obj/item/weapon/robot_module/medical/robot/surgeon/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	if(src.emag)
+<<<<<<< HEAD
 		var/obj/item/weapon/reagent_containers/spray/PS = src.emag
 		PS.reagents.add_reagent("pacid", 2 * amount)
+=======
+		var/obj/item/reagent_containers/spray/PS = src.emag
+		PS.reagents.add_reagent(REAGENT_ID_PACID, 2 * amount)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	..()

@@ -1100,18 +1100,26 @@ z
 /area/crew_quarters/heads/sc/
 	name = "\improper Command - Head Office"
 	icon_state = "head_quarters"
-	flags = RAD_SHIELDED
+	flags = RAD_SHIELDED | AREA_FORBID_EVENTS | AREA_FORBID_SINGULO
 	sound_env = MEDIUM_SOFTFLOOR
 
 /area/crew_quarters/heads/sc/hop
 	name = "\improper Command - HoP's Office"
 	icon_state = "head_quarters"
 	holomap_color = HOLOMAP_AREACOLOR_COMMAND
+<<<<<<< HEAD
+=======
+	flags = RAD_SHIELDED | AREA_FORBID_EVENTS | AREA_FORBID_SINGULO | AREA_FLAG_IS_NOT_PERSISTENT
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/crew_quarters/heads/sc/hor
 	name = "\improper Research - RD's Office"
 	icon_state = "head_quarters"
 	holomap_color = HOLOMAP_AREACOLOR_SCIENCE
+<<<<<<< HEAD
+=======
+	flags = RAD_SHIELDED | AREA_FORBID_EVENTS | AREA_FORBID_SINGULO | AREA_FLAG_IS_NOT_PERSISTENT
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/crew_quarters/heads/sc/chief
 	name = "\improper Engineering - CE's Office"
@@ -1127,6 +1135,10 @@ z
 	name = "\improper Medbay - CMO's Office"
 	icon_state = "head_quarters"
 	holomap_color = HOLOMAP_AREACOLOR_MEDICAL
+<<<<<<< HEAD
+=======
+	flags = RAD_SHIELDED | AREA_FORBID_EVENTS | AREA_FORBID_SINGULO | AREA_FLAG_IS_NOT_PERSISTENT
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /area/engineering/engineer_eva
 	name = "\improper Engineering EVA"
