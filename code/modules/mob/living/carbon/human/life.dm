@@ -508,9 +508,22 @@
 /mob/living/carbon/human/handle_post_breath(datum/gas_mixture/breath)
 	..()
 	//spread some viruses while we are at it
+<<<<<<< HEAD
 	if(breath && virus2.len > 0 && prob(10))
 		for(var/mob/living/carbon/M in view(1,src))
 			src.spread_disease_to(M)
+=======
+	if(breath && !isnull(viruses) && prob(10))
+		if((wear_mask && (wear_mask.item_flags & AIRTIGHT)) || (head && (head && (head.item_flags & AIRTIGHT))))
+			return
+		if(wear_mask && wear_mask.permeability_coefficient < 1)
+			return
+		for(var/datum/disease/D in GetViruses())
+			if(!D.IsSpreadByAir())
+				continue
+			for(var/mob/living/carbon/M in view(1,src))
+				ContractDisease(D)
+>>>>>>> 65b20a4d5c ([MIRROR] Virology Hotfix #5 (#9620))
 
 
 /mob/living/carbon/human/get_breath_from_internal(volume_needed=BREATH_VOLUME)
