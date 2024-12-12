@@ -1,10 +1,16 @@
 /datum/seed/banana
-	name = "banana"
-	seed_name = "banana"
+	name = PLANT_BANANA
+	seed_name = PLANT_BANANA
 	display_name = "banana tree"
+<<<<<<< HEAD
 	kitchen_tag = "banana"
 	chems = list("banana" = list(10,10))
 	trash_type = /obj/item/weapon/bananapeel
+=======
+	kitchen_tag = PLANT_BANANA
+	chems = list(REAGENT_ID_BANANA = list(10,10))
+	trash_type = /obj/item/bananapeel
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/seed/banana/New()
 	..()

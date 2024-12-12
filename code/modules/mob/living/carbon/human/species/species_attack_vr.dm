@@ -18,6 +18,7 @@
 			// ----- HEAD ----- //
 			switch(attack_damage)
 				if(1 to 2)
+<<<<<<< HEAD
 					user.visible_message("<span class='danger'>[user]'s fangs scrape across [target]'s cheek!</span>")
 					to_chat(target, "<span class='danger'>Your face feels tingly!</span>")
 					target.bloodstr.add_reagent("numbenzyme",attack_damage) //Have to add this here, otherwise the swtich fails.
@@ -29,10 +30,24 @@
 					user.visible_message("<span class='danger'>[user] sinks \his [pick(attack_noun)] <b><i>deep</i></b> into [target]'s neck, causing the vein to bulge outwards at some type of chemical is pumped into it!</span>")
 					to_chat(target, "<span class='danger'>Your neck feels like it's going to burst! Moments later, you simply can't feel your neck any longer, the numbness beginning to spread throughout your body!</span>")
 					target.bloodstr.add_reagent("numbenzyme",attack_damage)
+=======
+					user.visible_message(span_danger("[user]'s fangs scrape across [target]'s cheek!"))
+					to_chat(target, span_danger("Your face feels tingly!"))
+					target.bloodstr.add_reagent(REAGENT_ID_NUMBENZYME,attack_damage) //Have to add this here, otherwise the swtich fails.
+				if(3 to 4)
+					user.visible_message(span_danger("[user]'s fangs pierce into [target]'s neck at an odd, awkward angle!"))
+					to_chat(target, span_danger("Your neck feels like it's on fire before going numb!"))
+					target.bloodstr.add_reagent(REAGENT_ID_NUMBENZYME,attack_damage)
+				if(5)
+					user.visible_message(span_danger("[user] sinks \his [pick(attack_noun)] <b><i>deep</i></b> into [target]'s neck, causing the vein to bulge outwards at some type of chemical is pumped into it!"))
+					to_chat(target, span_danger("Your neck feels like it's going to burst! Moments later, you simply can't feel your neck any longer, the numbness beginning to spread throughout your body!"))
+					target.bloodstr.add_reagent(REAGENT_ID_NUMBENZYME,attack_damage)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		else
 			// ----- BODY ----- //
 			switch(attack_damage)
 				if(1 to 2)
+<<<<<<< HEAD
 					user.visible_message("<span class='danger'>[user]'s fangs scrape across [target]'s [affecting.name]!</span>")
 					to_chat(target, "<span class='danger'>Your [affecting.name] feels tingly!</span>")
 					target.bloodstr.add_reagent("numbenzyme",attack_damage)
@@ -44,6 +59,19 @@
 					user.visible_message("<span class='danger'>[user]'s fangs sink deep into [target]'s [affecting.name], one of their veins bulging outwards from the sudden fluid pumped into it!</span>")
 					to_chat(target, "<span class='danger'>Your [affecting.name] feels like it's going to burst! Moments later, you simply can't feel your [affecting.name] any longer, the numbness slowly spreading throughout your body!</span>")
 					target.bloodstr.add_reagent("numbenzyme",attack_damage)
+=======
+					user.visible_message(span_danger("[user]'s fangs scrape across [target]'s [affecting.name]!"))
+					to_chat(target, span_danger("Your [affecting.name] feels tingly!"))
+					target.bloodstr.add_reagent(REAGENT_ID_NUMBENZYME,attack_damage)
+				if(3 to 4)
+					user.visible_message(span_danger("[user]'s fangs pierce [pick("", "", "the side of")] [target]'s [affecting.name]!"))
+					to_chat(target, span_danger("Your [affecting.name] feels like it's on fire before going numb!"))
+					target.bloodstr.add_reagent(REAGENT_ID_NUMBENZYME,attack_damage)
+				if(5)
+					user.visible_message(span_danger("[user]'s fangs sink deep into [target]'s [affecting.name], one of their veins bulging outwards from the sudden fluid pumped into it!"))
+					to_chat(target, span_danger("Your [affecting.name] feels like it's going to burst! Moments later, you simply can't feel your [affecting.name] any longer, the numbness slowly spreading throughout your body!"))
+					target.bloodstr.add_reagent(REAGENT_ID_NUMBENZYME,attack_damage)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/unarmed_attack/claws/shadekin
 

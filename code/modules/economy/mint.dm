@@ -7,7 +7,7 @@
 	density = TRUE
 	anchored = TRUE
 	var/coinsToProduce = 6	//how many coins do we make per sheet? a sheet is 2000 units whilst a coin is 250, and some material should be lost in the process
-	var/list/validMats = list("silver", "gold", "diamond", "iron", "phoron", "uranium")	//what's valid stuff to make coins out of?
+	var/list/validMats = list(MAT_SILVER, MAT_GOLD, MAT_DIAMOND, MAT_IRON, MAT_PHORON, MAT_URANIUM)	//what's valid stuff to make coins out of?
 
 /obj/machinery/mineral/mint/attackby(obj/item/stack/material/M as obj, mob/user as mob)
 	if(M.default_type in validMats)
@@ -16,8 +16,9 @@
 			icon_state = "coinpress1"
 			if(do_after(user, 2 SECONDS, src))
 				M.amount--
-				if(M.default_type == "silver")
+				if(M.default_type == MAT_SILVER)
 					while(coinsToProduce-- > 0)
+<<<<<<< HEAD
 						new /obj/item/weapon/coin/silver(user.loc)
 				else if(M.default_type == "gold")
 					while(coinsToProduce-- > 0)
@@ -32,6 +33,22 @@
 					while(coinsToProduce-- > 0)
 						new /obj/item/weapon/coin/phoron(user.loc)
 				else if(M.default_type == "uranium")
+=======
+						new /obj/item/coin/silver(user.loc)
+				else if(M.default_type == MAT_GOLD)
+					while(coinsToProduce-- > 0)
+						new /obj/item/coin/gold(user.loc)
+				else if(M.default_type == MAT_DIAMOND)
+					while(coinsToProduce-- > 0)
+						new /obj/item/coin/diamond(user.loc)
+				else if(M.default_type == MAT_IRON)
+					while(coinsToProduce-- > 0)
+						new /obj/item/coin/iron(user.loc)
+				else if(M.default_type == MAT_PHORON)
+					while(coinsToProduce-- > 0)
+						new /obj/item/coin/phoron(user.loc)
+				else if(M.default_type == MAT_URANIUM)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 					while(coinsToProduce-- > 0)
 						new /obj/item/weapon/coin/uranium(user.loc)
 				src.visible_message("<span class='notice'>\The [src] rattles and dispenses several [M.default_type] coins!</span>")

@@ -142,8 +142,13 @@
 	sharp = TRUE
 	edge = FALSE
 
+<<<<<<< HEAD
 /obj/item/weapon/material/kitchen/utensil/fork/plastic
 	default_material = "plastic"
+=======
+/obj/item/material/kitchen/utensil/fork/plastic
+	default_material = MAT_PLASTIC
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/material/kitchen/utensil/foon
 	name = "foon"
@@ -152,8 +157,13 @@
 	sharp = TRUE
 	edge = FALSE
 
+<<<<<<< HEAD
 /obj/item/weapon/material/kitchen/utensil/foon/plastic
 	default_material = "plastic"
+=======
+/obj/item/material/kitchen/utensil/foon/plastic
+	default_material = MAT_PLASTIC
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/material/kitchen/utensil/spork
 	name = "spork"
@@ -162,8 +172,13 @@
 	sharp = TRUE
 	edge = FALSE
 
+<<<<<<< HEAD
 /obj/item/weapon/material/kitchen/utensil/spork/plastic
 	default_material = "plastic"
+=======
+/obj/item/material/kitchen/utensil/spork/plastic
+	default_material = MAT_PLASTIC
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/material/kitchen/utensil/spoon
 	name = "spoon"
@@ -174,8 +189,13 @@
 	sharp = FALSE
 	force_divisor = 0.1 //2 when wielded with weight 20 (steel)
 
+<<<<<<< HEAD
 /obj/item/weapon/material/kitchen/utensil/spoon/plastic
 	default_material = "plastic"
+=======
+/obj/item/material/kitchen/utensil/spoon/plastic
+	default_material = MAT_PLASTIC
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /*
  * Knives
@@ -189,8 +209,13 @@
 		return
 	return ..()
 */
+<<<<<<< HEAD
 /obj/item/weapon/material/knife/plastic
 	default_material = "plastic"
+=======
+/obj/item/material/knife/plastic
+	default_material = MAT_PLASTIC
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /*
  * Rolling Pins
@@ -201,7 +226,7 @@
 	desc = "Used to knock out the Bartender."
 	icon_state = "rolling_pin"
 	attack_verb = list("bashed", "battered", "bludgeoned", "thrashed", "whacked")
-	default_material = "wood"
+	default_material = MAT_WOOD
 	force_divisor = 0.7 // 10 when wielded with weight 15 (wood)
 	dulled_divisor = 0.75	// Still a club
 	thrown_force_divisor = 1 // as above

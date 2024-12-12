@@ -28,4 +28,12 @@
 	add_overlay(mainOverlay)
 	add_overlay(shadeOverlay)
 
+<<<<<<< HEAD
 	add_hiddenprint(usr)
+=======
+		add_overlay(mainOverlay)
+		add_overlay(shadeOverlay)
+
+	add_janitor_hud_overlay()
+	return
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

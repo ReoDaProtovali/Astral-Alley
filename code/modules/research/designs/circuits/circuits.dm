@@ -6,7 +6,7 @@ CIRCUITS BELOW
 	build_type = IMPRINTER
 	req_tech = list(TECH_DATA = 2)
 	materials = list(MAT_GLASS = 2000)
-	chemicals = list("sacid" = 20)
+	chemicals = list(REAGENT_ID_SACID = 20)
 	time = 5
 
 /datum/design/circuit/AssembleDesignName()
@@ -608,8 +608,13 @@ CIRCUITS BELOW
 	id = "durand_main"
 	req_tech = list(TECH_DATA = 4)
 	materials = list(MAT_GLASS = 2000, MAT_GRAPHITE = 1250)
+<<<<<<< HEAD
 	chemicals = list("sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/mecha/durand/main
+=======
+	chemicals = list(REAGENT_ID_SACID = 20)
+	build_path = /obj/item/circuitboard/mecha/durand/main
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	sort_string = "NAADA"
 
 /datum/design/circuit/mecha/durand_peri
@@ -617,8 +622,13 @@ CIRCUITS BELOW
 	id = "durand_peri"
 	req_tech = list(TECH_DATA = 4)
 	materials = list(MAT_GLASS = 2000, MAT_GRAPHITE = 1250)
+<<<<<<< HEAD
 	chemicals = list("sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/mecha/durand/peripherals
+=======
+	chemicals = list(REAGENT_ID_SACID = 20)
+	build_path = /obj/item/circuitboard/mecha/durand/peripherals
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	sort_string = "NAADB"
 
 /datum/design/circuit/mecha/durand_targ
@@ -626,8 +636,13 @@ CIRCUITS BELOW
 	id = "durand_targ"
 	req_tech = list(TECH_DATA = 4, TECH_COMBAT = 2)
 	materials = list(MAT_GLASS = 2000, MAT_GRAPHITE = 1250)
+<<<<<<< HEAD
 	chemicals = list("sacid" = 20)
 	build_path = /obj/item/weapon/circuitboard/mecha/durand/targeting
+=======
+	chemicals = list(REAGENT_ID_SACID = 20)
+	build_path = /obj/item/circuitboard/mecha/durand/targeting
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	sort_string = "NAADC"
 
 /datum/design/circuit/tcom

@@ -97,11 +97,17 @@
 //Called when spawning to equip them with special things.
 /datum/species/custom/equip_survival_gear(var/mob/living/carbon/human/H, var/extendedtank = 0, var/comprehensive = 0)
 	. = ..()
-	if(breath_type != "oxygen")
+	if(breath_type != GAS_O2)
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(H), slot_wear_mask)
+<<<<<<< HEAD
 		var/obj/item/weapon/tank/tankpath
 		if(breath_type == "phoron")
 			tankpath = /obj/item/weapon/tank/vox
+=======
+		var/obj/item/tank/tankpath
+		if(breath_type == GAS_PHORON)
+			tankpath = /obj/item/tank/vox
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		else
 			tankpath = text2path("/obj/item/weapon/tank/" + breath_type)
 

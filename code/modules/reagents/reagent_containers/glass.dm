@@ -271,10 +271,15 @@
 
 /obj/item/weapon/reagent_containers/glass/beaker/cryoxadone
 	name = "beaker (cryoxadone)"
-	prefill = list("cryoxadone" = 30)
+	prefill = list(REAGENT_ID_CRYOXADONE = 30)
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/glass/beaker/sulphuric
 	prefill = list("sacid" = 60)
+=======
+/obj/item/reagent_containers/glass/beaker/sulphuric
+	prefill = list(REAGENT_ID_SACID = 60)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/reagent_containers/glass/beaker/stopperedbottle
 	name = "stoppered bottle"

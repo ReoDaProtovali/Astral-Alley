@@ -138,8 +138,13 @@
 	if (!istype(tool, /obj/item/weapon/reagent_containers))
 		return 0
 
+<<<<<<< HEAD
 	var/obj/item/weapon/reagent_containers/container = tool
 	if(!container.reagents.has_reagent("peridaxon"))
+=======
+	var/obj/item/reagent_containers/container = tool
+	if(!container.reagents.has_reagent(REAGENT_ID_PERIDAXON))
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		return 0
 
 	if(!hasorgans(target))

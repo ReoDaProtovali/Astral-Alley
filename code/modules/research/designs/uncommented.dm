@@ -19,8 +19,13 @@
 	id = "rust_core_control"
 	req_tech = list("programming" = 4, "engineering" = 4)
 	build_type = IMPRINTER
+<<<<<<< HEAD
 	materials = list(MAT_GLASS = 2000, "sacid" = 20)
 	build_path = "/obj/item/weapon/circuitboard/rust_core_control"
+=======
+	materials = list(MAT_GLASS = 2000, REAGENT_ID_SACID = 20)
+	build_path = "/obj/item/circuitboard/rust_core_control"
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/design/rust_fuel_control
 	name = "Circuit Design (RUST fuel controller)"
@@ -28,8 +33,13 @@
 	id = "rust_fuel_control"
 	req_tech = list("programming" = 4, "engineering" = 4)
 	build_type = IMPRINTER
+<<<<<<< HEAD
 	materials = list(MAT_GLASS = 2000, "sacid" = 20)
 	build_path = "/obj/item/weapon/circuitboard/rust_fuel_control"
+=======
+	materials = list(MAT_GLASS = 2000, REAGENT_ID_SACID = 20)
+	build_path = "/obj/item/circuitboard/rust_fuel_control"
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/design/rust_fuel_port
 	name = "Internal circuitry (RUST fuel port)"
@@ -37,8 +47,13 @@
 	id = "rust_fuel_port"
 	req_tech = list("engineering" = 4, "materials" = 5)
 	build_type = IMPRINTER
+<<<<<<< HEAD
 	materials = list(MAT_GLASS = 2000, "sacid" = 20, MAT_URANIUM = 3000)
 	build_path = "/obj/item/weapon/module/rust_fuel_port"
+=======
+	materials = list(MAT_GLASS = 2000, REAGENT_ID_SACID = 20, MAT_URANIUM = 3000)
+	build_path = "/obj/item/module/rust_fuel_port"
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/design/rust_fuel_compressor
 	name = "Circuit Design (RUST fuel compressor)"
@@ -46,8 +61,13 @@
 	id = "rust_fuel_compressor"
 	req_tech = list("materials" = 6, "phorontech" = 4)
 	build_type = IMPRINTER
+<<<<<<< HEAD
 	materials = list(MAT_GLASS = 2000, "sacid" = 20, MAT_PHORON = 3000, MAT_DIAMOND = 1000)
 	build_path = "/obj/item/weapon/module/rust_fuel_compressor"
+=======
+	materials = list(MAT_GLASS = 2000, REAGENT_ID_SACID = 20, MAT_PHORON = 3000, MAT_DIAMOND = 1000)
+	build_path = "/obj/item/module/rust_fuel_compressor"
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/design/rust_core
 	name = "Internal circuitry (RUST tokamak core)"
@@ -55,8 +75,13 @@
 	id = "pacman"
 	req_tech = list(bluespace = 3, phorontech = 4, magnets = 5, powerstorage = 6)
 	build_type = IMPRINTER
+<<<<<<< HEAD
 	materials = list(MAT_GLASS = 2000, "sacid" = 20, MAT_PHORON = 3000, MAT_DIAMOND = 2000)
 	build_path = "/obj/item/weapon/circuitboard/rust_core"
+=======
+	materials = list(MAT_GLASS = 2000, REAGENT_ID_SACID = 20, MAT_PHORON = 3000, MAT_DIAMOND = 2000)
+	build_path = "/obj/item/circuitboard/rust_core"
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/design/rust_injector
 	name = "Internal circuitry (RUST tokamak core)"
@@ -64,6 +89,11 @@
 	id = "pacman"
 	req_tech = list(powerstorage = 3, engineering = 4, phorontech = 4, materials = 6)
 	build_type = IMPRINTER
+<<<<<<< HEAD
 	materials = list(MAT_GLASS = 2000, "sacid" = 20, MAT_PHORON = 3000, MAT_URANIUM = 2000)
 	build_path = "/obj/item/weapon/circuitboard/rust_core"
+=======
+	materials = list(MAT_GLASS = 2000, REAGENT_ID_SACID = 20, MAT_PHORON = 3000, MAT_URANIUM = 2000)
+	build_path = "/obj/item/circuitboard/rust_core"
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 */

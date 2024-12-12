@@ -39,8 +39,13 @@
 	desc = "A device used to rapidly pipe things."
 	id = "RPD"
 	req_tech = list(TECH_ENGINEERING = 3, TECH_MATERIAL = 2, TECH_BLUESPACE = 2)
+<<<<<<< HEAD
 	materials = list(DEFAULT_WALL_MATERIAL = 300, "silver" = 100, "diamond" = 500)
 	build_path = /obj/item/weapon/pipe_dispenser
+=======
+	materials = list(DEFAULT_WALL_MATERIAL = 300, MAT_SILVER = 100, MAT_DIAMOND = 500)
+	build_path = /obj/item/pipe_dispenser
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	sort_string = "NAAAB"
 	department = LATHE_ALL | LATHE_ENGINEERING // CHOMPAdd
 
@@ -49,8 +54,13 @@
 	desc = "A tool that converts battery charge to materials."
 	id = "RMS"
 	req_tech = list(TECH_ENGINEERING = 4, TECH_MATERIAL = 3, TECH_BLUESPACE = 3)
+<<<<<<< HEAD
 	materials = list(DEFAULT_WALL_MATERIAL = 500, "glass" = 500, "silver" = 300, "phoron" = 300, "diamond" = 500) //Probably change the price in the future just put something for now
 	build_path = /obj/item/weapon/rms
+=======
+	materials = list(DEFAULT_WALL_MATERIAL = 500, MAT_GLASS = 500, MAT_SILVER = 300, MAT_PHORON = 300, MAT_DIAMOND = 500) //Probably change the price in the future just put something for now
+	build_path = /obj/item/rms
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	sort_string = "NAAAB"
 	department = LATHE_ALL | LATHE_ENGINEERING // CHOMPAdd
 // YW addition end

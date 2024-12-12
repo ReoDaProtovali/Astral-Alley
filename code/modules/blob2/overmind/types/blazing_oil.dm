@@ -32,8 +32,13 @@
 	if(env)
 		env.add_thermal_energy(10 * 1000)
 
+<<<<<<< HEAD
 /datum/blob_type/blazing_oil/on_chunk_tick(obj/item/weapon/blobcore_chunk/B)
 	B.reagents.add_reagent("thermite_v", 0.5)
+=======
+/datum/blob_type/blazing_oil/on_chunk_tick(obj/item/blobcore_chunk/B)
+	B.reagents.add_reagent(REAGENT_ID_THERMITEV, 0.5)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 	var/turf/T = get_turf(B)
 	if(!T)

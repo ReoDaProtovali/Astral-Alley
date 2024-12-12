@@ -77,7 +77,7 @@
 	w_class = ITEMSIZE_SMALL
 	maxcharge = 7200
 	charge_amount = 20
-	matter = list("metal" = 350, "glass" = 50)
+	matter = list(MAT_METAL = 350, MAT_GLASS = 50)
 	preserve_item = 1
 	origin_tech = list(TECH_POWER = 6)
 
@@ -124,6 +124,12 @@
 	w_class = ITEMSIZE_HUGE		//Probably gonna make it a rifle sooner or later //CHOMP Edit, and so I did.
 	slot_flags = SLOT_BELT|SLOT_BACK //CHOMP Edit. Let's make it so that if it doesn't fit in a backpack, it doesn't fit in a holster either.
 	var/is64x32_override = TRUE
+<<<<<<< HEAD
 	accept_cell_type = /obj/item/weapon/cell/vepr
 	cell_type = /obj/item/weapon/cell/vepr
 	origin_tech = list(TECH_POWER = 4, TECH_COMBAT = 6, TECH_MAGNET = 4, TECH_ILLEGAL = 4)
+=======
+	accept_cell_type = /obj/item/cell/vepr
+	cell_type = /obj/item/cell/vepr
+	origin_tech = list(TECH_POWER = 4, TECH_COMBAT = 6, TECH_MAGNET = 4, TECH_ILLEGAL = 4)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

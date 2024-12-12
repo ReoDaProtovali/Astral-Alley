@@ -20,6 +20,7 @@
 		return
 	. = ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/grown/sif/sifpod
 	plantname = "sifbulb"
 
@@ -31,6 +32,19 @@
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/sif/wildwabback
 	plantname = "wildwabback"
+=======
+/obj/item/reagent_containers/food/snacks/grown/sif/sifpod
+	plantname = PLANT_SIFBULB
+
+/obj/item/reagent_containers/food/snacks/grown/sif/wabback
+	plantname = PLANT_WHITEWABBACK
+
+/obj/item/reagent_containers/food/snacks/grown/sif/blackwabback
+	plantname = PLANT_BLACKWABBACK
+
+/obj/item/reagent_containers/food/snacks/grown/sif/wildwabback
+	plantname = PLANT_WILDWABBACK
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/reagent_containers/food/snacks/grown/sif/eyebulbs
 	plantname = "eyebulbs"

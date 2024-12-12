@@ -32,8 +32,13 @@ var/global/list/stool_cache = list() //haha stool
 	force = round(material.get_blunt_damage()*0.4)
 	update_icon()
 
+<<<<<<< HEAD
 /obj/item/weapon/stool/padded/New(var/newloc, var/new_material)
 	..(newloc,"steel",MAT_CARPET) //CHOMPstation edit: New tile material system
+=======
+/obj/item/stool/padded/New(var/newloc, var/new_material)
+	..(newloc, MAT_STEEL, MAT_CARPET)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/stool/update_icon()
 	// Prep icon.

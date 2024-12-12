@@ -25,8 +25,13 @@
 	if(istype(W,/obj/item/stack/nanopaste))
 		var/obj/item/stack/nanopaste/np = W
 		if((supply.get_free_space() >= efficiency) && np.use(1))
+<<<<<<< HEAD
 			to_chat(user, "<span class='notice'>You convert some nanopaste into programmed nanites inside \the [src].</span>")
 			supply.add_reagent(id = "nifrepairnanites", amount = efficiency)
+=======
+			to_chat(user, span_notice("You convert some nanopaste into programmed nanites inside \the [src]."))
+			supply.add_reagent(id = REAGENT_ID_NIFREPAIRNANITES, amount = efficiency)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 			update_icon()
 		else if(supply.get_free_space() < efficiency)
 			to_chat(user, "<span class='warning'>\The [src] is too full. Empty it into a container first.</span>")

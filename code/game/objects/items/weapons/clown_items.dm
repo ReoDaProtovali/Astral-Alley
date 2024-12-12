@@ -22,8 +22,13 @@
 	create_reagents(5)
 	wet()
 
+<<<<<<< HEAD
 /obj/item/weapon/soap/proc/wet()
 	reagents.add_reagent("cleaner", 5)
+=======
+/obj/item/soap/proc/wet()
+	reagents.add_reagent(REAGENT_ID_CLEANER, 5)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/soap/Crossed(atom/movable/AM as mob|obj)
 	if(AM.is_incorporeal())

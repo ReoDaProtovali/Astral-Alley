@@ -112,7 +112,7 @@
 
 /obj/item/weapon/weldingtool/silver/process()
 	if(get_fuel() <= get_max_fuel())
-		reagents.add_reagent("fuel", 1)
+		reagents.add_reagent(REAGENT_ID_FUEL, 1)
 	..()
 
 //Midnightfog
@@ -169,5 +169,10 @@
 	name = "Magnet Pull"
 
 /datum/modifier/magnet/tick()
+<<<<<<< HEAD
 	for(var/obj/item/weapon/ore/O in orange(4, holder))
 		step_towards(O, get_turf(holder))
+=======
+	for(var/obj/item/ore/O in orange(4, holder))
+		step_towards(O, get_turf(holder))
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

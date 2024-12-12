@@ -4,8 +4,13 @@
 			var/remove_volume = volume* 0.1 //10% of what the bloodpack can hold.
 			var/reagent_to_remove = reagents.get_master_reagent_id()
 			switch(reagents.get_master_reagent_id())
+<<<<<<< HEAD
 				if("blood")
 					user.show_message("<span class='warning'>You sink your fangs into \the [src] and suck the blood out of it!</span>")
+=======
+				if(REAGENT_ID_BLOOD)
+					user.show_message(span_warning("You sink your fangs into \the [src] and suck the blood out of it!"))
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 					user.visible_message(span_red("[user] sinks their fangs into \the [src] and drains it!"))
 					user.adjust_nutrition(remove_volume*5)
 					reagents.remove_reagent(reagent_to_remove, remove_volume)

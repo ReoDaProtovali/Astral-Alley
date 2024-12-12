@@ -29,8 +29,13 @@
 				if(water.energy < amount)
 					amount = water.energy
 				water.use_charge(amount)
+<<<<<<< HEAD
 				E.reagents.add_reagent("water", amount)
 				to_chat(src, "<span class='filter_notice'>You refill the extinguisher using your water reserves.</span>")
+=======
+				E.reagents.add_reagent(REAGENT_ID_WATER, amount)
+				to_chat(src, span_filter_notice("You refill the extinguisher using your water reserves."))
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 			else
 				to_chat(src, "<span class='filter_notice'>Insufficient water reserves.</span>")
 

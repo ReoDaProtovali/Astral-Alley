@@ -22,7 +22,7 @@
 		inject_amount = inject_amount * 1.5
 		to_chat(src, "<span class='notice'>We inject extra chemicals.</span>")
 	if(T.reagents)
-		T.reagents.add_reagent("cryotoxin", inject_amount)
+		T.reagents.add_reagent(REAGENT_ID_CRYOTOXIN, inject_amount)
 	feedback_add_details("changeling_powers","CS")
 	remove_verb(src,/mob/proc/changeling_cryo_sting)  //CHOMPEdit
 	spawn(3 MINUTES)

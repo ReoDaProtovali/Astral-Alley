@@ -34,8 +34,13 @@
 		user.put_in_hands(F)
 
 	else if(istype(thing, /obj/machinery/power/supermatter))
+<<<<<<< HEAD
 		var/obj/item/weapon/fuel_assembly/F = new(get_turf(src), "supermatter")
 		visible_message("<b>\The [src]</b> compresses \the [thing] into a new fuel assembly.")
+=======
+		var/obj/item/fuel_assembly/F = new(get_turf(src), MAT_SUPERMATTER)
+		visible_message(span_infoplain(span_bold("\The [src]") + " compresses \the [thing] into a new fuel assembly."))
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		qdel(thing)
 		user.put_in_hands(F)
 		return 1
@@ -58,8 +63,13 @@
 				to_chat(user, "<span class='warning'>It would be pointless to make a fuel rod out of [mat.use_name].</span>")
 				return
 			if(M.get_amount() < FUSION_ROD_SHEET_AMT)
+<<<<<<< HEAD
 				if(mat.name=="supermatter")
 					visible_message("<span class='notice'>\The [user] places the [mat.use_name] into the compressor.</span>")
+=======
+				if(mat.name==MAT_SUPERMATTER)
+					visible_message(span_notice("\The [user] places the [mat.use_name] into the compressor."))
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 					M.use(1)
 					blitzprogress = 1
 					verbs |= /obj/machinery/fusion_fuel_compressor/verb/eject_sheet
@@ -71,7 +81,7 @@
 			M.use(FUSION_ROD_SHEET_AMT)
 			user.put_in_hands(F)
 		else
-			if(mat.name=="phoron")
+			if(mat.name==MAT_PHORON)
 				if(M.get_amount() < 25)
 					to_chat(user, "<span class='warning'>You need at least 25 phoron sheets to make a blitz rod!</span>")
 					return

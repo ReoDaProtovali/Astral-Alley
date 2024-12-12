@@ -422,7 +422,11 @@
 	charge_amount = 100
 	var/mob/living/carbon/human/charger
 
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/carbon/human/species/station/protean/protean_rig.dm
 /obj/item/weapon/cell/protean/Initialize() //ChompEDIT New --> Initialize
+=======
+/obj/item/cell/protean/Initialize()
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611)):code/modules/mob/living/carbon/human/species/station/protean_vr/protean_rig.dm
 	charge = maxcharge
 	update_icon()
 	addtimer(CALLBACK(src, PROC_REF(search_for_protean)), 60)

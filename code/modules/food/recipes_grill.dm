@@ -96,7 +96,7 @@
 
 /datum/recipe/bunbun
 	appliance = GRILL
-	reagents = list("sodiumchloride" = 1)
+	reagents = list(REAGENT_ID_SODIUMCHLORIDE = 1)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/bun,
 		/obj/item/weapon/reagent_containers/food/snacks/bun
@@ -180,14 +180,14 @@
 		/obj/item/weapon/reagent_containers/food/snacks/meat,
 		/obj/item/weapon/reagent_containers/food/snacks/meat,
 	)
-	reagents = list("egg" = 3)
+	reagents = list(REAGENT_ID_EGG = 3)
 	reagent_mix = RECIPE_REAGENT_REPLACE
 	result = /obj/item/weapon/reagent_containers/food/snacks/bigbiteburger
 
 /datum/recipe/superbiteburger
 	appliance = GRILL
-	fruit = list("tomato" = 1)
-	reagents = list("sodiumchloride" = 5, "blackpepper" = 5)
+	fruit = list(PLANT_TOMATO = 1)
+	reagents = list(REAGENT_ID_SODIUMCHLORIDE = 5, REAGENT_ID_BLACKPEPPER = 5)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/bigbiteburger,
 		/obj/item/weapon/reagent_containers/food/snacks/dough,
@@ -199,7 +199,7 @@
 
 /datum/recipe/slimeburger
 	appliance = GRILL
-	reagents = list("slimejelly" = 5)
+	reagents = list(REAGENT_ID_SLIMEJELLY = 5)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/bun
 	)
@@ -207,7 +207,7 @@
 
 /datum/recipe/jellyburger
 	appliance = GRILL
-	reagents = list("cherryjelly" = 5)
+	reagents = list(REAGENT_ID_CHERRYJELLY = 5)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/bun
 	)
@@ -237,12 +237,13 @@
 		/obj/item/weapon/reagent_containers/food/snacks/cheesewedge,
 		/obj/item/weapon/reagent_containers/food/snacks/cheesewedge,
 	)
-	reagents = list("egg" = 6)
+	reagents = list(REAGENT_ID_EGG = 6)
 	reagent_mix = RECIPE_REAGENT_REPLACE
 	result = /obj/item/weapon/reagent_containers/food/snacks/omelette
 
 /datum/recipe/omurice
 	appliance = GRILL
+<<<<<<< HEAD
 	reagents = list("rice" = 5, "ketchup" = 5, "egg" = 3)
 	result = /obj/item/weapon/reagent_containers/food/snacks/omurice
 
@@ -261,10 +262,30 @@
 	reagents = list("sodiumchloride" = 1, "blackpepper" = 1)
 	items = list(/obj/item/weapon/reagent_containers/food/snacks/meat)
 	result = /obj/item/weapon/reagent_containers/food/snacks/meatsteak
+=======
+	reagents = list(REAGENT_ID_RICE = 5, REAGENT_ID_KETCHUP = 5, REAGENT_ID_EGG = 3)
+	result = /obj/item/reagent_containers/food/snacks/omurice
+
+/datum/recipe/omurice/heart
+	appliance = GRILL
+	reagents = list(REAGENT_ID_RICE = 5, REAGENT_ID_KETCHUP = 5, REAGENT_ID_SUGAR = 5, REAGENT_ID_EGG = 3)
+	result = /obj/item/reagent_containers/food/snacks/omurice/heart
+
+/datum/recipe/omurice/face
+	appliance = GRILL
+	reagents = list(REAGENT_ID_RICE = 5, REAGENT_ID_KETCHUP = 5, REAGENT_ID_SODIUMCHLORIDE = 1, REAGENT_ID_EGG = 3)
+	result = /obj/item/reagent_containers/food/snacks/omurice/face
+
+/datum/recipe/meatsteak
+	appliance = GRILL
+	reagents = list(REAGENT_ID_SODIUMCHLORIDE = 1, REAGENT_ID_BLACKPEPPER = 1)
+	items = list(/obj/item/reagent_containers/food/snacks/meat)
+	result = /obj/item/reagent_containers/food/snacks/meatsteak
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/recipe/honeytoast
 	appliance = GRILL
-	reagents = list("honey" = 5)
+	reagents = list(REAGENT_ID_HONEY = 5)
 	items = list(
 		/obj/item/weapon/reagent_containers/food/snacks/slice/bread
 	)
@@ -281,9 +302,15 @@
 		/obj/item/weapon/reagent_containers/food/snacks/carpmeat,
 		/obj/item/weapon/reagent_containers/food/snacks/carpmeat
 	)
+<<<<<<< HEAD
 	reagents = list("spacespice" = 1)
 	fruit = list("lettuce" = 1, "lime" = 1)
 	result = /obj/item/weapon/reagent_containers/food/snacks/sliceable/grilled_carp
+=======
+	reagents = list(REAGENT_ID_SPACESPICE = 1)
+	fruit = list(PLANT_LETTUCE = 1, PLANT_LIME = 1)
+	result = /obj/item/reagent_containers/food/snacks/sliceable/grilled_carp
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /datum/recipe/grilledcheese
 	appliance = GRILL
@@ -308,8 +335,13 @@
 		/obj/item/weapon/reagent_containers/food/snacks/slice/bread,
 		/obj/item/weapon/reagent_containers/food/snacks/cheesewedge
 	)
+<<<<<<< HEAD
 	reagents = list("spacespice" = 1)
 	result = /obj/item/weapon/reagent_containers/food/snacks/cheesetoast
+=======
+	reagents = list(REAGENT_ID_SPACESPICE = 1)
+	result = /obj/item/reagent_containers/food/snacks/cheesetoast
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 	result_quantity = 4
 
 /datum/recipe/bacongrill

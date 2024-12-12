@@ -274,7 +274,7 @@ var/global/list/robot_modules = list(
 	var/obj/item/weapon/reagent_containers/spray/PS = new /obj/item/weapon/reagent_containers/spray(src)
 
 	src.emag += PS
-	PS.reagents.add_reagent("pacid", 250)
+	PS.reagents.add_reagent(REAGENT_ID_PACID, 250)
 	PS.name = "Polyacid spray"
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(10000)
@@ -310,7 +310,7 @@ var/global/list/robot_modules = list(
 
 	var/obj/item/weapon/reagent_containers/spray/PS = locate() in src.emag
 	if(PS)
-		PS.reagents.add_reagent("pacid", 2 * amount)
+		PS.reagents.add_reagent(REAGENT_ID_PACID, 2 * amount)
 
 	..()
 
@@ -348,7 +348,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/inflatable_dispenser/robot(src)
 	var/obj/item/weapon/reagent_containers/spray/PS = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag += PS
-	PS.reagents.add_reagent("pacid", 250)
+	PS.reagents.add_reagent(REAGENT_ID_PACID, 250)
 	PS.name = "Polyacid spray"
 
 	var/datum/matter_synth/medicine = new /datum/matter_synth/medicine(30000) // CHOMPedit: Increased capacity.
@@ -391,7 +391,7 @@ var/global/list/robot_modules = list(
 
 	var/obj/item/weapon/reagent_containers/spray/PS = locate() in src.emag
 	if(PS)
-		PS.reagents.add_reagent("pacid", 2 * amount)
+		PS.reagents.add_reagent(REAGENT_ID_PACID, 2 * amount)
 
 	..()
 
@@ -556,7 +556,7 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/borg/sight/janitor(src)
 	var/obj/item/weapon/reagent_containers/spray/LS = new /obj/item/weapon/reagent_containers/spray(src)
 	src.emag += LS
-	LS.reagents.add_reagent("lube", 250)
+	LS.reagents.add_reagent(REAGENT_ID_LUBE, 250)
 	LS.name = "Lube spray"
 
 	//Starts empty. Can only recharge with recycled material.
@@ -605,7 +605,7 @@ var/global/list/robot_modules = list(
 
 	var/obj/item/weapon/reagent_containers/spray/LS = locate() in src.emag
 	if(LS)
-		LS.reagents.add_reagent("lube", 2 * amount)
+		LS.reagents.add_reagent(REAGENT_ID_LUBE, 2 * amount)
 
 /obj/item/weapon/robot_module/robot/clerical
 	name = "service robot module"
@@ -671,7 +671,7 @@ var/global/list/robot_modules = list(
 	var/datum/reagents/R = new/datum/reagents(50)
 	PB.reagents = R
 	R.my_atom = PB
-	R.add_reagent("beer2", 50)
+	R.add_reagent(REAGENT_ID_BEER2, 50)
 	PB.name = "Auntie Hong's Final Sip"
 	PB.desc = "A bottle of very special mix of alcohol and poison. Some may argue that there's alcohol to die for, but Auntie Hong took it to next level."
 
@@ -682,7 +682,7 @@ var/global/list/robot_modules = list(
 /obj/item/weapon/robot_module/robot/clerical/butler/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	var/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer/PB = locate() in src.emag
 	if(PB)
-		PB.reagents.add_reagent("beer2", 2 * amount)
+		PB.reagents.add_reagent(REAGENT_ID_BEER2, 2 * amount)
 
 /obj/item/weapon/robot_module/robot/clerical/general
 	name = "clerical robot module"

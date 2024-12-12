@@ -18,12 +18,17 @@
 
 /obj/item/weapon/tank/oxygen/Initialize()
 	. = ..()
-	air_contents.adjust_gas("oxygen", (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	air_contents.adjust_gas(GAS_O2, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/weapon/tank/oxygen/examine(mob/user)
 	. = ..()
+<<<<<<< HEAD
 	if(loc == user && (air_contents.gas["oxygen"] < 10))
 		. += "<span class='warning'>The meter on \the [src] indicates you are almost out of oxygen!</span>"
+=======
+	if(loc == user && (air_contents.gas[GAS_O2] < 10))
+		. += span_warning("The meter on \the [src] indicates you are almost out of oxygen!")
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 
 /obj/item/weapon/tank/oxygen/yellow
 	desc = "A tank of oxygen, this one is yellow."
@@ -44,8 +49,8 @@
 /obj/item/weapon/tank/anesthetic/Initialize()
 	. = ..()
 
-	air_contents.gas["oxygen"] = (3*ONE_ATMOSPHERE)*70/(R_IDEAL_GAS_EQUATION*T20C) * O2STANDARD
-	air_contents.gas["nitrous_oxide"] = (3*ONE_ATMOSPHERE)*70/(R_IDEAL_GAS_EQUATION*T20C) * N2STANDARD
+	air_contents.gas[GAS_O2] = (3*ONE_ATMOSPHERE)*70/(R_IDEAL_GAS_EQUATION*T20C) * O2STANDARD
+	air_contents.gas[GAS_N2O] = (3*ONE_ATMOSPHERE)*70/(R_IDEAL_GAS_EQUATION*T20C) * N2STANDARD
 	air_contents.update_values()
 
 /*
@@ -53,18 +58,23 @@
  */
 /obj/item/weapon/tank/air
 	name = "air tank"
-	desc = "Mixed. Shaken, not stirred."		// CHOMP EDIT Haha funny? idk I like this description. 
+	desc = "Mixed. Shaken, not stirred."		// CHOMP EDIT Haha funny? idk I like this description.
 	icon_state = "oxygen"
 
 /obj/item/weapon/tank/air/examine(mob/user)
 	. = ..()
+<<<<<<< HEAD
 	if(loc == user && (air_contents.gas["oxygen"] < 1))
 		. += "<span class='warning'>The meter on \the [src] indicates you are almost out of air!</span>"
+=======
+	if(loc == user && (air_contents.gas[GAS_O2] < 1))
+		. += span_warning("The meter on \the [src] indicates you are almost out of air!")
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		user << sound('sound/effects/alert.ogg')
 
 /obj/item/weapon/tank/air/Initialize()
 	. = ..()
-	src.air_contents.adjust_multi("oxygen", (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * O2STANDARD, "nitrogen", (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * N2STANDARD)
+	src.air_contents.adjust_multi(GAS_O2, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * O2STANDARD, GAS_N2, (6*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C) * N2STANDARD)
 
 /*
  * Phoron
@@ -78,7 +88,7 @@
 
 /obj/item/weapon/tank/phoron/Initialize()
 	. = ..()
-	src.air_contents.adjust_gas("phoron", (3*ONE_ATMOSPHERE)*70/(R_IDEAL_GAS_EQUATION*T20C))
+	src.air_contents.adjust_gas(GAS_PHORON, (3*ONE_ATMOSPHERE)*70/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/weapon/tank/phoron/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()
@@ -96,13 +106,13 @@
 	name = "phoron tank"
 	desc = "Contains dangerous phoron. Do not inhale. Warning: extremely flammable."
 	icon_state = "phoron_vox"
-	gauge_icon = "indicator_bigtank"		// CHOMP EDIT fixes indicator to ensure there's never a buggy outcome 
+	gauge_icon = "indicator_bigtank"		// CHOMP EDIT fixes indicator to ensure there's never a buggy outcome
 	distribute_pressure = ONE_ATMOSPHERE*O2STANDARD
 	slot_flags = SLOT_BACK	//these ones have straps!
 
 /obj/item/weapon/tank/vox/Initialize()
 	. = ..()
-	air_contents.adjust_gas("phoron", (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)) //VOREStation Edit
+	air_contents.adjust_gas(GAS_PHORON, (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)) //VOREStation Edit
 
 /obj/item/weapon/tank/phoron/pressurized
 	name = "fuel can"
@@ -112,7 +122,7 @@
 /obj/item/weapon/tank/phoron/pressurized/Initialize()
 	. = ..()
 	adjust_scale(0.8)
-	air_contents.adjust_gas("phoron", (7*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	air_contents.adjust_gas(GAS_PHORON, (7*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /*
  * Emergency Oxygen
@@ -137,12 +147,17 @@
 
 /obj/item/weapon/tank/emergency/oxygen/Initialize()
 	. = ..()
-	src.air_contents.adjust_gas("oxygen", (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	src.air_contents.adjust_gas(GAS_O2, (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/weapon/tank/emergency/oxygen/examine(mob/user)
 	. = ..()
+<<<<<<< HEAD
 	if(loc == user && (air_contents.gas["oxygen"] < 0.2))
 		. += "<span class='danger'>The meter on the [src.name] indicates you are almost out of air!</span>"
+=======
+	if(loc == user && (air_contents.gas[GAS_O2] < 0.2))
+		. += span_danger("The meter on the [src.name] indicates you are almost out of air!")
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		user << sound('sound/effects/alert.ogg')
 
 /obj/item/weapon/tank/emergency/oxygen/engi
@@ -166,7 +181,7 @@
 
 /obj/item/weapon/tank/stasis/oxygen/Initialize()
 	. = ..()
-	src.air_contents.adjust_gas("oxygen", (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	src.air_contents.adjust_gas(GAS_O2, (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/weapon/tank/emergency/nitrogen
 	name = "emergency nitrogen tank"
@@ -176,7 +191,7 @@
 
 /obj/item/weapon/tank/emergency/nitrogen/Initialize()
 	. = ..()
-	src.air_contents.adjust_gas("nitrogen", (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	src.air_contents.adjust_gas(GAS_N2, (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/weapon/tank/emergency/nitrogen/double
 	name = "double emergency nitrogen tank"
@@ -192,7 +207,7 @@
 
 /obj/item/weapon/tank/emergency/phoron/Initialize()
 	. = ..()
-	src.air_contents.adjust_gas("phoron", (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
+	src.air_contents.adjust_gas(GAS_PHORON, (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C))
 
 /obj/item/weapon/tank/emergency/phoron/double
 	name = "double emergency phoron tank"
@@ -211,12 +226,17 @@
 
 /obj/item/weapon/tank/nitrogen/Initialize()
 	. = ..()
-	src.air_contents.adjust_gas("nitrogen", (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)) //CHOMPedit
+	src.air_contents.adjust_gas(GAS_N2, (10*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*T20C)) //CHOMPedit
 
 /obj/item/weapon/tank/nitrogen/examine(mob/user)
 	. = ..()
+<<<<<<< HEAD
 	if(loc == user && (air_contents.gas["nitrogen"] < 10))
 		. += "<span class='danger'>The meter on \the [src] indicates you are almost out of nitrogen!</span>"
+=======
+	if(loc == user && (air_contents.gas[GAS_N2] < 10))
+		. += span_danger("The meter on \the [src] indicates you are almost out of nitrogen!")
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 		//playsound(user, 'sound/effects/alert.ogg', 50, 1)
 
 /obj/item/weapon/tank/stasis/nitro_cryo // Synthmorph bags need to have initial pressure within safe bounds for human atmospheric pressure, but low temperature to stop unwanted degredation.
@@ -229,4 +249,4 @@
 
 /obj/item/weapon/tank/stasis/nitro_cryo/Initialize()
 	. = ..()
-	src.air_contents.adjust_gas_temp("nitrogen", (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*TN60C), TN60C)
+	src.air_contents.adjust_gas_temp(GAS_N2, (3*ONE_ATMOSPHERE)*volume/(R_IDEAL_GAS_EQUATION*TN60C), TN60C)

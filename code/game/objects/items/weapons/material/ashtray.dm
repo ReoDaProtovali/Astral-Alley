@@ -93,6 +93,7 @@ var/global/list/ashtray_cache = list()
 		update_icon()
 	return ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/material/ashtray/plastic/New(var/newloc)
 	..(newloc, "plastic")
 
@@ -101,3 +102,13 @@ var/global/list/ashtray_cache = list()
 
 /obj/item/weapon/material/ashtray/glass/New(var/newloc)
 	..(newloc, "glass")
+=======
+/obj/item/material/ashtray/plastic/New(var/newloc)
+	..(newloc, MAT_PLASTIC)
+
+/obj/item/material/ashtray/bronze/New(var/newloc)
+	..(newloc, MAT_BRONZE)
+
+/obj/item/material/ashtray/glass/New(var/newloc)
+	..(newloc,MAT_GLASS)
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))

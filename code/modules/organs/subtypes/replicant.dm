@@ -53,6 +53,23 @@
 	can_reject = FALSE
 	icon_state = "plasma_grey"
 
+<<<<<<< HEAD
+=======
+/obj/item/organ/internal/xenos/plasmavessel/replicant/crew/handle_organ_proc_special()
+	if(!istype(owner))
+		return
+
+	var/modifier = 1 - 0.5 * is_bruised()
+
+	if(owner.bloodstr.has_reagent(REAGENT_ID_PHORON))
+		adjust_plasma(round(4 * modifier))
+
+	if(owner.ingested.has_reagent(REAGENT_ID_PHORON))
+		adjust_plasma(round(2 * modifier))
+
+	adjust_plasma(2) //Make it a decent amount so people can actually build stuff without stealing all of medbays phoron
+
+>>>>>>> fd5d9267ff ([MIRROR] Converts gas, ore, plants and reagent strings to defines (#9611))
 /obj/item/organ/internal/xenos/acidgland/replicant
 	name = "replicant aerosol tubule"
 	desc = "A long, rubbery tube that ends in a hard plastic-like bulb."
