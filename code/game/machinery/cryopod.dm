@@ -747,8 +747,13 @@
 
 		// Book keeping!
 		var/turf/location = get_turf(src)
+<<<<<<< HEAD
 		log_admin("[key_name_admin(M)] has entered a stasis pod. (<A HREF='?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
 		message_admins("<span class='notice'>[key_name_admin(M)] has entered a stasis pod.</span>")
+=======
+		log_admin("[key_name_admin(M)] has entered a stasis pod. (<A href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[location.x];Y=[location.y];Z=[location.z]'>JMP</a>)")
+		message_admins(span_notice("[key_name_admin(M)] has entered a stasis pod."))
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 		//Despawning occurs when process() is called with an occupant without a client.
 		add_fingerprint(M)

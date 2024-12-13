@@ -47,9 +47,15 @@
 
 /datum/category_item/player_setup_item/vore/persistence/proc/make_yesno(var/bit)
 	if(pref.persistence_settings & bit)
+<<<<<<< HEAD
 		return "<td><span class='linkOn'><b>Yes</b></span></td> <td><a href='?src=\ref[src];toggle_off=[bit]'>No</a></td>"
 	else
 		return "<td><a href='?src=\ref[src];toggle_on=[bit]'>Yes</a></td> <td><span class='linkOn'><b>No</b></span></td>"
+=======
+		return "<td>" + span_linkOn(span_bold("Yes")) + "</td> <td><a href='byond://?src=\ref[src];toggle_off=[bit]'>No</a></td>"
+	else
+		return "<td><a href='byond://?src=\ref[src];toggle_on=[bit]'>Yes</a></td> <td>" + span_linkOn(span_bold("No")) + "</td>"
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 
 /datum/category_item/player_setup_item/vore/persistence/OnTopic(var/href, var/list/href_list, var/mob/user)
 	if(href_list["toggle_on"])

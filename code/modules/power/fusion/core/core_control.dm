@@ -27,8 +27,6 @@
 		var/new_ident = sanitize_text(tgui_input_text(usr, "Enter a new ident tag.", "Core Control", monitor.core_tag))
 		if(new_ident && user.Adjacent(src))
 			monitor.core_tag = new_ident
-//			id_tag = new_ident
-//			cur_viewed_device = null
 		return
 
 /obj/machinery/computer/fusion_core_control/attack_ai(mob/user)
@@ -41,6 +39,7 @@
 
 	monitor.tgui_interact(user)
 
+<<<<<<< HEAD
 /*
 /obj/machinery/computer/fusion_core_control/attack_hand(mob/user)
 	add_fingerprint(user)
@@ -196,24 +195,8 @@
 		updateUsrDialog()
 */
 
+=======
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 //Returns 1 if the machine can be interacted with via this console.
 /obj/machinery/computer/fusion_core_control/proc/check_core_status(var/obj/machinery/power/fusion_core/C)
 	return istype(C) ? C.check_core_status() : FALSE
-
-/*
-/obj/machinery/computer/fusion_core_control/update_icon()
-	if(stat & (BROKEN))
-		icon = 'icons/obj/computer.dmi'
-		icon_state = "broken"
-		set_light(0)
-
-	if(stat & (NOPOWER))
-		icon = 'icons/obj/computer.dmi'
-		icon_state = "computer"
-		set_light(0)
-
-	if(!stat & (BROKEN|NOPOWER))
-		icon = initial(icon)
-		icon_state = initial(icon_state)
-		set_light(light_range_on, light_power_on)
-*/

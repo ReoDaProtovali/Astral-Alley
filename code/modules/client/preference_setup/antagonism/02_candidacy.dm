@@ -52,7 +52,11 @@ var/global/list/special_roles = list( //keep synced with the defines BE_* in set
 				if(jobban_isbanned(user, i) || (i == "positronic brain" && jobban_isbanned(user, "AI") && jobban_isbanned(user, "Cyborg")) || (i == "pAI candidate" && jobban_isbanned(user, "pAI")))
 					. += "<b>Be [i]:</b> <font color=red><b> \[BANNED]</b></font><br>"
 				else
+<<<<<<< HEAD
 					. += "<b>Be [i]:</b> <a href='?src=\ref[src];be_special=[n]'><b>[pref.be_special&(1<<n) ? "Yes" : "No"]</b></a><br>"
+=======
+					. += span_bold("Be [i]:") + " <a href='byond://?src=\ref[src];be_special=[n]'>" + span_bold("[pref.be_special&(1<<n) ? "Yes" : "No"]") + " </a><br>"
+>>>>>>> a967fb3861 ([MIRROR] Check for 516 byond:// hrefs (#9624))
 			// CHOMPEdit Start -  Add header for Ghost roles section
 			if(i == "GHOST")
 				. += "<h4><u>GHOST ROLES</u> - Roles that are joinable as ghosts, but not true antags.</h4><br>"
