@@ -208,6 +208,11 @@ export const DmTarget = new Juke.Target({
     'html/**',
     'icons/**',
     'interface/**',
+<<<<<<< HEAD
+=======
+    'sound/**',
+    'tgui/public/tgui.html',
+>>>>>>> 6ccae99cba ([MIRROR] Make export chatlog work under 516 (#9646))
     'modular_chomp/code/**',
     'modular_chomp/icons/**',
     `${DME_NAME}.dme`,
