@@ -24,12 +24,21 @@ var/list/department_radio_keys = list(
 	":L" = "left ear",	".L" = "left ear",
 	":I" = "intercom",	".I" = "intercom",
 	":H" = "department",	".H" = "department",
+<<<<<<< HEAD
 	":C" = "Command",		".C" = "Command",
 	":N" = "Science",		".N" = "Science",
 	":M" = "Medical",		".M" = "Medical",
 	":E" = "Engineering",	".E" = "Engineering",
 	":k" = "Response Team",	".k" = "Response Team",
 	":S" = "Security",	".S" = "Security",
+=======
+	":C" = CHANNEL_COMMAND,		".C" = CHANNEL_COMMAND,
+	":N" = CHANNEL_SCIENCE,		".N" = CHANNEL_SCIENCE,
+	":M" = CHANNEL_MEDICAL,		".M" = CHANNEL_MEDICAL,
+	":E" = CHANNEL_ENGINEERING,	".E" = CHANNEL_ENGINEERING,
+	":K" = CHANNEL_RESPONSE_TEAM,	".K" = CHANNEL_RESPONSE_TEAM,
+	":S" = CHANNEL_SECURITY,	".S" = CHANNEL_SECURITY,
+>>>>>>> 3d4f3e800e ([MIRROR] fix rigs going permanently offline and some radio stuff (#9641))
 	":W" = "whisper",		".W" = "whisper",
 	":T" = "Mercenary",	".T" = "Mercenary",
 	":X" = "Raider",		".X" = "Raider",

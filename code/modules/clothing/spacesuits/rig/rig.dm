@@ -534,11 +534,18 @@
 					if(offline_vision_restriction == 1)
 						to_chat(wearer, "<span class='danger'>The suit optics flicker and die, leaving you with restricted vision.</span>")
 					else if(offline_vision_restriction == 2)
+<<<<<<< HEAD
 						to_chat(wearer, "<span class='danger'>The suit optics drop out completely, drowning you in darkness.</span>")
 		if(!offline)
 			offline = 1
 	else
 		if(offline)
+=======
+						to_chat(wearer, span_danger("The suit optics drop out completely, drowning you in darkness."))
+			if(!offline)
+				offline = 1
+		else if (offline)
+>>>>>>> 3d4f3e800e ([MIRROR] fix rigs going permanently offline and some radio stuff (#9641))
 			offline = 0
 			if(istype(wearer) && !wearer.wearing_rig)
 				wearer.wearing_rig = src
