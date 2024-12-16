@@ -13,6 +13,7 @@
 
 /datum/supply_pack/robotics/robotics_assembly
 	name = "Robotics assembly crate"
+	desc = "An assortment of basic robotics assembly supplies. Requires Robotics access."
 	contains = list(
 			/obj/item/device/assembly/prox_sensor = 3,
 			/obj/item/weapon/storage/toolbox/electrical,
@@ -54,7 +55,12 @@
 
 /datum/supply_pack/robotics/robolimbs/morpheus
 	name = "Morpheus robolimb blueprints"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/disk/limb/morpheus)
+=======
+	desc = "A disk of robolimbs from the Morpheus catalogue. Requires Robotics access."
+	contains = list(/obj/item/disk/limb/morpheus)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 20
 	containertype = /obj/structure/closet/crate/secure/morpheus
 	containername = "Robolimb blueprints (Morpheus)"
@@ -62,7 +68,12 @@
 
 /datum/supply_pack/robotics/robolimbs/cybersolutions
 	name = "Cyber Solutions robolimb blueprints"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/disk/limb/cybersolutions)
+=======
+	desc = "A disk of robolimbs from the Cyber Solutions catalogue. Requires Robotics access."
+	contains = list(/obj/item/disk/limb/cybersolutions)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 20
 	containertype = /obj/structure/closet/crate/secure/cybersolutions
 	containername = "Robolimb blueprints (Cyber Solutions)"
@@ -70,7 +81,12 @@
 
 /datum/supply_pack/robotics/robolimbs/xion
 	name = "Xion robolimb blueprints"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/disk/limb/xion)
+=======
+	desc = "A disk of robolimbs from the Xion Manufacturing catalogue. Requires Robotics access."
+	contains = list(/obj/item/disk/limb/xion)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 20
 	containertype = /obj/structure/closet/crate/secure/xion
 	containername = "Robolimb blueprints (Xion)"
@@ -78,7 +94,12 @@
 
 /datum/supply_pack/robotics/robolimbs/grayson
 	name = "Grayson robolimb blueprints"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/disk/limb/grayson)
+=======
+	desc = "A disk of robolimbs from the Grayson Industries catalogue. Requires Robotics access."
+	contains = list(/obj/item/disk/limb/grayson)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 30
 	containertype = /obj/structure/closet/crate/secure/grayson
 	containername = "Robolimb blueprints (Grayson)"
@@ -86,7 +107,12 @@
 
 /datum/supply_pack/robotics/robolimbs/hephaestus
 	name = "Hephaestus robolimb blueprints"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/disk/limb/hephaestus)
+=======
+	desc = "A disk of robolimbs from the Hephaestus Arms catalogue. Requires Robotics access."
+	contains = list(/obj/item/disk/limb/hephaestus)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 35
 	containertype = /obj/structure/closet/crate/secure/heph
 	containername = "Robolimb blueprints (Hephaestus)"
@@ -94,7 +120,12 @@
 
 /datum/supply_pack/robotics/robolimbs/wardtakahashi
 	name = "Ward-Takahashi robolimb blueprints"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/disk/limb/wardtakahashi)
+=======
+	desc = "A disk of robolimbs from the Ward-Takahashi catalogue. Requires Robotics access."
+	contains = list(/obj/item/disk/limb/wardtakahashi)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 35
 	containertype = /obj/structure/closet/crate/secure/ward
 	containername = "Robolimb blueprints (Ward-Takahashi)"
@@ -102,7 +133,12 @@
 
 /datum/supply_pack/robotics/robolimbs/zenghu
 	name = "Zeng Hu robolimb blueprints"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/disk/limb/zenghu)
+=======
+	desc = "A disk of robolimbs from the Zeng Hu Medical catalogue. Requires Robotics access."
+	contains = list(/obj/item/disk/limb/zenghu)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 35
 	containertype = /obj/structure/closet/crate/secure/zenghu
 	containername = "Robolimb blueprints (Zeng Hu)"
@@ -110,7 +146,12 @@
 
 /datum/supply_pack/robotics/robolimbs/bishop
 	name = "Bishop robolimb blueprints"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/disk/limb/bishop)
+=======
+	desc = "A disk of robolimbs from the Bishop catalogue. Requires Robotics access."
+	contains = list(/obj/item/disk/limb/bishop)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 70
 	containertype = /obj/structure/closet/crate/secure/bishop
 	containername = "Robolimb blueprints (Bishop)"
@@ -118,15 +159,20 @@
 
 /datum/supply_pack/robotics/robolimbs/cenilimicybernetics
 	name = "Cenilimi Cybernetics robolimb blueprints"
+<<<<<<< HEAD
 	contains = list(/obj/item/weapon/disk/limb/cenilimicybernetics)
+=======
+	desc = "A disk of teshari robolimbs from the Cenilimi Cybernetics catalogue. Requires Robotics access."
+	contains = list(/obj/item/disk/limb/cenilimicybernetics)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 45
 	containertype = /obj/structure/closet/crate/secure/science
 	containername = "Robolimb blueprints (Cenilimi Cybernetics)"
 	access = access_robotics
 
-
 /datum/supply_pack/robotics/mecha_ripley
 	name = "Circuit Crate (\"Ripley\" APLU)"
+	desc = "A set of standard core components for a Ripley Power-Loader mech, plus an assembly manual. Requires Robotics access."
 	contains = list(
 			/obj/item/weapon/book/manual/ripley_build_and_repair,
 			/obj/item/weapon/circuitboard/mecha/ripley/main,
@@ -139,6 +185,7 @@
 
 /datum/supply_pack/robotics/mecha_odysseus
 	name = "Circuit Crate (\"Odysseus\")"
+	desc = "A set of standard core components for an Odysseus Medical Response mech. Requires Robotics access."
 	contains = list(
 			/obj/item/weapon/circuitboard/mecha/odysseus/peripherals,
 			/obj/item/weapon/circuitboard/mecha/odysseus/main
@@ -157,6 +204,7 @@
 			/obj/item/device/kit/paint/ripley/flames_blue
 			)
 	name = "Random APLU modkit"
+	desc = "A random Ripley customization kit, used to modify a mech's paint job."
 	cost = 200
 	containertype = /obj/structure/closet/crate/xion
 	containername = "heavy crate"
@@ -168,6 +216,7 @@
 			/obj/item/device/kit/paint/durand/phazon
 			)
 	name = "Random Durand exosuit modkit"
+	desc = "A random Durand customization kit, used to modify a mech's paint job."
 	containertype = /obj/structure/closet/crate/heph
 
 /datum/supply_pack/randomised/robotics/exosuit_mod/gygax
@@ -177,10 +226,12 @@
 			/obj/item/device/kit/paint/gygax/recitence
 			)
 	name = "Random Gygax exosuit modkit"
+	desc = "A random Gygax customization kit, used to modify a mech's paint job."
 	containertype = /obj/structure/closet/crate/heph
 
 /datum/supply_pack/robotics/jumper_cables
 	name = "Jumper kit crate"
+	desc = "A pair of jumper kits, for restarting damaged synthetics."
 	contains = list(
 			/obj/item/device/defib_kit/jumper_kit = 2
 			)
@@ -191,6 +242,7 @@
 
 /datum/supply_pack/robotics/restrainingbolt
 	name = "Restraining bolt crate"
+	desc = "A pair of restraining bolts and an implanter. Requires Robotics access."
 	contains = list(
 			/obj/item/weapon/implanter = 1,
 			/obj/item/weapon/implantcase/restrainingbolt = 2
@@ -202,6 +254,7 @@
 
 /datum/supply_pack/robotics/bike
 	name = "Spacebike Crate"
+	desc = "A spacebike. Drive with extreme care."
 	contains = list()
 	cost = 350
 	containertype = /obj/structure/largecrate/vehicle/bike
@@ -209,6 +262,7 @@
 
 /datum/supply_pack/robotics/quadbike
 	name = "ATV Crate"
+	desc = "An all-terrain vehicle in a crate. Can tow a trailer."
 	contains = list()
 	cost = 300
 	containertype = /obj/structure/largecrate/vehicle/quadbike
@@ -216,6 +270,7 @@
 
 /datum/supply_pack/robotics/quadtrailer
 	name = "ATV Trailer Crate"
+	desc = "A trailer for an all-terrain vehicle."
 	contains = list()
 	cost = 250
 	containertype = /obj/structure/largecrate/vehicle/quadtrailer
@@ -224,6 +279,7 @@
 /* //CHOMPedit commented micromech stuff, because fuck this trash
 /datum/supply_pack/robotics/mecha_gopher
 	name = "Circuit Crate (\"Gopher\" APLU)"
+	desc = "A set of standard core components for a Gopher micro-mech. Requires Robotics access."
 	contains = list(
 			/obj/item/weapon/circuitboard/mecha/gopher/main,
 			/obj/item/weapon/circuitboard/mecha/gopher/peripherals
@@ -235,6 +291,7 @@
 
 /datum/supply_pack/robotics/mecha_polecat
 	name = "Circuit Crate (\"Polecat\" APLU)"
+	desc = "A set of standard core components for a Polecat micro-mech. Requires Robotics access."
 	contains = list(
 			/obj/item/weapon/circuitboard/mecha/polecat/main,
 			/obj/item/weapon/circuitboard/mecha/polecat/peripherals,
@@ -247,6 +304,7 @@
 
 /datum/supply_pack/robotics/mecha_weasel
 	name = "Circuit Crate (\"Weasel\" APLU)"
+	desc = "A set of standard core components for a Weasel micro-mech. Requires Robotics access."
 	contains = list(
 			/obj/item/weapon/circuitboard/mecha/weasel/main,
 			/obj/item/weapon/circuitboard/mecha/weasel/peripherals,
@@ -259,6 +317,7 @@
 
 /datum/supply_pack/robotics/some_robolimbs
 	name = "Basic Robolimb Blueprints"
+	desc = "A set of standard cyberlimb blueprints, from the Morpheus, Xion, and Talon LLC catalogues. Requires Robotics access."
 	contains = list(
 			/obj/item/weapon/disk/limb/morpheus,
 			/obj/item/weapon/disk/limb/xion,
@@ -271,6 +330,7 @@
 
 /datum/supply_pack/robotics/all_robolimbs
 	name = "Advanced Robolimb Blueprints"
+	desc = "A wide selection of advanced cyberlimb blueprints. Includes hyperrealistic prosthetic designs from Vey-Medical and DSI. Requires Robotics access."
 	contains = list(
 			/obj/item/weapon/disk/limb/bishop,
 			/obj/item/weapon/disk/limb/hephaestus,

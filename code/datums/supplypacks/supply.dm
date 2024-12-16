@@ -8,6 +8,7 @@
 
 /datum/supply_pack/supply/food
 	name = "Kitchen supply crate"
+	desc = "An assortment of standard kitchen supplies, fit for preparing a variety of basic meals."
 	contains = list(
 			/obj/item/weapon/reagent_containers/food/condiment/carton/flour = 6,
 			/obj/item/weapon/reagent_containers/food/drinks/milk = 3,
@@ -24,6 +25,7 @@
 
 /datum/supply_pack/supply/fancyfood
 	name = "Artisanal food delivery"
+	desc = "High-quality flour and sugar from luxury Centauri Foods brands."
 	contains = list(
 			/obj/item/weapon/reagent_containers/food/condiment/carton/flour/rustic = 6,
 			/obj/item/weapon/reagent_containers/food/condiment/carton/sugar/rustic = 6
@@ -35,13 +37,19 @@
 
 /datum/supply_pack/supply/toner
 	name = "Toner cartridges"
+<<<<<<< HEAD
 	contains = list(/obj/item/device/toner = 6)
+=======
+	desc = "A set of six toner cartridges, for use in printers."
+	contains = list(/obj/item/toner = 6)
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	cost = 10
 	containertype = /obj/structure/closet/crate/ummarcar
 	containername = "Toner cartridges"
 
 /datum/supply_pack/supply/janitor
 	name = "Janitorial supplies"
+	desc = "A set of standard-issue janitorial equipment."
 	contains = list(
 			/obj/item/weapon/reagent_containers/glass/bucket,
 			/obj/item/weapon/mop,
@@ -67,6 +75,7 @@
 
 /datum/supply_pack/supply/shipping
 	name = "Shipping supplies"
+	desc = "Equipment and supplies needed for shipping supplies."
 	contains = list(
 				/obj/fiftyspawner/cardboard,
 				/obj/item/weapon/packageWrap = 4,
@@ -95,12 +104,14 @@
 			/obj/item/weapon/paper_bin
 			)
 	name = "Office supplies"
+	desc = "Standard issue office supplies."
 	cost = 15
 	containertype = /obj/structure/closet/crate/ummarcar
 	containername = "Office supplies crate"
 
 /datum/supply_pack/supply/sticky_notes
 	name = "Stationery - sticky notes (50)"
+	desc = "An entire full-size crate for a single pad of sticky notes."
 	contains = list(/obj/item/sticky_pad/random)
 	cost = 10
 	containertype = /obj/structure/closet/crate/ummarcar
@@ -108,6 +119,7 @@
 
 /datum/supply_pack/supply/spare_pda
 	name = "Spare PDAs"
+	desc = "Three spare PDAs."
 	cost = 10
 	containertype = /obj/structure/closet/crate/thinktronic
 	containername = "Spare PDA crate"
@@ -115,6 +127,7 @@
 
 /datum/supply_pack/supply/minergear
 	name = "Shaft miner equipment"
+	desc = "Standard supplies for equipping miners. Requires Mining access."
 	contains = list(
 			/obj/item/weapon/storage/backpack/industrial,
 			/obj/item/weapon/storage/backpack/satchel/eng,
@@ -141,6 +154,7 @@
 //plus we have the destination tagger
 /datum/supply_pack/supply/mule
 	name = "Mulebot Crate"
+	desc = "A mulebot."
 	contains = list()
 	cost = 20
 	containertype = /obj/structure/largecrate/animal/mulebot
@@ -149,16 +163,23 @@
 
 /datum/supply_pack/supply/cargotrain
 	name = "Cargo Train Tug"
+	desc = "A cargo train tug. Useless without at least one trolley. Can tow several though."
 	contains = list(/obj/vehicle/train/engine)
 	cost = 35
 
 /datum/supply_pack/supply/cargotrailer
 	name = "Cargo Train Trolley"
+	desc = "A cargo train trolley. Useless without a tug."
 	contains = list(/obj/vehicle/train/trolley)
 	cost = 15
 
 /datum/supply_pack/explorergear
+<<<<<<< HEAD
 	name="Explorer gear" //CHOMP explo keep
+=======
+	name= JOB_EXPLORER + " gear"
+	desc = "Standard issue equipment for Explorers. Requires EVA and Exploration access."
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	contains = list (
 					/obj/item/device/cataloguer,
 					/obj/item/device/geiger,
@@ -184,7 +205,12 @@
 	access = access_explorer //CHOMP explo keep
 
 /datum/supply_pack/pilotgear
+<<<<<<< HEAD
 	name= "Pilot gear"
+=======
+	name= JOB_PILOT + " gear"
+	desc = "Standard issue equipment for Pilots. Requires Pilot's access."
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	contains = list (
 					/obj/item/weapon/storage/backpack/parachute,
 					/obj/item/device/radio/headset/pilot,
@@ -211,6 +237,7 @@
 
 /datum/supply_pack/supply/foodcubes
 	name = "Emergency food cubes"
+	desc = "A pack of emergency food cubes. Even less appetizing than nutripaste."
 	contains = list(
 				/obj/machinery/vending/emergencyfood/filled = 1)
 	cost = 75
@@ -218,7 +245,12 @@
 	containername = "food cubes"
 
 /datum/supply_pack/pathfindergear
+<<<<<<< HEAD
 	name="Explorer Leader gear" //CHOMPEdit Keep Explo
+=======
+	name= JOB_PATHFINDER + " gear"
+	desc = "Standard issue equipment for Away Team Pathfinders. Requires Exploration access."
+>>>>>>> bd0bae7b43 ([MIRROR] Supply Pack Details/Descriptions (#9644))
 	contains = list (
 					/obj/item/device/cataloguer/compact/pathfinder,
 					/obj/item/device/geiger,
