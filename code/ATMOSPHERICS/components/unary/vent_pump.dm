@@ -311,8 +311,17 @@
 	radio_filter_in = frequency==1439?(RADIO_FROM_AIRALARM):null
 	radio_filter_out = frequency==1439?(RADIO_TO_AIRALARM):null
 	if(frequency)
+<<<<<<< HEAD
 		radio_connection = register_radio(src, frequency, frequency, radio_filter_in)
 		src.broadcast_status()
+=======
+		set_frequency(frequency)
+
+/obj/machinery/atmospherics/unary/vent_pump/proc/set_frequency(new_frequency)
+	radio_connection = register_radio(src, frequency, new_frequency, radio_filter_in)
+	frequency = new_frequency
+	broadcast_status()
+>>>>>>> 1ec472b58b ([MIRROR] Fix vents not linking to air alarms (#9638))
 
 /obj/machinery/atmospherics/unary/vent_pump/receive_signal(datum/signal/signal)
 	if(stat & (NOPOWER|BROKEN))
