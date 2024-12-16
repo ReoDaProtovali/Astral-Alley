@@ -14,6 +14,7 @@
 		species.silk_reserve = min(species.silk_reserve + 2, species.silk_max_reserve)
 		adjust_nutrition(-0.4)
 
+<<<<<<< HEAD
 /mob/living/carbon/human/proc/handle_hud_list_vr()
 
 	//Right-side status hud updates with left side one.
@@ -65,6 +66,8 @@
 			vantag.icon_state = "hudblank"
 		apply_hud(VANTAG_HUD, vantag)
 
+=======
+>>>>>>> 3d5b084661 ([MIRROR] fixes a few plane issues (#9639))
 //Our call for the NIF to do whatever
 /mob/living/carbon/human/proc/handle_nif()
 	if(!nif) return
@@ -89,4 +92,3 @@
 
 /mob/living/carbon
 	var/synth_cosmetic_pain = FALSE
-
