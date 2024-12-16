@@ -18,8 +18,17 @@
 
 /obj/item/weapon/storage/box/glasses
 	name = "box of glasses"
+<<<<<<< HEAD
 	can_hold = list(/obj/item/weapon/reagent_containers/food/drinks/glass2)
 	starts_with = list(/obj/item/weapon/reagent_containers/food/drinks/glass2 = 7)
+=======
+	can_hold = list(/obj/item/reagent_containers/food/drinks/glass2,
+		/obj/item/reagent_containers/food/drinks/cup,
+		/obj/item/reagent_containers/food/drinks/tall,
+		/obj/item/reagent_containers/food/drinks/grande,
+		/obj/item/reagent_containers/food/drinks/venti)
+	starts_with = list(/obj/item/reagent_containers/food/drinks/glass2 = 7)
+>>>>>>> 65554147ca ([MIRROR] Fixed coffee cup storage (#9635))
 
 /obj/item/weapon/storage/box/glasses/square
 	name = "box of half-pint glasses"
