@@ -109,6 +109,14 @@
 					to_chat(src, "<span class='warning'>You gave up on pulling yourself up.</span>")
 					return 0
 
+<<<<<<< HEAD
+=======
+			// Explicit check if the destination turf allows full passing
+			else if(!destination.CanZPass(src, direction))
+				to_chat(src, span_warning("Something solid above stops you from passing."))
+				return 0
+
+>>>>>>> e925c48028 ([MIRROR] fix multizmovement (#9634))
 			else if(isliving(src)) //VOREStation Edit Start. Are they a mob, and are they currently flying??
 				var/mob/living/H = src
 				if(H.flying)
