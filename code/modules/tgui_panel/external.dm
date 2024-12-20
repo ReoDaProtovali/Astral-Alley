@@ -19,22 +19,30 @@
 	// Failed to fix, using tgalert as fallback
 	action = tgalert(src, "Did that work?", "", "Yes", "No, switch to old ui")
 	if (action == "No, switch to old ui")
-		winset(src, "output", "on-show=&is-disabled=0&is-visible=1")
-		winset(src, "browseroutput", "is-disabled=1;is-visible=0")
+		winset(src, "legacy_output_selector", "left=output_legacy")
 		log_tgui(src, "Failed to fix.", context = "verb/fix_tgui_panel")
 
 /client/proc/nuke_chat()
 	// Catch all solution (kick the whole thing in the pants)
-	winset(src, "output", "on-show=&is-disabled=0&is-visible=1")
-	winset(src, "browseroutput", "is-disabled=1;is-visible=0")
+	winset(src, "legacy_output_selector", "left=output_legacy")
 	if(!tgui_panel || !istype(tgui_panel))
 		log_tgui(src, "tgui_panel datum is missing",
 			context = "verb/fix_tgui_panel")
 		tgui_panel = new(src)
 	tgui_panel.initialize(force = TRUE)
 	// Force show the panel to see if there are any errors
+<<<<<<< HEAD
 	winset(src, "output", "is-disabled=1&is-visible=0")
 	winset(src, "browseroutput", "is-disabled=0;is-visible=1")
+=======
+	winset(src, "legacy_output_selector", "left=output_browser")
+	// TODO: Remove version check with 516
+	if(byond_version >= 516)
+		if(prefs?.read_preference(/datum/preference/toggle/browser_dev_tools))
+			winset(src, null, "browser-options=[DEFAULT_CLIENT_BROWSER_OPTIONS],devtools")
+		else
+			winset(src, null, "browser-options=[DEFAULT_CLIENT_BROWSER_OPTIONS]")
+>>>>>>> 1bb9d0dfdf ([MIRROR] Change how legacy output is hidden for 516 to remove chat flickering (#9667))
 
 /client/verb/refresh_tgui()
 	set name = "Refresh TGUI"
