@@ -124,6 +124,7 @@
 	module_type = "Security"
 	sprite_icon = 'icons/mob/robot/security_wide.dmi'
 
+<<<<<<< HEAD
 	var/has_laser_sprite = FALSE
 	var/has_taser_sprite = FALSE
 
@@ -133,29 +134,28 @@
 	if(has_taser_sprite && istype(ourborg.module_active, /obj/item/weapon/gun/energy/taser/mounted/cyborg))
 		ourborg.add_overlay("[sprite_icon_state]-taser")
 
+=======
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 /datum/robot_sprite/dogborg/security/k9
 	name = "K9"
 	sprite_icon_state = "k9"
 	sprite_hud_icon_state = "k9"
 	has_eye_light_sprites = TRUE
-	has_laser_sprite = TRUE
-	has_taser_sprite = TRUE
+	sprite_flags = ROBOT_HAS_TASER_SPRITE | ROBOT_HAS_LASER_SPRITE
 
 /datum/robot_sprite/dogborg/security/k92
 	name = "K9 Alt"
 	sprite_icon_state = "k92"
 	sprite_hud_icon_state = "k9"
 	has_eye_sprites = FALSE
-	has_laser_sprite = TRUE
-	has_taser_sprite = TRUE
+	sprite_flags = ROBOT_HAS_TASER_SPRITE | ROBOT_HAS_LASER_SPRITE
 
 /datum/robot_sprite/dogborg/security/vale
 	name = "Hound V2"
 	sprite_icon_state = "vale"
 	sprite_hud_icon_state = "k9"
 	has_eye_light_sprites = TRUE
-	has_laser_sprite = TRUE
-	has_taser_sprite = TRUE
+	sprite_flags = ROBOT_HAS_TASER_SPRITE | ROBOT_HAS_LASER_SPRITE
 
 /datum/robot_sprite/dogborg/security/borgi
 	name = "Borgi"
@@ -170,14 +170,12 @@
 	sprite_icon_state = "otie"
 	sprite_hud_icon_state = "k9"
 	has_eye_light_sprites = TRUE
-	has_laser_sprite = TRUE
-	has_taser_sprite = TRUE
+	sprite_flags = ROBOT_HAS_TASER_SPRITE | ROBOT_HAS_LASER_SPRITE
 
 /datum/robot_sprite/dogborg/security/drake
 	name = "Drake"
 	sprite_icon_state = "drake"
-	has_laser_sprite = TRUE
-	has_taser_sprite = TRUE
+	sprite_flags = ROBOT_HAS_TASER_SPRITE | ROBOT_HAS_LASER_SPRITE
 
 // Tall sprites
 
@@ -185,6 +183,7 @@
 	module_type = "Security"
 	sprite_icon = 'icons/mob/robot/security_large.dmi'
 
+<<<<<<< HEAD
 	var/has_laser_sprite = FALSE
 	var/has_taser_sprite = FALSE
 
@@ -194,12 +193,13 @@
 	if(has_taser_sprite && istype(ourborg.module_active, /obj/item/weapon/gun/energy/taser/mounted/cyborg))
 		ourborg.add_overlay("[sprite_icon_state]-taser")
 
+=======
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 /datum/robot_sprite/dogborg/tall/security/raptor
 	name = "Raptor V-4"
 	sprite_icon_state = "raptor"
 	has_custom_equipment_sprites = TRUE
-	has_laser_sprite = TRUE
-	has_taser_sprite = TRUE
+	sprite_flags = ROBOT_HAS_TASER_SPRITE | ROBOT_HAS_LASER_SPRITE
 	rest_sprite_options = list("Default", "Bellyup")
 
 /datum/robot_sprite/dogborg/tall/security/meka

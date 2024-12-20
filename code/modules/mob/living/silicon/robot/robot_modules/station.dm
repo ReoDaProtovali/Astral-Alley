@@ -512,6 +512,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/robot/security/general/create_equipment(var/mob/living/silicon/robot/robot)
 	..()
+<<<<<<< HEAD
 	src.modules += new /obj/item/weapon/handcuffs/cyborg(src)
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg(src)
@@ -521,6 +522,17 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/device/ticket_printer(src)	//VOREStation Add
 	src.modules += new /obj/item/weapon/gun/energy/locked/phasegun/unlocked/mounted/cyborg(src) // CHOMPedit: Phasegun for regular sec cyborg.
 	src.emag += new /obj/item/weapon/gun/energy/laser/mounted(src)
+=======
+	src.modules += new /obj/item/handcuffs/cyborg(src)
+	src.modules += new /obj/item/melee/baton/robot(src)
+	src.modules += new /obj/item/gun/energy/robotic/taser(src)
+	src.modules += new /obj/item/taperoll/police(src)
+	src.modules += new /obj/item/reagent_containers/spray/pepper(src)
+	src.modules += new /obj/item/gripper/security(src)
+	src.modules += new /obj/item/ticket_printer(src)	//VOREStation Add
+	src.modules += new /obj/item/gun/energy/robotic/phasegun(src) // CHOMPedit: Phasegun for regular sec cyborg.
+	src.emag += new /obj/item/gun/energy/robotic/laser/rifle(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 	src.modules += new /obj/item/device/dogborg/sleeper/K9(src) //Eat criminals. Bring them to the brig.
 	src.modules += new /obj/item/weapon/dogborg/pounce(src) //Pounce
@@ -711,6 +723,7 @@ var/global/list/robot_modules = list(
 /obj/item/weapon/robot_module/robot/miner/create_equipment(var/mob/living/silicon/robot/robot)
 	..()
 	src.modules += new /obj/item/borg/sight/material(src)
+<<<<<<< HEAD
 	src.modules += new /obj/item/weapon/tool/wrench/cyborg(src)
 	src.modules += new /obj/item/weapon/tool/screwdriver/cyborg(src)
 	src.modules += new /obj/item/weapon/storage/bag/ore(src)
@@ -722,6 +735,19 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gun/energy/locked/phasegun/unlocked/mounted/cyborg(src) //CHOMPedit: Phasegun for regular mining cyborg.
 	src.modules += new /obj/item/device/vac_attachment(src) //CHOMPAdd
 	src.emag += new /obj/item/weapon/kinetic_crusher/machete/dagger(src)
+=======
+	src.modules += new /obj/item/tool/wrench/cyborg(src)
+	src.modules += new /obj/item/tool/screwdriver/cyborg(src)
+	src.modules += new /obj/item/storage/bag/ore(src)
+	src.modules += new /obj/item/pickaxe/borgdrill(src)
+	src.modules += new /obj/item/storage/bag/sheetsnatcher/borg(src)
+	src.modules += new /obj/item/gripper/miner(src)
+	src.modules += new /obj/item/mining_scanner(src)
+	src.modules += new /obj/item/card/id/cargo/miner/borg(src)
+	src.modules += new /obj/item/gun/energy/robotic/phasegun(src) //CHOMPedit: Phasegun for regular mining cyborg.
+	src.modules += new /obj/item/vac_attachment(src) //CHOMPAdd
+	src.emag += new /obj/item/kinetic_crusher/machete/dagger(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 	src.modules += new /obj/item/device/dogborg/sleeper/compactor/supply(src)
 	src.emag += new /obj/item/weapon/dogborg/pounce(src)
@@ -734,6 +760,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/robot/research/create_equipment(var/mob/living/silicon/robot/robot)
 	..()
+<<<<<<< HEAD
 	src.modules += new /obj/item/weapon/portable_destructive_analyzer(src)
 	src.modules += new /obj/item/weapon/gripper/research(src)
 	src.modules += new /obj/item/weapon/gripper/circuit(src)
@@ -757,6 +784,31 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gun/energy/taser/xeno/robot(src)
 	src.modules += new /obj/item/device/xenoarch_multi_tool(src)
 	src.modules += new /obj/item/weapon/pickaxe/excavationdrill(src)
+=======
+	src.modules += new /obj/item/portable_destructive_analyzer(src)
+	src.modules += new /obj/item/gripper/research(src)
+	src.modules += new /obj/item/gripper/circuit(src)
+	src.modules += new /obj/item/gripper/no_use/organ/robotics(src)
+	src.modules += new /obj/item/gripper/no_use/mech(src)
+	src.modules += new /obj/item/gripper/no_use/loader(src)
+	src.modules += new /obj/item/robotanalyzer(src)
+	src.modules += new /obj/item/card/robot(src)
+	src.modules += new /obj/item/weldingtool/electric/mounted/cyborg(src)
+	src.modules += new /obj/item/tool/screwdriver/cyborg(src)
+	src.modules += new /obj/item/tool/wrench/cyborg(src)
+	src.modules += new /obj/item/tool/wirecutters/cyborg(src)
+	src.modules += new /obj/item/multitool(src)
+	src.modules += new /obj/item/surgical/hemostat/cyborg(src) //Synth repair
+	src.modules += new /obj/item/surgical/surgicaldrill/cyborg(src) //NIF repair
+	src.modules += new /obj/item/reagent_containers/syringe(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large/borg(src)
+	src.modules += new /obj/item/storage/part_replacer(src)
+	src.modules += new /obj/item/shockpaddles/robot/jumper(src)
+	src.modules += new /obj/item/melee/baton/slime/robot(src)
+	src.modules += new /obj/item/gun/energy/robotic/taser/xeno(src)
+	src.modules += new /obj/item/xenoarch_multi_tool(src)
+	src.modules += new /obj/item/pickaxe/excavationdrill(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 	src.emag += new /obj/item/weapon/hand_tele(src)
 
@@ -798,6 +850,7 @@ var/global/list/robot_modules = list(
 	..()
 	src.modules += new /obj/item/weapon/handcuffs/cyborg(src)
 	src.modules += new /obj/item/taperoll/police(src)
+<<<<<<< HEAD
 	src.modules += new /obj/item/weapon/gun/energy/laser/mounted(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg/ertgun(src)
 	src.modules += new /obj/item/weapon/pickaxe/plasmacutter/borg(src)
@@ -807,6 +860,17 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/melee/borg_combat_shocker(src)
 	src.modules += new /obj/item/device/ticket_printer(src)
 	src.emag += new /obj/item/weapon/gun/energy/lasercannon/mounted(src)
+=======
+	src.modules += new /obj/item/gun/energy/robotic/laser/rifle(src)
+	src.modules += new /obj/item/gun/energy/robotic/disabler(src)
+	src.modules += new /obj/item/pickaxe/plasmacutter/borg(src)
+	src.modules += new /obj/item/melee/robotic/dagger(src)
+	src.modules += new /obj/item/borg/combat/shield(src)
+	src.modules += new /obj/item/borg/combat/mobility(src)
+	src.modules += new /obj/item/melee/robotic/borg_combat_shocker(src)
+	src.modules += new /obj/item/ticket_printer(src)
+	src.emag += new /obj/item/gun/energy/robotic/laser/heavy(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 	src.modules += new /obj/item/device/dogborg/sleeper/K9/ert(src)
 	src.modules += new /obj/item/weapon/dogborg/pounce(src)
@@ -924,8 +988,16 @@ var/global/list/robot_modules = list(
 /obj/item/weapon/robot_module/drone/mining/create_equipment(var/mob/living/silicon/robot/robot)
 	..()
 	src.modules += new /obj/item/borg/sight/material(src)
+<<<<<<< HEAD
 	src.modules += new /obj/item/weapon/pickaxe/borgdrill(src)
 	src.modules += new /obj/item/weapon/storage/bag/ore(src)
 	src.modules += new /obj/item/weapon/storage/bag/sheetsnatcher/borg(src)
 	src.modules += new /obj/item/weapon/gun/energy/locked/phasegun/unlocked/mounted/cyborg(src)  //Chompedit, makes the mining borg able to defend itself.
 	src.emag += new /obj/item/weapon/pickaxe/diamonddrill(src)
+=======
+	src.modules += new /obj/item/pickaxe/borgdrill(src)
+	src.modules += new /obj/item/storage/bag/ore(src)
+	src.modules += new /obj/item/storage/bag/sheetsnatcher/borg(src)
+	src.modules += new /obj/item/gun/energy/robotic/phasegun(src)  //Chompedit, makes the mining borg able to defend itself.
+	src.emag += new /obj/item/pickaxe/diamonddrill(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))

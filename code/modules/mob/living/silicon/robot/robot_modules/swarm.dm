@@ -8,12 +8,21 @@
 	id = robot.idcard
 	src.modules += id
 
+<<<<<<< HEAD
 	src.modules += new /obj/item/weapon/rcd/electric/mounted/borg/swarm(src)
 	src.modules += new /obj/item/device/flash/robot(src)
 	src.modules += new /obj/item/weapon/handcuffs/cable/tape/cyborg(src)
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg/swarm(src)
 	src.modules += new /obj/item/weapon/matter_decompiler/swarm(src)
+=======
+	src.modules += new /obj/item/rcd/electric/mounted/borg/swarm(src)
+	src.modules += new /obj/item/flash/robot(src)
+	src.modules += new /obj/item/handcuffs/cable/tape/cyborg(src)
+	src.modules += new /obj/item/melee/baton/robot(src)
+	src.modules += new /obj/item/gun/energy/robotic/taser/swarm(src)
+	src.modules += new /obj/item/matter_decompiler/swarm(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 /obj/item/weapon/robot_module/drone/swarm/ranged
 	name = "swarm gunner module"

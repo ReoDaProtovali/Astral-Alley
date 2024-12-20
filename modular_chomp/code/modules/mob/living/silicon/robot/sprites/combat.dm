@@ -27,6 +27,7 @@
 /datum/robot_sprite/dogborg/wide/combat
 	module_type = "Combat"
 	has_custom_equipment_sprites = TRUE
+<<<<<<< HEAD
 	var/has_gun_sprite = FALSE
 	var/has_taser_sprite = FALSE
 	var/has_blade_sprite = FALSE
@@ -38,6 +39,9 @@
 		ourborg.add_overlay("[sprite_icon_state]-taser")
 	if (has_blade_sprite && (istype(ourborg.module_active, /obj/item/weapon/melee/combat_borgblade)))
 		ourborg.add_overlay("[sprite_icon_state]-blade")
+=======
+	has_eye_sprites = FALSE
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 /datum/robot_sprite/dogborg/wide/combat/blade/do_equipment_glamour(var/obj/item/weapon/robot_module/module)
 	if(!has_custom_equipment_sprites)
@@ -45,11 +49,19 @@
 
 	..()
 
+<<<<<<< HEAD
 	var/obj/item/weapon/melee/combat_borgblade/CBB = locate() in module.modules
 	if(CBB)
 		CBB.name = "combat saw"
 		CBB.desc = "A high frequency blade attached to the end of a cyborg's tail. It appears to be extremely sharp."
 	var/obj/item/weapon/melee/borg_combat_shocker/BCS = locate() in module.modules
+=======
+	var/obj/item/melee/robotic/blade/CBB = locate() in module.modules
+	if(CBB)
+		CBB.name = "combat saw"
+		CBB.desc = "A high frequency blade attached to the end of a cyborg's tail. It appears to be extremely sharp."
+	var/obj/item/melee/robotic/borg_combat_shocker/BCS = locate() in module.modules
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 	if(BCS)
 		BCS.name = "combat jaws"
 		BCS.desc = "Shockingly chompy!"
@@ -64,6 +76,4 @@
 	sprite_icon_state = "blade"
 	sprite_hud_icon_state = "ert"
 	rest_sprite_options = list()
-	has_gun_sprite = TRUE
-	has_taser_sprite = TRUE
-	has_blade_sprite = TRUE
+	sprite_flags = ROBOT_HAS_LASER_SPRITE | ROBOT_HAS_DISABLER_SPRITE | ROBOT_HAS_DAGGER_SPRITE

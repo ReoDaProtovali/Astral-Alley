@@ -29,7 +29,11 @@
 	src.modules += new /obj/item/device/robotanalyzer(src)
 
 	// Potato
+<<<<<<< HEAD
 	src.emag += new /obj/item/weapon/gun/energy/retro/mounted(src)
+=======
+	src.emag += new /obj/item/gun/energy/robotic/laser/retro(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 	var/datum/matter_synth/wire = new /datum/matter_synth/wire()
 	synths += wire
@@ -68,7 +72,11 @@
 	src.modules += new /obj/item/weapon/gripper/gravekeeper(src)
 
 	// For really persistent looters
+<<<<<<< HEAD
 	src.emag += new /obj/item/weapon/gun/energy/retro/mounted(src)
+=======
+	src.emag += new /obj/item/gun/energy/robotic/laser/retro(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 	var/datum/matter_synth/wood = new /datum/matter_synth/wood(50000) //CHOMPEdit - "Buffing this to 50k on account of broken code not letting us pick up more stacks. Wee."
 	synths += wood
