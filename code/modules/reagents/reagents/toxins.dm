@@ -139,8 +139,13 @@
 	strength = 5
 
 /datum/reagent/toxin/phoron
+<<<<<<< HEAD
 	name = "Phoron"
 	id = "phoron"
+=======
+	name = REAGENT_PHORON
+	id = REAGENT_ID_PHORON
+>>>>>>> 9d288cdb28 ([MIRROR] fix bodyscanner (#9668))
 	description = "Phoron in its liquid form."
 	taste_mult = 1.5
 	reagent_state = LIQUID
