@@ -53,9 +53,15 @@
 /obj/item/weapon/robot_module/robot/syndicate/protector/create_equipment(var/mob/living/silicon/robot/robot)
 	..()
 	src.modules += new /obj/item/shield_projector/rectangle/weak(src)
+<<<<<<< HEAD
 	src.modules += new /obj/item/weapon/gun/energy/dakkalaser(src)
 	src.modules += new /obj/item/weapon/handcuffs/cyborg(src)
 	src.modules += new /obj/item/weapon/melee/baton/robot(src)
+=======
+	src.modules += new /obj/item/gun/energy/robotic/laser/dakkalaser(src)
+	src.modules += new /obj/item/handcuffs/cyborg(src)
+	src.modules += new /obj/item/melee/baton/robot(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 	src.modules += new /obj/item/device/dogborg/sleeper/K9/syndie(src)
 	src.modules += new /obj/item/weapon/dogborg/pounce(src)

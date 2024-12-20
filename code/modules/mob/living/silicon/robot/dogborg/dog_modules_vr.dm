@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /obj/item/weapon/melee/dogborg/jaws
 	icon = 'icons/mob/dogborg_vr.dmi'
 	hitsound = 'sound/weapons/bite.ogg'
@@ -105,6 +106,8 @@
 			var/mob/living/carbon/human/H = target
 			H.forcesay(hit_appends)
 
+=======
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 //Boop //New and improved, now a simple reagent sniffer.
 /obj/item/device/boop_module
 	name = "boop module"
@@ -419,6 +422,7 @@
 	recharge_time = 1 //Takes ten ticks to recharge a laser, so don't waste them all!
 	//cell_type = null //Same cell as a taser until edits are made.
 
+<<<<<<< HEAD
 /obj/item/weapon/melee/combat_borgblade
 	name = "energy blade"
 	icon = 'icons/mob/dogborg_vr.dmi'
@@ -434,6 +438,9 @@
 	w_class = ITEMSIZE_NORMAL
 
 /obj/item/device/lightreplacer/dogborg
+=======
+/obj/item/lightreplacer/dogborg
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 	name = "light replacer"
 	desc = "A device to automatically replace lights. This version is capable to produce a few replacements using your internal matter reserves."
 	max_uses = 16

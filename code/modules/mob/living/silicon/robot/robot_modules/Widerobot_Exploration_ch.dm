@@ -31,10 +31,17 @@
 
 /obj/item/weapon/robot_module/robot/exploration
 	can_be_pushed = 0
+<<<<<<< HEAD
 /obj/item/weapon/robot_module/robot/exploration/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/dogborg/sleeper/exploration(src)
 	src.modules += new /obj/item/weapon/gun/energy/locked/phasegun/unlocked/mounted/cyborg(src)
 	src.modules += new /obj/item/device/cataloguer(src)
+=======
+/obj/item/robot_module/robot/exploration/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/dogborg/sleeper/exploration(src)
+	src.modules += new /obj/item/gun/energy/robotic/phasegun(src)
+	src.modules += new /obj/item/cataloguer(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 	src.modules += new /obj/item/roller_holder(src)
 	src.modules += new /obj/item/weapon/gun/energy/taser/mounted/cyborg/flare(src)
 

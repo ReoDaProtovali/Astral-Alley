@@ -364,7 +364,11 @@
 		generic_error(R, type)
 		return 0
 
+<<<<<<< HEAD
 	var/obj/T = R.has_upgrade_module(/obj/item/weapon/gun/energy/taser/mounted/cyborg)
+=======
+	var/obj/T = R.has_upgrade_module(/obj/item/gun/energy/robotic/taser)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 	if(!T)
 		to_chat(usr, "<span class='warning'>This robot has had its taser removed!</span>")
 		return 0
@@ -374,7 +378,11 @@
 		to_chat(usr, "There's no room for another cooling unit!")
 		return 0
 
+<<<<<<< HEAD
 	var/obj/item/weapon/gun/energy/taser/mounted/cyborg/B = T
+=======
+	var/obj/item/gun/energy/robotic/taser/B = T
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 	B.recharge_time = max(2 , B.recharge_time - 4)
 	return 1
 

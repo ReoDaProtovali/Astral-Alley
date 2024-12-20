@@ -26,6 +26,7 @@
 /obj/item/weapon/robot_module/robot/exploration
 	can_be_pushed = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/robot_module/robot/exploration/New(var/mob/living/silicon/robot/R)
 	src.modules += new /obj/item/device/dogborg/sleeper/exploration(src)
 	src.modules += new /obj/item/device/cataloguer(src)
@@ -33,11 +34,24 @@
 	src.modules += new /obj/item/weapon/dogborg/pounce(src)
 	src.modules += new /obj/item/weapon/melee/combat_borgblade/explotailspear(src)
 	src.modules += new /obj/item/weapon/gun/energy/medigun/mounted/smallmedigun(src)
+=======
+/obj/item/robot_module/robot/exploration/New(var/mob/living/silicon/robot/R)
+	src.modules += new /obj/item/dogborg/sleeper/exploration(src)
+	src.modules += new /obj/item/cataloguer(src)
+	src.modules += new /obj/item/gun/energy/robotic/flare(src)
+	src.modules += new /obj/item/dogborg/pounce(src)
+	src.modules += new /obj/item/melee/robotic/blade/explotailspear(src)
+	src.modules += new /obj/item/gun/energy/robotic/smallmedigun(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 	src.modules += new /obj/item/shield_projector/line/exploborg(src)
 	src.modules += new /obj/item/roller_holder(src)
 	src.modules += new /obj/item/device/self_repair_system(src)
 	src.modules += new /obj/item/weapon/card/id/exploration/borg(src)
 
+<<<<<<< HEAD
 	src.emag += new /obj/item/weapon/melee/dogborg/jaws/big/explojaws(src)
+=======
+	src.emag += new /obj/item/melee/robotic/jaws/big/explojaws(src)
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 	..()

@@ -64,8 +64,12 @@
 	modules += bandaid
 	synths += medicine
 
+<<<<<<< HEAD
 	var/obj/item/weapon/gun/energy/locked/phasegun/unlocked/mounted/cyborg/phasegun = new(src)  //CHOMP Edit
 	modules += phasegun
+=======
+	modules += new /obj/item/gun/energy/robotic/phasegun(src)  //CHOMP Edit
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 
 	emag += new /obj/item/weapon/chainsaw(src)
 

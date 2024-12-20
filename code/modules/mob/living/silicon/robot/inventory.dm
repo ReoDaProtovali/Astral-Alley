@@ -98,13 +98,43 @@
 	else
 		return 0
 
+/mob/living/silicon/robot/proc/get_active_modules()
+	return list(module_state_1, module_state_2, module_state_3)
+
 // This one takes an object's type instead of an instance, as above.
+<<<<<<< HEAD
 /mob/living/silicon/robot/proc/has_active_type(var/type_to_compare)
 	var/list/active_modules = list(module_state_1, module_state_2, module_state_3)
 	if(is_path_in_list(type_to_compare, active_modules))
 		return TRUE
 	return FALSE
 
+=======
+/mob/living/silicon/robot/proc/has_active_type(var/type_to_compare, var/explicit = FALSE)
+	var/list/active_modules = get_active_modules()
+	if(is_type_in_modules(type_to_compare, active_modules, explicit))
+		return TRUE
+	return FALSE
+
+/// Searches through a provided list to see if we have a module that is in that list.
+/mob/living/silicon/robot/proc/has_active_type_list(var/list/type_to_compare, var/explicit = FALSE)
+	var/list/active_modules = get_active_modules()
+	if(islist(type_to_compare))
+		for(var/object_to_compare in type_to_compare)
+			if(is_type_in_modules(object_to_compare, active_modules, explicit))
+				return TRUE
+	return FALSE
+
+/mob/living/silicon/robot/proc/is_type_in_modules(var/type, var/list/modules, var/explicit = FALSE)
+	for(var/atom/module in modules)
+		if(explicit && isatom(module))
+			if(module.type == type)
+				return TRUE
+		else if(istype(module, type))
+			return TRUE
+	return FALSE
+
+>>>>>>> 0192924910 ([MIRROR] Borg Icon Optimization and Weapon Modulation (#9655))
 //Helper procs for cyborg modules on the UI.
 //These are hackish but they help clean up code elsewhere.
 
@@ -238,6 +268,7 @@
 		contents += O
 		if(istype(module_state_1,/obj/item/borg/sight))
 			sight_mode |= module_state_1:sight_mode
+		update_icon()
 	else if(!module_state_2)
 		module_state_2 = O
 		O.hud_layerise()
@@ -245,6 +276,7 @@
 		contents += O
 		if(istype(module_state_2,/obj/item/borg/sight))
 			sight_mode |= module_state_2:sight_mode
+		update_icon()
 	else if(!module_state_3)
 		module_state_3 = O
 		O.hud_layerise()
@@ -252,6 +284,7 @@
 		contents += O
 		if(istype(module_state_3,/obj/item/borg/sight))
 			sight_mode |= module_state_3:sight_mode
+		update_icon()
 	else
 		to_chat(src, "<span class='notice'>You need to disable a module first!</span>")
 		return
