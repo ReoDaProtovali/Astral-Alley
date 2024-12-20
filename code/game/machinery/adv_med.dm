@@ -189,7 +189,11 @@
 		occupantData["health"] = H.health
 		occupantData["maxHealth"] = H.getMaxHealth()
 
+<<<<<<< HEAD
 		occupantData["hasVirus"] = H.virus2.len
+=======
+		occupantData["hasVirus"] = LAZYLEN(H.viruses)
+>>>>>>> 9d288cdb28 ([MIRROR] fix bodyscanner (#9668))
 
 		occupantData["bruteLoss"] = H.getBruteLoss()
 		occupantData["oxyLoss"] = H.getOxyLoss()
@@ -376,8 +380,17 @@
 				t1 = "*dead*"
 		dat += "<font color=[occupant.health > (occupant.getMaxHealth() / 2) ? "blue" : "red"]>\tHealth %: [(occupant.health / occupant.getMaxHealth())*100], ([t1])</font><br>"
 
+<<<<<<< HEAD
 		if(occupant.virus2.len)
 			dat += "<font color='red'>Viral pathogen detected in blood stream.</font><BR>"
+=======
+		if(LAZYLEN(occupant.viruses))
+			for(var/datum/disease/D in occupant.GetViruses())
+				if(D.visibility_flags & HIDDEN_SCANNER)
+					continue
+				else
+					dat += span_red("Viral pathogen detected in blood stream.") + "<BR>"
+>>>>>>> 9d288cdb28 ([MIRROR] fix bodyscanner (#9668))
 
 		var/extra_font = null
 		extra_font = "<font color=[occupant.getBruteLoss() < 60 ? "blue" : "red"]>"

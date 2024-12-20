@@ -19,8 +19,13 @@
 	molar_mass = 0.044	// kg/mol
 
 /decl/xgm_gas/phoron
+<<<<<<< HEAD
 	id = "phoron"
 	name = "Phoron"
+=======
+	id = GAS_PHORON
+	name = REAGENT_PHORON
+>>>>>>> 9d288cdb28 ([MIRROR] fix bodyscanner (#9668))
 
 	//Note that this has a significant impact on TTV yield.
 	//Because it is so high, any leftover phoron soaks up a lot of heat and drops the yield pressure.
