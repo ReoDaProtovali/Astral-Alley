@@ -580,6 +580,14 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/toggle_random_events,
 	/client/proc/modify_server_news,
 	/client/proc/toggle_spawning_with_recolour,
+<<<<<<< HEAD
+=======
+	/client/proc/start_vote,
+	/client/proc/AdminCreateVirus,
+	/client/proc/ReleaseVirus,
+	/client/proc/add_hidden_area,
+	/client/proc/remove_hidden_area,
+>>>>>>> d35faa5844 ([MIRROR] Adds a new ghost vis blocking area flag (#9636))
 	/datum/admins/proc/quick_nif, //CHOMPStation Add,
 	/datum/admins/proc/quick_authentic_nif, //CHOMPStation add
 	/client/proc/reload_jobwhitelist, //ChompADD
