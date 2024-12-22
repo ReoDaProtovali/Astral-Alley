@@ -244,3 +244,24 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 	wing_offset = 16
+<<<<<<< HEAD
+=======
+
+/datum/sprite_accessory/wing/large_harpy_wings_ch
+	name = "Harpy arm-wings(Large)"
+	desc = ""
+	icon = 'modular_chomp/icons/mob/human_races/sprite_accessories/wings64.dmi'
+	icon_state = "Harpy_wings"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	wing_offset = 16
+
+/datum/sprite_accessory/wing/sloogshell
+	name = "Sloog shell"
+	desc = ""
+	icon = 'modular_chomp/icons/mob/human_races/sprite_accessories/wings64.dmi'
+	icon_state = "sloogshell"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	wing_offset = 16
+>>>>>>> 96fc0bc3db (adding in sloogs per request (#9648))
