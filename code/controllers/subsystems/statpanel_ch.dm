@@ -425,9 +425,16 @@ SUBSYSTEM_DEF(statpanels)
 		COMSIG_MOB_LOGOUT = PROC_REF(on_mob_logout),
 	)
 	AddComponent(/datum/component/connect_mob_behalf, parent, connections)
+<<<<<<< HEAD:code/controllers/subsystems/statpanel_ch.dm
 	RegisterSignal(parent.mob.listed_turf, COMSIG_ATOM_ENTERED, PROC_REF(turflist_changed))
 	RegisterSignal(parent.mob.listed_turf, COMSIG_ATOM_EXITED, PROC_REF(turflist_changed))
 	actively_tracking = TRUE
+=======
+	RegisterSignal(new_turf, COMSIG_ATOM_ENTERED, PROC_REF(turflist_changed))
+	RegisterSignal(new_turf, COMSIG_ATOM_EXITED, PROC_REF(turflist_changed))
+	parent.stat_panel.send_message("create_listedturf", new_turf)
+	parent.tracked_turf = new_turf
+>>>>>>> 70c6ebf846 ([MIRROR] oups small mistake (#9672)):code/controllers/subsystems/statpanel.dm
 
 /datum/object_window_info/proc/stop_turf_tracking()
 	qdel(GetComponent(/datum/component/connect_mob_behalf))
