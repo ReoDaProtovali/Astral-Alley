@@ -157,12 +157,21 @@
 	result_amount = 2
 
 /decl/chemical_reaction/instant/respirodaxon
+<<<<<<< HEAD
 	name = "Respirodaxon"
 	id = "respirodaxon"
 	result = "respirodaxon"
 	required_reagents = list("dexalinp" = 2, "biomass" = 2, "phoron" = 1)
 	catalysts = list("phoron" = 5)
 	inhibitors = list("dexalin" = 1)
+=======
+	name = REAGENT_RESPIRODAXON
+	id = REAGENT_ID_RESPIRODAXON
+	result = REAGENT_ID_RESPIRODAXON
+	required_reagents = list(REAGENT_ID_DEXALINP = 2, REAGENT_ID_BIOMASS = 2, REAGENT_ID_PHORON = 1)
+	catalysts = list(REAGENT_ID_PHORON = 5)
+	inhibitors = list(REAGENT_ID_DEXALIN = 1)
+>>>>>>> 70c6ebf846 ([MIRROR] oups small mistake (#9672))
 	result_amount = 2
 
 /decl/chemical_reaction/instant/gastirodaxon
