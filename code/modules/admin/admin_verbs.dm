@@ -67,14 +67,12 @@
 		var/mob/observer/dead/ghost
 		if(build_mode)
 			togglebuildmode(body)
-			ghost = body.ghostize(1)
-			ghost.admin_ghosted = 1
+			ghost = body.ghostize(1, TRUE)
 			log_and_message_admins("[key_name(src)] admin-ghosted.") // CHOMPEdit - Add logging.
 			if(build_mode == "Yes")
 				togglebuildmode(ghost)
 		else
-			ghost = body.ghostize(1)
-			ghost.admin_ghosted = 1
+			ghost = body.ghostize(1, TRUE)
 			log_and_message_admins("[key_name(src)] admin-ghosted.") // CHOMPEdit - Add logging.
 		init_verbs() //CHOMPEdit
 		if(body)
@@ -390,8 +388,16 @@
 		deadmin_holder.reassociate()
 		log_admin("[src] re-admined themself.")
 		message_admins("[src] re-admined themself.", 1)
+<<<<<<< HEAD
 		to_chat(src, "<span class='filter_system interface'>You now have the keys to control the planet, or at least a small space station</span>")
 		remove_verb(src,/client/proc/readmin_self) //CHOMPEdit TGPanel
+=======
+		to_chat(src, span_filter_system(span_interface("You now have the keys to control the planet, or at least a small space station")))
+		remove_verb(src, /client/proc/readmin_self)
+		if(isobserver(mob))
+			var/mob/observer/dead/our_mob = mob
+			our_mob.visualnet?.addVisibility(our_mob, src)
+>>>>>>> d35faa5844 ([MIRROR] Adds a new ghost vis blocking area flag (#9636))
 
 /client/proc/deadmin_self()
 	set name = "De-admin self"
@@ -402,8 +408,16 @@
 			log_admin("[src] deadmined themself.")
 			message_admins("[src] deadmined themself.", 1)
 			deadmin()
+<<<<<<< HEAD
 			to_chat(src, "<span class='filter_system interface'>You are now a normal player.</span>")
 			add_verb(src,/client/proc/readmin_self) //CHOMPEdit TGPanel
+=======
+			to_chat(src, span_filter_system(span_interface("You are now a normal player.")))
+			add_verb(src, /client/proc/readmin_self)
+			if(isobserver(mob))
+				var/mob/observer/dead/our_mob = mob
+				our_mob.visualnet?.removeVisibility(our_mob, src)
+>>>>>>> d35faa5844 ([MIRROR] Adds a new ghost vis blocking area flag (#9636))
 	feedback_add_details("admin_verb","DAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/toggle_log_hrefs()
@@ -568,3 +582,53 @@
 	set category = "Debug"
 
 	src.stat_panel.send_message("create_debug")
+<<<<<<< HEAD
+=======
+
+/client/proc/spawn_reagent()
+	set name = "Spawn Reagent"
+	set category = "Debug.Game"
+
+	if(!check_rights(R_ADMIN|R_EVENT))	return
+	var/datum/reagent/R = tgui_input_list(usr, "Select a reagent to spawn", "Reagent Spawner", subtypesof(/datum/reagent))
+	if(!R)
+		return
+
+	var/obj/item/reagent_containers/glass/bottle/B = new(usr.loc)
+
+	B.icon_state = "bottle-1"
+	B.reagents.add_reagent(R.id, 60)
+	B.name = "[B.name] of [R.name]"
+
+/client/proc/add_hidden_area()
+	set name = "Add Ghostsight Block Area"
+	set category = "Admin.Game"
+
+	var/list/blocked_areas = list()
+	for(var/area/A in world)
+		if(!A.flag_check(AREA_BLOCK_GHOST_SIGHT))
+			blocked_areas[A.name] = A
+	blocked_areas = sortTim(blocked_areas, GLOBAL_PROC_REF(cmp_text_asc))
+	var/selected_area = tgui_input_list(usr, "Pick an area to hide from ghost", "Select Area to hide", blocked_areas)
+	var/area/A = blocked_areas[selected_area]
+	if(!A)
+		return
+	A.flags |= AREA_BLOCK_GHOST_SIGHT
+	ghostnet.addArea(A)
+
+/client/proc/remove_hidden_area()
+	set name = "Remove Ghostsight Block Area"
+	set category = "Admin.Game"
+
+	var/list/blocked_areas = list()
+	for(var/area/A in world)
+		if(A.flag_check(AREA_BLOCK_GHOST_SIGHT))
+			blocked_areas[A.name] = A
+	blocked_areas = sortTim(blocked_areas, GLOBAL_PROC_REF(cmp_text_asc))
+	var/selected_area = tgui_input_list(usr, "Pick a from ghost hidden area to let them see it again", "Select Hidden Area", blocked_areas)
+	var/area/A = blocked_areas[selected_area]
+	if(!A)
+		return
+	A.flags &= ~(AREA_BLOCK_GHOST_SIGHT)
+	ghostnet.removeArea(A)
+>>>>>>> d35faa5844 ([MIRROR] Adds a new ghost vis blocking area flag (#9636))
