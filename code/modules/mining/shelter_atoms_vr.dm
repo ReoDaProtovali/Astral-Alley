@@ -42,8 +42,18 @@ GLOBAL_LIST_EMPTY(unique_deployable)
 	else
 		. += "This capsule has an unknown template stored."
 
+<<<<<<< HEAD
 /obj/item/device/survivalcapsule/attack_self()
+=======
+// CHOMPEdit Start
+/obj/item/survivalcapsule/attack_self(mob/user as mob)
+>>>>>>> d4a7b03e67 (Escaping vr is no longer possible (#9671))
 	//Can't grab when capsule is New() because templates aren't loaded then
+	if(istype(get_area(user), /area/vr))
+		to_chat(user, span_danger("\The [src] does not appear to work in VR! This is useless to you!"))
+		return
+	. = ..()
+// CHOMPEdit End
 	get_template()
 	if(!used)
 		loc.visible_message("<span class='warning'>\The [src] begins to shake. Stand back!</span>")
