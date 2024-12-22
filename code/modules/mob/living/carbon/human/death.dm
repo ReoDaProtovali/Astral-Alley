@@ -90,10 +90,19 @@
 	// CHOMPEdit End
 
 	if(mind)
+<<<<<<< HEAD
 		// SSgame_master.adjust_danger(gibbed ? 40 : 20)  // VOREStation Edit - We don't use SSgame_master yet.
 		for(var/mob/observer/dead/O in mob_list)
 			if(O.client && O.client.is_preference_enabled(/datum/client_preference/show_dsay))
 				to_chat(O, "<span class='deadsay'><b>[src]</b> has died in <b>[get_area(src)]</b>. [ghost_follow_link(src, O)] </span>")
+=======
+		var/area/A = get_area(src)
+		if(!(A?.flag_check(AREA_BLOCK_SUIT_SENSORS)) && isbelly(loc))
+			// SSgame_master.adjust_danger(gibbed ? 40 : 20)  // VOREStation Edit - We don't use SSgame_master yet.
+			for(var/mob/observer/dead/O in mob_list)
+				if(O.client?.prefs?.read_preference(/datum/preference/toggle/show_dsay))
+					to_chat(O, span_deadsay(span_bold("[src]") + " has died in " + span_bold("[get_area(src)]")  + ". [ghost_follow_link(src, O)] "))
+>>>>>>> 53df96252f ([MIRROR] hides death messages in protected areas when dying in a belly (#9681))
 
 	/* // CHOMPEdit Start: Replacing this with our own death sounds. :3
 	if(!gibbed && species.death_sound)
