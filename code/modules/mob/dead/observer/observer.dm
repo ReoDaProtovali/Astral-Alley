@@ -438,6 +438,17 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			stop_following()
 		return
 
+<<<<<<< HEAD
+=======
+	//RS Port #658 Start
+	var/area/A = get_area(destination)
+	if(A?.flag_check(AREA_BLOCK_GHOSTS) && !isbelly(destination) && !admin_ghosted)
+		to_chat(src,span_warning("Sorry, that area does not allow ghosts."))
+		if(following)
+			stop_following()
+		return
+	//RS Port #658 End
+>>>>>>> 798918f6d6 ([MIRROR] More area flag option fixes (#9684))
 	return ..()
 
 /mob/observer/dead/Move(atom/newloc, direct = 0, movetime)
