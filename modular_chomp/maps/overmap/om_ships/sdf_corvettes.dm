@@ -139,3 +139,54 @@
 	vessel_mass = 1000
 	vessel_size = SHIP_SIZE_TINY
 	shuttle = "SDF Cutter"
+<<<<<<< HEAD
+=======
+
+//For outsider superposed pod
+//Nerfed version of the corvette, with less guns, seperate areas and stuff to allow admins to spawn the full version
+/area/shuttle/sdf_corvette2
+	name = "\improper SDF Corvette Civilian"
+	icon_state = "green"
+	requires_power = 1
+	has_gravity = 0
+
+/obj/effect/shuttle_landmark/shuttle_initializer/sdf_corvette2
+	name = "SDF Corvette"
+	base_area = /area/space
+	base_turf = /turf/space
+	landmark_tag = "omship_spawn_sdf_corvette2"
+	shuttle_type = /datum/shuttle/autodock/overmap/sdf_corvette2
+
+/obj/machinery/computer/shuttle_control/explore/sdf_corvette2
+	name = "short jump console"
+	shuttle_tag = "SDF Corvette Civilian"
+	req_one_access = list()
+
+/datum/shuttle/autodock/overmap/sdf_corvette2
+	name = "SDF Corvette Civilian"
+	current_location = "omship_spawn_sdf_corvette2"
+	docking_controller_tag = "sdfc_dock_con2"
+	shuttle_area = list(/area/shuttle/sdf_corvette2)
+	defer_initialisation = TRUE
+	fuel_consumption = 1
+	ceiling_type = /turf/simulated/floor/reinforced/airless
+
+/obj/effect/overmap/visitable/ship/landable/sdf_corvette2
+	name = "SDF Corvette Civilian"
+	scanner_desc = @{"[i]Registration[/i]: PRIVATE
+[i]Class[/i]: Corvette
+[i]Transponder[/i]: Transmitting (CIV), non-hostile
+[b]Notice[/b]: Small private vessel"}
+	vessel_mass = 1000
+	vessel_size = SHIP_SIZE_TINY
+	shuttle = "SDF Corvette Civilian"
+	known = FALSE
+
+/datum/map_template/shelter/superpose/sdf_corvette
+	shelter_id = "SDFCorvette"
+	mappath = "modular_chomp/maps/overmap/om_ships/sdf_corvette-10x17.dmm"
+	name = "SDF Corvette Civilian"
+	description = "A small size civilian class armed transfort ship."
+	superpose = FALSE
+	shuttle = TRUE
+>>>>>>> e8053ada86 (fixes docking errors with the SDF corvette (#9689))
