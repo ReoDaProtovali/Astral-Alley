@@ -64,6 +64,10 @@
 			var/mob/living/simple_mob/shadekin/red/shadekin = new(Ts)
 			//Abuse of shadekin
 			shadekin.real_name = shadekin.name
+<<<<<<< HEAD
+=======
+			shadekin.voremob_loaded = TRUE
+>>>>>>> 9c5fa078e4 ([MIRROR] On demand belly loading & multibelly (#9701))
 			shadekin.init_vore()
 			shadekin.ability_flags |= 0x1
 			shadekin.phase_shift()
@@ -117,6 +121,10 @@
 			target.transforming = TRUE //Cheap hack to stop them from moving
 			var/mob/living/simple_mob/shadekin/shadekin = new kin_type(Tt)
 			shadekin.real_name = shadekin.name
+<<<<<<< HEAD
+=======
+			shadekin.voremob_loaded = TRUE
+>>>>>>> 9c5fa078e4 ([MIRROR] On demand belly loading & multibelly (#9701))
 			shadekin.init_vore()
 			shadekin.can_be_drop_pred = TRUE
 			shadekin.dir = SOUTH

@@ -83,7 +83,7 @@
 /mob/living/simple_mob/vore/horse/init_vore()
 	if(!voremob_loaded)
 		return
-	.=..()
+	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "With a final few gulps, the horse finishes swallowing you down into its hot, dark gut... and with a slosh, your weight makes the equine's belly hang down slightly like some sort of organic hammock. The thick, humid air is tinged with the smell of half-digested grass, and the surrounding flesh wastes no time in clenching and massaging down over its newfound fodder."
@@ -140,7 +140,13 @@
 	vore_bump_emote	= "chomps down on"
 
 /mob/living/simple_mob/vore/horse/kelpie/init_vore()
+<<<<<<< HEAD
 	..()
+=======
+	if(!voremob_loaded)
+		return
+	. = ..()
+>>>>>>> 9c5fa078e4 ([MIRROR] On demand belly loading & multibelly (#9701))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "With a final few gulps, the kelpie finishes swallowing you down into its hot, humid gut... and with a slosh, your weight makes the equine's belly hang down slightly like some sort of organic hammock. The thick, damp air is tinged with the smell of seaweed, and the surrounding flesh wastes no time in clenching and massaging down over its newfound fodder."
