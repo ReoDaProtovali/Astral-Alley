@@ -533,7 +533,13 @@ var/global/list/robot_modules = list(
 		F.icon_state = "flash"
 	else if(F.times_used)
 		F.times_used--
+<<<<<<< HEAD
 	var/obj/item/weapon/gun/energy/taser/mounted/cyborg/T = locate() in src.modules
+=======
+	var/obj/item/gun/energy/robotic/taser/T = locate() in src.modules
+	if(!T)
+		return
+>>>>>>> 7fb5d29dab ([MIRROR] Allows borg tasers to properly charge when in charging ports (#9704))
 	if(T.power_supply.charge < T.power_supply.maxcharge)
 		T.power_supply.give(T.charge_cost * amount)
 		T.update_icon()
