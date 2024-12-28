@@ -220,10 +220,24 @@
 	result_amount = 5
 
 /decl/chemical_reaction/instant/drinks/protein_shake/banana
+<<<<<<< HEAD
 	name = "Banana Protein Shake"
 	id = "banana_protein_shake"
 	result = "banana_protein_shake"
 	required_reagents = list("water" = 5, "banana_protein_powder" = 1)
+=======
+	name = REAGENT_BANANAPROTEINSHAKE
+	id = REAGENT_ID_BANANAPROTEINSHAKE
+	result = REAGENT_ID_BANANAPROTEINSHAKE
+	required_reagents = list(REAGENT_ID_WATER = 5, REAGENT_ID_BANANAPROTEINPOWDER = 1)
+	result_amount = 5
+
+/decl/chemical_reaction/instant/drinks/protein_shake/chocolate
+	name = REAGENT_CHOCOLATEPROTEINSHAKE
+	id = REAGENT_ID_CHOCOLATEPROTEINSHAKE
+	result = REAGENT_ID_CHOCOLATEPROTEINSHAKE
+	required_reagents = list(REAGENT_ID_WATER = 5, REAGENT_ID_CHOCOLATEPROTEINPOWDER = 1)
+>>>>>>> eb48289147 ([MIRROR] few more defines (#9705))
 	result_amount = 5
 
 /decl/chemical_reaction/instant/drinks/protein_shake/strawberry
