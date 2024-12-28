@@ -99,6 +99,17 @@
 		icon_state = "holo_medical"
 
 /obj/structure/holosign/barrier/medical/proc/CheckHuman(mob/living/carbon/human/H)
+<<<<<<< HEAD
 	if(isemptylist(H.virus2) && !istype(H.species, /datum/species/xenochimera))
 		return TRUE
 	return FALSE
+=======
+	if(istype(H.species, /datum/species/xenochimera))
+		return FALSE
+	if(H.viruses)
+		for(var/datum/disease/D in H.viruses)
+			if(D.severity == NONTHREAT)
+				continue
+			return FALSE
+	return TRUE
+>>>>>>> 4475233a92 (Fixes Medical holo-barriers (#9709))
