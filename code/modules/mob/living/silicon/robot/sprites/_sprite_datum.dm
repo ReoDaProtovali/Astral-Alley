@@ -127,22 +127,15 @@
 	has_dead_sprite_overlay = TRUE
 	has_custom_equipment_sprites = TRUE
 	pixel_x = -16
-/* //Does not need to be dogborg-only, letting all borgs use these -Reo
-/datum/robot_sprite/dogborg/get_rest_sprite(var/mob/living/silicon/robot/ourborg)
-	if(!(ourborg.rest_style in rest_sprite_options))
-		ourborg.rest_style = "Default"
-	switch(ourborg.rest_style)
-		if("Sit")
-			return "[sprite_icon_state]-sit"
-		if("Bellyup")
-			return "[sprite_icon_state]-bellyup"
-		else
-			return "[sprite_icon_state]-rest"
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/get_belly_overlay(var/mob/living/silicon/robot/ourborg)
 	return "[sprite_icon_state]-sleeper"
 */
 /datum/robot_sprite/dogborg/do_equipment_glamour(var/obj/item/weapon/robot_module/module)
+=======
+/datum/robot_sprite/dogborg/do_equipment_glamour(var/obj/item/robot_module/module)
+>>>>>>> 9cc6521a7b ([MIRROR] this was missed (#9713))
 	if(!has_custom_equipment_sprites)
 		return
 
