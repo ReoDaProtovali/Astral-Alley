@@ -519,13 +519,26 @@
 	"<span class='notice'>You have installed \the [tool] into [target]'s [affected.name].</span>")
 	user.balloon_alert_visible("Installed \the [tool] into [target]'s [affected.name]", "Installed \the [tool] into \the [affected.name]") // CHOMPEdit
 
+<<<<<<< HEAD
 	var/obj/item/device/mmi/M = tool
 	var/obj/item/organ/internal/mmi_holder/holder = new(target, 1)
+=======
+	var/obj/item/mmi/M = tool
+	// VOREstation edit begin - Select the proper mmi holder subtype based on the brain inserted
+	var/obj/item/organ/internal/mmi_holder/holder = null
+	user.drop_from_inventory(M)
+	M.loc = holder
+	if(istype(M,/obj/item/mmi/digital/posibrain/nano))
+		holder = new /obj/item/organ/internal/mmi_holder/posibrain/nano(target, 1, M)
+	else if(istype(M,/obj/item/mmi/digital/posibrain))
+		holder = new /obj/item/organ/internal/mmi_holder/posibrain(target, 1, M)
+	else if(istype(M,/obj/item/mmi/digital/robot))
+		holder = new /obj/item/organ/internal/mmi_holder/robot(target, 1, M)
+	else
+		holder = new /obj/item/organ/internal/mmi_holder(target, 1, M) // Fallback to old behavior if organic MMI or if no subtype exists.
+    //VOREstation edit end
+>>>>>>> 22fa8b2572 ([MIRROR] fixes mmi holders making 2 brainmobs on re-inserton of MMIs in FBPs (#9715))
 	target.internal_organs_by_name["brain"] = holder
-	user.drop_from_inventory(tool)
-	tool.loc = holder
-	holder.stored_mmi = tool
-	holder.update_from_mmi()
 
 	if(M.brainmob && M.brainmob.mind)
 		M.brainmob.mind.transfer_to(target)
