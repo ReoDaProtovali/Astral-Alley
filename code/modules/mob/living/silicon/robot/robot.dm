@@ -1783,3 +1783,24 @@
 	return (has_basic_upgrade(given_type) || has_advanced_upgrade(given_type) || has_restricted_upgrade(given_type) || has_no_prod_upgrade(given_type))
 
 #undef CYBORG_POWER_USAGE_MULTIPLIER
+<<<<<<< HEAD
+=======
+
+/mob/living/silicon/robot/vv_edit_var(var_name, var_value)
+	switch(var_name)
+		if(NAMEOF(src, emagged))
+			robotact?.update_static_data_for_all_viewers()
+		if(NAMEOF(src, emag_items))
+			robotact?.update_static_data_for_all_viewers()
+
+	. = ..()
+
+/// This proc checks to see if a borg has access to whatever they're interacting with
+/obj/proc/siliconaccess(mob/user)
+	var/mob/living/silicon/robot/R = user
+	if(istype(R))
+		return check_access(R.idcard)
+	if(issilicon(user))
+		return TRUE
+	return FALSE
+>>>>>>> 0db64193af ([MIRROR] Turret & Sound Optimizations (#9703))
