@@ -2,10 +2,6 @@
 	var/sleeper_resting = FALSE //Enable resting belly sprites for dogborgs that have the sprites
 	var/datum/matter_synth/water_res = null //Enable water for lick clean
 	//Multibelly support. We do not want to apply it to any module not supporting it in it's sprites
-	var/list/vore_light_states = list() //Robot exclusive
-	vore_capacity_ex = list()
-	vore_fullness_ex = list()
-	vore_icon_bellies = list()
 
 /mob/living/silicon/robot/verb/purge_nutrition()
 	set name = "Purge Nutrition"
@@ -32,6 +28,7 @@
 				E.reagents.add_reagent("water", amount)
 				to_chat(src, "<span class='filter_notice'>You refill the extinguisher using your water reserves.</span>")
 			else
+<<<<<<< HEAD
 				to_chat(src, "<span class='filter_notice'>Insufficient water reserves.</span>")
 
 /mob/living/silicon/robot/proc/reset_belly_lights(var/b_class)
@@ -58,6 +55,9 @@
 	vore_fullness_ex = list()
 	vore_light_states = list()
 
+=======
+				to_chat(src, span_filter_notice("Insufficient water reserves."))
+>>>>>>> 9c5fa078e4 ([MIRROR] On demand belly loading & multibelly (#9701))
 
 /obj/machinery/door/airlock/BorgCtrlShiftClick(var/mob/living/silicon/robot/user)
 	if(check_access(user.idcard))

@@ -69,6 +69,11 @@
 	movement_cooldown = -1
 
 /mob/living/simple_mob/vore/cryptdrake/init_vore()
+<<<<<<< HEAD
+=======
+	if(!voremob_loaded)
+		return
+>>>>>>> 9c5fa078e4 ([MIRROR] On demand belly loading & multibelly (#9701))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

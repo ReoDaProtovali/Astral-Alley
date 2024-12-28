@@ -4,9 +4,6 @@
 	var/speech_chance = 75 //mobs can be a bit more emotive than carbon/humans
 	var/speech_sound_enabled = TRUE
 
-	//vars for vore_icons toggle control
-	var/vore_icons_cache = null // null by default. Going from ON to OFF should store vore_icons val here, OFF to ON reset as null
-
 	//spitting projectiles
 	var/spitting = 0
 	var/spit_projectile = null // what our spit projectile is. Can be anything
@@ -19,6 +16,7 @@
 		Spit(A)
 	. = ..()
 
+<<<<<<< HEAD
 /mob/living/simple_mob/verb/toggle_vore_icons()
 
 	set name = "Toggle Vore Sprite"
@@ -38,6 +36,8 @@
 
 	update_icon()
 
+=======
+>>>>>>> 9c5fa078e4 ([MIRROR] On demand belly loading & multibelly (#9701))
 /mob/living/simple_mob/verb/toggle_speech_sounds()
 	set name = "Toggle Species Speech Sounds"
 	set desc = "Toggle if your species defined speech sound has a chance of playing on a Say"
