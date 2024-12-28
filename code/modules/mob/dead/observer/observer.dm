@@ -128,7 +128,7 @@
 	if(!T && length(latejoin))
 		T = pick(latejoin)			//Safety in case we cannot find the body's position
 	if(T)
-		forceMove(T)
+		forceMove(T, just_spawned = TRUE)
 	else
 		moveToNullspace()
 		to_chat(src, "<span class='danger'>Could not locate an observer spawn point. Use the Teleport verb to jump to the station map.</span>")
@@ -428,7 +428,7 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 
 	ManualFollow(M || jumpable_mobs()[mobname])
 
-/mob/observer/dead/forceMove(atom/destination, direction, movetime) //ChompEDIT - pass movetime through
+/mob/observer/dead/forceMove(atom/destination, direction, movetime, just_spawned = FALSE) //ChompEDIT - pass movetime through
 	if(client?.holder)
 		return ..()
 
@@ -438,6 +438,17 @@ This is the proc mobs get to turn into a ghost. Forked from ghostize due to comp
 			stop_following()
 		return
 
+<<<<<<< HEAD
+=======
+	//RS Port #658 Start
+	var/area/A = get_area(destination)
+	if(A?.flag_check(AREA_BLOCK_GHOSTS) && !isbelly(destination) && !admin_ghosted && !just_spawned)
+		to_chat(src,span_warning("Sorry, that area does not allow ghosts."))
+		if(following)
+			stop_following()
+		return
+	//RS Port #658 End
+>>>>>>> 1ff2ed72a7 ([MIRROR] initial ghost spawn is important... (#9702))
 	return ..()
 
 /mob/observer/dead/Move(atom/newloc, direct = 0, movetime)
