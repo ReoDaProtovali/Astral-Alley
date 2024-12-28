@@ -14,8 +14,13 @@
 		"thousand" = 999,
 		"million" = 999
 		)
+<<<<<<< HEAD
 	var/xarch_source_mineral = "iron"
 	var/reagent = "silicate"
+=======
+	var/xarch_source_mineral = REAGENT_ID_IRON
+	var/reagent = REAGENT_ID_SILICATE
+>>>>>>> eb48289147 ([MIRROR] few more defines (#9705))
 
 /ore/New()
 	. = ..()
