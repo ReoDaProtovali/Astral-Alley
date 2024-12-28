@@ -259,4 +259,27 @@ var/global/list/image/splatter_cache=list()
 	virus2.Cut()
 	return ..()
 
+<<<<<<< HEAD
+=======
+/obj/effect/decal/cleanable/mucus/Crossed(mob/living/carbon/human/perp)
+	if(viruses)
+		for(var/datum/disease/D in viruses)
+			perp.ContractDisease(D)
+
+/obj/effect/decal/cleanable/mucus/attack_hand(mob/living/carbon/human/perp)
+	if(viruses)
+		for(var/datum/disease/D in viruses)
+			perp.ContractDisease(D)
+
+/obj/effect/decal/cleanable/vomit/Crossed(mob/living/carbon/human/perp)
+	if(viruses)
+		for(var/datum/disease/D in viruses)
+			perp.ContractDisease(D)
+
+/obj/effect/decal/cleanable/vomit/Crossed(mob/living/carbon/human/perp)
+	if(viruses)
+		for(var/datum/disease/D in viruses)
+			perp.ContractDisease(D)
+
+>>>>>>> bd5e6199cc ([MIRROR] Virology Hotfix (#9700))
 #undef DRYING_TIME

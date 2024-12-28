@@ -698,6 +698,12 @@
 	sdisabilities = 0
 	disabilities = 0
 	resting = FALSE
+<<<<<<< HEAD
+=======
+
+	if(viruses)
+		viruses.Cut()
+>>>>>>> bd5e6199cc ([MIRROR] Virology Hotfix (#9700))
 
 	// fix blindness and deafness
 	blinded = 0
