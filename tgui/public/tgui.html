@@ -276,6 +276,7 @@
         var errorMessage = "Error: Failed to load the asset "
           + "'" + url + "' after several attempts.";
         if (type === 'css') {
+<<<<<<< HEAD
           errorMessage += + "\nStylesheet was either not found, "
             + "or you're trying to load an empty stylesheet "
             + "that has no CSS rules in it.";
@@ -325,6 +326,31 @@
         if (isStyleSheetLoaded(node, url)) {
           // Render the stylesheet
           node.media = 'all';
+=======
+          var node = document.createElement('link');
+          node.type = 'text/css';
+          node.rel = 'stylesheet';
+          node.crossOrigin = 'anonymous';
+          node.href = url;
+          // Temporarily set media to something inapplicable
+          // to ensure it'll fetch without blocking render
+          if (!sync) {
+            node.media = 'only x';
+          }
+          node.onload = function () {
+            node.onload = null;
+            if (isStyleSheetLoaded(node, url)) {
+              // Render the stylesheet
+              node.media = 'all';
+              return;
+            }
+            // Try again
+            node.parentNode.removeChild(node);
+            node = null;
+            retry();
+          };
+          injectNode(node);
+>>>>>>> a4a690afff ([MIRROR] Need crossorigin="anonymous" for webroot (#9729))
           return;
         }
         // Try again
