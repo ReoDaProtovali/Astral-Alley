@@ -34,6 +34,7 @@
 	sort_string = "NAAAC"
 	department = LATHE_ALL | LATHE_ENGINEERING // CHOMPAdd
 // YW addition begins
+<<<<<<< HEAD
 /datum/design/item/tool/rpd
 	name = "Rapid Piping Device (RPD)"
 	desc = "A device used to rapidly pipe things."
@@ -44,6 +45,8 @@
 	sort_string = "NAAAB"
 	department = LATHE_ALL | LATHE_ENGINEERING // CHOMPAdd
 
+=======
+>>>>>>> a4ab374b23 (Removes duplicate RPD science research design (#9720))
 /datum/design/item/tool/rms
 	name = "Rapid Material Synthesizer (RMS)"
 	desc = "A tool that converts battery charge to materials."
