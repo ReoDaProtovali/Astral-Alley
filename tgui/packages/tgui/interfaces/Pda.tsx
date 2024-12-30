@@ -25,18 +25,33 @@ type Data = {
   };
 };
 
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/Pda.tsx
 const requirePdaInterface = require.context('./pda', false, /\.tsx$/);
 
+=======
+const requirePdaInterface = require.context('./pda_screens', false, /\.tsx$/);
+// CHOMPEdit Start - Add check for chompstation pda_screens
+const requirePdaInterfaceCh = require.context(
+  '../chompstation/Pda/pda_screens',
+  false,
+  /\.tsx$/,
+);
+>>>>>>> d60da3a6d1 (Add a timeclock app to the PDA (#9650)):tgui/packages/tgui/interfaces/Pda/index.tsx
 function getPdaApp(name: string) {
   let appModule: __WebpackModuleApi.RequireContext;
   try {
-    appModule = requirePdaInterface(`./${name}.tsx`);
+    appModule = requirePdaInterfaceCh(`./${name}.tsx`);
   } catch (err) {
-    if (err.code === 'MODULE_NOT_FOUND') {
-      return routingError('notFound', name);
+    try {
+      appModule = requirePdaInterface(`./${name}.tsx`);
+    } catch (err) {
+      if (err.code === 'MODULE_NOT_FOUND') {
+        return routingError('notFound', name);
+      }
+      throw err;
     }
-    throw err;
   }
+  // CHOMPEdit End
   const Component: () => React.JSX.Element = appModule[name];
   if (!Component) {
     return routingError('missingExport', name);
