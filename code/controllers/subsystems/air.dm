@@ -30,8 +30,25 @@ SUBSYSTEM_DEF(air)
 	// This is used to tell CI WHERE the edges are.
 	var/list/startup_active_edge_log = list()
 
+<<<<<<< HEAD
 /datum/controller/subsystem/air/PreInit()
 	air_master = src
+=======
+	//Geometry lists
+	var/list/zones = list()
+	var/list/edges = list()
+	//Geometry updates lists
+	var/list/tiles_to_update = list()
+	var/list/zones_to_update = list()
+	var/list/active_fire_zones = list()
+	var/list/active_hotspots = list()
+	var/list/active_edges = list()
+	var/lingering_fires = 0 // CHOMPEdit - If this is over a certain large numbers, fires will start dying out.
+
+	var/active_zones = 0
+	var/current_cycle = 0
+	var/next_id = 1 //Used to keep track of zone UIDs.
+>>>>>>> 3beae0bde1 (Fire Rework (#9669))
 
 /datum/controller/subsystem/air/Initialize() // CHOMPEdit
 	var/start_timeofday = REALTIMEOFDAY // CHOMPEdit
