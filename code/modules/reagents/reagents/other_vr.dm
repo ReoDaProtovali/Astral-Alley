@@ -82,6 +82,8 @@
 		if(prob(5))
 			T.visible_message("<span class='warning'>The foam sizzles as it lands on \the [T]!</span>")
 
+	T.apply_fire_protection() // CHOMPEdit - Apply fire protection to the turf
+
 /datum/reagent/firefighting_foam/touch_obj(var/obj/O, reac_volume)
 	O.water_act(reac_volume / 5)
 
