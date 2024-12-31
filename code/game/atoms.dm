@@ -762,3 +762,62 @@
 		else if(C)
 			color = C
 			return
+<<<<<<< HEAD
+=======
+
+///Passes Stat Browser Panel clicks to the game and calls client click on an atom
+/atom/Topic(href, list/href_list)
+	. = ..()
+	if(!usr?.client)
+		return
+	var/client/usr_client = usr.client
+	var/list/paramslist = list()
+
+	if(href_list["statpanel_item_click"])
+		switch(href_list["statpanel_item_click"])
+			if("left")
+				paramslist["left"] = "1"
+			if("right")
+				paramslist["right"] = "1"
+			if("middle")
+				paramslist["middle"] = "1"
+			else
+				return
+
+		if(href_list["statpanel_item_shiftclick"])
+			paramslist["shift"] = "1"
+		if(href_list["statpanel_item_ctrlclick"])
+			paramslist["ctrl"] = "1"
+		if(href_list["statpanel_item_altclick"])
+			paramslist["alt"] = "1"
+
+		var/mouseparams = list2params(paramslist)
+		usr_client.Click(src, loc, null, mouseparams)
+		return TRUE
+
+GLOBAL_LIST_EMPTY(icon_dimensions)
+
+/atom/proc/get_oversized_icon_offsets()
+    if (pixel_x == 0 && pixel_y == 0)
+        return list("x" = 0, "y" = 0)
+    var/list/icon_dimensions = get_icon_dimensions(icon)
+    var/icon_width = icon_dimensions["width"]
+    var/icon_height = icon_dimensions["height"]
+    return list(
+        "x" = icon_width > world.icon_size && pixel_x != 0 ? (icon_width - world.icon_size) * 0.5 : 0,
+        "y" = icon_height > world.icon_size /*&& pixel_y != 0*/ ? (icon_height - world.icon_size) * 0.5 : 0, // we don't have pixel_y in use
+	)
+
+/// Returns a list containing the width and height of an icon file
+/proc/get_icon_dimensions(icon_path)
+	// Icons can be a real file(), a rsc backed file(), a dynamic rsc (dyn.rsc) reference (known as a cache reference in byond docs), or an /icon which is pointing to one of those.
+	// Runtime generated dynamic icons are an unbounded concept cache identity wise, the same icon can exist millions of ways and holding them in a list as a key can lead to unbounded memory usage if called often by consumers.
+	// Check distinctly that this is something that has this unspecified concept, and thus that we should not cache.
+	if (!isfile(icon_path) || !length("[icon_path]"))
+		var/icon/my_icon = icon(icon_path)
+		return list("width" = my_icon.Width(), "height" = my_icon.Height())
+	if (isnull(GLOB.icon_dimensions[icon_path]))
+		var/icon/my_icon = icon(icon_path)
+		GLOB.icon_dimensions[icon_path] = list("width" = my_icon.Width(), "height" = my_icon.Height())
+	return GLOB.icon_dimensions[icon_path]
+>>>>>>> 845ad465cc ([MIRROR] fix speechbubble and runechat position (#9747))
