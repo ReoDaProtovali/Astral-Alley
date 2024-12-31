@@ -22,6 +22,8 @@
 	var/has_custom_equipment_sprites = FALSE
 	var/vis_height = 32
 	var/pixel_x = 0
+	var/icon_x = 32
+	var/icon_y = 32
 
 	var/is_whitelisted = FALSE
 	var/whitelist_ckey
@@ -127,6 +129,7 @@
 	has_dead_sprite_overlay = TRUE
 	has_custom_equipment_sprites = TRUE
 	pixel_x = -16
+<<<<<<< HEAD
 /* //Does not need to be dogborg-only, letting all borgs use these -Reo
 /datum/robot_sprite/dogborg/get_rest_sprite(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.rest_style in rest_sprite_options))
@@ -138,6 +141,10 @@
 			return "[sprite_icon_state]-bellyup"
 		else
 			return "[sprite_icon_state]-rest"
+=======
+	icon_x = 64
+	icon_y = 32
+>>>>>>> f120af29b2 ([Manual Port] of the robot sprite iconforge migration (#9743))
 
 /datum/robot_sprite/dogborg/get_belly_overlay(var/mob/living/silicon/robot/ourborg)
 	return "[sprite_icon_state]-sleeper"
@@ -160,7 +167,8 @@
 	has_dead_sprite_overlay = FALSE
 	has_custom_equipment_sprites = FALSE
 	vis_height = 64
-	pixel_x = -16
+	icon_x = 64
+	icon_y = 64
 
 // Default module sprite
 
@@ -175,5 +183,6 @@
 /datum/robot_sprite/dogborg/raptor
 	has_dead_sprite_overlay = FALSE
 	vis_height = 45
-	pixel_x = -16
+	icon_x = 64
+	icon_y = 64
 //CHOMPAdd End
