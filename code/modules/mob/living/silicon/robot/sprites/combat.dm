@@ -127,10 +127,28 @@
 		BCS.dogborg = TRUE
 
 /datum/robot_sprite/dogborg/tall/combat/derg
-	name = "ERT"
+	name = "ERT Dragon"
 	sprite_icon_state = "derg"
+<<<<<<< HEAD
 	rest_sprite_options = list("Default")
 	has_gun_sprite = TRUE
+=======
+	sprite_hud_icon_state = "ert"
+	rest_sprite_options = list("Default", "Sit")
+	sprite_flags = ROBOT_HAS_GUN_SPRITE | ROBOT_HAS_SHIELD_SPRITE
+/datum/robot_sprite/dogborg/tall/combat/derg/handle_extra_icon_updates(var/mob/living/silicon/robot/ourborg)
+	..()
+	if(ourborg.resting)
+		return
+	if(ourborg.has_active_type(/obj/item/borg/combat/mobility))
+		ourborg.add_overlay("[sprite_icon_state]-roll")
+
+/datum/robot_sprite/dogborg/tall/combat/derg/get_eyes_overlay(var/mob/living/silicon/robot/ourborg)
+	if(ourborg.has_active_type(/obj/item/borg/combat/mobility))
+		return
+	else
+		return ..()
+>>>>>>> a1d9b2c193 ([MIRROR] ERT borg additions and sprite fixes (#9760))
 
 /datum/robot_sprite/dogborg/tall/combat/hound
 	name = "Hound"
