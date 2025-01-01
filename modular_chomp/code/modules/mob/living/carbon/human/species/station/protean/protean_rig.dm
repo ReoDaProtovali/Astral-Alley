@@ -108,8 +108,9 @@
 	name = "mass"
 	desc = "A helmet-shaped clump of nanomachines."
 	light_overlay = "should not use a light overlay"
-	species_restricted = list(SPECIES_PROTEAN, SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJ, SPECIES_UNATHI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_PROMETHEAN, SPECIES_XENOHYBRID, SPECIES_VOX, SPECIES_TESHARI, SPECIES_VASILISSAN, SPECIES_XENOMORPH_HYBRID)
+	species_restricted = list(SPECIES_PROTEAN, SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARAN, SPECIES_UNATHI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_PROMETHEAN, SPECIES_XENOHYBRID, SPECIES_VOX, SPECIES_TESHARI, SPECIES_VASILISSAN, SPECIES_XENOMORPH_HYBRID)
 	sprite_sheets = list(
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/carbon/human/species/station/protean/protean_rig.dm
 		SPECIES_PROTEAN			 = 'modular_chomp/icons/mob/head_ch.dmi',
 		SPECIES_HUMAN			 = 'modular_chomp/icons/mob/head_ch.dmi',
 		SPECIES_TAJ 			 = 'modular_chomp/icons/mob/species/tajaran/helmet_ch.dmi',
@@ -147,6 +148,45 @@
 		SPECIES_VASILISSAN		 = 'modular_chomp/icons/mob/head_ch.dmi',
 		SPECIES_VOX				 = 'modular_chomp/icons/mob/head_ch.dmi',
 		SPECIES_XENOMORPH_HYBRID = 'modular_chomp/icons/mob/head_ch.dmi'
+=======
+		SPECIES_PROTEAN			 = 'icons/mob/head.dmi',
+		SPECIES_HUMAN			 = 'icons/mob/head.dmi',
+		SPECIES_TAJARAN 			 = 'icons/mob/species/tajaran/helmet.dmi',
+		SPECIES_SKRELL 			 = 'icons/mob/species/skrell/helmet.dmi',
+		SPECIES_UNATHI 			 = 'icons/mob/species/unathi/helmet.dmi',
+		SPECIES_XENOHYBRID		 = 'icons/mob/species/unathi/helmet.dmi',
+		SPECIES_AKULA 			 = 'icons/mob/species/akula/helmet.dmi',
+		SPECIES_SERGAL			 = 'icons/mob/species/sergal/helmet.dmi',
+		SPECIES_NEVREAN			 = 'icons/mob/species/sergal/helmet.dmi',
+		SPECIES_VULPKANIN 		 = 'icons/mob/species/vulpkanin/helmet.dmi',
+		SPECIES_ZORREN_HIGH 	 = 'icons/mob/species/fox/helmet.dmi',
+		SPECIES_FENNEC 			 = 'icons/mob/species/vulpkanin/helmet.dmi',
+		SPECIES_PROMETHEAN		 = 'icons/mob/species/skrell/helmet.dmi',
+		SPECIES_TESHARI 		 = 'icons/mob/species/teshari/helmet.dmi',
+		SPECIES_VASILISSAN		 = 'icons/mob/species/skrell/helmet.dmi',
+		SPECIES_VOX				 = 'icons/mob/species/vox/head.dmi',
+		SPECIES_XENOMORPH_HYBRID = 'icons/mob/species/xenomorph_hybrid/helmet.dmi'
+		)
+
+	sprite_sheets_obj = list(
+		SPECIES_PROTEAN			 = 'icons/mob/head.dmi',
+		SPECIES_HUMAN			 = 'icons/mob/head.dmi',
+		SPECIES_TAJARAN 			 = 'icons/mob/head.dmi',
+		SPECIES_SKRELL 			 = 'icons/mob/head.dmi',
+		SPECIES_UNATHI 			 = 'icons/mob/head.dmi',
+		SPECIES_XENOHYBRID		 = 'icons/mob/head.dmi',
+		SPECIES_AKULA 			 = 'icons/mob/head.dmi',
+		SPECIES_SERGAL			 = 'icons/mob/head.dmi',
+		SPECIES_NEVREAN			 = 'icons/mob/head.dmi',
+		SPECIES_VULPKANIN 		 = 'icons/mob/head.dmi',
+		SPECIES_ZORREN_HIGH 	 = 'icons/mob/head.dmi',
+		SPECIES_FENNEC 			 = 'icons/mob/head.dmi',
+		SPECIES_PROMETHEAN		 = 'icons/mob/head.dmi',
+		SPECIES_TESHARI 		 = 'icons/mob/head.dmi',
+		SPECIES_VASILISSAN		 = 'icons/mob/head.dmi',
+		SPECIES_VOX				 = 'icons/mob/head.dmi',
+		SPECIES_XENOMORPH_HYBRID = 'icons/mob/head.dmi'
+>>>>>>> 80eb1abbd0 ([MIRROR] resize limits and designer / dna update (#9756)):code/modules/mob/living/carbon/human/species/station/protean_vr/protean_rig.dm
 		)
 	icon = 'modular_chomp/icons/mob/head_ch.dmi'
 	default_worn_icon = 'modular_chomp/icons/mob/head_ch.dmi'
@@ -155,8 +195,9 @@
 	name = "mass"
 	desc = "Glove-shaped clusters of nanomachines."
 	siemens_coefficient= 0
-	species_restricted = list(SPECIES_PROTEAN, SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJ, SPECIES_UNATHI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_PROMETHEAN, SPECIES_XENOHYBRID, SPECIES_VOX, SPECIES_TESHARI, SPECIES_VASILISSAN, SPECIES_XENOMORPH_HYBRID)
+	species_restricted = list(SPECIES_PROTEAN, SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARAN, SPECIES_UNATHI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_PROMETHEAN, SPECIES_XENOHYBRID, SPECIES_VOX, SPECIES_TESHARI, SPECIES_VASILISSAN, SPECIES_XENOMORPH_HYBRID)
 	sprite_sheets = list(
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/carbon/human/species/station/protean/protean_rig.dm
 		SPECIES_PROTEAN			 = 'modular_chomp/icons/mob/hands_ch.dmi',
 		SPECIES_HUMAN			 = 'modular_chomp/icons/mob/hands_ch.dmi',
 		SPECIES_TAJ 			 = 'modular_chomp/icons/mob/hands_ch.dmi',
@@ -193,6 +234,44 @@
 		SPECIES_VASILISSAN		 = 'modular_chomp/icons/mob/hands_ch.dmi',
 		SPECIES_VOX				 = 'modular_chomp/icons/mob/hands_ch.dmi',
 		SPECIES_XENOMORPH_HYBRID = 'modular_chomp/icons/mob/hands_ch.dmi'
+=======
+		SPECIES_PROTEAN			 = 'icons/mob/hands.dmi',
+		SPECIES_HUMAN			 = 'icons/mob/hands.dmi',
+		SPECIES_TAJARAN 			 = 'icons/mob/hands.dmi',
+		SPECIES_SKRELL 			 = 'icons/mob/hands.dmi',
+		SPECIES_UNATHI 			 = 'icons/mob/hands.dmi',
+		SPECIES_XENOHYBRID		 = 'icons/mob/hands.dmi',
+		SPECIES_AKULA 			 = 'icons/mob/hands.dmi',
+		SPECIES_SERGAL			 = 'icons/mob/hands.dmi',
+		SPECIES_NEVREAN			 = 'icons/mob/hands.dmi',
+		SPECIES_VULPKANIN		 = 'icons/mob/hands.dmi',
+		SPECIES_ZORREN_HIGH 	 = 'icons/mob/hands.dmi',
+		SPECIES_FENNEC			 = 'icons/mob/hands.dmi',
+		SPECIES_PROMETHEAN		 = 'icons/mob/hands.dmi',
+		SPECIES_TESHARI 		 = 'icons/mob/species/teshari/hands.dmi',
+		SPECIES_VASILISSAN		 = 'icons/mob/hands.dmi',
+		SPECIES_VOX				 = 'icons/mob/species/vox/gloves.dmi',
+		SPECIES_XENOMORPH_HYBRID = 'icons/mob/species/xenomorph_hybrid/gloves.dmi'
+		)
+
+	sprite_sheets_obj = list(
+		SPECIES_HUMAN			 = 'icons/mob/hands.dmi',
+		SPECIES_TAJARAN 			 = 'icons/mob/hands.dmi',
+		SPECIES_SKRELL 			 = 'icons/mob/hands.dmi',
+		SPECIES_UNATHI 			 = 'icons/mob/hands.dmi',
+		SPECIES_XENOHYBRID		 = 'icons/mob/hands.dmi',
+		SPECIES_AKULA 			 = 'icons/mob/hands.dmi',
+		SPECIES_SERGAL			 = 'icons/mob/hands.dmi',
+		SPECIES_NEVREAN			 = 'icons/mob/hands.dmi',
+		SPECIES_VULPKANIN 		 = 'icons/mob/hands.dmi',
+		SPECIES_ZORREN_HIGH 	 = 'icons/mob/hands.dmi',
+		SPECIES_FENNEC 			 = 'icons/mob/hands.dmi',
+		SPECIES_PROMETHEAN		 = 'icons/mob/hands.dmi',
+		SPECIES_TESHARI 		 = 'icons/mob/hands.dmi',
+		SPECIES_VASILISSAN		 = 'icons/mob/hands.dmi',
+		SPECIES_VOX				 = 'icons/mob/hands.dmi',
+		SPECIES_XENOMORPH_HYBRID = 'icons/mob/hands.dmi'
+>>>>>>> 80eb1abbd0 ([MIRROR] resize limits and designer / dna update (#9756)):code/modules/mob/living/carbon/human/species/station/protean_vr/protean_rig.dm
 		)
 	icon = 'modular_chomp/icons/mob/hands_ch.dmi'
 	default_worn_icon = 'modular_chomp/icons/mob/hands_ch.dmi'
@@ -200,7 +279,7 @@
 /obj/item/clothing/shoes/magboots/rig/protean
 	name = "mass"
 	desc = "Boot-shaped clusters of nanomachines."
-	species_restricted = list(SPECIES_PROTEAN, SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJ, SPECIES_UNATHI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_PROMETHEAN, SPECIES_XENOHYBRID, SPECIES_VOX, SPECIES_TESHARI, SPECIES_VASILISSAN, SPECIES_XENOMORPH_HYBRID)
+	species_restricted = list(SPECIES_PROTEAN, SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARAN, SPECIES_UNATHI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_PROMETHEAN, SPECIES_XENOHYBRID, SPECIES_VOX, SPECIES_TESHARI, SPECIES_VASILISSAN, SPECIES_XENOMORPH_HYBRID)
 	sprite_sheets = list(
 		SPECIES_TESHARI 		 = 'modular_chomp/icons/mob/species/teshari/feet_ch.dmi',
 		SPECIES_VOX				 = 'modular_chomp/icons/mob/species/vox/shoes_ch.dmi',
@@ -214,7 +293,7 @@
 	name = "mass"
 	desc = "A body-hugging mass of nanomachines."
 	can_breach = 0
-	species_restricted = list(SPECIES_PROTEAN, SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJ, SPECIES_UNATHI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_PROMETHEAN, SPECIES_XENOHYBRID, SPECIES_VOX, SPECIES_TESHARI, SPECIES_VASILISSAN, SPECIES_XENOMORPH_HYBRID)
+	species_restricted = list(SPECIES_PROTEAN, SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_TAJARAN, SPECIES_UNATHI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_PROMETHEAN, SPECIES_XENOHYBRID, SPECIES_VOX, SPECIES_TESHARI, SPECIES_VASILISSAN, SPECIES_XENOMORPH_HYBRID)
 	allowed = list(
 		/obj/item/weapon/gun,
 		/obj/item/device/flashlight,

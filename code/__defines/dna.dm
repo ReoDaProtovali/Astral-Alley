@@ -138,3 +138,13 @@ var/SMALLSIZEBLOCK     = 0
 #define DNA2_BUF_UI 1
 #define DNA2_BUF_UE 2
 #define DNA2_BUF_SE 4
+<<<<<<< HEAD
+=======
+
+// Mutation flags
+#define MUTCHK_FORCED        1
+
+// Gene flags
+#define GENE_ALWAYS_ACTIVATE 1
+#define MUTCHK_HIDEMSG       2
+>>>>>>> 80eb1abbd0 ([MIRROR] resize limits and designer / dna update (#9756))
