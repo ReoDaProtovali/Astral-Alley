@@ -77,7 +77,11 @@
 /datum/supply_pack/misc/solgov_medical_rig
 	name = "solgov medical hardsuit (loaded)"
 	contains = list(
+<<<<<<< HEAD
 			/obj/item/weapon/rig/baymed = 1
+=======
+			/obj/item/rig/baymed/equipped = 1 // CHOMPEdit
+>>>>>>> 32b8d087e1 (fixing empty hardsuit bug in cargo order. (#9691))
 			)
 	cost = 250
 	containertype = /obj/structure/closet/crate/secure/gear
