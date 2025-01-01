@@ -31,7 +31,7 @@
 	icon_state = "ears_plain"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	//species_allowed = list(SPECIES_TAJ, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
+	//species_allowed = list(SPECIES_TAJARAN, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 	extra_overlay = "ears_plain-inner"
 
 /datum/sprite_accessory/ears/taj_ears_tall
@@ -39,7 +39,7 @@
 	icon_state = "msai_plain"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
-	//species_allowed = list(SPECIES_TAJ, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
+	//species_allowed = list(SPECIES_TAJARAN, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
 	extra_overlay = "msai_plain-inner"
 
 /datum/sprite_accessory/ears/squirrel_orange
