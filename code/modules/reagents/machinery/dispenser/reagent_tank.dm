@@ -149,8 +149,13 @@
 	amount_per_transfer_from_this = 10
 
 /obj/structure/reagent_dispenser/he3/Initialize()
+<<<<<<< HEAD
 	..()
 	reagents.add_reagent("helium3",1000)
+=======
+	. = ..()
+	reagents.add_reagent(REAGENT_ID_HELIUM3,1000)
+>>>>>>> 52ea336513 ([MIRROR] some more strings to defines (#9767))
 
 /*
  * Misc
