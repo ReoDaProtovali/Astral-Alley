@@ -191,11 +191,23 @@
 /obj/item/weapon/research_sample/attackby(obj/item/weapon/P as obj, mob/user as mob)
 	..()
 
+<<<<<<< HEAD
 	if(istype(P, /obj/item/weapon/storage/sample_container))
 		var/obj/item/weapon/storage/sample_container/SC = P
 		src.loc = SC
 		SC.update_icon()
 		to_chat(user, "<span class='notice'>You store \the [src] in \the [SC].</span>")
+=======
+	if(istype(P, /obj/item/storage/sample_container))
+		var/obj/item/storage/sample_container/SC = P
+		if(SC.contents.len >= SC.max_storage_space)
+			to_chat(user, span_notice("\The [SC] is full!"))
+			return
+		else
+			src.loc = SC
+			SC.update_icon()
+			to_chat(user, span_notice("You store \the [src] in \the [SC]."))
+>>>>>>> c2447c7715 ([MIRROR] Sample Scooping Sanity (#9766))
 
 	if(istype(P, /obj/item/device/cataloguer))
 		to_chat(user, "<span class='notice'>You start to scan \the [src] with \the [P]...</span>")
