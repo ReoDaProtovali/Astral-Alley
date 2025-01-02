@@ -25,11 +25,23 @@
 	else
 		set_light(0)
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/sample_container/afterattack(turf/T as turf, mob/user as mob)
 	for(var/obj/item/weapon/research_sample/S in T)
 		S.loc = src
 		update_icon()
 		to_chat(user, "<span class='notice'>You scoop \the [S] into \the [src].</span>")
+=======
+/obj/item/storage/sample_container/afterattack(turf/T as turf, mob/user as mob)
+	for(var/obj/item/research_sample/S in T)
+		if(contents.len >= max_storage_space)
+			to_chat(user, span_notice("\The [src] is full!"))
+			return
+		else
+			S.loc = src
+			update_icon()
+			to_chat(user, span_notice("You scoop \the [S] into \the [src]."))
+>>>>>>> c2447c7715 ([MIRROR] Sample Scooping Sanity (#9766))
 
 //Splice research sample containers into the list of valid items for these belts *without* overriding the lists entirely
 /obj/item/weapon/storage/belt/explorer/New()
