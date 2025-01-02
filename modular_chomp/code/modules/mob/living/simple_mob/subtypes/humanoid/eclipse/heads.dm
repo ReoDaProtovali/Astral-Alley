@@ -19,81 +19,33 @@
 	special_attack_cooldown = 10 SECONDS
 	special_attack_min_range = 1
 	special_attack_max_range = 8
+<<<<<<< HEAD
 	loot_list = list(/obj/item/weapon/gun/energy/flamegun = 100,
 		/obj/item/weapon/bone/skull = 100
+=======
+	has_heal_droid = TRUE
+	specialattackprojectile = /obj/item/projectile/bullet/dragon
+	loot_list = list(/obj/item/gun/energy/flamegun = 100,
+		/obj/item/bone/skull = 100
+>>>>>>> 1c07e54746 (Tyr Update 3 (#9688))
 			)
 
-
-/mob/living/simple_mob/humanoid/eclipse/head/security/updatehealth()
-	. = ..()
-
-	if(vore_fullness == 1)
-		ranged_cooldown = 8
-		projectiletype = /obj/item/projectile/energy/flamecrystal
-	else if(vore_fullness == 2)
-		ranged_cooldown = 12
-		projectiletype = /obj/item/projectile/energy/fireball
-	else if (vore_fullness > 2)
-		ranged_cooldown = 16
-		projectiletype = /obj/item/projectile/energy/fireball
-	else
-		ranged_cooldown = 5
-
 /mob/living/simple_mob/humanoid/eclipse/head/security/do_special_attack(atom/A)
-	if(vore_fullness < 2)
+	if(vore_fullness > 3)
+		bomb_chaos(A)
+	else if(vore_fullness > 0)
+		visible_message(span_warning("\The [src]'s maw glows!"))
+		Beam(A, icon_state = "sat_beam", time = 2.5 SECONDS, maxdistance = INFINITY)
+		addtimer(CALLBACK(src, PROC_REF(special_projectile), A), 3 SECONDS, TIMER_DELETE_ME)
+	else
 		if(prob(50))
-			rapidfire(A)
+			visible_message(span_warning("\The [src] throws out a chain!"))
+			Beam(A, icon_state = "chain", time = 3 SECONDS, maxdistance = INFINITY)
+			addtimer(CALLBACK(src, PROC_REF(gravity_pull), A), 3 SECOND, TIMER_DELETE_ME)
 		else
-			tornado_maw(A)
-	else if(vore_fullness == 2)
-		tornado_maw(A)
-	else if(vore_fullness > 2)
-		if(prob(50))
-			deathtoll(A)
-		else
-			tornado_maw(A)
-
-/mob/living/simple_mob/humanoid/eclipse/head/security/proc/rapidfire(atom/A)
-	var/obj/item/projectile/P = new /obj/item/projectile/energy/flamecrystal(get_turf(src))
-	P.launch_projectile(A, BP_TORSO, src)
-	sleep(1)
-	P.launch_projectile(A, BP_TORSO, src)
-	sleep(1)
-	P.launch_projectile(A, BP_TORSO, src)
-	sleep(1)
-	P.launch_projectile(A, BP_TORSO, src)
-	sleep(1)
-	P.launch_projectile(A, BP_TORSO, src)
-
-/mob/living/simple_mob/humanoid/eclipse/head/security/proc/tornado_maw(atom/A)
-	var/turf/T = get_turf(src)
-
-	var/datum/effect/effect/system/grav_pull/s1 = new /datum/effect/effect/system/grav_pull
-	s1.set_up(5, 1, T)
-	s1.start()
-
-/mob/living/simple_mob/humanoid/eclipse/head/security/proc/deathtoll(atom/A)
-	var/list/potential_targets = ai_holder.list_targets()
-	for(var/atom/entry in potential_targets)
-		if(istype(entry, /mob/living/simple_mob/humanoid/eclipse))
-			potential_targets -= entry
-	if(potential_targets.len)
-		var/iteration = clamp(potential_targets.len, 1, 3)
-		for(var/i = 0, i < iteration, i++)
-			if(!(potential_targets.len))
-				break
-			var/mob/target = pick(potential_targets)
-			potential_targets -= target
-			deathtollfollow(target)
-
-/mob/living/simple_mob/humanoid/eclipse/head/security/proc/deathtollfollow(atom/target)
-	var/list/bomb_range = block(locate(target.x-6, target.y-6, target.z), locate(target.x+6, target.y+6, target.z))
-	var/obj/item/projectile/P = new /obj/item/projectile/bullet/flamegun(get_turf(src))
-	bomb_range -= get_turf(target)
-	for(var/i = 0, i < 4, i++)
-		var/turf/T = pick(bomb_range)
-		P.launch_projectile(target, BP_TORSO, src)
-		bomb_range -= T
+			visible_message(span_warning("\The [src] throws out a chain!"))
+			Beam(A, icon_state = "chain", time = 3 SECONDS, maxdistance = INFINITY)
+			addtimer(CALLBACK(src, PROC_REF(itemyoink), A), 3 SECOND, TIMER_DELETE_ME)
 
 /obj/item/projectile/energy/flamecrystal
 	name = "Flame Crystal"
@@ -130,10 +82,19 @@
 	special_attack_max_range = 10
 	projectiletype = /obj/item/projectile/bullet/pistol/ap
 
+<<<<<<< HEAD
 	loot_list = list(/obj/item/weapon/circuitboard/mecha/hades/targeting = 100,
 		/obj/item/weapon/circuitboard/mecha/hades/peripherals = 100,
 		/obj/item/weapon/circuitboard/mecha/hades/main = 100,
 		/obj/item/weapon/bone/skull = 100
+=======
+	loot_list = list(/obj/item/circuitboard/mecha/imperion/targeting = 60,
+		/obj/item/circuitboard/mecha/gygax/peripherals = 60,
+		/obj/item/prop/alien/phasecoil = 60,
+		/obj/item/circuitboard/mecha/durand/peripherals = 60,
+		/obj/item/bluespace_harpoon = 10,
+		/obj/item/bone/skull = 100
+>>>>>>> 1c07e54746 (Tyr Update 3 (#9688))
 			)
 
 	var/obj/item/shield_projector/shield1 = null
@@ -196,11 +157,15 @@
 /mob/living/simple_mob/mechanical/hivebot/swarm/eclipse
 	faction = "eclipse"
 
+/mob/living/simple_mob/mechanical/combat_drone/artillery
+	faction = FACTION_ECLIPSE
+	projectiletype = /obj/item/projectile/arc/blue_energy
 
 /mob/living/simple_mob/humanoid/eclipse/head/captain
 	name = "Eclipse Expedition Leader"
 	icon_state = "captain"
 
+<<<<<<< HEAD
 	loot_list = list(/obj/item/slime_extract/dark = 20,
 			/obj/item/prop/alien/junk = 60,
 			/obj/random/tool/alien = 60,
@@ -278,6 +243,227 @@
 
 
 /mob/living/simple_mob/humanoid/eclipse/head/captain/proc/invokesec(atom/A)
+=======
+/mob/living/simple_mob/humanoid/eclipse/head/tyrlead
+	name = "Eclipse Precursor Overseer"
+	icon_state = "overseer_shield"
+	icon_living = "overseer_shield"
+	special_attack_cooldown = 4 SECONDS
+	special_attack_min_range = 1
+	special_attack_max_range = 8
+	projectiletype = /obj/item/projectile/energy/homing_bolt
+	ai_holder_type = /datum/ai_holder/simple_mob/intentional/adv_dark_gygax
+	var/fullshield = 4
+	var/shieldrage = 4
+
+/mob/living/simple_mob/humanoid/eclipse/head/tyrlead/bullet_act(obj/item/projectile/P) //Projectiles will be absorbed by the shield. Note to self do funky sprite. 4 hits to remove
+	if(fullshield > 0)
+		fullshield--
+		if(P == /obj/item/projectile/ion)
+			fullshield = 0
+			visible_message(span_boldwarning(span_orange("[P] breaks the shield!!.")))
+			icon_state = "overseer"
+		if(fullshield > 0)
+			visible_message(span_boldwarning(span_orange("[P] is absorbed by the shield!.")))
+		else
+			visible_message(span_boldwarning(span_orange("[P] breaks the shield!!.")))
+			icon_state = "overseer"
+	else
+		..()
+		shieldrage--
+		if(shieldrage == 0)
+			shieldrage = 4
+			fullshield = 4
+			visible_message(span_boldwarning(span_orange("The shield reactivates!!.")))
+			icon_state = "overseer_shield"
+
+/mob/living/simple_mob/humanoid/eclipse/head/tyrlead/do_special_attack(atom/A)
+	var/deathdir = rand(1,3)
+	switch(deathdir)
+		if(1)
+			teleport(A)
+		if(2)
+			bomb_chaos(A)
+		if(3)
+			bomb_lines(A)
+
+/mob/living/simple_mob/humanoid/eclipse/head/engineer //teshari
+	name = "Eclipse Chief Engineer"
+	icon_state = "engi"
+	icon_living = "engi"
+	health = 50
+	maxHealth = 50
+	melee_damage_lower = 60 //Durasteel fireaxe
+	melee_damage_upper = 60
+	projectiletype = null
+
+	loot_list = list(/obj/item/stock_parts/matter_bin/omni = 60,
+		/obj/item/material/twohanded/fireaxe  = 60,
+		/obj/item/storage/toolbox/syndicate/powertools = 60,
+		/obj/item/rig/ce = 60,
+		/obj/item/rig_module/teleporter = 5
+			)
+
+/mob/living/simple_mob/humanoid/eclipse/head/engineer/Initialize()
+	add_modifier(/datum/modifier/technomancer/haste, null, src) // tesh goes nyooooom
+	return ..()
+
+/mob/living/simple_mob/humanoid/eclipse/head/medical
+	name = "Eclipse Chief Medical Officer"
+	icon_state = "medi"
+	icon_living = "medi"
+	health = 150
+	maxHealth = 150
+	special_attack_cooldown = 5 SECONDS
+	special_attack_min_range = 0
+	special_attack_max_range = 7
+	melee_damage_lower = 15 //Durasteel fireaxe
+	melee_damage_upper = 15
+	attack_armor_pen = 60
+	projectiletype = null
+
+	loot_list = list(/obj/item/rig_module/atmos_shield  = 60,
+		/obj/item/rig_module/rad_shield/advanced = 60,
+		/obj/item/rig/baymed = 60,
+		/obj/item/ammo_casing/microbattery/medical/brute3 = 15,
+		/obj/item/ammo_casing/microbattery/medical/burn3 = 15,
+		/obj/item/ammo_casing/microbattery/medical/toxin3 = 15,
+		/obj/item/ammo_casing/microbattery/medical/omni3 = 5
+			)
+
+	var/cloaked_alpha = 45			// Lower = Harder to see.
+	var/cloak_cooldown = 5 SECONDS	// Amount of time needed to re-cloak after losing it.
+	var/last_uncloak = 0			// world.time
+	var/poison_type = REAGENT_ID_STOXIN
+	var/poison_per_bite = 8
+	var/poison_chance = 80
+
+/mob/living/simple_mob/humanoid/eclipse/head/medical/apply_melee_effects(var/atom/A)
+	if(isliving(A))
+		var/mob/living/L = A
+		if(L.reagents)
+			var/target_zone = pick(BP_TORSO,BP_TORSO,BP_TORSO,BP_L_LEG,BP_R_LEG,BP_L_ARM,BP_R_ARM,BP_HEAD)
+			if(L.can_inject(src, null, target_zone))
+				inject_poison(L, target_zone)
+
+/mob/living/simple_mob/humanoid/eclipse/head/medical/proc/inject_poison(mob/living/L, target_zone)
+	if(prob(poison_chance))
+		to_chat(L, span_warning("You feel a tiny prick."))
+		L.reagents.add_reagent(poison_type, poison_per_bite)
+
+/mob/living/simple_mob/humanoid/eclipse/head/medical/cloak()
+	if(cloaked)
+		return
+	animate(src, alpha = cloaked_alpha, time = 1 SECOND)
+	cloaked = TRUE
+
+
+/mob/living/simple_mob/humanoid/eclipse/head/medical/uncloak()
+	last_uncloak = world.time // This is assigned even if it isn't cloaked already, to 'reset' the timer if the spider is continously getting attacked.
+	if(!cloaked)
+		return
+	animate(src, alpha = initial(alpha), time = 1 SECOND)
+	cloaked = FALSE
+
+// Check if cloaking if possible.
+/mob/living/simple_mob/humanoid/eclipse/head/medical/proc/can_cloak()
+	if(stat)
+		return FALSE
+	if(last_uncloak + cloak_cooldown > world.time)
+		return FALSE
+
+	return TRUE
+
+// Called by things that break cloaks, like Technomancer wards.
+/mob/living/simple_mob/humanoid/eclipse/head/medical/break_cloak()
+	uncloak()
+
+
+/mob/living/simple_mob/humanoid/eclipse/head/medical/is_cloaked()
+	return cloaked
+
+
+// Cloaks the spider automatically, if possible.
+/mob/living/simple_mob/humanoid/eclipse/head/medical/handle_special()
+	if(!cloaked && can_cloak())
+		cloak()
+
+
+//special attack things
+/mob/living/simple_mob/humanoid/eclipse/head/scientist/do_special_attack(atom/A)
+	addtimer(CALLBACK(src, PROC_REF(summon_drones), A, 3, 0.5 SECONDS), 0.5 SECONDS, TIMER_DELETE_ME)
+
+/mob/living/simple_mob/humanoid/eclipse/proc/summon_drones(atom/target, var/amount, var/fire_delay)
+	if(!target)
+		return
+	var/deathdir = rand(1,3)
+	switch(deathdir)
+		if(1)
+			new /mob/living/simple_mob/mechanical/mining_drone/scavenger/eclipse (src.loc)
+		if(2)
+			new /mob/living/simple_mob/mechanical/hivebot/swarm/eclipse (src.loc)
+		if(3)
+			new /mob/living/simple_mob/mechanical/combat_drone/artillery
+	amount--
+	if(amount > 0)
+		addtimer(CALLBACK(src, PROC_REF(summon_drones), target, amount, fire_delay), fire_delay, TIMER_DELETE_ME)
+
+
+/mob/living/simple_mob/humanoid/eclipse/head/medical/do_special_attack(atom/A)
+	if(!cloaked)
+		teleport(A)
+
+/mob/living/simple_mob/humanoid/eclipse/proc/teleport(atom/A)
+	// Teleport attack.
+	if(!A)
+		to_chat(src, span_warning("There's nothing to teleport to."))
+		return FALSE
+
+	var/list/nearby_things = range(4, A)
+	var/list/valid_turfs = list()
+
+	// All this work to just go to a non-dense tile.
+	for(var/turf/potential_turf in nearby_things)
+		var/valid_turf = TRUE
+		if(potential_turf.density)
+			continue
+		for(var/atom/movable/AM in potential_turf)
+			if(AM.density)
+				valid_turf = FALSE
+		if(valid_turf)
+			valid_turfs.Add(potential_turf)
+
+	if(!(valid_turfs.len))
+		to_chat(src, span_warning("There wasn't an unoccupied spot to teleport to."))
+		return FALSE
+
+	var/turf/target_turf = pick(valid_turfs)
+	var/turf/T = get_turf(src)
+
+	var/datum/effect/effect/system/spark_spread/s1 = new /datum/effect/effect/system/spark_spread
+	s1.set_up(5, 1, T)
+	var/datum/effect/effect/system/spark_spread/s2 = new /datum/effect/effect/system/spark_spread
+	s2.set_up(5, 1, target_turf)
+
+
+	T.visible_message(span_warning("\The [src] vanishes!"))
+	s1.start()
+
+	forceMove(target_turf)
+	playsound(target_turf, 'sound/effects/phasein.ogg', 50, 1)
+	to_chat(src, span_notice("You teleport to \the [target_turf]."))
+
+	target_turf.visible_message(span_warning("\The [src] appears!"))
+	s2.start()
+
+/mob/living/simple_mob/humanoid/eclipse/head/cargomaster //Naga
+	name = "Eclipse Cargo Master"
+
+
+/mob/living/simple_mob/humanoid/eclipse/proc/bomb_lines(atom/A)
+	if(!A)
+		return
+>>>>>>> 1c07e54746 (Tyr Update 3 (#9688))
 	var/list/potential_targets = ai_holder.list_targets()
 	for(var/atom/entry in potential_targets)
 		if(istype(entry, /mob/living/simple_mob/humanoid/eclipse))
@@ -289,6 +475,7 @@
 				break
 			var/mob/target = pick(potential_targets)
 			potential_targets -= target
+<<<<<<< HEAD
 			secattack(target)
 
 /mob/living/simple_mob/humanoid/eclipse/head/captain/proc/secattack(atom/target)
@@ -345,17 +532,59 @@
 
 
 /mob/living/simple_mob/humanoid/eclipse/head/shade/do_special_attack(atom/A)
+=======
+			spawn_lines(target)
+
+
+/mob/living/simple_mob/humanoid/eclipse/proc/spawn_lines(atom/target)
+	var/alignment = rand(1,2)	// 1 for vertical, 2 for horizontal
+	var/list/line_range = list()
+	var/turf/T = get_turf(target)
+	line_range += T
+	for(var/i = 1, i <= 7, i++)
+		switch(alignment)
+			if(1)
+				if(T.x-i > 0)
+					line_range += locate(T.x-i, T.y-i, T.z)
+				if(T.x+i <= world.maxx)
+					line_range += locate(T.x+i, T.y+i, T.z)
+				if(T.y-i > 0)
+					line_range += locate(T.x+i, T.y-i, T.z)
+				if(T.y+i <= world.maxy)
+					line_range += locate(T.x-i, T.y+i, T.z)
+			if(2)
+				if(T.x-i > 0)
+					line_range += locate(T.x-i, T.y, T.z)
+				if(T.x+i <= world.maxx)
+					line_range += locate(T.x+i, T.y, T.z)
+				if(T.y-i > 0)
+					line_range += locate(T.x, T.y-i, T.z)
+				if(T.y+i <= world.maxy)
+					line_range += locate(T.x, T.y+i, T.z)
+	for(var/turf/dropspot in line_range)
+		new /obj/effect/artillery_attack(dropspot)
+
+
+/mob/living/simple_mob/humanoid/eclipse/proc/bomb_chaos(atom/A)
+	if(!A)
+		return
+>>>>>>> 1c07e54746 (Tyr Update 3 (#9688))
 	var/list/potential_targets = ai_holder.list_targets()
 	for(var/atom/entry in potential_targets)
 		if(istype(entry, /mob/living/simple_mob/humanoid/eclipse))
 			potential_targets -= entry
 	if(potential_targets.len)
+<<<<<<< HEAD
 		var/iteration = clamp(potential_targets.len, 1, 5)
+=======
+		var/iteration = clamp(potential_targets.len, 1, 3)
+>>>>>>> 1c07e54746 (Tyr Update 3 (#9688))
 		for(var/i = 0, i < iteration, i++)
 			if(!(potential_targets.len))
 				break
 			var/mob/target = pick(potential_targets)
 			potential_targets -= target
+<<<<<<< HEAD
 			bullethell(target)
 
 /mob/living/simple_mob/humanoid/eclipse/head/shade/proc/bullethell(atom/target)
@@ -366,3 +595,89 @@
 		var/turf/T = pick(bomb_range)
 		P.launch_projectile(target, BP_TORSO, src)
 		bomb_range -= T
+=======
+			chaos_lines(target)
+
+
+/mob/living/simple_mob/humanoid/eclipse/proc/chaos_lines(atom/target)
+	var/alignment = rand(1,2)
+	var/list/line_range = list()
+	var/turf/T = get_turf(target)
+	line_range += T
+	for(var/i = 1, i <= 7, i++)
+		switch(alignment)
+			if(1)
+				if(T.x-i > 0)
+					var/zed = rand(1,3)
+					line_range += locate(T.x+zed, T.y-i, T.z)
+				if(T.x+i <= world.maxx)
+					var/zed = rand(1,3)
+					line_range += locate(T.x+zed, T.y+i, T.z)
+				if(T.y-i > 0)
+					var/zed = rand(1,3)
+					line_range += locate(T.x+i, T.y+zed, T.z)
+				if(T.y+i <= world.maxy)
+					var/zed = rand(1,3)
+					line_range += locate(T.x-i, T.y+zed, T.z)
+			if(2)
+				if(T.x-i > 0)
+					var/zed = rand(1,3)
+					line_range += locate(T.x-i, T.y-zed, T.z)
+				if(T.x+i <= world.maxx)
+					var/zed = rand(1,3)
+					line_range += locate(T.x+i, T.y-zed, T.z)
+				if(T.y-i > 0)
+					var/zed = rand(1,3)
+					line_range += locate(T.x-zed, T.y-i, T.z)
+				if(T.y+i <= world.maxy)
+					var/zed = rand(1,3)
+					line_range += locate(T.x-zed, T.y+i, T.z)
+	for(var/turf/dropspot in line_range)
+		new /obj/effect/artillery_attack(dropspot)
+
+
+/obj/effect/artillery_attack
+	anchored = TRUE
+	density = FALSE
+	unacidable = TRUE
+	mouse_opacity = 0
+	icon = 'icons/effects/effects.dmi'
+	icon_state = "drop_marker"
+
+/obj/effect/artillery_attack/Initialize(mapload)
+	..()
+	return INITIALIZE_HINT_LATELOAD
+
+/obj/effect/artillery_attack/LateInitialize()
+	var/delay = rand(25, 30)
+	addtimer(CALLBACK(src, PROC_REF(spawner)), delay, TIMER_DELETE_ME)
+
+/obj/effect/artillery_attack/proc/spawner()
+	new /obj/effect/falling_effect/callstrike_bomb(src.loc)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), 0.7 SECONDS, TIMER_DELETE_ME)
+
+/obj/effect/falling_effect/callstrike_bomb
+	falling_type = /obj/effect/callstrike
+	crushing = FALSE
+
+/obj/effect/callstrike
+	anchored = TRUE
+	density = FALSE
+	mouse_opacity = 0
+	icon ='modular_chomp/icons/obj/guns/precursor/tyr.dmi'
+
+/obj/effect/callstrike/Initialize(mapload)
+	.=..()
+	icon_state = "arti"
+
+/obj/effect/callstrike/end_fall(var/crushing = FALSE)
+	for(var/mob/living/L in loc)
+		var/target_zone = ran_zone()
+		var/blocked = L.run_armor_check(target_zone, "laser")
+		var/soaked = L.get_armor_soak(target_zone, "laser")
+
+		if(!L.apply_damage(70, BURN, target_zone, blocked, soaked))
+			break
+	playsound(src, 'sound/effects/clang2.ogg', 50, 1)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), src), 0.25 SECONDS, TIMER_DELETE_ME)
+>>>>>>> 1c07e54746 (Tyr Update 3 (#9688))
