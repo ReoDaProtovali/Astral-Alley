@@ -19,8 +19,13 @@
 #include "gateway/BaseBlep.dmm"
 #include "gateway/maddnesslab.dmm"
 #include "gateway/snowfield.dmm"
+<<<<<<< HEAD:maps/southern_cross/submaps/_southern_cross_submaps.dm
 #include "gateway/hiddeneclipse.dmm"
 #include "virtual_reality/constructVR.dmm"
+=======
+// #include "gateway/hiddeneclipse.dmm" //needs remaping and energy is low.
+#include "../../virtual_reality/constructVR.dmm"
+>>>>>>> 1c07e54746 (Tyr Update 3 (#9688)):modular_chomp/maps/southern_cross/submaps/_southern_cross_submaps.dm
 #endif
 
 
@@ -78,14 +83,14 @@
 	desc = "Asteroid base surrounded by carp"
 	mappath = 'gateway/carpfarm.dmm'
 	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
-
+/*
 #include "gateway/hiddeneclipse.dm"
 /datum/map_template/sc_lateload/gateway/hiddeneclipse
 	name = "Distant Mining Facility"
 	desc = "Asteroid mining facility, lost to unknown horrors"
 	mappath = 'gateway/hiddeneclipse.dmm'
 	associated_map_datum = /datum/map_z_level/sc_lateload/gateway_destination
-
+*/
 //VR maps go here, tell me if theres a better way to load this
 // #include "virtual_reality/constructVR.dm" Virtual Reality areas included by default.
 /datum/map_template/sc_lateload/vr_world
