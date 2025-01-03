@@ -21,12 +21,18 @@
 
 	// Movespeed delay based on movement mode
 	switch(m_intent)
-		if("run")
+		if(I_RUN)
 			if(drowsyness > 0)
 				. += 6
+<<<<<<< HEAD
 			. += CONFIG_GET(number/run_speed) // CHOMPEdit
 		if("walk")
 			. += CONFIG_GET(number/walk_speed) // CHOMPEdit
+=======
+			. += CONFIG_GET(number/run_speed)
+		if(I_WALK)
+			. += CONFIG_GET(number/walk_speed)
+>>>>>>> 16d5b45148 ([MIRROR] intent cleanup (#9778))
 
 /client/proc/client_dir(input, direction=-1)
 	return turn(input, direction*dir2angle(dir))
@@ -274,10 +280,10 @@
 			//drunk wheelchair driving
 			else if(my_mob.confused)
 				switch(my_mob.m_intent)
-					if("run")
+					if(I_RUN)
 						if(prob(50))
 							direct = turn(direct, pick(90, -90))
-					if("walk")
+					if(I_WALK)
 						if(prob(25))
 							direct = turn(direct, pick(90, -90))
 			total_delay += 3
@@ -289,11 +295,11 @@
 	// Confused direction randomization
 	if(my_mob.confused)
 		switch(my_mob.m_intent)
-			if("run")
+			if(I_RUN)
 				if(prob(75))
 					direct = turn(direct, pick(90, -90))
 					n = get_step(my_mob, direct)
-			if("walk")
+			if(I_WALK)
 				if(prob(25))
 					direct = turn(direct, pick(90, -90))
 					n = get_step(my_mob, direct)

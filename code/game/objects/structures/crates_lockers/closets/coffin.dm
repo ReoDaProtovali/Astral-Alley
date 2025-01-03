@@ -42,8 +42,13 @@
 		add_fingerprint(M)
 		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
+<<<<<<< HEAD
 			if(H.m_intent == "walk")
 				to_chat(H, "<span class='warning'>You stop at the edge of \the [src.name].</span>")
+=======
+			if(H.m_intent == I_WALK)
+				to_chat(H, span_warning("You stop at the edge of \the [src.name]."))
+>>>>>>> 16d5b45148 ([MIRROR] intent cleanup (#9778))
 				return FALSE
 			else
 				to_chat(H, "<span class='warning'>You fall into \the [src.name]!</span>")

@@ -207,8 +207,13 @@
 /obj/item/glass_jar/fish/afterattack(var/atom/A, var/mob/user, var/proximity)
 	if(!filled)
 		if(istype(A, /obj/structure/sink) || istype(A, /turf/simulated/floor/water))
+<<<<<<< HEAD
 			if(contains && user.a_intent == "help")
 				to_chat(user, "<span class='warning'>That probably isn't the best idea.</span>")
+=======
+			if(contains && user.a_intent == I_HELP)
+				to_chat(user, span_warning("That probably isn't the best idea."))
+>>>>>>> 16d5b45148 ([MIRROR] intent cleanup (#9778))
 				return
 
 			to_chat(user, "<span class='notice'>You fill \the [src] with water!</span>")
@@ -221,8 +226,13 @@
 /obj/item/glass_jar/fish/attack_self(var/mob/user)
 	if(filled)
 		if(contains == JAR_ANIMAL)
+<<<<<<< HEAD
 			if(user.a_intent == "help")
 				to_chat(user, "<span class='notice'>Maybe you shouldn't empty the water...</span>")
+=======
+			if(user.a_intent == I_HELP)
+				to_chat(user, span_notice("Maybe you shouldn't empty the water..."))
+>>>>>>> 16d5b45148 ([MIRROR] intent cleanup (#9778))
 				return
 
 			else

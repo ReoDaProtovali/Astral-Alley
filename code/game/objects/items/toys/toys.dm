@@ -257,8 +257,13 @@
 		return
 	if((ishuman(H))) //i guess carp and shit shouldn't set them off
 		var/mob/living/carbon/M = H
+<<<<<<< HEAD
 		if(M.m_intent == "run")
 			to_chat(M, "<span class='warning'>You step on the snap pop!</span>")
+=======
+		if(M.m_intent == I_RUN)
+			to_chat(M, span_warning("You step on the snap pop!"))
+>>>>>>> 16d5b45148 ([MIRROR] intent cleanup (#9778))
 
 			var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
 			s.set_up(2, 0, src)

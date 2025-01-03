@@ -55,8 +55,13 @@
 		src.pixel_y = rand(0, 16)
 	..()
 
+<<<<<<< HEAD
 /obj/item/weapon/tool/screwdriver/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
 	if(!istype(M) || user.a_intent == "help")
+=======
+/obj/item/tool/screwdriver/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
+	if(!istype(M) || user.a_intent == I_HELP)
+>>>>>>> 16d5b45148 ([MIRROR] intent cleanup (#9778))
 		return ..()
 	if(user.zone_sel.selecting != O_EYES && user.zone_sel.selecting != BP_HEAD)
 		return ..()

@@ -30,8 +30,13 @@
 		to_chat(user, "<span class='warning'>They don't seem to have DNA!</span>")
 		return
 
+<<<<<<< HEAD
 	if(user != H && H.a_intent != "help" && !H.lying)
 		user.visible_message("<span class='danger'>\The [user] tries to take a swab sample from \the [H], but they move away.</span>")
+=======
+	if(user != H && H.a_intent != I_HELP && !H.lying)
+		user.visible_message(span_danger("\The [user] tries to take a swab sample from \the [H], but they move away."))
+>>>>>>> 16d5b45148 ([MIRROR] intent cleanup (#9778))
 		return
 
 	if(user.zone_sel.selecting == O_MOUTH)

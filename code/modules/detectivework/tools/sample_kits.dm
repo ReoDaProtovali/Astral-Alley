@@ -90,8 +90,13 @@
 		to_chat(user, "<span class='warning'>\The [H] is wearing gloves.</span>")
 		return 1
 
+<<<<<<< HEAD
 	if(user != H && H.a_intent != "help" && !H.lying)
 		user.visible_message("<span class='danger'>\The [user] tries to take prints from \the [H], but they move away.</span>")
+=======
+	if(user != H && H.a_intent != I_HELP && !H.lying)
+		user.visible_message(span_danger("\The [user] tries to take prints from \the [H], but they move away."))
+>>>>>>> 16d5b45148 ([MIRROR] intent cleanup (#9778))
 		return 1
 
 	if(user.zone_sel.selecting == "r_hand" || user.zone_sel.selecting == "l_hand")
