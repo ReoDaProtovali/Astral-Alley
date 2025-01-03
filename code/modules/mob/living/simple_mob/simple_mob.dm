@@ -283,7 +283,7 @@
 			. = 1
 		. *= purge
 
-	if(m_intent == "walk")
+	if(m_intent == I_WALK)
 		. *= 1.5
 
 	// VOREStation Edit Start
