@@ -656,7 +656,23 @@ Medium Weapons
 	allowed_magazines = list(/obj/item/ammo_magazine/medium,/obj/item/ammo_magazine/medium_small)
 	magazine_type = /obj/item/ammo_magazine/medium
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/automatic/serdy/fal
+=======
+/obj/item/gun/projectile/automatic/serdy/t12
+	caliber = "medium"
+	projectile_type = /obj/item/projectile/bullet/rifle/a762
+	allowed_magazines = list(/obj/item/ammo_magazine/medium,/obj/item/ammo_magazine/medium_small)
+	magazine_type = /obj/item/ammo_magazine/medium
+
+/obj/item/gun/projectile/automatic/serdy/sr25c
+	caliber = "medium"
+	projectile_type = /obj/item/projectile/bullet/rifle/a762
+	allowed_magazines = list(/obj/item/ammo_magazine/medium,/obj/item/ammo_magazine/medium_small)
+	magazine_type = /obj/item/ammo_magazine/medium
+
+/obj/item/gun/projectile/automatic/serdy/fal
+>>>>>>> 4144b85008 (Ammo fixes (#9780))
 	caliber = "medium"
 	projectile_type = /obj/item/projectile/bullet/rifle/a762
 	allowed_magazines = list(/obj/item/ammo_magazine/medium_small)
