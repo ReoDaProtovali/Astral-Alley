@@ -9,8 +9,13 @@
 	var/spell_light_intensity = 2
 	var/spell_light_range = 3
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/modifier/New()
 	..()
+=======
+/obj/item/spell/modifier/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	set_light(spell_light_range, spell_light_intensity, l_color = light_color)
 
 /obj/item/weapon/spell/modifier/on_melee_cast(atom/hit_atom, mob/user)

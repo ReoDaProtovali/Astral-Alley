@@ -11,8 +11,13 @@
 	var/obj/item/weapon/inserted_spell/inserting = null
 	var/allow_stacking = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/insert/New()
 	..()
+=======
+/obj/item/spell/insert/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	set_light(spell_light_range, spell_light_intensity, l_color = light_color)
 
 /obj/item/weapon/inserted_spell

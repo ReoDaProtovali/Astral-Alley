@@ -77,9 +77,15 @@
 	center_of_mass_x = 16 //CHOMPEdit
 	center_of_mass_y = 8 //CHOMPEdit
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb/Initialize()
 		..()
 		reagents.add_reagent("dr_gibb", 30)
+=======
+/obj/item/reagent_containers/food/drinks/cans/dr_gibb/Initialize()
+	. = ..()
+	reagents.add_reagent(REAGENT_ID_DRGIBB, 30)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb_diet
 	name = "\improper Diet Dr. Gibb"
@@ -89,9 +95,15 @@
 	center_of_mass_x = 16 //CHOMPEdit
 	center_of_mass_y = 8 //CHOMPEdit
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/cans/dr_gibb_diet/Initialize()
 		..()
 		reagents.add_reagent("diet_dr_gibb", 30)
+=======
+/obj/item/reagent_containers/food/drinks/cans/dr_gibb_diet/Initialize()
+	. = ..()
+	reagents.add_reagent(REAGENT_ID_DIETDRGIBB, 30)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 
 /obj/item/weapon/reagent_containers/food/drinks/cans/starkist
 	name = "\improper Star-kist"

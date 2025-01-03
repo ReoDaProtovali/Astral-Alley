@@ -422,7 +422,12 @@
 	charge_amount = 100
 	var/mob/living/carbon/human/charger
 
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/carbon/human/species/station/protean/protean_rig.dm
 /obj/item/weapon/cell/protean/Initialize() //ChompEDIT New --> Initialize
+=======
+/obj/item/cell/protean/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773)):code/modules/mob/living/carbon/human/species/station/protean_vr/protean_rig.dm
 	charge = maxcharge
 	update_icon()
 	addtimer(CALLBACK(src, PROC_REF(search_for_protean)), 60)

@@ -184,8 +184,13 @@
 					to_chat(user, "<span class='notice'>You repaired \the [src] frame.</span>")
 				else
 					assembly.state = 1
+<<<<<<< HEAD
 					to_chat(user, "<span class='notice'>You cut \the [src] free from the wall.</span>")
 					new /obj/item/stack/cable_coil(src.loc, length=2)
+=======
+					to_chat(user, span_notice("You cut \the [src] free from the wall."))
+					new /obj/item/stack/cable_coil(src.loc, 2)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 				assembly = null //so qdel doesn't eat it.
 			qdel(src)
 

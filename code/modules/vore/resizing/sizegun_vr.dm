@@ -24,10 +24,17 @@
 			fire_sound		= 'sound/weapons/pulse3.ogg'
 		))
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/energy/sizegun/New()
 	..()
 	verbs += /obj/item/weapon/gun/energy/sizegun/proc/select_size
 	verbs += /obj/item/weapon/gun/energy/sizegun/proc/spin_dial
+=======
+/obj/item/gun/energy/sizegun/Initialize()
+	. = ..()
+	verbs += /obj/item/gun/energy/sizegun/proc/select_size
+	verbs += /obj/item/gun/energy/sizegun/proc/spin_dial
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 
 /obj/item/weapon/gun/energy/sizegun/attack_self(mob/user)
 	. = ..()

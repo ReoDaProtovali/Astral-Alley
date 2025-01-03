@@ -62,8 +62,13 @@
 		desc = "A powdered form of what appears to be [R.name]. There's about [reagents.total_volume] units here."
 	return ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/powder/Initialize()
 	..()
+=======
+/obj/item/reagent_containers/powder/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	get_appearance()
 
 /obj/item/weapon/reagent_containers/powder/proc/get_appearance()

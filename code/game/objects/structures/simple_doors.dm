@@ -241,6 +241,7 @@
 	SSradiation.radiate(src, round(material.radioactivity/3))
 
 /obj/structure/simple_door/iron/Initialize(mapload,var/material_name)
+<<<<<<< HEAD
 	..(mapload, material_name || "iron")
 
 /obj/structure/simple_door/silver/Initialize(mapload,var/material_name)
@@ -260,22 +261,50 @@
 
 /obj/structure/simple_door/diamond/Initialize(mapload,var/material_name)
 	..(mapload, material_name || "diamond")
+=======
+	. = ..(mapload, material_name || MAT_IRON)
+
+/obj/structure/simple_door/silver/Initialize(mapload,var/material_name)
+	. = ..(mapload, material_name || MAT_SILVER)
+
+/obj/structure/simple_door/gold/Initialize(mapload,var/material_name)
+	. = ..(mapload, material_name || MAT_GOLD)
+
+/obj/structure/simple_door/uranium/Initialize(mapload,var/material_name)
+	. = ..(mapload, material_name || MAT_URANIUM)
+
+/obj/structure/simple_door/sandstone/Initialize(mapload,var/material_name)
+	. = ..(mapload, material_name || MAT_SANDSTONE)
+
+/obj/structure/simple_door/phoron/Initialize(mapload,var/material_name)
+	. = ..(mapload, material_name || MAT_PHORON)
+
+/obj/structure/simple_door/diamond/Initialize(mapload,var/material_name)
+	. = ..(mapload, material_name || MAT_DIAMOND)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 
 /obj/structure/simple_door/wood/Initialize(mapload,var/material_name)
-	..(mapload, material_name || MAT_WOOD)
+	. = ..(mapload, material_name || MAT_WOOD)
 	knock_sound = 'sound/machines/door/knock_wood.wav'
 
 /obj/structure/simple_door/hardwood/Initialize(mapload,var/material_name)
-	..(mapload, material_name || MAT_HARDWOOD)
+	. = ..(mapload, material_name || MAT_HARDWOOD)
 
 /obj/structure/simple_door/sifwood/Initialize(mapload,var/material_name)
-	..(mapload, material_name || MAT_SIFWOOD)
+	. = ..(mapload, material_name || MAT_SIFWOOD)
 
 /obj/structure/simple_door/resin/Initialize(mapload,var/material_name)
+<<<<<<< HEAD
 	..(mapload, material_name || "resin")
 
 /obj/structure/simple_door/cult/Initialize(mapload,var/material_name)
 	..(mapload, material_name || "cult")
+=======
+	. = ..(mapload, material_name || MAT_RESIN)
+
+/obj/structure/simple_door/cult/Initialize(mapload,var/material_name)
+	. = ..(mapload, material_name || MAT_CULT)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 
 /obj/structure/simple_door/cult/TryToSwitchState(atom/user)
 	if(isliving(user))

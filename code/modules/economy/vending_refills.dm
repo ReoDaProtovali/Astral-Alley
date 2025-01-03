@@ -26,8 +26,13 @@
 			return TRUE
 	return FALSE
 
+<<<<<<< HEAD
 /obj/item/weapon/refill_cartridge/autoname/Initialize()
 	..()
+=======
+/obj/item/refill_cartridge/autoname/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	if(refill_type && ispath(refill_type))
 		var/atom/tmp = refill_type
 		src.name = "[initial(tmp.name)] refill cartridge"

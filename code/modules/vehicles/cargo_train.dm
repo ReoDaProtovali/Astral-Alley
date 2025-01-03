@@ -42,9 +42,15 @@
 //-------------------------------------------
 // Standard procs
 //-------------------------------------------
+<<<<<<< HEAD
 /obj/vehicle/train/engine/New()
 	..()
 	cell = new /obj/item/weapon/cell/high(src)
+=======
+/obj/vehicle/train/engine/Initialize()
+	. = ..()
+	cell = new /obj/item/cell/high(src)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	key = new key_type(src)
 	var/image/I = new(icon = 'icons/obj/vehicles_vr.dmi', icon_state = "cargo_engine_overlay", layer = src.layer + 0.2) //over mobs		//VOREStation edit
 	add_overlay(I)

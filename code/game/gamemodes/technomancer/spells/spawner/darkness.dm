@@ -18,8 +18,13 @@
 		adjust_instability(4)
 		..()
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/spawner/darkness/New()
 	..()
+=======
+/obj/item/spell/spawner/darkness/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	set_light(6, -20, l_color = "#FFFFFF")
 
 /obj/effect/temporary_effect/darkness

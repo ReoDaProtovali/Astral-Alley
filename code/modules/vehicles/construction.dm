@@ -16,8 +16,13 @@
 	var/build_stage = 0
 	var/obj/item/weapon/cell/cell = null
 
+<<<<<<< HEAD
 /obj/item/weapon/vehicle_assembly/New()
 	..()
+=======
+/obj/item/vehicle_assembly/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	icon_state = "[initial(icon_state)][build_stage]"
 	update_icon()
 
