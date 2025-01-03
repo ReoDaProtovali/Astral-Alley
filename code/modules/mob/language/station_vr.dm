@@ -109,12 +109,22 @@
 	speech_verb = "mars"
 	ask_verb = "mars"
 	exclaim_verb = "MARS"
+<<<<<<< HEAD
 	colour = "shadekin"
 	key = "9"
+=======
+	key = "9"
+	colour = "marish"
+	syllables = list("mar", "mwrrr", "maaAr", "'aarrr", "wrurrl", "mmar")
+>>>>>>> e707763457 (Reverts Marish Changes (#9753))
 	machine_understands = FALSE
 	syllables = list("mar", "mwrrr", "maaAr", "'aarrr", "wrurrl", "mmar")  // Placeholder syllables until someone else has a better idea!
 
+<<<<<<< HEAD
 /datum/language/slavic //CHOMP reAdd this language
+=======
+/datum/language/slavic
+>>>>>>> e707763457 (Reverts Marish Changes (#9753))
 	name = LANGUAGE_SLAVIC
 	desc = "The official language of the Independent Colonial Confederation of Gilgamesh, originally established in 2122 by the short-lived United Slavic Confederation on Earth."
 	speech_verb = "govorit" // All Russian for "says" "asks" and "shouts". Mostly here as a joke.
