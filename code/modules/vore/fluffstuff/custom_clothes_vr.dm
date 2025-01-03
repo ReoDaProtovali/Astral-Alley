@@ -744,6 +744,7 @@
 
 	storage_slots = 9
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/belt/utility/fluff/vulpine/New()
 	..()
 	new /obj/item/weapon/tool/screwdriver(src)
@@ -752,6 +753,16 @@
 	new /obj/item/weapon/tool/crowbar(src)
 	new /obj/item/weapon/tool/wirecutters(src)
 	new /obj/item/device/multitool(src)
+=======
+/obj/item/storage/belt/utility/fluff/vulpine/Initialize()
+	. = ..()
+	new /obj/item/tool/screwdriver(src)
+	new /obj/item/tool/wrench(src)
+	new /obj/item/weldingtool(src)
+	new /obj/item/tool/crowbar(src)
+	new /obj/item/tool/wirecutters(src)
+	new /obj/item/multitool(src)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	new /obj/item/stack/cable_coil(src, 30, "red")
 
 // molenar:Giliana Gamish

@@ -169,7 +169,12 @@
 		/obj/item/capture_crystal
 	)
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/backpack/sport/hyd/catchemall/Initialize() //gotta have your starter 'mon too (or an improved way to catch one)
 	..()
+=======
+/obj/item/storage/backpack/sport/hyd/catchemall/Initialize() //gotta have your starter 'mon too (or an improved way to catch one)
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	var/path = pick(subtypesof(/obj/item/capture_crystal))
 	contents += new path()

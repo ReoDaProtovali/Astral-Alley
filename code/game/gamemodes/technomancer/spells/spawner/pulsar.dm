@@ -13,8 +13,13 @@
 	aspect = ASPECT_EMP
 	spawner_type = /obj/effect/temporary_effect/pulse/pulsar
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/spawner/pulsar/New()
 	..()
+=======
+/obj/item/spell/spawner/pulsar/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	set_light(3, 2, l_color = "#2ECCFA")
 
 /obj/item/weapon/spell/spawner/pulsar/on_ranged_cast(atom/hit_atom, mob/user)
@@ -44,7 +49,6 @@
 	. = ..()
 
 /obj/effect/temporary_effect/pulse/proc/pulse_loop()
-	set waitfor = FALSE
 
 	if(pulses_remaining > 0)
 		pulsetimer = addtimer(CALLBACK(src, PROC_REF(pulse_loop)), pulse_delay, TIMER_STOPPABLE)

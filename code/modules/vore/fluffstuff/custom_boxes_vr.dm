@@ -100,8 +100,13 @@
 	name = "Ivy's Courier"
 	desc = "A bag resembling something used by college students. Contains items for ''MooMoo''."
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/backpack/messenger/sec/fluff/ivymoomoo/New()
 	..()
+=======
+/obj/item/storage/backpack/messenger/sec/fluff/ivymoomoo/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	new /obj/item/clothing/head/beretg(src)
 	new /obj/item/device/fluff/id_kit_ivy(src)
 	new /obj/item/weapon/storage/fancy/cigarettes/dromedaryco(src)
@@ -140,8 +145,13 @@
 	slowdown = 0
 	can_tilt = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/backpack/dufflebag/sec/fluff/joanrisu/New()
 	..()
+=======
+/obj/item/storage/backpack/dufflebag/sec/fluff/joanrisu/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	new /obj/item/clothing/accessory/holster/hip(src)
 	new /obj/item/clothing/suit/storage/fluff/modernfedcoat(src)
 	new /obj/item/clothing/head/caphat/formal/fedcover(src)
@@ -157,8 +167,13 @@
 	desc = "A duffle bag Katarina uses to carry her tools."
 	slowdown = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/backpack/dufflebag/sec/fluff/katarina/New()
 	..()
+=======
+/obj/item/storage/backpack/dufflebag/sec/fluff/katarina/Initialize()
+	. = ..()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	new /obj/item/clothing/accessory/holster/hip(src)
 	new /obj/item/clothing/suit/storage/fluff/fedcoat(src)
 	new /obj/item/clothing/suit/armor/det_suit(src)

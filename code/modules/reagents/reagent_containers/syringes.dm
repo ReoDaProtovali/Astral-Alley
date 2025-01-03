@@ -389,10 +389,17 @@
 	name = "Syringe (anabolic steroids)"
 	desc = "Contains drugs for muscle growth."
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/syringe/steroid/Initialize()
 	..()
 	//reagents.add_reagent("adrenaline",5) //VOREStation Edit - No thanks.
 	reagents.add_reagent("hyperzine",10)
+=======
+/obj/item/reagent_containers/syringe/steroid/Initialize()
+	. = ..()
+	//reagents.add_reagent(REAGENT_ID_ADRENALINE,5) //VOREStation Edit - No thanks.
+	reagents.add_reagent(REAGENT_ID_HYPERZINE,10)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 
 /obj/item/weapon/reagent_containers/syringe/proc/dirty(var/mob/living/carbon/human/target, var/obj/item/organ/external/eo)
 	if(!ishuman(loc))

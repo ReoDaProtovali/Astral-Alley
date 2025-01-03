@@ -455,8 +455,8 @@
 		icon_state = "pod_g"
 
 
-/obj/machinery/clonepod/full/New()
-	..()
+/obj/machinery/clonepod/full/Initialize()
+	. = ..()
 	for(var/i = 1 to container_limit)
 		containers += new /obj/item/weapon/reagent_containers/glass/bottle/biomass(src)
 

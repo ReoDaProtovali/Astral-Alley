@@ -306,9 +306,15 @@
 	filling_color = "#FDFFD1"
 	volume = 12
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/egg/teshari/New()
 	..()
 	reagents.add_reagent("egg", 10)
+=======
+/obj/item/reagent_containers/food/snacks/egg/teshari/Initialize()
+	. = ..()
+	reagents.add_reagent(REAGENT_ID_EGG, 10)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/teshari/tesh2
@@ -409,9 +415,15 @@
 	filling_color = "#FDFFD1"
 	volume = 12
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/egg/roiz/New()
 	..()
 	reagents.add_reagent("egg", 9)
+=======
+/obj/item/reagent_containers/food/snacks/egg/roiz/Initialize()
+	. = ..()
+	reagents.add_reagent(REAGENT_ID_EGG, 9)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/egg/roiz/attackby(obj/item/weapon/W as obj, mob/user as mob)
@@ -439,9 +451,15 @@
 	icon_state = "friedegg"
 	volume = 12
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/friedegg/roiz/New()
 	..()
 	reagents.add_reagent("protein", 9)
+=======
+/obj/item/reagent_containers/food/snacks/friedegg/roiz/Initialize()
+	. = ..()
+	reagents.add_reagent(REAGENT_ID_PROTEIN, 9)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/boiledegg/roiz
@@ -451,9 +469,15 @@
 	icon_state = "egg_roiz"
 	volume = 12
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/boiledegg/roiz/New()
 	..()
 	reagents.add_reagent("protein", 6)
+=======
+/obj/item/reagent_containers/food/snacks/boiledegg/roiz/Initialize()
+	. = ..()
+	reagents.add_reagent(REAGENT_ID_PROTEIN, 6)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	bitesize = 2
 
 /obj/item/weapon/reagent_containers/food/snacks/chocolateegg/roiz
@@ -466,11 +490,19 @@
 	nutriment_desc = list("chocolate" = 5)
 	volume = 18
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/chocolateegg/roiz/New()
 	..()
 	reagents.add_reagent("sugar", 6)
 	reagents.add_reagent("coco", 6)
 	reagents.add_reagent("milk", 2)
+=======
+/obj/item/reagent_containers/food/snacks/chocolateegg/roiz/Initialize()
+	. = ..()
+	reagents.add_reagent(REAGENT_ID_SUGAR, 6)
+	reagents.add_reagent(REAGENT_ID_COCO, 6)
+	reagents.add_reagent(REAGENT_ID_MILK, 2)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	bitesize = 2
 
 //SilverTalisman: Evian

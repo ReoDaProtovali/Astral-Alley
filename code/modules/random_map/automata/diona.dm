@@ -1,5 +1,9 @@
 /turf/simulated/wall/diona/Initialize(mapload)
+<<<<<<< HEAD
 	..(mapload, "biomass")
+=======
+	. = ..(mapload, MAT_BIOMASS)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 
 /turf/simulated/wall/diona/attack_generic(var/mob/user, var/damage, var/attack_message)
 	if(istype(user, /mob/living/carbon/alien/diona))

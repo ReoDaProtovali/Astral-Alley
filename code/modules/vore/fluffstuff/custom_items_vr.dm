@@ -532,8 +532,8 @@
 	var/client/owner_c = null //They'll be dead when we message them probably.
 	var/state = 0 //0 - New, 1 - Paired, 2 - Breaking, 3 - Broken (same as iconstates)
 
-/obj/item/clothing/accessory/collar/khcrystal/New()
-	..()
+/obj/item/clothing/accessory/collar/khcrystal/Initialize()
+	. = ..()
 	update_state(0)
 
 /obj/item/clothing/accessory/collar/khcrystal/Destroy() //Waitwaitwait
@@ -618,9 +618,15 @@
 	max_storage_space = ITEMSIZE_COST_SMALL * 2
 	w_class = ITEMSIZE_SMALL
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/box/khcrystal/New()
 	..()
 	new /obj/item/weapon/paper/khcrystal_manual(src)
+=======
+/obj/item/storage/box/khcrystal/Initialize()
+	. = ..()
+	new /obj/item/paper/khcrystal_manual(src)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	new /obj/item/clothing/accessory/collar/khcrystal(src)
 
 /obj/item/weapon/cane/fluff
@@ -902,8 +908,13 @@
 				slot_r_hand_str = 'icons/vore/custom_items_right_hand_vr.dmi',
 				)
 
+<<<<<<< HEAD
 /obj/item/weapon/material/twohanded/fluff/New(var/newloc)
 	..(newloc," ") //See materials_vr_dmi for more information as to why this is a blank space.
+=======
+/obj/item/material/twohanded/fluff/Initialize(var/newloc)
+	. = ..(newloc," ") //See materials_vr_dmi for more information as to why this is a blank space.
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 
 //jacknoir413:Areax Third
 /obj/item/weapon/melee/baton/fluff/stunstaff
@@ -926,11 +937,16 @@
 	var/wielded = 0
 	var/base_name = "stunstaff"
 
+<<<<<<< HEAD
 /obj/item/weapon/melee/baton/fluff/stunstaff/New()
 	..()
 	bcell = new/obj/item/weapon/cell/device/weapon(src)
+=======
+/obj/item/melee/baton/fluff/stunstaff/Initialize()
+	. = ..()
+	bcell = new/obj/item/cell/device/weapon(src)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	update_icon()
-	return
 
 /obj/item/weapon/melee/baton/fluff/stunstaff/update_held_icon()
 	var/mob/living/M = loc
@@ -996,9 +1012,15 @@
 	max_w_class = ITEMSIZE_HUGE
 	max_storage_space = 16
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/backpack/fluff/stunstaff/New()
 	..()
 	new /obj/item/weapon/melee/baton/fluff/stunstaff(src)
+=======
+/obj/item/storage/backpack/fluff/stunstaff/Initialize()
+	. = ..()
+	new /obj/item/melee/baton/fluff/stunstaff(src)
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 
 
 /*
@@ -1349,12 +1371,16 @@ End CHOMP Removal*/
 	w_class = ITEMSIZE_TINY
 	starts_with = list(/obj/item/clothing/mask/smokable/cigarette = 7)
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/fancy/fluff/charlotte/New()
+=======
+/obj/item/storage/fancy/fluff/charlotte/Initialize()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	if(!open_state)
 		open_state = "[initial(icon_state)]0"
 	if(!closed_state)
 		closed_state = "[initial(icon_state)]"
-	..()
+	. = ..()
 
 /obj/item/weapon/storage/fancy/fluff/charlotte/update_icon()
 	cut_overlays()
@@ -1569,8 +1595,13 @@ End CHOMP Removal*/
 	..()
 	icon_state = "ceph_d6[result]"
 
+<<<<<<< HEAD
 /obj/item/weapon/dice/loaded/ceph/New()
+=======
+/obj/item/dice/loaded/ceph/Initialize()
+>>>>>>> a3ac1d26d7 ([MIRROR] bunch of inits without return and a few easy new to init (#9773))
 	icon_state = "ceph_d6[rand(1,sides)]"
+	. = ..()
 
 
 //abc123: Mira Nesyne
