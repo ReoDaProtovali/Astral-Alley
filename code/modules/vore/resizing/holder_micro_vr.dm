@@ -10,7 +10,12 @@
 	item_icons = null // No in-hand sprites (for now, anyway, we could totally add some)
 	pixel_y = 0		  // Override value from parent.
 
+<<<<<<< HEAD
 /obj/item/weapon/holder/examine(mob/user)
+=======
+/obj/item/holder/examine(mob/user)
+	SHOULD_CALL_PARENT(FALSE)
+>>>>>>> 6e330e2acf ([MIRROR] Adds SHOULD_CALL_PARENT to examine (#9775))
 	. = list()
 	for(var/mob/living/M in contents)
 		. += M.examine(user)
