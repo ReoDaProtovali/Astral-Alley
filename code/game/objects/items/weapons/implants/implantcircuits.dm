@@ -35,8 +35,14 @@
 /obj/item/weapon/implant/integrated_circuit/emp_act(severity)
 	IC.emp_act(severity)
 
+<<<<<<< HEAD
 /obj/item/weapon/implant/integrated_circuit/examine(mob/user)
 	return IC.examine(user)
+=======
+/obj/item/implant/integrated_circuit/examine(mob/user)
+	. = ..()
+	. += IC.examine(user)
+>>>>>>> 6e330e2acf ([MIRROR] Adds SHOULD_CALL_PARENT to examine (#9775))
 
 /obj/item/weapon/implant/integrated_circuit/attackby(var/obj/item/O, var/mob/user)
 	if(O.has_tool_quality(TOOL_CROWBAR) || istype(O, /obj/item/device/integrated_electronics) || istype(O, /obj/item/integrated_circuit) || O.has_tool_quality(TOOL_SCREWDRIVER) || istype(O, /obj/item/weapon/cell/device) )

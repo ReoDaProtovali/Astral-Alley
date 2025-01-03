@@ -126,7 +126,12 @@
 	..()
 	flags |= NOBLUDGEON
 
+<<<<<<< HEAD
 /obj/item/weapon/ducttape/examine(mob/user)
+=======
+/obj/item/ducttape/examine(mob/user)
+	SHOULD_CALL_PARENT(FALSE)
+>>>>>>> 6e330e2acf ([MIRROR] Adds SHOULD_CALL_PARENT to examine (#9775))
 	return stuck.examine(user)
 
 /obj/item/weapon/ducttape/proc/attach(var/obj/item/weapon/W)
