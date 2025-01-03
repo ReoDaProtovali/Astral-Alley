@@ -132,8 +132,13 @@
 	if(!ticker || !SSmedia_tracks.lobby_tracks.len || !media)	return
 	if(is_preference_enabled(/datum/client_preference/play_lobby_music))
 		var/datum/track/T = pick(SSmedia_tracks.lobby_tracks)
+<<<<<<< HEAD
 		media.push_music(T.url, world.time, 0.85)
 		to_chat(src,"<span class='notice'>Lobby music: <b>[T.title]</b> by <b>[T.artist]</b>.</span>")
+=======
+		media.push_music(T.url, world.time, 0.35)
+		to_chat(src,span_notice("Lobby music: " + span_bold("[T.title]") + " by " + span_bold("[T.artist]") + "."))
+>>>>>>> 55bedc6024 ([MIRROR] reduce lobbxy music intensity (#9771))
 
 /proc/get_sfx(soundin)
 	if(istext(soundin))
