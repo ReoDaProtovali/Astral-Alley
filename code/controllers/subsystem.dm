@@ -233,7 +233,6 @@
  */
 /datum/controller/subsystem/Initialize()
 	return SS_INIT_NONE
-// CHOMPEdit End
 
 //hook for printing stats to the "MC" statuspanel for admins to see performance and related stats etc.
 //CHOMPEdit Begin
