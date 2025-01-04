@@ -70,12 +70,18 @@
 	cell_type = /obj/item/weapon/cell/vepr
 	origin_tech = list(TECH_POWER = 4, TECH_COMBAT = 6, TECH_MAGNET = 4, TECH_ILLEGAL = 4)
 
+<<<<<<< HEAD
 /obj/item/weapon/cell/vepr
+=======
+/obj/item/cell/vepr
+	name = "VEPR cell"
+>>>>>>> 283cb68aae (Vepr cell Fix (#9789))
 	icon = 'icons/obj/ammo_ch.dmi'
 	icon_state = "veprcell"
 	item_state = "egg6"
 	w_class = ITEMSIZE_SMALL
 	maxcharge = 7200
+	charge = 7200
 	charge_amount = 20
 	matter = list("metal" = 350, "glass" = 50)
 	preserve_item = 1
