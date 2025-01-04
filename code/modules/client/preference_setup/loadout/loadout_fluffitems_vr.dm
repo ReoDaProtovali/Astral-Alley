@@ -1407,23 +1407,33 @@
 	display_name = "Tempest's Medical Hud"
 	slot = slot_glasses
 	ckeywhitelist = list("wickedtemp")
+<<<<<<< HEAD
 	character_name = list("Chakat Tempest Venosare")
 	allowed_roles = list("Chief Medical Officer","Medical Doctor","Chemist","Psychiatrist","Paramedic","Field Medic","Off-duty Medic") //CHOMP keep explo
+=======
+	character_name = list("Chakat Tempest Trismaer")
+	allowed_roles = list(JOB_CHIEF_MEDICAL_OFFICER,JOB_MEDICAL_DOCTOR,JOB_CHEMIST,JOB_PSYCHIATRIST,JOB_PARAMEDIC, JOB_OFFDUTY_MEDIC)
+>>>>>>> 9fe5f53a26 ([MIRROR] Updates fluffitems_vr to show current character name (#9782))
 
 /datum/gear/fluff/tempest_hypospray
 	path = /obj/item/weapon/reagent_containers/hypospray/vial/tempest
 	display_name = "Tempest's Hypospray"
 	slot = slot_belt
 	ckeywhitelist = list("wickedtemp")
+<<<<<<< HEAD
 	character_name = list("Chakat Tempest Venosare")
 	allowed_roles = list("Chief Medical Officer","Medical Doctor","Chemist","Psychiatrist","Paramedic", "Field Medic", "Off-duty Medic") //CHOMP keep explo
+=======
+	character_name = list("Chakat Tempest Trismaer")
+	allowed_roles = list(JOB_CHIEF_MEDICAL_OFFICER,JOB_MEDICAL_DOCTOR,JOB_CHEMIST,JOB_PSYCHIATRIST,JOB_PARAMEDIC, JOB_OFFDUTY_MEDIC)
+>>>>>>> 9fe5f53a26 ([MIRROR] Updates fluffitems_vr to show current character name (#9782))
 
 /datum/gear/fluff/tempest_backpack
 	path = /obj/item/weapon/storage/backpack/saddlebag/tempest
 	display_name = "Tempest's Saddlebag"
 	slot = slot_back
 	ckeywhitelist = list("wickedtemp")
-	character_name = list("Chakat Tempest Venosare")
+	character_name = list("Chakat Tempest Trismaer")
 
 //  X CKEYS
 /datum/gear/fluff/penelope_box
