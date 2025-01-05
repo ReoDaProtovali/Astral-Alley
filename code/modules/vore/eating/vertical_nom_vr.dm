@@ -3,8 +3,13 @@
 	set desc = "Allows you to eat people who are below your tile or adjacent one. Requires passability."
 	set category = "Abilities.Vore" //CHOMPEdit
 
+<<<<<<< HEAD
 	if(stat == DEAD || paralysis || weakened || stunned)
 		to_chat(src, "<span class='notice'>You cannot do that while in your current state.</span>")
+=======
+	if(stat == DEAD || paralysis || weakened || stunned || is_incorporeal()) // CHOMPEdit
+		to_chat(src, span_notice("You cannot do that while in your current state."))
+>>>>>>> 4f51cf1044 (Fix multiple KIN exploits (#9786))
 		return
 
 	if(!(src.vore_selected))

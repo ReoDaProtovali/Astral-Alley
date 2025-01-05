@@ -119,7 +119,11 @@
 		// change
 		ability_flags &= ~AB_PHASE_SHIFTED
 		ability_flags |= AB_PHASE_SHIFTING
+<<<<<<< HEAD
 		mouse_opacity = 1
+=======
+		throwpass = FALSE
+>>>>>>> 4f51cf1044 (Fix multiple KIN exploits (#9786))
 		name = get_visible_name()
 		for(var/obj/belly/B as anything in vore_organs)
 			B.escapable = initial(B.escapable)
@@ -230,7 +234,11 @@
 		// change
 		ability_flags |= AB_PHASE_SHIFTED
 		ability_flags |= AB_PHASE_SHIFTING
+<<<<<<< HEAD
 		mouse_opacity = 0
+=======
+		throwpass = TRUE
+>>>>>>> 4f51cf1044 (Fix multiple KIN exploits (#9786))
 		custom_emote(1,"phases out!")
 		name = get_visible_name()
 
