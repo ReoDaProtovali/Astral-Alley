@@ -543,33 +543,48 @@
 	return
 
 //PRETTIER TOOL LIST.
-/mob/living/silicon/robot/drone/installed_modules()
+// /mob/living/silicon/robot/drone/installed_modules()
 
+<<<<<<< HEAD
 	if(weapon_lock)
 		to_chat(src, "<span class='danger'>Weapon lock active, unable to use modules! Count:[weaponlock_time]</span>")
 		return
 
 	if(!module)
 		module = new /obj/item/weapon/robot_module/drone(src)
+=======
+// 	if(weapon_lock)
+// 		to_chat(src, span_danger("Weapon lock active, unable to use modules! Count:[weaponlock_time]"))
+// 		return
 
-	var/dat = "<HEAD><TITLE>Drone modules</TITLE></HEAD><BODY>\n"
-	dat += {"
-	<B>Activated Modules</B>
-	<BR>
-	Module 1: [module_state_1 ? "<A HREF=?src=\ref[src];mod=\ref[module_state_1]>[module_state_1]<A>" : "No Module"]<BR>
-	Module 2: [module_state_2 ? "<A HREF=?src=\ref[src];mod=\ref[module_state_2]>[module_state_2]<A>" : "No Module"]<BR>
-	Module 3: [module_state_3 ? "<A HREF=?src=\ref[src];mod=\ref[module_state_3]>[module_state_3]<A>" : "No Module"]<BR>
-	<BR>
-	<B>Installed Modules</B><BR><BR>"}
+// 	if(!module)
+// 		module = new /obj/item/robot_module/drone(src)
+>>>>>>> 3bf9782414 ([MIRROR] 516 - A few URLs, Robotact for drones (#9792))
+
+// 	var/dat = "<HEAD><TITLE>Drone modules</TITLE></HEAD><BODY>\n"
+// 	dat += {"
+// 	<B>Activated Modules</B>
+// 	<BR>
+// 	Module 1: [module_state_1 ? "<A HREF='byond://?src=\ref[src];mod=\ref[module_state_1]'>[module_state_1]<A>" : "No Module"]<BR>
+// 	Module 2: [module_state_2 ? "<A HREF='byond://?src=\ref[src];mod=\ref[module_state_2]'>[module_state_2]<A>" : "No Module"]<BR>
+// 	Module 3: [module_state_3 ? "<A HREF='byond://?src=\ref[src];mod=\ref[module_state_3]'>[module_state_3]<A>" : "No Module"]<BR>
+// 	<BR>
+// 	<B>Installed Modules</B><BR><BR>"}
 
 
+<<<<<<< HEAD
 	var/tools = "<B>Tools and devices</B><BR>"
 	var/resources = "<BR><B>Resources</B><BR>"
+=======
+// 	var/tools = span_bold("Tools and devices") + "<BR>"
+// 	var/resources = "<BR>" + span_bold("Resources") + "<BR>"
+>>>>>>> 3bf9782414 ([MIRROR] 516 - A few URLs, Robotact for drones (#9792))
 
-	for (var/O in module.modules)
+// 	for (var/O in module.modules)
 
-		var/module_string = ""
+// 		var/module_string = ""
 
+<<<<<<< HEAD
 		if (!O)
 			module_string += text("<B>Resource depleted</B><BR>")
 		else if(activated(O))
@@ -581,12 +596,26 @@
 			tools += module_string
 		else
 			resources += module_string
+=======
+// 		if (!O)
+// 			module_string += span_bold("Resource depleted") + "<BR>"
+// 		else if(activated(O))
+// 			module_string += text("[O]: <B>Activated</B><BR>")
+// 		else
+// 			module_string += text("[O]: <A HREF='byond://?src=\ref[src];act=\ref[O]'>Activate</A><BR>")
 
-	if (emagged)
-		for (var/O in module.emag)
+// 		if((istype(O,/obj/item) || istype(O,/obj/item)) && !(istype(O,/obj/item/stack/cable_coil)))
+// 			tools += module_string
+// 		else
+// 			resources += module_string
+>>>>>>> 3bf9782414 ([MIRROR] 516 - A few URLs, Robotact for drones (#9792))
 
-			var/module_string = ""
+// 	if (emagged)
+// 		for (var/O in module.emag)
 
+// 			var/module_string = ""
+
+<<<<<<< HEAD
 			if (!O)
 				module_string += text("<B>Resource depleted</B><BR>")
 			else if(activated(O))
@@ -598,9 +627,22 @@
 				tools += module_string
 			else
 				resources += module_string
+=======
+// 			if (!O)
+// 				module_string += span_bold("Resource depleted") + "<BR>"
+// 			else if(activated(O))
+// 				module_string += text("[O]: <B>Activated</B><BR>")
+// 			else
+// 				module_string += text("[O]: <A HREF='byond://?src=\ref[src];act=\ref[O]'>Activate</A><BR>")
 
-	dat += tools
+// 			if((istype(O,/obj/item) || istype(O,/obj/item)) && !(istype(O,/obj/item/stack/cable_coil)))
+// 				tools += module_string
+// 			else
+// 				resources += module_string
+>>>>>>> 3bf9782414 ([MIRROR] 516 - A few URLs, Robotact for drones (#9792))
 
-	dat += resources
+// 	dat += tools
 
-	src << browse(dat, "window=robotmod")
+// 	dat += resources
+
+// 	src << browse(dat, "window=robotmod")
