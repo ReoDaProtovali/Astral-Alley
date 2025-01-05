@@ -547,8 +547,14 @@
 					/obj/item/clothing/accessory/collar/pink = 5,
 					/obj/item/clothing/accessory/collar/holo = 5,
 					/obj/item/clothing/accessory/collar/shock = 5,
+<<<<<<< HEAD
 					/obj/item/weapon/storage/belt/fannypack = 1,
 					/obj/item/weapon/storage/belt/fannypack/white = 5,
+=======
+					/obj/item/leash = 5,
+					/obj/item/storage/belt/fannypack = 1,
+					/obj/item/storage/belt/fannypack/white = 5,
+>>>>>>> e3a1767a52 ([MIRROR] diff up port leashes (#9804))
 					/obj/item/clothing/accessory/fullcape = 5,
 					/obj/item/clothing/accessory/halfcape = 5,
 					/obj/item/clothing/accessory/hawaiian = 5,
@@ -688,8 +694,14 @@
 					/obj/item/clothing/accessory/collar/pink = 50,
 					/obj/item/clothing/accessory/collar/holo = 50,
 					/obj/item/clothing/accessory/collar/shock = 50,
+<<<<<<< HEAD
 					/obj/item/weapon/storage/belt/fannypack = 50,
 					/obj/item/weapon/storage/belt/fannypack/white = 50,
+=======
+					/obj/item/leash = 50,
+					/obj/item/storage/belt/fannypack = 50,
+					/obj/item/storage/belt/fannypack/white = 50,
+>>>>>>> e3a1767a52 ([MIRROR] diff up port leashes (#9804))
 					/obj/item/clothing/accessory/fullcape = 50,
 					/obj/item/clothing/accessory/halfcape = 50,
 					/obj/item/clothing/accessory/hawaiian = 50,
