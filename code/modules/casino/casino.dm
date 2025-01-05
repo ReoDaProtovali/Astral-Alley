@@ -401,7 +401,7 @@
 
 	if(usr.incapacitated())
 		return
-	if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+	if(ishuman(usr) || isrobot(usr))
 		switch(input(user,"Choose what to do","Wheel Of Fortune") in list("Spin the Wheel! (Not Lottery)", "Set the interval", "Cancel"))
 			if("Cancel")
 				return
@@ -429,8 +429,13 @@
 			to_chat(user, "<span class='warning'>Access Denied.</span>")
 			return
 		else
+<<<<<<< HEAD
 			to_chat(user, "<span class='warning'>Proper access, allowed staff controls.</span>")
 			if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+=======
+			to_chat(user, span_warning("Proper access, allowed staff controls."))
+			if(ishuman(usr) || isrobot(usr))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 				switch(input(user,"Choose what to do (Management)","Wheel Of Fortune (Management)") in list("Spin the Lottery Wheel!", "Toggle Lottery Sales", "Toggle Public Spins", "Reset Lottery", "Cancel"))
 					if("Cancel")
 						return
@@ -545,7 +550,7 @@
 
 	if(usr.incapacitated())
 		return
-	if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+	if(ishuman(usr) || isrobot(usr))
 		interval = tgui_input_number(usr, "Put the desired interval (1-1000)", "Set Interval", null, 1000, 1)
 		if(interval>1000 || interval<1)
 			to_chat(usr, span_notice("Invalid interval."))
@@ -578,7 +583,7 @@
 		to_chat(user,"<span class='notice'>The SPASM is disabled.</span> ")
 		return
 
-	if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+	if(ishuman(usr) || isrobot(usr))
 		switch(input(user,"Choose what to do","SPASM") in list("Show selected Prize", "Select Prize", "Become Prize (Please examine yourself first)", "Cancel"))
 			if("Cancel")
 				return
@@ -690,8 +695,13 @@
 			to_chat(user, "<span class='warning'>Access Denied.</span>")
 			return
 		else
+<<<<<<< HEAD
 			to_chat(user, "<span class='warning'>Proper access, allowed staff controls.</span>")
 			if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+=======
+			to_chat(user, span_warning("Proper access, allowed staff controls."))
+			if(ishuman(usr) || isrobot(usr))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 				switch(input(user,"Choose what to do (Management)","SPASM (Management)") in list("Toggle Sentient Prize Sales", "Wipe Selected Prize Entry", "Change Prize Value", "Cancel"))
 					if("Cancel")
 						return
@@ -774,7 +784,7 @@
 /obj/machinery/casinosentientprize_handler/proc/setprice(mob/living/user as mob)
 	if(usr.incapacitated())
 		return
-	if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+	if(ishuman(usr) || isrobot(usr))
 		casinosentientprize_price = tgui_input_number(usr, "Select the desired price (1-1000)", "Set Price", null, null, 1000, 1)
 		if(casinosentientprize_price>1000 || casinosentientprize_price<1)
 			to_chat(user,"<span class='notice'>Invalid price.</span> ")

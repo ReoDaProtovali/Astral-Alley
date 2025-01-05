@@ -26,10 +26,17 @@
 /obj/item/weapon/toy/xmas_cracker/New()
 	..()
 
+<<<<<<< HEAD
 /obj/item/weapon/toy/xmas_cracker/attack(mob/target, mob/user)
 	if( !cracked && (istype(target,/mob/living/silicon) || (istype(target,/mob/living/carbon/human) && !target.get_active_hand())) && target.stat == CONSCIOUS)
 		target.visible_message("<span class='notice'>[user] and [target] pop \an [src]! *pop*</span>", "<span class='notice'>You pull \an [src] with [target]! *pop*</span>", "<span class='notice'>You hear a *pop*.</span>")
 		var/obj/item/weapon/paper/Joke = new /obj/item/weapon/paper(user.loc)
+=======
+/obj/item/toy/xmas_cracker/attack(mob/target, mob/user)
+	if( !cracked && (issilicon(target) || (ishuman(target) && !target.get_active_hand())) && target.stat == CONSCIOUS)
+		target.visible_message(span_notice("[user] and [target] pop \an [src]! *pop*"), span_notice("You pull \an [src] with [target]! *pop*"), span_notice("You hear a *pop*."))
+		var/obj/item/paper/Joke = new /obj/item/paper(user.loc)
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		Joke.name = "[pick("awful","terrible","unfunny")] joke"
 		Joke.info = pick("What did one snowman say to the other?\n\n<i>'Is it me or can you smell carrots?'</i>",
 			"Why couldn't the snowman get laid?\n\n<i>He was frigid!</i>",

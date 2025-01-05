@@ -142,10 +142,17 @@ var/global/list/all_objectives = list()
 	return target
 
 /datum/objective/anti_revolution/demote/check_completion()
+<<<<<<< HEAD
 	if(target && target.current && istype(target,/mob/living/carbon/human))
 		var/obj/item/weapon/card/id/I = target.current:wear_id
 		if(istype(I, /obj/item/device/pda))
 			var/obj/item/device/pda/P = I
+=======
+	if(target && target.current && ishuman(target))
+		var/obj/item/card/id/I = target.current:wear_id
+		if(istype(I, /obj/item/pda))
+			var/obj/item/pda/P = I
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			I = P.id
 
 		if(!istype(I)) return 1
@@ -389,7 +396,7 @@ var/global/list/all_objectives = list()
 	if(already_completed)
 		return 1
 
-	if(target && target.current && istype(target.current, /mob/living/carbon/human))
+	if(target && target.current && ishuman(target.current))
 		if(target.current.stat == DEAD)
 			return 0
 
@@ -518,7 +525,7 @@ var/global/list/all_objectives = list()
 
 			for(var/obj/item/device/aicard/C in all_items) //Check for ai card
 				for(var/mob/living/silicon/ai/M in C)
-					if(istype(M, /mob/living/silicon/ai) && M.stat != 2) //See if any AI's are alive inside that card.
+					if(isAI(M) && M.stat != 2) //See if any AI's are alive inside that card.
 						return 1
 
 			for(var/mob/living/silicon/ai/ai in mob_list)
@@ -557,8 +564,13 @@ var/global/list/all_objectives = list()
 		return 0
 
 	var/current_amount
+<<<<<<< HEAD
 	var/obj/item/weapon/rig/S
 	if(istype(owner.current,/mob/living/carbon/human))
+=======
+	var/obj/item/rig/S
+	if(ishuman(owner.current))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		var/mob/living/carbon/human/H = owner.current
 		S = H.back
 

@@ -146,7 +146,7 @@
 			to_chat(user, "<span class='warning'>You can't store \the [A.name] in this!</span>")
 			c.scanned = null
 			return
-		if(istype(A.loc,/mob/living/carbon/human))
+		if(ishuman(A.loc))
 			var/mob/living/carbon/human/H = A.loc
 			H.remove_from_mob(A)
 		else if(istype(A.loc,/obj/item/weapon/storage))

@@ -707,8 +707,13 @@
 		total_storage_space += I.get_storage_cost()
 	max_storage_space = max(total_storage_space,max_storage_space) //Prevents spawned containers from being too small for their contents.
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/emp_act(severity)
 	if(!istype(src.loc, /mob/living))
+=======
+/obj/item/storage/emp_act(severity)
+	if(!isliving(src.loc))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		for(var/obj/O in contents)
 			O.emp_act(severity)
 	..()

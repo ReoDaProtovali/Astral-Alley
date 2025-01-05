@@ -322,8 +322,13 @@ var/list/tape_roll_applications = list()
 		var/mob/M = mover
 		add_fingerprint(M)
 		if(!allowed(M))	//only select few learn art of not crumpling the tape
+<<<<<<< HEAD
 			to_chat(M, span("warning", "You are not supposed to go past \the [src]..."))
 			if(M.a_intent == I_HELP && !(istype(M, /mob/living/simple_mob)))
+=======
+			to_chat(M, span_warning("You are not supposed to go past \the [src]..."))
+			if(M.a_intent == I_HELP && !(isanimal(M)))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 				return FALSE
 			crumple()
 	return ..()

@@ -9,8 +9,13 @@
 
 	toolspeed = 2 //It is now used in surgery as a not awful, but probably dangerous option, due to speed.
 
+<<<<<<< HEAD
 /obj/item/weapon/tape_roll/proc/can_place(var/mob/living/carbon/human/H, var/mob/user)
 	if(istype(user, /mob/living/silicon/robot) || user == H)
+=======
+/obj/item/tape_roll/proc/can_place(var/mob/living/carbon/human/H, var/mob/user)
+	if(isrobot(user) || user == H)
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return TRUE
 
 	for (var/obj/item/weapon/grab/G in H.grabbed_by)

@@ -88,7 +88,7 @@
 		if(tdelta < (DEFIB_TIME_LIMIT * 10))
 			dat += "<span class='notice'><b>Subject died [DisplayTimeText(tdelta)] ago - resuscitation may be possible!</b></span><br>"
 	//VOREStation edit/addition ends
-	if(istype(M, /mob/living/carbon/human) && mode == 1)
+	if(ishuman(M) && mode == 1)
 		var/mob/living/carbon/human/H = M
 		var/list/damaged = H.get_damaged_organs(1,1)
 		dat += 	"<span class='notice'>Localized Damage, Brute/Burn:</span><br>"

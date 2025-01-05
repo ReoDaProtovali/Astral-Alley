@@ -544,7 +544,7 @@
 	else return
 	to_chat(src, "<span class='notice'>Your message was relayed.</span>")
 	for (var/mob/G in player_list)
-		if (istype(G, /mob/new_player))
+		if (isnewplayer(G))
 			continue
 		else if(isobserver(G) && G.is_preference_enabled(/datum/client_preference/ghost_ears))
 			if((is_preference_enabled(/datum/client_preference/whisubtle_vis) || G.client.holder) && \

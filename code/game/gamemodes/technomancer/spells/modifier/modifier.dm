@@ -13,6 +13,7 @@
 	..()
 	set_light(spell_light_range, spell_light_intensity, l_color = light_color)
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/modifier/on_melee_cast(atom/hit_atom, mob/user)
 	if(istype(hit_atom, /mob/living))
 		return on_add_modifier(hit_atom)
@@ -20,6 +21,15 @@
 
 /obj/item/weapon/spell/modifier/on_ranged_cast(atom/hit_atom, mob/user)
 	if(istype(hit_atom, /mob/living))
+=======
+/obj/item/spell/modifier/on_melee_cast(atom/hit_atom, mob/user)
+	if(isliving(hit_atom))
+		return on_add_modifier(hit_atom)
+	return FALSE
+
+/obj/item/spell/modifier/on_ranged_cast(atom/hit_atom, mob/user)
+	if(isliving(hit_atom))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return on_add_modifier(hit_atom)
 	return FALSE
 

@@ -25,8 +25,13 @@ var/global/datum/repository/crew/crew_repository = new()
 	for(var/obj/item/clothing/under/C in tracked)
 		var/turf/pos = get_turf(C)
 		var/area/B = pos?.loc //VOREStation Add: No sensor in Dorm
+<<<<<<< HEAD
 		if((C.has_sensor) && (pos?.z == zLevel) && (C.sensor_mode != SUIT_SENSOR_OFF) && !(B.block_suit_sensors) && !(is_jammed(C)) && !(is_vore_jammed(C))) //VOREStation Edit
 			if(istype(C.loc, /mob/living/carbon/human))
+=======
+		if((C.has_sensor) && (pos?.z == zLevel) && (C.sensor_mode != SUIT_SENSOR_OFF) && !(B.flag_check(AREA_BLOCK_SUIT_SENSORS)) && !(is_jammed(C)) && !(is_vore_jammed(C))) //VOREStation Edit
+			if(ishuman(C.loc))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 				var/mob/living/carbon/human/H = C.loc
 				if(H.w_uniform != C)
 					continue

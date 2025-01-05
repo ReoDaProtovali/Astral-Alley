@@ -151,7 +151,7 @@
 			if(M.buckled)
 				return
 
-			if(istype(M,/mob/living/carbon/human))
+			if(ishuman(M))
 				var/mob/living/carbon/human/H = M
 				if(H.shoes && H.shoes.item_flags & NOSLIP)
 					return
@@ -177,9 +177,15 @@
 			var/obj/item/stack/cable_coil/C = W
 			if(C.use(5))
 				//TODO: generalize this.
+<<<<<<< HEAD
 				to_chat(user, "<span class='notice'>You add some cable to the [src.name] and slide it inside the battery casing.</span>")
 				var/obj/item/weapon/cell/potato/pocell = new /obj/item/weapon/cell/potato(get_turf(user))
 				if(src.loc == user && istype(user,/mob/living/carbon/human))
+=======
+				to_chat(user, span_notice("You add some cable to the [src.name] and slide it inside the battery casing."))
+				var/obj/item/cell/potato/pocell = new /obj/item/cell/potato(get_turf(user))
+				if(src.loc == user && ishuman(user))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 					user.put_in_hands(pocell)
 				pocell.maxcharge = src.potency * 200
 				pocell.charge = pocell.maxcharge

@@ -216,7 +216,7 @@
 /obj/item/device/pda/clown/Crossed(atom/movable/AM as mob|obj) //Clown PDA is slippery.
 	if(AM.is_incorporeal())
 		return
-	if (istype(AM, /mob/living))
+	if (isliving(AM))
 		var/mob/living/M = AM
 
 		if(M.slip("the PDA",8) && M.real_name != src.owner && istype(src.cartridge, /obj/item/weapon/cartridge/clown))

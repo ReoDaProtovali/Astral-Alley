@@ -213,9 +213,15 @@
 		return
 	playsound(src, 'sound/machines/click.ogg', 75, 1)
 	user.visible_message("\The [user] attaches \the [src] to the wall.",
+<<<<<<< HEAD
 		"<span class='notice'>You attach \the [src] to the wall.</span>",
 		"<span class='italics'>You hear clicking.</span>")
 	if(istype(user, /mob/living/silicon/robot)) //Robots cannot unequip/drop items, for Safety Reasons.
+=======
+		span_notice("You attach \the [src] to the wall."),
+		span_warningplain("You hear clicking."))
+	if(isrobot(user)) //Robots cannot unequip/drop items, for Safety Reasons.
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		forceMove(T)
 	user.drop_item(T)
 	anchored = TRUE

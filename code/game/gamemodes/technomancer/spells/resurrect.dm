@@ -28,8 +28,13 @@
 			if(L.tod > world.time + 30 MINUTES)
 				to_chat(user, "<span class='danger'>\The [L]'s been dead for too long, even this function cannot replace cloning at this point.</span>")
 				return 0
+<<<<<<< HEAD
 			to_chat(user, "<span class='notice'>You stab \the [L] with a hidden integrated hypo, attempting to bring them back...</span>")
 			if(istype(L, /mob/living/simple_mob))
+=======
+			to_chat(user, span_notice("You stab \the [L] with a hidden integrated hypo, attempting to bring them back..."))
+			if(isanimal(L))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 				var/mob/living/simple_mob/SM = L
 				SM.health = SM.getMaxHealth() / 3
 				SM.set_stat(CONSCIOUS)

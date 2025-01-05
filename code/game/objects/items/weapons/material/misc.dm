@@ -155,11 +155,16 @@
 	if(user.a_intent)
 		switch(user.a_intent)
 			if(I_HURT)
+<<<<<<< HEAD
 				if(prob(10) && istype(target, /mob/living/carbon/human) && (user.zone_sel in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT, BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
 					to_chat(target, "<span class='warning'>\The [src] rips at your hands!</span>")
+=======
+				if(prob(10) && ishuman(target) && (user.zone_sel in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT, BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
+					to_chat(target, span_warning("\The [src] rips at your hands!"))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 					ranged_disarm(target)
 			if(I_DISARM)
-				if(prob(min(90, force * 3)) && istype(target, /mob/living/carbon/human) && (user.zone_sel in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT, BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
+				if(prob(min(90, force * 3)) && ishuman(target) && (user.zone_sel in list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT, BP_L_ARM, BP_R_ARM, BP_L_HAND, BP_R_HAND)))
 					ranged_disarm(target)
 				else
 					target.visible_message("<span class='danger'>\The [src] sends \the [target] stumbling away.</span>")

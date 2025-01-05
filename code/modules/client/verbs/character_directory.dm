@@ -179,8 +179,12 @@ GLOBAL_DATUM(character_directory, /datum/character_directory)
 
 			flavor_text = R.flavor_text
 
+<<<<<<< HEAD
 		//CHOMPEdit Start
 		if(istype(C.mob, /mob/living/silicon/pai))
+=======
+		if(ispAI(C.mob))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			var/mob/living/silicon/pai/P = C.mob
 			name = P.name
 			species = "pAI"
@@ -203,7 +207,7 @@ GLOBAL_DATUM(character_directory, /datum/character_directory)
 					ooc_notes += "\n\nDISLIKES\n\n[P.ooc_notes_dislikes]"
 			flavor_text = P.flavor_text
 
-		if(istype(C.mob, /mob/living/simple_mob))
+		if(isanimal(C.mob))
 			var/mob/living/simple_mob/S = C.mob
 			name = S.name
 			species = S.character_directory_species()

@@ -233,7 +233,7 @@
 	if(!Adjacent(user)) //Can only check the contents of ore bags if you can physically reach them.
 		return .
 
-	if(istype(user, /mob/living))
+	if(isliving(user))
 		add_fingerprint(user)
 
 	. += "<span class='notice'>It holds:</span>"

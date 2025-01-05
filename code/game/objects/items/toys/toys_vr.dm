@@ -511,7 +511,7 @@
 		user.visible_message("<span class='warning'>[user] presses the big red button.</span>", "<span class='notice'>You press the button, it plays a loud noise!</span>", "<span class='notice'>The button clicks loudly.</span>")
 		playsound(src, 'sound/effects/explosionfar.ogg', 50, 0, 0)
 		for(var/mob/M in range(10, src)) // Checks range
-			if(!M.stat && !istype(M, /mob/living/silicon/ai)) // Checks to make sure whoever's getting shaken is alive/not the AI
+			if(!M.stat && !isAI(M)) // Checks to make sure whoever's getting shaken is alive/not the AI
 				sleep(2) // Short delay to match up with the explosion sound
 				shake_camera(M, 2, 1)
 	else
@@ -905,7 +905,7 @@
 			icon_state = "tastybread"
 
 /obj/item/toy/snake_popper/attack(mob/living/M as mob, mob/user as mob)
-	if(istype(M,/mob/living/carbon/human))
+	if(ishuman(M))
 		if(!popped)
 			to_chat(user, "<span class='warning'>A snake popped out of [src]!</span>")
 			if(real == 0)
@@ -1058,10 +1058,17 @@
 /obj/item/weapon/toy/desk/AltClick(mob/user)
 	activate(user)
 
+<<<<<<< HEAD
 /obj/item/weapon/toy/desk/MouseDrop(mob/user as mob) // Code from Paper bin, so you can still pick up the deck
 	if((user == usr && (!( usr.restrained() ) && (!( usr.stat ) && (usr.contents.Find(src) || in_range(src, usr))))))
 		if(!istype(usr, /mob/living/simple_mob))
 			if( !usr.get_active_hand() )		//if active hand is empty
+=======
+/obj/item/toy/desk/MouseDrop(mob/user as mob) // Code from Paper bin, so you can still pick up the deck
+	if((user == usr && (!( user.restrained() ) && (!( user.stat ) && (user.contents.Find(src) || in_range(src, user))))))
+		if(!isanimal(user))
+			if(!user.get_active_hand())		//if active hand is empty
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 				var/mob/living/carbon/human/H = user
 				var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 

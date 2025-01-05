@@ -725,8 +725,13 @@ modules/mob/living/carbon/human/life.dm if you die, you will be zoomed out.
 
 	var/cannotzoom
 
+<<<<<<< HEAD
 	if((M.stat && !zoom) || !(istype(M,/mob/living/carbon/human)))
 		to_chat(M, "<span class='filter_notice'>You are unable to focus through the [devicename].</span>")
+=======
+	if((M.stat && !zoom) || !(ishuman(M)))
+		to_chat(M, span_filter_notice("You are unable to focus through the [devicename]."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		cannotzoom = 1
 	else if(!zoom && (global_hud.darkMask[1] in M.client.screen))
 		to_chat(M, "<span class='filter_notice'>Your visor gets in the way of looking through the [devicename].</span>")

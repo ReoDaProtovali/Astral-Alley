@@ -63,8 +63,13 @@
 	else
 		return buf.dna.SetUIValue(real_block,val)
 
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/proc/inject(mob/M as mob, mob/user as mob)
 	if(istype(M,/mob/living))
+=======
+/obj/item/dnainjector/proc/inject(mob/M as mob, mob/user as mob)
+	if(isliving(M))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		var/mob/living/L = M
 		L.apply_effect(rand(5,20), IRRADIATE, check_protection = 0)
 		L.apply_damage(max(2,L.getCloneLoss()), CLONE)

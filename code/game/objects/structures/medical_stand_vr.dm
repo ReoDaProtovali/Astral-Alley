@@ -226,8 +226,13 @@
 	set name = "Toggle IV Mode"
 	set src in view(1)
 
+<<<<<<< HEAD
 	if(!istype(usr, /mob/living))
 		to_chat(usr, "<span class='warning'>You can't do that.</span>")
+=======
+	if(!isliving(usr))
+		to_chat(usr, span_warning("You can't do that."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 	if(usr.incapacitated())

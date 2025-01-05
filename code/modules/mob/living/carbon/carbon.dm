@@ -56,7 +56,7 @@
 			var/obj/item/I = user.get_active_hand()
 			if(I && I.force)
 				var/d = rand(round(I.force / 4), I.force)
-				if(istype(src, /mob/living/carbon/human))
+				if(ishuman(src))
 					var/mob/living/carbon/human/H = src
 					var/obj/item/organ/external/organ = H.get_organ(BP_TORSO)
 					if (istype(organ))
@@ -198,8 +198,13 @@
 	return shock_damage
 
 /mob/living/carbon/proc/help_shake_act(mob/living/carbon/M)
+<<<<<<< HEAD
 	if (src.health >= CONFIG_GET(number/health_threshold_crit)) // CHOMPEdit
 		if(src == M && istype(src, /mob/living/carbon/human))
+=======
+	if (src.health >= CONFIG_GET(number/health_threshold_crit))
+		if(src == M && ishuman(src))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			var/mob/living/carbon/human/H = src
 			var/datum/gender/T = gender_datums[H.get_visible_gender()]
 			src.visible_message( \
@@ -277,7 +282,7 @@
 							src.ExtinguishMob()
 							src.fire_stacks = 0
 		else
-			if (istype(src,/mob/living/carbon/human) && src:w_uniform)
+			if (ishuman(src) && src:w_uniform)
 				var/mob/living/carbon/human/H = src
 				H.w_uniform.add_fingerprint(M)
 

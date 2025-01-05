@@ -266,8 +266,13 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			"resist_animation" = selected.resist_triggers_animation,
 			"voresprite_size_factor" = selected.size_factor_for_sprite,
 			"belly_sprite_to_affect" = selected.belly_sprite_to_affect,
+<<<<<<< HEAD
 			"belly_sprite_option_shown" = LAZYLEN(host.vore_icon_bellies) >= 1 ? TRUE : FALSE, //CHOMPEdit
 			"tail_option_shown" = istype(host, /mob/living/carbon/human),
+=======
+			"belly_sprite_option_shown" = LAZYLEN(host.vore_icon_bellies) >= 1 ? TRUE : FALSE,
+			"tail_option_shown" = ishuman(host),
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			"tail_to_change_to" = selected.tail_to_change_to,
 			"tail_colouration" = selected.tail_colouration,
 			"tail_extra_overlay" = selected.tail_extra_overlay,

@@ -140,8 +140,13 @@ V::::::V           V::::::VO:::::::OOO:::::::ORR:::::R     R:::::REE::::::EEEEEE
 //	Check if an object is capable of eating things, based on vore_organs
 //
 /proc/is_vore_predator(mob/living/O)
+<<<<<<< HEAD
 	if(istype(O,/mob/living))
 		if(istype(O,/mob/living/simple_mob)) //CHOMPEdit: On-demand belly loading.
+=======
+	if(isliving(O))
+		if(isanimal(O)) //On-demand belly loading.
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			var/mob/living/simple_mob/SM = O
 			if(SM.vore_active && !SM.voremob_loaded)
 				SM.voremob_loaded = TRUE

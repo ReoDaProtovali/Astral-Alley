@@ -101,11 +101,15 @@
 			dirtoverlay.alpha = min((dirt - 50) * 5, 255)
 
 /turf/simulated/Entered(atom/A, atom/OL)
+<<<<<<< HEAD
 	if(movement_disabled && usr.ckey != movement_disabled_exception)
 		to_chat(usr, "<span class='danger'>Movement is admin-disabled.</span>") //This is to identify lag problems
 		return
 
 	if (istype(A,/mob/living))
+=======
+	if (isliving(A))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		var/dirtslip = FALSE	//CHOMPEdit
 		var/mob/living/M = A
 		if(M.lying || M.flying || M.is_incorporeal()) //VOREStation Edit - CHOMPADD - Don't forget the phased ones.
@@ -115,7 +119,7 @@
 			// Dirt overlays.
 			update_dirt()
 
-		if(istype(M, /mob/living/carbon/human))
+		if(ishuman(M))
 			var/mob/living/carbon/human/H = M
 			//CHOMPEdit Begin
 			dirtslip = H.species.dirtslip

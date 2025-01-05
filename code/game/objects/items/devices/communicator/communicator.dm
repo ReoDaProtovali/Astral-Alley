@@ -211,8 +211,13 @@ var/global/list/obj/item/device/communicator/all_communicators = list()
 // Parameters: 1 (user - the person the communicator belongs to)
 // Description: Sets up the exonet datum, gives the device an address, and then gets a node reference.  Afterwards, populates the device
 //				list.
+<<<<<<< HEAD
 /obj/item/device/communicator/proc/initialize_exonet(mob/user)
 	if(!user || !istype(user, /mob/living))
+=======
+/obj/item/communicator/proc/initialize_exonet(mob/user)
+	if(!user || !isliving(user))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 	if(!exonet)
 		exonet = new(src)

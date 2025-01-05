@@ -91,8 +91,13 @@ Protectiveness | Armor %
 	if(!material)
 		return
 	var/turf/T = get_turf(src)
+<<<<<<< HEAD
 	T.visible_message("<span class='danger'>\The [src] [material.destruction_desc]!</span>")
 	if(istype(loc, /mob/living))
+=======
+	T.visible_message(span_danger("\The [src] [material.destruction_desc]!"))
+	if(isliving(loc))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		var/mob/living/M = loc
 		M.drop_from_inventory(src)
 		if(material.shard_type == SHARD_SHARD) // Wearing glass armor is a bad idea.

@@ -48,6 +48,7 @@
 		add_attack_logs(user,L,"Casted [src]")
 		qdel(src)
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/insert/on_melee_cast(atom/hit_atom, mob/user)
 	if(istype(hit_atom, /mob/living))
 		var/mob/living/L = hit_atom
@@ -55,5 +56,14 @@
 
 /obj/item/weapon/spell/insert/on_ranged_cast(atom/hit_atom, mob/user)
 	if(istype(hit_atom, /mob/living))
+=======
+/obj/item/spell/insert/on_melee_cast(atom/hit_atom, mob/user)
+	if(isliving(hit_atom))
+		var/mob/living/L = hit_atom
+		insert(L,user)
+
+/obj/item/spell/insert/on_ranged_cast(atom/hit_atom, mob/user)
+	if(isliving(hit_atom))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		var/mob/living/L = hit_atom
 		insert(L,user)

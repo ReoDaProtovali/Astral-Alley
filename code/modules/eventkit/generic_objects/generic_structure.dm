@@ -53,7 +53,7 @@
 						continue
 
 					var/flash_time = 10
-					if(istype(O, /mob/living/carbon/human))
+					if(ishuman(O))
 						var/mob/living/carbon/human/H = O
 						//VOREStation Edit Start
 						if(H.nif && H.nif.flag_check(NIF_V_FLASHPROT,NIF_FLAGS_VISION))
@@ -76,7 +76,19 @@
 					O.Weaken(flash_time)
 			if(effect == 4)
 				var/atom/o = new object(get_turf(src))
+<<<<<<< HEAD
 				src.visible_message("<span class='notice'>[src] has produced [o]!</span>")
+=======
+				src.visible_message(span_notice("[src] has produced [o]!"))
+			if(effect == 5)
+				for (var/mob/O in viewers(src, null))
+					if(get_dist(src, O) > 7)
+						continue
+
+					if(ishuman(O))
+						var/mob/living/carbon/human/H = O
+						H.fear = 200
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			if(sound_activated)
 				playsound(src, sound_activated, 50, 1)
 		else if(togglable)

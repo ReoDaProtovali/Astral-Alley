@@ -72,9 +72,15 @@ var/global/list/stool_cache = list() //haha stool
 		padding_material = null
 	update_icon()
 
+<<<<<<< HEAD
 /obj/item/weapon/stool/attack(mob/M as mob, mob/user as mob)
 	if (prob(5) && istype(M,/mob/living))
 		user.visible_message("<span class='danger'>[user] breaks [src] over [M]'s back!</span>")
+=======
+/obj/item/stool/attack(mob/M as mob, mob/user as mob)
+	if (prob(5) && isliving(M))
+		user.visible_message(span_danger("[user] breaks [src] over [M]'s back!"))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		user.setClickCooldown(user.get_attack_speed())
 		user.do_attack_animation(M)
 
