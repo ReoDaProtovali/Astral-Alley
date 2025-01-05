@@ -260,8 +260,17 @@
 					var/obj/item/clothing/gloves/G = H.gloves
 					real_damage += G.punch_force
 					hit_dam_type = G.punch_damtype
+<<<<<<< HEAD
 					if(H.pulling_punches && !attack.sharp && !attack.edge)	//SO IT IS DECREED: PULLING PUNCHES WILL PREVENT THE ACTUAL DAMAGE FROM RINGS AND KNUCKLES, BUT NOT THE ADDED PAIN, BUT YOU CAN'T "PULL" A KNIFE
 						hit_dam_type = AGONY
+=======
+				else if(istype(H.gloves, /obj/item/clothing/accessory))
+					var/obj/item/clothing/accessory/G = H.gloves
+					real_damage += G.punch_force
+					hit_dam_type = G.punch_damtype
+				if(H.pulling_punches && !attack.sharp && !attack.edge)	//SO IT IS DECREED: PULLING PUNCHES WILL PREVENT THE ACTUAL DAMAGE FROM RINGS AND KNUCKLES, BUT NOT THE ADDED PAIN, BUT YOU CAN'T "PULL" A KNIFE
+					hit_dam_type = HALLOSS
+>>>>>>> 495859da2f ([MIRROR] Pull punches does stamina damage (#9806))
 			real_damage *= damage_multiplier
 			rand_damage *= damage_multiplier
 			if(HULK in H.mutations)
