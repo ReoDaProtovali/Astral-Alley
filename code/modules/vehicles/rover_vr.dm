@@ -61,10 +61,16 @@
 //-------------------------------------------
 // Standard procs
 //-------------------------------------------
+<<<<<<< HEAD
 /obj/vehicle/train/rover/engine/New()
 	..()
 	cell = new /obj/item/weapon/cell/high(src)
+=======
+/obj/vehicle/train/rover/engine/Initialize()
+	cell = new /obj/item/cell/high(src)
+>>>>>>> 4d0df72be2 ([MIRROR] just some init fixes (#9794))
 	key = new(src)
+	. = ..()
 	turn_off()	//so engine verbs are correctly set
 
 /obj/vehicle/train/rover/engine/Move(var/turf/destination)
