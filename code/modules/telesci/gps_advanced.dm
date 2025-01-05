@@ -42,7 +42,11 @@
 		t += "<BR><A href='?src=\ref[src];tag=1'>Set Tag</A> "
 		t += "<BR>Tag: [gpstag]"
 
+<<<<<<< HEAD
 		for(var/obj/item/device/gps/advanced/G in GPS_list)
+=======
+		for(var/obj/item/gps/advanced/G in GLOB.GPS_list)
+>>>>>>> 9064a83dc2 ([MIRROR] fix an issue with multi borg module registering (#9795))
 			var/turf/pos = get_turf(G)
 			var/area/gps_area = get_area(G)
 			var/tracked_gpstag = G.gpstag
