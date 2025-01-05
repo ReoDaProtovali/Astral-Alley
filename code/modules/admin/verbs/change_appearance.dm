@@ -43,8 +43,13 @@
 
 	var/mob/living/carbon/human/M = tgui_input_list(usr, "Select mob.", "Edit Appearance", human_mob_list)
 
+<<<<<<< HEAD
 	if(!istype(M, /mob/living/carbon/human))
 		to_chat(usr, "<span class='warning'>You can only do this to humans!</span>")
+=======
+	if(!ishuman(M))
+		to_chat(usr, span_warning("You can only do this to humans!"))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 	if(tgui_alert(usr, "Are you sure you wish to edit this mob's appearance? Skrell, Unathi, Tajaran can result in unintended consequences.","Danger!",list("Yes","No")) != "Yes")
 		return

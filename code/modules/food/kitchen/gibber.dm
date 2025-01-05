@@ -136,12 +136,21 @@
 		to_chat(user, "<span class='danger'>The gibber is locked and running, wait for it to finish.</span>")
 		return
 
+<<<<<<< HEAD
 	if(!(istype(victim, /mob/living/carbon)) && !(istype(victim, /mob/living/simple_mob)) )
 		to_chat(user, "<span class='danger'>This is not suitable for the gibber!</span>")
 		return
 
 	if(istype(victim,/mob/living/carbon/human) && !emagged)
 		to_chat(user, "<span class='danger'>The gibber safety guard is engaged!</span>")
+=======
+	if(!(iscarbon(victim)) && !(isanimal(victim)) )
+		to_chat(user, span_danger("This is not suitable for the gibber!"))
+		return
+
+	if(ishuman(victim) && !emagged)
+		to_chat(user, span_danger("The gibber safety guard is engaged!"))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 
@@ -204,7 +213,7 @@
 
 	var/list/byproducts = occupant?.butchery_loot?.Copy()
 
-	if(istype(src.occupant,/mob/living/carbon/human))
+	if(ishuman(src.occupant))
 		var/mob/living/carbon/human/H = occupant
 		slab_name = src.occupant.real_name
 		slab_type = H.isSynthetic() ? /obj/item/stack/material/steel : H.species.meat_type

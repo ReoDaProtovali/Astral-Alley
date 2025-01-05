@@ -79,7 +79,7 @@
 				else if(H.ear_damage >= 5)
 					to_chat(H, "<span class='danger'>Your ears start to ring!</span>")
 					H.deaf_loop.start() // CHOMPStation Add: Ear Ringing/Deafness
-			if(istype(L, /mob/living/silicon/robot))
+			if(isrobot(L))
 				var/mob/living/silicon/robot/R = L
 				if(L.client)
 					if(prob(50))

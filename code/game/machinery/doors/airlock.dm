@@ -87,7 +87,7 @@
 	..()
 
 /obj/machinery/door/airlock/attack_alien(var/mob/user) //Familiar, right? Doors. -Mechoid
-	if(istype(user, /mob/living/carbon/human))
+	if(ishuman(user))
 		var/mob/living/carbon/human/X = user
 		if(istype(X.species, /datum/species/xenos))
 			if(src.locked || src.welded)
@@ -990,7 +990,19 @@ About the new airlock wires panel:
 			if(src.shock(user, 100))
 				return
 
+<<<<<<< HEAD
 	if(istype(user, /mob/living/carbon/human))
+=======
+	if(!Adjacent(hold_open))
+		hold_open = null
+	if(hold_open && !density)
+		if(hold_open == user)
+			hold_open = null
+		else
+			to_chat(user, span_warning("[hold_open] is holding \the [src] open!"))
+
+	if(ishuman(user))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		var/mob/living/carbon/human/X = user
 		if(istype(X.species, /datum/species/xenos))
 			src.attack_alien(user)
@@ -1140,7 +1152,7 @@ About the new airlock wires panel:
 
 	src.add_fingerprint(user)
 	if (attempt_vr(src,"attackby_vr",list(C, user))) return
-	if(istype(C, /mob/living))
+	if(isliving(C))
 		..()
 		return
 	 //VOREstation Edit: Removing material cost from repair requirements

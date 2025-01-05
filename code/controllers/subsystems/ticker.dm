@@ -454,8 +454,13 @@ var/global/datum/controller/subsystem/ticker/ticker
 		//VOREStation Addition End
 	if(captainless)
 		for(var/mob/M in player_list)
+<<<<<<< HEAD
 			if(!istype(M,/mob/new_player))
 				to_chat(M, "<span class='notice'>Site Management is not forced on anyone.</span>")
+=======
+			if(!isnewplayer(M))
+				to_chat(M, span_notice("Site Management is not forced on anyone."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 
 
 /datum/controller/subsystem/ticker/proc/declare_completion()
@@ -476,7 +481,7 @@ var/global/datum/controller/subsystem/ticker/ticker
 				else
 					to_chat(Player, "<span class='filter_system'>[span_blue("<b>You missed the crew transfer after the events on [station_name()] as [Player.real_name].</b>")]</span>")
 			else
-				if(istype(Player,/mob/observer/dead))
+				if(isobserver(Player))
 					var/mob/observer/dead/O = Player
 					if(!O.started_as_observer)
 						to_chat(Player, "<span class='filter_system'>[span_red("<b>You did not survive the events on [station_name()]...</b>")]</span>")

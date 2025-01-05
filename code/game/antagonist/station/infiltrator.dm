@@ -24,9 +24,15 @@ var/datum/antagonist/traitor/infiltrator/infiltrators
 	// Now for the special headset.
 
 	// Humans and the AI.
+<<<<<<< HEAD
 	if(istype(traitor_mob) || istype(traitor_mob, /mob/living/silicon/ai))
 		var/obj/item/device/radio/headset/R
 		R = locate(/obj/item/device/radio/headset) in traitor_mob.contents
+=======
+	if(istype(traitor_mob) || isAI(traitor_mob))
+		var/obj/item/radio/headset/R
+		R = locate(/obj/item/radio/headset) in traitor_mob.contents
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		if(!R)
 			to_chat(traitor_mob, "Unfortunately, a headset could not be found.  You have been given an encryption key \
 			to put into a new headset.  Once that is done, you can talk to your team using <b>:t</b>")
@@ -50,7 +56,7 @@ var/datum/antagonist/traitor/infiltrator/infiltrators
 				<b>:t</b>")
 
 	// Borgs, because their radio is not a headset for some reason.
-	if(istype(traitor_mob, /mob/living/silicon/robot))
+	if(isrobot(traitor_mob))
 		var/mob/living/silicon/robot/borg = traitor_mob
 		var/obj/item/device/encryptionkey/syndicate/encrypt_key = new(null)
 		if(borg.radio)

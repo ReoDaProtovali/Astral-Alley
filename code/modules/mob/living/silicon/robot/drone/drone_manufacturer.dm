@@ -64,7 +64,11 @@
 
 /obj/machinery/drone_fabricator/examine(mob/user)
 	. = ..()
+<<<<<<< HEAD
 	if(produce_drones && drone_progress >= 100 && istype(user,/mob/observer/dead) && CONFIG_GET(flag/allow_drone_spawn) && count_drones() < CONFIG_GET(number/max_maint_drones)) // CHOMPEdit
+=======
+	if(produce_drones && drone_progress >= 100 && isobserver(user) && CONFIG_GET(flag/allow_drone_spawn) && count_drones() < CONFIG_GET(number/max_maint_drones))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		. += "<br><B>A drone is prepared. Select 'Join As Drone' from the Ghost tab to spawn as a maintenance drone.</B>"
 
 /obj/machinery/drone_fabricator/proc/create_drone(var/client/player)
@@ -75,7 +79,7 @@
 	if(!produce_drones || !CONFIG_GET(flag/allow_drone_spawn) || count_drones() >= CONFIG_GET(number/max_maint_drones)) // CHOMPEdit
 		return
 
-	if(player && !istype(player.mob,/mob/observer/dead))
+	if(player && !isobserver(player.mob))
 		return
 
 	visible_message("\The [src] churns and grinds as it lurches into motion, disgorging a shiny new drone after a few moments.")

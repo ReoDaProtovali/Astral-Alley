@@ -88,7 +88,7 @@
 
 	if(H.stat || H.restrained())
 		return
-	if(!istype(H, /mob/living/carbon/human))
+	if(!ishuman(H))
 		return 1
 
 	if(H.mind.special_role == "apprentice")
@@ -403,8 +403,13 @@
 	icon_state ="bookhorses"
 	desc = "This book is more horse than your mind has room for."
 
+<<<<<<< HEAD
 /obj/item/weapon/spellbook/oneuse/horsemask/recoil(mob/living/carbon/user as mob)
 	if(istype(user, /mob/living/carbon/human))
+=======
+/obj/item/spellbook/oneuse/horsemask/recoil(mob/living/carbon/user as mob)
+	if(ishuman(user))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		to_chat(user, "<font size='15' color='red'><b>HOR-SIE HAS RISEN</b></font>")
 		var/obj/item/clothing/mask/horsehead/magichead = new /obj/item/clothing/mask/horsehead
 		magichead.canremove = FALSE		//curses!

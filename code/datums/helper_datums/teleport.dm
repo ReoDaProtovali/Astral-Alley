@@ -175,7 +175,7 @@ var/bluespace_item_types = newlist(/obj/item/weapon/storage/backpack/holding,
 		bluespace_things |= teleatom.search_contents_for(item)
 
 	//VOREStation Addition Start: Prevent taurriding abuse
-	if(istype(teleatom, /mob/living))
+	if(isliving(teleatom))
 		var/mob/living/L = teleatom
 		if(LAZYLEN(L.buckled_mobs))
 			for(var/mob/rider in L.buckled_mobs)
@@ -185,7 +185,7 @@ var/bluespace_item_types = newlist(/obj/item/weapon/storage/backpack/holding,
 
 	if(bluespace_things.len)
 		precision = max(rand(1,100)*bluespace_things.len,100)
-		if(istype(teleatom, /mob/living))
+		if(isliving(teleatom))
 			var/mob/living/MM = teleatom
 			to_chat(MM, "<span class='danger'>The Bluespace interface on your [teleatom] interferes with the teleport!</span>")
 	return 1
@@ -195,8 +195,13 @@ var/bluespace_item_types = newlist(/obj/item/weapon/storage/backpack/holding,
 		teleatom.visible_message("<span class='danger'>\The [teleatom] bounces off of the portal!</span>")
 		return 0
 
+<<<<<<< HEAD
 	if(!isemptylist(teleatom.search_contents_for(/obj/item/weapon/disk/nuclear)))
 		if(istype(teleatom, /mob/living))
+=======
+	if(!isemptylist(teleatom.search_contents_for(/obj/item/disk/nuclear)))
+		if(isliving(teleatom))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			var/mob/living/MM = teleatom
 			MM.visible_message("<span class='danger'>\The [MM] bounces off of the portal!</span>","<span class='warning'>Something you are carrying seems to be unable to pass through the portal. Better drop it if you want to go through.</span>")
 		else
@@ -216,8 +221,13 @@ var/bluespace_item_types = newlist(/obj/item/weapon/storage/backpack/holding,
 	var/obstructed = 0
 	var/turf/dest_turf = get_turf(destination)
 	if(local && !(dest_turf.z in using_map.player_levels))
+<<<<<<< HEAD
 		if(istype(teleatom, /mob/living))
 			to_chat(teleatom, "<span class='warning'>The portal refuses to carry you that far away!</span>")
+=======
+		if(isliving(teleatom))
+			to_chat(teleatom, span_warning("The portal refuses to carry you that far away!"))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return 0
 	else if(istype(destination.loc, /obj/belly))
 		var/obj/belly/destination_belly = destination.loc

@@ -82,8 +82,13 @@
 		to_chat(user,"<span class = 'warning'>Your rehydrator flashes an error as it attempts to process your target.</span>")
 		playsound(src, 'sound/weapons/empty.ogg', 50, 1)
 		return
+<<<<<<< HEAD
 	if(istype(A, /mob/living))
 		to_chat(user,"<span class = 'warning'>The rehydrator's saftey systems prevent firing into living creatures!</span>")
+=======
+	if(isliving(A))
+		to_chat(user,span_warning("The rehydrator's saftey systems prevent firing into living creatures!"))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		playsound(src, 'sound/weapons/empty.ogg', 50, 1)
 		return
 	if(loaded_item)
@@ -138,7 +143,7 @@
 		if(S.stat != DEAD)
 			return FALSE
 		return TRUE
-	if(istype(AM, /mob/living/carbon/human))
+	if(ishuman(AM))
 		var/mob/living/carbon/human/H = AM
 		if(!istype(H.species, /datum/species/monkey))
 			return FALSE

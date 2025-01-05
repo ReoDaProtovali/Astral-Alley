@@ -203,8 +203,13 @@
 	set category = "Object"
 	set src in view(1)
 
+<<<<<<< HEAD
 	if(!istype(usr, /mob/living/carbon/human)) //Only living, intelligent creatures with hands can empty ore boxes.
 		to_chat(usr, "<span class='warning'>You are physically incapable of emptying the ore box.</span>")
+=======
+	if(!ishuman(usr)) //Only living, intelligent creatures with hands can empty ore boxes.
+		to_chat(usr, span_warning("You are physically incapable of emptying the ore box."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 	if( usr.stat || usr.restrained() )

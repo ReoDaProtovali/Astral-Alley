@@ -86,8 +86,13 @@
 		to_chat(user, "<span class='warning'>The tank scoffs at your insolence. It only provides services to welders.</span>")
 	return
 
+<<<<<<< HEAD
 /obj/item/weapon/weldpack/attack_hand(mob/user as mob)
 	if(istype(user, /mob/living/carbon/human))
+=======
+/obj/item/weldpack/attack_hand(mob/user as mob)
+	if(ishuman(user))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		var/mob/living/carbon/human/wearer = user
 		if(wearer.back == src)
 			if(nozzle && nozzle_attached)

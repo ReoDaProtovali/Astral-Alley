@@ -384,8 +384,13 @@
 				var/obj/item/device/communicator/comm = exonet.get_atom_from_address(their_address)
 				to_chat(usr, "<span class='notice'>[icon2html(src, usr.client)] Sent message to [istype(comm, /obj/item/device/communicator) ? comm.owner : comm.name], <b>\"[text]\"</b> (<a href='?src=\ref[src];action=Reply;target=\ref[exonet.get_atom_from_address(comm.exonet.address)]'>Reply</a>)</span>")
 				for(var/mob/M in player_list)
+<<<<<<< HEAD
 					if(M.stat == DEAD && M.is_preference_enabled(/datum/client_preference/ghost_ears))
 						if(istype(M, /mob/new_player) || M.forbid_seeing_deadchat)
+=======
+					if(M.stat == DEAD && M.client?.prefs?.read_preference(/datum/preference/toggle/ghost_ears))
+						if(isnewplayer(M) || M.forbid_seeing_deadchat)
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 							continue
 						if(exonet.get_atom_from_address(their_address) == M)
 							continue

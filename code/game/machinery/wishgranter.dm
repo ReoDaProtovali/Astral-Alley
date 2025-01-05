@@ -18,8 +18,13 @@
 		to_chat(user, "The Wish Granter lies silent.")
 		return
 
+<<<<<<< HEAD
 	else if(!istype(user, /mob/living/carbon/human))
 		to_chat(user, "You feel a dark stirring inside of the Wish Granter, something you want nothing of. Your instincts are better than any man's.")
+=======
+	else if(!ishuman(user))
+		to_chat(user, span_infoplain("You feel a dark stirring inside of the Wish Granter, something you want nothing of. Your instincts are better than any man's."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 	else if(is_special_character(user))

@@ -162,8 +162,13 @@
 			w_class = ITEMSIZE_LARGE
 
 		if(3)
+<<<<<<< HEAD
 			var/obj/item/weapon/gun/projectile/heavysniper/collapsible/gun = new (get_turf(src), 0)
 			if(usr && istype(usr, /mob/living/carbon/human))
+=======
+			var/obj/item/gun/projectile/heavysniper/collapsible/gun = new (get_turf(src), 0)
+			if(usr && ishuman(usr))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 				var/mob/living/carbon/human/user = usr
 				user.unEquip(src, force=1)
 				user.put_in_any_hand_if_possible(gun) || gun.dropInto(loc)

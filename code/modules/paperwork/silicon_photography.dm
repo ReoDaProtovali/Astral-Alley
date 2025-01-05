@@ -142,8 +142,13 @@
 	if(aiCamera)
 		aiCamera.deletepicture()
 
+<<<<<<< HEAD
 /obj/item/device/camera/siliconcam/proc/getsource()
 	if(istype(src.loc, /mob/living/silicon/ai))
+=======
+/obj/item/camera/siliconcam/proc/getsource()
+	if(isAI(src.loc))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return src
 
 	var/mob/living/silicon/robot/C = usr

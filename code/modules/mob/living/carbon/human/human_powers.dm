@@ -102,14 +102,24 @@
 
 	var/mob/M = targets[target]
 
+<<<<<<< HEAD
 	if(istype(M, /mob/observer/dead) || M.stat == DEAD)
 		to_chat(src, "<span class='filter_notice'>Not even a [src.species.name] can speak to the dead.</span>")
+=======
+	if(isobserver(M) || M.stat == DEAD)
+		to_chat(src, span_filter_notice("Not even a [src.species.name] can speak to the dead."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 	log_say("(COMMUNE to [key_name(M)]) [text]",src)
 
+<<<<<<< HEAD
 	to_chat(M, "<span class='filter_say'>[span_blue("Like lead slabs crashing into the ocean, alien thoughts drop into your mind: [text]")]</span>")
 	if(istype(M,/mob/living/carbon/human))
+=======
+	to_chat(M, span_filter_say("[span_blue("Like lead slabs crashing into the ocean, alien thoughts drop into your mind: [text]")]"))
+	if(ishuman(M))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		var/mob/living/carbon/human/H = M
 		if(H.species.name == src.species.name)
 			return

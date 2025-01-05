@@ -169,8 +169,13 @@
 	if(Adjacent(user))
 		. += "There is about [src.amount] square units of paper left!"
 
+<<<<<<< HEAD
 /obj/item/weapon/wrapping_paper/attack(mob/target as mob, mob/user as mob)
 	if (!istype(target, /mob/living/carbon/human)) return
+=======
+/obj/item/wrapping_paper/attack(mob/target as mob, mob/user as mob)
+	if (!ishuman(target)) return
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 	var/mob/living/carbon/human/H = target
 
 	if (istype(H.wear_suit, /obj/item/clothing/suit/straight_jacket) || H.stat)

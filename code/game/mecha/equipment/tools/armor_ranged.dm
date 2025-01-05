@@ -91,11 +91,16 @@
 /obj/item/mecha_parts/mecha_equipment/antiproj_armor_booster/proc/dynhitby(atom/movable/A)
 	if(!action_checks(A))
 		return chassis.dynhitby(A)
+<<<<<<< HEAD
 	if(prob(chassis.deflect_chance*deflect_coeff) || istype(A, /mob/living) || istype(A, /obj/item/mecha_parts/mecha_tracking))
 		chassis.occupant_message("<span class='notice'>The [A] bounces off the armor.</span>")
+=======
+	if(prob(chassis.deflect_chance*deflect_coeff) || isliving(A) || istype(A, /obj/item/mecha_parts/mecha_tracking))
+		chassis.occupant_message(span_notice("The [A] bounces off the armor."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		chassis.visible_message("The [A] bounces off the [chassis] armor")
 		chassis.log_append_to_last("Armor saved.")
-		if(istype(A, /mob/living))
+		if(isliving(A))
 			var/mob/living/M = A
 			M.take_organ_damage(10)
 	else if(istype(A, /obj))

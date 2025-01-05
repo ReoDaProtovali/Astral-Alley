@@ -19,12 +19,17 @@
 		to_chat(src, "<span class='warning'>You need to be closer to do that.</span>")
 		return
 
+<<<<<<< HEAD
 	if ( ! (istype(src, /mob/living/carbon/human) || \
 			istype(src, /mob/living/silicon)) )
 		to_chat(src, "<span class='warning'>If you even have a tongue, it doesn't work that way.</span>")
+=======
+	if ( ! (ishuman(src) || issilicon(src)) )
+		to_chat(src, span_warning("If you even have a tongue, it doesn't work that way."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
-	if (istype(M, /mob/living/carbon/human))
+	if (ishuman(M))
 		var/mob/living/carbon/human/H = M
 		var/obj/item/organ/external/affecting = H.get_organ(src.zone_sel.selecting)
 

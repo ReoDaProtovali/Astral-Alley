@@ -81,9 +81,15 @@
 				entry += "[C.key]"
 			var/mob/observer/dead/O = C.mob
 			if(isobserver(O))
+<<<<<<< HEAD
 				entry += " - <span class='gray'>Observing</span><br>"
 			else if(istype(O,/mob/new_player))
 				entry += " - <span class='blue'>In Lobby</span><br>"
+=======
+				entry += " - " + span_gray("Observing") + "<br>"
+			else if(isnewplayer(O))
+				entry += " - " + span_blue("In Lobby") + "<br>"
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			else
 				entry += " - <span class='green'>Playing</span><br>"
 

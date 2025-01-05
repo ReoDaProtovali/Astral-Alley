@@ -19,8 +19,13 @@
 
 //////////////////////////////Capturing////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 /obj/item/device/soulstone/attack(mob/living/carbon/human/M as mob, mob/user as mob)
 	if(!istype(M, /mob/living/carbon/human))//If target is not a human.
+=======
+/obj/item/soulstone/attack(mob/living/carbon/human/M as mob, mob/user as mob)
+	if(!ishuman(M))//If target is not a human.
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return ..()
 	if(istype(M, /mob/living/carbon/human/dummy))
 		return..()

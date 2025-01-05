@@ -133,7 +133,7 @@
 
 					var/datum/reagent/B
 					drawing = 1
-					if(istype(T, /mob/living/carbon/human))
+					if(ishuman(T))
 						var/mob/living/carbon/human/H = T
 						if(H.species && !H.should_have_organ(O_HEART))
 							H.reagents.trans_to_obj(src, amount)
@@ -260,8 +260,13 @@
 //		dirty(target,affected) //VOREStation Add -- Removed by Request
 	return
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/syringe/proc/syringestab(mob/living/carbon/target as mob, mob/living/carbon/user as mob)
 	if(istype(target, /mob/living/carbon/human))
+=======
+/obj/item/reagent_containers/syringe/proc/syringestab(mob/living/carbon/target as mob, mob/living/carbon/user as mob)
+	if(ishuman(target))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 
 		var/mob/living/carbon/human/H = target
 

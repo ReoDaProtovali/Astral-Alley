@@ -50,7 +50,7 @@
 		if(!ai_holder)
 			log_debug("[src] could not initialize ai_holder of type [ai_holder_type]")
 			return
-		if(istype(src, /mob/living/carbon/human))
+		if(ishuman(src))
 			var/mob/living/carbon/human/H = src
 			H.hud_used = new /datum/hud(H)
 			H.create_mob_hud(H.hud_used)

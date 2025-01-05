@@ -12,8 +12,13 @@
 	set category = "Object"
 	set src in view(1)
 
+<<<<<<< HEAD
 	if(usr.incapacitated() || !istype(usr, /mob/living) || istype(usr, /mob/living/simple_mob)) //CHOMPEdit - Preventing simple_mobs from interacting
 		to_chat(usr, "<span class='warning'>You can't do that.</span>")
+=======
+	if(usr.incapacitated() || !isliving(usr) || isanimal(usr)) //CHOMPEdit - Preventing simple_mobs from interacting
+		to_chat(usr, span_warning("You can't do that."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 	if(!Adjacent(usr))
@@ -36,8 +41,13 @@
 	set category = "Object"
 	set src in view(1)
 
+<<<<<<< HEAD
 	if(usr.incapacitated() || !istype(usr, /mob/living) || istype(usr, /mob/living/simple_mob)) //CHOMPEdit - Preventing simple_mobs from interacting
 		to_chat(usr, "<span class='warning'>You can't do that.</span>")
+=======
+	if(usr.incapacitated() || !isliving(usr) || isanimal(usr)) //CHOMPEdit - Preventing simple_mobs from interacting
+		to_chat(usr, span_warning("You can't do that."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 	if(!Adjacent(usr))
@@ -52,8 +62,13 @@
 	set category = "Object"
 	set src in view(1)
 
+<<<<<<< HEAD
 	if(usr.incapacitated() || !istype(usr, /mob/living) || istype(usr, /mob/living/simple_mob)) //CHOMPEdit - Preventing simple_mobs from interacting
 		to_chat(usr, "<span class='warning'>You can't do that.</span>")
+=======
+	if(usr.incapacitated() || !isliving(usr) || isanimal(usr)) //CHOMPEdit - Preventing simple_mobs from interacting
+		to_chat(usr, span_warning("You can't do that."))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 	if(!Adjacent(usr))

@@ -42,7 +42,11 @@
 #undef NEST_RESIST_TIME
 
 /obj/structure/bed/nest/user_buckle_mob(mob/M as mob, mob/user as mob)
+<<<<<<< HEAD
 	if ( !ismob(M) || (get_dist(src, user) > 1) || (M.loc != src.loc) || user.restrained() || usr.stat || M.buckled || istype(user, /mob/living/silicon/pai) )
+=======
+	if ( !ismob(M) || (get_dist(src, user) > 1) || (M.loc != src.loc) || user.restrained() || user.stat || M.buckled || ispAI(user) )
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 	unbuckle_mob()

@@ -266,7 +266,11 @@ update_flag
 		src.add_fingerprint(user)
 		healthcheck()
 
+<<<<<<< HEAD
 	if(istype(user, /mob/living/silicon/robot) && istype(W, /obj/item/weapon/tank/jetpack))
+=======
+	if(isrobot(user) && istype(W, /obj/item/tank/jetpack))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		var/datum/gas_mixture/thejetpack = W:air_contents
 		var/env_pressure = thejetpack.return_pressure()
 		var/pressure_delta = min(10*ONE_ATMOSPHERE - env_pressure, (air_contents.return_pressure() - env_pressure)/2)

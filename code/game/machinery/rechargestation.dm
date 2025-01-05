@@ -171,9 +171,15 @@
 			return
 		if(default_part_replacement(user, O))
 			return
+<<<<<<< HEAD
 		if (istype(O, /obj/item/weapon/grab) && get_dist(src,user)<2)
 			var/obj/item/weapon/grab/G = O
 			if(istype(G.affecting,/mob/living))
+=======
+		if (istype(O, /obj/item/grab) && get_dist(src,user)<2)
+			var/obj/item/grab/G = O
+			if(isliving(G.affecting))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 				var/mob/living/M = G.affecting
 				qdel(O)
 				go_in(M)
@@ -252,7 +258,7 @@
 	if(occupant)
 		return
 
-	if(istype(L, /mob/living/silicon/robot))
+	if(isrobot(L))
 		var/mob/living/silicon/robot/R = L
 
 		if(R.incapacitated())
@@ -273,7 +279,7 @@
 		return 1
 
 	//VOREStation Add Start
-	else if(istype(L, /mob/living/silicon/pai))
+	else if(ispAI(L))
 		var/mob/living/silicon/pai/P = L
 
 		if(P.incapacitated())

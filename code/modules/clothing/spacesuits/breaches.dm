@@ -189,8 +189,13 @@ var/global/list/breach_burn_descriptors = list(
 		if(!repair_power)
 			return
 
+<<<<<<< HEAD
 		if(istype(src.loc,/mob/living))
 			to_chat(user, "<span class='warning'>How do you intend to patch a hardsuit while someone is wearing it?</span>")
+=======
+		if(isliving(src.loc))
+			to_chat(user, span_warning("How do you intend to patch a hardsuit while someone is wearing it?"))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			return
 
 		if(!damage || !burn_damage)
@@ -205,7 +210,7 @@ var/global/list/breach_burn_descriptors = list(
 
 	else if(W.has_tool_quality(TOOL_WELDER))
 
-		if(istype(src.loc,/mob/living))
+		if(isliving(src.loc))
 			to_chat(user, span_red("How do you intend to patch a hardsuit while someone is wearing it?"))
 			return
 

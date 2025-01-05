@@ -693,14 +693,19 @@
 			if(istype(src, /mob/living/carbon/human/diona) || istype(src, /mob/living/carbon/alien/diona))
 				src.composition_reagent = "nutriment" // diona are plants, not meat
 			else
+<<<<<<< HEAD
 				src.composition_reagent = "protein"
 				if(istype(src, /mob/living/carbon/human))
+=======
+				src.composition_reagent = REAGENT_ID_PROTEIN
+				if(ishuman(src))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 					var/mob/living/carbon/human/H = src
 					if(istype(H.species, /datum/species/diona))
 						src.composition_reagent = "nutriment"
 
 	//if the mob is a simple animal - MOB NOT ANIMAL - with a defined meat quantity
-	if (istype(src, /mob/living/simple_mob))
+	if (isanimal(src))
 		var/mob/living/simple_mob/SA = src
 		if(SA.meat_amount)
 			src.composition_reagent_quantity = SA.meat_amount*2*9

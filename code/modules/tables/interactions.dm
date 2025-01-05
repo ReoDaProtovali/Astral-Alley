@@ -90,9 +90,15 @@
 	if (!W) return
 
 	// Handle harm intent grabbing/tabling.
+<<<<<<< HEAD
 	if(istype(W, /obj/item/weapon/grab) && get_dist(src,user)<2)
 		var/obj/item/weapon/grab/G = W
 		if (istype(G.affecting, /mob/living))
+=======
+	if(istype(W, /obj/item/grab) && get_dist(src,user)<2)
+		var/obj/item/grab/G = W
+		if (isliving(G.affecting))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 			var/mob/living/M = G.affecting
 			var/obj/occupied = turf_is_crowded()
 			if(occupied)

@@ -483,8 +483,13 @@
 
 	if(client.holder && (client.holder.rights & R_ADMIN|R_EVENT))
 		is_admin = 1
+<<<<<<< HEAD
 	else if(stat != DEAD || istype(src, /mob/new_player))
 		to_chat(usr, "<span class='filter_notice'>[span_blue("You must be observing to use this!")]</span>")
+=======
+	else if(stat != DEAD || isnewplayer(src))
+		to_chat(usr, span_filter_notice("[span_blue("You must be observing to use this!")]"))
+>>>>>>> ed79946ade ([MIRROR] some istype to macros (#9802))
 		return
 
 	if(is_admin && stat == DEAD)
