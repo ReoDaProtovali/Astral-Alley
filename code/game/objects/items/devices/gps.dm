@@ -1,4 +1,4 @@
-var/list/GPS_list = list()
+GLOBAL_LIST_EMPTY(GPS_list)
 
 /obj/item/device/gps
 	name = "global positioning system"
@@ -27,7 +27,7 @@ var/list/GPS_list = list()
 /obj/item/device/gps/Initialize()
 	. = ..()
 	compass = new(src)
-	GPS_list += src
+	GLOB.GPS_list += src
 	name = "global positioning system ([gps_tag])"
 	update_holder()
 	update_icon()
@@ -91,7 +91,7 @@ var/list/GPS_list = list()
 /obj/item/device/gps/Destroy()
 	STOP_PROCESSING(SSobj, src)
 	is_in_processing_list = FALSE
-	GPS_list -= src
+	GLOB.GPS_list -= src
 	update_holder()
 	QDEL_NULL(compass)
 	. = ..()
@@ -197,7 +197,11 @@ var/list/GPS_list = list()
 	dat["z_level_detection"] = using_map.get_map_levels(curr.z, long_range)
 
 	var/list/gps_list = list()
+<<<<<<< HEAD
 	for(var/obj/item/device/gps/G in GPS_list - src)
+=======
+	for(var/obj/item/gps/G in GLOB.GPS_list - src)
+>>>>>>> 9064a83dc2 ([MIRROR] fix an issue with multi borg module registering (#9795))
 
 		if(!can_track(G, dat["z_level_detection"]))
 			continue
