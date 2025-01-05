@@ -11,14 +11,18 @@
 	var/glass = 1
 	var/datum/tgui_module/appearance_changer/mirror/M
 
+<<<<<<< HEAD
 /obj/structure/mirror/Initialize(mapload, var/dir, var/building = 0, mob/user as mob)
+=======
+/obj/structure/mirror/Initialize(mapload, var/dir, var/building = 0)
+	. = ..()
+>>>>>>> e9f8aa7bc0 ([MIRROR] more inits without returns (#9798))
 	M = new(src, null)
 	if(building)
 		glass = 0
 		icon_state = "mirror_frame"
 		pixel_x = (dir & 3)? 0 : (dir == 4 ? -28 : 28)
 		pixel_y = (dir & 3)? (dir == 1 ? -30 : 30) : 0
-	return
 
 /obj/structure/mirror/Destroy()
 	QDEL_NULL(M)
