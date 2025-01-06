@@ -238,6 +238,12 @@
 	var/splatter_volume = 5			// The volume of its chemical container, for said cloud of reagents.
 	var/list/my_chems = list("mold")
 
+/obj/item/projectile/arc/vial/Initialize()
+	. = ..()
+	if(splatter)
+		create_reagents(splatter_volume)
+		ready_chemicals()
+
 /obj/item/projectile/arc/vial/on_impact(var/atom/A)
 	if(splatter)
 		var/turf/location = get_turf(src)
