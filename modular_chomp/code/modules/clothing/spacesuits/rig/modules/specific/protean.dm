@@ -131,6 +131,9 @@ These should come standard with the Protean rigsuit, unless you want them to wor
 /obj/item/rig_module/protean/armor/process()
 	if(active)
 		var/mob/living/carbon/human/H = holder.wearer
+		if(!H)
+			deactivate(1)
+			return
 		if(istype(H.species, /datum/species/protean))
 			to_chat(H, "<span class='warning'>Your Protean modules do not function on yourself.</span>")
 			deactivate(1)
@@ -185,8 +188,16 @@ These should come standard with the Protean rigsuit, unless you want them to wor
 	if(active)
 		var/mob/living/carbon/human/H = holder.wearer
 		var/mob/living/P = holder?:myprotean
+<<<<<<< HEAD:modular_chomp/code/modules/clothing/spacesuits/rig/modules/specific/protean.dm
 		if((istype(H.species, /datum/species/protean)) || !H || !P)
 			to_chat(H, "<span class='warning'>Your Protean modules do not function on yourself.</span>")
+=======
+		if(!H || !P)
+			deactivate()
+			return
+		if(istype(H.species, /datum/species/protean))
+			to_chat(H, span_warning("Your Protean modules do not function on yourself."))
+>>>>>>> 0144bf1e6e ([MIRROR] fix a runtime in the keyloop (#9813)):code/modules/clothing/spacesuits/rig/modules/protean.dm
 			deactivate()
 			return
 		var/obj/item/organ/internal/nano/refactory/R = P.nano_get_refactory()

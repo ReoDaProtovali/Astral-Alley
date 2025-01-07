@@ -200,7 +200,12 @@
 				B.blood_DNA = list()
 			if(!B.blood_DNA[M.dna.unique_enzymes])
 				B.blood_DNA[M.dna.unique_enzymes] = M.dna.b_type
+<<<<<<< HEAD
 				B.virus2 = virus_copylist(M.virus2)
+=======
+				if(M.viruses)
+					B.viruses = M.viruses.Copy()
+>>>>>>> 0144bf1e6e ([MIRROR] fix a runtime in the keyloop (#9813))
 			return 1 //we bloodied the floor
 		blood_splatter(src,M.get_blood(M.vessel),1)
 		return 1 //we bloodied the floor
