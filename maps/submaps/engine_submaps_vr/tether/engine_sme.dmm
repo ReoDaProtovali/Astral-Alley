@@ -316,9 +316,6 @@
 	},
 /turf/simulated/floor,
 /area/engineering/engine_room)
-"aV" = (
-/turf/simulated/floor/tiled/techmaint,
-/area/template_noop)
 "aW" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -1584,7 +1581,7 @@ ac
 ad
 ac
 ac
-ac
+ab
 ac
 ac
 ac
@@ -2355,8 +2352,8 @@ af
 av
 av
 av
-aV
-aV
+aa
+aa
 av
 bz
 bz

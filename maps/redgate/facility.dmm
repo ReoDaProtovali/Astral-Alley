@@ -13620,7 +13620,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	dir = 8;
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
@@ -13892,7 +13891,6 @@
 	icon_state = "1-2"
 	},
 /obj/structure/cable{
-	dir = 8;
 	icon_state = "1-4"
 	},
 /turf/unsimulated/floor/techfloor_grid{
@@ -15279,7 +15277,6 @@
 	icon_state = "1-4"
 	},
 /obj/structure/cable{
-	dir = 8;
 	icon_state = "1-4"
 	},
 /turf/unsimulated/floor/techfloor_grid{
@@ -15308,7 +15305,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/cable{
-	dir = 8;
 	icon_state = "1-4"
 	},
 /turf/unsimulated/floor/techfloor_grid{
@@ -16608,7 +16604,6 @@
 /area/redgate/facility/ne)
 "xtG" = (
 /obj/structure/cable{
-	dir = 8;
 	icon_state = "1-4"
 	},
 /turf/simulated/floor/tiled/eris/dark/orangecorner,
