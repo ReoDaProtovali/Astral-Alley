@@ -522,3 +522,163 @@ var/global/list/disallowed_protean_accessories = list(
 		if(PB.humanform == src)
 			return FALSE
 	return ..()
+<<<<<<< HEAD
+=======
+
+/mob/living/simple_mob/protean_blob/handle_mutations_and_radiation()
+	humanform.handle_mutations_and_radiation()
+
+/mob/living/simple_mob/protean_blob/update_icon()
+	..()
+	if(humanform)
+		vis_height = 32
+		cut_overlays()
+		var/list/wide_icons = list(
+		"lizard",
+		"rat",
+		"wolf"
+		)
+		var/list/tall_icons = list(
+		"drake",
+		"teppi",
+		"panther"
+		)
+		var/list/big_icons = list(
+		"robodrgn"
+		)
+		var/datum/species/protean/S = humanform.species
+		icon = 'icons/mob/species/protean/protean.dmi'
+		default_pixel_x = 0
+		pixel_x = 0
+		vore_capacity = 1
+		if(S.blob_appearance == "dragon")
+			vore_capacity = 2
+			icon = 'icons/mob/vore128x64.dmi'
+			mount_offset_y = 32
+			mount_offset_x = -16
+			var/image/I = image(icon, "[S.dragon_overlays[1]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -48)
+			I.color = S.dragon_overlays[S.dragon_overlays[1]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dragon_overlays[2]][resting? "-rest" : null]", pixel_x = -48)
+			I.color = S.dragon_overlays[S.dragon_overlays[2]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dragon_overlays[3]][resting? "-rest" : null]", pixel_x = -48)
+			I.color = S.dragon_overlays[S.dragon_overlays[3]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dragon_overlays[4]][resting? "-rest" : null]", pixel_x = -48)
+			I.color = S.dragon_overlays[S.dragon_overlays[4]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dragon_overlays[5]][resting? "-rest" : null]", pixel_x = -48)
+			I.color = S.dragon_overlays[S.dragon_overlays[5]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dragon_overlays[6]][resting? "-rest" : null]", pixel_x = -48)
+			I.color = S.dragon_overlays[S.dragon_overlays[6]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = PLANE_LIGHTING_ABOVE
+			add_overlay(I)
+			qdel(I)
+		// CHOMPEdit Start
+		if(S.blob_appearance == "dullahan")
+			icon = 'modular_chomp/icons/mob/dullahanborg/Dullahanprotean64x64.dmi'
+			vis_height = 64
+			var/image/I = image(icon, "[S.dullahan_overlays[1]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16)
+			I.color = S.dullahan_overlays[S.dullahan_overlays[1]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dullahan_overlays[2]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16)
+			I.color = S.dullahan_overlays[S.dullahan_overlays[2]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dullahan_overlays[3]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16)
+			I.color = S.dullahan_overlays[S.dullahan_overlays[3]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dullahan_overlays[4]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16)
+			I.color = S.dullahan_overlays[S.dullahan_overlays[4]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dullahan_overlays[5]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16)
+			I.color = S.dullahan_overlays[S.dullahan_overlays[5]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+
+			I = image(icon, "[S.dullahan_overlays[6]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16)
+			I.color = S.dullahan_overlays[S.dullahan_overlays[6]]
+			I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+			I.plane = MOB_PLANE
+			I.layer = MOB_LAYER
+			add_overlay(I)
+			qdel(I)
+			// CHOMPEdit End
+		if(S.blob_appearance in wide_icons)
+			icon = 'icons/mob/species/protean/protean64x32.dmi'
+			default_pixel_x = -16
+			pixel_x = -16
+		if(S.blob_appearance in tall_icons)
+			icon = 'icons/mob/species/protean/protean64x64.dmi'
+			default_pixel_x = -16
+			pixel_x = -16
+			vis_height = 64
+		if(S.blob_appearance in big_icons)
+			icon = 'icons/mob/species/protean/protean128x64.dmi'
+			default_pixel_x = -48
+			pixel_x = -48
+			vis_height = 64
+		var/image/I = image(icon, S.blob_appearance+"[resting? "_rest":null][vore_fullness? "-[vore_fullness]" : null]")
+		I.color = S.blob_color_1
+		I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+		I.plane = MOB_PLANE
+		I.layer = MOB_LAYER
+		add_overlay(I)
+		qdel(I)
+		eye_layer = image(icon, "[S.blob_appearance][resting? "_rest" : null]-eyes")
+		eye_layer.appearance_flags = appearance_flags
+		eye_layer.color = S.blob_color_2
+		eye_layer.plane = PLANE_LIGHTING_ABOVE
+		add_overlay(eye_layer)
+		qdel(eye_layer)
+>>>>>>> 93a0981f43 (adding in proteanborgs. (dullahan) (#9696))
