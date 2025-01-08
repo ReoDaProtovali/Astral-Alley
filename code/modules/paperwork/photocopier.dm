@@ -87,7 +87,11 @@
 
 				if(!camera)
 					return
+<<<<<<< HEAD
 				var/obj/item/weapon/photo/selection = camera.selectpicture()
+=======
+				var/obj/item/photo/selection = camera.selectpicture(ui.user)
+>>>>>>> e9859ef961 ([MIRROR] fix a runtime and some usr to user (#9817))
 				if (!selection)
 					return
 
