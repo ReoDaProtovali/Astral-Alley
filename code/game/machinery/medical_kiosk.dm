@@ -6,6 +6,11 @@
 #define RADIATION_DAMAGE 0x20
 #define TOXIN_DAMAGE 0x40
 #define OXY_DAMAGE 0x80
+<<<<<<< HEAD
+=======
+#define HUSKED_BODY 0x100
+#define WEIRD_ORGANS 0x200 //CHOMPedit malignant
+>>>>>>> 78c6862211 (Malignant organs + Selling organs (#9744))
 
 /obj/machinery/medical_kiosk
 	name = "medical kiosk"
@@ -125,7 +130,18 @@
 			problems |= SERIOUS_INTERNAL_DAMAGE
 		if(I.status & ORGAN_BLEEDING)
 			problems |= INTERNAL_BLEEDING
+<<<<<<< HEAD
 	
+=======
+		//CHOMPedit begin- malignants
+		if(istype(I,/obj/item/organ/internal/malignant))
+			problems |= WEIRD_ORGANS
+		//CHOMPedit end
+
+	if(HUSK in user.mutations)
+		problems |= HUSKED_BODY
+
+>>>>>>> 78c6862211 (Malignant organs + Selling organs (#9744))
 	if(user.getToxLoss() > 0)
 		problems |= TOXIN_DAMAGE
 	if(user.getOxyLoss() > 0)
@@ -157,7 +173,17 @@
 	if(problems & TOXIN_DAMAGE)
 		problem_text += "<br><span class='warning'>Exposure to toxic materials detected - induce vomiting if you have consumed anything recently.</span>"
 	if(problems & OXY_DAMAGE)
+<<<<<<< HEAD
 		problem_text += "<br><span class='warning'>Blood/air perfusion level is below acceptable norms - use concentrated oxygen if necessary.</span>"
+=======
+		problem_text += "<br>" + span_warning("Blood/air perfusion level is below acceptable norms - use concentrated oxygen if necessary.")
+	//CHOMPedit begin malignants
+	if(problems & WEIRD_ORGANS)
+		problem_text += "<br>" + span_warning("Anatomical irregularities detected - Please see a medical professional.")
+	//CHOMPedit end
+	if(problems & HUSKED_BODY)
+		problem_text += "<br>" + span_danger("Anatomical structure lost, resuscitation not possible!")
+>>>>>>> 78c6862211 (Malignant organs + Selling organs (#9744))
 
 	return problem_text
 
@@ -184,4 +210,10 @@
 #undef SERIOUS_INTERNAL_DAMAGE
 #undef RADIATION_DAMAGE
 #undef TOXIN_DAMAGE
+<<<<<<< HEAD
 #undef OXY_DAMAGE
+=======
+#undef OXY_DAMAGE
+#undef HUSKED_BODY
+#undef WEIRD_ORGANS // CHOMPedit - malignants
+>>>>>>> 78c6862211 (Malignant organs + Selling organs (#9744))

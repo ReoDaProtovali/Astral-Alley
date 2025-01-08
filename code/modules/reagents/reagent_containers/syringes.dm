@@ -186,8 +186,26 @@
 			if(istype(target, /obj/item/weapon/implantcase/chem))
 				return
 
+<<<<<<< HEAD
 			if(!target.is_open_container() && !ismob(target) && !istype(target, /obj/item/weapon/reagent_containers/food) && !istype(target, /obj/item/slime_extract) && !istype(target, /obj/item/clothing/mask/smokable/cigarette) && !istype(target, /obj/item/weapon/storage/fancy/cigarettes) && !istype(target, /obj/item/clothing/mask/chewable)) // CHOMPEdit
 				to_chat(user, "<span class='notice'>You cannot directly fill this object.</span>")
+=======
+			// CHOMPedit begin - Engineered organ training
+			if(istype(target, /obj/item/organ/internal/malignant/engineered/lattice))
+				var/datum/reagent/R = pick(reagents.reagent_list)
+				if(R)
+					var/obj/item/organ/internal/malignant/engineered/lattice/LAT = target
+					var/success = LAT.make_mutoid(R.id)
+					to_chat(user, span_notice("You inject \the [target] with \the [src], and [success ? "it begins to mutate!" : "nothing seems to happen."]"))
+					reagents.clear_reagents()
+					mode = SYRINGE_DRAW
+					update_icon()
+				return
+			// CHOMPedit end
+
+			if(!target.is_open_container() && !ismob(target) && !istype(target, /obj/item/reagent_containers/food) && !istype(target, /obj/item/slime_extract) && !istype(target, /obj/item/clothing/mask/smokable/cigarette) && !istype(target, /obj/item/storage/fancy/cigarettes) && !istype(target, /obj/item/clothing/mask/chewable)) // CHOMPEdit
+				to_chat(user, span_notice("You cannot directly fill this object."))
+>>>>>>> 78c6862211 (Malignant organs + Selling organs (#9744))
 				return
 			if(!target.reagents.get_free_space())
 				to_chat(user, "<span class='notice'>[target] is full.</span>")
