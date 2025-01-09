@@ -628,3 +628,11 @@ GLOBAL_LIST_EMPTY(text_tag_cache)
 		return json_decode(data)
 	catch
 		return null
+<<<<<<< HEAD
+=======
+
+/// Removes all non-alphanumerics from the text, keep in mind this can lead to id conflicts
+/proc/sanitize_css_class_name(name)
+	var/static/regex/regex = new(@"[^a-zA-Z0-9]","g")
+	return replacetext(name, regex, "")
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))

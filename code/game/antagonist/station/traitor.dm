@@ -115,21 +115,33 @@ var/datum/antagonist/traitor/traitors
 	var/loc = ""
 	var/obj/item/R = locate() //Hide the uplink in a PDA if available, otherwise radio
 
+<<<<<<< HEAD
 	if(traitor_mob.client.prefs.uplinklocation == "Headset")
 		R = locate(/obj/item/device/radio) in traitor_mob.contents
+=======
+	var/uplinklocation = traitor_mob.read_preference(/datum/preference/choiced/uplinklocation)
+
+	if(uplinklocation == "Headset")
+		R = locate(/obj/item/radio) in traitor_mob.contents
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 		if(!R)
 			R = locate(/obj/item/device/pda) in traitor_mob.contents
 			to_chat(traitor_mob, "Could not locate a Radio, installing in PDA instead!")
 		if (!R)
 			to_chat(traitor_mob, "Unfortunately, neither a radio or a PDA relay could be installed.")
+<<<<<<< HEAD
 	else if(traitor_mob.client.prefs.uplinklocation == "PDA")
 		R = locate(/obj/item/device/pda) in traitor_mob.contents
+=======
+	else if(uplinklocation == "PDA")
+		R = locate(/obj/item/pda) in traitor_mob.contents
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 		if(!R)
 			R = locate(/obj/item/device/radio) in traitor_mob.contents
 			to_chat(traitor_mob, "Could not locate a PDA, installing into a Radio instead!")
 		if(!R)
 			to_chat(traitor_mob, "Unfortunately, neither a radio or a PDA relay could be installed.")
-	else if(traitor_mob.client.prefs.uplinklocation == "None")
+	else if(uplinklocation == "None")
 		to_chat(traitor_mob, "You have elected to not have an AntagCorp portable teleportation relay installed!")
 		R = null
 	else

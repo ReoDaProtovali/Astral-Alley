@@ -203,8 +203,13 @@ Maybe later, gotta figure out a way to click yourself when in a locker etc.
 		if(new_metadata == "!clear")
 			new_metadata = ""
 		ooc_notes_favs = new_metadata
+<<<<<<< HEAD
 		client.prefs.metadata_favs = new_metadata
 		to_chat(user, "<span class='filter_notice'>OOC note favs have been updated. Don't forget to save!</span>")
+=======
+		client.prefs.update_preference_by_type(/datum/preference/text/living/ooc_notes_favs, new_metadata)
+		to_chat(user, span_filter_notice("OOC note favs have been updated. Don't forget to save!"))
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 		log_admin("[key_name(user)] updated their OOC note favs mid-round.")
 		if(reopen)
 			ooc_notes_window(user)
@@ -217,8 +222,13 @@ Maybe later, gotta figure out a way to click yourself when in a locker etc.
 		if(new_metadata == "!clear")
 			new_metadata = ""
 		ooc_notes_maybes = new_metadata
+<<<<<<< HEAD
 		client.prefs.metadata_maybes = new_metadata
 		to_chat(user, "<span class='filter_notice'>OOC note maybes have been updated. Don't forget to save!</span>")
+=======
+		client.prefs.update_preference_by_type(/datum/preference/text/living/ooc_notes_maybes, new_metadata)
+		to_chat(user, span_filter_notice("OOC note maybes have been updated. Don't forget to save!"))
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 		log_admin("[key_name(user)] updated their OOC note maybes mid-round.")
 		if(reopen)
 			ooc_notes_window(user)
@@ -227,7 +237,7 @@ Maybe later, gotta figure out a way to click yourself when in a locker etc.
 	if(user != src)
 		return
 	ooc_notes_style = !ooc_notes_style
-	client.prefs.matadata_ooc_style = !client.prefs.matadata_ooc_style
+	client.prefs.update_preference_by_type(/datum/preference/toggle/living/ooc_notes_style, ooc_notes_style)
 	if(reopen)
 		ooc_notes_window(user)
 //ChompEDIT END - Removal of usr

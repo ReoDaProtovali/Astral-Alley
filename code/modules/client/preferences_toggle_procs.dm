@@ -239,6 +239,7 @@
 
 	feedback_add_details("admin_verb","TBeSpecial") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
+<<<<<<< HEAD
 /client/verb/toggle_air_pump_hum()
 	set name = "Toggle Air Vent Noise"
 	set category = "Preferences.Sounds" //CHOMPEdit
@@ -484,6 +485,8 @@ CHOMPRemove. Bundled voice sounds into emote/whisper/subtle. Going this extra le
 
 	feedback_add_details("admin_verb","TVoreHealthBars")
 
+=======
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 // Not attached to a pref datum because those are strict binary toggles
 /client/verb/toggle_examine_mode()
 	set name = "Toggle Examine Mode"

@@ -29,6 +29,7 @@
 
 // For the client FPS pref and anywhere else
 #define MAX_CLIENT_FPS	200
+#define RECOMMENDED_FPS	100
 
 // Some arbitrary defines to be used by self-pruning global lists. (see master_controller)
 #define PROCESS_KILL 26 // Used to trigger removal from a processing list.
