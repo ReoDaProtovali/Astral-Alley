@@ -161,6 +161,7 @@
 	feedback_add_details("admin_verb","S") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+<<<<<<< HEAD
 /client/proc/colorooc()
 	set category = "Admin.Misc" //CHOMPEdit
 	set name = "OOC Text Color"
@@ -175,6 +176,8 @@
 	feedback_add_details("admin_verb","OC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	return
 
+=======
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 /client/proc/findStealthKey(txt)
 	if(txt)
 		for(var/P in GLOB.stealthminID)

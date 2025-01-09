@@ -138,11 +138,14 @@
 		ai_holder.on_hear_say(speaker, multilingual_to_message(message_pieces))
 
 /mob/proc/on_hear_say(var/message, var/mob/speaker = null)
-	var/time = say_timestamp()
 	if(client)
+<<<<<<< HEAD
 		if(client.prefs.chat_timestamp)
 			message = "[time] [message]"
 		message = "<span class='game say'>[message]</span>"
+=======
+		message = span_game(span_say(message))
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 		if(speaker && !speaker.client)
 			message = "<span class='npcsay'>[message]</span>"
 		else if(speaker && !(get_z(src) == get_z(speaker)))
@@ -154,11 +157,14 @@
 		to_chat(src, "<span class='game say'>[message]</span>")
 
 /mob/living/silicon/on_hear_say(var/message, var/mob/speaker = null)
-	var/time = say_timestamp()
 	if(client)
+<<<<<<< HEAD
 		if(client.prefs.chat_timestamp)
 			message = "[time] [message]"
 		message = "<span class='game say'>[message]</span>"
+=======
+		message = span_game(span_say(message))
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 		if(speaker && !speaker.client)
 			message = "<span class='npcsay'>[message]</span>"
 		else if(speaker && !(get_z(src) == get_z(speaker)))
@@ -219,13 +225,14 @@
 	else
 		on_hear_radio(part_a, part_b, speaker_name, track, part_c, message, part_d, part_e)
 
+<<<<<<< HEAD
 /proc/say_timestamp()
 	return "<span class='say_quote'>\[[time2text(world.timeofday, "hh:mm")]\]</span>"
 
+=======
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 /mob/proc/on_hear_radio(part_a, part_b, speaker_name, track, part_c, formatted, part_d, part_e)
 	var/time = ""
-	if(client.prefs.chat_timestamp)
-		time = say_timestamp()
 	var/final_message = "[part_b][speaker_name][part_c][formatted][part_d]"
 	if(check_mentioned(formatted) && is_preference_enabled(/datum/client_preference/check_mention))
 		final_message = "[time][part_a]<font size='3'><b>[final_message]</b></font>[part_e]"
@@ -235,8 +242,6 @@
 
 /mob/observer/dead/on_hear_radio(part_a, part_b, speaker_name, track, part_c, formatted, part_d, part_e)
 	var/time = ""
-	if(client.prefs.chat_timestamp)
-		time = say_timestamp()
 	var/final_message = "[part_b][track][part_c][formatted][part_d]"
 	if(check_mentioned(formatted) && is_preference_enabled(/datum/client_preference/check_mention))
 		final_message = "[time][part_a]<font size='3'><b>[final_message]</b></font>[part_e]"
@@ -246,8 +251,6 @@
 
 /mob/living/silicon/on_hear_radio(part_a, part_b, speaker_name, track, part_c, formatted, part_d, part_e)
 	var/time = ""
-	if(client.prefs.chat_timestamp)
-		time = say_timestamp()
 	var/final_message = "[part_b][speaker_name][part_c][formatted][part_d]"
 	if(check_mentioned(formatted) && is_preference_enabled(/datum/client_preference/check_mention))
 		final_message = "[time][part_a]<font size='3'><b>[final_message]</b></font>[part_e]"
@@ -257,8 +260,6 @@
 
 /mob/living/silicon/ai/on_hear_radio(part_a, part_b, speaker_name, track, part_c, formatted, part_d, part_e)
 	var/time = ""
-	if(client.prefs.chat_timestamp)
-		time = say_timestamp()
 	var/final_message = "[part_b][track][part_c][formatted][part_d]"
 	if(check_mentioned(formatted) && is_preference_enabled(/datum/client_preference/check_mention))
 		final_message = "[time][part_a]<font size='3'><b>[final_message]</b></font>[part_e]"

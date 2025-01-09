@@ -746,7 +746,11 @@
 			ooc_notes_window(usr)
 //			to_chat(usr, "<span class='filter_notice'>[src]'s Metainfo:<br>[ooc_notes]</span>")
 		else if(client)
+<<<<<<< HEAD
 			to_chat(usr, "<span class='filter_notice'>[src]'s Metainfo:<br>[client.prefs.metadata]</span>")
+=======
+			to_chat(usr, span_filter_notice("[src]'s Metainfo:<br>[client.prefs.read_preference(/datum/preference/text/living/ooc_notes)]"))
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 		else
 			to_chat(usr, "<span class='filter_notice'>[src] does not have any stored infomation!</span>")
 	else

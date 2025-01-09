@@ -374,7 +374,12 @@ Proc for attack log creation, because really why not
 		cached_character_icons[cachekey] = .
 
 /proc/not_has_ooc_text(mob/user)
+<<<<<<< HEAD
 	if (CONFIG_GET(flag/allow_metadata) && (!user.client?.prefs?.metadata || length(user.client.prefs.metadata) < 15)) // CHOMPEdit
 		to_chat(user, "<span class='warning'>Please set informative OOC notes related to RP/ERP preferences. Set them using the 'OOC Notes' button on the 'General' tab in character setup.</span>")
+=======
+	if (CONFIG_GET(flag/allow_metadata) && (!user.client?.prefs?.read_preference(/datum/preference/text/living/ooc_notes) || length(user.client.prefs.read_preference(/datum/preference/text/living/ooc_notes)) < 15))
+		to_chat(user, span_warning("Please set informative OOC notes related to RP/ERP preferences. Set them using the 'OOC Notes' button on the 'General' tab in character setup."))
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 		return TRUE
 	return FALSE

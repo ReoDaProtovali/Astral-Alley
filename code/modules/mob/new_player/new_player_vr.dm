@@ -12,8 +12,13 @@
 		pass = FALSE
 
 	//No OOC notes
+<<<<<<< HEAD
 	if (CONFIG_GET(flag/allow_metadata) && (!client?.prefs?.metadata || length(client.prefs.metadata) < 15)) // CHOMPEdit
 		to_chat(src,"<span class='warning'>Please set informative OOC notes related to RP/ERP preferences. Set them using the 'OOC Notes' button on the 'General' tab in character setup.</span>")
+=======
+	if (CONFIG_GET(flag/allow_metadata) && (!client?.prefs?.read_preference(/datum/preference/text/living/ooc_notes) || length(client.prefs.read_preference(/datum/preference/text/living/ooc_notes)) < 15))
+		to_chat(src,span_warning("Please set informative OOC notes related to RP/ERP preferences. Set them using the 'OOC Notes' button on the 'General' tab in character setup."))
+>>>>>>> 039ee85382 ([MIRROR] Convert preferences to /tg/ preferences (#9797))
 		pass = FALSE
 
 	//Are they on the VERBOTEN LIST?
