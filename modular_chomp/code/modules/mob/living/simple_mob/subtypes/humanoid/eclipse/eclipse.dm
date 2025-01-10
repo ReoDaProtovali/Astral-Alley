@@ -58,14 +58,22 @@
 	reload_max = 7		// Not the best default, but it fits the pistol
 	ai_holder_type = /datum/ai_holder/simple_mob/merc/eclipse/ranged
 
+<<<<<<< HEAD
 	loot_list = list(/obj/item/slime_extract/sepia  = 1,
 		/obj/item/weapon/bone/skull = 100
 			)
 
+=======
+>>>>>>> feb7a1a21c (Alterations (#9835))
 	special_attack_cooldown = 15 SECONDS
 	special_attack_min_range = 2
 	special_attack_max_range = 7
 	var/has_heal_droid = FALSE
+<<<<<<< HEAD
+=======
+	var/specialattackprojectile = /obj/item/projectile/energy/phase/bolt
+	var/artidrop = /obj/effect/artillery_attack
+>>>>>>> feb7a1a21c (Alterations (#9835))
 
 //Want a self heal for a spefic dude, and to increase diffculty of some POIs
 /mob/living/simple_mob/humanoid/eclipse/handle_special()
@@ -112,11 +120,16 @@
 	armor_soak = list(melee = 0, bullet = 0, laser = 10, energy = 10, bomb = 0, bio = 0, rad = 0)
 
 /mob/living/simple_mob/humanoid/eclipse/solar/bullet_act(obj/item/projectile/P)
+	..()
 	if(istype(P, /obj/item/projectile/energy) || istype(P, /obj/item/projectile/beam))
+<<<<<<< HEAD
 		visible_message(span_orange("<B>[P] seems ineffective!.</B>"))
 		..()
 	else
 		..()
+=======
+		visible_message(span_cult("[P] seems ineffective!."))
+>>>>>>> feb7a1a21c (Alterations (#9835))
 
 /mob/living/simple_mob/humanoid/eclipse/solar/teslanoodle
 	name = "Solar Eclipse Tesla Serpent"
@@ -283,7 +296,9 @@
 	armor_soak = list(melee = 10, bullet = 10, laser = 0, energy = 0, bomb = 0, bio = 0, rad = 0) //15 because every melee weapon has dumb amount of AP
 
 /mob/living/simple_mob/humanoid/eclipse/lunar/bullet_act(obj/item/projectile/P)
+	..()
 	if(istype(P, /obj/item/projectile/bullet))
+<<<<<<< HEAD
 		visible_message(span_orange("<B>[P] seems ineffective!.</B>"))
 		..()
 	else
@@ -291,6 +306,12 @@
 
 /mob/living/simple_mob/humanoid/eclipse/lunar/attackby(var/obj/item/O as obj, var/mob/user as mob)
 	to_chat(user, "<span class='warning'>This weapon is ineffective, it does no damage.</span>")
+=======
+		visible_message(span_cult("[P] seems ineffective!."))
+
+/mob/living/simple_mob/humanoid/eclipse/lunar/attackby(var/obj/item/O as obj, var/mob/user as mob)
+	to_chat(user, span_cult("This weapon is ineffective, it does no damage."))
+>>>>>>> feb7a1a21c (Alterations (#9835))
 	.=..()
 
 /mob/living/simple_mob/humanoid/eclipse/lunar/silvernoodle //Bouncing bullet extreme
