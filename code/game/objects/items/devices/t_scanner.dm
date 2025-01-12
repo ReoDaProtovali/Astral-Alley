@@ -131,6 +131,7 @@
 
 /obj/item/device/t_scanner/dropped(mob/user)
 	set_user_client(null)
+	..()
 
 /obj/item/device/t_scanner/upgraded
 	name = "Upgraded T-ray Scanner"

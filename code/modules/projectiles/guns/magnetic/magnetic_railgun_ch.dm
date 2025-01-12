@@ -19,7 +19,11 @@
 	is_picked_up = TRUE
 	update_transform()
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/magnetic/railgun/dropped()
+=======
+/obj/item/gun/magnetic/railgun/dropped(mob/living/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	. = ..()
 	is_picked_up = FALSE
 	update_transform()

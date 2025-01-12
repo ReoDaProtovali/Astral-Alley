@@ -36,8 +36,14 @@
 	if(ismob(loc))
 		to_chat(loc, "<span class='notice'>We shape our finger to fit inside electronics, and are ready to force them open.</span>")
 
+<<<<<<< HEAD
 /obj/item/weapon/finger_lockpick/dropped(mob/user)
 	to_chat(user, "<span class='notice'>We discreetly shape our finger back to a less suspicious form.</span>")
+=======
+/obj/item/finger_lockpick/dropped(mob/user)
+	..()
+	to_chat(user, span_notice("We discreetly shape our finger back to a less suspicious form."))
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	spawn(1)
 		if(src)
 			qdel(src)

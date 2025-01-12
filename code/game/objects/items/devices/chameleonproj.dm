@@ -15,7 +15,14 @@
 	var/saved_icon_state = "cigbutt"
 	var/saved_overlays
 
+<<<<<<< HEAD
 /obj/item/device/chameleon/dropped()
+=======
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/chameleon/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	disrupt()
 	..()
 

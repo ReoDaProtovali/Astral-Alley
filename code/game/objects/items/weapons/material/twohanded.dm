@@ -72,7 +72,11 @@
 	icon_state = "[base_icon][wielded]"
 	item_state = icon_state
 
+<<<<<<< HEAD
 /obj/item/weapon/material/twohanded/dropped()
+=======
+/obj/item/material/twohanded/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()
 	if(wielded)
 		spawn(0)

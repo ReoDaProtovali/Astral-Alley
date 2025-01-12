@@ -195,7 +195,12 @@
 					Img.color = O.color
 			add_overlay(Img)
 
+<<<<<<< HEAD
 /obj/item/weapon/tray/dropped(mob/user)
+=======
+/obj/item/tray/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	var/noTable = null
 
 	spawn() //Allows the tray to udpate location, rather than just checking against mob's location

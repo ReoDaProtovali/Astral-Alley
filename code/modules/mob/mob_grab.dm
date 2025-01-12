@@ -346,7 +346,12 @@
 	if(M == assailant && state >= GRAB_AGGRESSIVE)
 		devour(affecting, assailant)
 
+<<<<<<< HEAD
 /obj/item/weapon/grab/dropped()
+=======
+/obj/item/grab/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	loc = null
 	if(!QDELETED(src))
 		qdel(src)

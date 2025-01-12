@@ -1489,7 +1489,11 @@
 
 /*
 //TODO - make this not trigger when the flag is returned to its original location
+<<<<<<< HEAD
 /obj/item/weapon/laserdome_flag/dropped()
+=======
+/obj/item/laserdome_flag/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	. = ..()
 	global_announcer.autosay("[src] dropped!","Laserdome Announcer","Entertainment")
 */
@@ -1654,7 +1658,11 @@
 
 /*
 //TODO- make this not trigger when the ball is thrown or dunked, only when it's actually dropped
+<<<<<<< HEAD
 /obj/item/weapon/laserdome_hyperball/dropped()
+=======
+/obj/item/laserdome_hyperball/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	. = ..()
 	global_announcer.autosay("[capitalize(last_team)] fumble!","Laserdome Announcer","Entertainment")
 */

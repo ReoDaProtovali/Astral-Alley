@@ -121,7 +121,12 @@
 		var/T = get_turf(src)
 		new /obj/effect/effect/sparks(T)
 
+<<<<<<< HEAD
 /obj/item/weapon/electric_hand/dropped(mob/user)
+=======
+/obj/item/electric_hand/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	spawn(1)
 		if(src)
 			qdel(src)

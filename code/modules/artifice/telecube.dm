@@ -114,7 +114,11 @@
 	. = ..()
 	update_icon()
 
+<<<<<<< HEAD
 /obj/item/weapon/telecube/dropped()
+=======
+/obj/item/telecube/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	. = ..()
 	update_icon()
 

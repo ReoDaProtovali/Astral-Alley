@@ -1,8 +1,14 @@
+<<<<<<< HEAD
 /obj/item/weapon/holder/dropped(mob/user)
+=======
+/obj/item/holder/dropped(mob/user)
+	// CHOMPEdit Start
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()
 	spawn(1)
 		if(!throwing && isturf(loc))
 			qdel(src)
+	// CHOMPEdit End
 
 /obj/item/weapon/holder/attack_hand(mob/living/user as mob) //straight up just copypasted from objects/items.dm with a few things changed (doesn't called dropped unless +actually dropped+)
 	if (!user) return

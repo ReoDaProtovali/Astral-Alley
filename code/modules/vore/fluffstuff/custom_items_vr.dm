@@ -961,7 +961,11 @@
 	else
 		set_light(0)
 
+<<<<<<< HEAD
 /obj/item/weapon/melee/baton/fluff/stunstaff/dropped()
+=======
+/obj/item/melee/baton/fluff/stunstaff/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()
 	if(wielded)
 		wielded = 0
@@ -1075,7 +1079,11 @@
 	allowed = list(/obj/item/weapon/shield/fluff/wolfgirlshield)
 	damtype = HALLOSS
 
+<<<<<<< HEAD
 /obj/item/weapon/melee/fluffstuff/wolfgirlsword/dropped(var/mob/user)
+=======
+/obj/item/melee/fluffstuff/wolfgirlsword/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()
 	if(!istype(loc,/mob))
 		deactivate(user)

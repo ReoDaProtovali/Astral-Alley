@@ -456,12 +456,21 @@
 		i++
 
 
+<<<<<<< HEAD
 /obj/item/weapon/hand/dropped(mob/user as mob)
+=======
+/obj/item/hand/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	if(locate(/obj/structure/table, loc))
 		src.update_icon(user.dir)
 	else
 		update_icon()
 
+<<<<<<< HEAD
 /obj/item/weapon/hand/pickup(mob/user as mob)
+=======
+/obj/item/hand/pickup(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()
 	src.update_icon()

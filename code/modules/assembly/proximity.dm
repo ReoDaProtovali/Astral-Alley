@@ -69,7 +69,12 @@
 		toggle_scan()
 		time = initial(time)
 
+<<<<<<< HEAD
 /obj/item/device/assembly/prox_sensor/dropped()
+=======
+/obj/item/assembly/prox_sensor/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	sense()
 
 /obj/item/device/assembly/prox_sensor/proc/toggle_scan()

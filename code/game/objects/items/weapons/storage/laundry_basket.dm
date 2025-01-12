@@ -58,21 +58,36 @@
 	return
 
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/laundry_basket/MouseDrop(obj/over_object as obj)
+=======
+/obj/item/storage/laundry_basket/MouseDrop(obj/over_object)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	if(over_object == usr)
 		return
 	else
 		return ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/laundry_basket/dropped(mob/user as mob)
+=======
+/obj/item/storage/laundry_basket/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	if(linked)
 		QDEL_NULL(linked)
 	return ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/laundry_basket/show_to(mob/user as mob)
 	return
 
 /obj/item/weapon/storage/laundry_basket/open(mob/user as mob)
+=======
+/obj/item/storage/laundry_basket/show_to(mob/user)
+	return
+
+/obj/item/storage/laundry_basket/open(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 
 
 //Offhand
@@ -82,7 +97,12 @@
 	name = "second hand"
 	use_to_pickup = FALSE
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/laundry_basket/offhand/dropped(mob/user as mob)
+=======
+/obj/item/storage/laundry_basket/offhand/dropped(mob/user)
+	SHOULD_CALL_PARENT(FALSE)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	if(user.isEquipped(linked))
 		user.drop_from_inventory(linked)
 	return

@@ -34,7 +34,11 @@
 	..(user, slot)
 
 /*
+<<<<<<< HEAD
 /obj/item/weapon/storage/backpack/dropped(mob/user as mob)
+=======
+/obj/item/storage/backpack/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	if (loc == user && src.use_sound)
 		playsound(src, src.use_sound, 50, 1, -5)
 	..(user)

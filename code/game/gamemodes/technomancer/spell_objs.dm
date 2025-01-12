@@ -282,7 +282,12 @@
 // Proc: dropped()
 // Parameters: 0
 // Description: Deletes the spell object immediately.
+<<<<<<< HEAD
 /obj/item/weapon/spell/dropped()
+=======
+/obj/item/spell/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	spawn(1)
 		if(src)
 			qdel(src)

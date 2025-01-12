@@ -116,8 +116,14 @@
 
 	return ..()
 
+<<<<<<< HEAD
 /obj/item/device/mapping_unit/dropped(mob/dropper)
 	if(loc != dropper) // Not just a juggle
+=======
+/obj/item/mapping_unit/dropped(mob/user)
+	..()
+	if(loc != user) // Not just a juggle
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 		hide_device()
 
 /obj/item/device/mapping_unit/attack_self(mob/user)

@@ -48,7 +48,11 @@ CIGARETTE PACKETS ARE IN FANCY.DM
 		location.hotspot_expose(700, 5)
 		return
 
+<<<<<<< HEAD
 /obj/item/weapon/flame/match/dropped(mob/user as mob)
+=======
+/obj/item/flame/match/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	//If dropped, put ourselves out
 	//not before lighting up the turf we land on, though.
 	if(lit)

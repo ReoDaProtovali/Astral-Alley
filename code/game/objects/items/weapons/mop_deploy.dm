@@ -56,7 +56,12 @@
 	user.drop_from_inventory(src)
 	spawn(1) if(!QDELETED(src)) qdel(src)
 
+<<<<<<< HEAD
 /obj/item/weapon/mop_deploy/dropped()
+=======
+/obj/item/mop_deploy/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	spawn(1) if(!QDELETED(src)) qdel(src)
 
 /obj/item/weapon/mop_deploy/process()

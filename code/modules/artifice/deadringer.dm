@@ -23,7 +23,12 @@
 	STOP_PROCESSING(SSobj, src)
 	..()
 
+<<<<<<< HEAD
 /obj/item/weapon/deadringer/dropped()
+=======
+/obj/item/deadringer/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	if(timer > 20)
 		reveal()
 		watchowner = null

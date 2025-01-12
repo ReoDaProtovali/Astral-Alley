@@ -279,7 +279,11 @@
 
 	projectile_parry_chance = 65
 
+<<<<<<< HEAD
 /obj/item/weapon/melee/energy/sword/dropped(var/mob/user)
+=======
+/obj/item/melee/energy/sword/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()
 	if(!istype(loc,/mob))
 		deactivate(user)
@@ -453,7 +457,12 @@
 	user.drop_from_inventory(src)
 	spawn(1) if(src) qdel(src)
 
+<<<<<<< HEAD
 /obj/item/weapon/melee/energy/blade/dropped()
+=======
+/obj/item/melee/energy/blade/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	spawn(1) if(src) qdel(src)
 
 /obj/item/weapon/melee/energy/blade/process()
