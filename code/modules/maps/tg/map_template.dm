@@ -16,11 +16,12 @@
 	var/discard_prob = 0 // If non-zero, there is a chance that the map seeding algorithm will skip this template when selecting potential templates to use.
 
 /datum/map_template/New(path = null, rename = null)
+	SHOULD_CALL_PARENT(TRUE)
+	. = ..()
 	if(path)
 		mappath = path
 	if(mappath)
-		spawn(1)
-			preload_size(mappath)
+		preload_size(mappath)
 	if(rename)
 		name = rename
 
@@ -50,7 +51,6 @@
 	var/list/turf/turfs = block(locate(bounds[MAP_MINX], bounds[MAP_MINY], bounds[MAP_MINZ]),
 	                   			locate(bounds[MAP_MAXX], bounds[MAP_MAXY], bounds[MAP_MAXZ]))
 	for(var/turf/B as anything in turfs)
-		atoms += B
 		areas |= B.loc
 		for(var/A in B)
 			atoms += A
@@ -60,8 +60,13 @@
 				atmos_machines += A
 	atoms |= areas
 
+<<<<<<< HEAD
 	admin_notice("<span class='danger'>Initializing newly created atom(s) in submap.</span>", R_DEBUG)
 	SSatoms.InitializeAtoms(atoms)
+=======
+	admin_notice(span_danger("Initializing newly created atom(s) in submap."), R_DEBUG)
+	SSatoms.InitializeAtoms(areas + turfs + atoms)
+>>>>>>> f19a517d0f ([MIRROR] Fixes lateload map template cable loading (#9851))
 
 	admin_notice("<span class='danger'>Initializing atmos pipenets and machinery in submap.</span>", R_DEBUG)
 	SSmachines.setup_atmos_machinery(atmos_machines)
