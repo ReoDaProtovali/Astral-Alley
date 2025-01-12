@@ -3,6 +3,21 @@
 
 	species_allowed = list()
 
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/marking/vr/inner_thigh
+	name = "inner thighs"
+	icon_state = "inner_thigh"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_L_LEG,BP_R_LEG)
+
+/datum/sprite_accessory/marking/vr/inner_arms
+	name = "inner arms"
+	icon_state = "inner_arm"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_L_ARM,BP_R_ARM)
+
+>>>>>>> 8a04cad9ba ([MIRROR] Full Chest Fluff and Inner Arms markings (#9861))
 /datum/sprite_accessory/marking/vr/vulp_belly
 	name = "belly fur (Vulp)"
 	icon_state = "vulp_belly"
@@ -12,6 +27,12 @@
 /datum/sprite_accessory/marking/vr/vulp_fullbelly
 	name = "full belly fur (Vulp)"
 	icon_state = "vulp_fullbelly"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_TORSO,BP_GROIN)
+
+/datum/sprite_accessory/marking/vr/vulp_fullbellyplus
+	name = "full wide chest fur (Vulp)"
+	icon_state = "vulp_fullchestplus"
 	color_blend_mode = ICON_MULTIPLY
 	body_parts = list(BP_TORSO,BP_GROIN)
 
