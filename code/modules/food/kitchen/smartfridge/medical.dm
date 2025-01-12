@@ -7,9 +7,17 @@
 	icon_contents = "chem"
 
 /obj/machinery/smartfridge/medbay/accept_check(var/obj/item/O as obj)
+<<<<<<< HEAD
 	if(istype(O,/obj/item/weapon/storage/pill_bottle) || istype(O,/obj/item/weapon/reagent_containers) || istype(O,/obj/item/weapon/reagent_containers/glass/))
 		return 1
 	return 0
+=======
+	if(istype(O, /obj/item/reagent_containers/borghypo))
+		return FALSE
+	if(istype(O,/obj/item/storage/pill_bottle) || istype(O,/obj/item/reagent_containers) || istype(O,/obj/item/reagent_containers/glass/))
+		return TRUE
+	return FALSE
+>>>>>>> 3c0f30bf8b ([MIRROR] blacklists borg hypos from smartstorage (#9849))
 
 /obj/machinery/smartfridge/secure/medbay
 	name = "\improper Refrigerated Medicine Storage"
@@ -18,9 +26,17 @@
 	req_one_access = list(access_medical,access_chemistry)
 
 /obj/machinery/smartfridge/secure/medbay/accept_check(var/obj/item/O as obj)
+<<<<<<< HEAD
 	if(istype(O,/obj/item/weapon/storage/pill_bottle) || istype(O,/obj/item/weapon/reagent_containers) || istype(O,/obj/item/weapon/reagent_containers/glass/))
 		return 1
 	return 0
+=======
+	if(istype(O, /obj/item/reagent_containers/borghypo))
+		return FALSE
+	if(istype(O,/obj/item/storage/pill_bottle) || istype(O,/obj/item/reagent_containers) || istype(O,/obj/item/reagent_containers/glass/))
+		return TRUE
+	return FALSE
+>>>>>>> 3c0f30bf8b ([MIRROR] blacklists borg hypos from smartstorage (#9849))
 
 /*
  * Virology
@@ -31,11 +47,19 @@
 	icon_contents = "viro"
 
 /obj/machinery/smartfridge/virology/accept_check(var/obj/item/O as obj)
+<<<<<<< HEAD
 	if(istype(O,/obj/item/weapon/reagent_containers/glass/beaker/vial/))
 		return 1
 	if(istype(O,/obj/item/weapon/virusdish/))
 		return 1
 	return 0
+=======
+	if(istype(O, /obj/item/reagent_containers/borghypo))
+		return FALSE
+	if(istype(O,/obj/item/storage/pill_bottle) || istype(O,/obj/item/reagent_containers) || istype(O,/obj/item/reagent_containers/glass/))
+		return TRUE
+	return FALSE
+>>>>>>> 3c0f30bf8b ([MIRROR] blacklists borg hypos from smartstorage (#9849))
 
 /obj/machinery/smartfridge/secure/virology
 	name = "\improper Refrigerated Virus Storage"
@@ -44,11 +68,19 @@
 	req_access = list(access_virology)
 
 /obj/machinery/smartfridge/secure/virology/accept_check(var/obj/item/O as obj)
+<<<<<<< HEAD
 	if(istype(O,/obj/item/weapon/reagent_containers/glass/beaker/vial/))
 		return 1
 	if(istype(O,/obj/item/weapon/virusdish/))
 		return 1
 	return 0
+=======
+	if(istype(O, /obj/item/reagent_containers/borghypo))
+		return FALSE
+	if(istype(O,/obj/item/storage/pill_bottle) || istype(O,/obj/item/reagent_containers) || istype(O,/obj/item/reagent_containers/glass/))
+		return TRUE
+	return FALSE
+>>>>>>> 3c0f30bf8b ([MIRROR] blacklists borg hypos from smartstorage (#9849))
 
 /*
  * Chemistry
@@ -60,9 +92,17 @@
 	req_one_access = list(access_chemistry)
 
 /obj/machinery/smartfridge/chemistry/accept_check(var/obj/item/O as obj)
+<<<<<<< HEAD
 	if(istype(O,/obj/item/weapon/storage/pill_bottle) || istype(O,/obj/item/weapon/reagent_containers) || istype(O,/obj/item/weapon/reagent_containers/glass/))
 		return 1
 	return 0
+=======
+	if(istype(O, /obj/item/reagent_containers/borghypo))
+		return FALSE
+	if(istype(O,/obj/item/storage/pill_bottle) || istype(O,/obj/item/reagent_containers) || istype(O,/obj/item/reagent_containers/glass/))
+		return TRUE
+	return FALSE
+>>>>>>> 3c0f30bf8b ([MIRROR] blacklists borg hypos from smartstorage (#9849))
 
 /obj/machinery/smartfridge/secure/chemistry
 	name = "\improper Smart Chemical Storage"
@@ -71,6 +111,14 @@
 	req_one_access = list(access_chemistry)
 
 /obj/machinery/smartfridge/secure/chemistry/accept_check(var/obj/item/O as obj)
+<<<<<<< HEAD
 	if(istype(O,/obj/item/weapon/storage/pill_bottle) || istype(O,/obj/item/weapon/reagent_containers) || istype(O,/obj/item/weapon/reagent_containers/glass/))
 		return 1
 	return 0
+=======
+	if(istype(O, /obj/item/reagent_containers/borghypo))
+		return FALSE
+	if(istype(O,/obj/item/storage/pill_bottle) || istype(O,/obj/item/reagent_containers) || istype(O,/obj/item/reagent_containers/glass/))
+		return TRUE
+	return FALSE
+>>>>>>> 3c0f30bf8b ([MIRROR] blacklists borg hypos from smartstorage (#9849))
