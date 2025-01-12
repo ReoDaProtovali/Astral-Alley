@@ -5,9 +5,15 @@
 	desc = "For storing all sorts of delicious foods!"
 
 /obj/machinery/smartfridge/chef/accept_check(var/obj/item/O as obj)
+<<<<<<< HEAD
 	if(istype(O,/obj/item/weapon/reagent_containers/food/snacks))
 		return 1
 	return 0
+=======
+	if(istype(O,/obj/item/reagent_containers/food/snacks))
+		return TRUE
+	return FALSE
+>>>>>>> 3c0f30bf8b ([MIRROR] blacklists borg hypos from smartstorage (#9849))
 
 /*
  * Bartender
@@ -18,9 +24,15 @@
 	icon_contents = "drinks"
 
 /obj/machinery/smartfridge/drinks/accept_check(var/obj/item/O as obj)
+<<<<<<< HEAD
 	if(istype(O,/obj/item/weapon/reagent_containers/glass) || istype(O,/obj/item/weapon/reagent_containers/food/drinks) || istype(O,/obj/item/weapon/reagent_containers/food/condiment))
 		return 1
 	return 0
+=======
+	if(istype(O,/obj/item/reagent_containers/glass) || istype(O,/obj/item/reagent_containers/food/drinks) || istype(O,/obj/item/reagent_containers/food/condiment))
+		return TRUE
+	return FALSE
+>>>>>>> 3c0f30bf8b ([MIRROR] blacklists borg hypos from smartstorage (#9849))
 
 /obj/machinery/smartfridge/drinks/showcase
 	name = "\improper Drink Showcase"
@@ -62,9 +74,15 @@
 	persistent = /datum/persistent/storage/smartfridge/produce/lossy
 
 /obj/machinery/smartfridge/produce/accept_check(var/obj/item/O as obj)
+<<<<<<< HEAD
 	if(istype(O,/obj/item/weapon/reagent_containers/food/snacks/grown/) || istype(O,/obj/item/seeds/))
 		return 1
 	return 0
+=======
+	if(istype(O,/obj/item/reagent_containers/food/snacks/grown/) || istype(O,/obj/item/seeds/))
+		return TRUE
+	return FALSE
+>>>>>>> 3c0f30bf8b ([MIRROR] blacklists borg hypos from smartstorage (#9849))
 
 /obj/machinery/smartfridge/seeds //I honestly don't know why this exists when you can store seeds in the vendor. It's not even persistent.
 	name = "\improper MegaSeed Servitor"
@@ -73,5 +91,5 @@
 
 /obj/machinery/smartfridge/seeds/accept_check(var/obj/item/O as obj)
 	if(istype(O,/obj/item/seeds/))
-		return 1
-	return 0
+		return TRUE
+	return FALSE
