@@ -734,6 +734,7 @@ var/global/list/robot_modules = list(
 
 /obj/item/weapon/robot_module/robot/research/create_equipment(var/mob/living/silicon/robot/robot)
 	..()
+<<<<<<< HEAD
 	src.modules += new /obj/item/weapon/portable_destructive_analyzer(src)
 	src.modules += new /obj/item/weapon/gripper/research(src)
 	src.modules += new /obj/item/weapon/gripper/circuit(src)
@@ -757,6 +758,32 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gun/energy/taser/xeno/robot(src)
 	src.modules += new /obj/item/device/xenoarch_multi_tool(src)
 	src.modules += new /obj/item/weapon/pickaxe/excavationdrill(src)
+=======
+	src.modules += new /obj/item/portable_destructive_analyzer(src)
+	src.modules += new /obj/item/gripper/research(src)
+	src.modules += new /obj/item/gripper/circuit(src)
+	src.modules += new /obj/item/gripper/no_use/organ/robotics(src)
+	src.modules += new /obj/item/gripper/no_use/mech(src)
+	src.modules += new /obj/item/gripper/no_use/loader(src)
+	src.modules += new /obj/item/robotanalyzer(src)
+	src.modules += new /obj/item/card/robot(src)
+	src.modules += new /obj/item/weldingtool/electric/mounted/cyborg(src)
+	src.modules += new /obj/item/tool/screwdriver/cyborg(src)
+	src.modules += new /obj/item/tool/wrench/cyborg(src)
+	src.modules += new /obj/item/tool/wirecutters/cyborg(src)
+	src.modules += new /obj/item/multitool(src)
+	src.modules += new /obj/item/surgical/hemostat/cyborg(src) //Synth repair
+	src.modules += new /obj/item/surgical/surgicaldrill/cyborg(src) //NIF repair
+	src.modules += new /obj/item/surgical/circular_saw/cyborg(src) // Synth limb replacement
+	src.modules += new /obj/item/reagent_containers/syringe(src)
+	src.modules += new /obj/item/reagent_containers/glass/beaker/large/borg(src)
+	src.modules += new /obj/item/storage/part_replacer(src)
+	src.modules += new /obj/item/shockpaddles/robot/jumper(src)
+	src.modules += new /obj/item/melee/baton/slime/robot(src)
+	src.modules += new /obj/item/gun/energy/robotic/taser/xeno(src)
+	src.modules += new /obj/item/xenoarch_multi_tool(src)
+	src.modules += new /obj/item/pickaxe/excavationdrill(src)
+>>>>>>> fce9d4cdf9 ([MIRROR] re adds circular saw to sciborgs (#9859))
 
 	src.emag += new /obj/item/weapon/hand_tele(src)
 
