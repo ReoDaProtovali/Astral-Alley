@@ -13,6 +13,11 @@
 			remove_verb(H,/mob/living/proc/shred_limb_temp) //CHOMPEdit TGPanel
 	..()
 
+<<<<<<< HEAD
 /obj/item/weapon/beartrap/dropped(var/mob/user)
 	remove_verb(user,/mob/living/proc/shred_limb_temp) //CHOMPEdit TGPanel
+=======
+/obj/item/beartrap/dropped(mob/user)
+	remove_verb(user, /mob/living/proc/shred_limb_temp)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()

@@ -146,7 +146,11 @@
 	else
 		set_light(0)
 
+<<<<<<< HEAD
 /obj/item/weapon/melee/shock_maul/dropped()
+=======
+/obj/item/melee/shock_maul/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()
 	if(status)
 		status = 0

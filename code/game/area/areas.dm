@@ -547,3 +547,29 @@ GLOBAL_DATUM(spoiler_obfuscation_image, /image)
 		add_overlay(GLOB.spoiler_obfuscation_image)
 	else
 		cut_overlay(GLOB.spoiler_obfuscation_image)
+<<<<<<< HEAD
+=======
+
+/area/proc/flag_check(var/flag, var/match_all = FALSE)
+    if(match_all)
+        return (flags & flag) == flag
+    return flags & flag
+
+// RS Port #658 Start
+/area/proc/check_phase_shift(var/mob/ourmob)
+	if(!flag_check(AREA_BLOCK_PHASE_SHIFT) || !ourmob.incorporeal_move)
+		return
+	if(!isliving(ourmob))
+		return
+	if(ourmob.client?.holder)
+		return
+	if(issimplekin(ourmob))
+		var/mob/living/simple_mob/shadekin/SK = ourmob
+		if(SK.ability_flags & AB_PHASE_SHIFTED)
+			SK.phase_in(SK.loc)
+	if(ishuman(ourmob))
+		var/mob/living/carbon/human/SK = ourmob
+		if(SK.ability_flags & AB_PHASE_SHIFTED)
+			SK.phase_in(SK.loc)
+// RS Port #658 End
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))

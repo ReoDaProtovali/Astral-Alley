@@ -732,7 +732,7 @@
 						use_obj.canremove = TRUE
 						holder.drop_from_inventory(use_obj)
 						use_obj.forceMove(get_turf(src))
-						use_obj.dropped()
+						use_obj.dropped(holder)
 						use_obj.canremove = FALSE
 						use_obj.forceMove(src)
 
@@ -789,8 +789,13 @@
 	for(var/piece in list("helmet","gauntlets","chest","boots"))
 		toggle_piece(piece, H, ONLY_DEPLOY)
 
+<<<<<<< HEAD
 /obj/item/weapon/rig/dropped(var/mob/user)
 	..()
+=======
+/obj/item/rig/dropped(mob/user)
+	. = ..(user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	for(var/piece in list("helmet","gauntlets","chest","boots"))
 		toggle_piece(piece, user, ONLY_RETRACT)
 	if(wearer && wearer.wearing_rig == src)

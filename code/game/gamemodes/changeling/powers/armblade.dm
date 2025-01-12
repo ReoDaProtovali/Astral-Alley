@@ -74,10 +74,18 @@
 		"<span class='italics'>You hear organic matter ripping and tearing!</span>")
 		src.creator = loc
 
+<<<<<<< HEAD
 /obj/item/weapon/melee/changeling/dropped(mob/user)
 	visible_message("<span class='warning'>With a sickening crunch, [creator] reforms their arm!</span>",
 	"<span class='notice'>We assimilate the weapon back into our body.</span>",
 	"<span class='italics'>You hear organic matter ripping and tearing!</span>")
+=======
+/obj/item/melee/changeling/dropped(mob/user)
+	..()
+	visible_message(span_warning("With a sickening crunch, [creator] reforms their arm!"),
+	span_notice("We assimilate the weapon back into our body."),
+	span_warningplain("You hear organic matter ripping and tearing!"))
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	playsound(src, 'sound/effects/blobattack.ogg', 30, 1)
 	spawn(1)
 		if(src)

@@ -614,8 +614,13 @@
 	W.add_fingerprint(user)
 	return handle_item_insertion(W)
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/dropped(mob/user as mob)
 	return
+=======
+/obj/item/storage/dropped(mob/user)
+	return ..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 
 /obj/item/weapon/storage/attack_hand(mob/user as mob)
 	if(ishuman(user) && !pocketable)

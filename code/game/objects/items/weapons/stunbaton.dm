@@ -99,7 +99,11 @@
 	else
 		set_light(0)
 
+<<<<<<< HEAD
 /obj/item/weapon/melee/baton/dropped()
+=======
+/obj/item/melee/baton/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()
 	if(status && grip_safety && !taped_safety)
 		status = 0

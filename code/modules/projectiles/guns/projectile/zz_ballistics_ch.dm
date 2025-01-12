@@ -92,7 +92,11 @@
 	is_picked_up = TRUE
 	update_transform()
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/automatic/serdy/dropped()
+=======
+/obj/item/gun/projectile/automatic/serdy/dropped(mob/living/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	. = ..()
 	is_picked_up = FALSE
 	update_transform()
@@ -1591,7 +1595,11 @@
 	is_picked_up = TRUE
 	update_transform()
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/shotgun/pump/dropped()
+=======
+/obj/item/gun/projectile/shotgun/pump/dropped(mob/living/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	. = ..()
 	is_picked_up = FALSE
 	update_transform()
@@ -1693,7 +1701,11 @@
 	is_picked_up = TRUE
 	update_transform()
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/shotgun/doublebarrel/dropped()
+=======
+/obj/item/gun/projectile/shotgun/doublebarrel/dropped(mob/living/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	. = ..()
 	is_picked_up = FALSE
 	update_transform()

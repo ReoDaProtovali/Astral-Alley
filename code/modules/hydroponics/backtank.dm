@@ -115,7 +115,11 @@
 	else
 		return ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/watertank/dropped(var/mob/user)
+=======
+/obj/item/watertank/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	..()
 	remove_noz(user)
 

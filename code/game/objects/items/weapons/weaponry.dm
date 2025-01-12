@@ -59,7 +59,12 @@
 	force = 0
 	var/net_type = /obj/effect/energy_net
 
+<<<<<<< HEAD
 /obj/item/weapon/energy_net/dropped()
+=======
+/obj/item/energy_net/dropped(mob/user)
+	..()
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	spawn(10)
 		if(src) qdel(src)
 

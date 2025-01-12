@@ -76,7 +76,11 @@ var/list/GPS_list = list()
 	. = ..()
 	update_holder()
 
+<<<<<<< HEAD
 /obj/item/device/gps/dropped()
+=======
+/obj/item/gps/dropped(mob/user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	. = ..()
 	update_holder()
 

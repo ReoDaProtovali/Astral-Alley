@@ -301,8 +301,14 @@ var/last_chew = 0
 	if(user) //A ranged legcuff, until proper implementation as items it remains a projectile-only thing.
 		return 1
 
+<<<<<<< HEAD
 /obj/item/weapon/handcuffs/legcuffs/bola/dropped()
 	visible_message("<b>\The [src]</b> falls apart!")
+=======
+/obj/item/handcuffs/legcuffs/bola/dropped(mob/user)
+	..()
+	visible_message(span_infoplain(span_bold("\The [src]") + " falls apart!"))
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 	qdel(src)
 
 /obj/item/weapon/handcuffs/legcuffs/bola/place_legcuffs(var/mob/living/carbon/target, var/mob/user)
@@ -310,12 +316,17 @@ var/last_chew = 0
 
 	var/mob/living/carbon/human/H = target
 	if(!istype(H))
-		src.dropped()
+		src.dropped(user)
 		return 0
 
 	if(!H.has_organ_for_slot(slot_legcuffed))
+<<<<<<< HEAD
 		H.visible_message("<b>\The [src]</b> slams into [H], but slides off!")
 		src.dropped()
+=======
+		H.visible_message(span_infoplain(span_bold("\The [src]") + " slams into [H], but slides off!"))
+		src.dropped(user)
+>>>>>>> 2d0719a4d4 ([MIRROR] some dropped sanity (#9856))
 		return 0
 
 	H.visible_message("<span class='danger'>\The [H] has been snared by \the [src]!</span>")
