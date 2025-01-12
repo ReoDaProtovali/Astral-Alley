@@ -536,8 +536,13 @@
 	if((istype(AM, /obj/item) || istype(AM, /mob/living)) && !istype(AM, /obj/item/projectile))
 		if(prob(75))
 			AM.forceMove(src)
+<<<<<<< HEAD
 			if(istype(AM, /obj/item/weapon/holder/micro) || istype(AM, /mob/living))
 				log_and_message_admins("[AM] was thrown into \the [src]")
+=======
+			if(istype(AM, /obj/item/holder/micro) || istype(AM, /mob/living))
+				log_and_message_admins("[AM] was thrown into \the [src]", null)
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 				visible_message("\The [AM] lands in \the [src]!")
 				//flush() //Away they go! //Uncomment this for proper autoflush. Compromising with autopull to avoid possible disposal dunking abuse
 				//flush = 1 //1984. No autoflush, no autopull. Leaving this here incase someone wants to revisit this in the future when the mood on this changes
@@ -559,8 +564,13 @@
 			return
 		if(prob(75))
 			I.forceMove(src)
+<<<<<<< HEAD
 			if(istype(I, /obj/item/weapon/holder/micro))
 				log_and_message_admins("[I.name] was thrown into \the [src]")
+=======
+			if(istype(I, /obj/item/holder/micro))
+				log_and_message_admins("[I.name] was thrown into \the [src]", null)
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 			for(var/mob/M in viewers(src))
 				M.show_message("\The [I] lands in \the [src].", 3)
 		else

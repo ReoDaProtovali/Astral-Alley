@@ -255,8 +255,13 @@ var/global/list/tele_landmarks = list() // Terrible, but the alternative is loop
 
 /obj/effect/step_trigger/death/Trigger(var/atom/movable/A)
 	if(isliving(A))
+<<<<<<< HEAD
 		to_chat(A, "<span class='danger'>[deathmessage]</span>")
 		log_and_message_admins("[A] [deathalert]")
+=======
+		to_chat(A, span_danger("[deathmessage]"))
+		log_and_message_admins("[deathalert]", A)
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 		qdel(A)
 
 /obj/effect/step_trigger/death/train_lost

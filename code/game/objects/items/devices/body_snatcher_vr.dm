@@ -41,11 +41,19 @@
 			else
 				log_and_message_admins("attempted to body swap with [key_name(M)].")
 			//CHOMPAdd End
+<<<<<<< HEAD
 			usr.visible_message("<span class='warning'>[usr] pushes the device up their forehead and [M]'s head, the device beginning to let out a series of light beeps!</span>","<span class='notice'>You begin swap minds with [M]!</span>")
 			if(do_after(usr,35 SECONDS,M))
 				if(usr.mind && M.mind && M.stat != DEAD && usr.stat != DEAD)
 					log_and_message_admins("[usr.ckey] used a Bodysnatcher to swap bodies with [M.ckey]")
 					to_chat(usr,"<span class='notice'>Your minds have been swapped! Have a nice day.</span>")
+=======
+			user.visible_message(span_warning("[user] pushes the device up their forehead and [M]'s head, the device beginning to let out a series of light beeps!"),span_notice("You begin swap minds with [M]!"))
+			if(do_after(user,35 SECONDS,M))
+				if(user.mind && M.mind && M.stat != DEAD && user.stat != DEAD)
+					log_and_message_admins("[user.ckey] used a Bodysnatcher to swap bodies with [M.ckey]", user)
+					to_chat(user,span_notice("Your minds have been swapped! Have a nice day."))
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 					var/datum/mind/user_mind = user.mind
 					var/datum/mind/prey_mind = M.mind
 					var/target_ooc_notes = M.ooc_notes
