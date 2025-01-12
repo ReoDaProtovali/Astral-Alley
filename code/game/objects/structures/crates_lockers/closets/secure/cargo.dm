@@ -46,7 +46,7 @@
 		/obj/item/clothing/under/rank/neo_qm_white_skirt,
 		/obj/item/clothing/under/rank/neo_qm_turtle,
 		/obj/item/clothing/under/rank/neo_qm_turtle_skirt,
-		/obj/item/clothing/under/rank/neo_qm_gorka,
+		/obj/item/clothing/under/rank/neo_gorka/qm,
 		/obj/item/clothing/gloves/black,
 		/obj/item/clothing/gloves/fingerless,
 		/obj/item/weapon/tank/emergency/oxygen,

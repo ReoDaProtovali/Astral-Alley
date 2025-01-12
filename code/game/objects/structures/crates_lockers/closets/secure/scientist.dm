@@ -39,8 +39,13 @@
 		/obj/item/clothing/under/rank/neo_rd_turtle_skirt,
 		/obj/item/clothing/under/rank/neo_rd_suit,
 		/obj/item/clothing/under/rank/neo_rd_suit_skirt,
+<<<<<<< HEAD
 		/obj/item/clothing/under/rank/neo_rd_gorka,
 		/obj/item/weapon/cartridge/rd,
+=======
+		/obj/item/clothing/under/rank/neo_gorka/rd,
+		/obj/item/cartridge/rd,
+>>>>>>> c7408e937a ([MIRROR] Gorka Suit Refactor + Accessory Feature Addon (#9862))
 		/obj/item/clothing/shoes/white,
 		/obj/item/clothing/shoes/laceup/brown,
 		/obj/item/clothing/gloves/sterile/latex,

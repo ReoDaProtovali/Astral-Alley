@@ -140,11 +140,20 @@
 		/obj/item/clothing/under/rank/neo_cmo_skirt,
 		/obj/item/clothing/under/rank/neo_cmo_turtle,
 		/obj/item/clothing/under/rank/neo_cmo_turtle_skirt,
+<<<<<<< HEAD
 		/obj/item/clothing/under/rank/neo_cmo_gorka,
 		/obj/item/device/radio/headset/heads/cmo,
 		/obj/item/device/radio/headset/heads/cmo/alt,
 		/obj/item/device/flash,
 		/obj/item/weapon/reagent_containers/hypospray/vial,
+=======
+		/obj/item/clothing/under/rank/neo_gorka/cmo,
+		/obj/item/radio/headset/heads/cmo,
+		/obj/item/radio/headset/alt/heads/cmo,
+		/obj/item/radio/headset/earbud/heads/cmo,
+		/obj/item/flash,
+		/obj/item/reagent_containers/hypospray/vial,
+>>>>>>> c7408e937a ([MIRROR] Gorka Suit Refactor + Accessory Feature Addon (#9862))
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/medical/cmo,
 		/obj/item/clothing/shoes/boots/winter/medical,
