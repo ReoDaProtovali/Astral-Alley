@@ -11,7 +11,11 @@
 
 	CONFIG_SET(flag/panic_bunker, !CONFIG_GET(flag/panic_bunker)) // CHOMPEdit
 
+<<<<<<< HEAD
 	log_and_message_admins("[key_name(usr)] has toggled the Panic Bunker, it is now [(CONFIG_GET(flag/panic_bunker) ? "on" : "off")].") // CHOMPEdit
+=======
+	log_and_message_admins("has toggled the Panic Bunker, it is now [(CONFIG_GET(flag/panic_bunker) ? "on":"off")].", src)
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 	if (CONFIG_GET(flag/panic_bunker) && (!SSdbcore.IsConnected())) //CHOMPEdit TGSQL
 		message_admins("The database is not connected! Panic bunker will not work until the connection is reestablished.")
 	feedback_add_details("admin_verb","PANIC") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -25,7 +29,11 @@
 
 	CONFIG_SET(flag/paranoia_logging, !CONFIG_GET(flag/paranoia_logging)) // CHOMPEdit
 
+<<<<<<< HEAD
 	log_and_message_admins("[key_name(usr)] has toggled Paranoia Logging, it is now [(CONFIG_GET(flag/paranoia_logging) ? "on" : "off")].") // CHOMPEdit
+=======
+	log_and_message_admins("has toggled Paranoia Logging, it is now [(CONFIG_GET(flag/paranoia_logging) ? "on":"off")].", src)
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 	if (CONFIG_GET(flag/paranoia_logging) && (!SSdbcore.IsConnected())) //CHOMPEdit TGSQL
 		message_admins("The database is not connected! Paranoia logging will not be able to give 'player age' (time since first connection) warnings, only Byond account warnings.")
 	feedback_add_details("admin_verb","PARLOG") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
@@ -39,7 +47,11 @@
 
 	CONFIG_SET(flag/ip_reputation, !CONFIG_GET(flag/ip_reputation)) // CHOMPEdit
 
+<<<<<<< HEAD
 	log_and_message_admins("[key_name(usr)] has toggled IP reputation checks, it is now [(CONFIG_GET(flag/ip_reputation) ? "on" : "off")].") // CHOMPEdit
+=======
+	log_and_message_admins("has toggled IP reputation checks, it is now [(CONFIG_GET(flag/ip_reputation) ? "on":"off")].", src)
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 	if (CONFIG_GET(flag/ip_reputation) && (!SSdbcore.IsConnected())) //CHOMPEdit TGSQL
 		message_admins("The database is not connected! IP reputation logging will not be able to allow existing players to bypass the reputation checks (if that is enabled).")
 	feedback_add_details("admin_verb","IPREP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!

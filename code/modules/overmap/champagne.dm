@@ -55,10 +55,17 @@
 	var/turf/comp_turf = get_turf(comp)
 	var/datum/shuttle/autodock/S = create_landable_shuttle(shuttle_name, comp_turf, my_area)
 	playsound(src, 'sound/effects/Glassbr3.ogg', 100, 0)
+<<<<<<< HEAD
 	user.visible_message("<span class='notice'>[user] smashes [src] on [comp]</span>",
 		"<span class='info'>You smash [src] on [comp], christening a new landable ship named [S.name]</span>",
 		"<span class='notice'>You hear glass shattering</span>")
 	log_and_message_admins("[key_name_admin(user)] Created a new shuttle [S.name]. [ADMIN_JMP(comp_turf)]")
+=======
+	user.visible_message(span_notice("[user] smashes [src] on [comp]"),
+		span_info("You smash [src] on [comp], christening a new landable ship named [S.name]"),
+		span_notice("You hear glass shattering"))
+	log_and_message_admins("Created a new shuttle [S.name]. [ADMIN_JMP(comp_turf)]", user)
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 	spawn(1 SECOND)
 		playsound(comp_turf, 'sound/voice/Serithi/Shuttlehere.ogg', 75, 0)
 	qdel(src)

@@ -103,15 +103,25 @@
 		var/sql_ckey = sql_sanitize_text(ckey)
 		var/datum/db_query/query = SSdbcore.NewQuery("UPDATE erro_player SET discord_id = :t_discord_id WHERE ckey = :t_ckey", list("t_discord_id" = sql_discord, "t_ckey" = sql_ckey)) //CHOMPEdit TGSQL
 		if(query.Execute())
+<<<<<<< HEAD
 			to_chat(src, "<span class='notice'>Registration complete! Thank you for taking the time to register your Discord ID.</span>")
 			log_and_message_admins("[ckey] has registered their Discord ID. Their Discord snowflake ID is: [their_id]") //YW EDIT
+=======
+			to_chat(src, span_notice("Registration complete! Thank you for taking the time to register your Discord ID."))
+			log_and_message_admins("[ckey] has registered their Discord ID. Their Discord snowflake ID is: [their_id]", src) //YW EDIT
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 			admin_chat_message(message = "[ckey] has registered their Discord ID. Their Discord is: <@[their_id]>", color = "#4eff22") //YW EDIT
 			notes_add(ckey, "Discord ID: [their_id]")
 			world.VgsAddMemberRole(their_id)
 			qdel(query) //CHOMPEdit TGSQL
 		else
+<<<<<<< HEAD
 			to_chat(src, "<span class='warning'>There was an error registering your Discord ID in the database. Contact an administrator.</span>")
 			log_and_message_admins("[ckey] failed to register their Discord ID. Their Discord snowflake ID is: [their_id]. Is the database connected?")
+=======
+			to_chat(src, span_warning("There was an error registering your Discord ID in the database. Contact an administrator."))
+			log_and_message_admins("[ckey] failed to register their Discord ID. Their Discord snowflake ID is: [their_id]. Is the database connected?", src)
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 			qdel(query) //CHOMPEdit TGSQL
 		return
 	//VOREStation Add End
@@ -432,8 +442,13 @@
 		else if(update_ip_reputation()) //It is set now
 			if(ip_reputation >= CONFIG_GET(number/ipr_bad_score)) //It's bad // CHOMPEdit
 				//Log it
+<<<<<<< HEAD
 				if(CONFIG_GET(flag/paranoia_logging)) //We don't block, but we want paranoia log messages // CHOMPEdit
 					log_and_message_admins("[key] at [address] has bad IP reputation: [ip_reputation]. Will be kicked if enabled in config.")
+=======
+				if(CONFIG_GET(flag/paranoia_logging)) //We don't block, but we want paranoia log messages
+					log_and_message_admins("[key] at [address] has bad IP reputation: [ip_reputation]. Will be kicked if enabled in config.", null)
+>>>>>>> c1cd7dc3f0 ([MIRROR] cleans up some logging (#9855))
 				else //We just log it
 					log_admin("[key] at [address] has bad IP reputation: [ip_reputation]. Will be kicked if enabled in config.")
 
