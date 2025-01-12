@@ -1747,12 +1747,19 @@
 /area/submap/casino_event)
 "eK" = (
 /obj/structure/table/reinforced,
+<<<<<<< HEAD
 /obj/item/device/radio/headset/casino,
 /obj/item/device/radio/headset/casino,
 /obj/item/device/radio/headset/casino,
 /obj/item/device/radio/headset/casino,
 /obj/item/device/radio/headset/casino/bowman,
 /obj/item/device/radio/headset/casino/bowman,
+=======
+/obj/item/radio/headset/casino,
+/obj/item/radio/headset/casino,
+/obj/item/radio/headset/casino,
+/obj/item/radio/headset/casino,
+>>>>>>> 42c1f36339 ([MIRROR] Archives old map files [MDB Ignore] (#9852))
 /turf/simulated/floor/tiled,
 /area/submap/casino_event)
 "eL" = (
@@ -2219,6 +2226,7 @@
 /area/submap/casino_event)
 "fG" = (
 /obj/structure/table/rack/shelf,
+<<<<<<< HEAD
 /obj/item/device/radio/headset/casino,
 /obj/item/device/radio/headset/casino,
 /obj/item/device/radio/headset/casino,
@@ -2228,6 +2236,14 @@
 /obj/item/device/radio/headset/casino/bowman,
 /obj/item/device/radio/headset/casino/bowman,
 /obj/item/device/radio/headset/casino/bowman,
+=======
+/obj/item/radio/headset/casino,
+/obj/item/radio/headset/casino,
+/obj/item/radio/headset/casino,
+/obj/item/radio/headset/casino,
+/obj/item/radio/headset/casino,
+/obj/item/radio/headset/casino,
+>>>>>>> 42c1f36339 ([MIRROR] Archives old map files [MDB Ignore] (#9852))
 /turf/simulated/floor/tiled/dark,
 /area/submap/casino_event)
 "fH" = (

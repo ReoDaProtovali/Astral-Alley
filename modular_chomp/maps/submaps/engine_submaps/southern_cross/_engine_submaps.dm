@@ -18,19 +18,35 @@
 /datum/map_template/engine/rust
 	name = "R-UST Engine"
 	desc = "R-UST Fusion Tokamak Engine"
+<<<<<<< HEAD
 	mappath = 'maps/submaps/engine_submaps/southern_cross/engine_rust.dmm'
+=======
+	mappath = "modular_chomp/maps/submaps/engine_submaps/southern_cross/engine_rust.dmm"
+>>>>>>> 42c1f36339 ([MIRROR] Archives old map files [MDB Ignore] (#9852))
 
 /datum/map_template/engine/singulo
 	name = "Singularity Engine"
 	desc = "Lord Singuloth"
+<<<<<<< HEAD
 	mappath = 'maps/submaps/engine_submaps/southern_cross/engine_singulo.dmm'
+=======
+	mappath = "modular_chomp/maps/submaps/engine_submaps/southern_cross/engine_singulo.dmm"
+>>>>>>> 42c1f36339 ([MIRROR] Archives old map files [MDB Ignore] (#9852))
 
 /datum/map_template/engine/supermatter
 	name = "Supermatter Engine"
 	desc = "Old Faithful Supermatter"
+<<<<<<< HEAD
 	mappath = 'maps/submaps/engine_submaps/southern_cross/engine_sme.dmm'
+=======
+	mappath = "modular_chomp/maps/submaps/engine_submaps/southern_cross/engine_sme.dmm"
+>>>>>>> 42c1f36339 ([MIRROR] Archives old map files [MDB Ignore] (#9852))
 
 /datum/map_template/engine/tesla
 	name = "Edison's Bane"
 	desc = "The Telsa Engine"
+<<<<<<< HEAD
 	mappath = 'maps/submaps/engine_submaps/southern_cross/engine_tesla.dmm' 
+=======
+	mappath = "modular_chomp/maps/submaps/engine_submaps/southern_cross/engine_tesla.dmm"
+>>>>>>> 42c1f36339 ([MIRROR] Archives old map files [MDB Ignore] (#9852))

@@ -1917,6 +1917,7 @@
 /area/aro2/airarea)
 "sB" = (
 /obj/structure/table/steel,
+<<<<<<< HEAD
 /obj/item/weapon/magnetic_ammo/pistol/khi{
 	pixel_x = 5;
 	pixel_y = 2
@@ -1925,6 +1926,8 @@
 	pixel_x = -3;
 	pixel_y = 5
 	},
+=======
+>>>>>>> 42c1f36339 ([MIRROR] Archives old map files [MDB Ignore] (#9852))
 /turf/simulated/floor/tiled/eris/techmaint_perforated,
 /area/aro2/surfluid)
 "sF" = (
