@@ -452,7 +452,10 @@
 /area/submap/diner)
 "bC" = (
 /obj/structure/table/standard,
+<<<<<<< HEAD
 /obj/item/stack/cable_coil,
+=======
+>>>>>>> 42c1f36339 ([MIRROR] Archives old map files [MDB Ignore] (#9852))
 /turf/simulated/floor/tiled/hydro,
 /area/submap/diner)
 "gw" = (

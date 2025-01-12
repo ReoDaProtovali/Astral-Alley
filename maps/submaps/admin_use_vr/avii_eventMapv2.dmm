@@ -5197,7 +5197,10 @@
 /area/engineering/engine_monitoring)
 "yw" = (
 /obj/structure/table/steel_reinforced,
+<<<<<<< HEAD
 /obj/item/weapon/book/manual/sd_guide,
+=======
+>>>>>>> 42c1f36339 ([MIRROR] Archives old map files [MDB Ignore] (#9852))
 /obj/effect/floor_decal/milspec/color/blue/half{
 	dir = 6
 	},
