@@ -108,11 +108,13 @@
 	var/list/spots_styles = list(
 		"null",
 		"zorgoia_spots",
-		"zorgoia_stripes"
+		"zorgoia_stripes",
+		"zorgoia_backline"
 	)
 	var/list/claws_styles = list(
 		"null",
 		"zorgoia_claws",
+		"zorgoia_justfangs"
 	)
 	var/list/spines_styles = list(
 		"null",
@@ -120,15 +122,51 @@
 	)
 	var/list/fluff_styles = list(
 		"null",
-		"zorgoia_fluff"
+		"zorgoia_fluff",
+		"zorgoia_feetpaws"
 	)
 	var/list/underbelly_styles = list(
 		"zorgoia_underbelly",
+		"zorgoia_underbellystripe",
 		"null"
 	)
 	var/list/eyes_styles = list(
-		"zorgoia_eyes"
+		"zorgoia_eyes",
+		"zorgoia_eyes2"
 	)
+<<<<<<< HEAD
+=======
+	var/list/spiky_styles = list(
+		"zorgoia_spike",
+		"zorgoia_spike2"
+	)
+	var/list/belly_styles = list(
+		"zorgoia_belly"
+	)
+
+/mob/living/simple_mob/vore/zorgoia/proc/recolor() //Base sprite wont need a radical menu selection
+	set name = "Change Color"
+	set desc = "Change your main color."
+	set category = "Abilities.General"
+	var/new_color = input("Pick new colors:","Color", goia_overlays["zorgoia_main"]) as null|color
+	if(!new_color)
+		return 0
+	goia_overlays["zorgoia_main"] = new_color
+	update_icon()
+
+/mob/living/simple_mob/vore/zorgoia/proc/appearance_switch() //This is just copypastas of the radial menu code, each block of code is the options for each bit of customisation... all 9 of them
+	set name = "Adjust Mob Markings"
+	set desc = "Change your markings and mob colors."
+	set category = "Abilities.General"
+
+	var/list/options = list("Belly","Spike","Ears","Spots","Claws","Spines","Fluff","Underbelly","Eyes")
+	for(var/option in options)
+		LAZYSET(options, option, image('modular_chomp/icons/effects/goia_labels.dmi', option))
+	var/choice = show_radial_menu(src, src, options, radius = 60)
+	if(!choice || QDELETED(src) || src.incapacitated())
+		return FALSE
+	. = TRUE
+>>>>>>> 806ca55591 (More zorgoia simplemob additions (#9864))
 	switch(choice)
 		if("Belly")
 			options = belly_styles
@@ -340,14 +378,21 @@
 	add_overlay(I)
 	qdel(I)
 
+<<<<<<< HEAD
 	I = image(icon, "[goia_overlays[7]][resting? "-rest" : null]", pixel_x = -16)
 	I.color = goia_overlays[goia_overlays[7]]
+=======
+
+	I = image(icon, "[goia_overlays["fluff"]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays["zorgoia_fluff"]
+>>>>>>> 806ca55591 (More zorgoia simplemob additions (#9864))
 	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
 	I.plane = MOB_PLANE
 	I.layer = MOB_LAYER
 	add_overlay(I)
 	qdel(I)
 
+<<<<<<< HEAD
 	I = image(icon, "[goia_overlays[8]][resting? "-rest" : null]", pixel_x = -16)
 	I.color = goia_overlays[goia_overlays[8]]
 	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
@@ -358,6 +403,10 @@
 
 	I = image(icon, "[goia_overlays[9]][resting? "-rest" : null]", pixel_x = -16)
 	I.color = goia_overlays[goia_overlays[9]]
+=======
+	I = image(icon, "[goia_overlays["eyes"]][resting? "-rest" : null]", pixel_x = -16)
+	I.color = goia_overlays["zorgoia_eyes"]
+>>>>>>> 806ca55591 (More zorgoia simplemob additions (#9864))
 	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
 	I.plane = PLANE_LIGHTING_ABOVE
 	add_overlay(I)
@@ -371,8 +420,21 @@
 	add_overlay(I)
 	qdel(I)
 
+<<<<<<< HEAD
 	I = image(icon, "[goia_overlays[1]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16) //todo, check kasscs resting sprite
 	I.color = goia_overlays[goia_overlays[1]]
+=======
+	I = image(icon, "[goia_overlays["belly"]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16)
+	I.color = goia_overlays["zorgoia_belly"]
+>>>>>>> 806ca55591 (More zorgoia simplemob additions (#9864))
+	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
+	I.plane = MOB_PLANE
+	I.layer = MOB_LAYER
+	add_overlay(I)
+	qdel(I)
+
+	I = image(icon, "[goia_overlays["underbelly"]][resting? "-rest" : (vore_fullness? "-[vore_fullness]" : null)]", pixel_x = -16)
+	I.color = goia_overlays["zorgoia_underbelly"]
 	I.appearance_flags |= (RESET_COLOR|PIXEL_SCALE)
 	I.plane = MOB_PLANE
 	I.layer = MOB_LAYER
