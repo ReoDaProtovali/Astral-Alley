@@ -1148,6 +1148,22 @@
     ckeywhitelist = list("satinisle")
     character_name = list("Parriz Tavakdavi")
 
+<<<<<<< HEAD
+=======
+/datum/gear/fluff/dark_tarot
+    path = /obj/item/deck/dark_tarot
+    display_name = "dark rose tarot deck"
+    ckeywhitelist = list("satinisle")
+    character_name = list("Millie Orlen")
+
+/datum/gear/fluff/memorycrown
+    path = /obj/item/clothing/head/fluff/memory_crown
+    display_name = "memory crown"
+    slot = slot_head
+    ckeywhitelist = list("sixberry")
+    character_name = list("Thistle")
+
+>>>>>>> 25d7359582 ([MIRROR] Fluff Item - Memory Crown (#9867))
 //  T CKEYS
 /datum/gear/fluff/ascian_medal
 	path = /obj/item/clothing/accessory/medal/silver/unity/tabiranth
