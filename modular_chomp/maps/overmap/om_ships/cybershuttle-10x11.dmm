@@ -14,11 +14,19 @@
 /obj/item/device/gps/explorer,
 /obj/item/device/gps/explorer,
 /obj/structure/closet/walllocker_double/east,
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/garand,
 /obj/item/ammo_magazine/clip/medium,
 /obj/item/ammo_magazine/clip/medium,
 /obj/item/ammo_magazine/clip/medium,
 /obj/item/weapon/storage/firstaid/regular,
+=======
+/obj/item/gun/projectile/garand,
+/obj/item/storage/firstaid/regular,
+/obj/item/ammo_magazine/clip/c762,
+/obj/item/ammo_magazine/clip/c762,
+/obj/item/ammo_magazine/clip/c762,
+>>>>>>> d0ebe164ac ([READY] The not so great but pretty alright ammo simplifcation (#9831))
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/cybershuttle)
 "e" = (

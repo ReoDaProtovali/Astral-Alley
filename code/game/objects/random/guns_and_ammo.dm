@@ -276,8 +276,13 @@
 				/obj/item/ammo_magazine/m10mm
 			),
 			prob(1);list(
+<<<<<<< HEAD
 				/obj/item/weapon/gun/projectile/automatic/p90,
 				/obj/item/ammo_magazine/a57p90 //CHOMPedit: new P90 magazine.
+=======
+				/obj/item/gun/projectile/automatic/p90,
+				/obj/item/ammo_magazine/m9mmp90
+>>>>>>> d0ebe164ac ([READY] The not so great but pretty alright ammo simplifcation (#9831))
 			),
 			prob(3);list(
 				/obj/item/weapon/gun/projectile/automatic/combatsmg,
