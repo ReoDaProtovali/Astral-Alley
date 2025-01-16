@@ -5825,21 +5825,6 @@
 	icon_state = "wood"
 	},
 /area/skipjack_station)
-"eQB" = (
-/obj/structure/table/rack,
-/obj/item/ammo_magazine/hectate/ap,
-/obj/item/ammo_magazine/hectate/ap,
-/obj/item/ammo_magazine/hectate/ap,
-/obj/item/ammo_magazine/hectate/ap,
-/obj/item/ammo_magazine/hectate/ap,
-/obj/item/ammo_magazine/hectate/ap,
-/obj/item/ammo_magazine/hectate/ap,
-/obj/item/ammo_magazine/hectate/ap,
-/turf/unsimulated/floor{
-	dir = 5;
-	icon_state = "vault"
-	},
-/area/centcom/specops)
 "eQT" = (
 /obj/structure/closet/crate/medical,
 /obj/item/weapon/surgical/circular_saw,
@@ -19733,10 +19718,13 @@
 /area/ninja_dojo/dojo)
 "shL" = (
 /obj/structure/table/rack,
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /obj/item/weapon/gun/projectile/automatic/serdy/hectate,
 /obj/item/weapon/gun/projectile/automatic/serdy/hectate,
 /obj/item/weapon/gun/projectile/automatic/serdy/hectate,
 /obj/item/weapon/gun/projectile/automatic/serdy/hectate,
+=======
+>>>>>>> d0ebe164ac ([READY] The not so great but pretty alright ammo simplifcation (#9831)):modular_chomp/maps/southern_cross/southern_cross-8.dmm
 /turf/unsimulated/floor{
 	dir = 5;
 	icon_state = "vault"
@@ -46393,7 +46381,7 @@ vFi
 vFi
 vFi
 nZC
-eQB
+shL
 eos
 eos
 eos

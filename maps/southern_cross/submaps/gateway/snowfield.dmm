@@ -2501,7 +2501,7 @@
 	pixel_x = -5;
 	pixel_y = 3
 	},
-/obj/item/ammo_casing/a762x54{
+/obj/item/ammo_casing/a762{
 	pixel_x = -3;
 	pixel_y = -8
 	},
@@ -14006,7 +14006,7 @@
 /turf/simulated/floor/tiled/monotile,
 /area/awaymission/snowfield/security/lobby)
 "lIw" = (
-/obj/item/ammo_casing/a762x54,
+/obj/item/ammo_casing/a762,
 /obj/item/ammo_casing/spent{
 	pixel_x = -4;
 	pixel_y = -7
@@ -18001,9 +18001,15 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/awaymission/snowfield/command/bridge)
 "pnD" = (
+<<<<<<< HEAD:maps/southern_cross/submaps/gateway/snowfield.dmm
 /obj/item/ammo_casing/a762x54,
 /obj/item/ammo_casing/a762x54,
 /obj/item/weapon/tool/crowbar/red{
+=======
+/obj/item/ammo_casing/a762,
+/obj/item/ammo_casing/a762,
+/obj/item/tool/crowbar/red{
+>>>>>>> d0ebe164ac ([READY] The not so great but pretty alright ammo simplifcation (#9831)):modular_chomp/maps/southern_cross/submaps/gateway/snowfield.dmm
 	pixel_x = -10;
 	pixel_y = -15
 	},

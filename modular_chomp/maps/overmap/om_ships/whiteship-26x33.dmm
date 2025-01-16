@@ -333,11 +333,20 @@
 /obj/structure/closet/secure_closet/guncabinet{
 	req_one_access = null
 	},
+<<<<<<< HEAD
 /obj/item/ammo_magazine/speedloader_six,
 /obj/item/ammo_magazine/speedloader_six,
 /obj/item/weapon/gun/projectile/revolver/mateba,
 /obj/item/ammo_magazine/clip/medium,
 /obj/item/ammo_magazine/clip/medium,
+=======
+/obj/item/gun/projectile/revolver/mateba,
+/obj/item/ammo_magazine/clip/c762,
+/obj/item/ammo_magazine/clip/c762,
+/obj/item/ammo_magazine/s357,
+/obj/item/ammo_magazine/s357,
+/obj/item/ammo_magazine/ammo_box/b762,
+>>>>>>> d0ebe164ac ([READY] The not so great but pretty alright ammo simplifcation (#9831))
 /turf/simulated/floor/tiled/techfloor,
 /area/shuttle/whiteshipOM2)
 "lM" = (

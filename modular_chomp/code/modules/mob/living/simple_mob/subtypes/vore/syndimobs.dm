@@ -291,7 +291,11 @@
 	var/explosion_delay_upper	= 1 SECONDS	// Upper bound.
 
 
+<<<<<<< HEAD
 	loot_list = list(/obj/item/weapon/gun/projectile/automatic/serdy/type901 = 1)
+=======
+	loot_list = list(/obj/item/gun/projectile/automatic/z8 = 1)
+>>>>>>> d0ebe164ac ([READY] The not so great but pretty alright ammo simplifcation (#9831))
 
 	projectiletype = /obj/item/projectile/bullet/rifle/a545
 	projectilesound = 'sound/weapons/serdy/type901.ogg'
