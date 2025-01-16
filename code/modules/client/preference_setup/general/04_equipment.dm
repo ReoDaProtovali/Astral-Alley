@@ -6,6 +6,7 @@
 	name = "Clothing"
 	sort_order = 4
 
+<<<<<<< HEAD
 /datum/category_item/player_setup_item/general/equipment/load_character(var/savefile/S)
 	S["all_underwear"] >> pref.all_underwear
 	S["all_underwear_metadata"] >> pref.all_underwear_metadata
@@ -23,6 +24,34 @@
 	S["communicator_visibility"]	<< pref.communicator_visibility
 	S["ttone"]	<< pref.ringtone  // CHOMPEdit - We use ttone in the pref so that it doesnt get reset
 	//S["shoe_hater"] << pref.shoe_hater	//RS ADD //CHOMPRemove, remove RS No shoes
+=======
+/datum/category_item/player_setup_item/general/equipment/load_character(list/save_data)
+	pref.all_underwear				= check_list_copy(save_data["all_underwear"])
+	pref.all_underwear_metadata		= check_list_copy(save_data["all_underwear_metadata"])
+	for(var/i in pref.all_underwear_metadata)
+		pref.all_underwear_metadata[i] = path2text_list(pref.all_underwear_metadata[i])
+	pref.headset					= save_data["headset"]
+	pref.backbag					= save_data["backbag"]
+	pref.pdachoice					= save_data["pdachoice"]
+	pref.communicator_visibility	= save_data["communicator_visibility"]
+	pref.ringtone					= save_data["ttone"] // CHOMPEdit - We use ttone in the pref so that it doesnt get reset
+	//pref.shoe_hater					= save_data["shoe_hater"] //CHOMPRemove, remove RS No shoes
+	pref.no_jacket					= save_data["no_jacket"]
+
+/datum/category_item/player_setup_item/general/equipment/save_character(list/save_data)
+	save_data["all_underwear"]				= pref.all_underwear
+	var/list/underwear = list()
+	for(var/i in pref.all_underwear_metadata)
+		underwear[i] = check_list_copy(pref.all_underwear_metadata[i])
+	save_data["all_underwear_metadata"] 	= underwear
+	save_data["headset"]					= pref.headset
+	save_data["backbag"]					= pref.backbag
+	save_data["pdachoice"]					= pref.pdachoice
+	save_data["communicator_visibility"]	= pref.communicator_visibility
+	save_data["ttone"]						= pref.ringtone // CHOMPEdit - We use ttone in the pref so that it doesnt get reset
+	//save_data["shoe_hater"] 				= pref.shoe_hater //CHOMPRemove, remove RS No shoes
+	save_data["no_jacket"]					= pref.no_jacket
+>>>>>>> f04719c7d8 ([MIRROR] Default Jacket Toggle (#9880))
 
 var/global/list/valid_ringtones = list(
 		"beep",
@@ -119,11 +148,21 @@ var/global/list/valid_ringtones = list(
 				. += " <a href='?src=\ref[src];underwear=[UWC.name];tweak=\ref[gt]'>[gt.get_contents(get_metadata(UWC.name, gt))]</a>"
 
 		. += "<br>"
+<<<<<<< HEAD
 	. += "Backpack Type: <a href='?src=\ref[src];change_backpack=1'><b>[backbaglist[pref.backbag]]</b></a><br>"
 	. += "PDA Type: <a href='?src=\ref[src];change_pda=1'><b>[pdachoicelist[pref.pdachoice]]</b></a><br>"
 	. += "Communicator Visibility: <a href='?src=\ref[src];toggle_comm_visibility=1'><b>[(pref.communicator_visibility) ? "Yes" : "No"]</b></a><br>"
 	. += "Ringtone (leave blank for job default): <a href='?src=\ref[src];set_ringtone=1'><b>[pref.ringtone]</b></a><br>"
 	//. += "Spawn With Shoes:<a href='?src=\ref[src];toggle_shoes=1'><b>[(pref.shoe_hater) ? "No" : "Yes"]</b></a><br>" //RS Addition //CHOMPRemove, remove RS No shoes
+=======
+	. += "Headset Type: <a href='byond://?src=\ref[src];change_headset=1'><b>[GLOB.headsetlist[pref.headset]]</b></a><br>"
+	. += "Backpack Type: <a href='byond://?src=\ref[src];change_backpack=1'><b>[backbaglist[pref.backbag]]</b></a><br>"
+	. += "PDA Type: <a href='byond://?src=\ref[src];change_pda=1'><b>[pdachoicelist[pref.pdachoice]]</b></a><br>"
+	. += "Communicator Visibility: <a href='byond://?src=\ref[src];toggle_comm_visibility=1'><b>[(pref.communicator_visibility) ? "Yes" : "No"]</b></a><br>"
+	. += "Ringtone (leave blank for job default): <a href='byond://?src=\ref[src];set_ringtone=1'><b>[pref.ringtone]</b></a><br>"
+	//. += "Spawn With Shoes:<a href='byond://?src=\ref[src];toggle_shoes=1'><b>[(pref.shoe_hater) ? "No" : "Yes"]</b></a><br>" //RS Addition //CHOMPRemove, remove RS No shoes
+	. += "Spawn With Jacket:<a href='byond://?src=\ref[src];toggle_jacket=1'><b>[(pref.no_jacket) ? "No" : "Yes"]</b></a><br>"
+>>>>>>> f04719c7d8 ([MIRROR] Default Jacket Toggle (#9880))
 
 	return jointext(.,null)
 
@@ -199,5 +238,9 @@ var/global/list/valid_ringtones = list(
 			return TOPIC_REFRESH
 			//RS ADD END
 	*///CHOMPRemove End, remove RS No shoes
+	else if(href_list["toggle_jacket"])
+		if(CanUseTopic(user))
+			pref.no_jacket = !pref.no_jacket
+			return TOPIC_REFRESH
 
 	return ..()
