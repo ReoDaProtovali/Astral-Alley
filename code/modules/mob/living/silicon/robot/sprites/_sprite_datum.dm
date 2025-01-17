@@ -77,6 +77,15 @@
 	else
 		return
 
+<<<<<<< HEAD
+=======
+/datum/robot_sprite/proc/get_robotdecal_overlay(var/mob/living/silicon/robot/ourborg)
+	if(!(ourborg.resting && has_robotdecal_sprites))
+		return "[sprite_icon_state]-decals"
+	else
+		return
+
+>>>>>>> 1bb255b664 ([MIRROR] Robot decal fix (#9897))
 /datum/robot_sprite/proc/get_rest_sprite(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.rest_style in rest_sprite_options))
 		ourborg.rest_style = "Default"
