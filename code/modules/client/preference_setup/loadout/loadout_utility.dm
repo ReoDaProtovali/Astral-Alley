@@ -194,3 +194,124 @@ modular computers
 /datum/gear/utility/customlaptop/New()
 	..()
 	gear_tweaks += new /datum/gear_tweak/laptop()
+<<<<<<< HEAD
+=======
+
+//////////Language Translators
+
+/datum/gear/utility/translator
+	display_name = "handheld translator (selection)"
+	path = /obj/item/universal_translator/limited
+	cost = 4
+
+/datum/gear/utility/translator/New()
+	..()
+	var/list/translators = list(
+	"galcom" = /obj/item/universal_translator/limited,
+	"solcom" = /obj/item/universal_translator/limited/sol,
+	"terminus" = /obj/item/universal_translator/limited/terminus,
+	"tradeband" = /obj/item/universal_translator/limited/tradeband,
+	"gutterband" = /obj/item/universal_translator/limited/gutterband,
+	"skrellian" = /obj/item/universal_translator/limited/skrellian,
+	"sinta'unathi" = /obj/item/universal_translator/limited/unathi,
+	"siik" = /obj/item/universal_translator/limited/siik,
+	"schechi" = /obj/item/universal_translator/limited/schechi,
+	"vedaqh" = /obj/item/universal_translator/limited/vedaqh,
+	"birdsong" = /obj/item/universal_translator/limited/birdsong,
+	"sagaru" = /obj/item/universal_translator/limited/sagaru,
+	"canilunzt" = /obj/item/universal_translator/limited/canilunzt,
+	"ecureuilian" = /obj/item/universal_translator/limited/ecureuilian,
+	"daemon" = /obj/item/universal_translator/limited/daemon,
+	"enochian" = /obj/item/universal_translator/limited/enochian,
+	"vespinae" = /obj/item/universal_translator/limited/vespinae,
+	"d'rudak'ar" = /obj/item/universal_translator/limited/dragon,
+	"spacer" = /obj/item/universal_translator/limited/spacer,
+	"tavan" = /obj/item/universal_translator/limited/tavan,
+	"echo song" = /obj/item/universal_translator/limited/echosong,
+	"akhani" = /obj/item/universal_translator/limited/akhani,
+	"alai" = /obj/item/universal_translator/limited/alai
+	)
+	gear_tweaks += new/datum/gear_tweak/path(translators)
+
+/datum/gear/utility/saddlebag
+	display_name = "saddle bag, horse"
+	path = /obj/item/storage/backpack/saddlebag
+	slot = slot_back
+	cost = 2
+
+/datum/gear/utility/saddlebag_common
+	display_name = "saddle bag, common"
+	path = /obj/item/storage/backpack/saddlebag_common
+	slot = slot_back
+	cost = 2
+
+/datum/gear/utility/saddlebag_common/robust
+	display_name = "saddle bag, robust"
+	path = /obj/item/storage/backpack/saddlebag_common/robust
+	slot = slot_back
+	cost = 2
+
+/datum/gear/utility/saddlebag_common/vest
+	display_name = "taur duty vest (backpack)"
+	path = /obj/item/storage/backpack/saddlebag_common/vest
+	slot = slot_back
+	cost = 1
+
+/datum/gear/utility/dufflebag
+	display_name = "dufflebag"
+	path = /obj/item/storage/backpack/dufflebag
+	slot = slot_back
+	cost = 2
+
+/datum/gear/utility/dufflebag/black
+	display_name = "black dufflebag"
+	path = /obj/item/storage/backpack/dufflebag/fluff
+
+/datum/gear/utility/dufflebag/med
+	display_name = "medical dufflebag"
+	path = /obj/item/storage/backpack/dufflebag/med
+	allowed_roles = list(JOB_MEDICAL_DOCTOR,JOB_CHIEF_MEDICAL_OFFICER,JOB_CHEMIST,JOB_PARAMEDIC,JOB_GENETICIST,JOB_PSYCHIATRIST,JOB_FIELD_MEDIC) //CHOMP explo keep
+
+/datum/gear/utility/dufflebag/med/emt
+	display_name = "EMT dufflebag"
+	path = /obj/item/storage/backpack/dufflebag/emt
+
+/datum/gear/utility/dufflebag/sec
+    display_name = "security Dufflebag"
+    allowed_roles = list(JOB_HEAD_OF_SECURITY,JOB_WARDEN,JOB_DETECTIVE,JOB_SECURITY_OFFICER,JOB_BLUESHIELD_GUARD,JOB_SECURITY_PILOT) //YW ADDITIONS
+    path = /obj/item/storage/backpack/dufflebag/sec
+
+/datum/gear/utility/dufflebag/eng
+	display_name = "engineering dufflebag"
+	allowed_roles = list(JOB_CHIEF_ENGINEER,JOB_ATMOSPHERIC_TECHNICIAN,JOB_ENGINEER)
+	path = /obj/item/storage/backpack/dufflebag/eng
+
+/datum/gear/utility/dufflebag/sci
+	display_name = "science dufflebag"
+	allowed_roles = list(JOB_RESEARCH_DIRECTOR,JOB_SCIENTIST,JOB_ROBOTICIST,JOB_XENOBIOLOGIST,JOB_XENOBOTANIST)
+	path = /obj/item/storage/backpack/dufflebag/sci
+
+/datum/gear/utility/dufflebag/explorer
+	display_name = "explorer dufflebag" //CHOMP explo keep
+	path = /obj/item/storage/backpack/dufflebag/explorer
+	allowed_roles = list(JOB_PATHFINDER,JOB_EXPLORER) //CHOMP explo keep
+
+/datum/gear/utility/dufflebag/talon
+	display_name = "Talon dufflebag"
+	path = /obj/item/storage/backpack/dufflebag/explorer
+
+/datum/gear/utility/ID
+	display_name = "contractor identification card"
+	path = /obj/item/card/id/event/polymorphic/altcard
+	cost = 1
+
+/datum/gear/utility/bs_bracelet
+	display_name = "bluespace bracelet"
+	path = /obj/item/clothing/gloves/bluespace
+	cost = 2
+
+/datum/gear/utility/walkpod
+	display_name = "podzu music player"
+	path = /obj/item/walkpod
+	cost = 2
+>>>>>>> fecffcf15b ([MIRROR] Update & Cleanup Loadouts (#9877))
