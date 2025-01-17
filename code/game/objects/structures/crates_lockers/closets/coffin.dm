@@ -4,7 +4,11 @@
 	icon = 'icons/obj/closets/coffin.dmi'
 
 	icon_state = "closed_unlocked"
+<<<<<<< HEAD
 	seal_tool = /obj/item/weapon/tool/screwdriver
+=======
+	seal_tool = /obj/item/tool/screwdriver
+>>>>>>> d462b7f748 ([MIRROR] Lose some weight, fatty (#9900))
 	breakout_sound = 'sound/weapons/tablehit1.ogg'
 	closet_appearance = null // Special icon for us
 

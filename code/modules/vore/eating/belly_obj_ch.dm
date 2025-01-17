@@ -550,7 +550,7 @@
 				if(O.possessed_voice && O.possessed_voice.len)
 					for(var/mob/living/voice/V in O.possessed_voice)
 						D.inhabit_item(V, null, V.tf_mob_holder)
-						V.Destroy()
+						qdel(V)
 					O.possessed_voice = list()
 				//CHOMPAdd End
 				return TRUE
@@ -559,7 +559,7 @@
 		if(O.possessed_voice && O.possessed_voice.len)
 			for(var/mob/living/voice/V in O.possessed_voice)
 				D.inhabit_item(V, null, V.tf_mob_holder)
-				V.Destroy()
+				qdel(V)
 			O.possessed_voice = list()
 		//CHOMPAdd End
 	return TRUE

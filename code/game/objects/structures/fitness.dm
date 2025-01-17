@@ -2,6 +2,7 @@
 	icon = 'icons/obj/stationobjs.dmi'
 	anchored = TRUE
 	var/being_used = 0
+	var/weightloss_power = 1
 
 /obj/structure/fitness/punchingbag
 	name = "punching bag"
@@ -25,8 +26,13 @@
 			playsound(src, 'sound/effects/woodhit.ogg', 25, 1, -1)
 			user.do_attack_animation(src)
 			user.adjust_nutrition(-10) //CHOMPEdit Set nutrition drain to be the same as in fitness_machines_vr.dm
+<<<<<<< HEAD
 			user.weight -= 0.1 * (0.01 * user.weight_loss) // CHOMPAdd Add weight loss to old fitness equipment
 			to_chat(user, "<span class='warning'>You [pick(hit_message)] \the [src].</span>")
+=======
+			user.weight -= 0.25 * weightloss_power * (0.01 * user.weight_loss)
+			to_chat(user, span_warning("You [pick(hit_message)] \the [src]."))
+>>>>>>> d462b7f748 ([MIRROR] Lose some weight, fatty (#9900))
 
 /obj/structure/fitness/weightlifter
 	name = "weightlifting machine"
@@ -65,8 +71,14 @@
 		if(do_after(user, 30 + (weight * 10))) //CHOMPEdit Set timer to be similar to the machines in fitness_machines_vr.dm
 			playsound(src, 'sound/effects/weightdrop.ogg', 25, 1)
 			user.adjust_nutrition(weight * -10)
+<<<<<<< HEAD
 			user.weight -= 0.1 * weight * (0.01 * user.weight_loss) // CHOMPAdd Add weight loss to old fitness equipment
 			to_chat(user, "<span class='notice'>You lift the weights [qualifiers[weight]].</span>")
+=======
+			var/weightloss_enhanced = weightloss_power * (weight * 0.5)
+			user.weight -= 0.25 * weightloss_enhanced * (0.01 * user.weight_loss)
+			to_chat(user, span_notice("You lift the weights [qualifiers[weight]]."))
+>>>>>>> d462b7f748 ([MIRROR] Lose some weight, fatty (#9900))
 			being_used = 0
 		else
 			to_chat(user, "<span class='notice'>Against your previous judgement, perhaps working out is not for you.</span>")
