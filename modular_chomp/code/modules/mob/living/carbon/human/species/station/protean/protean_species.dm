@@ -130,7 +130,21 @@
 		"dragon_hornsPointy" = "#FFFFFF",
 		"dragon_eyesNormal" = "#FFFFFF"
 	)
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/carbon/human/species/station/protean/protean_species.dm
 
+=======
+	// CHOMPEdit Start
+	var/list/dullahan_overlays = list(
+		"dullahanbody" = "#FFFFFF",
+		"dullahanhead" = "#FFFFFF",
+		"dullahanmetal" = "#FFFFFF",
+		"dullahaneyes" = "#FFFFFF",
+		"dullahandecals" = "#FFFFFF",
+		"dullahanextended" = "#FFFFFF"
+		// loads the icons from the DMI file in that order on spawn. they are overlay 1-6.
+	)
+	// CHOMPEdit End
+>>>>>>> 590fb55972 (protean dullahan string import and export for colors/overlays selected and code rehaul.  [Needs Review] (#9870)):code/modules/mob/living/carbon/human/species/station/protean_vr/protean_species.dm
 	var/pseudodead = 0
 
 /datum/species/protean/New()
