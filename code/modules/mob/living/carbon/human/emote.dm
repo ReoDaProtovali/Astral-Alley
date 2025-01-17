@@ -186,7 +186,15 @@ var/list/_human_default_emotes = list(
 	/decl/emote/audible/wawa,
 	/decl/emote/audible/malehumanscream,
 	/decl/emote/audible/scientist/scream,
+<<<<<<< HEAD
 	/decl/emote/audible/scientist/pain
+=======
+	/decl/emote/audible/scientist/pain,
+	/decl/emote/audible/caw,
+	/decl/emote/audible/yip,
+	/decl/emote/audible/tailthump,
+	/decl/emote/audible/squeal,
+>>>>>>> f0c403ee4a (Adds *yip, *squeal and *tailthump as emotes (#9846))
 	//CHOMP Add end
 )
 
@@ -335,7 +343,15 @@ var/list/_simple_mob_default_emotes = list(
 	/decl/emote/audible/mgeow,
 	/decl/emote/audible/xenogrowl,
 	/decl/emote/audible/xenohiss,
+<<<<<<< HEAD
 	/decl/emote/audible/xenopurr
+=======
+	/decl/emote/audible/xenopurr,
+	/decl/emote/audible/caw,
+	/decl/emote/audible/yip,
+	/decl/emote/audible/tailthump,
+	/decl/emote/audible/squeal,
+>>>>>>> f0c403ee4a (Adds *yip, *squeal and *tailthump as emotes (#9846))
 	//CHOMP Add end
 	)
 	//VOREStation Add End
