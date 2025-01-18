@@ -497,7 +497,9 @@ var/global/list/obj/item/device/pda/PDAs = list()
 
 /obj/item/device/pda/Destroy()
 	PDAs -= src
-	if (src.id && !delete_id && src.id.loc == src) //CHOMPEdit
+	if(id.loc != src)
+		id = null
+	if (src.id && !delete_id)
 		src.id.forceMove(get_turf(src.loc))
 	else
 		QDEL_NULL(src.id)
