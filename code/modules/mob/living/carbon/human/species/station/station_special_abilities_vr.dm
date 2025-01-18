@@ -1263,8 +1263,13 @@
 	set category = "Abilities.Vore" //CHOMPEdit
 	set desc = "Grab a target with any of your appendages!"
 
+<<<<<<< HEAD
 	if(stat || paralysis || weakened || stunned || world.time < last_special) //No tongue flicking while stunned.
 		to_chat(src, "<span class='warning'>You can't do that in your current state.</span>")
+=======
+	if(stat || paralysis || weakened || stunned || world.time < last_special || is_incorporeal()) //No tongue flicking while stunned. // CHOMPEdit
+		to_chat(src, span_warning("You can't do that in your current state."))
+>>>>>>> df2d89a287 (fix that too (#9902))
 		return
 
 	last_special = world.time + 10 //Anti-spam.
