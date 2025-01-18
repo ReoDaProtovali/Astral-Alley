@@ -542,14 +542,20 @@ var/global/floorIsLava = 0
 	if(!check_rights(0))	return
 
 	var/dat = {"
+<<<<<<< HEAD
 		<center><B>Game Panel</B></center><hr>\n
 		<A href='?src=\ref[src];[HrefToken()];c_mode=1'>Change Game Mode</A><br>
+=======
+		<html><center><B>Game Panel</B></center><hr>\n
+		<A href='byond://?src=\ref[src];[HrefToken()];c_mode=1'>Change Game Mode</A><br>
+>>>>>>> 65efaca3b9 ([MIRROR] more 516 compat (#9904))
 		"}
 	if(master_mode == "secret")
 		dat += "<A href='?src=\ref[src];[HrefToken()];f_secret=1'>(Force Secret Mode)</A><br>"
 
 	dat += {"
 		<BR>
+<<<<<<< HEAD
 		<A href='?src=\ref[src];[HrefToken()];create_object=1'>Create Object</A><br>
 		<A href='?src=\ref[src];[HrefToken()];quick_create_object=1'>Quick Create Object</A><br>
 		<A href='?src=\ref[src];[HrefToken()];create_turf=1'>Create Turf</A><br>
@@ -557,6 +563,15 @@ var/global/floorIsLava = 0
 		<br><A href='?src=\ref[src];[HrefToken()];vsc=airflow'>Edit Airflow Settings</A><br>
 		<A href='?src=\ref[src];[HrefToken()];vsc=phoron'>Edit Phoron Settings</A><br>
 		<A href='?src=\ref[src];[HrefToken()];vsc=default'>Choose a default ZAS setting</A><br>
+=======
+		<A href='byond://?src=\ref[src];[HrefToken()];create_object=1'>Create Object</A><br>
+		<A href='byond://?src=\ref[src];[HrefToken()];quick_create_object=1'>Quick Create Object</A><br>
+		<A href='byond://?src=\ref[src];[HrefToken()];create_turf=1'>Create Turf</A><br>
+		<A href='byond://?src=\ref[src];[HrefToken()];create_mob=1'>Create Mob</A><br>
+		<br><A href='byond://?src=\ref[src];[HrefToken()];vsc=airflow'>Edit Airflow Settings</A><br>
+		<A href='byond://?src=\ref[src];[HrefToken()];vsc=phoron'>Edit Phoron Settings</A><br>
+		<A href='byond://?src=\ref[src];[HrefToken()];vsc=default'>Choose a default ZAS setting</A><br></html>
+>>>>>>> 65efaca3b9 ([MIRROR] more 516 compat (#9904))
 		"}
 
 	usr << browse(dat, "window=admin2;size=210x280")

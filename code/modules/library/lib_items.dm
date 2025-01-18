@@ -209,9 +209,14 @@ Book Cart End
 
 // CHOMPEdit Start
 /// Proc that handles sending the book information to the user, as well as some housekeeping stuff.
+<<<<<<< HEAD
 /obj/item/weapon/book/proc/display_content(mob/living/user)
 	user << browse("<TT><I>Penned by [author].</I></TT> <BR>" + "[dat]", "window=book")
 // CHOMPEdit End
+=======
+/obj/item/book/proc/display_content(mob/living/user)
+	user << browse(replacetext(dat, "<html>", "<html><TT><I>Penned by [author].</I></TT> <BR>"), "window=book")
+>>>>>>> 65efaca3b9 ([MIRROR] more 516 compat (#9904))
 
 /obj/item/weapon/book/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(carved)

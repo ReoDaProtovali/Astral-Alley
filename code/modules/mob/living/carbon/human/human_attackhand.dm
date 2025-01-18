@@ -461,7 +461,7 @@
 		else
 			dat += "<b>Primarily [u_attack.attack_name]</b> - <a href='byond://?src=\ref[src];default_attk=\ref[u_attack]'>set default</a><br/><br/><br/>"
 
-	src << browse(dat, "window=checkattack")
+	src << browse("<html>[dat]</html>", "window=checkattack")
 
 /mob/living/carbon/human/Topic(href, href_list)
 	if(href_list["default_attk"])
