@@ -1,4 +1,5 @@
-import { useBackend } from '../../../backend';
+import { useBackend } from 'tgui/backend';
+
 import { Data } from './types';
 import { generateBellyString } from './VorePanelExportBellyString';
 import { getCurrentTimestamp } from './VorePanelExportTimestamp';
@@ -38,12 +39,12 @@ export const downloadPrefs = (extension: string) => {
           '</p><div class="accordion" id="accordionBellies">',
       ],
       {
-        type: 'text/html;charset=utf8',
+        type: 'text/html',
       },
     );
     bellies.forEach((belly, i) => {
       blob = new Blob([blob, generateBellyString(belly, i)], {
-        type: 'text/html;charset=utf8',
+        type: 'text/html',
       });
     });
     blob = new Blob(
@@ -53,7 +54,7 @@ export const downloadPrefs = (extension: string) => {
         '<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>',
         '</div></main></body></html>',
       ],
-      { type: 'text/html;charset=utf8' },
+      { type: 'text/html' },
     );
   }
 
@@ -61,5 +62,5 @@ export const downloadPrefs = (extension: string) => {
     blob = new Blob([JSON.stringify(bellies)], { type: 'application/json' });
   }
 
-  (window.navigator as any).msSaveOrOpenBlob(blob, filename);
+  Byond.saveBlob(blob, filename, extension);
 };
