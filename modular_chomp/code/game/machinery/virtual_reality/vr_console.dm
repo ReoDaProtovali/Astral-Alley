@@ -159,7 +159,12 @@
 	if(stat & (BROKEN|NOPOWER))
 		return
 	if(!ishuman(M))
+<<<<<<< HEAD
 		to_chat(user, "<span class='warning'>\The [src] rejects [M] with a sharp beep.</span>")
+=======
+		to_chat(user, span_warning("\The [src] rejects [M] with a sharp beep."))
+		return
+>>>>>>> 832b835b65 (fix missing vr return (#9907))
 	if(occupant)
 		to_chat(user, "<span class='warning'>\The [src] is already occupied.</span>")
 		return
