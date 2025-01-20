@@ -47,6 +47,7 @@
 /datum/data/pda/utility/scanmode/medical/scan_mob(mob/living/C as mob, mob/living/user as mob)
 	C.visible_message("<span class=warning>[user] has analyzed [C]'s vitals!</span>")
 
+<<<<<<< HEAD
 	user.show_message("<span class='notice'>Analyzing Results for [C]:</span>")
 	user.show_message("<span class='notice'>    Overall Status: [C.stat > 1 ? "dead" : "[C.health - C.halloss]% healthy"]</span>", 1)
 	user.show_message(text("<span class='notice'>    Damage Specifics:</span> <span class='[]'>[]</span>-<span class='[]'>[]</span>-<span class='[]'>[]</span>-<span class='[]'>[]</span>",
@@ -57,6 +58,16 @@
 			), 1)
 	user.show_message("<span class='notice'>    Key: Suffocation/Toxin/Burns/Brute</span>", 1)
 	user.show_message("<span class='notice'>    Body Temperature: [C.bodytemperature-T0C]&deg;C ([C.bodytemperature*1.8-459.67]&deg;F)</span>", 1)
+=======
+	user.show_message(span_notice("Analyzing Results for [C]:"))
+	user.show_message(span_notice("    Overall Status: [C.stat > 1 ? "dead" : "[C.health - C.halloss]% healthy"]"), 1)
+	user.show_message(span_notice("    Damage Specifics:") + " [(C.getOxyLoss() > 50) ? span_warning(C.getOxyLoss()) : C.getOxyLoss()]-\
+									[(C.getToxLoss() > 50) ? span_warning("[C.getToxLoss()]") : C.getToxLoss()]-\
+									[(C.getFireLoss() > 50) ? span_warning("[C.getFireLoss()]") : C.getFireLoss()]-\
+									[(C.getBruteLoss() > 50) ? span_warning("[C.getBruteLoss()]") : C.getBruteLoss()]", 1)
+	user.show_message(span_notice("    Key: Suffocation/Toxin/Burns/Brute"), 1)
+	user.show_message(span_notice("    Body Temperature: [C.bodytemperature-T0C]&deg;C ([C.bodytemperature*1.8-459.67]&deg;F)"), 1)
+>>>>>>> 5c1ab76e5d ([MIRROR] more 516 compat (#9914))
 	if(C.tod && (C.stat == DEAD || (C.status_flags & FAKEDEATH)))
 		user.show_message("<span class='notice'>    Time of Death: [C.tod]</span>")
 	if(istype(C, /mob/living/carbon/human))
