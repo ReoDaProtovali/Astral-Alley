@@ -230,7 +230,11 @@
 		return TRACKING_TERMINATE
 	var/turf/pos = get_turf(src)
 	var/area/B = pos?.loc // No cam tracking in dorms!
+<<<<<<< HEAD
 	if(InvalidPlayerTurf(pos) || B.block_tracking)
+=======
+	if(InvalidPlayerTurf(pos) || B?.flag_check(AREA_BLOCK_TRACKING))
+>>>>>>> 5c1ab76e5d ([MIRROR] more 516 compat (#9914))
 		return TRACKING_TERMINATE
 	if(invisibility >= INVISIBILITY_LEVEL_ONE) //cloaked
 		return TRACKING_TERMINATE
