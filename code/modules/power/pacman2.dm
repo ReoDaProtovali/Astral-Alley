@@ -128,8 +128,13 @@
 				dat += text("No phoron tank currently loaded.<br>")
 			dat += text("Power output: <A href='?src=\ref[src];action=lower_power'>-</A> [power_gen * power_output] <A href='?src=\ref[src];action=higher_power'>+</A><br>")
 			dat += text("Heat: [heat]<br>")
+<<<<<<< HEAD
 			dat += "<br><A href='?src=\ref[src];action=close'>Close</A>"
 			user << browse("[dat]", "window=port_gen")
+=======
+			dat += "<br><A href='byond://?src=\ref[src];action=close'>Close</A>"
+			user << browse("<html>[dat]</html>", "window=port_gen")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 
 	Topic(href, href_list)
 		if(..())

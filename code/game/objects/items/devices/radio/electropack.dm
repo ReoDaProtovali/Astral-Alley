@@ -111,8 +111,13 @@
 	if(!istype(user, /mob/living/carbon/human))
 		return
 	user.set_machine(src)
+<<<<<<< HEAD
 	var/dat = {"<TT>
 <A href='?src=\ref[src];power=1'>Turn [on ? "Off" : "On"]</A><BR>
+=======
+	var/dat = {"<html><TT>
+<A href='byond://?src=\ref[src];power=1'>Turn [on ? "Off" : "On"]</A><BR>
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 <B>Frequency/Code</B> for electropack:<BR>
 Frequency:
 <A href='byond://?src=\ref[src];freq=-10'>-</A>
@@ -125,7 +130,7 @@ Code:
 <A href='byond://?src=\ref[src];code=-1'>-</A> [code]
 <A href='byond://?src=\ref[src];code=1'>+</A>
 <A href='byond://?src=\ref[src];code=5'>+</A><BR>
-</TT>"}
+</TT></html>"}
 	user << browse(dat, "window=radio")
 	onclose(user, "radio")
 	return

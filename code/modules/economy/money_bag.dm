@@ -42,8 +42,13 @@
 	if (amt_phoron)
 		dat += text("Phoron coins: [amt_phoron] <A href='?src=\ref[src];remove=phoron'>Remove one</A><br>")
 	if (amt_uranium)
+<<<<<<< HEAD
 		dat += text("Uranium coins: [amt_uranium] <A href='?src=\ref[src];remove=uranium'>Remove one</A><br>")
 	user << browse("[dat]", "window=moneybag")
+=======
+		dat += text("Uranium coins: [amt_uranium] <A href='byond://?src=\ref[src];remove=uranium'>Remove one</A><br>")
+	user << browse("<html>[dat]</html>", "window=moneybag")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 
 /obj/item/weapon/moneybag/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	..()

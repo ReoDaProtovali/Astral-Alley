@@ -20,9 +20,15 @@
 	for(var/line in my_list)
 		i++
 		t += "#[i] | [display_data(line)]  |  "
+<<<<<<< HEAD
 		t += "<a href='?src=\ref[src];edit=1;pos=[i]'>\[Edit\]</a>  |  "
 		t += "<a href='?src=\ref[src];remove=1;pos=[i]'>\[Remove\]</a><br>"
 	user << browse(t, "window=list_pin_\ref[src];size=500x400")
+=======
+		t += "<a href='byond://?src=\ref[src];edit=1;pos=[i]'>\[Edit\]</a>  |  "
+		t += "<a href='byond://?src=\ref[src];remove=1;pos=[i]'>\[Remove\]</a><br>"
+	user << browse("<html>[t]</html>", "window=list_pin_\ref[src];size=500x400")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 
 /datum/integrated_io/list/proc/add_to_list(mob/user, var/new_entry)
 	if(!new_entry && user)

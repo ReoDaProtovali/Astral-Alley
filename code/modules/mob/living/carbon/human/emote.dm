@@ -362,7 +362,7 @@ var/list/_simple_mob_default_emotes = list(
 	set desc = "Sets an extended description of your character's features."
 	set category = "IC.Settings" //CHOMPEdit
 
-	var/HTML = "<body>"
+	var/HTML = "<html><body>"
 	HTML += "<tt><center>"
 	HTML += "<b>Update Flavour Text</b> <hr />"
 	HTML += "<br></center>"
@@ -394,8 +394,13 @@ var/list/_simple_mob_default_emotes = list(
 	HTML += TextPreview(flavor_texts["feet"])
 	HTML += "<br>"
 	HTML += "<hr />"
+<<<<<<< HEAD
 	HTML +="<a href='?src=\ref[src];flavor_change=done'>\[Done\]</a>"
 	HTML += "<tt>"
+=======
+	HTML +="<a href='byond://?src=\ref[src];flavor_change=done'>\[Done\]</a>"
+	HTML += "<tt></body></html>"
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	src << browse(HTML, "window=flavor_changes;size=430x300")
 
 /mob/living/carbon/human/proc/toggle_tail(var/setting,var/message = 0)

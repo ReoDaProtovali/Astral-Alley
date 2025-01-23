@@ -35,7 +35,7 @@
 
 /obj/machinery/librarypubliccomp/attack_hand(var/mob/user as mob)
 	usr.set_machine(src)
-	var/dat = "<HEAD><TITLE>Library Visitor</TITLE></HEAD><BODY>\n" // <META HTTP-EQUIV='Refresh' CONTENT='10'>
+	var/dat = "<html><HEAD><TITLE>Library Visitor</TITLE></HEAD><BODY>\n" // <META HTTP-EQUIV='Refresh' CONTENT='10'>
 	switch(screenstate)
 		if(0)
 			dat += {"<h2>Search Settings</h2><br>
@@ -64,7 +64,11 @@
 					dat += "<tr><td>[author]</td><td>[title]</td><td>[category]</td><td>[id]</td></tr>"
 				qdel(query)
 				dat += "</table><BR>"
+<<<<<<< HEAD
 			dat += "<A href='?src=\ref[src];back=1'>\[Go Back\]</A><BR>"
+=======
+			dat += "<A href='byond://?src=\ref[src];back=1'>\[Go Back\]</A><BR></html>"
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	user << browse(dat, "window=publiclibrary")
 	onclose(user, "publiclibrary")
 
@@ -304,8 +308,13 @@
 				dat += "</table>"
 			dat += "<BR><A href='?src=\ref[src];switchscreen=0'>(Return to main menu)</A><BR>"
 
+<<<<<<< HEAD
 	//dat += "<A HREF='?src=\ref[user];mach_close=library'>Close</A><br><br>"
 	user << browse(dat, "window=library")
+=======
+	//dat += "<A href='byond://?src=\ref[user];mach_close=library'>Close</A><br><br>"
+	user << browse("<html>[dat]</html>", "window=library")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	onclose(user, "library")
 
 //VOREStation Addition Start
@@ -341,7 +350,7 @@
 			dat += "</table>"
 		dat += "<BR><A href='?src=\ref[src];switchscreen=0'>(Return to main menu)</A><BR>"
 
-		user << browse(dat, "window=library")
+		user << browse("<html>[dat]</html>", "window=library")
 		onclose(user, "library")
 //VOREStation Addition End
 
@@ -539,7 +548,7 @@
 		dat += "       <A href='?src=\ref[src];clear=1'>\[Clear Memory\]</A><BR><BR><A href='?src=\ref[src];eject=1'>\[Remove Book\]</A>"
 	else
 		dat += "<BR>"
-	user << browse(dat, "window=scanner")
+	user << browse("<html>[dat]</html>", "window=scanner")
 	onclose(user, "scanner")
 
 /obj/machinery/libraryscanner/Topic(href, href_list)

@@ -128,8 +128,13 @@
 	dat += "<A href='?src=\ref[src];RUSTEngine=1'>Build R-UST</A><BR>"
 	dat += "<BR><A href='?src=\ref[src];RANDOM=1'>Build Random Engine</A><BR>"
 
+<<<<<<< HEAD
 	dat += "<A href='?src=\ref[user];mach_close=computer'>Close</A>"
 	user << browse(dat, "window=computer;size=575x450")
+=======
+	dat += "<A href='byond://?src=\ref[user];mach_close=computer'>Close</A>"
+	user << browse("<html>[dat]</html>", "window=computer;size=575x450")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	onclose(user, "computer")
 	return
 

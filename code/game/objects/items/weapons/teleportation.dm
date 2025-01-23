@@ -37,8 +37,13 @@ Frequency:
 <A href='byond://?src=\ref[src];freq=2'>+</A>
 <A href='byond://?src=\ref[src];freq=10'>+</A><BR>
 
+<<<<<<< HEAD
 <A href='?src=\ref[src];refresh=1'>Refresh</A>"}
 	user << browse(dat, "window=radio")
+=======
+<A href='byond://?src=\ref[src];refresh=1'>Refresh</A>"}
+	user << browse("<html>[dat]</html>", "window=radio")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	onclose(user, "radio")
 	return
 

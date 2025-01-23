@@ -1616,7 +1616,11 @@
 					You can also bite synthetics, but due to how synths work, they won't have anything injected into them.
 					<br>
 					"}
+<<<<<<< HEAD
 		usr << browse(output,"window=chemicalrefresher")
+=======
+		src << browse("<html>[output]</html>","window=chemicalrefresher")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 		return
 	else
 		var/list/targets = list() //IF IT IS NOT BROKEN. DO NOT FIX IT. AND KEEP COPYPASTING IT  (Pointing Rick Dalton: "That's my code!" ~CL)

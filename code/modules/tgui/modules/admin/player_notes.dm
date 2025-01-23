@@ -240,7 +240,7 @@
 			if(index == page)
 				dat += "</b>"
 
-	usr << browse(dat, "window=player_notes;size=400x400")
+	usr << browse("<html>[dat]</html>", "window=player_notes;size=400x400")
 
 /datum/admins/proc/player_has_info_legacy(var/key as text)
 	var/savefile/info = new("data/player_saves/[copytext(key, 1, 2)]/[key]/info.sav")
