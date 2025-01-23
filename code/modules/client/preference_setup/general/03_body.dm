@@ -781,7 +781,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(href_list["hair_color"])
 		if(!has_flag(mob_species, HAS_HAIR_COLOR))
 			return TOPIC_NOACTION
+<<<<<<< HEAD
 		var/new_hair = input(user, "Choose your character's hair colour:", "Character Preference", rgb(pref.r_hair, pref.g_hair, pref.b_hair)) as color|null
+=======
+		var/new_hair = tgui_color_picker(user, "Choose your character's hair colour:", "Character Preference", pref.read_preference(/datum/preference/color/human/hair_color))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_hair && has_flag(mob_species, HAS_HAIR_COLOR) && CanUseTopic(user))
 			pref.r_hair = hex2num(copytext(new_hair, 2, 4))
 			pref.g_hair = hex2num(copytext(new_hair, 4, 6))
@@ -791,7 +795,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(href_list["grad_color"])
 		if(!has_flag(mob_species, HAS_HAIR_COLOR))
 			return TOPIC_NOACTION
+<<<<<<< HEAD
 		var/new_grad = input(user, "Choose your character's secondary hair color:", "Character Preference", rgb(pref.r_grad, pref.g_grad, pref.b_grad)) as color|null
+=======
+		var/new_grad = tgui_color_picker(user, "Choose your character's secondary hair color:", "Character Preference", pref.read_preference(/datum/preference/color/human/grad_color))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_grad && has_flag(mob_species, HAS_HAIR_COLOR) && CanUseTopic(user))
 			pref.r_grad = hex2num(copytext(new_grad, 2, 4))
 			pref.g_grad = hex2num(copytext(new_grad, 4, 6))
@@ -857,7 +865,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(href_list["facial_color"])
 		if(!has_flag(mob_species, HAS_HAIR_COLOR))
 			return TOPIC_NOACTION
+<<<<<<< HEAD
 		var/new_facial = input(user, "Choose your character's facial-hair colour:", "Character Preference", rgb(pref.r_facial, pref.g_facial, pref.b_facial)) as color|null
+=======
+		var/new_facial = tgui_color_picker(user, "Choose your character's facial-hair colour:", "Character Preference", pref.read_preference(/datum/preference/color/human/facial_color))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_facial && has_flag(mob_species, HAS_HAIR_COLOR) && CanUseTopic(user))
 			pref.r_facial = hex2num(copytext(new_facial, 2, 4))
 			pref.g_facial = hex2num(copytext(new_facial, 4, 6))
@@ -872,7 +884,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(href_list["eye_color"])
 		if(!has_flag(mob_species, HAS_EYE_COLOR))
 			return TOPIC_NOACTION
+<<<<<<< HEAD
 		var/new_eyes = input(user, "Choose your character's eye colour:", "Character Preference", rgb(pref.r_eyes, pref.g_eyes, pref.b_eyes)) as color|null
+=======
+		var/new_eyes = tgui_color_picker(user, "Choose your character's eye colour:", "Character Preference", pref.read_preference(/datum/preference/color/human/eyes_color))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_eyes && has_flag(mob_species, HAS_EYE_COLOR) && CanUseTopic(user))
 			pref.r_eyes = hex2num(copytext(new_eyes, 2, 4))
 			pref.g_eyes = hex2num(copytext(new_eyes, 4, 6))
@@ -890,7 +906,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	else if(href_list["skin_color"])
 		if(!has_flag(mob_species, HAS_SKIN_COLOR))
 			return TOPIC_NOACTION
+<<<<<<< HEAD
 		var/new_skin = input(user, "Choose your character's skin colour: ", "Character Preference", rgb(pref.r_skin, pref.g_skin, pref.b_skin)) as color|null
+=======
+		var/new_skin = tgui_color_picker(user, "Choose your character's skin colour: ", "Character Preference", pref.read_preference(/datum/preference/color/human/skin_color))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_skin && has_flag(mob_species, HAS_SKIN_COLOR) && CanUseTopic(user))
 			pref.r_skin = hex2num(copytext(new_skin, 2, 4))
 			pref.g_skin = hex2num(copytext(new_skin, 4, 6))
@@ -985,7 +1005,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		if (isnull(pref.body_markings[M]["color"]))
 			if (tgui_alert(user, "You currently have customized marking colors. This will reset each bodypart's color. Are you sure you want to continue?","Reset Bodypart Colors",list("Yes","No")) != "Yes")
 				return TOPIC_NOACTION
-		var/mark_color = input(user, "Choose the [M] color: ", "Character Preference", pref.body_markings[M]["color"]) as color|null
+		var/mark_color = tgui_color_picker(user, "Choose the [M] color: ", "Character Preference", pref.body_markings[M]["color"])
 		if(mark_color && CanUseTopic(user))
 			pref.body_markings[M] = pref.mass_edit_marking_list(M,FALSE,TRUE,pref.body_markings[M],color="[mark_color]")
 			return TOPIC_REFRESH_UPDATE_PREVIEW
@@ -1010,7 +1030,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		if (pref.body_markings.Find(marking) == 0)
 			winshow(user, "prefs_markings_subwindow", FALSE)
 			return TOPIC_NOACTION
-		var/mark_color = input(user, "Choose the [marking] color: ", "Character Preference", pref.body_markings[marking]["color"]) as color|null
+		var/mark_color = tgui_color_picker(user, "Choose the [marking] color: ", "Character Preference", pref.body_markings[marking]["color"])
 		if(mark_color && CanUseTopic(user))
 			pref.body_markings[marking] = pref.mass_edit_marking_list(marking,FALSE,TRUE,pref.body_markings[marking],color="[mark_color]")
 			markings_subwindow(user, marking)
@@ -1023,7 +1043,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			return TOPIC_NOACTION
 		var/zone = href_list["zone"]
 		pref.body_markings[marking]["color"] = null //turn off the color button outside the submenu
-		var/mark_color = input(user, "Choose the [marking] color: ", "Character Preference", pref.body_markings[marking][zone]["color"]) as color|null
+		var/mark_color = tgui_color_picker(user, "Choose the [marking] color: ", "Character Preference", pref.body_markings[marking][zone]["color"])
 		if(mark_color && CanUseTopic(user))
 			pref.body_markings[marking][zone]["color"] = "[mark_color]"
 			markings_subwindow(user, marking)
@@ -1252,7 +1272,11 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["synth2_color"])
+<<<<<<< HEAD
 		var/new_color = input(user, "Choose your character's synth colour: ", "Character Preference", rgb(pref.r_synth, pref.g_synth, pref.b_synth)) as color|null
+=======
+		var/new_color = tgui_color_picker(user, "Choose your character's synth colour: ", "Character Preference", pref.read_preference(/datum/preference/color/human/synth_color))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_color && CanUseTopic(user))
 			pref.r_synth = hex2num(copytext(new_color, 2, 4))
 			pref.g_synth = hex2num(copytext(new_color, 4, 6))
@@ -1307,8 +1331,13 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["ear_color"])
+<<<<<<< HEAD
 		var/new_earc = input(user, "Choose your character's ear colour:", "Character Preference",
 			rgb(pref.r_ears, pref.g_ears, pref.b_ears)) as color|null
+=======
+		var/new_earc = tgui_color_picker(user, "Choose your character's ear colour:", "Character Preference",
+			pref.read_preference(/datum/preference/color/human/ears_color1))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_earc)
 			pref.r_ears = hex2num(copytext(new_earc, 2, 4))
 			pref.g_ears = hex2num(copytext(new_earc, 4, 6))
@@ -1316,8 +1345,13 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["ear_color2"])
+<<<<<<< HEAD
 		var/new_earc2 = input(user, "Choose your character's ear colour:", "Character Preference",
 			rgb(pref.r_ears2, pref.g_ears2, pref.b_ears2)) as color|null
+=======
+		var/new_earc2 = tgui_color_picker(user, "Choose your character's ear colour:", "Character Preference",
+			pref.read_preference(/datum/preference/color/human/ears_color2))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_earc2)
 			pref.r_ears2 = hex2num(copytext(new_earc2, 2, 4))
 			pref.g_ears2 = hex2num(copytext(new_earc2, 4, 6))
@@ -1325,14 +1359,48 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["ear_color3"])
+<<<<<<< HEAD
 		var/new_earc3 = input(user, "Choose your character's tertiary ear colour:", "Character Preference",
 			rgb(pref.r_ears3, pref.g_ears3, pref.b_ears3)) as color|null
+=======
+		var/new_earc3 = tgui_color_picker(user, "Choose your character's tertiary ear colour:", "Character Preference",
+			pref.read_preference(/datum/preference/color/human/ears_color3))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_earc3)
 			pref.r_ears3 = hex2num(copytext(new_earc3, 2, 4))
 			pref.g_ears3 = hex2num(copytext(new_earc3, 4, 6))
 			pref.b_ears3 = hex2num(copytext(new_earc3, 6, 8))
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
+<<<<<<< HEAD
+=======
+	else if(href_list["ear_secondary_style"])
+		var/new_style = tgui_input_list(user, "Select an ear style for this character:", "Character Preference", pref.get_available_styles(global.ear_styles_list), pref.ear_secondary_style)
+		if(!new_style)
+			return TOPIC_NOACTION
+		pref.ear_secondary_style = new_style
+		return TOPIC_REFRESH_UPDATE_PREVIEW
+	else if(href_list["ear_secondary_color"])
+		var/channel = text2num(href_list["ear_secondary_color"])
+		// very important sanity check; this makes sure someone can't crash the server by setting channel to some insanely high value
+		if(channel > GLOB.fancy_sprite_accessory_color_channel_names.len)
+			return TOPIC_NOACTION
+		// this would say 'secondary ears' but you'd get 'choose your character's primary secondary ear colour' which sounds silly
+		var/new_color = tgui_color_picker(
+			user,
+			"Choose your character's [lowertext(GLOB.fancy_sprite_accessory_color_channel_names[channel])] ear colour:",
+			"Secondary Ear Coloration",
+			LAZYACCESS(pref.ear_secondary_colors, channel) || "#ffffff",
+		)
+		if(!new_color)
+			return TOPIC_NOACTION
+		// ensures color channel list is at least that long
+		// the upper bound is to have a secondary safety check because list index set is a dangerous call
+		pref.ear_secondary_colors.len = clamp(length(pref.ear_secondary_colors), channel, length(GLOB.fancy_sprite_accessory_color_channel_names))
+		pref.ear_secondary_colors[channel] = new_color
+		return TOPIC_REFRESH_UPDATE_PREVIEW
+
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 	else if(href_list["tail_style"])
 		var/new_tail_style = tgui_input_list(user, "Select a tail style for this character:", "Character Preference", pref.get_available_styles(global.tail_styles_list), pref.tail_style)
 		if(new_tail_style)
@@ -1340,8 +1408,13 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["tail_color"])
+<<<<<<< HEAD
 		var/new_tailc = input(user, "Choose your character's tail/taur colour:", "Character Preference",
 			rgb(pref.r_tail, pref.g_tail, pref.b_tail)) as color|null
+=======
+		var/new_tailc = tgui_color_picker(user, "Choose your character's tail/taur colour:", "Character Preference",
+			pref.read_preference(/datum/preference/color/human/tail_color1))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_tailc)
 			pref.r_tail = hex2num(copytext(new_tailc, 2, 4))
 			pref.g_tail = hex2num(copytext(new_tailc, 4, 6))
@@ -1349,8 +1422,13 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["tail_color2"])
+<<<<<<< HEAD
 		var/new_tailc2 = input(user, "Choose your character's secondary tail/taur colour:", "Character Preference",
 			rgb(pref.r_tail2, pref.g_tail2, pref.b_tail2)) as color|null
+=======
+		var/new_tailc2 = tgui_color_picker(user, "Choose your character's secondary tail/taur colour:", "Character Preference",
+			pref.read_preference(/datum/preference/color/human/tail_color2))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_tailc2)
 			pref.r_tail2 = hex2num(copytext(new_tailc2, 2, 4))
 			pref.g_tail2 = hex2num(copytext(new_tailc2, 4, 6))
@@ -1358,8 +1436,13 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["tail_color3"])
+<<<<<<< HEAD
 		var/new_tailc3 = input(user, "Choose your character's tertiary tail/taur colour:", "Character Preference",
 			rgb(pref.r_tail3, pref.g_tail3, pref.b_tail3)) as color|null
+=======
+		var/new_tailc3 = tgui_color_picker(user, "Choose your character's tertiary tail/taur colour:", "Character Preference",
+			pref.read_preference(/datum/preference/color/human/tail_color3))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_tailc3)
 			pref.r_tail3 = hex2num(copytext(new_tailc3, 2, 4))
 			pref.g_tail3 = hex2num(copytext(new_tailc3, 4, 6))
@@ -1374,8 +1457,13 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["wing_color"])
+<<<<<<< HEAD
 		var/new_wingc = input(user, "Choose your character's wing colour:", "Character Preference",
 			rgb(pref.r_wing, pref.g_wing, pref.b_wing)) as color|null
+=======
+		var/new_wingc = tgui_color_picker(user, "Choose your character's wing colour:", "Character Preference",
+			pref.read_preference(/datum/preference/color/human/wing_color1))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_wingc)
 			pref.r_wing = hex2num(copytext(new_wingc, 2, 4))
 			pref.g_wing = hex2num(copytext(new_wingc, 4, 6))
@@ -1383,6 +1471,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["wing_color2"])
+<<<<<<< HEAD
 		var/new_wingc2 = input(user, "Choose your character's secondary wing colour:", "Character Preference",
 			rgb(pref.r_wing2, pref.g_wing2, pref.b_wing2)) as color|null
 		if(new_wingc2)
@@ -1398,6 +1487,19 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 			pref.r_wing3 = hex2num(copytext(new_wingc3, 2, 4))
 			pref.g_wing3 = hex2num(copytext(new_wingc3, 4, 6))
 			pref.b_wing3 = hex2num(copytext(new_wingc3, 6, 8))
+=======
+		var/new_wingc = tgui_color_picker(user, "Choose your character's secondary wing colour:", "Character Preference",
+			pref.read_preference(/datum/preference/color/human/wing_color2))
+		if(new_wingc)
+			pref.update_preference_by_type(/datum/preference/color/human/wing_color2, new_wingc)
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+
+	else if(href_list["wing_color3"])
+		var/new_wingc = tgui_color_picker(user, "Choose your character's tertiary wing colour:", "Character Preference",
+			pref.read_preference(/datum/preference/color/human/wing_color3))
+		if(new_wingc)
+			pref.update_preference_by_type(/datum/preference/color/human/wing_color3, new_wingc)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 	return ..()
 

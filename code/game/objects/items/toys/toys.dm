@@ -197,8 +197,13 @@
 		to_chat(user, "<span class='warning'>You can't do that right now!</span>")
 		return
 
+<<<<<<< HEAD
 	if(tgui_alert(usr, "Are you sure you want to recolor your blade?", "Confirm Recolor", list("Yes", "No")) == "Yes")
 		var/energy_color_input = input(usr,"","Choose Energy Color",lcolor) as color|null
+=======
+	if(tgui_alert(user, "Are you sure you want to recolor your blade?", "Confirm Recolor", list("Yes", "No")) == "Yes")
+		var/energy_color_input = tgui_color_picker(user,"","Choose Energy Color",lcolor)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(energy_color_input)
 			lcolor = sanitize_hexcolor(energy_color_input)
 		update_icon()

@@ -169,7 +169,11 @@
 				active_mode = text2num(params["mode"])
 				return TRUE
 			if("choose_color")
+<<<<<<< HEAD
 				var/chosen_color = input(usr, "Choose a color: ", "ColorMate colour picking", activecolor) as color|null
+=======
+				var/chosen_color = tgui_color_picker(ui.user, "Choose a color: ", "ColorMate colour picking", activecolor)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 				if(chosen_color)
 					activecolor = chosen_color
 				return TRUE

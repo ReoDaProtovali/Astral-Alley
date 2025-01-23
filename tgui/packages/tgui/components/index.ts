@@ -27,7 +27,11 @@ export { Icon } from './Icon';
 export { Image } from './Image';
 export { InfinitePlane } from './InfinitePlane';
 export { Input } from './Input';
+<<<<<<< HEAD
 export { KeyListener } from './KeyListener';
+=======
+export { Interactive } from './Interactive';
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 export { Knob } from './Knob';
 export { LabeledControls } from './LabeledControls';
 export { LabeledList } from './LabeledList';
@@ -36,6 +40,7 @@ export { Modal } from './Modal';
 export { NanoMap } from './NanoMap';
 export { NoticeBox } from './NoticeBox';
 export { NumberInput } from './NumberInput';
+export { Pointer } from './Pointer';
 export { Popper } from './Popper';
 export { ProgressBar } from './ProgressBar';
 export { RestrictedInput } from './RestrictedInput';

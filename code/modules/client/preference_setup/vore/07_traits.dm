@@ -101,7 +101,7 @@ var/global/list/valid_bloodreagents = list("default","iron","copper","phoron","s
 		if (1) //TRAIT_PREF_TYPE_BOOLEAN
 			trait_prefs[preference] = !trait_prefs[preference]
 		if (2) //TRAIT_PREF_TYPE_COLOR
-			var/new_color = input(user, "Choose the color for this trait preference:", "Trait Preference", trait_prefs[preference]) as color|null
+			var/new_color = tgui_color_picker(user, "Choose the color for this trait preference:", "Trait Preference", trait_prefs[preference])
 			if (new_color)
 				trait_prefs[preference] = new_color
 		if (3) //TRAIT_PREF_TYPE_STRING - CHOMPEdit

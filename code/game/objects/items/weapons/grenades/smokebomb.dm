@@ -32,8 +32,14 @@
 
 	return
 
+<<<<<<< HEAD
 /obj/item/weapon/grenade/smokebomb/attackby(obj/item/I as obj, mob/user as mob)
 	if(istype(I,/obj/item/device/multitool))
 		var/new_smoke_color = input(user, "Choose a color for the smoke:", "Smoke Color", smoke_color) as color|null
+=======
+/obj/item/grenade/smokebomb/attackby(obj/item/I as obj, mob/user as mob)
+	if(istype(I,/obj/item/multitool))
+		var/new_smoke_color = tgui_color_picker(user, "Choose a color for the smoke:", "Smoke Color", smoke_color)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_smoke_color)
 			smoke_color = new_smoke_color
