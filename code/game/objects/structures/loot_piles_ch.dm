@@ -113,3 +113,71 @@
 
 /obj/structure/loot_pile/maint/boxfort
 	density = FALSE
+<<<<<<< HEAD
+=======
+
+//Eclipse mecha
+/obj/structure/loot_pile/mecha/odd_gygax
+	name = "\improper mecha wreckage"
+	icon = 'modular_chomp/icons/mob/eclipse.dmi'
+	icon_state = "orb-broken"
+	density = TRUE
+	anchored = FALSE
+
+	chance_uncommon = 20
+	chance_rare = 10
+
+	loot_depletion = FALSE
+
+	common_loot = list(
+		/obj/random/tool,
+		/obj/random/tool,
+		/obj/item/stack/cable_coil/random,
+		/obj/random/tank,
+		/obj/random/tech_supply/component,
+		/obj/random/tech_supply/component,
+		/obj/item/stack/material/steel{amount = 20}
+		)
+
+	uncommon_loot = list(
+		/obj/item/holosign_creator/smokewand,
+		/obj/item/holosign_creator/forcewand
+		)
+
+	rare_loot = list(
+		/obj/item/weldingtool/silver,
+		/obj/item/cell/slime/jellyfish
+		)
+
+/obj/structure/loot_pile/mecha/odd_ripley
+	name = "\improper mecha wreckage"
+	icon = 'modular_chomp/icons/mob/eclipse.dmi'
+	icon_state = "mine-broken"
+	density = TRUE
+	anchored = FALSE
+
+	chance_uncommon = 30
+	chance_rare = 20
+
+	loot_depletion = FALSE
+
+	common_loot = list(
+		/obj/random/tool,
+		/obj/random/tool,
+		/obj/item/stack/cable_coil/random,
+		/obj/random/tank,
+		/obj/random/tech_supply/component,
+		/obj/random/tech_supply/component,
+		/obj/item/stack/material/steel{amount = 20}
+		)
+
+	uncommon_loot = list(
+		/obj/item/stack/material/durasteel{amount = 10},
+		/obj/item/stack/material/morphium{amount = 5}
+		)
+
+	rare_loot = list(
+		/obj/item/clothing/suit/armor/reactive,
+		/obj/item/personal_shield_generator/belt/magnetbelt
+		)
+>>>>>>> b8e029f202 (Another Tyr Update (#9924))
