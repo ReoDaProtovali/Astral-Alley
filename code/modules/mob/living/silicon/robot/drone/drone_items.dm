@@ -603,4 +603,8 @@
 
 	dat += resources
 
+<<<<<<< HEAD
 	src << browse(dat, "window=robotmod")
+=======
+// 	src << browse("<html>[dat]</html>", "window=robotmod")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))

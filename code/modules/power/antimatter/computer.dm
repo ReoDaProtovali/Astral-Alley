@@ -89,8 +89,13 @@
 				dat += "<BR>\[ <A HREF='?src=\ref[src];operation=activate'>Activate Engine</A> \]"
 			dat += "<BR>Contents:<br>[src.connected_E.H_fuel]kg of Hydrogen<br>[src.connected_E.antiH_fuel]kg of Anti-Hydrogen<br>"
 
+<<<<<<< HEAD
 	dat += "<BR>\[ [(src.state != STATE_DEFAULT) ? "<A HREF='?src=\ref[src];operation=main'>Main Menu</A> | " : ""]<A HREF='?src=\ref[user];mach_close=communications'>Close</A> \]"
 	user << browse(dat, "window=communications;size=400x500")
+=======
+	dat += "<BR>\[ [(src.state != STATE_DEFAULT) ? "<A href='byond://?src=\ref[src];operation=main'>Main Menu</A> | " : ""]<A href='byond://?src=\ref[user];mach_close=communications'>Close</A> \]"
+	user << browse("<html>[dat]</html>", "window=communications;size=400x500")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	onclose(user, "communications")
 
 #undef STATE_DEFAULT

@@ -23,7 +23,7 @@
 			else
 				inactive_on_main_station++
 
-	var/output = {"<B>AIR SYSTEMS REPORT</B><HR>
+	var/output = {"<html><B>AIR SYSTEMS REPORT</B><HR>
 <B>General Processing Data</B><BR>
 	Cycle: [air_master.current_cycle]<br>
 	Groups: [air_master.zones.len]<BR>
@@ -36,7 +36,11 @@
 	Hotspot Processing: [hotspots]<BR>
 <br>
 <B>Geometry Processing Data</B><BR>
+<<<<<<< HEAD
 	Tile Update: [air_master.tiles_to_update.len]<BR>
+=======
+	Tile Update: [SSair.tiles_to_update.len]<BR></html>
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 "}
 
 	usr << browse(output,"window=airreport")
@@ -95,7 +99,7 @@
 				else
 					output += "&nbsp;&nbsp;&nbsp;&nbsp;[device]<br>"
 
-	usr << browse(output,"window=radioreport")
+	usr << browse("<html>[output]</html>","window=radioreport")
 	feedback_add_details("admin_verb","RR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/reload_admins()

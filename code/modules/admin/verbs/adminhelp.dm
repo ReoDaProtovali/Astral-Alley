@@ -92,8 +92,13 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	var/list/dat = list("<html><head><title>[title]</title></head>")
 	dat += "<A HREF='?_src_=holder;[HrefToken()];ahelp_tickets=[state]'>Refresh</A><br><br>"
 	for(var/datum/admin_help/AH as anything in l2b)
+<<<<<<< HEAD
 		dat += "<span class='adminnotice'><span class='adminhelp'>Ticket #[AH.id]</span>: <A HREF='?_src_=holder;ahelp=\ref[AH];[HrefToken()];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A></span><br>"
 
+=======
+		dat += span_adminnotice(span_adminhelp("Ticket #[AH.id]") + ": <A href='byond://?_src_=holder;ahelp=\ref[AH];[HrefToken()];ahelp_action=ticket'>[AH.initiator_key_name]: [AH.name]</A>") + "<br>"
+	dat += "</html>"
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	usr << browse(dat.Join(), "window=ahelp_list[state];size=600x480")
 
 //Tickets statpanel
@@ -515,7 +520,7 @@ GLOBAL_DATUM_INIT(ahelp_tickets, /datum/admin_help_tickets, new)
 	dat += "<br><b>Log:</b><br><br>"
 	for(var/I in _interactions)
 		dat += "[I]<br>"
-
+	dat += "</html>"
 	usr << browse(dat.Join(), "window=ahelp[id];size=620x480")
 
 /datum/admin_help/proc/Retitle()

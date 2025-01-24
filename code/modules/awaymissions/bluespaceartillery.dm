@@ -27,7 +27,7 @@
 	dat += "<B>Charge progress: [reload]/180:</B><BR>"
 	dat += "<A href='byond://?src=\ref[src];fire=1'>Open Fire</A><BR>"
 	dat += "Deployment of weapon authorized by <br>[using_map.company_name] Naval Command<br><br>Remember, friendly fire is grounds for termination of your contract and life.<HR>"
-	user << browse(dat, "window=scroll")
+	user << browse("<html>[dat]</html>", "window=scroll")
 	onclose(user, "scroll")
 	return
 

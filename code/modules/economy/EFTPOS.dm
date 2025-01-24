@@ -89,6 +89,7 @@
 		else
 			dat += "<a href='?src=\ref[src];choice=toggle_lock'>Lock in new transaction</a><br><br>"
 
+<<<<<<< HEAD
 			dat += "<a href='?src=\ref[src];choice=trans_purpose'>Transaction purpose: [transaction_purpose]</a><br>"
 			dat += "Value: <a href='?src=\ref[src];choice=trans_value'>$[transaction_amount]</a><br>"
 			dat += "Linked account: <a href='?src=\ref[src];choice=link_account'>[linked_account ? linked_account.owner_name : "None"]</a><hr>"
@@ -96,6 +97,15 @@
 			dat += "<a href='?src=\ref[src];choice=change_id'>Change EFTPOS ID</a><br>"
 			dat += "Scan card to reset access code <a href='?src=\ref[src];choice=reset'>\[------\]</a>"
 		user << browse(dat,"window=eftpos")
+=======
+			dat += "<a href='byond://?src=\ref[src];choice=trans_purpose'>Transaction purpose: [transaction_purpose]</a><br>"
+			dat += "Value: <a href='byond://?src=\ref[src];choice=trans_value'>$[transaction_amount]</a><br>"
+			dat += "Linked account: <a href='byond://?src=\ref[src];choice=link_account'>[linked_account ? linked_account.owner_name : "None"]</a><hr>"
+			dat += "<a href='byond://?src=\ref[src];choice=change_code'>Change access code</a><br>"
+			dat += "<a href='byond://?src=\ref[src];choice=change_id'>Change EFTPOS ID</a><br>"
+			dat += "Scan card to reset access code <a href='byond://?src=\ref[src];choice=reset'>\[------\]</a>"
+		user << browse("<html>[dat]</html>","window=eftpos")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	else
 		user << browse(null,"window=eftpos")
 

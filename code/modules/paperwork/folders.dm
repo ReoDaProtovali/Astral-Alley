@@ -84,6 +84,7 @@
 /obj/item/weapon/folder/attack_self(mob/user as mob)
 	var/dat = "<title>[name]</title>"
 
+<<<<<<< HEAD
 	for(var/obj/item/weapon/paper/P in src)
 		dat += "<A href='?src=\ref[src];remove=\ref[P]'>Remove</A> <A href='?src=\ref[src];rename=\ref[P]'>Rename</A> - <A href='?src=\ref[src];read=\ref[P]'>[P.name]</A><BR>"
 	for(var/obj/item/weapon/photo/Ph in src)
@@ -91,6 +92,15 @@
 	for(var/obj/item/weapon/paper_bundle/Pb in src)
 		dat += "<A href='?src=\ref[src];remove=\ref[Pb]'>Remove</A> <A href='?src=\ref[src];rename=\ref[Pb]'>Rename</A> - <A href='?src=\ref[src];browse=\ref[Pb]'>[Pb.name]</A><BR>"
 	user << browse(dat, "window=folder")
+=======
+	for(var/obj/item/paper/P in src)
+		dat += "<A href='byond://?src=\ref[src];remove=\ref[P]'>Remove</A> <A href='byond://?src=\ref[src];rename=\ref[P]'>Rename</A> - <A href='byond://?src=\ref[src];read=\ref[P]'>[P.name]</A><BR>"
+	for(var/obj/item/photo/Ph in src)
+		dat += "<A href='byond://?src=\ref[src];remove=\ref[Ph]'>Remove</A> <A href='byond://?src=\ref[src];rename=\ref[Ph]'>Rename</A> - <A href='byond://?src=\ref[src];look=\ref[Ph]'>[Ph.name]</A><BR>"
+	for(var/obj/item/paper_bundle/Pb in src)
+		dat += "<A href='byond://?src=\ref[src];remove=\ref[Pb]'>Remove</A> <A href='byond://?src=\ref[src];rename=\ref[Pb]'>Rename</A> - <A href='byond://?src=\ref[src];browse=\ref[Pb]'>[Pb.name]</A><BR>"
+	user << browse("<html>[dat]</html>", "window=folder")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	onclose(user, "folder")
 	add_fingerprint(user)
 	return

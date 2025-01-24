@@ -96,8 +96,13 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	var/list/dat = list("<html><head><title>[title]</title></head>")
 	dat += "<A HREF='?_src_=holder;[HrefToken()];ahelp_tickets=[state]'>Refresh</A><br><br>"
 	for(var/datum/ticket/T as anything in l2b)
+<<<<<<< HEAD
 		dat += "<span class='adminnotice'><span class='adminhelp'>Ticket #[T.id]</span>: <A HREF='?_src_=holder;ahelp=\ref[T];[HrefToken()];ahelp_action=ticket'>[T.initiator_key_name]: [T.name]</A></span><br>"
 
+=======
+		dat += span_adminnotice(span_adminhelp("Ticket #[T.id]") + ": <A href='byond://?_src_=holder;ahelp=\ref[T];[HrefToken()];ahelp_action=ticket'>[T.initiator_key_name]: [T.name]</A>") + "<br>"
+	dat += "</html>"
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 	usr << browse(dat.Join(), "window=ahelp_list[state];size=600x480")
 
 //Tickets statpanel

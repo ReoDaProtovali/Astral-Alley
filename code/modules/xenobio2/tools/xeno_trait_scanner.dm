@@ -179,7 +179,12 @@
 
 	if(dat)
 		last_data = dat
+<<<<<<< HEAD
 		dat += "<br><br>\[<a href='?src=\ref[src];print=1'>print report</a>\]"
 		user << browse(dat,"window=xeno_analyzer")
+=======
+		dat += "<br><br>\[<a href='byond://?src=\ref[src];print=1'>print report</a>\]"
+		user << browse("<html>[dat]</html>","window=xeno_analyzer")
+>>>>>>> c0ee2c30d3 ([MIRROR] more missing tags (#9918))
 
 	return
