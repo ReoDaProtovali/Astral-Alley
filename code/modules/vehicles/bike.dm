@@ -46,9 +46,15 @@
 	paint_color = rgb(rand(1,255),rand(1,255),rand(1,255))
 	..()
 
+<<<<<<< HEAD
 /obj/vehicle/bike/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/device/multitool) && open)
 		var/new_paint = input(usr, "Please select paint color.", "Paint Color", paint_color) as color|null
+=======
+/obj/vehicle/bike/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/multitool) && open)
+		var/new_paint = tgui_color_picker(user, "Please select paint color.", "Paint Color", paint_color)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_paint)
 			paint_color = new_paint
 			update_icon()

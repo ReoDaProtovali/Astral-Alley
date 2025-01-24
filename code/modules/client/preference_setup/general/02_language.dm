@@ -196,5 +196,20 @@
 			return TOPIC_REFRESH
 	// VOREStation Add End
 
+<<<<<<< HEAD
+=======
+	else if(href_list["pref_runechat_color"])
+		var/new_runechat_color = tgui_color_picker(user, "Choose your character's runechat colour (#000000 for random):", "Character Preference", pref.runechat_color)
+		if(new_runechat_color && CanUseTopic(user))
+			pref.runechat_color = new_runechat_color
+			// whenever we change this, we update our mob
+			var/mob/pref_mob = preference_mob()
+			if(pref_mob)
+				pref_mob.chat_color = new_runechat_color
+				pref_mob.chat_color_darkened = new_runechat_color
+				pref_mob.chat_color_name = pref_mob.name
+			return TOPIC_REFRESH
+
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 
 	return ..()

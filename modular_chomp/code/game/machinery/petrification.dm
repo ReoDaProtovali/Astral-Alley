@@ -171,7 +171,11 @@
 		return
 	switch(option)
 		if("tint")
+<<<<<<< HEAD:modular_chomp/code/game/machinery/petrification.dm
 			var/new_color = input(usr, "Choose the color for the [identifier] to be:", "Statue color", tint) as color|null
+=======
+			var/new_color = tgui_color_picker(user, "Choose the color for the [identifier] to be:", "Statue color", tint)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919)):code/game/machinery/petrification.dm
 			if (new_color)
 				tint = new_color
 		if("material","identifier","adjective")

@@ -70,7 +70,11 @@
 	if(istype(W,/obj/item/device/multitool) && state == 1)
 		var/new_paint_location = tgui_input_list(usr, "Please select a target zone.", "Paint Zone", list("Central", "Engine", "Base", "Front", "CANCEL"))
 		if(new_paint_location && new_paint_location != "CANCEL")
+<<<<<<< HEAD
 			var/new_paint_color = input(usr, "Please select a paint color.", "Paint Color", null) as color|null
+=======
+			var/new_paint_color = tgui_color_picker(user, "Please select a paint color.", "Paint Color", null)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 			if(new_paint_color)
 				switch(new_paint_location)
 					if("Central")

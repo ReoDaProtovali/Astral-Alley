@@ -88,9 +88,15 @@
 		if(8)
 			pixel_y = 0
 
+<<<<<<< HEAD
 /obj/vehicle/train/engine/quadbike/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/device/multitool) && open)
 		var/new_paint = input(usr, "Please select paint color.", "Paint Color", paint_color) as color|null
+=======
+/obj/vehicle/train/engine/quadbike/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/multitool) && open)
+		var/new_paint = tgui_color_picker(user, "Please select paint color.", "Paint Color", paint_color)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_paint)
 			paint_color = new_paint
 			update_icon()
@@ -276,9 +282,15 @@
 	Bodypaint.color = paint_color
 	add_overlay(Bodypaint)
 
+<<<<<<< HEAD
 /obj/vehicle/train/trolley/trailer/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/device/multitool) && open)
 		var/new_paint = input(usr, "Please select paint color.", "Paint Color", paint_color) as color|null
+=======
+/obj/vehicle/train/trolley/trailer/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/multitool) && open)
+		var/new_paint = tgui_color_picker(user, "Please select paint color.", "Paint Color", paint_color)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_paint)
 			paint_color = new_paint
 			update_icon()

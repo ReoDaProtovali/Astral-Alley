@@ -1278,7 +1278,11 @@
 		return
 
 	if(choice == "Color") //Easy way to set color so we don't bloat up the menu with even more buttons.
+<<<<<<< HEAD
 		var/new_color = input(usr, "Choose a color to set your appendage to!", "", appendage_color) as color|null
+=======
+		var/new_color = tgui_color_picker(src, "Choose a color to set your appendage to!", "", appendage_color)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_color)
 			appendage_color = new_color
 

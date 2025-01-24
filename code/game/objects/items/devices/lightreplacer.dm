@@ -135,8 +135,13 @@
 			to_chat(usr, You short circuit the [src].")
 			return
 	*/
+<<<<<<< HEAD
 	to_chat(usr, "It has [uses] lights remaining.")
 	var/new_color = input(usr, "Choose a color to set the light to! (Default is [LIGHT_COLOR_INCANDESCENT_TUBE])", "", selected_color) as color|null
+=======
+	to_chat(user, "It has [uses] lights remaining.")
+	var/new_color = tgui_color_picker(user, "Choose a color to set the light to! (Default is [LIGHT_COLOR_INCANDESCENT_TUBE])", "", selected_color)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 	if(new_color)
 		selected_color = new_color
 		to_chat(usr, "The light color has been changed.")

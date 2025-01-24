@@ -123,9 +123,15 @@
 					changed_hook(APPEARANCECHANGER_CHANGED_SKINTONE)
 					return target.change_skin_tone(new_s_tone)
 		if("skin_color")
+<<<<<<< HEAD
 			if(can_change_skin_color())
 				var/new_skin = input(usr, "Choose your character's skin colour: ", "Skin Color", rgb(target.r_skin, target.g_skin, target.b_skin)) as color|null
 				if(new_skin && can_still_topic(usr, state))
+=======
+			if(can_change_skin_color(owner))
+				var/new_skin = tgui_color_picker(ui.user, "Choose your character's skin colour: ", "Skin Color", rgb(owner.r_skin, owner.g_skin, owner.b_skin))
+				if(new_skin && can_still_topic(owner, state))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 					var/r_skin = hex2num(copytext(new_skin, 2, 4))
 					var/g_skin = hex2num(copytext(new_skin, 4, 6))
 					var/b_skin = hex2num(copytext(new_skin, 6, 8))
@@ -140,9 +146,15 @@
 					changed_hook(APPEARANCECHANGER_CHANGED_HAIRSTYLE)
 					return 1
 		if("hair_color")
+<<<<<<< HEAD
 			if(can_change(APPEARANCE_HAIR_COLOR))
 				var/new_hair = input(usr, "Please select hair color.", "Hair Color", rgb(target.r_hair, target.g_hair, target.b_hair)) as color|null
 				if(new_hair && can_still_topic(usr, state))
+=======
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select hair color.", "Hair Color", rgb(owner.r_hair, owner.g_hair, owner.b_hair))
+				if(new_hair && can_still_topic(owner, state))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 					var/r_hair = hex2num(copytext(new_hair, 2, 4))
 					var/g_hair = hex2num(copytext(new_hair, 4, 6))
 					var/b_hair = hex2num(copytext(new_hair, 6, 8))
@@ -157,9 +169,15 @@
 					changed_hook(APPEARANCECHANGER_CHANGED_F_HAIRSTYLE)
 					return 1
 		if("facial_hair_color")
+<<<<<<< HEAD
 			if(can_change(APPEARANCE_FACIAL_HAIR_COLOR))
 				var/new_facial = input(usr, "Please select facial hair color.", "Facial Hair Color", rgb(target.r_facial, target.g_facial, target.b_facial)) as color|null
 				if(new_facial && can_still_topic(usr, state))
+=======
+			if(can_change(owner, APPEARANCE_FACIAL_HAIR_COLOR))
+				var/new_facial = tgui_color_picker(ui.user, "Please select facial hair color.", "Facial Hair Color", rgb(owner.r_facial, owner.g_facial, owner.b_facial))
+				if(new_facial && can_still_topic(owner, state))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 					var/r_facial = hex2num(copytext(new_facial, 2, 4))
 					var/g_facial = hex2num(copytext(new_facial, 4, 6))
 					var/b_facial = hex2num(copytext(new_facial, 6, 8))
@@ -168,9 +186,15 @@
 						changed_hook(APPEARANCECHANGER_CHANGED_F_HAIRCOLOR)
 						return 1
 		if("eye_color")
+<<<<<<< HEAD
 			if(can_change(APPEARANCE_EYE_COLOR))
 				var/new_eyes = input(usr, "Please select eye color.", "Eye Color", rgb(target.r_eyes, target.g_eyes, target.b_eyes)) as color|null
 				if(new_eyes && can_still_topic(usr, state))
+=======
+			if(can_change(owner, APPEARANCE_EYE_COLOR))
+				var/new_eyes = tgui_color_picker(ui.user, "Please select eye color.", "Eye Color", rgb(owner.r_eyes, owner.g_eyes, owner.b_eyes))
+				if(new_eyes && can_still_topic(owner, state))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 					var/r_eyes = hex2num(copytext(new_eyes, 2, 4))
 					var/g_eyes = hex2num(copytext(new_eyes, 4, 6))
 					var/b_eyes = hex2num(copytext(new_eyes, 6, 8))
@@ -192,6 +216,7 @@
 				changed_hook(APPEARANCECHANGER_CHANGED_HAIRSTYLE)
 				return TRUE
 		if("ears_color")
+<<<<<<< HEAD
 			if(can_change(APPEARANCE_HAIR_COLOR))
 				var/new_hair = input(usr, "Please select ear color.", "Ear Color", rgb(target.r_ears, target.g_ears, target.b_ears)) as color|null
 				if(new_hair && can_still_topic(usr, state))
@@ -213,6 +238,42 @@
 					target.update_hair()
 					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
 					return 1
+=======
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select ear color.", "Ear Color", rgb(owner.r_ears, owner.g_ears, owner.b_ears))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_ears = hex2num(copytext(new_hair, 2, 4))
+					owner.g_ears = hex2num(copytext(new_hair, 4, 6))
+					owner.b_ears = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_hair()
+					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
+					return 1
+		if("ears2_color")
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select secondary ear color.", "2nd Ear Color", rgb(owner.r_ears2, owner.g_ears2, owner.b_ears2))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_ears2 = hex2num(copytext(new_hair, 2, 4))
+					owner.g_ears2 = hex2num(copytext(new_hair, 4, 6))
+					owner.b_ears2 = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_hair()
+					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
+					return 1
+		if("ears_secondary_color")
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/channel = params["channel"]
+				if(channel > length(owner.ear_secondary_colors))
+					return TRUE
+				var/existing = LAZYACCESS(owner.ear_secondary_colors, channel) || "#ffffff"
+				var/new_color = tgui_color_picker(ui.user, "Please select ear color.", "2nd Ear Color", existing)
+				if(new_color && can_still_topic(owner, state))
+					owner.ear_secondary_colors[channel] = new_color
+					update_dna(owner)
+					owner.update_hair()
+					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
+					return TRUE
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if("tail")
 			if(can_change(APPEARANCE_ALL_HAIR))
 				var/datum/sprite_accessory/tail/instance = locate(params["ref"])
@@ -226,6 +287,7 @@
 				changed_hook(APPEARANCECHANGER_CHANGED_HAIRSTYLE)
 				return TRUE
 		if("tail_color")
+<<<<<<< HEAD
 			if(can_change(APPEARANCE_HAIR_COLOR))
 				var/new_hair = input(usr, "Please select tail color.", "Tail Color", rgb(target.r_tail, target.g_tail, target.b_tail)) as color|null
 				if(new_hair && can_still_topic(usr, state))
@@ -245,6 +307,38 @@
 					target.b_tail2 = hex2num(copytext(new_hair, 6, 8))
 					update_dna()
 					target.update_tail_showing()
+=======
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select tail color.", "Tail Color", rgb(owner.r_tail, owner.g_tail, owner.b_tail))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_tail = hex2num(copytext(new_hair, 2, 4))
+					owner.g_tail = hex2num(copytext(new_hair, 4, 6))
+					owner.b_tail = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_tail_showing()
+					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
+					return 1
+		if("tail2_color")
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select secondary tail color.", "2nd Tail Color", rgb(owner.r_tail2, owner.g_tail2, owner.b_tail2))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_tail2 = hex2num(copytext(new_hair, 2, 4))
+					owner.g_tail2 = hex2num(copytext(new_hair, 4, 6))
+					owner.b_tail2 = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_tail_showing()
+					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
+					return 1
+		if("tail3_color")
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select secondary tail color.", "3rd Tail Color", rgb(owner.r_tail3, owner.g_tail3, owner.b_tail3))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_tail3 = hex2num(copytext(new_hair, 2, 4))
+					owner.g_tail3 = hex2num(copytext(new_hair, 4, 6))
+					owner.b_tail3 = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_tail_showing()
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
 					return 1
 		if("wing")
@@ -260,6 +354,7 @@
 				changed_hook(APPEARANCECHANGER_CHANGED_HAIRSTYLE)
 				return TRUE
 		if("wing_color")
+<<<<<<< HEAD
 			if(can_change(APPEARANCE_HAIR_COLOR))
 				var/new_hair = input(usr, "Please select wing color.", "Wing Color", rgb(target.r_wing, target.g_wing, target.b_wing)) as color|null
 				if(new_hair && can_still_topic(usr, state))
@@ -279,6 +374,38 @@
 					target.b_wing2 = hex2num(copytext(new_hair, 6, 8))
 					update_dna()
 					target.update_wing_showing()
+=======
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select wing color.", "Wing Color", rgb(owner.r_wing, owner.g_wing, owner.b_wing))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_wing = hex2num(copytext(new_hair, 2, 4))
+					owner.g_wing = hex2num(copytext(new_hair, 4, 6))
+					owner.b_wing = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_wing_showing()
+					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
+					return 1
+		if("wing2_color")
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select secondary wing color.", "2nd Wing Color", rgb(owner.r_wing2, owner.g_wing2, owner.b_wing2))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_wing2 = hex2num(copytext(new_hair, 2, 4))
+					owner.g_wing2 = hex2num(copytext(new_hair, 4, 6))
+					owner.b_wing2 = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_wing_showing()
+					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
+					return 1
+		if("wing3_color")
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select secondary wing color.", "3rd Wing Color", rgb(owner.r_wing3, owner.g_wing3, owner.b_wing3))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_wing3 = hex2num(copytext(new_hair, 2, 4))
+					owner.g_wing3 = hex2num(copytext(new_hair, 4, 6))
+					owner.b_wing3 = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_wing_showing()
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
 					return 1
 		if("marking")
@@ -310,8 +437,13 @@
 							return TRUE
 					if (4) //color
 						var/current = markings[name_marking] ? markings[name_marking] : "#000000"
+<<<<<<< HEAD
 						var/marking_color = input(usr, "Please select marking color", "Marking color", current) as color|null
 						if(marking_color && can_still_topic(usr, state))
+=======
+						var/marking_color = tgui_color_picker(ui.user, "Please select marking color", "Marking color", current)
+						if(marking_color && can_still_topic(owner, state))
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 							var/datum/sprite_accessory/marking/mark_datum = body_marking_styles_list[name_marking]
 							if (target.change_marking_color(mark_datum, marking_color))
 								return TRUE

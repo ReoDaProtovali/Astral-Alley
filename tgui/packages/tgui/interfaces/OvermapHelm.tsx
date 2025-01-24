@@ -6,6 +6,10 @@ import { Window } from '../layouts';
 import { OvermapFlightData, OvermapPanControls } from './common/Overmap';
 
 type Data = {
+<<<<<<< HEAD
+=======
+  mapRef: string | undefined;
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
   sector: string;
   sector_info: string;
   landed: string;

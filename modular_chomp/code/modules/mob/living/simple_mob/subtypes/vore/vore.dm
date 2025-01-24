@@ -33,7 +33,7 @@
 	if(picked_color)
 		to_chat(src, "<span class='notice'>You have already picked a color! If you picked the wrong color, ask an admin to change your picked_color variable to 0.</span>")
 		return
-	var/newcolor = input(usr, "Choose a color.", "", color) as color|null
+	var/newcolor = tgui_color_picker(usr, "Choose a color.", "", color)
 	if(newcolor)
 		color = newcolor
 	picked_color = TRUE

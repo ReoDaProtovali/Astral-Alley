@@ -210,8 +210,13 @@
 					active_weapon.power_supply = null //No power cell anymore!
 				to_chat(user, "<span class='notice'>You remove the cell from \the [src].</span>")
 				update_icon()
+<<<<<<< HEAD
 	else if(istype(W,/obj/item/device/multitool))
 		var/new_color = input(usr, "Choose a color to set the shield to!", "", effect_color) as color|null
+=======
+	else if(istype(W,/obj/item/multitool))
+		var/new_color = tgui_color_picker(usr, "Choose a color to set the shield to!", "", effect_color)
+>>>>>>> fc21a0cb26 ([MIRROR] ports tgui color input from bubbers (#9919))
 		if(new_color)
 			effect_color = new_color
 	else
