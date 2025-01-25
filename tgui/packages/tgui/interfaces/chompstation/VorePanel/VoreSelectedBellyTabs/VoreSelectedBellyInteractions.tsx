@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { useBackend } from '../../../../backend';
 import { Button, LabeledList, Section } from '../../../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Button, LabeledList, Section } from 'tgui-core/components';
+
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 import { selectedData } from '../types';
 
 export const VoreSelectedBellyInteractions = (props: {

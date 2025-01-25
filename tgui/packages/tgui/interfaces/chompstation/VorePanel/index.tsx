@@ -1,4 +1,10 @@
 import { useState } from 'react';
+<<<<<<< HEAD
+=======
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Button, Icon, NoticeBox, Stack, Tabs } from 'tgui-core/components';
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 
 import { useBackend } from '../../../backend';
 import { Button, Flex, Icon, NoticeBox, Tabs } from '../../../components';
@@ -41,7 +47,7 @@ import { VoreUserPreferences } from './VoreUserPreferences';
  *   liq_rec, liq_giv,
  *
  * To VoreUserPreferences return
- *         <Flex.Item basis="49%">
+ *         <Stack.Item basis="49%">
  *        <Button
  *          onClick={() => act("toggle_liq_rec")}
  *          icon={liq_rec ? "toggle-on" : "toggle-off"}
@@ -53,8 +59,8 @@ import { VoreUserPreferences } from './VoreUserPreferences';
  *          >
  *            {liq_rec ? "Receiving Liquids Allowed" : "Do Not Allow Receiving Liquids"}
  *          </Button>
- *      </Flex.Item>
- *      <Flex.Item basis="49%">
+ *      </Stack.Item>
+ *      <Stack.Item basis="49%">
  *        <Button
  *          onClick={() => act("toggle_liq_giv")}
  *          icon={liq_giv ? "toggle-on" : "toggle-off"}
@@ -66,11 +72,11 @@ import { VoreUserPreferences } from './VoreUserPreferences';
  *          >
  *            {liq_giv ? "Taking Liquids Allowed" : "Do Not Allow Taking Liquids"}
  *          </Button>
- *      </Flex.Item>
+ *      </Stack.Item>
  *
  * NEW EDITS 2/25/21: COLORED BELLY OVERLAYS
  * LINE 5:
- *import { Box, Button, ByondUi, Flex, Collapsible, Icon, LabeledList, NoticeBox, Section, Tabs } from "../components";
+ *import { Box, Button, ByondUi, Stack, Collapsible, Icon, LabeledList, NoticeBox, Section, Tabs } from "../components";
  *
  * LINE 172 - <Window width={700} height={800} resizable>
  *
@@ -78,14 +84,14 @@ import { VoreUserPreferences } from './VoreUserPreferences';
  * mapRef,
  *
  * LINE 604 - <Section title="Belly Fullscreens Preview and Coloring">
- *           <Flex direction="row">
+ *           <Stack direction="row">
  *             <Box backgroundColor={belly_fullscreen_color} width="20px" height="20px" />
  *             <Button
  *               icon="eye-dropper"
  *               onClick={() => act("set_attribute", { attribute: "b_fullscreen_color", val: null })}>
  *               Select Color
  *             </Button>
- *           </Flex>
+ *           </Stack>
  *           <ByondUi
  *             style={{
  *               width: '200px',
@@ -194,6 +200,7 @@ export const VorePanel = () => {
   );
 
   return (
+<<<<<<< HEAD
     <Window width={990} height={660} theme="abstract">
       <Window.Content scrollable>
         {(data.unsaved_changes && (
@@ -240,6 +247,71 @@ export const VorePanel = () => {
           </Tabs.Tab>
         </Tabs>
         {tabs[tabIndex] || 'Error'}
+=======
+    <Window width={1000} height={660} theme="abstract">
+      <Window.Content>
+        <Stack fill vertical>
+          <Stack.Item>
+            {(unsaved_changes && (
+              <NoticeBox danger>
+                <Stack>
+                  <Stack.Item basis="90%">Warning: Unsaved Changes!</Stack.Item>
+                  <Stack.Item>
+                    <Button icon="save" onClick={() => act('saveprefs')}>
+                      Save Prefs
+                    </Button>
+                  </Stack.Item>
+                  <Stack.Item>
+                    <Button
+                      icon="download"
+                      onClick={() => {
+                        act('saveprefs');
+                        act('exportpanel');
+                      }}
+                    >
+                      Save Prefs & Export Selected Belly
+                    </Button>
+                  </Stack.Item>
+                </Stack>
+              </NoticeBox>
+            )) ||
+              ''}
+          </Stack.Item>
+          <Stack.Item basis={inside?.desc?.length || 0 > 500 ? '30%' : '20%'}>
+            <VoreInsidePanel
+              inside={inside}
+              show_pictures={show_pictures}
+              icon_overflow={icon_overflow}
+            />
+          </Stack.Item>
+          <Stack.Item>
+            <Tabs>
+              <Tabs.Tab
+                selected={tabIndex === 0}
+                onClick={() => setTabIndex(0)}
+              >
+                Bellies
+                <Icon name="list" ml={0.5} />
+              </Tabs.Tab>
+              <Tabs.Tab
+                selected={tabIndex === 1}
+                onClick={() => setTabIndex(1)}
+              >
+                Soulcatcher
+                <Icon name="ghost" ml={0.5} />
+              </Tabs.Tab>
+              <Tabs.Tab
+                selected={tabIndex === 2}
+                onClick={() => setTabIndex(2)}
+              >
+                Preferences
+                <Icon name="user-cog" ml={0.5} />
+              </Tabs.Tab>
+            </Tabs>
+          </Stack.Item>
+          <Stack.Item grow>{tabs[tabIndex] || 'Error'}</Stack.Item>
+        </Stack>
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
       </Window.Content>
     </Window>
   );

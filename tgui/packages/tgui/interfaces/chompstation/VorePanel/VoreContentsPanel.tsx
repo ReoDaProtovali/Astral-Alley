@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
+=======
+import { useBackend } from 'tgui/backend';
+import { Button, Image, LabeledList, Stack } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 
 import { useBackend } from '../../../backend';
 import { Button, Flex, Image, LabeledList } from '../../../components';
@@ -37,9 +43,9 @@ export const VoreContentsPanel = (props: {
         ''
       )}
       {(show_pictures && !icon_overflow && (
-        <Flex wrap="wrap" justify="center" align="center">
+        <Stack wrap="wrap" justify="center" align="center">
           {contents.map((thing) => (
-            <Flex.Item key={thing} basis="33%">
+            <Stack.Item key={thing.name} basis="32%">
               <Button
                 width="64px"
                 color={thing.absorbed ? 'purple' : stats[thing.stat]}
@@ -68,9 +74,9 @@ export const VoreContentsPanel = (props: {
                 />
               </Button>
               {thing.name}
-            </Flex.Item>
+            </Stack.Item>
           ))}
-        </Flex>
+        </Stack>
       )) || (
         <LabeledList>
           {contents.map((thing, i) => (

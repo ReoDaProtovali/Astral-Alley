@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { useBackend } from '../../../../backend';
 import { Button, LabeledList } from '../../../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Button, LabeledList } from 'tgui-core/components';
+
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 import { digestModeToColor } from '../constants';
 import { selectedData } from '../types';
 

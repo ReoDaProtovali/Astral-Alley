@@ -1,8 +1,11 @@
 import { useState } from 'react';
+<<<<<<< HEAD
+=======
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Button, Icon, NoticeBox, Stack, Tabs } from 'tgui-core/components';
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 
-import { useBackend } from '../../backend';
-import { Button, Flex, Icon, NoticeBox, Tabs } from '../../components';
-import { Window } from '../../layouts';
 import { Data } from './types';
 import { VoreBellySelectionAndCustomization } from './VoreBellySelectionAndCustomization';
 import { VoreInsidePanel } from './VoreInsidePanel';
@@ -38,6 +41,7 @@ export const VorePanel = (props) => {
   return (
     <Window width={890} height={660} theme="abstract">
       <Window.Content>
+<<<<<<< HEAD
         {(data.unsaved_changes && (
           <NoticeBox danger>
             <Flex>
@@ -74,6 +78,58 @@ export const VorePanel = (props) => {
           </Tabs.Tab>
         </Tabs>
         {tabs[tabIndex] || 'Error'}
+=======
+        <Stack fill vertical>
+          <Stack.Item>
+            {(data.unsaved_changes && (
+              <NoticeBox danger>
+                <Stack>
+                  <Stack.Item basis="90%">Warning: Unsaved Changes!</Stack.Item>
+                  <Stack.Item>
+                    <Button icon="save" onClick={() => act('saveprefs')}>
+                      Save Prefs
+                    </Button>
+                  </Stack.Item>
+                  <Stack.Item>
+                    <Button
+                      icon="download"
+                      onClick={() => {
+                        act('saveprefs');
+                        act('exportpanel');
+                      }}
+                    >
+                      Save Prefs & Export Selected Belly
+                    </Button>
+                  </Stack.Item>
+                </Stack>
+              </NoticeBox>
+            )) ||
+              ''}
+          </Stack.Item>
+          <Stack.Item basis={inside?.desc?.length || 0 > 500 ? '30%' : '20%'}>
+            <VoreInsidePanel inside={inside} show_pictures={show_pictures} />
+          </Stack.Item>
+          <Stack.Item>
+            <Tabs>
+              <Tabs.Tab
+                selected={tabIndex === 0}
+                onClick={() => setTabIndex(0)}
+              >
+                Bellies
+                <Icon name="list" ml={0.5} />
+              </Tabs.Tab>
+              <Tabs.Tab
+                selected={tabIndex === 1}
+                onClick={() => setTabIndex(1)}
+              >
+                Preferences
+                <Icon name="user-cog" ml={0.5} />
+              </Tabs.Tab>
+            </Tabs>
+          </Stack.Item>
+          <Stack.Item grow>{tabs[tabIndex] || 'Error'}</Stack.Item>
+        </Stack>
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
       </Window.Content>
     </Window>
   );

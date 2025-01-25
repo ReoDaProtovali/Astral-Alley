@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
+=======
+import { useBackend } from 'tgui/backend';
+import { Button, Divider, Section, Stack } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 
 import { useBackend } from '../../../backend';
 import { Box, Button, Divider, Flex, Section } from '../../../components';
@@ -727,18 +733,18 @@ export const VoreUserPreferences = (props: {
       />
       <Divider />
       <Section>
-        <Flex spacing={1}>
-          <Flex.Item basis="50%">
+        <Stack>
+          <Stack.Item basis="49%">
             <Button fluid icon="save" onClick={() => act('saveprefs')}>
               Save Prefs
             </Button>
-          </Flex.Item>
-          <Flex.Item basis="50%" grow={1}>
+          </Stack.Item>
+          <Stack.Item basis="49%" grow>
             <Button fluid icon="undo" onClick={() => act('reloadprefs')}>
               Reload Prefs
             </Button>
-          </Flex.Item>
-        </Flex>
+          </Stack.Item>
+        </Stack>
       </Section>
     </Box>
   );

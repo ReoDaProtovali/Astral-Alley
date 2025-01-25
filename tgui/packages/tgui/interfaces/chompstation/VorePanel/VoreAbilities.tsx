@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import { toFixed } from 'common/math';
+=======
+import { useBackend } from 'tgui/backend';
+import { LabeledList, Section, Slider, Stack } from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 
 import { useBackend } from '../../../backend';
 import { Flex, LabeledList, Section, Slider } from '../../../components';
@@ -20,8 +26,8 @@ export const VoreAbilities = (props: { abilities: abilities }) => {
     <Section title="Abilities" buttons={'Nutrition: ' + toFixed(nutrition, 1)}>
       <LabeledList>
         <LabeledList.Item label="Resize">
-          <Flex align="baseline">
-            <Flex.Item>
+          <Stack align="baseline">
+            <Stack.Item>
               <Slider
                 disabled={!is_enabled(nutrition, resize_cost)}
                 width="250px"
@@ -46,10 +52,10 @@ export const VoreAbilities = (props: { abilities: abilities }) => {
                   })
                 }
               />
-            </Flex.Item>
-            <Flex.Item color="label">&nbsp;&nbsp;Cost:&nbsp;</Flex.Item>
-            <Flex.Item>{resize_cost}</Flex.Item>
-          </Flex>
+            </Stack.Item>
+            <Stack.Item color="label">&nbsp;&nbsp;Cost:&nbsp;</Stack.Item>
+            <Stack.Item>{resize_cost}</Stack.Item>
+          </Stack>
         </LabeledList.Item>
       </LabeledList>
     </Section>
