@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, Button, NumberInput, Section, Stack } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 
 import { useBackend } from '../../../../backend';
 import {
@@ -47,16 +53,21 @@ export const VoreUserPreferencesSpawn = (props: {
         </Box>
       }
     >
-      <Flex spacing={1} wrap="wrap" justify="center">
+      <Stack wrap="wrap" justify="center">
         {latejoin_vore ? (
           <>
-            <Flex.Item basis="33%">
+            <Stack.Item
+              basis="32%"
+              style={{
+                marginLeft: '0.5em', // Remove if tgui core implements gap
+              }}
+            >
               <VoreUserPreferenceItem
                 spec={preferences.no_spawnpred_warning}
                 tooltipPosition="top"
               />
-            </Flex.Item>
-            <Flex.Item basis="12%">
+            </Stack.Item>
+            <Stack.Item basis="12%">
               <NumberInput
                 fluid
                 value={no_spawnpred_warning_time}
@@ -71,8 +82,8 @@ export const VoreUserPreferencesSpawn = (props: {
                   })
                 }
               />
-            </Flex.Item>
-            <Flex.Item basis="5%">
+            </Stack.Item>
+            <Stack.Item basis="5%">
               <Button
                 fluid
                 backgroundColor={no_spawnpred_warning_save ? 'green' : ''}
@@ -82,20 +93,20 @@ export const VoreUserPreferencesSpawn = (props: {
               >
                 P
               </Button>
-            </Flex.Item>
+            </Stack.Item>
           </>
         ) : (
           ''
         )}
         {latejoin_prey ? (
           <>
-            <Flex.Item basis="33%">
+            <Stack.Item basis="32%">
               <VoreUserPreferenceItem
                 spec={preferences.no_spawnprey_warning}
                 tooltipPosition="top"
               />
-            </Flex.Item>
-            <Flex.Item basis="12%">
+            </Stack.Item>
+            <Stack.Item basis="12%">
               <NumberInput
                 fluid
                 value={no_spawnprey_warning_time}
@@ -110,8 +121,8 @@ export const VoreUserPreferencesSpawn = (props: {
                   })
                 }
               />
-            </Flex.Item>
-            <Flex.Item basis="5%">
+            </Stack.Item>
+            <Stack.Item basis="5%">
               <Button
                 fluid
                 backgroundColor={no_spawnprey_warning_save ? 'green' : ''}
@@ -121,12 +132,12 @@ export const VoreUserPreferencesSpawn = (props: {
               >
                 P
               </Button>
-            </Flex.Item>
+            </Stack.Item>
           </>
         ) : (
           ''
         )}
-      </Flex>
+      </Stack>
     </Section>
   );
 };

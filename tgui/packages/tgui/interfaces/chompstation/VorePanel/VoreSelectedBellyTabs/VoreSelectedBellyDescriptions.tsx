@@ -1,6 +1,16 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useBackend } from 'tgui/backend';
+<<<<<<< HEAD
 import { Box, Button, LabeledList } from 'tgui/components';
+=======
+import {
+  Box,
+  Button,
+  Dimmer,
+  LabeledList,
+  Section,
+} from 'tgui-core/components';
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 
 import { SYNTAX_COLOR, SYNTAX_REGEX } from '../constants';
 import { selectedData } from '../types';

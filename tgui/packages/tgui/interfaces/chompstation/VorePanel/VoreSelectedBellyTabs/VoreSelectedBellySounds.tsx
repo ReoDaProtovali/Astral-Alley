@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { useBackend } from '../../../../backend';
 import { Button, Flex, LabeledList } from '../../../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Button, LabeledList, Stack } from 'tgui-core/components';
+
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 import { selectedData } from '../types';
 
 export const VoreSelectedBellySounds = (props: { belly: selectedData }) => {
@@ -17,8 +23,8 @@ export const VoreSelectedBellySounds = (props: { belly: selectedData }) => {
   } = belly;
 
   return (
-    <Flex wrap="wrap">
-      <Flex.Item basis="49%" grow={1}>
+    <Stack wrap="wrap">
+      <Stack.Item basis="49%" grow>
         <LabeledList>
           <LabeledList.Item label="Fleshy Belly">
             <Button
@@ -92,7 +98,7 @@ export const VoreSelectedBellySounds = (props: { belly: selectedData }) => {
             </Button>
           </LabeledList.Item>
         </LabeledList>
-      </Flex.Item>
-    </Flex>
+      </Stack.Item>
+    </Stack>
   );
 };

@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import { capitalize } from 'common/string';
+=======
+import { useBackend } from 'tgui/backend';
+import { Button, LabeledList, Section } from 'tgui-core/components';
+import { capitalize } from 'tgui-core/string';
+>>>>>>> 4c7ad3003b (Tgui core for our UIs (#9925))
 
 import { useBackend } from '../../../../backend';
 import { Button, LabeledList, Section } from '../../../../components';
