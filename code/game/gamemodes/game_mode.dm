@@ -499,8 +499,14 @@ var/global/list/additional_antag_types = list()
 //Reports player logouts//
 //////////////////////////
 /proc/display_roundstart_logout_report()
+<<<<<<< HEAD
 	var/msg = "<span class='notice'><b>Roundstart logout report</b>\n\n"
 	for(var/mob/living/L in mob_list)
+=======
+	var/msg = span_bold("Roundstart logout report")
+	msg += "<br><br>"
+	for(var/mob/living/L in living_mob_list)
+>>>>>>> f140095441 ([MIRROR] no need to have the full list (#9941))
 
 		if(L.ckey)
 			var/found = 0
@@ -527,7 +533,7 @@ var/global/list/additional_antag_types = list()
 					continue //Dead
 
 			continue //Happy connected client
-		for(var/mob/observer/dead/D in mob_list)
+		for(var/mob/observer/dead/D in dead_mob_list)
 			if(D.mind && (D.mind.original == L || D.mind.current == L))
 				if(L.stat == DEAD)
 					if(L.suiciding)	//Suicider
