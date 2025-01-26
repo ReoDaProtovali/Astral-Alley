@@ -285,7 +285,12 @@
 
 /mob/verb/memory()
 	set name = "Notes"
+<<<<<<< HEAD
 	set category = "IC.Game" //CHOMPEdit
+=======
+	set desc = "View notes stored for this round only."
+	set category = "IC.Notes"
+>>>>>>> fdebf86a72 ([MIRROR] Adds a persistent notes feature (#9935))
 	if(mind)
 		mind.show_memory(src)
 	else
@@ -293,7 +298,12 @@
 
 /mob/verb/add_memory(msg as message)
 	set name = "Add Note"
+<<<<<<< HEAD
 	set category = "IC.Game" //CHOMPEdit
+=======
+	set desc = "Add notes stored for this round only."
+	set category = "IC.Notes"
+>>>>>>> fdebf86a72 ([MIRROR] Adds a persistent notes feature (#9935))
 
 	msg = sanitize(msg)
 
