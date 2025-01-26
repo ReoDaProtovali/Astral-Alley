@@ -426,6 +426,20 @@
 	color_blend_mode = ICON_MULTIPLY
 	body_parts = list(BP_L_FOOT,BP_R_FOOT)
 
+/datum/sprite_accessory/marking/vr_topscars
+	name = "Top surgery scars"
+	icon = 'icons/mob/human_races/markings_vr.dmi'
+	icon_state = "topscars"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_TORSO)
+
+/datum/sprite_accessory/marking/vr_body_tonage
+	name = "Body tonage"
+	icon = 'icons/mob/human_races/markings_vr.dmi'
+	icon_state = "tonage"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_TORSO)
+
 /datum/sprite_accessory/marking/vr_body_tone
 	name = "Body toning (for emergency contrast loss)"
 	icon = 'icons/mob/human_races/markings_vr.dmi'
@@ -473,6 +487,13 @@
 	icon_state = "osocks"
 	color_blend_mode = ICON_MULTIPLY
 	body_parts = list(BP_L_FOOT,BP_L_LEG)
+
+/datum/sprite_accessory/marking/vr_gradient
+	name = "Gradient (Arms + Legs)"
+	icon = 'icons/mob/human_races/markings_vr.dmi'
+	icon_state = "gradient"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_R_ARM,BP_R_HAND,BP_L_ARM,BP_L_HAND,BP_R_FOOT,BP_R_LEG,BP_L_FOOT,BP_L_LEG)
 
 /datum/sprite_accessory/marking/vr_animeeyesinner
 	name = "Anime Eyes Inner"
@@ -1283,3 +1304,18 @@
 	icon_state = "bigspots"
 	color_blend_mode = ICON_MULTIPLY
 	body_parts = list(BP_R_LEG,BP_R_FOOT)
+<<<<<<< HEAD
+=======
+
+/datum/sprite_accessory/marking/digi/inner_thigh
+	name = "inner thighs (digitigrade)"
+	icon_state = "digi_inner"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_L_LEG,BP_R_LEG)
+
+/datum/sprite_accessory/marking/digi/gradient
+	name = "Digitigrade Gradient, Legs (Only works with digitigrade legs)"
+	icon_state = "digigradient"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_L_LEG,BP_L_FOOT,BP_R_LEG,BP_R_FOOT)
+>>>>>>> c7129e4fce ([MIRROR] small markings port, 2nd try (#9933))
