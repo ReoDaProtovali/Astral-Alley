@@ -3,9 +3,15 @@
 	name = "eggplant"
 	seed_name = "eggplant"
 	display_name = "eggplants"
+<<<<<<< HEAD
 	kitchen_tag = "eggplant"
 	mutants = list("egg-plant")
 	chems = list("nutriment" = list(1,10))
+=======
+	kitchen_tag = PLANT_EGGPLANT
+	mutants = list(PLANT_EGG_PLANT)
+	chems = list(REAGENT_ID_NUTRIMENT = list(1,10))
+>>>>>>> aa0d3c5c6c ([MIRROR] fix egg plant mutation (#9940))
 
 /datum/seed/eggplant/New()
 	..()
