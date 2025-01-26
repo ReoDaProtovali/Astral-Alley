@@ -28,8 +28,8 @@
 	// Determines if the accessory will be skipped or included in random hair generations
 	var/gender = NEUTER
 
-	// Restrict some styles to specific species. Set to null to perform no checking.
-	var/list/species_allowed = list()
+	// Restrict some styles to specific species. Default to all species to avoid runtimes in character creator.
+	var/list/species_allowed = list(SPECIES_HUMAN, SPECIES_SKRELL, SPECIES_UNATHI, SPECIES_TAJARAN, SPECIES_TESHARI, SPECIES_NEVREAN, SPECIES_AKULA, SPECIES_SERGAL, SPECIES_FENNEC, SPECIES_ZORREN_HIGH, SPECIES_VULPKANIN, SPECIES_XENOCHIMERA, SPECIES_XENOHYBRID, SPECIES_VASILISSAN, SPECIES_RAPALA, SPECIES_PROTEAN, SPECIES_ALRAUNE, SPECIES_WEREBEAST, SPECIES_SHADEKIN, SPECIES_SHADEKIN_CREW, SPECIES_ALTEVIAN, SPECIES_LLEILL, SPECIES_HANNER)
 
 	// Whether or not the accessory can be affected by colouration
 	var/do_colouration = 1
@@ -44,6 +44,7 @@
 
 	var/list/hide_body_parts = list() //Uses organ tag defines. Bodyparts in this list do not have their icons rendered, allowing for more spriter freedom when doing taur/digitigrade stuff.
 
+<<<<<<< HEAD
 /*
 ////////////////////////////
 /  =--------------------=  /
@@ -3730,3 +3731,10 @@ shaved
 	icon_state = "Voxscales"
 	color_blend_mode = ICON_MULTIPLY
 	body_parts = list(BP_R_ARM,BP_L_ARM,BP_R_HAND,BP_L_HAND,BP_R_LEG,BP_L_LEG,BP_R_FOOT,BP_L_FOOT)
+=======
+/**
+ * Gets the number of color channels we have.
+ */
+/datum/sprite_accessory/proc/get_color_channel_count()
+	return do_colouration ? 1 : 0
+>>>>>>> 68736266ff ([MIRROR] De-collide-oscope (#9929))
