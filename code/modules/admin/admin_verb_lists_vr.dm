@@ -288,6 +288,12 @@ var/list/admin_verbs_debug = list(
 	/datum/admins/proc/set_uplink, //VOREStation Add,
 	/datum/admins/proc/change_weather,
 	/datum/admins/proc/change_time,
+<<<<<<< HEAD
+=======
+	/client/proc/cmd_regenerate_asset_cache,
+	/client/proc/cmd_clear_smart_asset_cache,
+	/client/proc/cmd_reload_robot_sprite_test,
+>>>>>>> efdd5e643d ([MIRROR] allows direct robot sprite testing (#9938))
 	/client/proc/admin_give_modifier,
 	/client/proc/simple_DPS,
 	/datum/admins/proc/view_feedback,
@@ -467,6 +473,12 @@ var/list/admin_verbs_event_manager = list(
 	/proc/release,
 	/datum/admins/proc/change_weather,
 	/datum/admins/proc/change_time,
+<<<<<<< HEAD
+=======
+	/client/proc/cmd_regenerate_asset_cache,
+	/client/proc/cmd_clear_smart_asset_cache,
+	/client/proc/cmd_reload_robot_sprite_test,
+>>>>>>> efdd5e643d ([MIRROR] allows direct robot sprite testing (#9938))
 	/client/proc/admin_give_modifier,
 	/client/proc/Jump,
 	/client/proc/jumptomob,
@@ -494,6 +506,12 @@ var/list/admin_verbs_event_manager = list(
 	// /client/proc/show_gm_status,  // VOREStation Edit - We don't use SSgame_master yet.
 	/datum/admins/proc/change_weather,
 	/datum/admins/proc/change_time,
+<<<<<<< HEAD
+=======
+	/client/proc/cmd_regenerate_asset_cache,
+	/client/proc/cmd_clear_smart_asset_cache,
+	/client/proc/cmd_reload_robot_sprite_test,
+>>>>>>> efdd5e643d ([MIRROR] allows direct robot sprite testing (#9938))
 	/client/proc/admin_give_modifier,
 	/datum/admins/proc/cmd_admin_dress,
 	/client/proc/cmd_admin_gib_self,
