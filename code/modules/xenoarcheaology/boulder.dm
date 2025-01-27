@@ -62,12 +62,15 @@
 		to_chat(user, "<span class='notice'>You finish [P.drill_verb] [src].</span>")
 		excavation_level += P.excavation_amount
 
+<<<<<<< HEAD
 		if(excavation_level > 100)
 			//failure
 			user.visible_message("<span class='warning'>\The [src] suddenly crumbles away.</span>", "<span class='warning'>\The [src] has disintegrated under your onslaught, any secrets it was holding are long gone.</span>")
 			qdel(src)
 			return
 
+=======
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 		if(prob(excavation_level))
 			//success
 			if(artifact_find)

@@ -1,7 +1,12 @@
 /obj/structure/fitness
 	icon = 'icons/obj/stationobjs.dmi'
 	anchored = TRUE
+<<<<<<< HEAD
 	var/being_used = 0
+=======
+	var/fitness_being_used = 0
+	var/weightloss_power = 1
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 
 /obj/structure/fitness/punchingbag
 	name = "punching bag"
@@ -54,20 +59,35 @@
 	if(user.weight < 70) //CHOMPAdd Begin Add weight loss to old fitness equipment
 		to_chat(user, "<span class='notice'>You're too skinny to risk losing any more weight!</span>")
 		return //CHOMPAdd End
+<<<<<<< HEAD
 	if(being_used)
 		to_chat(user, "<span class='warning'>The weight machine is already in use by somebody else.</span>")
+=======
+	if(fitness_being_used)
+		to_chat(user, span_warning("The weight machine is already in use by somebody else."))
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 		return
 	else
-		being_used = 1
+		fitness_being_used = 1
 		playsound(src, 'sound/effects/weightlifter.ogg', 50, 1)
 		user.set_dir(SOUTH)
 		flick("[icon_state]_[weight]", src)
 		if(do_after(user, 30 + (weight * 10))) //CHOMPEdit Set timer to be similar to the machines in fitness_machines_vr.dm
 			playsound(src, 'sound/effects/weightdrop.ogg', 25, 1)
 			user.adjust_nutrition(weight * -10)
+<<<<<<< HEAD
 			user.weight -= 0.1 * weight * (0.01 * user.weight_loss) // CHOMPAdd Add weight loss to old fitness equipment
 			to_chat(user, "<span class='notice'>You lift the weights [qualifiers[weight]].</span>")
 			being_used = 0
 		else
 			to_chat(user, "<span class='notice'>Against your previous judgement, perhaps working out is not for you.</span>")
 			being_used = 0
+=======
+			var/weightloss_enhanced = weightloss_power * (weight * 0.5)
+			user.weight -= 0.25 * weightloss_enhanced * (0.01 * user.weight_loss)
+			to_chat(user, span_notice("You lift the weights [qualifiers[weight]]."))
+			fitness_being_used = 0
+		else
+			to_chat(user, span_notice("Against your previous judgement, perhaps working out is not for you."))
+			fitness_being_used = 0
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))

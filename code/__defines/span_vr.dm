@@ -41,8 +41,14 @@
 #define span_disarm(str) ("<span class='disarm'>" + str + "</span>")
 #define span_passive(str) ("<span class='passive'>" + str + "</span>")
 
+<<<<<<< HEAD
 #define span_critical(str) ("<span class='critical'>" + str + "</span>")
 #define span_danger(str) ("<span class='danger'>" + str + "</span>")
+=======
+// Filtered under warning messages
+#define span_critical(str) ("<span class='critical'>" + str + "</span>") //This doesn't seem to work.
+#define span_userdanger(str) ("<span class='userdanger'>" + str + "</span>")
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 #define span_warning(str) ("<span class='warning'>" + str + "</span>")
 #define span_rose(str) ("<span class='rose'>" + str + "</span>")
 #define span_info(str) ("<span class='info'>" + str + "</span>")

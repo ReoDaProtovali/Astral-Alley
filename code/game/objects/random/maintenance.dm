@@ -261,6 +261,7 @@ something, make sure it's not in one of the other lists.*/
 
 /obj/random/maintenance/research/item_to_spawn()
 	return pick(prob(320);/obj/random/maintenance/clean,
+<<<<<<< HEAD
 				prob(3);/obj/item/device/analyzer/plant_analyzer,
 				prob(1);/obj/item/device/flash/synthetic,
 				prob(2);/obj/item/weapon/bucket_sensor,
@@ -273,6 +274,20 @@ something, make sure it's not in one of the other lists.*/
 				prob(3);/obj/item/weapon/storage/box/beakers,
 				prob(3);/obj/item/weapon/storage/box/syringes,
 				prob(3);/obj/item/weapon/storage/box/gloves,
+=======
+				prob(3);/obj/item/analyzer/plant_analyzer,
+				prob(1);/obj/item/flash/synthetic,
+				prob(2);/obj/item/bucket_sensor,
+				prob(1);/obj/item/cell/device/weapon,
+				prob(5);/obj/item/storage/backpack/toxins,
+				prob(5);/obj/item/storage/backpack/satchel/tox,
+				prob(5);/obj/item/storage/backpack/messenger/tox,
+				prob(2);/obj/item/pickaxe/excavationdrill,
+				prob(1);/obj/item/storage/backpack/holding,
+				prob(3);/obj/item/storage/box/beakers,
+				prob(3);/obj/item/storage/box/syringes,
+				prob(3);/obj/item/storage/box/gloves,
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 				prob(2);/obj/item/clothing/gloves/sterile/latex,
 				prob(4);/obj/item/clothing/glasses/science,
 				prob(3);/obj/item/clothing/glasses/material,
