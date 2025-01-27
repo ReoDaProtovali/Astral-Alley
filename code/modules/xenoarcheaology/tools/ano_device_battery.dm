@@ -1,4 +1,12 @@
+<<<<<<< HEAD
 /obj/item/weapon/anobattery
+=======
+/// NOTE:
+/// If you are adding an artifact, I would highly recommend thinking of HOW it can be utilized by the harvester first and foremost.
+/// If you need assistance in getting it to work with the harvester, I suggest looking at animate_anomaly.dm (for a full incorporation) and electric_field (for a partial incoporation)
+
+/obj/item/anobattery
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 	name = "Anomaly power battery"
 	icon = 'icons/obj/xenoarchaeology.dmi'
 	icon_state = "anobattery0"
@@ -37,13 +45,23 @@
 	var/obj/item/weapon/anobattery/inserted_battery
 	var/turf/archived_loc
 	var/energy_consumed_on_touch = 100
+	var/mob/last_user_touched
 
 /obj/item/weapon/anodevice/New()
 	..()
 	START_PROCESSING(SSobj, src)
 
+<<<<<<< HEAD
 /obj/item/weapon/anodevice/attackby(var/obj/I as obj, var/mob/user as mob)
 	if(istype(I, /obj/item/weapon/anobattery))
+=======
+/obj/item/anodevice/equipped(var/mob/user, var/slot)
+	last_user_touched = user
+	..()
+
+/obj/item/anodevice/attackby(var/obj/I as obj, var/mob/user as mob)
+	if(istype(I, /obj/item/anobattery))
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 		if(!inserted_battery)
 			to_chat(user, span_blue("You insert the battery."))
 			user.drop_item()
@@ -156,7 +174,7 @@
 						//consume power equal to time passed
 						inserted_battery.use_power(world.time - last_process)
 
-					inserted_battery.battery_effect.DoEffectTouch(holder)
+					inserted_battery.battery_effect.DoEffectTouch(last_user_touched) //Yes. This means if you give it something REALLY bad, it'll keep hitting you as if you're touching it. Be responsible with eldritch magic.
 
 				else if(inserted_battery.battery_effect.effect == EFFECT_PULSE)
 					inserted_battery.battery_effect.chargelevel = inserted_battery.battery_effect.chargelevelmax

@@ -39,6 +39,7 @@
 		if(user.transforming)
 			user.transforming = FALSE
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/vore_egg/proc/animate_shake()
 	var/init_px = pixel_x
 	var/shake_dir = pick(-1, 1)
@@ -46,6 +47,9 @@
 	animate(transform=null, pixel_x=init_px, time=6, easing=ELASTIC_EASING)
 
 /obj/item/weapon/storage/vore_egg/unathi
+=======
+/obj/item/storage/vore_egg/unathi
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 	name = "unathi egg"
 	desc = "Some species of Unathi apparently lay soft-shelled eggs!"
 	icon_state = "egg_unathi"

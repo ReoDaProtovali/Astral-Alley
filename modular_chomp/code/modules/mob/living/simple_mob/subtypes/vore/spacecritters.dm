@@ -222,7 +222,7 @@
 
 /datum/component/artifact_master/dreameel
 	make_effects = list(
-		/datum/artifact_effect/gassleeping
+		/datum/artifact_effect/gas/sleeping
 	)
 
 /mob/living/simple_mob/vore/spacecritter/dreameel/nightmare
@@ -238,7 +238,7 @@
 
 /datum/component/artifact_master/nightmare
 	make_effects = list(
-		/datum/artifact_effect/gasphoron
+		/datum/artifact_effect/gas/phoron
 	)
 
 /mob/living/simple_mob/vore/spacecritter/gravityshell
@@ -281,7 +281,7 @@
 
 /datum/component/artifact_master/gasoxy
 	make_effects = list(
-		/datum/artifact_effect/gasoxy
+		/datum/artifact_effect/gas/oxy
 	)
 
 

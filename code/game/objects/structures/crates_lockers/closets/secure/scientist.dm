@@ -67,9 +67,16 @@
 		/obj/item/clothing/shoes/white,
 		/obj/item/weapon/melee/umbrella,
 		/obj/item/clothing/glasses/science,
+<<<<<<< HEAD
 		/obj/item/device/radio/headset/headset_sci,
 		/obj/item/weapon/storage/belt/archaeology,
 		/obj/item/weapon/storage/excavation)
+=======
+		/obj/item/radio/headset/headset_sci,
+		/obj/item/storage/belt/archaeology,
+		/obj/item/storage/excavation,
+		/obj/item/pickaxe/excavationdrill)
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 
 /obj/structure/closet/excavation
 	name = "Excavation tools"

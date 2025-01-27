@@ -71,9 +71,16 @@
 				/obj/item/device/beacon_locator,
 				/obj/item/device/radio/beacon,
 				/obj/item/clothing/glasses/meson,
+<<<<<<< HEAD
 				/obj/item/weapon/pickaxe,
 				/obj/item/weapon/storage/bag/fossils,
 				/obj/item/weapon/hand_labeler)
+=======
+				/obj/item/pickaxe,
+				/obj/item/storage/bag/fossils,
+				/obj/item/hand_labeler,
+				/obj/item/tool/wrench)
+>>>>>>> ab1a8177ff ([MIRROR] Xenoarch Rework [Ready for Review] (#9951))
 	cost = 100
 	containertype = /obj/structure/closet/crate/secure/xion
 	containername = "Xenoarchaeology Tech crate"
