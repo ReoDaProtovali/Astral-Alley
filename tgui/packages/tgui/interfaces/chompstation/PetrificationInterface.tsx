@@ -1,8 +1,15 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/PetrificationInterface.tsx
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../../backend';
 import { Button, LabeledList, Section } from '../../components';
 import { Window } from '../../layouts';
+=======
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Button, LabeledList, Section } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/interfaces/PetrificationInterface.tsx
 
 type Data = {
   material: string;

@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import { useBackend } from '../../../backend';
 import { Button } from '../../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Button } from 'tgui-core/components';
+
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import { preferenceData } from './types';
 
 export const VoreUserPreferenceItem = (props: {

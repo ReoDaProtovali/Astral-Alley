@@ -13,9 +13,17 @@
   font-weight: bold;
   justify-content: center;
   padding: 0;
-  width: 1rem;
+  width: 2.6rem;
   &:hover {
+<<<<<<< HEAD
     background-color: lighten(colors.$button, 10%);
+=======
+    background-color: color.adjust(
+      colors.$button,
+      $lightness: 10%,
+      $space: hsl
+    );
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
   }
 }
 

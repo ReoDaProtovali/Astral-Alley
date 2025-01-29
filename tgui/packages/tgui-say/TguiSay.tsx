@@ -1,11 +1,17 @@
+<<<<<<< HEAD
 import { KEY } from 'common/keys';
 import { BooleanLike } from 'common/react';
+=======
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import { Component, createRef, RefObject } from 'react';
 import { dragStartHandler } from 'tgui/drag';
 import {
   removeAllSkiplines,
   sanitizeMultiline,
 } from 'tgui/interfaces/TextInputModal';
+import { isEscape, KEY } from 'tgui-core/keys';
+import { clamp } from 'tgui-core/math';
+import { BooleanLike } from 'tgui-core/react';
 
 import { Channel, ChannelIterator } from './ChannelIterator';
 import { ChatHistory } from './ChatHistory';

@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
 
 import { useBackend, useSharedState } from '../backend';
+=======
+import { filter } from 'common/collections';
+import { useBackend, useSharedState } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import {
   Button,
   Input,
@@ -9,8 +15,10 @@ import {
   Section,
   Table,
   Tabs,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { flow } from 'tgui-core/fp';
+import { BooleanLike } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
 
 type Data = {
   ion_law_nr: string;
@@ -192,6 +200,7 @@ const LawManagerLaws = (props) => {
                 <Table.Cell collapsing>Zero</Table.Cell>
                 <Table.Cell>
                   <Input
+                    updateOnPropsChange
                     value={zeroth_law}
                     fluid
                     onChange={(e, val: string) =>
@@ -213,6 +222,7 @@ const LawManagerLaws = (props) => {
               <Table.Cell collapsing>Ion</Table.Cell>
               <Table.Cell>
                 <Input
+                  updateOnPropsChange
                   value={ion_law}
                   fluid
                   onChange={(e, val: string) =>
@@ -231,6 +241,7 @@ const LawManagerLaws = (props) => {
               <Table.Cell>Inherent</Table.Cell>
               <Table.Cell>
                 <Input
+                  updateOnPropsChange
                   value={inherent_law}
                   fluid
                   onChange={(e, val: string) =>
@@ -249,6 +260,7 @@ const LawManagerLaws = (props) => {
               <Table.Cell>Supplied</Table.Cell>
               <Table.Cell>
                 <Input
+                  updateOnPropsChange
                   value={supplied_law}
                   fluid
                   onChange={(e, val: string) =>

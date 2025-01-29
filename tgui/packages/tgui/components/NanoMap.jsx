@@ -1,8 +1,27 @@
+<<<<<<< HEAD:tgui/packages/tgui/components/NanoMap.jsx
 import { Component } from 'react';
 
 import { resolveAsset } from '../assets';
 import { useBackend } from '../backend';
 import { Box, Button, Icon, LabeledList, Slider, Tooltip } from '.';
+=======
+import React, { Component, PropsWithChildren } from 'react';
+import { resolveAsset } from 'tgui/assets';
+import { useBackend } from 'tgui/backend';
+import { KeyListener } from 'tgui-core/components';
+import {
+  Box,
+  Button,
+  Icon,
+  LabeledList,
+  Slider,
+  Tooltip,
+} from 'tgui-core/components';
+import { KeyEvent } from 'tgui-core/events';
+import { KEY } from 'tgui-core/keys';
+
+import { logger } from '../logging';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/components/NanoMap.tsx
 
 const pauseEvent = (e) => {
   if (e.stopPropagation) {
@@ -87,6 +106,7 @@ export class NanoMap extends Component {
       }
     };
 
+<<<<<<< HEAD:tgui/packages/tgui/components/NanoMap.jsx
     this.handleZoom = (_e, value) => {
       this.setState((state) => {
         const newZoom = Math.min(Math.max(value, 1), 8);
@@ -104,6 +124,23 @@ export class NanoMap extends Component {
         let newOffsetY = state.offsetY - 256 * zoomDiff;
         if (newOffsetY < -200) {
           newOffsetY = -200;
+=======
+    this.handleKey = (e: KeyEvent) => {
+      switch (e.event.key) {
+        case KEY.Up:
+        case KEY.W: {
+          this.setZoom(this.state.zoom + 1);
+          break;
+        }
+        case KEY.Down:
+        case KEY.S: {
+          this.setZoom(this.state.zoom - 1);
+          break;
+        }
+        case KEY.E: {
+          logger.log(this.state.offsetX, this.state.offsetY);
+          break;
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/components/NanoMap.tsx
         }
         if (newOffsetY > 200) {
           newOffsetY = 200;
@@ -129,7 +166,7 @@ export class NanoMap extends Component {
     );
     // (x * zoom), x Needs to be double the turf- map size. (for virgo, 140x140)
     const mapSize = this.props.zoomScale * zoom + 'px';
-    const newStyle = {
+    const newStyle: {} = {
       width: mapSize,
       height: mapSize,
       'margin-top': offsetY + 'px',

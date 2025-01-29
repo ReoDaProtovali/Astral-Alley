@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import { useBackend } from '../backend';
 import { Button, ByondUi } from '../components';
 import { NtosWindow } from '../layouts';
+=======
+import { useBackend } from 'tgui/backend';
+import { NtosWindow } from 'tgui/layouts';
+import { Button, ByondUi } from 'tgui-core/components';
+
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import {
   camera,
   CameraConsoleContent,

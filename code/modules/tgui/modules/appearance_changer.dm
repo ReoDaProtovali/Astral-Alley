@@ -237,6 +237,7 @@
 					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
 					return 1
 		if("tail2_color")
+<<<<<<< HEAD
 			if(can_change(APPEARANCE_HAIR_COLOR))
 				var/new_hair = input(usr, "Please select secondary tail color.", "2nd Tail Color", rgb(target.r_tail2, target.g_tail2, target.b_tail2)) as color|null
 				if(new_hair && can_still_topic(usr, state))
@@ -245,6 +246,27 @@
 					target.b_tail2 = hex2num(copytext(new_hair, 6, 8))
 					update_dna()
 					target.update_tail_showing()
+=======
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select secondary tail color.", "2nd Tail Color", rgb(owner.r_tail2, owner.g_tail2, owner.b_tail2))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_tail2 = hex2num(copytext(new_hair, 2, 4))
+					owner.g_tail2 = hex2num(copytext(new_hair, 4, 6))
+					owner.b_tail2 = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_tail_showing()
+					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
+					return 1
+		if("tail3_color")
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select tertiary tail color.", "3rd Tail Color", rgb(owner.r_tail3, owner.g_tail3, owner.b_tail3))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_tail3 = hex2num(copytext(new_hair, 2, 4))
+					owner.g_tail3 = hex2num(copytext(new_hair, 4, 6))
+					owner.b_tail3 = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_tail_showing()
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
 					return 1
 		if("wing")
@@ -271,6 +293,7 @@
 					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
 					return 1
 		if("wing2_color")
+<<<<<<< HEAD
 			if(can_change(APPEARANCE_HAIR_COLOR))
 				var/new_hair = input(usr, "Please select secondary wing color.", "2nd Wing Color", rgb(target.r_wing2, target.g_wing2, target.b_wing2)) as color|null
 				if(new_hair && can_still_topic(usr, state))
@@ -279,6 +302,27 @@
 					target.b_wing2 = hex2num(copytext(new_hair, 6, 8))
 					update_dna()
 					target.update_wing_showing()
+=======
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select secondary wing color.", "2nd Wing Color", rgb(owner.r_wing2, owner.g_wing2, owner.b_wing2))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_wing2 = hex2num(copytext(new_hair, 2, 4))
+					owner.g_wing2 = hex2num(copytext(new_hair, 4, 6))
+					owner.b_wing2 = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_wing_showing()
+					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
+					return 1
+		if("wing3_color")
+			if(can_change(owner, APPEARANCE_HAIR_COLOR))
+				var/new_hair = tgui_color_picker(ui.user, "Please select tertiary wing color.", "3rd Wing Color", rgb(owner.r_wing3, owner.g_wing3, owner.b_wing3))
+				if(new_hair && can_still_topic(owner, state))
+					owner.r_wing3 = hex2num(copytext(new_hair, 2, 4))
+					owner.g_wing3 = hex2num(copytext(new_hair, 4, 6))
+					owner.b_wing3 = hex2num(copytext(new_hair, 6, 8))
+					update_dna(owner)
+					owner.update_wing_showing()
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 					changed_hook(APPEARANCECHANGER_CHANGED_HAIRCOLOR)
 					return 1
 		if("marking")

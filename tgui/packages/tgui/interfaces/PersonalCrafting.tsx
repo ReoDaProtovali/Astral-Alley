@@ -1,17 +1,23 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
+=======
+import { filter } from 'common/collections';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import { useState } from 'react';
-
-import { useBackend } from '../backend';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
 import {
   Button,
   Dimmer,
-  Flex,
   Icon,
   LabeledList,
   Section,
+  Stack,
   Tabs,
-} from '../components';
-import { Window } from '../layouts';
+} from 'tgui-core/components';
+import { flow } from 'tgui-core/fp';
+import { BooleanLike } from 'tgui-core/react';
+import { createSearch } from 'tgui-core/string';
 
 type Data = {
   busy: BooleanLike;
@@ -111,8 +117,19 @@ export const PersonalCrafting = (props) => {
             </>
           }
         >
+<<<<<<< HEAD
           <Flex>
             <Flex.Item>
+=======
+          <Input
+            fluid
+            value={searchText}
+            placeholder="Search for recipes..."
+            onInput={(e, value: string) => setSearchText(value)}
+          />
+          <Stack>
+            <Stack.Item>
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
               <Tabs vertical>
                 {categories.map((category) => (
                   <Tabs.Tab
@@ -130,11 +147,23 @@ export const PersonalCrafting = (props) => {
                   </Tabs.Tab>
                 ))}
               </Tabs>
+<<<<<<< HEAD
             </Flex.Item>
             <Flex.Item grow={1} basis={0}>
               <CraftingList craftables={shownRecipes} />
             </Flex.Item>
           </Flex>
+=======
+            </Stack.Item>
+            <Stack.Item grow basis={0}>
+              <CraftingList
+                craftables={shownRecipes}
+                display_compact={display_compact}
+                display_craftable_only={display_craftable_only}
+              />
+            </Stack.Item>
+          </Stack>
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
         </Section>
       </Window.Content>
     </Window>
@@ -181,7 +210,12 @@ const CraftingList = (props: { craftables: uiRecipe[] }) => {
     // Full display
     return (
       <Section
+<<<<<<< HEAD
         key={craftable.name}
+=======
+        ml={0}
+        key={i}
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
         title={craftable.name}
         buttons={
           <Button

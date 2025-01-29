@@ -1,7 +1,20 @@
 @use '../colors.scss';
 @use '../base.scss';
 
+<<<<<<< HEAD
 $bg-map: colors.$bg-map !default;
+=======
+$fg-map: colors.$fg-map !default;
+
+.CircuitInfo__Examined {
+  background-color: hsla(0, 0%, 0%, 1);
+  padding: 8px;
+  border-radius: 5px;
+
+  user-select: none;
+  pointer-events: none;
+}
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 .ObjectComponent__Titlebar {
   border-top-left-radius: 12px;
@@ -15,8 +28,19 @@ $bg-map: colors.$bg-map !default;
 
 .ObjectComponent__Content {
   white-space: nowrap;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: hsla(0, 0%, 0%, 0.5);
 
+<<<<<<< HEAD
+=======
+  -ms-user-select: none; // TODO: Remove with 516
+  user-select: none;
+}
+
+.ObjectComponent__Greyed_Content {
+  white-space: nowrap;
+  background-color: hsla(0, 0%, 7%, 0.5);
+
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
   -ms-user-select: none;
   user-select: none;
 }
@@ -33,4 +57,20 @@ $bg-map: colors.$bg-map !default;
   .color-stroke-#{$color-name} {
     stroke: $color-value !important;
   }
+<<<<<<< HEAD
+=======
+
+  .color-fill-#{$color-name} {
+    fill: $color-value !important;
+  }
+}
+
+$border-color: hsl(212, 100%, 77%) !default;
+$border-radius: base.$border-radius !default;
+
+.IntegratedCircuit__BlueBorder {
+  border: base.em(1px) solid $border-color;
+  border: base.em(1px) solid rgba($border-color, 0.75);
+  border-radius: $border-radius;
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 }

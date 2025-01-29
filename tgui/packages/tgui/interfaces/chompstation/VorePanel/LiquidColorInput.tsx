@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../../../backend';
 import { Box, Button, Stack } from '../../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Stack } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 export const LiquidColorInput = (props: {
   action_name: string;

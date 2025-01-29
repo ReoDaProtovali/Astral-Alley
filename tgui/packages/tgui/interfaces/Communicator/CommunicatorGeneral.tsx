@@ -1,4 +1,17 @@
+<<<<<<< HEAD
 import { decodeHtmlEntities } from 'common/string';
+=======
+import { useBackend } from 'tgui/backend';
+import {
+  Box,
+  Button,
+  ByondUi,
+  Icon,
+  Section,
+  Stack,
+} from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 import { useBackend } from '../../backend';
 import { Box, Button, ByondUi, Flex, Icon, Section } from '../../components';
@@ -20,17 +33,19 @@ export const CommunicatorHeader = (props) => {
 
   return (
     <Section>
-      <Flex align="center" justify="space-between">
-        <Flex.Item color="average">{time}</Flex.Item>
-        <Flex.Item>
+      <Stack align="center" justify="space-between">
+        <Stack.Item color="average">{time}</Stack.Item>
+        <Stack.Item>
           <Icon
             color={connectionStatus === 1 ? 'good' : 'bad'}
             name={connectionStatus === 1 ? 'signal' : 'exclamation-triangle'}
           />
-        </Flex.Item>
-        <Flex.Item color="average">{decodeHtmlEntities(owner)}</Flex.Item>
-        <Flex.Item color="average">{decodeHtmlEntities(occupation)}</Flex.Item>
-      </Flex>
+        </Stack.Item>
+        <Stack.Item color="average">{decodeHtmlEntities(owner)}</Stack.Item>
+        <Stack.Item color="average">
+          {decodeHtmlEntities(occupation)}
+        </Stack.Item>
+      </Stack>
     </Section>
   );
 };
@@ -46,8 +61,8 @@ export const CommunicatorFooter = (props: {
   const { videoSetting, setVideoSetting } = props;
 
   return (
-    <Flex>
-      <Flex.Item basis={videoSetting === 2 ? '60%' : '80%'}>
+    <Stack>
+      <Stack.Item basis={videoSetting === 2 ? '60%' : '80%'}>
         <Button
           p={1}
           fluid
@@ -56,8 +71,8 @@ export const CommunicatorFooter = (props: {
           textAlign="center"
           onClick={() => act('switch_tab', { switch_tab: HOMETAB })}
         />
-      </Flex.Item>
-      <Flex.Item basis="20%">
+      </Stack.Item>
+      <Stack.Item basis="20%">
         <Button
           icon="lightbulb"
           iconSize={2}
@@ -69,9 +84,9 @@ export const CommunicatorFooter = (props: {
           tooltipPosition="top"
           onClick={() => act('Light')}
         />
-      </Flex.Item>
+      </Stack.Item>
       {videoSetting === 2 && (
-        <Flex.Item basis="20%">
+        <Stack.Item basis="20%">
           <Button
             icon="video"
             iconSize={2}
@@ -82,9 +97,9 @@ export const CommunicatorFooter = (props: {
             tooltipPosition="top"
             onClick={() => setVideoSetting(1)}
           />
-        </Flex.Item>
+        </Stack.Item>
       )}
-    </Flex>
+    </Stack>
   );
 };
 
@@ -109,8 +124,8 @@ export const VideoComm = (props: {
             type: 'map',
           }}
         />
-        <Flex justify="space-between" spacing={1} mt={0.5}>
-          <Flex.Item grow={1}>
+        <Stack justify="space-between" mt={0.5}>
+          <Stack.Item grow>
             <Button
               textAlign="center"
               fluid
@@ -118,8 +133,8 @@ export const VideoComm = (props: {
               icon="window-minimize"
               onClick={() => setVideoSetting(1)}
             />
-          </Flex.Item>
-          <Flex.Item grow={1}>
+          </Stack.Item>
+          <Stack.Item grow>
             <Button
               textAlign="center"
               fluid
@@ -128,8 +143,8 @@ export const VideoComm = (props: {
               icon="video-slash"
               onClick={() => act('endvideo')}
             />
-          </Flex.Item>
-          <Flex.Item grow={1}>
+          </Stack.Item>
+          <Stack.Item grow>
             <Button
               textAlign="center"
               fluid
@@ -138,8 +153,8 @@ export const VideoComm = (props: {
               icon="phone-slash"
               onClick={() => act('hang_up')}
             />
-          </Flex.Item>
-        </Flex>
+          </Stack.Item>
+        </Stack>
       </Box>
     );
   } else if (videoSetting === 1) {
@@ -153,8 +168,8 @@ export const VideoComm = (props: {
         }}
       >
         <Section p={0} m={0}>
-          <Flex justify="space-between" spacing={1}>
-            <Flex.Item grow={1}>
+          <Stack justify="space-between">
+            <Stack.Item grow>
               <Button
                 textAlign="center"
                 fluid
@@ -162,8 +177,8 @@ export const VideoComm = (props: {
                 icon="window-minimize"
                 onClick={() => setVideoSetting(2)}
               />
-            </Flex.Item>
-            <Flex.Item grow={1}>
+            </Stack.Item>
+            <Stack.Item grow>
               <Button
                 textAlign="center"
                 fluid
@@ -171,8 +186,8 @@ export const VideoComm = (props: {
                 icon="window-maximize"
                 onClick={() => setVideoSetting(0)}
               />
-            </Flex.Item>
-            <Flex.Item grow={1}>
+            </Stack.Item>
+            <Stack.Item grow>
               <Button
                 textAlign="center"
                 fluid
@@ -181,8 +196,8 @@ export const VideoComm = (props: {
                 icon="video-slash"
                 onClick={() => act('endvideo')}
               />
-            </Flex.Item>
-            <Flex.Item grow={1}>
+            </Stack.Item>
+            <Stack.Item grow>
               <Button
                 textAlign="center"
                 fluid
@@ -191,8 +206,8 @@ export const VideoComm = (props: {
                 icon="phone-slash"
                 onClick={() => act('hang_up')}
               />
-            </Flex.Item>
-          </Flex>
+            </Stack.Item>
+          </Stack>
         </Section>
         <ByondUi
           width="200px"

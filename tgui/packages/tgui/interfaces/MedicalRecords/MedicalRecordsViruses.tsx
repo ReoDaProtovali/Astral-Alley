@@ -1,7 +1,12 @@
 import { Fragment } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Button, NoticeBox } from 'tgui-core/components';
 
+<<<<<<< HEAD
 import { useBackend } from '../../backend';
 import { Button } from '../../components';
+=======
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import { Data } from './types';
 
 export const MedicalRecordsViruses = (props) => {

@@ -1,8 +1,20 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
+=======
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import {
+  Box,
+  Button,
+  ByondUi,
+  LabeledList,
+  Section,
+  Stack,
+  Table,
+} from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
-import { useBackend } from '../backend';
-import { Box, Button, Flex, LabeledList, Section, Table } from '../components';
-import { Window } from '../layouts';
 import { OvermapFlightData, OvermapPanControls } from './common/Overmap';
 
 type Data = {
@@ -41,18 +53,31 @@ export const OvermapHelm = (props) => {
 export const OvermapHelmContent = (props) => {
   return (
     <>
-      <Flex>
-        <Flex.Item basis="40%" height="180px">
+      <Stack>
+        <Stack.Item basis="40%" height="180px">
           <OvermapFlightDataWrap />
-        </Flex.Item>
-        <Flex.Item basis="25%" height="180px">
+        </Stack.Item>
+        <Stack.Item basis="25%" height="180px">
           <OvermapManualControl />
-        </Flex.Item>
-        <Flex.Item basis="35%" height="180px">
+        </Stack.Item>
+        <Stack.Item basis="35%" height="180px">
           <OvermapAutopilot />
+<<<<<<< HEAD
         </Flex.Item>
       </Flex>
       <OvermapNavComputer />
+=======
+        </Stack.Item>
+      </Stack>
+      <Stack>
+        <Stack.Item grow>
+          <OvermapNavComputer />
+        </Stack.Item>
+        <Stack.Item grow>
+          <OvermapMapView />
+        </Stack.Item>
+      </Stack>
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
     </>
   );
 };
@@ -207,8 +232,8 @@ const OvermapNavComputer = (props) => {
         <LabeledList.Item label="Scan Data">{sector_info}</LabeledList.Item>
         <LabeledList.Item label="Status">{landed}</LabeledList.Item>
       </LabeledList>
-      <Flex mt={1} align="center" justify="center" spacing={1}>
-        <Flex.Item basis="50%">
+      <Stack mt={1} align="center" justify="center">
+        <Stack.Item basis="50%">
           <Button
             fluid
             icon="save"
@@ -216,8 +241,8 @@ const OvermapNavComputer = (props) => {
           >
             Save Current Position
           </Button>
-        </Flex.Item>
-        <Flex.Item basis="50%">
+        </Stack.Item>
+        <Stack.Item basis="50%">
           <Button
             fluid
             icon="sticky-note"
@@ -225,8 +250,8 @@ const OvermapNavComputer = (props) => {
           >
             Add New Entry
           </Button>
-        </Flex.Item>
-      </Flex>
+        </Stack.Item>
+      </Stack>
       <Section mt={1} scrollable fill height="130px">
         <Table>
           <Table.Row header>

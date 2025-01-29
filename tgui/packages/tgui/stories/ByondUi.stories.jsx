@@ -5,9 +5,14 @@
  */
 
 import { useState } from 'react';
+<<<<<<< HEAD
 
 import { Box, Button, ByondUi, Section } from '../components';
 import { logger } from '../logging';
+=======
+import { logger } from 'tgui/logging';
+import { Box, Button, ByondUi, Section } from 'tgui-core/components';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 export const meta = {
   title: 'ByondUi',

@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import { capitalize } from 'common/string';
+=======
+import { useBackend } from 'tgui/backend';
+import { Button, LabeledList, Section } from 'tgui-core/components';
+import { capitalize } from 'tgui-core/string';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 import { useBackend } from '../../../backend';
 import { Button, LabeledList, Section } from '../../../components';

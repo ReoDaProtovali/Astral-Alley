@@ -1,7 +1,14 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_main_menu.tsx
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../../backend';
 import { Box, Button, LabeledList, Section } from '../../components';
+=======
+import { useState } from 'react';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Icon, LabeledList, Section } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/interfaces/Pda/pda_screens/pda_main_menu.tsx
 
 type Data = {
   owner: string;

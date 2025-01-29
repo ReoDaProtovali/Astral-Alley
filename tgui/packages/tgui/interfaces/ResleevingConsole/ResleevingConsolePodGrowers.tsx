@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 import { toFixed } from 'common/math';
+=======
+import { resolveAsset } from 'tgui/assets';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Icon, Image, ProgressBar } from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 import { resolveAsset } from '../../assets';
 import { useBackend } from '../../backend';

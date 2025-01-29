@@ -1,4 +1,12 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_types.ts
 import { IconProps } from '../../components/Icon';
+=======
+import { ComponentProps } from 'react';
+import { Icon } from 'tgui-core/components';
+
+type IconProps = ComponentProps<typeof Icon>;
+
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/interfaces/Pda/pda_types.ts
 /**
  * Gernal Record data
  */

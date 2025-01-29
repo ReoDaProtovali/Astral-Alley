@@ -1,8 +1,15 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_news.tsx
 import { BooleanLike } from 'common/react';
 import { decodeHtmlEntities } from 'common/string';
 
 import { useBackend } from '../../backend';
 import { Box, Button, Image, Section } from '../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Image, Section } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+import { decodeHtmlEntities } from 'tgui-core/string';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/interfaces/Pda/pda_screens/pda_news.tsx
 
 type Data = {
   feeds: feed[];
