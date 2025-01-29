@@ -1,6 +1,11 @@
 /* eslint react/no-danger: "off" */
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_notekeeper.tsx
 import { useBackend } from '../../backend';
 import { Box, Button, Section, Table } from '../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Section, Table } from 'tgui-core/components';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/interfaces/Pda/pda_screens/pda_notekeeper.tsx
 
 type Data = { note: string; notename: string };
 

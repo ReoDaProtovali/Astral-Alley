@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, Divider, Icon, Section, Tabs } from 'tgui-core/components';
+import { Stack } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 import { useBackend } from '../../../backend';
 import { Box, Divider, Flex, Icon, Section, Tabs } from '../../../components';

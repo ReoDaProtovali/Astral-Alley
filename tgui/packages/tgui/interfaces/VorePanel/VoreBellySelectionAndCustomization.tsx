@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../../backend';
 import { Box, Divider, Flex, Icon, Section, Tabs } from '../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Stack } from 'tgui-core/components';
+import { Box, Divider, Icon, Section, Tabs } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import { digestModeToColor } from './constants';
 import { bellyData, hostMob, selectedData } from './types';
 import { VoreSelectedBelly } from './VoreSelectedBelly';

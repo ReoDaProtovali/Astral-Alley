@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
 
 import { useBackend } from '../../../../backend';
 import { Box, Button, LabeledList } from '../../../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, Button, LabeledList } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 export const GlobalOptions = (props: { taken_over: BooleanLike }) => {
   const { act } = useBackend();

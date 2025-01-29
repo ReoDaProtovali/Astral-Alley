@@ -1,6 +1,19 @@
+<<<<<<< HEAD
 import { useBackend } from '../../backend';
 import { Box, Button, ColorBox, LabeledList, Section } from '../../components';
 import { Data } from './types';
+=======
+import { useBackend } from 'tgui/backend';
+import {
+  Box,
+  Button,
+  ColorBox,
+  LabeledList,
+  Section,
+} from 'tgui-core/components';
+
+import { Data, SPRITE_ACCESSORY_COLOR_CHANNEL_NAMES } from './types';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 export const AppearanceChangerColors = (props) => {
   const { act, data } = useBackend<Data>();

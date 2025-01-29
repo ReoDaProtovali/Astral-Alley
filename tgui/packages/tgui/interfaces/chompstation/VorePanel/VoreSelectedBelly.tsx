@@ -1,5 +1,9 @@
-import { BooleanLike } from 'common/react';
 import { useState } from 'react';
+<<<<<<< HEAD
+=======
+import { Tabs } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 import { Tabs } from '../../../components';
 import { hostMob, selectedData } from './types';

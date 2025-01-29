@@ -1,8 +1,14 @@
 import { filter } from 'common/collections';
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_atmos_scan.tsx
 import { decodeHtmlEntities } from 'common/string';
 
 import { useBackend } from '../../backend';
 import { Box, LabeledList } from '../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, LabeledList } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/interfaces/Pda/pda_screens/pda_atmos_scan.tsx
 
 type Data = {
   aircontents: aircontent[];

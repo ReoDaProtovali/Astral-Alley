@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react';
+=======
+import { useBackend, useSharedState } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import {
+  Box,
+  Button,
+  FitText,
+  Icon,
+  Section,
+  Stack,
+  Tabs,
+} from 'tgui-core/components';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 import { useBackend, useSharedState } from '../../backend';
 import { Box, Button, Section, Tabs } from '../../components';

@@ -1,6 +1,16 @@
 import { ReactNode, useEffect, useState } from 'react';
 import { useBackend } from 'tgui/backend';
+<<<<<<< HEAD
 import { Box, Button, LabeledList } from 'tgui/components';
+=======
+import {
+  Box,
+  Button,
+  Dimmer,
+  LabeledList,
+  Section,
+} from 'tgui-core/components';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 import { SYNTAX_COLOR, SYNTAX_REGEX } from '../constants';
 import { selectedData } from '../types';

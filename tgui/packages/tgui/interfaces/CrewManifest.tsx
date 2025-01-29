@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 import { decodeHtmlEntities } from 'common/string';
 
 import { useBackend } from '../backend';
 import { Box, Section, Table } from '../components';
 import { COLORS } from '../constants';
 import { Window } from '../layouts';
+=======
+import { useBackend } from 'tgui/backend';
+import { COLORS } from 'tgui/constants';
+import { Window } from 'tgui/layouts';
+import { Box, Section, Table } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 /*
  * Shared by the following templates (and used individually too)

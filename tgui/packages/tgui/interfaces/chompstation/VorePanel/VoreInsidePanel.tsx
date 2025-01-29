@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
+=======
+import { Box, Collapsible, Section } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 
 import { Box, Collapsible, Section } from '../../../components';
 import { digestModeToPreyMode, reagentToColor } from './constants';

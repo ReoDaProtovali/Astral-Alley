@@ -1,6 +1,13 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_security.tsx
 import { useBackend } from '../../backend';
 import { Box, Button, LabeledList, Section } from '../../components';
 import { GeneralRecord, RecordList, SecurityRecord } from './pda_types';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, Button, LabeledList, Section } from 'tgui-core/components';
+
+import { GeneralRecord, RecordList, SecurityRecord } from '../pda_types';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/interfaces/Pda/pda_screens/pda_security.tsx
 
 type Data = {
   records: {

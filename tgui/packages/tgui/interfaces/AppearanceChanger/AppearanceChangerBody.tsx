@@ -1,7 +1,12 @@
 import { sortBy } from 'common/collections';
+import { useBackend } from 'tgui/backend';
+import { Button, LabeledList, Section, Stack } from 'tgui-core/components';
 
+<<<<<<< HEAD
 import { useBackend } from '../../backend';
 import { Button, LabeledList, Section } from '../../components';
+=======
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import { Data, species, styles } from './types';
 
 export const AppearanceChangerSpecies = (props) => {
@@ -66,6 +71,7 @@ export const AppearanceChangerEars = (props) => {
   const { ear_style, ear_styles } = data;
 
   return (
+<<<<<<< HEAD
     <Section title="Ears" fill scrollable>
       <Button
         onClick={() => act('ear', { clear: true })}
@@ -83,6 +89,52 @@ export const AppearanceChangerEars = (props) => {
         </Button>
       ))}
     </Section>
+=======
+    <Stack vertical fill>
+      <Stack.Item grow>
+        <Section title="Ears" fill scrollable>
+          <Button
+            onClick={() => act('ear', { clear: true })}
+            selected={ear_style === null}
+          >
+            -- Not Set --
+          </Button>
+          {sortBy(ear_styles, (e: styles) => e.name.toLowerCase()).map(
+            (ear) => (
+              <Button
+                key={ear.instance}
+                onClick={() => act('ear', { ref: ear.instance })}
+                selected={ear.name === ear_style}
+              >
+                {ear.name}
+              </Button>
+            ),
+          )}
+        </Section>
+      </Stack.Item>
+      <Stack.Item grow>
+        <Section title="Ears - Secondary" fill scrollable>
+          <Button
+            onClick={() => act('ear_secondary', { clear: true })}
+            selected={data.ear_secondary_style === null}
+          >
+            -- Not Set --
+          </Button>
+          {sortBy(ear_styles, (e: styles) => e.name.toLowerCase()).map(
+            (ear) => (
+              <Button
+                key={ear.instance}
+                onClick={() => act('ear_secondary', { ref: ear.instance })}
+                selected={ear.name === ear_style}
+              >
+                {ear.name}
+              </Button>
+            ),
+          )}
+        </Section>
+      </Stack.Item>
+    </Stack>
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
   );
 };
 

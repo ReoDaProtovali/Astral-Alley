@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 import { useBackend } from '../../backend';
 import { Button, LabeledList, Section } from '../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Button, LabeledList, Section } from 'tgui-core/components';
+
+import { PanelOpen } from './PanelOpen';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import { DoorAccessConsoleData } from './types';
 
 /**

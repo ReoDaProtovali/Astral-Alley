@@ -1,5 +1,10 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_supply.tsx
 import { useBackend } from '../../backend';
 import { Box, LabeledList, Section } from '../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, LabeledList, Section } from 'tgui-core/components';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967)):tgui/packages/tgui/interfaces/Pda/pda_screens/pda_supply.tsx
 
 type Data = {
   supply: {

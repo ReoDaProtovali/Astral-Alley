@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 import { useBackend } from '../../backend';
 import { Section, Tabs } from '../../components';
 import { Window } from '../../layouts';
+=======
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import { Section, Stack, Tabs } from 'tgui-core/components';
+
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
 import { OperatingComputerOptions } from './OperatingComputerOptions';
 import { OperatingComputerPatient } from './OperatingComputerPatient';
 import { OperatingComputerUnoccupied } from './OperatingComputerUnoccupied';

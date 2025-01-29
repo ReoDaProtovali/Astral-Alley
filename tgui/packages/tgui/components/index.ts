@@ -4,6 +4,7 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 export { AnimatedNumber } from './AnimatedNumber';
 export { Autofocus } from './Autofocus';
 export { Blink } from './Blink';
@@ -51,3 +52,8 @@ export { TimeDisplay } from './TimeDisplay';
 export { Tooltip } from './Tooltip';
 export { TrackOutsideClicks } from './TrackOutsideClicks';
 export { VirtualList } from './VirtualList';
+=======
+export { Interactive } from './Interactive';
+export { NanoMap } from './NanoMap';
+export { Pointer } from './Pointer';
+>>>>>>> 3aa9314ff4 ([MIRROR] Moves UIs to TGUI core (#9967))
