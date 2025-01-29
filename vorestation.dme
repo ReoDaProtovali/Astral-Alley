@@ -179,8 +179,13 @@
 #include "code\__defines\traits\sources.dm"
 #include "code\_global_vars\_regexes.dm"
 #include "code\_global_vars\bitfields.dm"
+<<<<<<< HEAD
 #include "code\_global_vars\configuration_ch.dm"
 #include "code\_global_vars\logging_ch.dm"
+=======
+#include "code\_global_vars\configuration.dm"
+#include "code\_global_vars\logging.dm"
+>>>>>>> 40e935a774 ([MIRROR] Moving the database to a subsystem (#9963))
 #include "code\_global_vars\misc.dm"
 #include "code\_global_vars\mobs.dm"
 #include "code\_global_vars\time_vars.dm"

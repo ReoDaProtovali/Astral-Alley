@@ -79,8 +79,13 @@ if number_of_defines == 0:
     print(red("No defines found! This is likely an error."))
     sys.exit(1)
 
+<<<<<<< HEAD
 if number_of_defines <= 1000:
     print(red(f"Only found {number_of_defines} defines! Something has likely gone wrong as the number of local defines should not be this low."))
+=======
+if number_of_defines <= 850:
+    print(red(f"Only found {number_of_defines} defines in {number_of_files} files! Something has likely gone wrong as the number of local defines should not be this low."))
+>>>>>>> 40e935a774 ([MIRROR] Moving the database to a subsystem (#9963))
     sys.exit(1)
 
 if len(located_error_tuples):
