@@ -10,6 +10,10 @@ SUBSYSTEM_DEF(persist)
 	flags = SS_BACKGROUND|SS_NO_INIT|SS_KEEP_TIMING
 	runlevels = RUNLEVEL_GAME|RUNLEVEL_POSTGAME
 	var/list/currentrun = list()
+<<<<<<< HEAD
+=======
+	var/list/query_stack = list()
+>>>>>>> 40e935a774 ([MIRROR] Moving the database to a subsystem (#9963))
 
 /datum/controller/subsystem/persist/fire(var/resumed = FALSE)
 	update_department_hours(resumed)
@@ -20,7 +24,7 @@ SUBSYSTEM_DEF(persist)
 		return
 
 	establish_db_connection()
-	if(!SSdbcore.IsConnected())	//CHOMPEdit TGSQL
+	if(!SSdbcore.IsConnected())
 		src.currentrun.Cut()
 		return
 	if(!resumed)
@@ -29,6 +33,10 @@ SUBSYSTEM_DEF(persist)
 
 	//cache for sanic speed (lists are references anyways)
 	var/list/currentrun = src.currentrun
+<<<<<<< HEAD
+=======
+	var/list/query_stack = src.query_stack
+>>>>>>> 40e935a774 ([MIRROR] Moving the database to a subsystem (#9963))
 	while (currentrun.len)
 		var/mob/M = currentrun[currentrun.len]
 		currentrun.len--
@@ -85,6 +93,7 @@ SUBSYSTEM_DEF(persist)
 		var/sql_dpt = sql_sanitize_text(department_earning)
 		var/sql_bal = text2num("[C.department_hours[department_earning]]")
 		var/sql_total = text2num("[C.play_hours[department_earning]]")
+<<<<<<< HEAD
 		var/list/sqlargs = list("t_ckey" = sql_ckey, "t_department" = sql_dpt) //CHOMPEdit TGSQL
 		var/datum/db_query/query = SSdbcore.NewQuery("INSERT INTO vr_player_hours (ckey, department, hours, total_hours) VALUES (:t_ckey, :t_department, [sql_bal], [sql_total]) ON DUPLICATE KEY UPDATE hours = VALUES(hours), total_hours = VALUES(total_hours)", sqlargs) //CHOMPEdit TGSQL
 		if(!query.Execute())	//CHOMPEdit
@@ -92,6 +101,22 @@ SUBSYSTEM_DEF(persist)
 		qdel(query) //CHOMPEdit TGSQL
 		if (MC_TICK_CHECK)
 			return
+=======
+		var/list/entry = list(
+			"ckey" = sql_ckey,
+			"department" = sql_dpt,
+			"hours" = sql_bal,
+			"total_hours" = sql_total
+		)
+		query_stack += list(entry)
+
+		if (MC_TICK_CHECK)
+			return
+	if(query_stack.len)
+		SSdbcore.MassInsert(format_table_name("vr_player_hours"), query_stack, duplicate_key = "ON DUPLICATE KEY UPDATE hours = VALUES(hours), total_hours = VALUES(total_hours)")
+		query_stack.Cut()
+
+>>>>>>> 40e935a774 ([MIRROR] Moving the database to a subsystem (#9963))
 
 // This proc tries to find the job datum of an arbitrary mob.
 /datum/controller/subsystem/persist/proc/detect_job(var/mob/M)
