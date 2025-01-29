@@ -8,6 +8,7 @@ source $HOME/BYOND/byond/bin/byondsetup
 # Copy example configs
 cp config/example/* config/
 
+<<<<<<< HEAD
 # Define any unit test defines that need to run
 echo "#define ${TEST_DEFINE} 1" > ${TEST_FILE}
 
@@ -23,6 +24,10 @@ elif grep -q '#include[[:space:]]\"maps\\groundbase\\groundbase.dm\"' $BASENAME.
   sed -i 's/#include[[:space:]]\"maps\\groundbase\\groundbase.dm\"/#include\ \"maps\\'${MAP}'\\'${MAP}'.dm\"/g' $BASENAME.dme
   replace=false
 fi
+=======
+# Create spritesheet directory
+mkdir -p data/spritesheets
+>>>>>>> 26ff936832 ([MIRROR] Updates librust_g.so (#9968))
 
 # Compile a copy of the codebase, and print errors as Github Actions annotations
 tools/build/build --ci tgui tg-font # compile tgui bundle
