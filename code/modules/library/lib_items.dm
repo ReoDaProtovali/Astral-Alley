@@ -27,6 +27,7 @@
 			I.loc = src
 	update_icon()
 
+<<<<<<< HEAD
 /obj/structure/bookcase/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/weapon/book))
 		user.drop_item()
@@ -34,6 +35,15 @@
 		update_icon()
 	else if(istype(O, /obj/item/weapon/pen))
 		var/newname = sanitizeSafe(tgui_input_text(usr, "What would you like to title this bookshelf?", null, null, MAX_NAME_LEN), MAX_NAME_LEN)
+=======
+/obj/structure/bookcase/attackby(obj/item/O, mob/user)
+	if(istype(O, /obj/item/book))
+		user.drop_item()
+		O.loc = src
+		update_icon()
+	else if(istype(O, /obj/item/pen))
+		var/newname = sanitizeSafe(tgui_input_text(user, "What would you like to title this bookshelf?", null, null, MAX_NAME_LEN), MAX_NAME_LEN)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(!newname)
 			return
 		else
@@ -55,11 +65,15 @@
 	else
 		..()
 
-/obj/structure/bookcase/attack_hand(var/mob/user as mob)
+/obj/structure/bookcase/attack_hand(var/mob/user)
 	if(contents.len)
+<<<<<<< HEAD
 		var/obj/item/weapon/book/choice = tgui_input_list(usr, "Which book would you like to remove from the shelf?", "Book Selection", contents)
+=======
+		var/obj/item/book/choice = tgui_input_list(user, "Which book would you like to remove from the shelf?", "Book Selection", contents)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(choice)
-			if(!usr.canmove || usr.stat || usr.restrained() || !in_range(loc, usr))
+			if(!user.canmove || user.stat || user.restrained() || !in_range(loc, user))
 				return
 			if(ishuman(user))
 				if(!user.get_active_hand())
@@ -213,7 +227,11 @@ Book Cart End
 	user << browse("<TT><I>Penned by [author].</I></TT> <BR>" + "[dat]", "window=book")
 // CHOMPEdit End
 
+<<<<<<< HEAD
 /obj/item/weapon/book/attackby(obj/item/weapon/W as obj, mob/user as mob)
+=======
+/obj/item/book/attackby(obj/item/W, mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(carved)
 		if(!store)
 			if(W.w_class < ITEMSIZE_LARGE)
@@ -232,27 +250,27 @@ Book Cart End
 		if(unique)
 			to_chat(user, "These pages don't seem to take the ink well. Looks like you can't modify it.")
 			return
-		var/choice = tgui_input_list(usr, "What would you like to change?", "Change What?", list("Title", "Contents", "Author", "Cancel"))
+		var/choice = tgui_input_list(user, "What would you like to change?", "Change What?", list("Title", "Contents", "Author", "Cancel"))
 		switch(choice)
 			if("Title")
-				var/newtitle = reject_bad_text(sanitizeSafe(tgui_input_text(usr, "Write a new title:")))
+				var/newtitle = reject_bad_text(sanitizeSafe(tgui_input_text(user, "Write a new title:")))
 				if(!newtitle)
-					to_chat(usr, "The title is invalid.")
+					to_chat(user, "The title is invalid.")
 					return
 				else
 					src.name = newtitle
 					src.title = newtitle
 			if("Contents")
-				var/content = sanitize(input(usr, "Write your book's contents (HTML NOT allowed):") as message|null, MAX_BOOK_MESSAGE_LEN)
+				var/content = sanitize(input(user, "Write your book's contents (HTML NOT allowed):") as message|null, MAX_BOOK_MESSAGE_LEN)
 				if(!content)
-					to_chat(usr, "The content is invalid.")
+					to_chat(user, "The content is invalid.")
 					return
 				else
 					src.dat += content
 			if("Author")
-				var/newauthor = sanitize(tgui_input_text(usr, "Write the author's name:"))
+				var/newauthor = sanitize(tgui_input_text(user, "Write the author's name:"))
 				if(!newauthor)
-					to_chat(usr, "The name is invalid.")
+					to_chat(user, "The name is invalid.")
 					return
 				else
 					src.author = newauthor
@@ -314,7 +332,11 @@ Book Cart End
 	var/page = 1 //current page
 	var/list/pages = list() //the contents of each page
 
+<<<<<<< HEAD
 /obj/item/weapon/book/bundle/proc/show_content(mob/user as mob)
+=======
+/obj/item/book/bundle/proc/show_content(mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(!pages.len)
 		return
 	var/dat
@@ -329,11 +351,19 @@ Book Cart End
 		dat+= "<DIV STYLE='float:right; text-align:right; with:33.33333%'><A href='?src=\ref[src];next_page=1'>Back</A></DIV><BR><HR>"
 	// middle pages
 	else
+<<<<<<< HEAD
 		dat+= "<DIV STYLE='float:left; text-align:left; width:33.33333%'><A href='?src=\ref[src];prev_page=1'>Previous Page</A></DIV>"
 		dat+= "<DIV STYLE='float:right; text-align:right; width:33.33333%'><A href='?src=\ref[src];next_page=1'>Next Page</A></DIV><BR><HR>"
 	if(istype(pages[page], /obj/item/weapon/paper))
 		var/obj/item/weapon/paper/P = W
 		if(!(istype(usr, /mob/living/carbon/human) || isobserver(usr) || istype(usr, /mob/living/silicon)))
+=======
+		dat+= "<DIV STYLE='float:left; text-align:left; width:33.33333%'><A href='byond://?src=\ref[src];prev_page=1'>Previous Page</A></DIV>"
+		dat+= "<DIV STYLE='float:right; text-align:right; width:33.33333%'><A href='byond://?src=\ref[src];next_page=1'>Next Page</A></DIV><BR><HR>"
+	if(istype(pages[page], /obj/item/paper))
+		var/obj/item/paper/P = W
+		if(!(ishuman(user) || isobserver(user) || issilicon(user)))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			dat += "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[stars(P.info)][P.stamps]</BODY></HTML>"
 		else
 			dat += "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>"
@@ -347,15 +377,23 @@ Book Cart End
 		+ "[P.scribble ? "<div> Written on the back:<br><i>[P.scribble]</i>" : null]"\
 		+ "</body></html>", "window=[name]")
 	else if(!isnull(pages[page]))
+<<<<<<< HEAD
 		if(!(istype(usr, /mob/living/carbon/human) || isobserver(usr) || istype(usr, /mob/living/silicon)))
+=======
+		if(!(ishuman(user) || isobserver(user) || issilicon(user)))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			dat += "<HTML><HEAD><TITLE>Page [page]</TITLE></HEAD><BODY>[stars(pages[page])]</BODY></HTML>"
 		else
 			dat += "<HTML><HEAD><TITLE>Page [page]</TITLE></HEAD><BODY>[pages[page]]</BODY></HTML>"
 		user << browse(dat, "window=[name]")
 
+<<<<<<< HEAD
 /obj/item/weapon/book/bundle/attack_self(mob/user as mob)
+=======
+/obj/item/book/bundle/attack_self(mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	src.show_content(user)
-	add_fingerprint(usr)
+	add_fingerprint(user)
 	update_icon()
 	return
 

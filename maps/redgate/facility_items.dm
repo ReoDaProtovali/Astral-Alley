@@ -38,16 +38,22 @@
 	density = 1
 	anchored = 0
 
-/obj/structure/crystalholder/attackby(obj/item/W as obj, mob/living/user as mob)
+/obj/structure/crystalholder/attackby(obj/item/W, mob/living/user)
 	if(istype(W,/obj/item/glamourcrystal) && !crystal)
 		icon_state = "crystalholder_full"
 		update_icon()
 		crystal = 1
 		user.drop_item()
 		qdel(W)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>You insert the crystal into the receptacle.</span>")
 	else
 		to_chat(usr, "<span class='notice'>There isn't a slot for that.</span>")
+=======
+		to_chat(user, span_notice("You insert the crystal into the receptacle."))
+	else
+		to_chat(user, span_notice("There isn't a slot for that."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 /obj/machinery/crystalexperimenter
 	name = "crystal experimenter"

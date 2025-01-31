@@ -468,10 +468,15 @@
 	if (src != usr)
 		return 0
 	if(!ticker || ticker.current_state != GAME_STATE_PLAYING)
-		to_chat(usr, span_red("The round is either not ready, or has already finished..."))
+		to_chat(src, span_red("The round is either not ready, or has already finished..."))
 		return 0
+<<<<<<< HEAD
 	if(!CONFIG_GET(flag/enter_allowed)) // CHOMPEdit
 		to_chat(usr, "<span class='notice'>There is an administrative lock on entering the game!</span>")
+=======
+	if(!CONFIG_GET(flag/enter_allowed))
+		to_chat(src, span_notice("There is an administrative lock on entering the game!"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return 0
 	if(!IsJobAvailable(rank))
 		tgui_alert_async(src,"[rank] is not available. Please try another.")

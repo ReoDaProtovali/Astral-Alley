@@ -18,8 +18,13 @@
 	matter = list(MAT_STEEL = 2000)
 
 //revolves the magazine, allowing players to choose between multiple grenade types
+<<<<<<< HEAD
 /obj/item/weapon/gun/launcher/grenade/proc/pump(mob/M as mob)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+=======
+/obj/item/gun/launcher/grenade/proc/pump(mob/user)
+	playsound(user, 'sound/weapons/shotgunpump.ogg', 60, 1)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 	var/obj/item/weapon/grenade/next
 	if(grenades.len)
@@ -30,9 +35,15 @@
 	if(next)
 		grenades -= next //Remove grenade from loaded list.
 		chambered = next
+<<<<<<< HEAD
 		to_chat(M, "<span class='warning'>You pump [src], loading \a [next] into the chamber.</span>")
 	else
 		to_chat(M, "<span class='warning'>You pump [src], but the magazine is empty.</span>")
+=======
+		to_chat(user, span_warning("You pump [src], loading \a [next] into the chamber."))
+	else
+		to_chat(user, span_warning("You pump [src], but the magazine is empty."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	update_icon()
 
 /obj/item/weapon/gun/launcher/grenade/examine(mob/user)

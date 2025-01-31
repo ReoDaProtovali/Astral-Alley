@@ -4,22 +4,27 @@
 //Note that this proc does NOT do MMI related stuff!
 /mob/proc/change_mob_type(var/new_type = null, var/turf/location = null, var/new_name = null as text, var/delete_old_mob = 0 as num, var/subspecies)
 
+<<<<<<< HEAD
 	if(istype(src,/mob/new_player))
 		to_chat(usr, span_red("cannot convert players who have not entered yet."))
+=======
+	if(isnewplayer(src))
+		to_chat(src, span_red("cannot convert players who have not entered yet."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	if(!new_type)
-		new_type = tgui_input_text(usr, "Mob type path:", "Mob type")
+		new_type = tgui_input_text(src, "Mob type path:", "Mob type")
 
 	if(istext(new_type))
 		new_type = text2path(new_type)
 
 	if( !ispath(new_type) )
-		to_chat(usr, "Invalid type path (new_type = [new_type]) in change_mob_type(). Contact a coder.")
+		to_chat(src, "Invalid type path (new_type = [new_type]) in change_mob_type(). Contact a coder.")
 		return
 
 	if( new_type == /mob/new_player )
-		to_chat(usr, span_red("cannot convert into a new_player mob type."))
+		to_chat(src, span_red("cannot convert into a new_player mob type."))
 		return
 
 	var/mob/M
@@ -29,7 +34,7 @@
 		M = new new_type( src.loc )
 
 	if(!M || !ismob(M))
-		to_chat(usr, "Type path is not a mob (new_type = [new_type]) in change_mob_type(). Contact a coder.")
+		to_chat(src, "Type path is not a mob (new_type = [new_type]) in change_mob_type(). Contact a coder.")
 		qdel(M)
 		return
 

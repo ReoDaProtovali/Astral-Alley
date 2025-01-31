@@ -447,14 +447,14 @@
 
 	var/mob/living/T = tgui_input_list(src, "Who do you wish to leap at?", "Target Choice", choices)
 
-	if(!T || !src || src.stat) return
+	if(!T || !src || stat) return
 
 	if(get_dist(get_turf(T), get_turf(src)) > 3) return
 
 	if(last_special > world.time)
 		return
 
-	if(usr.incapacitated(INCAPACITATION_DISABLED))
+	if(incapacitated(INCAPACITATION_DISABLED))
 		to_chat(src, "You cannot leap in your current state.")
 		return
 
@@ -462,8 +462,13 @@
 	status_flags |= LEAPING
 	pixel_y = pixel_y + 10
 
+<<<<<<< HEAD
 	src.visible_message("<span class='danger'>\The [src] leaps at [T]!</span>")
 	src.throw_at(get_step(get_turf(T),get_turf(src)), 4, 1, src)
+=======
+	visible_message(span_danger("\The [src] leaps at [T]!"))
+	throw_at(get_step(get_turf(T),get_turf(src)), 4, 1, src)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	playsound(src, 'sound/effects/bodyfall1.ogg', 50, 1)
 	pixel_y = default_pixel_y
 
@@ -471,8 +476,13 @@
 
 	if(status_flags & LEAPING) status_flags &= ~LEAPING
 
+<<<<<<< HEAD
 	if(!src.Adjacent(T))
 		to_chat(src, "<span class='warning'>You miss!</span>")
+=======
+	if(!Adjacent(T))
+		to_chat(src, span_warning("You miss!"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	if(ishuman(T))

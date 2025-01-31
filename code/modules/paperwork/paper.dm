@@ -158,8 +158,13 @@
 
 /obj/item/weapon/paper/examine(mob/user)
 	. = ..()
+<<<<<<< HEAD
 	if(in_range(user, src) || istype(user, /mob/observer/dead))
 		show_content(usr)
+=======
+	if(in_range(user, src) || isobserver(user))
+		show_content(user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	else
 		. += "<span class='notice'>You have to go closer if you want to read it.</span>"
 
@@ -210,18 +215,22 @@
 				spam_flag = 0
 	return
 
+<<<<<<< HEAD
 /obj/item/weapon/paper/attack_ai(var/mob/living/silicon/ai/user as mob)
+=======
+/obj/item/paper/attack_ai(var/mob/living/silicon/ai/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	var/dist
 	if(istype(user) && user.camera) //is AI
 		dist = get_dist(src, user.camera)
 	else //cyborg or AI not seeing through a camera
 		dist = get_dist(src, user)
 	if(dist < 2)
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info][stamps]</BODY></HTML>", "window=[name]")
-		onclose(usr, "[name]")
+		user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[info][stamps]</BODY></HTML>", "window=[name]")
+		onclose(user, "[name]")
 	else
-		usr << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[stars(info)][stamps]</BODY></HTML>", "window=[name]")
-		onclose(usr, "[name]")
+		user << browse("<HTML><HEAD><TITLE>[name]</TITLE></HEAD><BODY>[stars(info)][stamps]</BODY></HTML>", "window=[name]")
+		onclose(user, "[name]")
 	return
 
 /obj/item/weapon/paper/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
@@ -539,7 +548,11 @@
 		return "paper" //Gross, but required for now.
 	return ..()
 
+<<<<<<< HEAD
 /obj/item/weapon/paper/attackby(obj/item/weapon/P as obj, mob/user as mob)
+=======
+/obj/item/paper/attackby(obj/item/P, mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	..()
 	var/clown = 0
 	if(user.mind && ((user.mind.role_alt_title == "Clown") || (user.mind.role_alt_title == "Jester") || (user.mind.role_alt_title == "Fool"))) // CHOMPStation Edit - Let clows/fools/jesters use clown stamps
@@ -612,7 +625,11 @@
 
 	else if(istype(P, /obj/item/weapon/pen))
 		if(icon_state == "scrap")
+<<<<<<< HEAD
 			to_chat(usr, "<span class='warning'>\The [src] is too crumpled to write on.</span>")
+=======
+			to_chat(user, span_warning("\The [src] is too crumpled to write on."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return
 
 		var/obj/item/weapon/pen/robopen/RP = P
@@ -634,8 +651,13 @@
 			if(the_stamp.stamptext)
 				stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>[the_stamp.stamptext]</i>"
 			else
+<<<<<<< HEAD
 				stamps += (stamps=="" ? "<HR>" : "<BR>") + "<i>This paper has been stamped with the [the_stamp.name].</i>"
 		if((!in_range(src, usr) && loc != user && !( istype(loc, /obj/item/weapon/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
+=======
+				stamps += (stamps=="" ? "<HR>" : "<BR>") + span_italics("This paper has been stamped with the [the_stamp.name].")
+		if((!in_range(src, user) && loc != user && !( istype(loc, /obj/item/clipboard) ) && loc.loc != user && user.get_active_hand() != P))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return
 		var/image/stampoverlay = image('icons/obj/bureaucracy.dmi')
 		var/x, y

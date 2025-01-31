@@ -41,7 +41,7 @@
 	holstered = null
 	name = initial(name)
 
-/obj/item/clothing/accessory/holster/proc/unholster(mob/user as mob)
+/obj/item/clothing/accessory/holster/proc/unholster(mob/user)
 	if(!holstered)
 		return
 
@@ -63,9 +63,15 @@
 		var/sound_vol = 25
 		if(user.a_intent == I_HURT)
 			sound_vol = 50
+<<<<<<< HEAD:code/modules/clothing/under/accessories/holster.dm
 			usr.visible_message(
 				"<span class='danger'>[user] draws \the [holstered], ready to go!</span>", //VOREStation Edit
 				"<span class='warning'>You draw \the [holstered], ready to go!</span>" //VOREStation Edit
+=======
+			user.visible_message(
+				span_danger("[user] draws \the [holstered], ready to go!"), //VOREStation Edit
+				span_warning("You draw \the [holstered], ready to go!") //VOREStation Edit
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015)):code/modules/clothing/accessories/holster.dm
 				)
 		else
 			user.visible_message(
@@ -82,7 +88,7 @@
 		clear_holster()
 
 //YW change start
-/obj/item/clothing/accessory/holster/attack_hand(mob/user as mob)
+/obj/item/clothing/accessory/holster/attack_hand(mob/user)
 	if (user.a_intent == I_HURT && has_suit && (slot & SLOT_HOLSTER ))	//if we are part of a suit and are using harm intent
 		if (holstered)
 			unholster(user)

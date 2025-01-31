@@ -447,7 +447,11 @@
 	if(!choice)
 		return
 	if(choice == "Color")
+<<<<<<< HEAD
 		var/new_color = input(usr, "Choose a color to set the light to! (Default is [LIGHT_COLOR_INCANDESCENT_TUBE])", "", selected_color) as color|null
+=======
+		var/new_color = tgui_color_picker(user, "Choose a color to set the light to! (Default is [LIGHT_COLOR_INCANDESCENT_TUBE])", "", selected_color)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(new_color)
 			selected_color = new_color
 			to_chat(user, "<span class='filter_notice'>The light color has been changed.</span>")
@@ -501,8 +505,13 @@
 		to_chat(src, "<span class='filter_notice'>Cell charge too low to continue.</span>")
 		return
 
+<<<<<<< HEAD
 	if(usr.incapacitated(INCAPACITATION_DISABLED))
 		to_chat(src, "<span class='filter_notice'>You cannot leap in your current state.</span>")
+=======
+	if(src.incapacitated(INCAPACITATION_DISABLED))
+		to_chat(src, span_filter_notice("You cannot leap in your current state."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	var/list/choices = list()
@@ -530,8 +539,13 @@
 	if(last_special > world.time)
 		return
 
+<<<<<<< HEAD
 	if(usr.incapacitated(INCAPACITATION_DISABLED))
 		to_chat(src, "<span class='filter_notice'>You cannot leap in your current state.</span>")
+=======
+	if(src.incapacitated(INCAPACITATION_DISABLED))
+		to_chat(src, span_filter_notice("You cannot leap in your current state."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	last_special = world.time + 10

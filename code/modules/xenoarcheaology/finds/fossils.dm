@@ -54,14 +54,18 @@
 	src.breq = rand(6)+3
 	src.desc = "An incomplete skeleton, looks like it could use [src.breq-src.bnum] more bones."
 
+<<<<<<< HEAD
 /obj/skeleton/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/weapon/fossil/bone))
+=======
+/obj/skeleton/attackby(obj/item/W, mob/user)
+	if(istype(W,/obj/item/fossil/bone))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(!bstate)
 			bnum++
 			src.contents.Add(new/obj/item/weapon/fossil/bone)
 			qdel(W)
 			if(bnum==breq)
-				usr = user
 				icon_state = "skel"
 				src.bstate = 1
 				src.density = TRUE
@@ -75,8 +79,13 @@
 				to_chat(user, "Looks like it could use [src.breq-src.bnum] more bones.")
 		else
 			..()
+<<<<<<< HEAD
 	else if(istype(W,/obj/item/weapon/pen))
 		plaque_contents = sanitize(tgui_input_text(usr, "What would you like to write on the plaque:","Skeleton plaque",""))
+=======
+	else if(istype(W,/obj/item/pen))
+		plaque_contents = sanitize(tgui_input_text(user, "What would you like to write on the plaque:","Skeleton plaque",""))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		user.visible_message("[user] writes something on the base of [src].","You relabel the plaque on the base of [icon2html(src,viewers(src))] [src].")
 		if(src.contents.Find(/obj/item/weapon/fossil/skull/horned))
 			src.desc = "A creature made of [src.contents.len-1] assorted bones and a horned skull. The plaque reads \'[plaque_contents]\'."

@@ -19,27 +19,37 @@
 	if(get_dist(user, src) <= 2)
 		. += span_blue("It's loaded with [confetti_charge] ball\s of confetti.")
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/launcher/confetti_cannon/attackby(obj/item/I as obj, mob/user as mob)
 	if(istype(I, /obj/item/weapon/paper) || istype(I, /obj/item/weapon/shreddedp))
+=======
+/obj/item/gun/launcher/confetti_cannon/attackby(obj/item/I, mob/user)
+	if(istype(I, /obj/item/paper) || istype(I, /obj/item/shreddedp))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(confetti_charge < max_confetti)
 			user.drop_item()
 			++confetti_charge
-			to_chat(usr, span_blue("You put the paper in the [src]."))
+			to_chat(user, span_blue("You put the paper in the [src]."))
 			qdel(I)
 		else
-			to_chat(usr, span_red("[src] cannot hold more paper."))
+			to_chat(user, span_red("[src] cannot hold more paper."))
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/launcher/confetti_cannon/proc/pump(mob/M as mob)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+=======
+/obj/item/gun/launcher/confetti_cannon/proc/pump(mob/user)
+	playsound(user, 'sound/weapons/shotgunpump.ogg', 60, 1)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(!chambered)
 		if(confetti_charge)
 			chambered = new /obj/item/weapon/grenade/confetti/party_ball
 			--confetti_charge
-			to_chat(usr, span_blue("You compress a new confetti ball."))
+			to_chat(user, span_blue("You compress a new confetti ball."))
 		else
-			to_chat(usr, span_red("The [src] is out of confetti!"))
+			to_chat(user, span_red("The [src] is out of confetti!"))
 	else
-		to_chat(usr, span_red("The [src] is already loaded!"))
+		to_chat(user, span_red("The [src] is already loaded!"))
 
 /obj/item/weapon/gun/launcher/confetti_cannon/attack_self(mob/user)
 	pump(user)
@@ -70,20 +80,26 @@
 	name = "Party Cannon"
 	desc = "Confetti, pies, banana peels, chaos!"
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/launcher/confetti_cannon/robot/pump(mob/M as mob)
 	playsound(M, 'sound/weapons/shotgunpump.ogg', 60, 1)
+=======
+/obj/item/gun/launcher/confetti_cannon/robot/pump(mob/user)
+	playsound(user, 'sound/weapons/shotgunpump.ogg', 60, 1)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(!chambered)
-		var/choice = tgui_alert(usr, "Load the Party Canon with?", "Change What?", list("Confetti","Banana Peel","Cream Pie"))
+		var/choice = tgui_alert(user, "Load the Party Canon with?", "Change What?", list("Confetti","Banana Peel","Cream Pie"))
 		if(!choice)
 			return
-		if(istype(usr,/mob/living/silicon/robot))
-			var/mob/living/silicon/robot/R = usr
+		if(istype(user,/mob/living/silicon/robot))
+			var/mob/living/silicon/robot/R = user
 			if(!R.use_direct_power(200, 400))
 				to_chat(R, span_warning("Warning, low power detected. Aborting action."))
 				return
 		playsound(src, 'sound/effects/pop.ogg', 50, 0)
 		switch(choice)
 			if("Confetti")
+<<<<<<< HEAD
 				chambered = new /obj/item/weapon/grenade/confetti/party_ball
 				to_chat(usr, span_blue("Confetti loaded."))
 			if("Banana Peel")
@@ -92,8 +108,18 @@
 			if("Cream Pie")
 				chambered = new /obj/item/weapon/reagent_containers/food/snacks/pie
 				to_chat(usr, span_blue("Banana cream pie loaded."))
+=======
+				chambered = new /obj/item/grenade/confetti/party_ball
+				to_chat(user, span_blue("Confetti loaded."))
+			if("Banana Peel")
+				chambered = new /obj/item/bananapeel
+				to_chat(user, span_blue("Banana peel loaded."))
+			if("Cream Pie")
+				chambered = new /obj/item/reagent_containers/food/snacks/pie
+				to_chat(user, span_blue("Banana cream pie loaded."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	else
-		to_chat(usr, span_red("The [src] is already loaded!"))
+		to_chat(user, span_red("The [src] is already loaded!"))
 
 /obj/item/weapon/gun/launcher/confetti_cannon/robot/consume_next_projectile()
 	if(istype(chambered,/obj/item/weapon/grenade/confetti/party_ball))

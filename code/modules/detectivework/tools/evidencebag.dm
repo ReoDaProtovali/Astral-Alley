@@ -9,7 +9,11 @@
 	w_class = ITEMSIZE_SMALL
 	var/obj/item/stored_item = null
 
+<<<<<<< HEAD
 /obj/item/weapon/evidencebag/MouseDrop(var/obj/item/I as obj)
+=======
+/obj/item/evidencebag/MouseDrop(var/obj/item/I)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if (!ishuman(usr))
 		return
 	if(!istype(I) || I.anchored)

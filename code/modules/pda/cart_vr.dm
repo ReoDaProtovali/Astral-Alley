@@ -49,10 +49,15 @@ var/list/exploration_cartridges = list(
 	if (hold.handle_mousedrop(usr, over_object))
 		..(over_object)
 
+<<<<<<< HEAD
 /obj/item/weapon/cartridge/storage/attack_self(mob/user as mob)
 	to_chat(user, "<span class='notice'>You empty [src].</span>")
+=======
+/obj/item/cartridge/storage/attack_self(mob/user)
+	to_chat(user, span_notice("You empty [src]."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	var/turf/T = get_turf(src)
-	hold.hide_from(usr)
+	hold.hide_from(user)
 	for(var/obj/item/I in hold.contents)
 		hold.remove_from_storage(I, T)
 	add_fingerprint(user)

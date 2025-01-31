@@ -43,7 +43,11 @@
 	add_overlay("clipboard_over")
 	return
 
+<<<<<<< HEAD
 /obj/item/weapon/clipboard/attackby(obj/item/weapon/W as obj, mob/user as mob)
+=======
+/obj/item/clipboard/attackby(obj/item/W, mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 	if(istype(W, /obj/item/weapon/paper) || istype(W, /obj/item/weapon/photo))
 		user.drop_item()
@@ -53,20 +57,34 @@
 		to_chat(user, "<span class='notice'>You clip the [W] onto \the [src].</span>")
 		update_icon()
 
+<<<<<<< HEAD
 	else if(istype(toppaper) && istype(W, /obj/item/weapon/pen))
 		toppaper.attackby(W, usr)
+=======
+	else if(istype(toppaper) && istype(W, /obj/item/pen))
+		toppaper.attackby(W, user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		update_icon()
 
 	return
 
+<<<<<<< HEAD
 /obj/item/weapon/clipboard/afterattack(turf/T as turf, mob/user as mob)
 	for(var/obj/item/weapon/paper/P in T)
+=======
+/obj/item/clipboard/afterattack(turf/T as turf, mob/user)
+	for(var/obj/item/paper/P in T)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		P.loc = src
 		toppaper = P
 		update_icon()
 		to_chat(user, "<span class='notice'>You clip the [P] onto \the [src].</span>")
 
+<<<<<<< HEAD
 /obj/item/weapon/clipboard/attack_self(mob/user as mob)
+=======
+/obj/item/clipboard/attack_self(mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	var/dat = "<title>Clipboard</title>"
 	if(haspen)
 		dat += "<A href='?src=\ref[src];pen=1'>Remove Pen</A><BR><HR>"
@@ -87,7 +105,7 @@
 
 	user << browse(dat, "window=clipboard")
 	onclose(user, "clipboard")
-	add_fingerprint(usr)
+	add_fingerprint(user)
 	return
 
 /obj/item/weapon/clipboard/Topic(href, href_list)

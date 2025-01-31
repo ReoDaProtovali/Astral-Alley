@@ -105,8 +105,13 @@ var/list/_cat_default_emotes = list(
 		return // Fuck off ghosts.
 
 	if(friend)
+<<<<<<< HEAD
 		if(friend == usr)
 			to_chat(L, span("notice", "\The [src] is already your friend! Meow!"))
+=======
+		if(friend == L)
+			to_chat(L, span_notice("\The [src] is already your friend! Meow!"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return
 		else
 			to_chat(L, span("warning", "\The [src] ignores you."))

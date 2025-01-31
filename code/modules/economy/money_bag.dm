@@ -45,12 +45,16 @@
 		dat += text("Uranium coins: [amt_uranium] <A href='?src=\ref[src];remove=uranium'>Remove one</A><br>")
 	user << browse("[dat]", "window=moneybag")
 
+<<<<<<< HEAD
 /obj/item/weapon/moneybag/attackby(obj/item/weapon/W as obj, mob/user as mob)
+=======
+/obj/item/moneybag/attackby(obj/item/W, mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	..()
 	if (istype(W, /obj/item/weapon/coin))
 		var/obj/item/weapon/coin/C = W
 		to_chat(user, span_blue("You add the [C.name] into the bag."))
-		usr.drop_item()
+		user.drop_item()
 		contents += C
 	if (istype(W, /obj/item/weapon/moneybag))
 		var/obj/item/weapon/moneybag/C = W

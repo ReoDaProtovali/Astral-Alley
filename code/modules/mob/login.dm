@@ -20,8 +20,13 @@
 				if( (client.connection != "web") && (M.computer_id == client.computer_id) )
 					if(matches)	matches += " and "
 					matches += "ID ([client.computer_id])"
+<<<<<<< HEAD
 					if(!CONFIG_GET(flag/disable_cid_warn_popup)) // CHOMPEdit
 						tgui_alert_async(usr, "You appear to have logged in with another key this round, which is not permitted. Please contact an administrator if you believe this message to be in error.")
+=======
+					if(!CONFIG_GET(flag/disable_cid_warn_popup))
+						tgui_alert_async(src, "You appear to have logged in with another key this round, which is not permitted. Please contact an administrator if you believe this message to be in error.")
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 				if(matches)
 					if(M.client)
 						message_admins("[span_red("<B>Notice: </B>")][span_blue("[key_name_admin(src)] has the same [matches] as [key_name_admin(M)].")]", 1)

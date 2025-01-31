@@ -112,15 +112,24 @@
 	if (usr != src)
 		return 0 //something is terribly wrong
 
+<<<<<<< HEAD
 	if(jobban_isbanned(src,"Cyborg"))
 		to_chat(usr, "<span class='danger'>You are banned from playing synthetics and cannot spawn as a drone.</span>")
+=======
+	if(jobban_isbanned(src,JOB_CYBORG))
+		to_chat(src, span_danger("You are banned from playing synthetics and cannot spawn as a drone."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	// VOREStation Addition Start
 	if(CONFIG_GET(flag/use_age_restriction_for_jobs) && isnum(src.client.player_age)) // CHOMPEdit
 		var/time_till_play = max(0, 3 - src.client.player_age)
 		if(time_till_play)
+<<<<<<< HEAD
 			to_chat(usr, "<span class='danger'>You have not been playing on the server long enough to join as drone.</span>")
+=======
+			to_chat(src, span_danger("You have not been playing on the server long enough to join as drone."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return
 	// VOREStation Addition End
 
@@ -139,8 +148,8 @@
 	var/deathtimeseconds = round((deathtime - deathtimeminutes * 1 MINUTE) / 10,1)
 
 	if (deathtime < 5 MINUTES)
-		to_chat(usr, "You have been dead for[pluralcheck] [deathtimeseconds] seconds.")
-		to_chat(usr, "You must wait 5 minutes to respawn as a drone!")
+		to_chat(src, "You have been dead for[pluralcheck] [deathtimeseconds] seconds.")
+		to_chat(src, "You must wait 5 minutes to respawn as a drone!")
 		return
 
 	var/list/all_fabricators = list()

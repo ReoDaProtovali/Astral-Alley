@@ -162,7 +162,11 @@
 
 
 
+<<<<<<< HEAD
 /obj/item/device/retail_scanner/attackby(obj/O as obj, user as mob)
+=======
+/obj/item/retail_scanner/attackby(obj/O, mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	// Check for a method of paying (ID, PDA, e-wallet, cash, ect.)
 	var/obj/item/weapon/card/id/I = O.GetID()
 	if(I)
@@ -170,8 +174,13 @@
 	else if (istype(O, /obj/item/weapon/spacecash/ewallet))
 		var/obj/item/weapon/spacecash/ewallet/E = O
 		scan_wallet(E)
+<<<<<<< HEAD
 	else if (istype(O, /obj/item/weapon/spacecash))
 		to_chat(usr, "<span class='warning'>This device does not accept cash.</span>")
+=======
+	else if (istype(O, /obj/item/spacecash))
+		to_chat(user, span_warning("This device does not accept cash."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 	else if(istype(O, /obj/item/weapon/card/emag))
 		return ..()

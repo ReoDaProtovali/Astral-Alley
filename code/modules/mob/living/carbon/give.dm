@@ -18,7 +18,11 @@
 		to_chat(src, SPAN_WARNING("You don't have anything in your hands to give to \the [target]."))
 		return
 
+<<<<<<< HEAD
 	usr.visible_message(SPAN_NOTICE("\The [usr] holds out \the [I] to \the [target]."), SPAN_NOTICE("You hold out \the [I] to \the [target], waiting for them to accept it."))
+=======
+	src.visible_message(span_notice("\The [src] holds out \the [I] to \the [target]."), span_notice("You hold out \the [I] to \the [target], waiting for them to accept it."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 	if(tgui_alert(target,"[src] wants to give you \a [I]. Will you accept it?","Item Offer",list("Yes","No")) != "Yes")
 		target.visible_message(SPAN_NOTICE("\The [src] tried to hand \the [I] to \the [target], but \the [target] didn't want it."))

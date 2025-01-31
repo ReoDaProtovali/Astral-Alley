@@ -130,8 +130,13 @@
 		if(istype(src.loc, /mob))
 			attack_self(src.loc)
 
+<<<<<<< HEAD
 /obj/item/weapon/newspaper/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/pen))
+=======
+/obj/item/newspaper/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/pen))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(scribble_page == curr_page)
 			to_chat(user, span_blue("There's already a scribble in this page... You wouldn't want to make things too cluttered, would you?"))
 		else
@@ -139,7 +144,7 @@
 			s = sanitize(s)
 			if(!s)
 				return
-			if(!in_range(src, usr) && src.loc != usr)
+			if(!in_range(src, user) && src.loc != user)
 				return
 			scribble_page = curr_page
 			scribble = s

@@ -82,13 +82,13 @@
 
 	var/mob/living/carbon/user = usr
 
-	if(usr.stat || !Adjacent(usr)) return
+	if(user.stat || !Adjacent(user)) return
 
 	if(user.hands_are_full()) // Safety check lest the card disappear into oblivion
 		to_chat(user,"<span class='notice'>Your hands are full!</span>")
 		return
 
-	if(!istype(usr,/mob/living/carbon))
+	if(!istype(user,/mob/living/carbon))
 		return
 
 	if(!cards.len)
@@ -238,10 +238,17 @@
 		return
 
 
+<<<<<<< HEAD
 /obj/item/weapon/deck/MouseDrop(mob/user as mob) // Code from Paper bin, so you can still pick up the deck
 	if((user == usr && (!( usr.restrained() ) && (!( usr.stat ) && (usr.contents.Find(src) || in_range(src, usr))))))
 		if(!istype(usr, /mob/living/simple_mob))
 			if( !usr.get_active_hand() )		//if active hand is empty
+=======
+/obj/item/deck/MouseDrop(mob/user) // Code from Paper bin, so you can still pick up the deck
+	if((user == usr && (!( user.restrained() ) && (!( user.stat ) && (user.contents.Find(src) || in_range(src, user))))))
+		if(!isanimal(user))
+			if( !user.get_active_hand() )		//if active hand is empty
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 				var/mob/living/carbon/human/H = user
 				var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 
@@ -258,9 +265,15 @@
 
 /obj/item/weapon/deck/verb_pickup() // Snowflaked so pick up verb work as intended
 	var/mob/user = usr
+<<<<<<< HEAD
 	if((istype(user) && (!( usr.restrained() ) && (!( usr.stat ) && (usr.contents.Find(src) || in_range(src, usr))))))
 		if(!istype(usr, /mob/living/simple_mob))
 			if( !usr.get_active_hand() )		//if active hand is empty
+=======
+	if((istype(user) && (!( user.restrained() ) && (!( user.stat ) && (user.contents.Find(src) || in_range(src, user))))))
+		if(!isanimal(user))
+			if( !user.get_active_hand() )		//if active hand is empty
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 				var/mob/living/carbon/human/H = user
 				var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 
@@ -373,15 +386,24 @@
 	if(user.stat || !Adjacent(user)) return
 
 	if(user.hands_are_full()) // Safety check lest the card disappear into oblivion
+<<<<<<< HEAD
 		to_chat(usr,"<span class='danger'>Your hands are full!</span>")
+=======
+		to_chat(user,span_danger("Your hands are full!"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	var/pickablecards = list()
 	for(var/datum/playingcard/P in cards)
+<<<<<<< HEAD
 		pickablecards[P.name] += P
 	var/pickedcard = tgui_input_list(usr, "Which card do you want to remove from the hand?", "Card Selection", pickablecards)
+=======
+		pickablecards[P.name] = P
+	var/pickedcard = tgui_input_list(user, "Which card do you want to remove from the hand?", "Card Selection", pickablecards)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
-	if(!pickedcard || !pickablecards[pickedcard] || !usr || !src) return
+	if(!pickedcard || !pickablecards[pickedcard] || !user || !src) return
 
 	var/datum/playingcard/card = pickablecards[pickedcard]
 

@@ -232,9 +232,13 @@ GLOBAL_LIST_EMPTY(all_waypoints)
 
 		if("move")
 			var/ndir = text2num(params["dir"])
+<<<<<<< HEAD
 			if(prob(usr.skill_fail_chance(/datum/skill/pilot, 50, linked.skill_needed, factor = 1)))
 				ndir = turn(ndir,pick(90,-90))
 			linked.relaymove(usr, ndir, accellimit)
+=======
+			linked.relaymove(ui.user, ndir, accellimit)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			. = TRUE
 
 		if("brake")

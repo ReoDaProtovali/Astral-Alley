@@ -42,7 +42,12 @@ GLOBAL_LIST_EMPTY(unique_deployable)
 	else
 		. += "This capsule has an unknown template stored."
 
+<<<<<<< HEAD
 /obj/item/device/survivalcapsule/attack_self()
+=======
+// CHOMPEdit Start
+/obj/item/survivalcapsule/attack_self(mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	//Can't grab when capsule is New() because templates aren't loaded then
 	get_template()
 	if(!used)
@@ -89,7 +94,11 @@ GLOBAL_LIST_EMPTY(unique_deployable)
 
 		playsound(src, 'sound/effects/phasein.ogg', 100, 1)
 
+<<<<<<< HEAD
 		log_and_message_admins("[key_name_admin(usr)] activated a bluespace capsule at [get_area(T)]!")
+=======
+		log_and_message_admins("activated a bluespace capsule at [get_area(T)]!", user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(above_location)
 			template.add_roof(above_location)
 		template.annihilate_plants(deploy_location)

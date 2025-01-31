@@ -61,9 +61,13 @@
 	if(tank && ispath(tank))
 		tank = new tank(src)
 
-/obj/item/clothing/suit/space/void/examine(user)
+/obj/item/clothing/suit/space/void/examine(mob/user)
 	. = ..()
+<<<<<<< HEAD
 	. += to_chat(usr, "<span class='notice'>Alt-click to relase Tank/Cooling unit if installed.</span>")
+=======
+	. += to_chat(user, span_notice("Alt-click to relase Tank/Cooling unit if installed."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	for(var/obj/item/I in list(helmet,boots,tank,cooler))
 		. += "It has \a [I] installed."
 	if(tank && in_range(src,user))
@@ -230,7 +234,7 @@
 	removing.canremove = TRUE
 	H.drop_from_inventory(removing)
 
-/obj/item/clothing/suit/space/void/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/clothing/suit/space/void/attackby(obj/item/W, mob/user)
 
 	if(!istype(user,/mob/living)) return
 
@@ -243,7 +247,7 @@
 
 	if(W.has_tool_quality(TOOL_SCREWDRIVER))
 		if(helmet || boots || tank)
-			var/choice = tgui_input_list(usr, "What component would you like to remove?", "Remove Component", list(helmet,boots,tank,cooler))
+			var/choice = tgui_input_list(user, "What component would you like to remove?", "Remove Component", list(helmet,boots,tank,cooler))
 			if(!choice) return
 
 			if(choice == tank)	//No, a switch doesn't work here. Sorry. ~Techhead

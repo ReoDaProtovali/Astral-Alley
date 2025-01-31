@@ -51,7 +51,7 @@
 	last_special = world.time + 50
 
 	var/new_species = null
-	new_species = tgui_input_list(usr, "Please select a species to emulate.", "Shapeshifter Body", species.get_valid_shapeshifter_forms(src))
+	new_species = tgui_input_list(src, "Please select a species to emulate.", "Shapeshifter Body", species.get_valid_shapeshifter_forms(src))
 
 	if(!new_species || !GLOB.all_species[new_species] || wrapped_species_by_ref["\ref[src]"] == new_species)
 		return
@@ -77,7 +77,7 @@
 
 	last_special = world.time + 50
 
-	var/new_skin = input(usr, "Please select a new body color.", "Shapeshifter Colour", rgb(r_skin, g_skin, b_skin)) as null|color
+	var/new_skin = input(src, "Please select a new body color.", "Shapeshifter Colour", rgb(r_skin, g_skin, b_skin)) as null|color
 	if(!new_skin)
 		return
 	lleill_set_colour(new_skin)
@@ -145,14 +145,20 @@
 		to_chat(src, "<span class='warning'>The item is no longer in your hands.</span>")
 		return
 	else
+<<<<<<< HEAD
 		visible_message("<b>\The [src]</b> begins to change the form of \the [I].")
 		if(!do_after(usr, 10 SECONDS, I, exclusive = TASK_USER_EXCLUSIVE))
 			visible_message("<b>\The [src]</b> leaves \the [I] in its original form.")
+=======
+		visible_message(span_infoplain(span_bold("\The [src]") + " begins to change the form of \the [I]."))
+		if(!do_after(src, 10 SECONDS, I, exclusive = TASK_USER_EXCLUSIVE))
+			visible_message(span_infoplain(span_bold("\The [src]") + " leaves \the [I] in its original form."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return 0
 		visible_message("<b>\The [src]</b> transmutes \the [I] into \the [transmute_product.name].")
 		drop_item(I)
 		qdel(I)
-		var/spawnloc = get_turf(usr)
+		var/spawnloc = get_turf(src)
 		var/obj/item/N = new transmute_product(spawnloc)
 		put_in_active_hand(N)
 		LL.lleill_energy -= energy_cost
@@ -357,14 +363,20 @@
 		to_chat(src, "<span class='warning'>The item is no longer in your hands.</span>")
 		return
 	else
+<<<<<<< HEAD
 		visible_message("<b>\The [src]</b> begins to change the form of \the [I].")
 		if(!do_after(usr, 10 SECONDS, I, exclusive = TASK_USER_EXCLUSIVE))
 			visible_message("<b>\The [src]</b> leaves \the [I] in its original form.")
+=======
+		visible_message(span_infoplain(span_bold("\The [src]") + " begins to change the form of \the [I]."))
+		if(!do_after(src, 10 SECONDS, I, exclusive = TASK_USER_EXCLUSIVE))
+			visible_message(span_infoplain(span_bold("\The [src]") + " leaves \the [I] in its original form."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return 0
 		visible_message("<b>\The [src]</b> transmutes \the [I] into \the [transmute_product.name].")
 		drop_item(I)
 		qdel(I)
-		var/spawnloc = get_turf(usr)
+		var/spawnloc = get_turf(src)
 		var/obj/item/N = new transmute_product(spawnloc)
 		put_in_active_hand(N)
 		LL.lleill_energy -= energy_cost

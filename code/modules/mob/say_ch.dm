@@ -14,7 +14,7 @@
 
 	client?.start_thinking()
 	client?.start_typing()
-	var/message = tgui_input_text(usr, "Speak to people in sight.\nType your message:", "Say")
+	var/message = tgui_input_text(src, "Speak to people in sight.\nType your message:", "Say")
 	client?.stop_thinking()
 
 	if(message)
@@ -27,7 +27,7 @@
 
 	client?.start_thinking()
 	client?.start_typing()
-	var/message = tgui_input_text(usr, "Emote to people in sight (and your pred/prey).\nType your message:", "Emote", multiline = TRUE)
+	var/message = tgui_input_text(src, "Emote to people in sight (and your pred/prey).\nType your message:", "Emote", multiline = TRUE)
 	client?.stop_thinking()
 
 	if(message)
@@ -37,7 +37,7 @@
 	set name = "Whisper CH"
 	set category = "IC.Subtle"
 
-	var/message = tgui_input_text(usr, "Speak to nearby people.\nType your message:", "Whisper")
+	var/message = tgui_input_text(src, "Speak to nearby people.\nType your message:", "Whisper")
 
 	if(message)
 		whisper(message)
@@ -48,7 +48,7 @@
 	set category = "IC.Subtle"
 	set desc = "Emote to nearby people (and your pred/prey)"
 
-	var/message = tgui_input_text(usr, "Emote to nearby people (and your pred/prey).\nType your message:", "Subtle", multiline = TRUE)
+	var/message = tgui_input_text(src, "Emote to nearby people (and your pred/prey).\nType your message:", "Subtle", multiline = TRUE)
 
 	if(message)
 		me_verb_subtle(message)
@@ -58,7 +58,7 @@
 	set category = "IC.Subtle"
 	set desc = "Emote to nearby people, with ability to choose which specific portion of people you wish to target."
 
-	var/message = tgui_input_text(usr, "Emote to nearby people, with ability to choose which specific portion of people you wish to target.\nType your message:", "Subtle (Custom)", multiline = TRUE)
+	var/message = tgui_input_text(src, "Emote to nearby people, with ability to choose which specific portion of people you wish to target.\nType your message:", "Subtle (Custom)", multiline = TRUE)
 
 	if(message)
 		me_verb_subtle_custom(message)
@@ -67,7 +67,7 @@
 	set name = "Psay CH"
 	set category = "IC.Subtle"
 
-	var/message = tgui_input_text(usr, "Talk to people affected by complete absorbed or dominate predator/prey.\nType your message:", "Psay")
+	var/message = tgui_input_text(src, "Talk to people affected by complete absorbed or dominate predator/prey.\nType your message:", "Psay")
 
 	if(message)
 		psay(message)
@@ -76,7 +76,11 @@
 	set name = "Pme CH"
 	set category = "IC.Subtle"
 
+<<<<<<< HEAD:code/modules/mob/say_ch.dm
 	var/message = tgui_input_text(usr, "Emote to people affected by complete absorbed or dominate predator/prey.\nType your message:", "Psay")
+=======
+	var/message = tgui_input_text(src, "Emote to people affected by complete absorbed or dominate predator/prey.\nType your message:", "Pme")
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015)):code/modules/mob/say_old.dm
 
 	if(message)
 		pme(message)
@@ -85,7 +89,11 @@
 	set name = "Narrate (Player) CH"
 	set category = "IC.Chat"
 
+<<<<<<< HEAD:code/modules/mob/say_ch.dm
 	var/message = tgui_input_text(usr, "Narrate an action or event! An alternative to emoting, for when your emote shouldn't start with your name!\nType your message:", "Psay")
+=======
+	var/message = tgui_input_text(src, "Narrate an action or event! An alternative to emoting, for when your emote shouldn't start with your name!\nType your message:", "Narrate (Player)")
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015)):code/modules/mob/say_old.dm
 
 	if(message)
 		player_narrate(message)

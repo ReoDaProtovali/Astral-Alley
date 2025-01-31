@@ -191,12 +191,19 @@
 		if(rig)
 			. += "<span class='notice'>There is some kind of device rigged to the tank.</span>"
 
-/obj/structure/reagent_dispensers/fueltank/attack_hand()
+/obj/structure/reagent_dispensers/fueltank/attack_hand(mob/user)
 	if (rig)
+<<<<<<< HEAD
 		usr.visible_message("[usr] begins to detach [rig] from \the [src].", "You begin to detach [rig] from \the [src]")
 		if(do_after(usr, 20))
 			usr.visible_message("<span class='notice'>[usr] detaches [rig] from \the [src].</span>", "<span class='notice'>You detach [rig] from \the [src]</span>")
 			rig.loc = get_turf(usr)
+=======
+		user.visible_message("[user] begins to detach [rig] from \the [src].", "You begin to detach [rig] from \the [src]")
+		if(do_after(user, 20))
+			user.visible_message(span_notice("[user] detaches [rig] from \the [src]."), span_notice("You detach [rig] from \the [src]"))
+			rig.loc = get_turf(user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			rig = null
 			overlays = new/list()
 

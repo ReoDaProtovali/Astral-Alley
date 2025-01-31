@@ -230,7 +230,11 @@
 	if(!istype(L))
 		return
 	if(deployed_headpods)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='warning'>The HeadPods are already deployed!</span>")
+=======
+		to_chat(L, span_warning("The HeadPods are already deployed!"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 	deployed_headpods = new ()
 	L.put_in_any_hand_if_possible(deployed_headpods)
