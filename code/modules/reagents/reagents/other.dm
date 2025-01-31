@@ -284,8 +284,13 @@
 	description = "A isotope of hydrogen. It has one extra neutron, and shares all chemical characteristics with hydrogen."
 
 /datum/reagent/hydrogen/tritium
+<<<<<<< HEAD
 	name = "Tritium"
 	id = "tritium"
+=======
+	name = REAGENT_TRITIUM
+	id = REAGENT_ID_TRITIUM
+>>>>>>> 782cc41cd1 ([MIRROR] Makes tritium no longer slime jelly (#9988))
 	description = "A radioactive isotope of hydrogen. It has two extra neutrons, and shares all other chemical characteristics with hydrogen."
 
 /datum/reagent/lithium/lithium6
