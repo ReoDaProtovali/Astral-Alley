@@ -85,21 +85,35 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	if(Adjacent(user))
 		. += "The time [stationtime2text()] is displayed in the corner of the screen."
 
+<<<<<<< HEAD
 /obj/item/device/pda/CtrlClick()
 	if(can_use(usr) && !issilicon(usr))
+=======
+/obj/item/pda/CtrlClick(mob/user)
+	if(can_use(user) && !issilicon(user))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		remove_pen()
 		return
 	..()
 
+<<<<<<< HEAD
 /obj/item/device/pda/AltClick()
 	if(issilicon(usr))
+=======
+/obj/item/pda/AltClick(mob/user)
+	if(issilicon(user))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
-	if ( can_use(usr) )
+	if ( can_use(user) )
 		if(id)
 			remove_id()
 		else
+<<<<<<< HEAD
 			to_chat(usr, "<span class='notice'>This PDA does not have an ID in it.</span>")
+=======
+			to_chat(user, span_notice("This PDA does not have an ID in it."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 /obj/item/device/pda/proc/play_ringtone()
 	var/S
@@ -112,19 +126,25 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	for(var/mob/O in hearers(3, loc))
 		O.show_message(text("[icon2html(src, O.client)] *[ttone]*"))
 
+<<<<<<< HEAD
 /obj/item/device/pda/proc/set_ringtone()
 	var/t = tgui_input_text(usr, "Please enter new ringtone", name, ttone)
 	if(in_range(src, usr) && loc == usr)
+=======
+/obj/item/pda/proc/set_ringtone(mob/user)
+	var/t = tgui_input_text(user, "Please enter new ringtone", name, ttone)
+	if(in_range(src, user) && loc == user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(t)
-			if(hidden_uplink && hidden_uplink.check_trigger(usr, lowertext(t), lowertext(lock_code)))
-				to_chat(usr, "The PDA softly beeps.")
-				close(usr)
+			if(hidden_uplink && hidden_uplink.check_trigger(user, lowertext(t), lowertext(lock_code)))
+				to_chat(user, "The PDA softly beeps.")
+				close(user)
 			else
 				t = sanitize(copytext(t, 1, 20))
 				ttone = t
 			return 1
 	else
-		close(usr)
+		close(user)
 	return 0
 
 /obj/item/device/pda/New(var/mob/living/carbon/human/H)
@@ -430,7 +450,11 @@ var/global/list/obj/item/device/pda/PDAs = list()
 	return 0
 
 // access to status display signals
+<<<<<<< HEAD
 /obj/item/device/pda/attackby(obj/item/C as obj, mob/user as mob)
+=======
+/obj/item/pda/attackby(obj/item/C as obj, mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	..()
 	if(istype(C, /obj/item/weapon/cartridge) && !cartridge)
 		cartridge = C
@@ -438,7 +462,11 @@ var/global/list/obj/item/device/pda/PDAs = list()
 		cartridge.loc = src
 		cartridge.update_programs(src)
 		update_shortcuts()
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>You insert [cartridge] into [src].</span>")
+=======
+		to_chat(user, span_notice("You insert [cartridge] into [src]."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(cartridge.radio)
 			cartridge.radio.hostpda = src
 

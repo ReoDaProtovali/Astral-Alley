@@ -353,21 +353,25 @@ BLIND     // can't see anything
 	icon_state = "salesman"
 	var/ar = 0
 
-/obj/item/clothing/glasses/sunglasses/bigshot/examine(mob/user as mob)
+/obj/item/clothing/glasses/sunglasses/bigshot/examine(mob/user)
 	. = ..()
+<<<<<<< HEAD
 	. += to_chat(usr, "<span class='notice'>Alt-click to toggle modes.</span>")
+=======
+	. += to_chat(user, span_notice("Alt-click to toggle modes."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
-/obj/item/clothing/glasses/sunglasses/bigshot/AltClick()
+/obj/item/clothing/glasses/sunglasses/bigshot/AltClick(mob/user)
 	set src in usr
-	if(usr.canmove && !usr.stat && !usr.restrained())
+	if(user.canmove && !user.stat && !user.restrained())
 		if(src.ar)
 			src.ar = !src.ar
 			icon_state = initial(icon_state)
-			to_chat(usr, "You press a small button on \the [src] and deactivate the AR mode.")
+			to_chat(user, "You press a small button on \the [src] and deactivate the AR mode.")
 		else
 			src.ar = !src.ar
 			icon_state = "[initial(icon_state)]_fzz"
-			to_chat(usr, "You press a small button on \the [src] and activate the AR mode.")
+			to_chat(user, "You press a small button on \the [src] and activate the AR mode.")
 		update_clothing_icon()
 
 /obj/item/clothing/glasses/welding
@@ -493,12 +497,12 @@ BLIND     // can't see anything
 			flash_protection = FLASH_PROTECTION_NONE
 			enables_planes = away_planes
 			away_planes = null
-			to_chat(usr, "You switch the [src] to HUD mode.")
+			to_chat(user, "You switch the [src] to HUD mode.")
 		else
 			flash_protection = initial(flash_protection)
 			away_planes = enables_planes
 			enables_planes = null
-			to_chat(usr, "You switch \the [src] to flash protection mode.")
+			to_chat(user, "You switch \the [src] to flash protection mode.")
 		update_icon()
 		user << activation_sound
 		user.recalculate_vis()

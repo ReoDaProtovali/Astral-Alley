@@ -21,9 +21,9 @@
 
 	client?.stop_thinking()
 	if(use_me)
-		usr.emote_vr("me",4,message)
+		emote_vr("me",4,message)
 	else
-		usr.emote_vr(message)
+		emote_vr(message)
 
 /mob/verb/me_verb_subtle_custom(message as message) // Literally same as above but with mode_selection set to true //CHOMPEdit
 	set name = "Subtle (Custom)"
@@ -43,9 +43,9 @@
 
 	client?.stop_thinking()
 	if(use_me)
-		usr.emote_vr("me",4,message,TRUE)
+		emote_vr("me",4,message,TRUE)
 	else
-		usr.emote_vr(message)
+		emote_vr(message)
 
 /mob/proc/custom_emote_vr(var/m_type=1,var/message = null,var/mode_selection = FALSE) //This would normally go in emote.dm
 	if(stat || !use_me && usr == src)
@@ -270,7 +270,7 @@
 			to_chat(src, "<span class='warning'>You cannot speak in IC (muted).</span>")
 			return
 	if (!message)
-		message = tgui_input_text(usr, "Type a message to say.","Psay")
+		message = tgui_input_text(src, "Type a message to say.","Psay")
 	message = sanitize_or_reflect(message,src)
 	if (!message)
 		return
@@ -376,7 +376,7 @@
 			to_chat(src, "<span class='warning'>You cannot speak in IC (muted).</span>")
 			return
 	if (!message)
-		message = tgui_input_text(usr, "Type a message to emote.","Pme")
+		message = tgui_input_text(src, "Type a message to emote.","Pme")
 	message = sanitize_or_reflect(message,src)
 	if (!message)
 		return
@@ -480,7 +480,7 @@
 			to_chat(src, "<span class='warning'>You cannot speak in IC (muted).</span>")
 			return
 	if(!message)
-		message = tgui_input_text(usr, "Type a message to narrate.","Narrate")
+		message = tgui_input_text(src, "Type a message to narrate.","Narrate")
 	message = sanitize_or_reflect(message,src)
 	if(!message)
 		return

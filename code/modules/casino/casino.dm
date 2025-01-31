@@ -19,7 +19,7 @@
 
 	var/busy = 0
 
-/obj/structure/casino_table/attackby(obj/item/W as obj, mob/user as mob)
+/obj/structure/casino_table/attackby(obj/item/W, mob/user)
 	if(item_place)
 		user.drop_item(src.loc)
 	return
@@ -47,7 +47,7 @@
 	else
 		. += "It doesn't have a ball."
 
-/obj/structure/casino_table/roulette_table/attack_hand(mob/user as mob)
+/obj/structure/casino_table/roulette_table/attack_hand(mob/user)
 	if(busy)
 		to_chat(user,"<span class='notice'>You cannot spin now! The roulette is already spinning.</span> ")
 		return
@@ -83,18 +83,24 @@
 
 		//CHOMPAdd Start
 		if(color=="gold") // Happy celebrations!
+<<<<<<< HEAD
 			visible_message("<span class='notice'>The roulette stops spinning, the ball lands on the golden zero! Fortune favors all bets!</span>")
 			src.confetti_spread = new /datum/effect/effect/system/confetti_spread()
 			src.confetti_spread.attach(src) //If somehow people start dragging roulette
+=======
+			visible_message(span_notice("The roulette stops spinning, the ball lands on the golden zero! Fortune favors all bets!"))
+			confetti_spread = new /datum/effect/effect/system/confetti_spread()
+			confetti_spread.attach(src) //If somehow people start dragging roulette
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			spawn(0)
 				for(var/i = 1 to confetti_strength)
-					src.confetti_spread.start()
+					confetti_spread.start()
 					sleep(10)
 		else
 			visible_message("<span class='notice'>The roulette stops spinning, the ball landing on [result], [color].</span>")
 		//CHOMPAdd End
 
-/obj/structure/casino_table/roulette_table/attackby(obj/item/W as obj, mob/user as mob)
+/obj/structure/casino_table/roulette_table/attackby(obj/item/W, mob/user)
 	if(istype(W, /obj/item/roulette_ball))
 		if(!ball)
 			user.drop_from_inventory(W)
@@ -262,7 +268,7 @@
 	else
 		icon_state = "roulette_ball_glass"
 
-/obj/item/roulette_ball/hollow/attack_self(mob/user as mob)
+/obj/item/roulette_ball/hollow/attack_self(mob/user)
 	if(!trapped)
 		to_chat(user, "<span class='notice'>\The [src] is empty!</span>")
 		return
@@ -394,14 +400,18 @@
 	var/confetti_strength = 15
 
 
-/obj/machinery/wheel_of_fortune/attack_hand(mob/user as mob)
+/obj/machinery/wheel_of_fortune/attack_hand(mob/user)
 	if (busy)
 		to_chat(user,"<span class='notice'>The wheel of fortune is already spinning!</span> ")
 		return
 
-	if(usr.incapacitated())
+	if(user.incapacitated())
 		return
+<<<<<<< HEAD
 	if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+=======
+	if(ishuman(user) || isrobot(user))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		switch(input(user,"Choose what to do","Wheel Of Fortune") in list("Spin the Wheel! (Not Lottery)", "Set the interval", "Cancel"))
 			if("Cancel")
 				return
@@ -416,12 +426,16 @@
 				setinterval()
 
 
+<<<<<<< HEAD
 /obj/machinery/wheel_of_fortune/attackby(obj/item/weapon/W as obj, mob/user as mob)
+=======
+/obj/machinery/wheel_of_fortune/attackby(obj/item/W, mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if (busy)
 		to_chat(user,"<span class='notice'>The wheel of fortune is already spinning!</span> ")
 		return
 
-	if(usr.incapacitated())
+	if(user.incapacitated())
 		return
 
 	if(istype(W, /obj/item/weapon/card/id)||istype(W, /obj/item/device/pda))
@@ -429,8 +443,13 @@
 			to_chat(user, "<span class='warning'>Access Denied.</span>")
 			return
 		else
+<<<<<<< HEAD
 			to_chat(user, "<span class='warning'>Proper access, allowed staff controls.</span>")
 			if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+=======
+			to_chat(user, span_warning("Proper access, allowed staff controls."))
+			if(ishuman(user) || isrobot(user))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 				switch(input(user,"Choose what to do (Management)","Wheel Of Fortune (Management)") in list("Spin the Lottery Wheel!", "Toggle Lottery Sales", "Toggle Public Spins", "Reset Lottery", "Cancel"))
 					if("Cancel")
 						return
@@ -455,7 +474,7 @@
 							to_chat(user,"<span class='notice'>Public spins has been disabled.</span> ")
 
 					if("Reset Lottery")
-						var/confirm = tgui_alert(usr, "Are you sure you want to reset Lottery?", "Confirm Lottery Reset", list("Yes", "No"))
+						var/confirm = tgui_alert(user, "Are you sure you want to reset Lottery?", "Confirm Lottery Reset", list("Yes", "No"))
 						if(confirm == "Yes")
 							to_chat(user, "<span class='warning'>Lottery has been Reset!</span>")
 							lottery_entries = 0
@@ -487,7 +506,7 @@
 	cashmoney.update_icon()
 
 	if(cashmoney.worth <= 0)
-		usr.drop_from_inventory(cashmoney)
+		user.drop_from_inventory(cashmoney)
 		qdel(cashmoney)
 		cashmoney.update_icon()
 
@@ -571,14 +590,18 @@
 	var/sentientprizes_ckeys_list = list() //Same trick as lottery, to keep life simple
 	var/obj/item/clothing/accessory/collar/casinosentientprize/selected_collar = null
 
-/obj/machinery/casinosentientprize_handler/attack_hand(mob/living/user as mob)
-	if(usr.incapacitated())
+/obj/machinery/casinosentientprize_handler/attack_hand(mob/living/user)
+	if(user.incapacitated())
 		return
 	if(casinosentientprize_sale == "disabled")
 		to_chat(user,"<span class='notice'>The SPASM is disabled.</span> ")
 		return
 
+<<<<<<< HEAD
 	if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+=======
+	if(ishuman(user) || isrobot(user))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		switch(input(user,"Choose what to do","SPASM") in list("Show selected Prize", "Select Prize", "Become Prize (Please examine yourself first)", "Cancel"))
 			if("Cancel")
 				return
@@ -611,7 +634,12 @@
 				if(safety_ckey in sentientprizes_ckeys_list)
 					to_chat(user, "<span class='warning'>The SPASM beeps in an upset manner, you already have a collar!</span>")
 					return
+<<<<<<< HEAD
 				var/confirm = tgui_alert(usr, "Are you sure you want to become a sentient prize?", "Confirm Sentient Prize", list("Yes", "No"))
+=======
+				var/confirm = tgui_alert(user, "Are you sure you want to become a sentient prize?", "Confirm Sentient Prize", list("Yes", "No"))
+				//CHOMPEdit Start
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 				if(confirm == "Yes")
 					to_chat(user, "<span class='warning'>You are now a prize!</span>")
 				//CHOMPAdd Start
@@ -638,8 +666,13 @@
 
 				spawn_casinochips(casinosentientprize_price, src.loc)
 
+<<<<<<< HEAD
 /obj/machinery/casinosentientprize_handler/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(usr.incapacitated())
+=======
+/obj/machinery/casinosentientprize_handler/attackby(obj/item/W, mob/user)
+	if(user.incapacitated())
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	if(istype(W, /obj/item/weapon/spacecasinocash))
@@ -674,7 +707,7 @@
 				to_chat(user,"<span class='notice'>If collar isn't disabled and entry removed, please ask your owner to free you with collar swipe on the SPASM, or contact staff if you need assistance.</span> ")
 				return
 		if(user.name == C.ownername)
-			var/confirm = tgui_alert(usr, "Are you sure you want to wipe [C.sentientprizename] entry?", "Confirm Sentient Prize Release", list("Yes", "No"))
+			var/confirm = tgui_alert(user, "Are you sure you want to wipe [C.sentientprizename] entry?", "Confirm Sentient Prize Release", list("Yes", "No"))
 			if(confirm == "Yes")
 				to_chat(user, "<span class='warning'>[C.sentientprizename] collar has been deleted from registry!</span>")
 				C.icon_state = "casinoslave"
@@ -690,8 +723,13 @@
 			to_chat(user, "<span class='warning'>Access Denied.</span>")
 			return
 		else
+<<<<<<< HEAD
 			to_chat(user, "<span class='warning'>Proper access, allowed staff controls.</span>")
 			if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
+=======
+			to_chat(user, span_warning("Proper access, allowed staff controls."))
+			if(ishuman(user) || isrobot(user))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 				switch(input(user,"Choose what to do (Management)","SPASM (Management)") in list("Toggle Sentient Prize Sales", "Wipe Selected Prize Entry", "Change Prize Value", "Cancel"))
 					if("Cancel")
 						return
@@ -719,7 +757,7 @@
 							selected_collar = null
 							return
 						var/safety_ckey = selected_collar.sentientprizeckey
-						var/confirm = tgui_alert(usr, "Are you sure you want to wipe [selected_collar.sentientprizename] entry?", "Confirm Sentient Prize", list("Yes", "No"))
+						var/confirm = tgui_alert(user, "Are you sure you want to wipe [selected_collar.sentientprizename] entry?", "Confirm Sentient Prize", list("Yes", "No"))
 						if(confirm == "Yes")
 							if(safety_ckey == selected_collar.sentientprizeckey)
 								to_chat(user, "<span class='warning'>[selected_collar.sentientprizename] collar has been deleted from registry!</span>")
@@ -747,7 +785,7 @@
 	cashmoney.update_icon()
 
 	if(cashmoney.worth <= 0)
-		usr.drop_from_inventory(cashmoney)
+		user.drop_from_inventory(cashmoney)
 		qdel(cashmoney)
 		cashmoney.update_icon()
 
@@ -771,11 +809,16 @@
 		selected_collar.desc = "A collar worn by sentient prizes on the Golden Goose Casino. The tag says its registered to [selected_collar.sentientprizename] and they are owned by [selected_collar.ownername]." //CHOMPEdit
 		selected_collar = null
 
-/obj/machinery/casinosentientprize_handler/proc/setprice(mob/living/user as mob)
-	if(usr.incapacitated())
+/obj/machinery/casinosentientprize_handler/proc/setprice(mob/living/user)
+	if(user.incapacitated())
 		return
+<<<<<<< HEAD
 	if(ishuman(usr) || istype(usr, /mob/living/silicon/robot))
 		casinosentientprize_price = tgui_input_number(usr, "Select the desired price (1-1000)", "Set Price", null, null, 1000, 1)
+=======
+	if(ishuman(user) || isrobot(user))
+		casinosentientprize_price = tgui_input_number(user, "Select the desired price (1-1000)", "Set Price", null, null, 1000, 1)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(casinosentientprize_price>1000 || casinosentientprize_price<1)
 			to_chat(user,"<span class='notice'>Invalid price.</span> ")
 			return

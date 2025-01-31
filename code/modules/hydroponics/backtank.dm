@@ -86,8 +86,13 @@
 	if(!slot_check())
 		to_chat(user, "<span class='warning'>You need to equip [src] before taking out [noz].</span>")
 	else
+<<<<<<< HEAD
 		if(!usr.put_in_hands(noz)) //Detach the handset into the user's hands
 			to_chat(user, "<span class='warning'>You need a free hand to hold the handset!</span>")
+=======
+		if(!user.put_in_hands(noz)) //Detach the handset into the user's hands
+			to_chat(user, span_warning("You need a free hand to hold the handset!"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		update_icon() //success
 
 /obj/item/weapon/watertank/proc/make_noz()

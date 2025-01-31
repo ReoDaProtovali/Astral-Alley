@@ -16,7 +16,7 @@
 	var/mob/living/L = over
 	var/confirm = tgui_alert(L, "You COULD eat this spaceship...", "Eat spaceship?", list("Eat it!", "No, thanks."))
 	if(confirm == "Eat it!")
-		var/obj/belly/bellychoice = tgui_input_list(usr, "Which belly?","Select A Belly", L.vore_organs)
+		var/obj/belly/bellychoice = tgui_input_list(L, "Which belly?","Select A Belly", L.vore_organs)
 		if(bellychoice)
 			L.visible_message("<span class='warning'>[L] is trying to stuff \the [src] into [L.gender == MALE ? "his" : L.gender == FEMALE ? "her" : "their"] [bellychoice]!</span>","<span class='notice'>You begin putting \the [src] into your [bellychoice]!</span>")
 			if(do_after(L, 5 SECONDS, src, exclusive = TASK_ALL_EXCLUSIVE))

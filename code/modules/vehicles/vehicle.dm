@@ -303,7 +303,11 @@
 	C.forceMove(src)
 	cell = C
 	powercheck()
+<<<<<<< HEAD
 	to_chat(usr, "<span class='notice'>You install [C] in [src].</span>")
+=======
+	to_chat(H, span_notice("You install [C] in [src]."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 /obj/vehicle/proc/remove_cell(var/mob/living/carbon/human/H)
 	if(!mechanical)
@@ -311,7 +315,11 @@
 	if(!cell)
 		return
 
+<<<<<<< HEAD
 	to_chat(usr, "<span class='notice'>You remove [cell] from [src].</span>")
+=======
+	to_chat(H, span_notice("You remove [cell] from [src]."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	cell.forceMove(get_turf(H))
 	H.put_in_hands(cell)
 	cell = null

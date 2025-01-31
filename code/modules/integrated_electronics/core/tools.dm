@@ -113,8 +113,13 @@
 	var/data_to_write = null
 	var/accepting_refs = 0
 
+<<<<<<< HEAD
 /obj/item/device/integrated_electronics/debugger/attack_self(mob/user)
 	var/type_to_use = tgui_input_list(usr, "Please choose a type to use.","[src] type setting", list("string","number","ref", "null"))
+=======
+/obj/item/integrated_electronics/debugger/attack_self(mob/user)
+	var/type_to_use = tgui_input_list(user, "Please choose a type to use.","[src] type setting", list("string","number","ref", "null"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(!CanInteract(user, GLOB.tgui_physical_state))
 		return
 
@@ -122,14 +127,14 @@
 	switch(type_to_use)
 		if("string")
 			accepting_refs = 0
-			new_data = tgui_input_text(usr, "Now type in a string.","[src] string writing", null, MAX_MESSAGE_LEN)
+			new_data = tgui_input_text(user, "Now type in a string.","[src] string writing", null, MAX_MESSAGE_LEN)
 			new_data = sanitizeSafe(new_data, MAX_MESSAGE_LEN, 0, 0)
 			if(istext(new_data) && CanInteract(user, GLOB.tgui_physical_state))
 				data_to_write = new_data
 				to_chat(user, "<span class='notice'>You set \the [src]'s memory to \"[new_data]\".</span>")
 		if("number")
 			accepting_refs = 0
-			new_data = tgui_input_number(usr, "Now type in a number.","[src] number writing", min_value=-INFINITY, round_value=FALSE)
+			new_data = tgui_input_number(user, "Now type in a number.","[src] number writing", min_value=-INFINITY, round_value=FALSE)
 			if(isnum(new_data) && CanInteract(user, GLOB.tgui_physical_state))
 				data_to_write = new_data
 				to_chat(user, "<span class='notice'>You set \the [src]'s memory to [new_data].</span>")

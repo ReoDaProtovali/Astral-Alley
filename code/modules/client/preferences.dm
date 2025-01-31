@@ -349,7 +349,7 @@ var/list/preferences_datums = list()
 		else
 			to_chat(user, "<span class='danger'>The forum URL is not set in the server configuration.</span>")
 			return
-	ShowChoices(user) //ChompEDIT - usr removal
+	ShowChoices(user)
 	return 1
 
 /datum/preferences/Topic(href, list/href_list)

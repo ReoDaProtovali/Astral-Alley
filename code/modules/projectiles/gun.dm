@@ -108,8 +108,13 @@
 	var/flight_x_offset = 0
 	var/flight_y_offset = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/CtrlClick(mob/user)
 	if(can_flashlight && ishuman(user) && src.loc == usr && !user.incapacitated(INCAPACITATION_ALL))
+=======
+/obj/item/gun/CtrlClick(mob/user)
+	if(can_flashlight && ishuman(user) && loc == user && !user.incapacitated(INCAPACITATION_ALL))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		toggle_flashlight()
 	else
 		return ..()

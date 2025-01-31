@@ -193,7 +193,11 @@
 
 /obj/item/weapon/gun/energy/staff/special_check(var/mob/user)
 	if((user.mind && !wizards.is_antagonist(user.mind)))
+<<<<<<< HEAD
 		to_chat(usr, "<span class='warning'>You focus your mind on \the [src], but nothing happens!</span>")
+=======
+		to_chat(user, span_warning("You focus your mind on \the [src], but nothing happens!"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return 0
 
 	return ..()

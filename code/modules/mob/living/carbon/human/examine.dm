@@ -289,9 +289,15 @@
 	if (src.stat)
 		msg += "<span class='warning'>[T.He] [T.is]n't responding to anything around [T.him] and seems to be asleep.</span>"
 		if((stat == 2 || src.losebreath) && get_dist(user, src) <= 3)
+<<<<<<< HEAD
 			msg += "<span class='warning'>[T.He] [T.does] not appear to be breathing.</span>"
 		if(istype(user, /mob/living/carbon/human) && !user.stat && Adjacent(user))
 			user.visible_message("<b>[usr]</b> checks [src]'s pulse.", "You check [src]'s pulse.")
+=======
+			msg += span_warning("[T.He] [T.does] not appear to be breathing.")
+		if(ishuman(user) && !user.stat && Adjacent(user))
+			user.visible_message(span_infoplain(span_bold("[user]") + " checks [src]'s pulse."), span_infoplain("You check [src]'s pulse."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		spawn(15)
 			if(isobserver(user) || (Adjacent(user) && !user.stat)) // If you're a corpse then you can't exactly check their pulse, but ghosts can see anything
 				if(pulse == PULSE_NONE)

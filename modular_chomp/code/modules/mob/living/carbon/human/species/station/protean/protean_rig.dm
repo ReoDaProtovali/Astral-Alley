@@ -234,7 +234,11 @@
 	default_worn_icon = 'modular_chomp/icons/mob/spacesuit_ch.dmi'
 
 //Copy pasted most of this proc from base because I don't feel like rewriting the base proc with a shit load of exceptions
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/carbon/human/species/station/protean/protean_rig.dm
 /obj/item/weapon/rig/protean/attackby(obj/item/W as obj, mob/living/user as mob)
+=======
+/obj/item/rig/protean/attackby(obj/item/W, mob/living/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015)):code/modules/mob/living/carbon/human/species/station/protean_vr/protean_rig.dm
 	if(!istype(user))
 		return 0
 	if(dead)
@@ -338,7 +342,7 @@
 			to_chat(user, "There are no installed modules to remove.")
 			return
 
-		var/removal_choice = tgui_input_list(usr, "Which module would you like to remove?", "Removal Choice", possible_removals)
+		var/removal_choice = tgui_input_list(user, "Which module would you like to remove?", "Removal Choice", possible_removals)
 		if(!removal_choice)
 			return
 

@@ -161,9 +161,13 @@
 		return //no eating the limb until everything's been removed
 	return ..()
 
-/obj/item/organ/external/examine()
+/obj/item/organ/external/examine(mob/user)
 	. = ..()
+<<<<<<< HEAD
 	if(in_range(usr, src) || istype(usr, /mob/observer/dead))
+=======
+	if(in_range(user, src) || isobserver(user))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		for(var/obj/item/I in contents)
 			if(istype(I, /obj/item/organ))
 				continue

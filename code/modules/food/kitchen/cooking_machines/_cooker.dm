@@ -56,6 +56,18 @@
 		return TRUE
 
 	switch(action)
+<<<<<<< HEAD
+=======
+		if("toggle_power")
+			attempt_toggle_power(ui.user)
+			return TRUE
+		if("toggle_safety")
+			toggle_safety()
+			return TRUE
+		if("change_output")
+			choose_output()
+			return TRUE
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if("slot")
 			var/slot = params["slot"]
 			var/obj/item/I = usr.get_active_hand()

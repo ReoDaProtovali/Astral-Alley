@@ -42,7 +42,7 @@ var/global/list/datum/stack_recipe/rods_recipes = list( \
 	new/datum/stack_recipe("grille", /obj/structure/grille, 2, time = 10, one_per_turf = 1, on_floor = 0),
 	new/datum/stack_recipe("catwalk", /obj/structure/catwalk, 2, time = 80, one_per_turf = 1, on_floor = 1))
 
-/obj/item/stack/rods/attackby(obj/item/W as obj, mob/user as mob)
+/obj/item/stack/rods/attackby(obj/item/W, mob/user)
 	if(W.has_tool_quality(TOOL_WELDER))
 		var/obj/item/weapon/weldingtool/WT = W.get_welder()
 
@@ -51,8 +51,8 @@ var/global/list/datum/stack_recipe/rods_recipes = list( \
 			return
 
 		if(WT.remove_fuel(0,user))
-			var/obj/item/stack/material/steel/new_item = new(usr.loc)
-			new_item.add_to_stacks(usr)
+			var/obj/item/stack/material/steel/new_item = new(user.loc)
+			new_item.add_to_stacks(user)
 			for (var/mob/M in viewers(src))
 				M.show_message("<span class='notice'>[src] is shaped into metal by [user.name] with the weldingtool.</span>", 3, "<span class='notice'>You hear welding.</span>", 2)
 			var/obj/item/stack/rods/R = src
@@ -75,13 +75,13 @@ var/global/list/datum/stack_recipe/rods_recipes = list( \
 	..()
 
 /*
-/obj/item/stack/rods/attack_self(mob/user as mob)
+/obj/item/stack/rods/attack_self(mob/user)
 	src.add_fingerprint(user)
 
 	if(!istype(user.loc,/turf)) return 0
 
-	if (locate(/obj/structure/grille, usr.loc))
-		for(var/obj/structure/grille/G in usr.loc)
+	if (locate(/obj/structure/grille, user.loc))
+		for(var/obj/structure/grille/G in user.loc)
 			if (G.destroyed)
 				G.health = 10
 				G.density = TRUE
@@ -95,15 +95,24 @@ var/global/list/datum/stack_recipe/rods_recipes = list( \
 		if(get_amount() < 2)
 			to_chat(user, "<span class='warning'>You need at least two rods to do this.</span>")
 			return
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>Assembling grille...</span>")
+=======
+		to_chat(user, span_notice("Assembling grille..."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		in_use = 1
-		if (!do_after(usr, 10))
+		if (!do_after(user, 10))
 			in_use = 0
 			return
+<<<<<<< HEAD
 		var/obj/structure/grille/F = new /obj/structure/grille/ ( usr.loc )
 		to_chat(usr, "<span class='notice'>You assemble a grille</span>")
+=======
+		var/obj/structure/grille/F = new /obj/structure/grille/ ( user.loc )
+		to_chat(user, span_notice("You assemble a grille"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		in_use = 0
-		F.add_fingerprint(usr)
+		F.add_fingerprint(user)
 		use(2)
 	return
 */

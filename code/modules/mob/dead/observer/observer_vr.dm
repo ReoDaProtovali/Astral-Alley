@@ -3,7 +3,7 @@
 	set name = "Join Into Soulcatcher"
 	set desc = "Select a player with a working NIF + Soulcatcher NIFSoft to join into it."
 
-	var/picked = tgui_input_list(usr, "Pick a friend with NIF and Soulcatcher to join into. Harrass strangers, get banned. Not everyone has a NIF w/ Soulcatcher.","Select a player", player_list)
+	var/picked = tgui_input_list(src, "Pick a friend with NIF and Soulcatcher to join into. Harrass strangers, get banned. Not everyone has a NIF w/ Soulcatcher.","Select a player", player_list)
 
 	//Didn't pick anyone or picked a null
 	if(!picked)
@@ -110,10 +110,14 @@
 	set desc = "Find an active ghost pod"
 	set popup_menu = FALSE
 
+<<<<<<< HEAD
 	if(!istype(usr, /mob/observer/dead)) //Make sure they're an observer!
+=======
+	if(!isobserver(src)) //Make sure they're an observer!
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
-	var/input = tgui_input_list(usr, "Select a ghost pod:", "Ghost Jump", observe_list_format(active_ghost_pods))
+	var/input = tgui_input_list(src, "Select a ghost pod:", "Ghost Jump", observe_list_format(active_ghost_pods))
 	if(!input)
 		to_chat(src, "<span class='filter_notice'>No active ghost pods detected.</span>")
 		return
@@ -137,7 +141,11 @@
 	set desc = "Find a Auto Resleever"
 	set popup_menu = FALSE
 
+<<<<<<< HEAD
 	if(!istype(usr, /mob/observer/dead)) //Make sure they're an observer!
+=======
+	if(!isobserver(src)) //Make sure they're an observer!
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	var/list/ar = list()

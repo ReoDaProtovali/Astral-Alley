@@ -239,7 +239,7 @@
 		to_chat(src, span("alium","We are too tired to do this..."))
 		return
 
-	do_infest(usr)
+	do_infest(src)
 
 /mob/living/simple_mob/animal/sif/leech/proc/do_infest(var/mob/living/user, var/mob/living/target = null)
 	if(host)
@@ -366,7 +366,7 @@
 	if(!M || stat)
 		return
 
-	poison_inject(usr, M)
+	poison_inject(src, M)
 
 /mob/living/simple_mob/animal/sif/leech/proc/poison_inject(var/mob/living/user, var/mob/living/carbon/L)
 	if(!L || !Adjacent(L) || stat)
@@ -399,11 +399,15 @@
 		return
 
 	if(!host || chemicals <= 50)
+<<<<<<< HEAD
 		to_chat(usr, span("alien","We cannot produce any chemicals right now."))
+=======
+		to_chat(src, span_alien("We cannot produce any chemicals right now."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	if(host)
-		var/chem = tgui_input_list(usr, "Select a chemical to produce.", "Chemicals", produceable_chemicals)
+		var/chem = tgui_input_list(src, "Select a chemical to produce.", "Chemicals", produceable_chemicals)
 		inject_meds(chem)
 
 /mob/living/simple_mob/animal/sif/leech/proc/inject_meds(var/chem)
@@ -430,7 +434,7 @@
 
 		var/target
 		if(client)
-			target = tgui_input_list(usr, "Select an organ to feed on.", "Organs", host_internal_organs)
+			target = tgui_input_list(src, "Select an organ to feed on.", "Organs", host_internal_organs)
 			if(!target)
 				to_chat(src, span("alien","We decide not to feed."))
 				return

@@ -71,7 +71,11 @@
 	playsound(src, 'sound/weapons/targeton.ogg', 50, 1)
 	user.update_action_buttons()
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/shotgun/compact/verb/verb_toggle_stock(mob/user as mob)
+=======
+/obj/item/gun/projectile/shotgun/compact/verb/verb_toggle_stock()
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	set category = "Object"
 	set name = "Toggle stock"
 	set src in usr
@@ -85,14 +89,23 @@
 		to_chat(usr, "<span class='notice'>You cannot do this in your current state.</span>")
 
 
+<<<<<<< HEAD
 /obj/item/weapon/gun/projectile/shotgun/compact/attack_self(mob/user as mob)
 	if(issilicon(usr))
+=======
+/obj/item/gun/projectile/shotgun/compact/attack_self(mob/user)
+	if(issilicon(user))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
-	if (isliving(usr))
+	if (isliving(user))
 		toggle_stock()
 	else
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>You cannot do this in your current state.</span>")
+=======
+		to_chat(user, span_notice("You cannot do this in your current state."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 /obj/item/weapon/gun/projectile/shotgun/compact/ui_action_click()
 	var/mob/living/user = loc

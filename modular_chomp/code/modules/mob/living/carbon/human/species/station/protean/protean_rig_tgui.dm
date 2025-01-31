@@ -87,7 +87,11 @@ So here it sits, snowflake code for a single item.
 
 	return data
 /*
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/carbon/human/species/station/protean/protean_rig_tgui.dm
 /obj/item/weapon/rig/protean/tgui_act(action, params)
+=======
+/obj/item/rig/protean/tgui_act(action, params, datum/tgui/ui)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015)):code/modules/mob/living/carbon/human/species/station/protean_vr/protean_rig_tgui.dm
 	switch(action)
 		if("toggle_seals")
 			toggle_seals(wearer)
@@ -96,7 +100,11 @@ So here it sits, snowflake code for a single item.
 			toggle_cooling(wearer)
 			. = TRUE
 		if("toggle_ai_control")
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/carbon/human/species/station/protean/protean_rig_tgui.dm
 			to_chat(usr, "<span class='notice'>Proteans cannot be AI controlled.</span>")
+=======
+			to_chat(ui.user, span_notice("Proteans cannot be AI controlled."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015)):code/modules/mob/living/carbon/human/species/station/protean_vr/protean_rig_tgui.dm
 			. = TRUE
 		if("toggle_suit_lock")
 			locked = !locked

@@ -99,7 +99,11 @@
 	else
 		user << browse(null,"window=eftpos")
 
+<<<<<<< HEAD
 /obj/item/device/eftpos/attackby(obj/item/O as obj, user as mob)
+=======
+/obj/item/eftpos/attackby(obj/item/O, mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 	var/obj/item/weapon/card/id/I = O.GetID()
 
@@ -107,9 +111,15 @@
 		if(linked_account)
 			scan_card(I, O)
 		else
+<<<<<<< HEAD
 			to_chat(usr, "[icon2html(src, usr.client)]<span class='warning'>Unable to connect to linked account.</span>")
 	else if (istype(O, /obj/item/weapon/spacecash/ewallet))
 		var/obj/item/weapon/spacecash/ewallet/E = O
+=======
+			to_chat(user, "[icon2html(src, user.client)]" + span_warning("Unable to connect to linked account."))
+	else if (istype(O, /obj/item/spacecash/ewallet))
+		var/obj/item/spacecash/ewallet/E = O
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if (linked_account)
 			if(!linked_account.suspended)
 				if(transaction_locked && !transaction_paid)
@@ -132,11 +142,19 @@
 						T.time = stationtime2text()
 						linked_account.transaction_log.Add(T)
 					else
+<<<<<<< HEAD
 						to_chat(usr, "[icon2html(src, usr.client)]<span class='warning'>\The [O] doesn't have that much money!</span>")
 			else
 				to_chat(usr, "[icon2html(src, usr.client)]<span class='warning'>Connected account has been suspended.</span>")
 		else
 			to_chat(usr, "[icon2html(src, usr.client)]<span class='warning'>EFTPOS is not connected to an account.</span>")
+=======
+						to_chat(user, "[icon2html(src, user.client)]" + span_warning("\The [O] doesn't have that much money!"))
+			else
+				to_chat(user, "[icon2html(src, user.client)]" + span_warning("Connected account has been suspended."))
+		else
+			to_chat(user, "[icon2html(src, user.client)]" + span_warning("EFTPOS is not connected to an account."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 	else
 		..()

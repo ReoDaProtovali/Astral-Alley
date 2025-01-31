@@ -23,8 +23,13 @@
 
 /obj/machinery/computer/fusion_core_control/attackby(var/obj/item/thing, var/mob/user)
 	..()
+<<<<<<< HEAD
 	if(istype(thing, /obj/item/device/multitool))
 		var/new_ident = sanitize_text(tgui_input_text(usr, "Enter a new ident tag.", "Core Control", monitor.core_tag))
+=======
+	if(istype(thing, /obj/item/multitool))
+		var/new_ident = sanitize_text(tgui_input_text(user, "Enter a new ident tag.", "Core Control", monitor.core_tag))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		if(new_ident && user.Adjacent(src))
 			monitor.core_tag = new_ident
 //			id_tag = new_ident

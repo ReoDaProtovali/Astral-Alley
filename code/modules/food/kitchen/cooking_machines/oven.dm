@@ -82,15 +82,24 @@
 	try_toggle_door(usr)
 
 /obj/machinery/appliance/cooker/oven/proc/try_toggle_door(mob/user)
-	if(!isliving(usr) || isAI(user))
+	if(!isliving(user) || isAI(user))
 		return
 
+<<<<<<< HEAD
 	if(!usr.IsAdvancedToolUser())
 		to_chat(user, "<span class='notice'>You lack the dexterity to do that.</span>")
 		return
 
 	if(!Adjacent(usr))
 		to_chat(user, "<span class='notice'>You can't reach the [src] from there, get closer!</span>")
+=======
+	if(!user.IsAdvancedToolUser())
+		to_chat(user, span_notice("You lack the dexterity to do that."))
+		return
+
+	if(!Adjacent(user))
+		to_chat(user, span_notice("You can't reach the [src] from there, get closer!"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	if(open)

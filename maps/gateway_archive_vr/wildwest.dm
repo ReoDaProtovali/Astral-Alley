@@ -20,8 +20,8 @@
 	var/chargesa = 1
 	var/insistinga = 0
 
-/obj/machinery/wish_granter_dark/attack_hand(var/mob/living/carbon/human/user as mob)
-	usr.set_machine(src)
+/obj/machinery/wish_granter_dark/attack_hand(var/mob/living/carbon/human/user)
+	user.set_machine(src)
 
 	if(chargesa <= 0)
 		to_chat(user, "The Wish Granter lies silent.")
@@ -41,7 +41,7 @@
 	else
 		chargesa--
 		insistinga = 0
-		var/wish = tgui_input_list(usr, "You want...","Wish", list("Power","Wealth","Immortality","To Kill","Peace"))
+		var/wish = tgui_input_list(user, "You want...","Wish", list("Power","Wealth","Immortality","To Kill","Peace"))
 		switch(wish)
 			if("Power")
 				to_chat(user, "<B>Your wish is granted, but at a terrible cost...</B>")
@@ -146,6 +146,7 @@
 	set category = "Immortality"
 	set name = "Resurrection"
 
+<<<<<<< HEAD:maps/gateway_archive_vr/wildwest.dm
 	var/mob/living/carbon/C = usr
 	if(!C.stat)
 		to_chat(C, "<span class='notice'>You're not dead yet!</span>")
@@ -171,3 +172,29 @@
 		C.visible_message("<span class='warning'>[usr] appears to wake from the dead, having healed all wounds.</span>")
 		C.update_canmove()
 	return 1
+=======
+	if(!stat)
+		to_chat(src, span_notice("You're not dead yet!"))
+		return FALSE
+	to_chat(src, span_notice("Death is not your end!"))
+
+	spawn(rand(800,1200))
+		if(stat == DEAD)
+			dead_mob_list -= src
+			living_mob_list += src
+		set_stat(CONSCIOUS)
+		tod = null
+		setToxLoss(0)
+		setOxyLoss(0)
+		setCloneLoss(0)
+		SetParalysis(0)
+		SetStunned(0)
+		SetWeakened(0)
+		radiation = 0
+		heal_overall_damage(getBruteLoss(), getFireLoss())
+		reagents.clear_reagents()
+		to_chat(src, span_notice("You have regenerated."))
+		visible_message(span_warning("[src] appears to wake from the dead, having healed all wounds."))
+		update_canmove()
+	return TRUE
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015)):archive/maps/gateway_archive_vr/wildwest.dm

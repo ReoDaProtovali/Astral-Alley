@@ -54,9 +54,13 @@
 	if(!istype(H) || H != usr)
 		return
 	if(H.wear_mask != src)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='warning'>You have not installed \the [src] yet.</span>")
+=======
+		to_chat(H, span_warning("You have not installed \the [src] yet."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
-	var/choice = tgui_input_list(usr, "Select a screen icon:", "Head Monitor Choice", monitor_states)
+	var/choice = tgui_input_list(H, "Select a screen icon:", "Head Monitor Choice", monitor_states)
 	if(choice)
 		monitor_state_index = choice
 		update_icon()

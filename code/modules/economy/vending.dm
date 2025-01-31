@@ -263,23 +263,31 @@ GLOBAL_LIST_EMPTY(vending_products)
 /**
  *  Receive payment with cashmoney.
  *
- *  usr is the mob who gets the change.
+ *  user is the mob who gets the change.
  */
 /obj/machinery/vending/proc/pay_with_cash(var/obj/item/weapon/spacecash/cashmoney, mob/user)
 	if(currently_vending.price > cashmoney.worth)
 
 		// This is not a status display message, since it's something the character
 		// themselves is meant to see BEFORE putting the money in
+<<<<<<< HEAD
 		to_chat(usr, "[icon2html(cashmoney, user.client)] <span class='warning'>That is not enough money.</span>")
+=======
+		to_chat(user, "[icon2html(cashmoney, user.client)] " + span_warning("That is not enough money."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return 0
 
 	if(istype(cashmoney, /obj/item/weapon/spacecash))
 
+<<<<<<< HEAD
 		visible_message("<span class='info'>\The [usr] inserts some cash into \the [src].</span>")
+=======
+		visible_message(span_info("\The [user] inserts some cash into \the [src]."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		cashmoney.worth -= currently_vending.price
 
 		if(cashmoney.worth <= 0)
-			usr.drop_from_inventory(cashmoney)
+			user.drop_from_inventory(cashmoney)
 			qdel(cashmoney)
 		else
 			cashmoney.update_icon()
@@ -298,7 +306,11 @@ GLOBAL_LIST_EMPTY(vending_products)
 	visible_message("<span class='info'>\The [usr] swipes \the [wallet] through \the [src].</span>")
 	playsound(src, 'sound/machines/id_swipe.ogg', 50, 1)
 	if(currently_vending.price > wallet.worth)
+<<<<<<< HEAD
 		to_chat(usr, "<span class='warning'>Insufficient funds on chargecard.</span>")
+=======
+		to_chat(user, span_warning("Insufficient funds on chargecard."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return 0
 	else
 		wallet.worth -= currently_vending.price

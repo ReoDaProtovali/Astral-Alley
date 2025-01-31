@@ -35,8 +35,13 @@
 /mob/living/carbon/human/verb/toggle_gender_identity_vr()
 	set name = "Set Gender Identity"
 	set desc = "Sets the pronouns when examined and performing an emote."
+<<<<<<< HEAD
 	set category = "IC.Settings" //CHOMPEdit
 	var/new_gender_identity = tgui_input_list(usr, "Please select a gender Identity:", "Set Gender Identity", list(FEMALE, MALE, NEUTER, PLURAL, HERM))
+=======
+	set category = "IC.Settings"
+	var/new_gender_identity = tgui_input_list(src, "Please select a gender Identity:", "Set Gender Identity", list(FEMALE, MALE, NEUTER, PLURAL, HERM))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(!new_gender_identity)
 		return 0
 	change_gender_identity(new_gender_identity)

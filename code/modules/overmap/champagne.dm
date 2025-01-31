@@ -15,7 +15,7 @@
 	var/max_name_len = 32		// Refuse if shuttle tag is longer than this.
 	var/max_area_turfs = 256	// Refuse if area has more than this many turfs.
 
-/obj/item/champagne/afterattack(var/atom/A, mob/user as mob, proximity)
+/obj/item/champagne/afterattack(var/atom/A, mob/user, proximity)
 	if(!proximity)
 		return
 	var/obj/machinery/computer/shuttle_control/explore/comp = A
@@ -26,8 +26,13 @@
 		to_chat(user, "<span class='warning'>[comp] is already configured to link with [comp.shuttle_tag]</span>")
 		return
 
+<<<<<<< HEAD
 	user.visible_message("<span class='notice'>[user] lifts [src] bottle over [comp]!</span>")
 	var/shuttle_name = tgui_input_text(usr, "Choose a name for the shuttle", "New Shuttle Name")
+=======
+	user.visible_message(span_notice("[user] lifts [src] bottle over [comp]!"))
+	var/shuttle_name = tgui_input_text(user, "Choose a name for the shuttle", "New Shuttle Name")
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(!shuttle_name || QDELETED(src) || QDELETED(comp) || comp.shuttle_tag || user.incapacitated())
 		return // After input() safety re-checks
 

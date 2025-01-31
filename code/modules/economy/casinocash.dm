@@ -111,8 +111,13 @@
 		update_icon()
 	return worth
 
+<<<<<<< HEAD
 /obj/item/weapon/spacecasinocash/attack_self()
 	var/amount = tgui_input_number(usr, "How much credits worth of chips do you want to take? (0 to [src.worth])", "Take chips", 20, src.worth)
+=======
+/obj/item/spacecasinocash/attack_self(mob/user)
+	var/amount = tgui_input_number(user, "How much credits worth of chips do you want to take? (0 to [src.worth])", "Take chips", 20, src.worth)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(!src || QDELETED(src))
 		return
 	amount = round(CLAMP(amount, 0, src.worth))
@@ -121,9 +126,13 @@
 		return
 
 	adjust_worth(-amount)
+<<<<<<< HEAD
 	var/obj/item/weapon/spacecasinocash/SC = new (usr.loc)
+=======
+	var/obj/item/spacecasinocash/SC = new (user.loc)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	SC.set_worth(amount)
-	usr.put_in_hands(SC)
+	user.put_in_hands(SC)
 
 /obj/item/weapon/spacecasinocash/c1
 	name = "1 credit casino chip"

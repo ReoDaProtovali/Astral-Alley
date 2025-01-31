@@ -12,7 +12,11 @@
 /obj/item/weapon/hand_labeler/attack()
 	return
 
+<<<<<<< HEAD
 /obj/item/weapon/hand_labeler/afterattack(atom/A, mob/user as mob, proximity)
+=======
+/obj/item/hand_labeler/afterattack(atom/A, mob/user, proximity)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(!proximity)
 		return
 	if(!mode)	//if it's off, give up.
@@ -32,7 +36,11 @@
 	if(istype(A, /mob/living/silicon/robot/platform))
 		var/mob/living/silicon/robot/platform/P = A
 		if(!P.allowed(user))
+<<<<<<< HEAD
 			to_chat(usr, SPAN_WARNING("Access denied."))
+=======
+			to_chat(user, span_warning("Access denied."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		else if(P.client || P.key)
 			to_chat(user, SPAN_NOTICE("You rename \the [P] to [label]."))
 			to_chat(P, SPAN_NOTICE("\The [user] renames you to [label]."))

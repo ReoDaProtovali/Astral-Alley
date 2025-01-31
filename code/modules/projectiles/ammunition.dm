@@ -280,4 +280,8 @@
 /obj/item/ammo_magazine/ammo_box/examine(mob/user)
 	. = ..()
 
+<<<<<<< HEAD
 	. += to_chat(usr, "<span class='notice'>Alt-click to extract contents.</span>")
+=======
+	. += to_chat(user, span_notice("Alt-click to extract contents."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))

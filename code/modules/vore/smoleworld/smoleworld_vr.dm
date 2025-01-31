@@ -114,7 +114,11 @@
 
 /obj/structure/smoletrack/attack_hand(mob/user)
 	if(user.a_intent == I_DISARM)
+<<<<<<< HEAD
 		if(ismouse(usr) || (isobserver(usr) && !CONFIG_GET(flag/ghost_interaction))) // CHOMPEdit
+=======
+		if(ismouse(user) || (isobserver(user) && !CONFIG_GET(flag/ghost_interaction)))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return
 		to_chat(user, "<span class='notice'>[src] was dismantaled into bricks.</span>")
 		playsound(src, 'sound/items/smolesmallbuild.ogg', 50, 1, -1, volume_channel = VOLUME_CHANNEL_MASTER)
@@ -211,7 +215,11 @@
 //makes it so buildings can be dismaintaled or GodZilla style attacked
 /obj/structure/smolebuilding/attack_hand(mob/user)
 	if(user.a_intent == I_DISARM)
+<<<<<<< HEAD
 		if(ismouse(usr) || (isobserver(usr) && !CONFIG_GET(flag/ghost_interaction))) // CHOMPEdit
+=======
+		if(ismouse(user) || (isobserver(user) && !CONFIG_GET(flag/ghost_interaction)))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return
 		to_chat(user, "<span class='notice'>[src] was dismantaled into bricks.</span>")
 		playsound(src, 'sound/items/smolesmallbuild.ogg', 50, 1, -1, volume_channel = VOLUME_CHANNEL_MASTER)
@@ -220,19 +228,28 @@
 			new /obj/item/stack/material/smolebricks(loc)
 		qdel(src)
 
-	else if (usr.a_intent == I_HURT)
+	else if (user.a_intent == I_HURT)
 
+<<<<<<< HEAD
 		if(ismouse(usr) || (isobserver(usr) && !CONFIG_GET(flag/ghost_interaction))) // CHOMPEdit
+=======
+		if(ismouse(user) || (isobserver(user) && !CONFIG_GET(flag/ghost_interaction)))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return
 
 		take_damage()
 		playsound(src, 'sound/items/smolebuildinghit2.ogg', 50, 1)
 		user.do_attack_animation(src)
+<<<<<<< HEAD
 		usr.visible_message("<span class='danger'>\The [usr] bangs against \the [src]!</span>",
 							"<span class='danger'>You bang against \the [src]!</span>",
+=======
+		user.visible_message(span_danger("\The [user] bangs against \the [src]!"),
+							span_danger("You bang against \the [src]!"),
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 							"You hear a banging sound.")
 	else
-		usr.visible_message("[usr.name] knocks on the [src.name].",
+		user.visible_message("[user.name] knocks on the [src.name].",
 							"You knock on the [src.name].")
 	return
 
@@ -274,7 +291,11 @@
 //get material from ruins
 /obj/structure/smoleruins/attack_hand(mob/user)
 	if(user.a_intent == I_DISARM)
+<<<<<<< HEAD
 		if(ismouse(usr) || (isobserver(usr) && !CONFIG_GET(flag/ghost_interaction))) // CHOMPEdit
+=======
+		if(ismouse(user) || (isobserver(user) && !CONFIG_GET(flag/ghost_interaction)))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			return
 		to_chat(user, "<span class='notice'>[src] was dismantaled into bricks.</span>")
 		playsound(src, 'sound/items/smolelargeunbuild.ogg', 50, 1, volume_channel = VOLUME_CHANNEL_MASTER)

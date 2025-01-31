@@ -2,29 +2,42 @@
 	set category = "IC.Game" //CHOMPEdit
 	set name = "Pray"
 
+<<<<<<< HEAD
 	if(say_disabled)	//This is here to try to identify lag problems
 		to_chat(usr, span_red("Speech is currently admin-disabled."))
 		return
 
 	var/raw_msg = sanitize(tgui_input_text(usr, "Prayers are sent to staff but do not open tickets or go to Discord. If you have a technical difficulty or an event/spice idea/hook - please ahelp instead. Thank you!", "Pray", null, MAX_MESSAGE_LEN))
+=======
+	var/raw_msg = sanitize(tgui_input_text(src, "Prayers are sent to staff but do not open tickets or go to Discord. If you have a technical difficulty or an event/spice idea/hook - please ahelp instead. Thank you!", "Pray", null, MAX_MESSAGE_LEN))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(!raw_msg)	return
 
-	if(usr.client)
+	if(src.client)
 		if(raw_msg)
 			client.handle_spam_prevention(MUTE_PRAY)
-			if(usr.client.prefs.muted & MUTE_PRAY)
-				to_chat(usr, span_red("You cannot pray (muted)."))
+			if(src.client.prefs.muted & MUTE_PRAY)
+				to_chat(src, span_red("You cannot pray (muted)."))
 				return
 
 	var/icon/cross = icon('icons/obj/storage.dmi',"bible")
 	var/msg = "<span class='filter_pray'>" + span_blue("[icon2html(cross, GLOB.admins)] <b>" + span_purple("PRAY: ") + "[key_name(src, 1)] [ADMIN_QUE(src)] [ADMIN_PP(src)] [ADMIN_VV(src)] [ADMIN_SM(src)] ([admin_jump_link(src, src)]) [ADMIN_CA(src)] [ADMIN_SC(src)] [ADMIN_SMITE(src)]:</b> [raw_msg]") + "</span>"
 
 	for(var/client/C in GLOB.admins)
+<<<<<<< HEAD
 		if(R_ADMIN|R_EVENT & C.holder.rights)
 			if(C.is_preference_enabled(/datum/client_preference/admin/show_chat_prayers))
 				to_chat(C, msg, type = MESSAGE_TYPE_PRAYER, confidential = TRUE)
 				C << 'sound/effects/ding.ogg'
 	to_chat(usr, "Your prayers have been received by the gods.", confidential = TRUE)
+=======
+		if(!check_rights(R_ADMIN|R_EVENT, 0, C)) //CHOMPEdit
+			continue
+		if(C.prefs?.read_preference(/datum/preference/toggle/show_chat_prayers))
+			to_chat(C, msg, type = MESSAGE_TYPE_PRAYER, confidential = TRUE)
+			C << 'sound/effects/ding.ogg'
+	to_chat(src, "Your prayers have been received by the gods.", confidential = TRUE)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 
 	feedback_add_details("admin_verb","PR") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 	log_pray(raw_msg, src)

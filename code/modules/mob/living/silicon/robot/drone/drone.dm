@@ -243,8 +243,13 @@ var/list/mob_hat_cache = list()
 				to_chat(user, "<span class='danger'>The interface is fried, and a distressing burned smell wafts from the robot's interior. You're not rebooting this one.</span>")
 				return
 
+<<<<<<< HEAD
 			if(!allowed(usr))
 				to_chat(user, "<span class='danger'>Access denied.</span>")
+=======
+			if(!allowed(user))
+				to_chat(user, span_danger("Access denied."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 				return
 
 			user.visible_message("<span class='danger'>\The [user] swipes [TU.his] ID card through \the [src], attempting to reboot it.</span>", "<span class='danger'>>You swipe your ID card through \the [src], attempting to reboot it.</span>")
@@ -261,7 +266,7 @@ var/list/mob_hat_cache = list()
 			if(emagged)
 				return
 
-			if(allowed(usr))
+			if(allowed(user))
 				shut_down()
 			else
 				to_chat(user, "<span class='danger'>Access denied.</span>")*/

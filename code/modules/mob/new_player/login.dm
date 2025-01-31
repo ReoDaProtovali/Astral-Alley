@@ -33,7 +33,11 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 		to_chat(src, "<div class=\"motd\">[join_motd]</div>")
 
 	if(has_respawned)
+<<<<<<< HEAD
 		to_chat(usr, CONFIG_GET(string/respawn_message)) // CHOMPEdit
+=======
+		to_chat(src, CONFIG_GET(string/respawn_message))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		has_respawned = FALSE
 
 	if(!mind)

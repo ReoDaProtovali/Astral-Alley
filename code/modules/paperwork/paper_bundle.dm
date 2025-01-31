@@ -18,7 +18,11 @@
 	var/list/pages = list()  // Ordered list of pages as they are to be displayed. Can be different order than src.contents.
 
 
+<<<<<<< HEAD
 /obj/item/weapon/paper_bundle/attackby(obj/item/weapon/W as obj, mob/user as mob)
+=======
+/obj/item/paper_bundle/attackby(obj/item/W, mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	..()
 
 	if (istype(W, /obj/item/weapon/paper/carbon))
@@ -40,7 +44,7 @@
 		user.drop_from_inventory(W)
 		for(var/obj/O in W)
 			O.loc = src
-			O.add_fingerprint(usr)
+			O.add_fingerprint(user)
 			pages.Add(O)
 
 		to_chat(user, "<span class='notice'>You add \the [W.name] to [(src.name == "paper bundle") ? "the paper bundle" : src.name].</span>")
@@ -48,14 +52,19 @@
 	else
 		if(istype(W, /obj/item/weapon/tape_roll))
 			return 0
+<<<<<<< HEAD
 		if(istype(W, /obj/item/weapon/pen))
 			usr << browse("", "window=[name]") //Closes the dialog
+=======
+		if(istype(W, /obj/item/pen))
+			user << browse("", "window=[name]") //Closes the dialog
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		var/obj/P = pages[page]
 		P.attackby(W, user)
 
 	update_icon()
-	attack_self(usr) //Update the browsed page.
-	add_fingerprint(usr)
+	attack_self(user) //Update the browsed page.
+	add_fingerprint(user)
 	return
 
 /obj/item/weapon/paper_bundle/proc/insert_sheet_at(mob/user, var/index, obj/item/weapon/sheet)
@@ -103,7 +112,11 @@
 	else
 		. += "<span class='notice'>It is too far away.</span>"
 
+<<<<<<< HEAD
 /obj/item/weapon/paper_bundle/proc/show_content(mob/user as mob)
+=======
+/obj/item/paper_bundle/proc/show_content(mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	var/dat
 	var/obj/item/weapon/W = pages[page]
 
@@ -123,9 +136,15 @@
 		dat+= "<DIV STYLE='float:left; text-align:center; width:33.33333%'><A href='?src=\ref[src];remove=1'>Remove [(istype(W, /obj/item/weapon/paper)) ? "paper" : "photo"]</A></DIV>"
 		dat+= "<DIV STYLE='float:left; text-align:right; width:33.33333%'><A href='?src=\ref[src];next_page=1'>Next Page</A></DIV><BR><HR>"
 
+<<<<<<< HEAD
 	if(istype(pages[page], /obj/item/weapon/paper))
 		var/obj/item/weapon/paper/P = W
 		if(!(istype(usr, /mob/living/carbon/human) || istype(usr, /mob/observer/dead) || istype(usr, /mob/living/silicon)))
+=======
+	if(istype(pages[page], /obj/item/paper))
+		var/obj/item/paper/P = W
+		if(!(ishuman(user) || isobserver(user) || issilicon(user)))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 			dat+= "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[stars(P.info)][P.stamps]</BODY></HTML>"
 		else
 			dat+= "<HTML><HEAD><TITLE>[P.name]</TITLE></HEAD><BODY>[P.info][P.stamps]</BODY></HTML>"
@@ -139,9 +158,13 @@
 		+ "[P.scribble ? "<div> Written on the back:<br><i>[P.scribble]</i>" : null]"\
 		+ "</body></html>", "window=[name]")
 
+<<<<<<< HEAD
 /obj/item/weapon/paper_bundle/attack_self(mob/user as mob)
+=======
+/obj/item/paper_bundle/attack_self(mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	src.show_content(user)
-	add_fingerprint(usr)
+	add_fingerprint(user)
 	update_icon()
 	return
 

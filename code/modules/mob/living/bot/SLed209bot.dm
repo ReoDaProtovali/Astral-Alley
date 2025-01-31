@@ -65,12 +65,17 @@
 	item_state = "buildpipe"
 	created_name = "SL-ED-209 Security Robot"
 
+<<<<<<< HEAD
 /obj/item/weapon/secbot_assembly/ed209_assembly/slime/attackby(var/obj/item/weapon/W as obj, var/mob/user as mob) // Here in the event it's added into a PoI or some such. Standard construction relies on the standard ED up until taser.
 	if(istype(W, /obj/item/weapon/pen))
+=======
+/obj/item/secbot_assembly/ed209_assembly/slime/attackby(var/obj/item/W, var/mob/user) // Here in the event it's added into a PoI or some such. Standard construction relies on the standard ED up until taser.
+	if(istype(W, /obj/item/pen))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		var/t = sanitizeSafe(tgui_input_text(user, "Enter new robot name", name, created_name, MAX_NAME_LEN), MAX_NAME_LEN)
 		if(!t)
 			return
-		if(!in_range(src, usr) && src.loc != usr)
+		if(!in_range(src, user) && src.loc != user)
 			return
 		created_name = t
 		return

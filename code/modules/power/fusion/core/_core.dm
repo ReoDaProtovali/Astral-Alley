@@ -149,8 +149,13 @@ GLOBAL_LIST_EMPTY(fusion_cores)
 	if(default_part_replacement(user, W))
 		return
 
+<<<<<<< HEAD
 	if(istype(W, /obj/item/device/multitool))
 		var/new_ident = tgui_input_text(usr, "Enter a new ident tag.", "Fusion Core", id_tag, MAX_NAME_LEN)
+=======
+	if(istype(W, /obj/item/multitool))
+		var/new_ident = tgui_input_text(user, "Enter a new ident tag.", "Fusion Core", id_tag, MAX_NAME_LEN)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		new_ident = sanitize(new_ident,MAX_NAME_LEN)
 		if(new_ident && user.Adjacent(src))
 			id_tag = new_ident

@@ -15,7 +15,11 @@
 	if(!user)
 		return
 	if((user.mind && !wizards.is_antagonist(user.mind)))
+<<<<<<< HEAD
 		to_chat(usr, "<span class='warning'>You stare at the book but cannot make sense of the markings!</span>")
+=======
+		to_chat(user, span_warning("You stare at the book but cannot make sense of the markings!"))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return
 
 	user.set_machine(src)
@@ -100,7 +104,7 @@
 		if(href_list["spell_choice"])
 			if(href_list["spell_choice"] == "rememorize")
 				var/area/wizard_station/A = locate()
-				if(usr in A.contents)
+				if(H in A.contents)
 					uses = max_uses
 					H.spellremove()
 					temp = "All spells have been removed. You may now memorize a new set of spells."

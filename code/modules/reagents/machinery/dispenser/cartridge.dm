@@ -51,6 +51,7 @@
 		label = ""
 		name = initial(name)
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/chem_disp_cartridge/attack_self()
 	..()
 	if (is_open_container())
@@ -58,6 +59,15 @@
 		flags ^= OPENCONTAINER
 	else
 		to_chat(usr, "<span class = 'notice'>You take the cap off \the [src].</span>")
+=======
+/obj/item/reagent_containers/chem_disp_cartridge/attack_self(mob/user)
+	..()
+	if (is_open_container())
+		to_chat(user, span_notice("You put the cap on \the [src]."))
+		flags ^= OPENCONTAINER
+	else
+		to_chat(user, span_notice("You take the cap off \the [src]."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		flags |= OPENCONTAINER
 
 /obj/item/weapon/reagent_containers/chem_disp_cartridge/afterattack(obj/target, mob/user , flag)

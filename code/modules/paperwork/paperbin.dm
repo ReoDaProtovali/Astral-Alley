@@ -20,10 +20,17 @@
 	pickup_sound = 'sound/items/pickup/cardboardbox.ogg'
 
 
+<<<<<<< HEAD
 /obj/item/weapon/paper_bin/MouseDrop(mob/user as mob)
 	if(user == usr && !(usr.restrained() || usr.stat) && (usr.contents.Find(src) || in_range(src, usr)))
 		if(!istype(usr, /mob/living/simple_mob))
 			if( !usr.get_active_hand() )		//if active hand is empty
+=======
+/obj/item/paper_bin/MouseDrop(mob/user)
+	if(user == usr && !(user.restrained() || user.stat) && (user.contents.Find(src) || in_range(src, user)))
+		if(!isanimal(user))
+			if( !user.get_active_hand() )		//if active hand is empty
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 				var/mob/living/carbon/human/H = user
 				var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]
 
@@ -38,7 +45,11 @@
 
 	return
 
+<<<<<<< HEAD
 /obj/item/weapon/paper_bin/attack_hand(mob/user as mob)
+=======
+/obj/item/paper_bin/attack_hand(mob/user)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 	if(ishuman(user))
 		var/mob/living/carbon/human/H = user
 		var/obj/item/organ/external/temp = H.organs_by_name["r_hand"]

@@ -118,8 +118,13 @@
 
 /obj/machinery/computer/gyrotron_control/attackby(var/obj/item/W, var/mob/user)
 	..()
+<<<<<<< HEAD
 	if(istype(W, /obj/item/device/multitool))
 		var/new_ident = tgui_input_text(usr, "Enter a new ident tag.", "Gyrotron Control", monitor.gyro_tag, MAX_NAME_LEN)
+=======
+	if(istype(W, /obj/item/multitool))
+		var/new_ident = tgui_input_text(user, "Enter a new ident tag.", "Gyrotron Control", monitor.gyro_tag, MAX_NAME_LEN)
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		new_ident = sanitize(new_ident,MAX_NAME_LEN)
 		if(new_ident && user.Adjacent(src))
 			monitor.gyro_tag = new_ident

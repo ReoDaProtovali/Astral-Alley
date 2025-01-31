@@ -103,8 +103,13 @@
 	set name = "Examine"
 	set category = "IC.Game" //CHOMPEdit
 
+<<<<<<< HEAD
 	if((is_blind(src) || usr.stat) && !isobserver(src))
 		to_chat(src, "<span class='notice'>Something is there but you can't see it.</span>")
+=======
+	if((is_blind(src) || src.stat) && !isobserver(src))
+		to_chat(src, span_notice("Something is there but you can't see it."))
+>>>>>>> a245b8687f ([MIRROR] usr to user part two (#10015))
 		return 1
 
 	//Could be gone by the time they finally pick something
