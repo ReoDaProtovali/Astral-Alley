@@ -106,12 +106,7 @@
 		if(!M.tf_form_ckey)
 			ourmob.vore_selected = M.vore_selected
 			M.vore_selected = null
-			for(var/obj/belly/B as anything in M.vore_organs)
-				B.loc = ourmob
-				B.forceMove(ourmob)
-				B.owner = ourmob
-				M.vore_organs -= B
-				ourmob.vore_organs += B
+			ourmob.mob_belly_transfer(M)
 			ourmob.nutrition = M.nutrition
 			M.soulgem.transfer_self(ourmob) //CHOMPAdd Soulcatcher
 
@@ -139,57 +134,7 @@
 			return
 		var/mob/living/new_mob = spawn_mob(M)
 
-		if(new_mob && isliving(new_mob))
-			new_mob.faction = M.faction //CHOMPEdit Start
-			if(istype(new_mob, /mob/living/simple_mob))
-				var/mob/living/simple_mob/S = new_mob
-				if(!S.voremob_loaded)
-					S.voremob_loaded = TRUE
-					S.init_vore()
-			new /obj/effect/effect/teleport_greyscale(M.loc) //CHOMPEdit End
-			for(var/obj/belly/B as anything in new_mob.vore_organs)
-				new_mob.vore_organs -= B
-				qdel(B)
-			new_mob.vore_organs = list()
-			new_mob.name = M.name
-			new_mob.real_name = M.real_name
-			for(var/lang in M.languages)
-				new_mob.languages |= lang
-			M.copy_vore_prefs_to_mob(new_mob)
-			new_mob.vore_selected = M.vore_selected
-			if(ishuman(M))
-				var/mob/living/carbon/human/H = M
-				if(ishuman(new_mob))
-					var/mob/living/carbon/human/N = new_mob
-					N.gender = H.gender
-					N.identifying_gender = H.identifying_gender
-				else
-					new_mob.gender = H.gender
-			else
-				new_mob.gender = M.gender
-				if(ishuman(new_mob))
-					var/mob/living/carbon/human/N = new_mob
-					N.identifying_gender = M.gender
-
-			for(var/obj/belly/B as anything in M.vore_organs)
-				B.loc = new_mob
-				B.forceMove(new_mob)
-				B.owner = new_mob
-				M.vore_organs -= B
-				new_mob.vore_organs += B
-			new_mob.nutrition = M.nutrition //CHOMPAdd
-			M.soulgem.transfer_self(new_mob) //CHOMPAdd Soulcatcher
-
-			new_mob.ckey = M.ckey
-			if(M.ai_holder && new_mob.ai_holder)
-				var/datum/ai_holder/old_AI = M.ai_holder
-				old_AI.set_stance(STANCE_SLEEP)
-				var/datum/ai_holder/new_AI = new_mob.ai_holder
-				new_AI.hostile = old_AI.hostile
-				new_AI.retaliate = old_AI.retaliate
-			M.loc = new_mob
-			M.forceMove(new_mob)
-			new_mob.tf_mob_holder = M
+		new_mob.mob_tf(M)
 
 /obj/item/projectile/beam/mouselaser/proc/spawn_mob(var/mob/living/target)
 	if(!ispath(tf_type))
@@ -197,9 +142,8 @@
 	var/new_mob = new tf_type(get_turf(target))
 	return new_mob
 
-/mob/living
-	var/mob/living/tf_mob_holder = null
 
+<<<<<<< HEAD
 /mob/living/proc/revert_mob_tf()
 	if(!tf_mob_holder)
 		return
@@ -310,6 +254,8 @@
 	new_mob.belly_rub_target = belly_rub_target
 	new_mob.soulcatcher_pref_flags = soulcatcher_pref_flags
 	//CHOMP stuff End
+=======
+>>>>>>> a8aec08612 ([MIRROR] Glamour Experimentation (#10042))
 
 /////SUBTYPES/////
 

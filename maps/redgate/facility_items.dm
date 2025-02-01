@@ -98,6 +98,7 @@
 /obj/machinery/button/remote/experimenter/trigger()
 	for(var/obj/machinery/crystalexperimenter/E in machines)
 		E.experiment()
+<<<<<<< HEAD
 
 /turf/unsimulated/wall/glamour
 	name = "glamour"
@@ -115,3 +116,5 @@
 	light_color = "#ffffff"
 	light_on = TRUE
 
+=======
+>>>>>>> a8aec08612 ([MIRROR] Glamour Experimentation (#10042))
