@@ -711,6 +711,7 @@ var/global/list/robot_modules = list(
 /obj/item/weapon/robot_module/robot/miner/create_equipment(var/mob/living/silicon/robot/robot)
 	..()
 	src.modules += new /obj/item/borg/sight/material(src)
+<<<<<<< HEAD
 	src.modules += new /obj/item/weapon/tool/wrench/cyborg(src)
 	src.modules += new /obj/item/weapon/tool/screwdriver/cyborg(src)
 	src.modules += new /obj/item/weapon/storage/bag/ore(src)
@@ -722,6 +723,19 @@ var/global/list/robot_modules = list(
 	src.modules += new /obj/item/weapon/gun/energy/locked/phasegun/unlocked/mounted/cyborg(src) //CHOMPedit: Phasegun for regular mining cyborg.
 	src.modules += new /obj/item/device/vac_attachment(src) //CHOMPAdd
 	src.emag += new /obj/item/weapon/kinetic_crusher/machete/dagger(src)
+=======
+	src.modules += new /obj/item/tool/wrench/cyborg(src)
+	src.modules += new /obj/item/tool/screwdriver/cyborg(src)
+	src.modules += new /obj/item/storage/bag/ore(src)
+	src.modules += new /obj/item/pickaxe/borgdrill(src)
+	src.modules += new /obj/item/storage/bag/sheetsnatcher/borg(src)
+	src.modules += new /obj/item/gripper/miner(src)
+	src.modules += new /obj/item/mining_scanner/robot(src)
+	src.modules += new /obj/item/card/id/cargo/miner/borg(src)
+	src.modules += new /obj/item/gun/energy/robotic/phasegun(src) //CHOMPedit: Phasegun for regular mining cyborg.
+	src.modules += new /obj/item/vac_attachment(src) //CHOMPAdd
+	src.emag += new /obj/item/kinetic_crusher/machete/dagger(src)
+>>>>>>> b01ab3974d ([MIRROR] better robot mining scanner (#10039))
 
 	src.modules += new /obj/item/device/dogborg/sleeper/compactor/supply(src)
 	src.emag += new /obj/item/weapon/dogborg/pounce(src)
