@@ -102,15 +102,25 @@
 	set category = "Abilities.Lleill" //CHOMPEdit
 
 	var/list/transmute_list = list(
+<<<<<<< HEAD
 		"Transparent Glamour" = /obj/item/weapon/potion_material/glamour_transparent,
 		"Shrinking Glamour" = /obj/item/weapon/potion_material/glamour_shrinking,
 		"Twinkling Glamour" = /obj/item/weapon/potion_material/glamour_twinkling,
 		"Glamour Shard" = /obj/item/weapon/potion_material/glamour_shard,
+=======
+		"Transparent Glamour" = /obj/item/potion_material/glamour_transparent,
+		"Shrinking Glamour" = /obj/item/potion_material/glamour_shrinking,
+		"Twinkling Glamour" = /obj/item/potion_material/glamour_twinkling,
+		"Unstable Glamour" = /obj/item/glamour_unstable,
+		"Glamour Shard" = /obj/item/potion_material/glamour_shard,
+>>>>>>> a8aec08612 ([MIRROR] Glamour Experimentation (#10042))
 		"Glamour Cell" = /obj/item/capture_crystal/glamour,
 		"Face of Glamour" = /obj/item/glamour_face,
 		"Speaking Glamour" = /obj/item/device/universal_translator/glamour,
 		"Glamour Bubble" = /obj/item/clothing/mask/gas/glamour,
-		"Pocket of Glamour" = /obj/item/clothing/under/permit/glamour
+		"Pocket of Glamour" = /obj/item/clothing/under/permit/glamour,
+		"glamour arrow" = /obj/item/arrow/standard/glamour,
+		"glamour bow" = /obj/item/gun/launcher/crossbow/bow/glamour
 		)
 
 	var/energy_cost = 50

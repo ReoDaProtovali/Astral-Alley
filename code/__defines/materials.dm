@@ -57,6 +57,37 @@
 #define MAT_CONCRETE		"concrete"
 #define MAT_PLASTEELREBAR	"plasteel rebar"
 #define MAT_GRASS			"grass"
+<<<<<<< HEAD
+=======
+#define MAT_RESIN			"resin"
+#define MAT_CULT			"cult"
+#define MAT_CULT2			"cult2"
+#define MAT_ALIENALLOY		"alienalloy"
+#define MAT_COMPOSITE		"composite"
+#define MAT_BIOMASS			"biomass"
+#define MAT_WEEDEXTRACT		"weed extract"
+#define MAT_CARDBOARD		"cardboard"
+#define MAT_COTTON			"cotton"
+#define MAT_GLAMOUR			"stable glamour"
+
+// cloth materials
+#define MAT_WOOL			"wool"
+#define MAT_FIBERS			"fibers"
+#define MAT_LEATHER			"leather"
+#define MAT_CLOTH			"cloth"
+#define MAT_SYNCLOTH		"syncloth"
+// # define MAT_CARPET			"carpet" // CHOMPRemove
+// colours
+#define MAT_CLOTH_TEAL		"teal"
+#define MAT_CLOTH_BLACK		"black"
+#define MAT_CLOTH_GREEN		"green"
+#define MAT_CLOTH_PURPLE	"purple"
+#define MAT_CLOTH_BLUE		"blue"
+#define MAT_CLOTH_BEIGE		"beige"
+#define MAT_CLOTH_LIME		"lime"
+#define MAT_CLOTH_YELLOW	"yellow"
+#define MAT_CLOTH_ORANGE	"orange"
+>>>>>>> a8aec08612 ([MIRROR] Glamour Experimentation (#10042))
 
 
 #define DEFAULT_TABLE_MATERIAL MAT_PLASTIC
