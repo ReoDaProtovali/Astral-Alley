@@ -124,8 +124,13 @@
 			. = TRUE
 		if("claim")
 			if(istype(inserted_id))
+<<<<<<< HEAD
 				if(access_mining_station in inserted_id.access)
 					inserted_id.mining_points += machine.points
+=======
+				if(access_mining_station in inserted_id.GetAccess())
+					inserted_id.adjust_mining_points(machine.points)
+>>>>>>> b01ab3974d ([MIRROR] better robot mining scanner (#10039))
 					machine.points = 0
 				else
 					to_chat(usr, "<span class='warning'>Required access not found.</span>")

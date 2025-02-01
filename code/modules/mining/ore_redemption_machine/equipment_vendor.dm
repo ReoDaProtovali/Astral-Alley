@@ -178,8 +178,13 @@
 		return 0
 	return target.mining_points
 
+<<<<<<< HEAD
 /obj/machinery/mineral/equipment_vendor/proc/remove_points(obj/item/weapon/card/id/target, amt)
 	target.mining_points -= amt
+=======
+/obj/machinery/mineral/equipment_vendor/proc/remove_points(obj/item/card/id/target, amt)
+	target.adjust_mining_points(-amt)
+>>>>>>> b01ab3974d ([MIRROR] better robot mining scanner (#10039))
 
 /obj/machinery/mineral/equipment_vendor/tgui_static_data(mob/user)
 	var/list/static_data[0]
