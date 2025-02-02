@@ -185,9 +185,15 @@ var/list/dispenser_presets = list()
 			to_chat(user, "<span class='warning'>\The [src] doesn't have anything to dispense for you!</span>")
 			dispenser_flags &= ~GD_BUSY
 			return
+<<<<<<< HEAD
 		
 		var/choice = input("Select equipment to dispense.", "Equipment Dispenser") as null|anything in gear_list
 		
+=======
+
+		var/choice = tgui_input_list(user, "Select equipment to dispense.", "Equipment Dispenser", gear_list)
+
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		if(!choice)
 			dispenser_flags &= ~GD_BUSY
 			return

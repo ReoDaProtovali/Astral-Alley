@@ -217,8 +217,13 @@
 	switch(action)
 		if("change_freq")
 			. = TRUE
+<<<<<<< HEAD
 			var/newfreq = input(usr, "Specify a new frequency for new signals to change to. Enter null to turn off frequency changing. Decimals assigned automatically.", src, network) as null|num
 			if(canAccess(usr))
+=======
+			var/newfreq = tgui_input_number(ui.user, "Specify a new frequency for new signals to change to. Enter null to turn off frequency changing. Decimals assigned automatically.", src, network, round_value=FALSE)
+			if(canAccess(ui.user))
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 				if(newfreq)
 					if(findtext(num2text(newfreq), "."))
 						newfreq *= 10 // shift the decimal one place

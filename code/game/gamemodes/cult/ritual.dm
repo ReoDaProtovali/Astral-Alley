@@ -448,7 +448,11 @@ var/global/list/rnwords = list("ire","ego","nahlizet","certum","veri","jatkaa","
 		if (!istype(user.loc,/turf))
 			to_chat(user, "<span class='notice'>You do not have enough space to write a proper rune.</span>")
 		var/list/runes = list("teleport", "itemport", "tome", "armor", "convert", "tear in reality", "emp", "drain", "seer", "raise", "obscure", "reveal", "astral journey", "manifest", "imbue talisman", "sacrifice", "wall", "freedom", "cultsummon", "deafen", "blind", "bloodboil", "communicate", "stun")
+<<<<<<< HEAD
 		r = input(usr, "Choose a rune to scribe", "Rune Scribing") in runes // Remains input() for extreme blocking
+=======
+		r = tgui_input_list(user, "Choose a rune to scribe", "Rune Scribing", runes, timeout=30 SECONDS)
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		var/obj/effect/rune/R = new /obj/effect/rune
 		if(istype(user, /mob/living/carbon/human))
 			var/mob/living/carbon/human/H = user
@@ -460,8 +464,13 @@ var/global/list/rnwords = list("ire","ego","nahlizet","certum","veri","jatkaa","
 			if("teleport")
 				var/list/words = list("ire", "ego", "nahlizet", "certum", "veri", "jatkaa", "balaq", "mgar", "karazet", "geeri")
 				var/beacon
+<<<<<<< HEAD
 				if(usr)
 					beacon = input(usr, "Select the last rune", "Rune Scribing") in words // Remains input() for extreme blocking
+=======
+				if(user)
+					beacon = tgui_input_list(user, "Select the last rune", "Rune Scribing", words, timeout=30 SECONDS)
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 				R.word1=cultwords["travel"]
 				R.word2=cultwords["self"]
 				R.word3=beacon
@@ -470,8 +479,13 @@ var/global/list/rnwords = list("ire","ego","nahlizet","certum","veri","jatkaa","
 			if("itemport")
 				var/list/words = list("ire", "ego", "nahlizet", "certum", "veri", "jatkaa", "balaq", "mgar", "karazet", "geeri")
 				var/beacon
+<<<<<<< HEAD
 				if(usr)
 					beacon = input(usr, "Select the last rune", "Rune Scribing") in words // Remains input() for extreme blocking
+=======
+				if(user)
+					beacon = tgui_input_list(user, "Select the last rune", "Rune Scribing", words, timeout=30 SECONDS)
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 				R.word1=cultwords["travel"]
 				R.word2=cultwords["other"]
 				R.word3=beacon

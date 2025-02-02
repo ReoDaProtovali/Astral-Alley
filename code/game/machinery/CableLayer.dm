@@ -36,7 +36,11 @@
 
 	if(O.has_tool_quality(TOOL_WIRECUTTER))
 		if(cable && cable.get_amount())
+<<<<<<< HEAD
 			var/m = round(input(usr, "Please specify the length of cable to cut", "Cut cable", min(cable.get_amount(), 30)) as num, 1)
+=======
+			var/m = tgui_input_number(user, "Please specify the length of cable to cut", "Cut cable", min(cable.get_amount(), 30))
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 			m = min(m, cable.get_amount())
 			m = min(m, 30)
 			if(m)

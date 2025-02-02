@@ -55,9 +55,15 @@ GLOBAL_LIST_EMPTY(fuel_injectors)
 			to_chat(user, "<span class='warning'>Shut \the [src] off before playing with the fuel rod!</span>")
 			return
 		//CHOMPEdit Begin
+<<<<<<< HEAD
 		if(istype(W,/obj/item/weapon/fuel_assembly/blitz))
 			var/secondchance = alert("Are you sure you want to put the blitz rod in the fuel injector? This definitely wasn't meant to be used like this, and could only end badly.","Confirm","Yes","No")
 			if(secondchance=="No")
+=======
+		if(istype(W,/obj/item/fuel_assembly/blitz))
+			var/secondchance = tgui_alert(user, "Are you sure you want to put the blitz rod in the fuel injector? This definitely wasn't meant to be used like this, and could only end badly.","Confirm",list("Yes","No"))
+			if(!secondchance || secondchance=="No")
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 				return
 		//CHOMPEdit End
 		if(cur_assembly)

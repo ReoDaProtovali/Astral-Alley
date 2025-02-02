@@ -156,9 +156,9 @@
 				else
 					to_chat(usr, "[icon2html(src, usr.client)]<span class='warning'>Incorrect code entered.</span>")
 			if("change_id")
-				var/attempt_code = text2num(input(usr, "Re-enter the current EFTPOS access code", "Confirm EFTPOS code"))
+				var/attempt_code = tgui_input_number(usr, "Re-enter the current EFTPOS access code", "Confirm EFTPOS code")
 				if(attempt_code == access_code)
-					eftpos_name = sanitize(input(usr, "Enter a new terminal ID for this device", "Enter new EFTPOS ID"), MAX_NAME_LEN) + " EFTPOS scanner"
+					eftpos_name = sanitize(tgui_input_text(usr, "Enter a new terminal ID for this device", "Enter new EFTPOS ID",max_length=MAX_NAME_LEN), MAX_NAME_LEN) + " EFTPOS scanner"
 					print_reference()
 				else
 					to_chat(usr, "[icon2html(src, usr.client)]<span class='warning'>Incorrect code entered.</span>")
@@ -173,8 +173,9 @@
 				else
 					to_chat(usr, "[icon2html(src, usr.client)]<span class='warning'>Account not found.</span>")
 			if("trans_purpose")
-				var/choice = sanitize(input(usr, "Enter reason for EFTPOS transaction", "Transaction purpose"))
-				if(choice) transaction_purpose = choice
+				var/choice = sanitize(tgui_input_text(usr, "Enter reason for EFTPOS transaction", "Transaction purpose"))
+				if(choice)
+					transaction_purpose = choice
 			if("trans_value")
 				var/try_num = tgui_input_number(usr, "Enter amount for EFTPOS transaction", "Transaction amount")
 				if(try_num < 0)
