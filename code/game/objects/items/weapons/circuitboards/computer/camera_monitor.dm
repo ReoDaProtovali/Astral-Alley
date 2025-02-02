@@ -10,8 +10,14 @@
 	var/locked = 1
 	var/emagged = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/circuitboard/security/New()
 	..()
+=======
+/obj/item/circuitboard/security/Initialize()
+	. = ..()
+	network = using_map.station_networks
+>>>>>>> f4b5f18698 ([MIRROR] camera monitors can be properly built with the board (#10052))
 
 /obj/item/weapon/circuitboard/security/tv
 	name = T_BOARD("security camera monitor - television")
@@ -22,8 +28,13 @@
 	build_path = /obj/machinery/computer/security/engineering
 	req_access = list()
 
+<<<<<<< HEAD
 /obj/item/weapon/circuitboard/security/engineering/New()
 	..()
+=======
+/obj/item/circuitboard/security/engineering/Initialize()
+	. = ..()
+>>>>>>> f4b5f18698 ([MIRROR] camera monitors can be properly built with the board (#10052))
 	network = engineering_networks
 
 /obj/item/weapon/circuitboard/security/mining
@@ -38,8 +49,13 @@
 	board_type = new /datum/frame/frame_types/display
 	matter = list(MAT_STEEL = 50, MAT_GLASS = 50)
 
+<<<<<<< HEAD
 /obj/item/weapon/circuitboard/security/telescreen/entertainment/New()
 	..()
+=======
+/obj/item/circuitboard/security/telescreen/entertainment/Initialize()
+	. = ..()
+>>>>>>> f4b5f18698 ([MIRROR] camera monitors can be properly built with the board (#10052))
 	network = NETWORK_THUNDER
 
 // CHOMPEdit Begin - Bodycam
