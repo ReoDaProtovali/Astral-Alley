@@ -1403,8 +1403,13 @@
 
 /mob/living/verb/mob_sleep()
 	set name = "Sleep"
+<<<<<<< HEAD
 	set category = "IC.Game" //CHOMPEdit
 	if(!toggled_sleeping && alert(src, "Are you sure you wish to go to sleep? You will snooze until you use the Sleep verb again.", "Sleepy Time", "No", "Yes") == "No")
+=======
+	set category = "IC.Game"
+	if(!toggled_sleeping && tgui_alert(src, "Are you sure you wish to go to sleep? You will snooze until you use the Sleep verb again.", "Sleepy Time", list("No", "Yes")) != "Yes")
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		return
 	toggled_sleeping = !toggled_sleeping
 	to_chat(src, SPAN_NOTICE("You are [toggled_sleeping ? "now sleeping. Use the Sleep verb again to wake up" : "no longer sleeping"]."))

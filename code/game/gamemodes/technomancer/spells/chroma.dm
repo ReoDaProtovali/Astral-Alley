@@ -35,8 +35,13 @@
 		to_chat(user, "<span class='notice'>You shift the light onto \the [T].</span>")
 		qdel(src)
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/chroma/on_use_cast(mob/user)
 	var/new_color = input(user, "Choose the color you want your light to be.", "Color selection") as null|color
+=======
+/obj/item/spell/chroma/on_use_cast(mob/user)
+	var/new_color = tgui_color_picker(user, "Choose the color you want your light to be.", "Color selection")
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(new_color)
 		color_to_use = new_color
 		set_light(6, 5, l_color = new_color)

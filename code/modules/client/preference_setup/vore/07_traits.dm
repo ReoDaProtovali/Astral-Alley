@@ -379,7 +379,11 @@ var/global/list/valid_bloodreagents = list("default","iron","copper","phoron","s
 		return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	else if(href_list["blood_color"])
+<<<<<<< HEAD
 		var/color_choice = input(user, "Pick a blood color (does not apply to synths)","Blood Color",pref.blood_color) as color //ChompEDIT - usr removal
+=======
+		var/color_choice = tgui_color_picker(user, "Pick a blood color (does not apply to synths)","Blood Color",pref.blood_color)
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 		if(color_choice)
 			pref.blood_color = sanitize_hexcolor(color_choice, default="#A10808")
 		return TOPIC_REFRESH

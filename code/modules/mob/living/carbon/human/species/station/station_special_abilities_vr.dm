@@ -1116,7 +1116,11 @@
 		to_chat(src, "<span class='warning'>You are not a weaver! How are you doing this? Tell a developer!</span>")
 		return
 
+<<<<<<< HEAD
 	var/new_silk_color = input(usr, "Pick a color for your woven products:","Silk Color", species.silk_color) as null|color
+=======
+	var/new_silk_color = tgui_color_picker(src, "Pick a color for your woven products:","Silk Color", species.silk_color)
+>>>>>>> 965f8f4a61 ([MIRROR] remove old inputs (#10038))
 	if(new_silk_color)
 		species.silk_color = new_silk_color
 
