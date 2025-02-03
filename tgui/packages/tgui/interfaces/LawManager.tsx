@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
 
 import { useBackend, useSharedState } from '../backend';
+=======
+import { useBackend, useSharedState } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import {
   Button,
   Input,
@@ -431,3 +436,26 @@ const LawManagerLawSets = (props) => {
     </>
   );
 };
+<<<<<<< HEAD
+=======
+
+const prepareSearch = (
+  laws: law_pack[],
+  searchText: string = '',
+): law_pack[] => {
+  const testSearch = createSearch(
+    searchText,
+    (law: law_pack) => law.name + law.header,
+  );
+  return flow([
+    (laws: law_pack[]) => {
+      // Optional search term
+      if (!searchText) {
+        return laws;
+      } else {
+        return laws.filter(testSearch);
+      }
+    },
+  ])(laws);
+};
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))

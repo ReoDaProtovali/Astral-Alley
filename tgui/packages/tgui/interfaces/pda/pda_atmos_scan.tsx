@@ -1,8 +1,14 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/pda/pda_atmos_scan.tsx
 import { filter } from 'common/collections';
 import { decodeHtmlEntities } from 'common/string';
 
 import { useBackend } from '../../backend';
 import { Box, LabeledList } from '../../components';
+=======
+import { useBackend } from 'tgui/backend';
+import { Box, LabeledList } from 'tgui-core/components';
+import { decodeHtmlEntities } from 'tgui-core/string';
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059)):tgui/packages/tgui/interfaces/Pda/pda_screens/pda_atmos_scan.tsx
 
 type Data = {
   aircontents: aircontent[];
@@ -39,28 +45,29 @@ export const pda_atmos_scan = (props) => {
   return (
     <Box>
       <LabeledList>
-        {filter(
-          aircontents,
-          (i: aircontent) =>
-            i.val !== '0' ||
-            i.entry === 'Pressure' ||
-            i.entry === 'Temperature',
-        ).map((item) => (
-          <LabeledList.Item
-            key={item.entry}
-            label={item.entry}
-            color={getItemColor(
-              item.val,
-              item.bad_low,
-              item.poor_low,
-              item.poor_high,
-              item.bad_high,
-            )}
-          >
-            {item.val}
-            {decodeHtmlEntities(item.units)}
-          </LabeledList.Item>
-        ))}
+        {aircontents
+          .filter(
+            (i: aircontent) =>
+              i.val !== '0' ||
+              i.entry === 'Pressure' ||
+              i.entry === 'Temperature',
+          )
+          .map((item) => (
+            <LabeledList.Item
+              key={item.entry}
+              label={item.entry}
+              color={getItemColor(
+                item.val,
+                item.bad_low,
+                item.poor_low,
+                item.poor_high,
+                item.bad_high,
+              )}
+            >
+              {item.val}
+              {decodeHtmlEntities(item.units)}
+            </LabeledList.Item>
+          ))}
       </LabeledList>
     </Box>
   );
