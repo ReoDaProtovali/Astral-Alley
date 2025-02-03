@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import { BooleanLike } from 'common/react';
+=======
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
 import { useState } from 'react';
 
 import { useBackend } from '../backend';
@@ -82,7 +85,25 @@ export const PersonalCrafting = (props) => {
   }
   // Sort out the tab state
   const [tab, setTab] = useState(categories[0]?.name);
+<<<<<<< HEAD
   const shownRecipes = recipes.filter((recipe) => recipe.category === tab);
+=======
+
+  const testSearch = createSearch(searchText, (recipe: recipe) => recipe.name);
+
+  const shownRecipes: uiRecipe[] = flow([
+    (recipes: uiRecipe[]) =>
+      recipes.filter((recipe) => recipe.category === tab),
+    (recipes: uiRecipe[]) => {
+      if (!searchText) {
+        return recipes;
+      } else {
+        return recipes.filter(testSearch);
+      }
+    },
+  ])(recipes);
+
+>>>>>>> 56759cb95b ([MIRROR] Work on phasing out tgui collections.ts (#10059))
   return (
     <Window title="Crafting Menu" width={700} height={800}>
       <Window.Content scrollable>
