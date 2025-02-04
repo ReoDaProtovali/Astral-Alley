@@ -11,6 +11,7 @@
 	icon_state = "zorgoia_fat"
 	extra_overlay = "zorgoia_fat_overlay"
 
+<<<<<<< HEAD
 /datum/sprite_accessory/tail/taur/ch/redpanda
 	name = "Red Panda (Taur)"
 	icon_state = "redpanda"
@@ -91,6 +92,8 @@
 	vore_tail_sprite_variant = "N"
 	fullness_icons = 3
 
+=======
+>>>>>>> 29badae119 (gets the icons to = virgo (#10066))
 /datum/sprite_accessory/tail/taur/ch/sergal/wheaties_2c
 	name = "Sergal (Taur, dual-color)"
 	icon_state = "sergwheat"
@@ -107,12 +110,6 @@
 	vore_tail_sprite_variant = "N"
 	fullness_icons = 3
 
-/datum/sprite_accessory/tail/taur/ch/longvirus
-	name = "Long Virus (Taur)"
-	icon_state = "longvirus_s"
-	extra_overlay = "longvirus_markings"
-	icon_sprite_tag = "virus"
-	//suit_sprites = 'icons/mob/taursuits_noodle.dmi' Aye, I've gotta sprite that shit.´
 
 /datum/sprite_accessory/tail/taur/ch/fox
 	name = "Fox (Taur, 3-color)"
@@ -123,6 +120,7 @@
 	icon_loaf = 'icons/mob/vore/taurs_ch_loaf.dmi'
 	loaf_offset = 4
 
+<<<<<<< HEAD
 /datum/sprite_accessory/tail/taur/ch/sectdrone
 	name = "Sect Drone (Taur)"
 	icon_state = "sectdrone"
@@ -154,6 +152,8 @@
 	icon_state = "fatsectdrone"
 	extra_overlay = "fatsectdrone_markings"
 
+=======
+>>>>>>> 29badae119 (gets the icons to = virgo (#10066))
 /datum/sprite_accessory/tail/taur/ch/kitsune
 	name = "Kitsune (Taur)"
 	icon_state = "kitsune"
