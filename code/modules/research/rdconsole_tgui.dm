@@ -333,21 +333,33 @@
 	switch(action)
 		if("search")
 			search = params["search"]
+<<<<<<< HEAD
 			update_tgui_static_data(usr, ui)
+=======
+			update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 			return TRUE
 		if("design_page")
 			if(params["reset"])
 				design_page = 0
 			else
 				design_page = max(design_page + (1 * params["reverse"]), 0)
+<<<<<<< HEAD
 			update_tgui_static_data(usr, ui)
+=======
+			update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 			return TRUE
 		if("builder_page")
 			if(params["reset"])
 				builder_page = 0
 			else
 				builder_page = max(builder_page + (1 * params["reverse"]), 0)
+<<<<<<< HEAD
 			update_tgui_static_data(usr, ui)
+=======
+			update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 			return TRUE
 
 		if("updt_tech") //Update the research holder with information from the technology disk.
@@ -357,7 +369,11 @@
 				files.AddTech2Known(t_disk.stored)
 				files.RefreshResearch()
 				griefProtection() //Update CentCom too
+<<<<<<< HEAD
 				update_tgui_static_data(usr, ui)
+=======
+				update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 			return TRUE
 
 		if("clear_tech") //Erase data on the technology disk.
@@ -382,7 +398,11 @@
 				busy_msg = null
 				files.AddDesign2Known(d_disk.blueprint)
 				griefProtection() //Update CentCom too
+<<<<<<< HEAD
 				update_tgui_static_data(usr, ui)
+=======
+				update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 			return TRUE
 
 		if("clear_design") //Erases data on the design disk.
@@ -473,7 +493,11 @@
 
 					use_power(linked_destroy.active_power_usage)
 					files.RefreshResearch()
+<<<<<<< HEAD
 					update_tgui_static_data(usr, ui)
+=======
+					update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 			return TRUE
 
 		if("lock") //Lock the console from use by anyone without tox access.
@@ -511,7 +535,11 @@
 							S.produce_heat()
 					busy_msg = null
 					files.RefreshResearch()
+<<<<<<< HEAD
 					update_tgui_static_data(usr, ui)
+=======
+					update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 			return TRUE
 
 		if("togglesync") //Prevents the console from being synced by other consoles. Can still send data.
@@ -606,7 +634,11 @@
 			spawn(10)
 				busy_msg = null
 				SyncRDevices()
+<<<<<<< HEAD
 				update_tgui_static_data(usr, ui)
+=======
+				update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 			return TRUE
 
 		if("disconnect") //The R&D console disconnects with a specific device.
@@ -620,7 +652,11 @@
 				if("imprinter")
 					linked_imprinter.linked_console = null
 					linked_imprinter = null
+<<<<<<< HEAD
 			update_tgui_static_data(usr, ui)
+=======
+			update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 
 		if("reset") //Reset the R&D console's database.
 			griefProtection()
@@ -631,7 +667,11 @@
 				files = new /datum/research(src)
 				spawn(20)
 					busy_msg = null
+<<<<<<< HEAD
 					update_tgui_static_data(usr, ui)
+=======
+					update_static_data_for_all_viewers()
+>>>>>>> a5aa055377 ([MIRROR] fix rd console shared view (#10067))
 
 		if("print") //Print research information
 			busy_msg = "Printing Research Information. Please Wait..."
