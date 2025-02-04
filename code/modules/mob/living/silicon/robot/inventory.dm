@@ -105,6 +105,36 @@
 		return TRUE
 	return FALSE
 
+<<<<<<< HEAD
+=======
+/// Searches through a provided list to see if we have a module that is in that list.
+/mob/living/silicon/robot/proc/has_active_type_list(var/list/type_to_compare, var/explicit = FALSE)
+	var/list/active_modules = get_active_modules()
+	if(islist(type_to_compare))
+		for(var/object_to_compare in type_to_compare)
+			if(is_type_in_modules(object_to_compare, active_modules, explicit))
+				return TRUE
+	return FALSE
+
+// Checks if the activated module is of the given type
+/mob/living/silicon/robot/proc/activated_module_type_list(var/list/type_to_compare, var/explicit = FALSE)
+	if(!islist(type_to_compare))
+		return FALSE
+	for(var/type in type_to_compare)
+		if(istype(module_active, type))
+			return TRUE
+	return FALSE
+
+/mob/living/silicon/robot/proc/is_type_in_modules(var/type, var/list/modules, var/explicit = FALSE)
+	for(var/atom/module in modules)
+		if(explicit && isatom(module))
+			if(module.type == type)
+				return TRUE
+		else if(istype(module, type))
+			return TRUE
+	return FALSE
+
+>>>>>>> 06a8bcaecb ([MIRROR] allows robots to "holster" guns (#10061))
 //Helper procs for cyborg modules on the UI.
 //These are hackish but they help clean up code elsewhere.
 
@@ -152,6 +182,7 @@
 				inv2.icon_state = "inv2"
 				inv3.icon_state = "inv3"
 				module_active = module_state_1
+				update_icon()
 				return
 		if(2)
 			if(module_active != module_state_2)
@@ -159,6 +190,7 @@
 				inv2.icon_state = "inv2 +a"
 				inv3.icon_state = "inv3"
 				module_active = module_state_2
+				update_icon()
 				return
 		if(3)
 			if(module_active != module_state_3)
@@ -166,6 +198,7 @@
 				inv2.icon_state = "inv2"
 				inv3.icon_state = "inv3 +a"
 				module_active = module_state_3
+				update_icon()
 				return
 	return
 
@@ -178,16 +211,19 @@
 			if(module_active == module_state_1)
 				inv1.icon_state = "inv1"
 				module_active = null
+				update_icon()
 				return
 		if(2)
 			if(module_active == module_state_2)
 				inv2.icon_state = "inv2"
 				module_active = null
+				update_icon()
 				return
 		if(3)
 			if(module_active == module_state_3)
 				inv3.icon_state = "inv3"
 				module_active = null
+				update_icon()
 				return
 	return
 
