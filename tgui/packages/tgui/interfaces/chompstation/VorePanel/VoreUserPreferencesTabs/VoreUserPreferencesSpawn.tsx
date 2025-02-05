@@ -50,7 +50,16 @@ export const VoreUserPreferencesSpawn = (props: {
       <Flex spacing={1} wrap="wrap" justify="center">
         {latejoin_vore ? (
           <>
+<<<<<<< HEAD
             <Flex.Item basis="33%">
+=======
+            <Stack.Item
+              basis="31%"
+              style={{
+                marginLeft: '0.5em', // Remove if tgui core implements gap
+              }}
+            >
+>>>>>>> 298826e2eb (fix vorepanel sizes (#10068))
               <VoreUserPreferenceItem
                 spec={preferences.no_spawnpred_warning}
                 tooltipPosition="top"
@@ -89,7 +98,11 @@ export const VoreUserPreferencesSpawn = (props: {
         )}
         {latejoin_prey ? (
           <>
+<<<<<<< HEAD
             <Flex.Item basis="33%">
+=======
+            <Stack.Item basis="31%">
+>>>>>>> 298826e2eb (fix vorepanel sizes (#10068))
               <VoreUserPreferenceItem
                 spec={preferences.no_spawnprey_warning}
                 tooltipPosition="top"

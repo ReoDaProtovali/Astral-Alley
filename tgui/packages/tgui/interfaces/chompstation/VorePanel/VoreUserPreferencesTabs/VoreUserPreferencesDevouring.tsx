@@ -88,8 +88,13 @@ export const VoreUserPreferencesDevouring = (props: {
               spec={preferences.remains}
               tooltipPosition="left"
             />
+<<<<<<< HEAD
           </Flex.Item>
           <Flex.Item basis="33%">
+=======
+          </Stack.Item>
+          <Stack.Item basis="34%">
+>>>>>>> 298826e2eb (fix vorepanel sizes (#10068))
             <VoreUserPreferenceItem
               spec={preferences.toggle_digest_pain}
               tooltipPosition="right"
