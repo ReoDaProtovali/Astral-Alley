@@ -13,8 +13,19 @@ export const VoreUserPreferencesAesthetic = (props: {
 
   return (
     <Section title="Aesthetic Preferences">
+<<<<<<< HEAD
       <Flex spacing={1} wrap="wrap" justify="center">
         <Flex.Item basis="50%" grow={1}>
+=======
+      <Stack wrap="wrap" justify="center">
+        <Stack.Item
+          basis="49%"
+          grow
+          style={{
+            marginLeft: '0.5em', // Remove if tgui core implements gap
+          }}
+        >
+>>>>>>> 298826e2eb (fix vorepanel sizes (#10068))
           <Button fluid icon="grin-tongue" onClick={() => act('setflavor')}>
             Set Taste
           </Button>

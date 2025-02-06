@@ -108,8 +108,19 @@ export const VoreUserPreferencesMechanical = (props: {
             spec={preferences.mind_transfer}
             tooltipPosition="top"
           />
+<<<<<<< HEAD
         </Flex.Item>
       </Flex>
+=======
+        </Stack.Item>
+        <Stack.Item basis="34%">
+          <VoreUserPreferenceItem
+            spec={preferences.allow_mimicry}
+            tooltipPosition="right"
+          />
+        </Stack.Item>
+      </Stack>
+>>>>>>> 298826e2eb (fix vorepanel sizes (#10068))
     </Section>
   );
 };
