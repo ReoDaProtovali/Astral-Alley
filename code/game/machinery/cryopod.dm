@@ -290,9 +290,15 @@
 
 	time_till_despawn = 60 //1 second, because gateway.
 
+<<<<<<< HEAD
 /obj/machinery/cryopod/New()
 	announce = new /obj/item/device/radio/intercom(src)
 	..()
+=======
+/obj/machinery/cryopod/Initialize()
+	. = ..()
+	announce = new /obj/item/radio/intercom(src)
+>>>>>>> 440e4e907b ([MIRROR] new to init (radios) (#10085))
 
 /obj/machinery/cryopod/Destroy()
 	if(occupant)

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 /obj/item/device/radio/phone
 	subspace_transmission = 1
+=======
+/obj/item/radio/phone
+	subspace_transmission = TRUE
+>>>>>>> 440e4e907b ([MIRROR] new to init (radios) (#10085))
 	canhear_range = 0
 	adhoc_fallback = TRUE
 
@@ -7,11 +12,16 @@
 	name = "Medbay Emergency Radio Link"
 	icon_state = "med_walkietalkie"
 	frequency = MED_I_FREQ
-	subspace_transmission = 1
+	subspace_transmission = TRUE
 	adhoc_fallback = TRUE
 
+<<<<<<< HEAD
 /obj/item/device/radio/emergency/New()
 	..()
+=======
+/obj/item/radio/emergency/Initialize()
+	. = ..()
+>>>>>>> 440e4e907b ([MIRROR] new to init (radios) (#10085))
 	internal_channels = default_medbay_channels.Copy()
 
 

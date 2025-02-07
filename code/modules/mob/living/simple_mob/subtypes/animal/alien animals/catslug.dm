@@ -769,9 +769,15 @@
 	. = ..()
 	mob_radio = new /obj/item/device/radio/headset/mob_headset(src)
 	mob_radio.frequency = PUB_FREQ
+<<<<<<< HEAD
 	mob_radio.ks2type = /obj/item/device/encryptionkey/heads/captain 		//Might not be able to speak, but the catslug can listen.
 	mob_radio.keyslot2 = new /obj/item/device/encryptionkey/heads/captain(mob_radio)
 	mob_radio.recalculateChannels(1)
+=======
+	mob_radio.ks2type = /obj/item/encryptionkey/heads/captain 		//Might not be able to speak, but the catslug can listen.
+	mob_radio.keyslot2 = new /obj/item/encryptionkey/heads/captain(mob_radio)
+	mob_radio.recalculateChannels(TRUE)
+>>>>>>> 440e4e907b ([MIRROR] new to init (radios) (#10085))
 
 //=============================================================================
 //Admin-spawn only catslugs below - Expect overpowered things & silliness below
@@ -854,10 +860,17 @@
 	. = ..()
 	mob_radio = new /obj/item/device/radio/headset/mob_headset(src)
 	mob_radio.frequency = SYND_FREQ
+<<<<<<< HEAD
 	mob_radio.syndie = 1
 	mob_radio.ks2type = /obj/item/device/encryptionkey/syndicate
 	mob_radio.keyslot2 = new /obj/item/device/encryptionkey/syndicate(mob_radio)
 	mob_radio.recalculateChannels(1)
+=======
+	mob_radio.syndie = TRUE
+	mob_radio.ks2type = /obj/item/encryptionkey/syndicate
+	mob_radio.keyslot2 = new /obj/item/encryptionkey/syndicate(mob_radio)
+	mob_radio.recalculateChannels(TRUE)
+>>>>>>> 440e4e907b ([MIRROR] new to init (radios) (#10085))
 	myid.access |= get_all_station_access()
 
 //ERT catslug
@@ -899,9 +912,15 @@
 	mob_radio = new /obj/item/device/radio/headset/mob_headset(src)
 	mob_radio.frequency = ERT_FREQ
 	mob_radio.centComm = 1
+<<<<<<< HEAD
 	mob_radio.ks2type = /obj/item/device/encryptionkey/ert
 	mob_radio.keyslot2 = new /obj/item/device/encryptionkey/ert(mob_radio)
 	mob_radio.recalculateChannels(1)
+=======
+	mob_radio.ks2type = /obj/item/encryptionkey/ert
+	mob_radio.keyslot2 = new /obj/item/encryptionkey/ert(mob_radio)
+	mob_radio.recalculateChannels(TRUE)
+>>>>>>> 440e4e907b ([MIRROR] new to init (radios) (#10085))
 	myid.access |= get_all_station_access()
 
 //Pilot Catslug
