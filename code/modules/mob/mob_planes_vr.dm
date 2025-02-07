@@ -42,8 +42,6 @@
 		if(my_mob.client)
 			my_mob.client.images -= entopic_images
 
-//CHOMPEdit begin
 /mob/Destroy()
 	. = ..()
 	entopic_users -= src
-//CHOMPEdit end
