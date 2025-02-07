@@ -124,7 +124,7 @@
 	brainmob = new(src)
 	brainmob.name = H.real_name
 	brainmob.real_name = H.real_name
-	brainmob.dna = H.dna
+	qdel_swap(brainmob.dna, H.dna.Clone())
 	brainmob.container = src
 
 	// Copy modifiers.
@@ -226,8 +226,13 @@
 				src.brainmob.emp_damage += rand(0,5)
 	..()
 
+<<<<<<< HEAD
 /obj/item/device/mmi/digital/transfer_identity(var/mob/living/carbon/H)
 	brainmob.dna = H.dna
+=======
+/obj/item/mmi/digital/transfer_identity(var/mob/living/carbon/H)
+	qdel_swap(brainmob.dna, H.dna.Clone())
+>>>>>>> ec71611656 ([MIRROR] (Partially) Fixes Out Of Memory crashes (#10092))
 	brainmob.timeofhostdeath = H.timeofdeath
 	brainmob.set_stat(CONSCIOUS)
 	if(H.mind)

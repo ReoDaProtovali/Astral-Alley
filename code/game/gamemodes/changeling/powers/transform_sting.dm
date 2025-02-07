@@ -35,8 +35,13 @@
 		to_chat(src, "<span class='warning'>Our sting appears ineffective against its DNA.</span>")
 		return 0
 	add_attack_logs(src,T,"Transformation sting (changeling)")
+<<<<<<< HEAD
 	T.visible_message("<span class='warning'>[T] transforms!</span>")
 	T.dna = chosen_dna.Clone()
+=======
+	T.visible_message(span_warning("[T] transforms!"))
+	qdel_swap(T.dna, chosen_dna.Clone())
+>>>>>>> ec71611656 ([MIRROR] (Partially) Fixes Out Of Memory crashes (#10092))
 	T.real_name = chosen_dna.real_name
 	T.UpdateAppearance()
 	domutcheck(T, null)
