@@ -54,8 +54,13 @@
 	battery_lock = 1
 
 	var/decl/plantgene/gene = null
+<<<<<<< HEAD
 	recoil_mode = 0 //CHOMP Addition
 	var/obj/item/weapon/stock_parts/micro_laser/emitter
+=======
+	recoil_mode = 0
+	var/obj/item/stock_parts/micro_laser/emitter
+>>>>>>> 15de0ed49d ([MIRROR] Gets rid of sleep in Fire and Fire_userless (#10086))
 
 	firemodes = list(
 		list(mode_name="induce mutations", projectile_type=/obj/item/projectile/energy/floramut, modifystate="floramut"),
