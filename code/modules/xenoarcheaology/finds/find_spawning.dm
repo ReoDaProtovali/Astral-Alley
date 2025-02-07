@@ -532,7 +532,11 @@
 				apply_image_decorations = TRUE
 			if(prob(25))
 				apply_material_decorations = FALSE
+<<<<<<< HEAD
 			new_item = new /obj/item/weapon/telecube/randomized(src.loc)
+=======
+			new_item = new /obj/item/telecube/randomized(src.loc)
+>>>>>>> 44c6516aa2 ([MIRROR] Xenoarch Gas Tweaks (#10093))
 			item_type = new_item.name
 
 		if(ARCHAEO_BATTERY)
