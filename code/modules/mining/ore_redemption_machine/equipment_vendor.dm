@@ -35,6 +35,7 @@
 	prize_list["Gear"] = list(
 		// TODO EQUIPMENT("Advanced Scanner",	/obj/item/device/t_scanner/adv_mining_scanner,										800),
 		// TODO EQUIPMENT("Explorer's Webbing",	/obj/item/storage/belt/mining,														500),
+<<<<<<< HEAD
 		EQUIPMENT("Defense Equipment - Plasteel Machete",		/obj/item/weapon/material/knife/machete,							500),
 		EQUIPMENT("Defense Equipment - Razor Drone Deployer",	/obj/item/weapon/grenade/spawnergrenade/manhacks/station/locked,	1000),
 		EQUIPMENT("Defense Equipment - Sentry Drone Deployer",	/obj/item/weapon/grenade/spawnergrenade/ward,						1500),
@@ -44,6 +45,18 @@
 		EQUIPMENT("Durasteel Fishing Rod",						/obj/item/weapon/material/fishing_rod/modern/strong,				7500),
 		EQUIPMENT("Titanium Fishing Rod",						/obj/item/weapon/material/fishing_rod/modern,						1000),
 		EQUIPMENT("Fishing Net",								/obj/item/weapon/material/fishing_net,								500),
+=======
+		EQUIPMENT("Defense Equipment - Plasteel Machete",		/obj/item/material/knife/machete,							500),
+		EQUIPMENT("Defense Equipment - Razor Drone Deployer",	/obj/item/grenade/spawnergrenade/manhacks/station/locked,	1000),
+		EQUIPMENT("Defense Equipment - Sentry Drone Deployer",	/obj/item/grenade/spawnergrenade/ward,						1500),
+		EQUIPMENT("Defense Equipment - Smoke Bomb",				/obj/item/grenade/smokebomb,									100),
+		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Dagger",	/obj/item/kinetic_crusher/machete/dagger,					500),
+		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Machete",	/obj/item/kinetic_crusher/machete,							1000),
+		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Gauntlets",	/obj/item/kinetic_crusher/machete/gauntlets,					1000), //eh this is two-hasnded so whatever, same price for slight dmg increase!
+		EQUIPMENT("Durasteel Fishing Rod",						/obj/item/material/fishing_rod/modern/strong,				7500),
+		EQUIPMENT("Titanium Fishing Rod",						/obj/item/material/fishing_rod/modern,						1000),
+		EQUIPMENT("Fishing Net",								/obj/item/material/fishing_net,								500),
+>>>>>>> 01baf5a38c ([MIRROR] Adds back diamond pickaxe & Kinetic Gauntlets to vendor (#10089))
 		EQUIPMENT("Fulton Beacon",								/obj/item/fulton_core,												500),
 		EQUIPMENT("Geiger Counter",								/obj/item/device/geiger,											750),
 		EQUIPMENT("GPS Device",									/obj/item/device/gps/mining,										100),
@@ -86,10 +99,16 @@
 		EQUIPMENT("Premium Kinetic Accelerator",/obj/item/weapon/gun/energy/kinetic_accelerator/premiumka,		12000),
 	)
 	prize_list["Digging Tools"] = list(
+<<<<<<< HEAD
 		EQUIPMENT("Diamond Pickaxe",	/obj/item/weapon/pickaxe/diamond,				2000), //CHOMPstation re-addition
 		// EQUIPMENT("Kinetic Crusher",	/obj/item/twohanded/required/kinetic_crusher,	750),
 		EQUIPMENT("Resonator",			/obj/item/resonator,							900),
 		EQUIPMENT("Silver Pickaxe",		/obj/item/weapon/pickaxe/silver,				1200),
+=======
+		EQUIPMENT("Resonator",			/obj/item/resonator,							900),
+		EQUIPMENT("Silver Pickaxe",		/obj/item/pickaxe/silver,						1200),
+		EQUIPMENT("Diamond Pickaxe",	/obj/item/pickaxe/diamond,				2000),
+>>>>>>> 01baf5a38c ([MIRROR] Adds back diamond pickaxe & Kinetic Gauntlets to vendor (#10089))
 		EQUIPMENT("Super Resonator",	/obj/item/resonator/upgraded,					2500),
 		EQUIPMENT("Explosive Excavation Kit - Plastic Charge",/obj/item/weapon/plastique/seismic/locked,	1500),
 		EQUIPMENT("Industrial Equipment - Phoron Bore",		/obj/item/weapon/gun/magnetic/matfed/phoronbore/loaded,			3000),
