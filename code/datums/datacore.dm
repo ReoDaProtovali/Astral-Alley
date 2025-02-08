@@ -370,7 +370,8 @@ var/global/list/PDA_Manifest = list()
 		var/datum/data/record/M = CreateMedicalRecord(H.real_name, id, hidden)
 		M.fields["species"]		= "[H.custom_species ? "[H.custom_species] ([H.species.name])" : H.species.name]" //VOREStation Edit
 		M.fields["b_type"]		= H.b_type
-		M.fields["blood_reagent"]	= H.species.blood_reagents
+		M.fields["blood_reagent"]	= H.dna.blood_reagents
+		M.fields["blood_color"]	= H.dna.blood_color
 		M.fields["b_dna"]		= H.dna.unique_enzymes
 		M.fields["id_gender"]	= gender2text(H.identifying_gender)
 		if(H.get_FBP_type())

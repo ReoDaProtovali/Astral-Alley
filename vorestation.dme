@@ -3631,7 +3631,12 @@
 #include "code\modules\mob\new_player\sprite_accessories_ear_vr.dm"
 #include "code\modules\mob\new_player\sprite_accessories_extra.dm"
 #include "code\modules\mob\new_player\sprite_accessories_extra_ch.dm"
+<<<<<<< HEAD
 #include "code\modules\mob\new_player\sprite_accessories_extra_vr.dm"
+=======
+#include "code\modules\mob\new_player\sprite_accessories_hair.dm"
+#include "code\modules\mob\new_player\sprite_accessories_markings.dm"
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 #include "code\modules\mob\new_player\sprite_accessories_tail.dm"
 #include "code\modules\mob\new_player\sprite_accessories_tail_ch.dm"
 #include "code\modules\mob\new_player\sprite_accessories_tail_vr.dm"
@@ -4386,7 +4391,6 @@
 #include "code\modules\tgui\modules\agentcard.dm"
 #include "code\modules\tgui\modules\alarm.dm"
 #include "code\modules\tgui\modules\appearance_changer.dm"
-#include "code\modules\tgui\modules\appearance_changer_vr.dm"
 #include "code\modules\tgui\modules\atmos_control.dm"
 #include "code\modules\tgui\modules\camera.dm"
 #include "code\modules\tgui\modules\communications.dm"
@@ -4619,6 +4623,7 @@
 #include "code\modules\xenobio\machinery\processor.dm"
 #include "code\modules\xgm\xgm_gas_data.dm"
 #include "code\modules\xgm\xgm_gas_mixture.dm"
+#include "code\unit_tests\cosmetic_tests.dm"
 #include "code\unit_tests\decl_tests.dm"
 #include "code\unit_tests\language_tests.dm"
 #include "code\unit_tests\loadout_tests.dm"

@@ -1,6 +1,4 @@
 // Little define makes it cleaner to read the tripple color values out of mobs.
-#define MOB_HEX_COLOR(M, V) "#[num2hex(M.r_##V, 2)][num2hex(M.g_##V, 2)][num2hex(M.b_##V, 2)]"
-
 #define MENU_MAIN "Main"
 #define MENU_BODYRECORDS "Body Records"
 #define MENU_STOCKRECORDS "Stock Records"
@@ -17,6 +15,7 @@
 	light_color = "#315ab4"
 	circuit = /obj/item/weapon/circuitboard/body_designer
 	req_access = list(access_medical) // Used for loading people's designs
+<<<<<<< HEAD
 	var/temp = ""
 	var/menu = MENU_MAIN //Which menu screen to display
 	var/datum/transhuman/body_record/active_br = null
@@ -28,6 +27,11 @@
 	// Mannequins are somewhat expensive to create, so cache it
 	var/mob/living/carbon/human/dummy/mannequin/mannequin = null
 	var/obj/item/weapon/disk/body_record/disk = null
+=======
+	var/datum/tgui_module/appearance_changer/body_designer/designer_gui
+	var/obj/item/disk/body_record/disk = null
+	var/selected_record = FALSE
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 
 	// Resleeving database this machine interacts with. Blank for default database
 	// Needs a matching /datum/transcore_db with key defined in code
@@ -36,6 +40,7 @@
 
 /obj/machinery/computer/transhuman/designer/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	map_name = "transhuman_designer_[REF(src)]_map"
 
 	south_preview = new
@@ -56,38 +61,45 @@
 	west_preview.del_on_map_removal = FALSE
 	west_preview.screen_loc = "[map_name]:0,1"
 
+=======
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 	our_db = SStranscore.db_by_key(db_key)
 
 /obj/machinery/computer/transhuman/designer/Destroy()
-	active_br = null
-	mannequin = null
-	disk = null
-	return ..()
+	if(disk)
+		disk.forceMove(get_turf(src))
+		disk = null
+	. = ..()
 
 /obj/machinery/computer/transhuman/designer/dismantle()
 	if(disk)
 		disk.forceMove(get_turf(src))
 		disk = null
-	..()
+	. = ..()
 
 /obj/machinery/computer/transhuman/designer/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/disk/body_record))
 		user.unEquip(W)
 		disk = W
 		disk.forceMove(src)
+<<<<<<< HEAD
 		to_chat(user, "<span class='notice'>You insert \the [W] into \the [src].</span>")
 		updateUsrDialog()
+=======
+		to_chat(user, span_notice("You insert \the [W] into \the [src]."))
+		SStgui.update_uis(src)
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 	else
-		..()
-	return
+		. = ..()
 
 /obj/machinery/computer/transhuman/designer/attack_ai(mob/user as mob)
-	return attack_hand(user)
+	attack_hand(user)
 
 /obj/machinery/computer/transhuman/designer/attack_hand(mob/user as mob)
 	add_fingerprint(user)
 	if(inoperable())
 		return
+<<<<<<< HEAD
 	tgui_interact(user)
 
 /obj/machinery/computer/transhuman/designer/tgui_interact(mob/user, datum/tgui/ui)
@@ -434,6 +446,15 @@
 /datum/preferences/designer/New()
 	player_setup = new(src)
 	// Do NOT call ..(), it expects real stuff
+=======
+	if(!designer_gui)
+		designer_gui = new(src, null)
+		designer_gui.linked_body_design_console = WEAKREF(src)
+	if(!designer_gui.owner)
+		designer_gui.make_fake_owner()
+		selected_record = FALSE
+	designer_gui.tgui_interact(user)
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 
 // Disk for manually moving body records between the designer and sleever console etc.
 /obj/item/weapon/disk/body_record
@@ -460,8 +481,6 @@
 	..()
 	for(var/i = 0 to 7)
 		new /obj/item/weapon/disk/body_record(src)
-
-#undef MOB_HEX_COLOR
 
 #undef MENU_MAIN
 #undef MENU_BODYRECORDS

@@ -101,8 +101,12 @@
 
 	if(H.dna)
 		H.dna.ready_dna(H)
+<<<<<<< HEAD
 
 	handle_base_eyes(H, custom_base) //ChompEDIT. ensure custom species with a base get the correct eyes
+=======
+	handle_base_eyes(H, custom_base)
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 
 	return new_copy
 

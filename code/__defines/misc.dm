@@ -509,3 +509,89 @@ GLOBAL_LIST_INIT(all_volume_channels, list(
 #define SPECIES_SORT_WHITELISTED 2
 #define SPECIES_SORT_RESTRICTED 3
 #define SPECIES_SORT_CUSTOM 4
+<<<<<<< HEAD
+=======
+
+// Vote Types
+#define VOTE_RESULT_TYPE_MAJORITY	"Majority"
+#define VOTE_RESULT_TYPE_SKEWED		"Seventy"
+
+#define ECO_MODIFIER 10
+
+#define VANTAG_NONE    "hudblank"
+#define VANTAG_VORE    "vantag_vore"
+#define VANTAG_KIDNAP  "vantag_kidnap"
+#define VANTAG_KILL    "vantag_kill"
+
+// ColorMate states
+#define COLORMATE_TINT 1
+#define COLORMATE_HSV 2
+#define COLORMATE_MATRIX 3
+
+#define DEPARTMENT_OFFDUTY			"Off-Duty"
+
+#define ANNOUNCER_NAME "Facility PA"
+
+//For custom species
+#define STARTING_SPECIES_POINTS 1 //CHOMPEdit
+#define MAX_SPECIES_TRAITS 6	//CHOMPEdit - Cap positive traits at 6, given negatives are unlimited.
+
+// Xenochimera thing mostly
+#define REVIVING_NOW		-1
+#define REVIVING_DONE		0
+#define REVIVING_READY		1
+
+// Resleeving Mind Record Status
+#define MR_NORMAL 0
+#define MR_UNSURE 1
+#define MR_DEAD 2
+
+//Shuttle madness!
+#define SHUTTLE_CRASHED 3 // Yup that can happen now
+
+//Herm Gender
+#define HERM "herm"
+
+// Bluespace shelter deploy checks
+#define SHELTER_DEPLOY_ALLOWED "allowed"
+#define SHELTER_DEPLOY_BAD_TURFS "bad turfs"
+#define SHELTER_DEPLOY_BAD_AREA "bad area"
+#define SHELTER_DEPLOY_ANCHORED_OBJECTS "anchored objects"
+#define SHELTER_DEPLOY_SHIP_SPACE "ship not in space"
+
+#define PTO_SECURITY		"Security"
+#define PTO_MEDICAL			"Medical"
+#define PTO_ENGINEERING 	"Engineering"
+#define PTO_SCIENCE			"Science"
+#define PTO_EXPLORATION 	"Exploration"
+#define PTO_CARGO			"Cargo"
+#define PTO_CIVILIAN		"Civilian"
+#define PTO_CYBORG			"Cyborg"
+#define PTO_TALON			"Talon Contractor"
+
+#define DEPARTMENT_TALON	"ITV Talon"
+
+#define MAT_TITANIUMGLASS		"ti-glass"
+#define MAT_PLASTITANIUM		"plastitanium"
+#define MAT_PLASTITANIUMHULL		"plastitanium hull"
+#define MAT_PLASTITANIUMGLASS	"plastitanium glass"
+#define MAT_GOLDHULL	"gold hull"
+
+#define RESIZE_MINIMUM 0.25
+#define RESIZE_MAXIMUM 2
+#define RESIZE_MINIMUM_DORMS 0.01
+#define RESIZE_MAXIMUM_DORMS 6
+
+#define RESIZE_HUGE 2
+#define RESIZE_BIG 1.5
+#define RESIZE_NORMAL 1
+#define RESIZE_SMALL 0.5
+#define RESIZE_TINY 0.25
+#define RESIZE_A_HUGEBIG (RESIZE_HUGE + RESIZE_BIG) / 2
+#define RESIZE_A_BIGNORMAL (RESIZE_BIG + RESIZE_NORMAL) / 2
+#define RESIZE_A_NORMALSMALL (RESIZE_NORMAL + RESIZE_SMALL) / 2
+#define RESIZE_A_SMALLTINY (RESIZE_SMALL + RESIZE_TINY) / 2
+
+#define WEIGHT_MIN 70
+#define WEIGHT_MAX 500
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))

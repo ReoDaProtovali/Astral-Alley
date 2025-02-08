@@ -985,7 +985,12 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 		if (isnull(pref.body_markings[M]["color"]))
 			if (tgui_alert(user, "You currently have customized marking colors. This will reset each bodypart's color. Are you sure you want to continue?","Reset Bodypart Colors",list("Yes","No")) != "Yes")
 				return TOPIC_NOACTION
+<<<<<<< HEAD
 		var/mark_color = input(user, "Choose the [M] color: ", "Character Preference", pref.body_markings[M]["color"]) as color|null
+=======
+		var/current = pref.body_markings[M] ? pref.body_markings[M]["color"] : "#000000"
+		var/mark_color = tgui_color_picker(user, "Choose the [M] color: ", "Character Preference", current)
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 		if(mark_color && CanUseTopic(user))
 			pref.body_markings[M] = pref.mass_edit_marking_list(M,FALSE,TRUE,pref.body_markings[M],color="[mark_color]")
 			return TOPIC_REFRESH_UPDATE_PREVIEW

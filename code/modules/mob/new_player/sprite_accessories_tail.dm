@@ -466,7 +466,35 @@
 	extra_overlay = "teshari_fluffytail_mark"
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
+<<<<<<< HEAD
 	//species_allowed = list(SPECIES_TESHARI, SPECIES_EVENT1, SPECIES_EVENT2, SPECIES_EVENT3)			//Removing Polaris whitelits, ones we need are defined in our files
+=======
+	extra_overlay = "teshpattern_male_tail"
+
+/datum/sprite_accessory/tail/tesh_pattern_male_alt
+	name = "Teshari male tail alt. pattern"
+	desc = ""
+	icon_state = "teshtail_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshpattern_male_alt"
+
+/datum/sprite_accessory/tail/tesh_pattern_fem
+	name = "Teshari female tail pattern"
+	desc = ""
+	icon_state = "teshtail_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshpattern_fem_tail"
+
+/datum/sprite_accessory/tail/tesh_pattern_fem_alt
+	name = "Teshari fem tail alt. pattern"
+	desc = ""
+	icon_state = "teshtail_s"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "teshpattern_fem_alt"
+>>>>>>> 116219bee6 ([MIRROR] Fixes the body designer [WIP] (#10105))
 
 /datum/sprite_accessory/tail/nightstalker
 	name = "Nightstalker, colorable"
@@ -477,7 +505,7 @@
 
 //For all species tails. Includes haircolored tails.
 /datum/sprite_accessory/tail/special
-	name = "Blank tail. Do not select."
+	name = DEVELOPER_WARNING_NAME
 	icon = 'icons/effects/species_tails.dmi'
 
 /datum/sprite_accessory/tail/special/unathi
