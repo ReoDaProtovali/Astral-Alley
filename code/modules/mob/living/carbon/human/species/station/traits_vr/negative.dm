@@ -194,4 +194,17 @@
 	desc = "You can't swim very well, all water slows you down a lot and you drown in deep water."
 	cost = -1
 	custom_only = FALSE
+<<<<<<< HEAD
 	var_changes = list("bad_swimmer" = 1, "water_movement" = 4)
+=======
+	var_changes = list("bad_swimmer" = 1, "water_movement" = 4, "swim_mult" = 1.25)
+	varchange_type = TRAIT_VARCHANGE_LESS_BETTER
+	excludes = list(/datum/trait/positive/good_swimmer)
+
+/datum/trait/negative/slipperydirt
+	name = "Dirt Vulnerability"
+	desc = "Even the tiniest particles of dirt give you uneasy footing, even through several layers of footwear."
+	cost = -5
+	var_changes = list("dirtslip" = TRUE)
+	excludes = list(/datum/trait/positive/absorbent) // CHOMPAdd
+>>>>>>> a12af10147 ([MIRROR] Ice Sliding & Signaler code ( & dirtking and mudslip) (#10110))

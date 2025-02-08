@@ -1,7 +1,6 @@
 /datum/species
 	var/crit_mod = 1
 	var/list/env_traits = list()
-	var/dirtslip = FALSE
 	var/photosynthesizing = FALSE
 	var/grows = FALSE
 	var/shrinks = FALSE
@@ -13,8 +12,11 @@
 	var/grab_power_victims = 0
 	var/grab_power_self = 0
 	var/waking_speed = 1
+<<<<<<< HEAD
 	var/mudking = FALSE
 	var/vanity_base_fit //when shapeshifting using vanity_copy_to, this allows you to have add something so they can go back to their original species fit
+=======
+>>>>>>> a12af10147 ([MIRROR] Ice Sliding & Signaler code ( & dirtking and mudslip) (#10110))
 	var/lightweight_light = 0
 
 // Handles non-standard eyes when using a species that utilizes a custom base icon set.
