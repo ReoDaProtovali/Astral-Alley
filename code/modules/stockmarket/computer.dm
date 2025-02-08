@@ -345,4 +345,8 @@
 		usr.machine = src
 
 	src.add_fingerprint(usr)
+<<<<<<< HEAD
 	src.updateUsrDialog()
+=======
+	src.updateUsrDialog(usr)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))

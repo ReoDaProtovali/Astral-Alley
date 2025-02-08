@@ -206,13 +206,19 @@
 				servers = list()
 				temp = "<font color = #336699>- NEW NETWORK TAG SET IN ADDRESS \[[network]\] -</font>"
 
-	updateUsrDialog()
+	updateUsrDialog(usr)
 	return
 
 /obj/machinery/computer/telecomms/traffic/emag_act(var/remaining_charges, var/mob/user)
 	if(!emagged)
 		playsound(src, 'sound/effects/sparks4.ogg', 75, 1)
 		emagged = 1
+<<<<<<< HEAD
 		to_chat(user, "<span class='notice'>You you disable the security protocols</span>")
 		src.updateUsrDialog()
 		return 1
+=======
+		to_chat(user, span_notice("You you disable the security protocols"))
+		updateUsrDialog(user)
+		return 1
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))

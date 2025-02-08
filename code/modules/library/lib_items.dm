@@ -107,8 +107,13 @@ Book Cart
 	anchored = FALSE
 	opacity = 0
 
+<<<<<<< HEAD
 /obj/structure/bookcase/bookcart/attackby(obj/item/O as obj, mob/user as mob)
 	if(istype(O, /obj/item/weapon/book))
+=======
+/obj/structure/bookcase/bookcart/attackby(obj/item/O as obj, mob/user)
+	if(istype(O, /obj/item/book))
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 		user.drop_item()
 		O.loc = src
 		update_icon()
@@ -188,7 +193,11 @@ Book Cart End
 	drop_sound = 'sound/items/drop/book.ogg'
 	pickup_sound = 'sound/items/pickup/book.ogg'
 
+<<<<<<< HEAD
 /obj/item/weapon/book/attack_self(var/mob/user as mob)
+=======
+/obj/item/book/attack_self(var/mob/user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 	if(carved)
 		if(store)
 			to_chat(user, "<span class='notice'>[store] falls out of [title]!</span>")
@@ -299,7 +308,11 @@ Book Cart End
 	else
 		..()
 
+<<<<<<< HEAD
 /obj/item/weapon/book/attack(mob/living/carbon/M as mob, mob/living/carbon/user as mob)
+=======
+/obj/item/book/attack(mob/living/carbon/M, mob/living/carbon/user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 	if(user.zone_sel.selecting == O_EYES)
 		user.visible_message("<span class='notice'>You open up the book and show it to [M]. </span>", \
 			"<span class='notice'> [user] opens up a book and shows it to [M]. </span>")
@@ -373,7 +386,7 @@ Book Cart End
 				page--
 				playsound(src, "pageturn", 50, 1)
 		src.attack_self(usr)
-		updateUsrDialog()
+		updateUsrDialog(usr)
 	else
 		to_chat(usr, "<span class='notice'>You need to hold it in your hands!</span>")
 
@@ -391,7 +404,11 @@ Book Cart End
 	var/obj/item/weapon/book/book	 //  Currently scanned book
 	var/mode = 0 					// 0 - Scan only, 1 - Scan and Set Buffer, 2 - Scan and Attempt to Check In, 3 - Scan and Attempt to Add to Inventory
 
+<<<<<<< HEAD
 /obj/item/weapon/barcodescanner/attack_self(mob/user as mob)
+=======
+/obj/item/barcodescanner/attack_self(mob/user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 	mode += 1
 	if(mode > 3)
 		mode = 0

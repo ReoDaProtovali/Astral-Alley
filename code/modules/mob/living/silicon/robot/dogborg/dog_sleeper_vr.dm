@@ -367,7 +367,7 @@
 	usr.set_machine(src)
 	if(href_list["refresh"])
 		update_patient()
-		src.updateUsrDialog()
+		src.updateUsrDialog(usr)
 		sleeperUI(usr)
 		return
 	if(href_list["eject"])
@@ -458,7 +458,7 @@
 	else
 		to_chat(usr, "<span class='notice'>ERROR: Subject cannot metabolise chemicals.</span>")
 
-	updateUsrDialog()
+	updateUsrDialog(usr)
 	sleeperUI(usr) //Needs a callback to boop the page to refresh.
 	return
 

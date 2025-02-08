@@ -24,7 +24,7 @@
 	add_implants()
 
 
-/obj/machinery/implantchair/attack_hand(mob/user as mob)
+/obj/machinery/implantchair/attack_hand(mob/user)
 	user.set_machine(src)
 	var/health_text = ""
 	if(src.occupant)
@@ -62,14 +62,20 @@
 				add_implants()
 				ready = 1
 
-		src.updateUsrDialog()
+		src.updateUsrDialog(usr)
 		src.add_fingerprint(usr)
 		return
 
 
+<<<<<<< HEAD
 /obj/machinery/implantchair/attackby(var/obj/item/weapon/G as obj, var/mob/user as mob)
 	if(istype(G, /obj/item/weapon/grab))
 		var/obj/item/weapon/grab/grab = G
+=======
+/obj/machinery/implantchair/attackby(var/obj/item/G, var/mob/user)
+	if(istype(G, /obj/item/grab))
+		var/obj/item/grab/grab = G
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 		if(!ismob(grab.affecting))
 			return
 		if(grab.affecting.has_buckled_mobs())
@@ -78,7 +84,7 @@
 		var/mob/M = grab.affecting
 		if(put_mob(M))
 			qdel(G)
-	src.updateUsrDialog()
+	src.updateUsrDialog(user)
 	return
 
 
@@ -99,7 +105,7 @@
 	return
 
 
-/obj/machinery/implantchair/proc/put_mob(mob/living/carbon/M as mob)
+/obj/machinery/implantchair/proc/put_mob(mob/living/carbon/M)
 	if(!iscarbon(M))
 		to_chat(usr, "<span class='warning'>\The [src] cannot hold this!</span>")
 		return

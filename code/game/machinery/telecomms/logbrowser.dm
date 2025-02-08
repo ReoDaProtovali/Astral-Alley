@@ -149,8 +149,13 @@
 	if(!emagged)
 		playsound(src, 'sound/effects/sparks4.ogg', 75, 1)
 		emagged = 1
+<<<<<<< HEAD
 		to_chat(user, "<span class='notice'>You you disable the security protocols</span>")
 		src.updateUsrDialog()
+=======
+		to_chat(user, span_notice("You you disable the security protocols"))
+		updateUsrDialog(user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 		return 1
 
 /obj/machinery/computer/telecomms/server/proc/set_temp(var/text, var/color = "average")

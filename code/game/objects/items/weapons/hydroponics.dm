@@ -14,7 +14,11 @@
 	w_class = ITEMSIZE_TINY
 	var/list/item_quants = list()
 
+<<<<<<< HEAD
 /obj/item/weapon/seedbag/attack_self(mob/user as mob)
+=======
+/obj/item/seedbag/attack_self(mob/user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 	user.machine = src
 	interact(user)
 
@@ -29,7 +33,7 @@
 		if(0)
 			to_chat(usr, "The bag now picks up one seed pouch at a time.")
 
-/obj/item/seeds/attackby(var/obj/item/O as obj, var/mob/user as mob)
+/obj/item/seeds/attackby(var/obj/item/O, var/mob/user)
 	..()
 	if (istype(O, /obj/item/weapon/seedbag))
 		var/obj/item/weapon/seedbag/S = O
@@ -42,8 +46,13 @@
 					else
 						S.item_quants[G.name] = 1
 				else
+<<<<<<< HEAD
 					to_chat(user, "<span class='warning'>The seed bag is full.</span>")
 					S.updateUsrDialog()
+=======
+					to_chat(user, span_warning("The seed bag is full."))
+					S.updateUsrDialog(user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 					return
 			to_chat(user, "<span class='notice'>You pick up all the seeds.</span>")
 		else
@@ -54,11 +63,19 @@
 				else
 					S.item_quants[name] = 1
 			else
+<<<<<<< HEAD
 				to_chat(user, "<span class='warning'>The seed bag is full.</span>")
 		S.updateUsrDialog()
 	return
 
 /obj/item/weapon/seedbag/interact(mob/user as mob)
+=======
+				to_chat(user, span_warning("The seed bag is full."))
+		S.updateUsrDialog(user)
+	return
+
+/obj/item/seedbag/interact(mob/user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 
 	var/dat = "<TT><b>Select an item:</b><br>"
 
@@ -102,10 +119,14 @@
 		for(var/obj/O in contents )
 			O.loc = get_turf(src)
 
-	src.updateUsrDialog()
+	src.updateUsrDialog(usr)
 	return
 
+<<<<<<< HEAD
 /obj/item/weapon/seedbag/updateUsrDialog()
+=======
+/obj/item/seedbag/updateUsrDialog(mob/user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 	var/list/nearby = range(1, src)
 	for(var/mob/M in nearby)
 		if ((M.client && M.machine == src))

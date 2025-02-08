@@ -41,7 +41,7 @@ FLOOR SAFES
 			space += I.w_class
 			I.forceMove(src)
 
-/obj/structure/safe/proc/check_unlocked(mob/user as mob, canhear)
+/obj/structure/safe/proc/check_unlocked(mob/user, canhear)
 	if(user && canhear)
 		if(tumbler_1_pos == tumbler_1_open)
 			to_chat(user, "<span class='notice'>You hear a [pick("tonk", "krunk", "plunk")] from \the [src].</span>")
@@ -74,7 +74,7 @@ FLOOR SAFES
 		icon_state = initial(icon_state)
 
 
-/obj/structure/safe/attack_hand(mob/user as mob)
+/obj/structure/safe/attack_hand(mob/user)
 	user.set_machine(src)
 	var/dat = "<center>"
 	dat += "<a href='?src=\ref[src];open=1'>[open ? "Close" : "Open"] [src]</a> | <a href='?src=\ref[src];decrement=1'>-</a> [dial * 5] <a href='?src=\ref[src];increment=1'>+</a>"
@@ -100,7 +100,7 @@ FLOOR SAFES
 			to_chat(user, "<span class='notice'>You [open ? "close" : "open"] [src].</span>")
 			open = !open
 			update_icon()
-			updateUsrDialog()
+			updateUsrDialog(usr)
 			return
 		else
 			to_chat(user, "<span class='notice'>You can't [open ? "close" : "open"] [src], the lock is engaged!</span>")
@@ -119,7 +119,7 @@ FLOOR SAFES
 					playsound(src, 'sound/machines/click.ogg', 20, 1)
 			check_unlocked(user, canhear)
 
-		updateUsrDialog()
+		updateUsrDialog(usr)
 		return
 
 	if(href_list["increment"])
@@ -134,7 +134,7 @@ FLOOR SAFES
 					to_chat(user, "<span class='notice'>You hear a [pick("click", "chink", "clink")] from \the [src].</span>")
 					playsound(src, 'sound/machines/click.ogg', 20, 1)
 			check_unlocked(user, canhear)
-		updateUsrDialog()
+		updateUsrDialog(usr)
 		return
 
 	if(href_list["retrieve"])
@@ -144,17 +144,22 @@ FLOOR SAFES
 		if(open)
 			if(P && in_range(src, user))
 				user.put_in_hands(P)
-				updateUsrDialog()
+				updateUsrDialog(usr)
 
 
-/obj/structure/safe/attackby(obj/item/I as obj, mob/user as mob)
+/obj/structure/safe/attackby(obj/item/I, mob/user)
 	if(open)
 		if(I.w_class + space <= maxspace)
 			space += I.w_class
 			user.drop_item()
 			I.loc = src
+<<<<<<< HEAD
 			to_chat(user, "<span class='notice'>You put [I] in \the [src].</span>")
 			updateUsrDialog()
+=======
+			to_chat(user, span_notice("You put [I] in \the [src]."))
+			updateUsrDialog(user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 			return
 		else
 			to_chat(user, "<span class='notice'>[I] won't fit in \the [src].</span>")

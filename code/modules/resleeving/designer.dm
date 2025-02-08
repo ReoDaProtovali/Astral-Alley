@@ -70,8 +70,13 @@
 		disk = null
 	..()
 
+<<<<<<< HEAD
 /obj/machinery/computer/transhuman/designer/attackby(obj/item/W as obj, mob/user as mob)
 	if(istype(W, /obj/item/weapon/disk/body_record))
+=======
+/obj/machinery/computer/transhuman/designer/attackby(obj/item/W, mob/user)
+	if(istype(W, /obj/item/disk/body_record))
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 		user.unEquip(W)
 		disk = W
 		disk.forceMove(src)
@@ -81,10 +86,15 @@
 		..()
 	return
 
+<<<<<<< HEAD
 /obj/machinery/computer/transhuman/designer/attack_ai(mob/user as mob)
 	return attack_hand(user)
+=======
+/obj/machinery/computer/transhuman/designer/attack_ai(mob/user)
+	attack_hand(user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 
-/obj/machinery/computer/transhuman/designer/attack_hand(mob/user as mob)
+/obj/machinery/computer/transhuman/designer/attack_hand(mob/user)
 	add_fingerprint(user)
 	if(inoperable())
 		return
