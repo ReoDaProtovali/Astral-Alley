@@ -3,9 +3,20 @@
 #define EXTERNAL_BLEEDING 0x4
 #define SERIOUS_EXTERNAL_DAMAGE 0x8
 #define SERIOUS_INTERNAL_DAMAGE 0x10
+<<<<<<< HEAD
 #define RADIATION_DAMAGE 0x20
 #define TOXIN_DAMAGE 0x40
 #define OXY_DAMAGE 0x80
+=======
+#define ACUTE_RADIATION_DOSE 0x20
+#define CHRONIC_RADIATION_DOSE 0x40
+#define TOXIN_DAMAGE 0x80
+#define OXY_DAMAGE 0x100
+#define HUSKED_BODY 0x200
+#define INFECTION 0x400
+#define VIRUS 0x800
+#define WEIRD_ORGANS 0x1000 //CHOMPedit malignant
+>>>>>>> 07fcefc446 ([MIRROR] Medical Kiosk additions (#10108))
 
 /obj/machinery/medical_kiosk
 	name = "medical kiosk"
@@ -119,22 +130,51 @@
 					problems |= INTERNAL_BLEEDING
 				else
 					problems |= EXTERNAL_BLEEDING
+<<<<<<< HEAD
 	
+=======
+		if(E.germ_level >= INFECTION_LEVEL_ONE) //Do NOT check for the germ_level on the mob, it'll be innacurate.
+			problems |= INFECTION
+
+>>>>>>> 07fcefc446 ([MIRROR] Medical Kiosk additions (#10108))
 	for(var/obj/item/organ/internal/I in user)
 		if(I.status & (ORGAN_BROKEN|ORGAN_DEAD|ORGAN_DESTROYED))
 			problems |= SERIOUS_INTERNAL_DAMAGE
 		if(I.status & ORGAN_BLEEDING)
 			problems |= INTERNAL_BLEEDING
+<<<<<<< HEAD
 	
+=======
+		if(I.germ_level >= INFECTION_LEVEL_ONE) //Do NOT check for the germ_level on the mob, it'll be innacurate.
+			problems |= INFECTION
+		//CHOMPedit begin- malignants
+		if(istype(I,/obj/item/organ/internal/malignant))
+			problems |= WEIRD_ORGANS
+		//CHOMPedit end
+
+	if(HUSK in user.mutations)
+		problems |= HUSKED_BODY
+
+>>>>>>> 07fcefc446 ([MIRROR] Medical Kiosk additions (#10108))
 	if(user.getToxLoss() > 0)
 		problems |= TOXIN_DAMAGE
 	if(user.getOxyLoss() > 0)
 		problems |= OXY_DAMAGE
 	if(user.radiation > 0)
-		problems |= RADIATION_DAMAGE
+		problems |= ACUTE_RADIATION_DOSE
+	if(user.accumulated_rads > 0)
+		problems |= CHRONIC_RADIATION_DOSE
 	if(user.getFireLoss() > 40 || user.getBruteLoss() > 40)
 		problems |= SERIOUS_EXTERNAL_DAMAGE
+<<<<<<< HEAD
 	
+=======
+	if(ishuman(user))
+		var/mob/living/carbon/human/our_user = user
+		if(our_user.has_virus())
+			problems |= VIRUS
+
+>>>>>>> 07fcefc446 ([MIRROR] Medical Kiosk additions (#10108))
 	if(!problems)
 		if(user.getHalLoss() > 0)
 			return "<br><span class='warning'>Mild concussion detected - advising bed rest until patient feels well. No other anatomical issues detected.</span>"
@@ -142,18 +182,44 @@
 			return "<br><span class='notice'>No anatomical issues detected.</span>"
 	
 	var/problem_text = ""
+	//Let's do this list from 'most severe' to 'least severe'
+	if(problems & INTERNAL_BLEEDING) //Will kill you quick and you NEED medical treatment.
+		problem_text += "<br>" + span_bolddanger("Internal bleeding detected - seek medical attention immediately!")
+	if(problems & INFECTION) //Will kill you quick and you NEED medical treatment.
+		problem_text += "<br>" + span_bolddanger("Infection detected - see a medical professional immediately!")
+
 	if(problems & BROKEN_BONES)
+<<<<<<< HEAD
 		problem_text += "<br><span class='warning'>Broken bones detected - see a medical professional and move as little as possible.</span>"
 	if(problems & INTERNAL_BLEEDING)
 		problem_text += "<br><span class='danger'>Internal bleeding detected - seek medical attention, ASAP!</span>"
 	if(problems & EXTERNAL_BLEEDING)
 		problem_text += "<br><span class='warning'>External bleeding detected - advising pressure with cloth and bandaging.</span>"
+=======
+		problem_text += "<br>" + span_warning("Broken bones detected - see a medical professional and move as little as possible.")
+	if(problems & EXTERNAL_BLEEDING)
+		problem_text += "<br>" + span_warning("External bleeding detected - advising pressure with cloth and bandaging or direct pressure until medical staff can assist.")
+
+>>>>>>> 07fcefc446 ([MIRROR] Medical Kiosk additions (#10108))
 	if(problems & SERIOUS_EXTERNAL_DAMAGE)
 		problem_text += "<br><span class='danger'>Severe anatomical damage detected - seek medical attention.</span>"
 	if(problems & SERIOUS_INTERNAL_DAMAGE)
+<<<<<<< HEAD
 		problem_text += "<br><span class='danger'>Severe internal damage detected - seek medical attention.</span>"
 	if(problems & RADIATION_DAMAGE)
 		problem_text += "<br><span class='danger'>Exposure to ionizing radiation detected - seek medical attention.</span>"
+=======
+		problem_text += "<br>" + span_danger("Severe internal damage detected - seek medical attention.")
+
+	if(problems & ACUTE_RADIATION_DOSE)
+		problem_text += "<br>" + span_danger("Acute exposure to ionizing radiation detected - seek medical attention.")
+	else if(problems & CHRONIC_RADIATION_DOSE) //We don't care about telling them about chronic rads if they have acute rads!
+		problem_text += "<br>" + span_warning("Chronic Exposure to ionizing radiation detected - medical attention is advises.")
+
+	if(problems & VIRUS)
+		problem_text += "<br>" + span_boldwarning("Viral illness detected - seek out medical attention and quarantine from others!")
+
+>>>>>>> 07fcefc446 ([MIRROR] Medical Kiosk additions (#10108))
 	if(problems & TOXIN_DAMAGE)
 		problem_text += "<br><span class='warning'>Exposure to toxic materials detected - induce vomiting if you have consumed anything recently.</span>"
 	if(problems & OXY_DAMAGE)
@@ -182,6 +248,15 @@
 #undef EXTERNAL_BLEEDING
 #undef SERIOUS_EXTERNAL_DAMAGE
 #undef SERIOUS_INTERNAL_DAMAGE
-#undef RADIATION_DAMAGE
+#undef ACUTE_RADIATION_DOSE
+#undef CHRONIC_RADIATION_DOSE
 #undef TOXIN_DAMAGE
+<<<<<<< HEAD
 #undef OXY_DAMAGE
+=======
+#undef OXY_DAMAGE
+#undef HUSKED_BODY
+#undef INFECTION
+#undef VIRUS
+#undef WEIRD_ORGANS // CHOMPedit - malignants
+>>>>>>> 07fcefc446 ([MIRROR] Medical Kiosk additions (#10108))
