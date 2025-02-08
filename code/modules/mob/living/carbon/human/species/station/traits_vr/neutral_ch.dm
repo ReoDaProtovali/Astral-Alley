@@ -29,12 +29,18 @@
 	cost = 0
 	var_changes = list("shrinks" = TRUE)
 
+<<<<<<< HEAD
 /datum/trait/neutral/mudking
 	name = "Mudking"
 	desc = "Somehow you are so filthy that tiles get dirty four times as quick from you walking on them."
 	cost = 0
 	var_changes = list("mudking" = TRUE)
 	custom_only = FALSE
+=======
+/datum/trait/neutral/nutritiongrow/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..()
+	add_verb(H,/mob/living/carbon/proc/toggle_shrinking) //CHOMPEdit TGPanel
+>>>>>>> a12af10147 ([MIRROR] Ice Sliding & Signaler code ( & dirtking and mudslip) (#10110))
 
 /datum/trait/neutral/singularity_metabolism
 	name = "Metabolism, Singularity"
