@@ -258,8 +258,13 @@
 			stored_material[S.material.name] += S.perunit
 			S.use(1)
 			count++
+<<<<<<< HEAD
 		user.visible_message("\The [user] inserts [S.name] into \the [src].", "<span class='notice'>You insert [count] [S.name] into \the [src].</span>")
 		updateUsrDialog()
+=======
+		user.visible_message("\The [user] inserts [S.name] into \the [src].", span_notice("You insert [count] [S.name] into \the [src]."))
+		updateUsrDialog(user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 	else
 		to_chat(user, "<span class='warning'>\The [src] cannot hold more [S.name].</span>")
 	return 1

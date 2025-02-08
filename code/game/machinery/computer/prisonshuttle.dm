@@ -64,9 +64,15 @@ var/prison_shuttle_timeleft = 0
 			return
 		if(!prison_shuttle_at_station|| prison_shuttle_moving_to_station || prison_shuttle_moving_to_prison) return
 		post_signal("prison")
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>The prison shuttle has been called and will arrive in [(PRISON_MOVETIME/10)] seconds.</span>")
 		src.temp += "Shuttle sent.<BR><BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
 		src.updateUsrDialog()
+=======
+		to_chat(usr, span_notice("The prison shuttle has been called and will arrive in [(PRISON_MOVETIME/10)] seconds."))
+		src.temp += "Shuttle sent.<BR><BR><A href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
+		src.updateUsrDialog(usr)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 		prison_shuttle_moving_to_prison = 1
 		prison_shuttle_time = world.timeofday + PRISON_MOVETIME
 		spawn(0)
@@ -78,9 +84,15 @@ var/prison_shuttle_timeleft = 0
 			return
 		if(prison_shuttle_at_station || prison_shuttle_moving_to_station || prison_shuttle_moving_to_prison) return
 		post_signal("prison")
+<<<<<<< HEAD
 		to_chat(usr, "<span class='notice'>The prison shuttle has been called and will arrive in [(PRISON_MOVETIME/10)] seconds.</span>")
 		src.temp += "Shuttle sent.<BR><BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
 		src.updateUsrDialog()
+=======
+		to_chat(usr, span_notice("The prison shuttle has been called and will arrive in [(PRISON_MOVETIME/10)] seconds."))
+		src.temp += "Shuttle sent.<BR><BR><A href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
+		src.updateUsrDialog(usr)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 		prison_shuttle_moving_to_station = 1
 		prison_shuttle_time = world.timeofday + PRISON_MOVETIME
 		spawn(0)
@@ -90,7 +102,7 @@ var/prison_shuttle_timeleft = 0
 		src.temp = null
 
 	src.add_fingerprint(usr)
-	src.updateUsrDialog()
+	src.updateUsrDialog(usr)
 	return
 
 

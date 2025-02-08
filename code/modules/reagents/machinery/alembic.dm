@@ -31,8 +31,13 @@
 		icon_state = "alembic-bubble"
 	return
 
+<<<<<<< HEAD
 /obj/machinery/alembic/attackby(var/obj/item/weapon/potion_material/O as obj, var/mob/user as mob)
 	if(istype(O,/obj/item/weapon/potion_material))
+=======
+/obj/machinery/alembic/attackby(var/obj/item/potion_material/O, var/mob/user)
+	if(istype(O,/obj/item/potion_material))
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 		if(potion_reagent != 0 )
 			to_chat(user, SPAN_WARNING("There is already a reagent in the alembic!"))
 			return
@@ -43,8 +48,13 @@
 			user.drop_item()
 			O.loc = src
 			update_icon()
+<<<<<<< HEAD
 			to_chat(user, SPAN_NOTICE("You place the [O] in the alembic."))
 			src.updateUsrDialog()
+=======
+			to_chat(user, span_notice("You place the [O] in the alembic."))
+			src.updateUsrDialog(user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 			return
 	else if(istype(O,/obj/item/weapon/potion_base))
 		if(base_reagent != 0 )
@@ -55,14 +65,19 @@
 			user.drop_item()
 			O.loc = src
 			update_icon()
+<<<<<<< HEAD
 			to_chat(user, SPAN_NOTICE("You place the [O] in the alembic."))
 			src.updateUsrDialog()
+=======
+			to_chat(user, span_notice("You place the [O] in the alembic."))
+			src.updateUsrDialog(user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 			return
 	else
 		to_chat(user, SPAN_WARNING("This item is no use in the alembic."))
 		return
 
-/obj/machinery/alembic/attack_hand(mob/user as mob)
+/obj/machinery/alembic/attack_hand(mob/user)
 
 	if(potion_reagent == 0 || base_reagent == 0) //If there is nothing in there
 		to_chat(user, SPAN_WARNING("The alembic is not yet full!"))

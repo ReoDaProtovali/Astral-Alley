@@ -294,8 +294,13 @@ var/specops_shuttle_timeleft = 0
 
 		to_chat(usr, "<span class='notice'>The Special Operations shuttle will arrive at [using_map.boss_name] in [(SPECOPS_MOVETIME/10)] seconds.</span>")
 
+<<<<<<< HEAD
 		temp += "Shuttle departing.<BR><BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
 		updateUsrDialog()
+=======
+		temp += "Shuttle departing.<BR><BR><A href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
+		updateUsrDialog(usr)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 
 		specops_shuttle_moving_to_centcom = 1
 		specops_shuttle_time = world.timeofday + SPECOPS_MOVETIME
@@ -311,8 +316,13 @@ var/specops_shuttle_timeleft = 0
 
 		to_chat(usr, "<span class='notice'>The Special Operations shuttle will arrive on [station_name()] in [(SPECOPS_MOVETIME/10)] seconds.</span>")
 
+<<<<<<< HEAD
 		temp += "Shuttle departing.<BR><BR><A href='?src=\ref[src];mainmenu=1'>OK</A>"
 		updateUsrDialog()
+=======
+		temp += "Shuttle departing.<BR><BR><A href='byond://?src=\ref[src];mainmenu=1'>OK</A>"
+		updateUsrDialog(usr)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 
 		var/area/centcom/specops/special_ops = locate()
 		if(special_ops)
@@ -327,7 +337,7 @@ var/specops_shuttle_timeleft = 0
 		temp = null
 
 	add_fingerprint(usr)
-	updateUsrDialog()
+	updateUsrDialog(usr)
 	return
 
 #undef SPECOPS_MOVETIME

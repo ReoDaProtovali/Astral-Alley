@@ -538,8 +538,13 @@
 		//Behavior lock/unlock mangement
 		if(allowed(user))
 			locked = !locked
+<<<<<<< HEAD
 			to_chat(user, "<span class='notice'>Controls are now [locked ? "locked" : "unlocked"].</span>")
 			updateUsrDialog()
+=======
+			to_chat(user, span_notice("Controls are now [locked ? "locked" : "unlocked"]."))
+			updateUsrDialog(user)
+>>>>>>> 90329c46d2 ([MIRROR] forward refs in usr dialog (#10115))
 		else
 			to_chat(user, "<span class='notice'>Access denied.</span>")
 
