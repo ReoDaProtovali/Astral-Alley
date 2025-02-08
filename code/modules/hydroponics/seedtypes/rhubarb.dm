@@ -1,9 +1,17 @@
 /datum/seed/rhubarb
+<<<<<<< HEAD
 	name = "rhubarb"
 	seed_name = "rhubarb"
 	display_name = "rhubarb"
 	kitchen_tag = "rhubarb"
 	chems = list("nutriment" = list(1,15))
+=======
+	name = PLANT_RHUBARB
+	seed_name = PLANT_RHUBARB
+	display_name = PLANT_RHUBARB
+	kitchen_tag = PLANT_RHUBARB
+	chems = list(REAGENT_ID_NUTRIMENT = list(1,15))
+>>>>>>> 5c9af59457 ([MIRROR] fix rhubarb define (#10106))
 
 /datum/seed/rhubarb/New()
 	..()
