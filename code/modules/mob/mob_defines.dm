@@ -237,4 +237,16 @@
 
 	var/datum/focus //What receives our keyboard inputs. src by default
 
+<<<<<<< HEAD
 	var/custom_footstep = FOOTSTEP_MOB_SHOE // CHOMPEdit
+=======
+	/// dict of custom stat tabs with data
+	var/list/list/misc_tabs = list()
+
+	var/list/datum/action/actions
+
+	var/list/viruses
+	var/list/resistances
+
+	var/custom_footstep = FOOTSTEP_MOB_SHOE
+>>>>>>> 4524b7b325 ([MIRROR] DCS Update + Footstep element (#10125))

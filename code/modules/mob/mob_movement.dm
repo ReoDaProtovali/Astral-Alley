@@ -400,13 +400,30 @@
 			if(mob.check_holy(T))
 				to_chat(mob, "<span class='warning'>You cannot get past holy grounds while you are in this plane of existence!</span>")
 				return
-			//CHOMPEdit start - add ability to block incorporeal movement for nonghosts
 			else if(!istype(mob, /mob/observer/dead) && T.blocks_nonghost_incorporeal)
 				return
+<<<<<<< HEAD
 			//CHOMPEdit end
 			else
 				mob.forceMove(get_step(mob, direct))
 				mob.dir = direct
+=======
+			//RS Port #658 Start
+			if(!holder)
+				if(isliving(mob) && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
+					to_chat(mob, span_warning("Something blocks you from entering this location while phased out."))
+					return
+				if(isobserver(mob) && A.flag_check(AREA_BLOCK_GHOSTS) && !isbelly(mob.loc))
+					to_chat(mob, span_warning("Ghosts can't enter this location."))
+					var/area/our_area = mobloc.loc
+					if(our_area.flag_check(AREA_BLOCK_GHOSTS) && !isbelly(mob.loc))
+						var/mob/observer/dead/D = mob
+						D.return_to_spawn()
+					return
+			mob.forceMove(get_step(mob, direct))
+			mob.dir = direct
+			//RS Port #658 End
+>>>>>>> 4524b7b325 ([MIRROR] DCS Update + Footstep element (#10125))
 		if(2)
 			if(prob(50))
 				var/locx

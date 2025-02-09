@@ -16,7 +16,7 @@
 	var/voice_freq = 42500	//CHOMPEdit - Why was the default 0
 	var/voice_sound = "goon speak 1"	//CHOMPEdit - Changed the default voice to one less jarring
 	var/custom_speech_bubble = "default"
-	var/custom_footstep = "Default"	// CHOMPAdd
+	var/custom_footstep = "Default"
 	var/species_sound = "Unset"		// CHOMPEdit: Use default species pain/scream sounds based off icon base if none set, override otherwise
 
 // Definition of the stuff for Sizing
@@ -24,6 +24,7 @@
 	name = "Size"
 	sort_order = 2
 
+<<<<<<< HEAD
 /datum/category_item/player_setup_item/vore/size/load_character(var/savefile/S)
 	S["size_multiplier"]	>> pref.size_multiplier
 	S["weight_vr"]			>> pref.weight_vr
@@ -50,6 +51,37 @@
 	S["custom_footstep"]	<< pref.custom_footstep // CHOMPEdit
 	S["species_sound"]		<< pref.species_sound // CHOMPEdit
 
+=======
+/datum/category_item/player_setup_item/vore/size/load_character(list/save_data)
+	pref.size_multiplier	= save_data["size_multiplier"]
+	pref.weight_vr			= save_data["weight_vr"]
+	pref.weight_gain		= save_data["weight_gain"]
+	pref.weight_loss		= save_data["weight_loss"]
+	pref.fuzzy				= save_data["fuzzy"]
+	pref.offset_override	= save_data["offset_override"]
+	pref.voice_freq			= save_data["voice_freq"]
+	pref.voice_sound		= save_data["voice_sound"]
+	pref.custom_speech_bubble	= save_data["custom_speech_bubble"]
+	pref.custom_footstep	= save_data["custom_footstep"]
+	//CHOMPAdd Start
+	pref.species_sound		= save_data["species_sound"]
+	//CHOMPAdd End
+
+/datum/category_item/player_setup_item/vore/size/save_character(list/save_data)
+	save_data["size_multiplier"]	= pref.size_multiplier
+	save_data["weight_vr"]			= pref.weight_vr
+	save_data["weight_gain"]		= pref.weight_gain
+	save_data["weight_loss"]		= pref.weight_loss
+	save_data["fuzzy"]				= pref.fuzzy
+	save_data["offset_override"]	= pref.offset_override
+	save_data["voice_freq"]			= pref.voice_freq
+	save_data["voice_sound"]		= pref.voice_sound
+	save_data["custom_speech_bubble"]		= pref.custom_speech_bubble
+	save_data["custom_footstep"]	= pref.custom_footstep
+	//CHOMPAdd Start
+	save_data["species_sound"]		= pref.species_sound
+	//CHOMPAdd End
+>>>>>>> 4524b7b325 ([MIRROR] DCS Update + Footstep element (#10125))
 
 /datum/category_item/player_setup_item/vore/size/sanitize_character()
 	pref.weight_vr			= sanitize_integer(pref.weight_vr, WEIGHT_MIN, WEIGHT_MAX, initial(pref.weight_vr))
@@ -63,7 +95,7 @@
 		pref.size_multiplier = initial(pref.size_multiplier)
 	if(!(pref.custom_speech_bubble in selectable_speech_bubbles))
 		pref.custom_speech_bubble = "default"
-	if(!(pref.custom_footstep))	// CHOMPAdd
+	if(!(pref.custom_footstep))
 		pref.custom_footstep = "Default"
 	// var/datum/species/selected_species = GLOB.all_species[pref.species] // CHOMPEdit
 	if(!(pref.species_sound)) // CHOMPEdit // && selected_species.selects_bodytype
@@ -246,14 +278,6 @@
 		else
 			pref.voice_sound = choice
 		return TOPIC_REFRESH
-	// CHOMPAdd Start
-	else if(href_list["customize_footsteps"])
-		var/list/footstep_choice = selectable_footstep
-		var/choice = tgui_input_list(user, "What footstep sounds would your character make?", "Custom Foostep Sounds", footstep_choice)
-		if(choice)
-			pref.custom_footstep = footstep_choice[choice]
-			return TOPIC_REFRESH
-	// CHOMPAdd End
 	else if(href_list["customize_speech_bubble"])
 		var/choice = tgui_input_list(user, "What speech bubble style do you want to use? (default for automatic selection)", "Custom Speech Bubble", selectable_speech_bubbles)
 		if(!choice)
@@ -261,6 +285,13 @@
 		else
 			pref.custom_speech_bubble = choice
 		return TOPIC_REFRESH
+
+	else if(href_list["customize_footsteps"])
+		var/list/footstep_choice = selectable_footstep
+		var/choice = tgui_input_list(user, "What footstep sounds would your character make?", "Custom Foostep Sounds", footstep_choice)
+		if(choice)
+			pref.custom_footstep = footstep_choice[choice]
+			return TOPIC_REFRESH
 
 	else if(href_list["voice_test"])
 		var/sound/S
