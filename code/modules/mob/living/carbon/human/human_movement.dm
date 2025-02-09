@@ -259,6 +259,7 @@
 
 // Handle footstep sounds
 /mob/living/carbon/human/handle_footstep(var/turf/T)
+<<<<<<< HEAD
 	/*CHOMPEdit - This is an Element now
 	if(!istype(T) || is_incorporeal() || !CONFIG_GET(number/footstep_volume) || !T.footstep_sounds || !T.footstep_sounds.len) // CHOMPEdit
 		return	//CHOMPEdit - Condensed some return checks
@@ -307,6 +308,11 @@
 
 	playsound(T, S, volume, FALSE)
 	*/
+=======
+	if(shoes && loc == T && get_gravity(loc) && !flying)
+		if(SEND_SIGNAL(shoes, COMSIG_SHOES_STEP_ACTION, m_intent))
+			return
+>>>>>>> 4524b7b325 ([MIRROR] DCS Update + Footstep element (#10125))
 	return
 
 /mob/living/carbon/human/set_dir(var/new_dir)
