@@ -119,6 +119,7 @@
 /datum/event_container/major/New()
 	available_events = list(
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Nothing",						/datum/event/nothing,					900),
+<<<<<<< HEAD
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Atmos Leak",					/datum/event/atmos_leak, 				5,		list(ASSIGNMENT_ENGINEER = 35), 1),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Blob",						/datum/event/blob, 						-100,	list(ASSIGNMENT_SECURITY = 40, ASSIGNMENT_HOS = 10, ASSIGNMENT_WARDEN = 10, ASSIGNMENT_ENGINEER = 5), 1, min_jobs = list(ASSIGNMENT_SECURITY = 1)),
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Carp Migration",				/datum/event/carp_migration,			-110,	list(ASSIGNMENT_SECURITY = 50, ASSIGNMENT_HOS = 10, ASSIGNMENT_WARDEN = 10), 1, min_jobs = list(ASSIGNMENT_SECURITY = 3)),
@@ -134,6 +135,25 @@
 	)
 	add_disabled_events(list(
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Containment Breach",			/datum/event/prison_break/station,		0,		list(ASSIGNMENT_ANY = 5),0),
+=======
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Atmos Leak",					/datum/event/atmos_leak, 				5,		list(DEPARTMENT_ENGINEERING = 35), 1),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Blob",						/datum/event/blob, 						-100,	list(DEPARTMENT_SECURITY = 40, JOB_HEAD_OF_SECURITY = 10, JOB_WARDEN = 10, DEPARTMENT_ENGINEERING = 5), 1, min_jobs = list(DEPARTMENT_SECURITY = 1)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Carp Migration",				/datum/event/carp_migration,			-110,	list(DEPARTMENT_SECURITY = 50, JOB_HEAD_OF_SECURITY = 10, JOB_WARDEN = 10), 1, min_jobs = list(DEPARTMENT_SECURITY = 3)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Electrical Fire",				/datum/event/electrical_fire,	 		5,		list(DEPARTMENT_ENGINEERING = 5, JOB_CYBORG = 5), 0),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Exotic Horde Infestation",	/datum/event/highdangerinfestation, 	-50,	list(DEPARTMENT_ENGINEERING = 20, DEPARTMENT_RESEARCH = 5, DEPARTMENT_ANY = 2), 1),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Horde Infestation",			/datum/event/horde_infestation, 		-60,	list(DEPARTMENT_SECURITY = 20, JOB_HEAD_OF_SECURITY = 10, JOB_WARDEN = 10, DEPARTMENT_ANY = 3), 0),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Infected Room",				/datum/event/disease_outbreak/floor,	-50,	list(DEPARTMENT_MEDICAL = 25, JOB_JANITOR = 10, DEPARTMENT_ANY = 1), 	1, min_jobs = list(DEPARTMENT_MEDICAL = 2)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Jellyfish Migration",			/datum/event/jellyfish_migration,		5,		list(DEPARTMENT_ANY = 1, DEPARTMENT_SECURITY = 5, DEPARTMENT_MEDICAL = 3), 1),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Meaty Ores Wave",				/datum/event/meteor_wave/meatyores,		-90,	list(DEPARTMENT_ENGINEERING = 50, DEPARTMENT_MEDICAL = 10, DEPARTMENT_ANY = 1),	1, min_jobs = list(DEPARTMENT_ENGINEERING = 1)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Meteor Wave",					/datum/event/meteor_wave,				-90,	list(DEPARTMENT_ENGINEERING = 50, DEPARTMENT_MEDICAL = 10, DEPARTMENT_ANY = 1),	1, min_jobs = list(DEPARTMENT_ENGINEERING = 1)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Spacefish Swarm",				/datum/event/spacefish_migration,		10,		list(DEPARTMENT_SECURITY = 5, DEPARTMENT_MEDICAL = 3), 1, min_jobs = list(DEPARTMENT_SECURITY = 1)),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Space Vines",					/datum/event/spacevine, 				20,		list(DEPARTMENT_ENGINEERING = 15), 1),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Supply Demand",				/datum/event/supply_demand,				0,		list(DEPARTMENT_ANY = 5, DEPARTMENT_RESEARCH = 15, JOB_BOTANIST = 10, DEPARTMENT_ENGINEERING = 10, DEPARTMENT_MEDICAL = 15), 1, min_jobs = list(DEPARTMENT_CARGO = 1)),
+	)
+	add_disabled_events(list(
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Containment Breach",			/datum/event/prison_break/station,		0,		list(DEPARTMENT_ANY = 5),0),
+		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Disease Outbreak",			/datum/event/disease_outbreak,			-30,	list(DEPARTMENT_MEDICAL = 30, DEPARTMENT_ANY = 1), 	1, min_jobs = list(DEPARTMENT_MEDICAL = 2)),
+>>>>>>> 4423014b41 (Disables random virus event (#10133))
 		//Spiders moved into horde infestation
 		new /datum/event_meta(EVENT_LEVEL_MAJOR, "Spider Infestation",			/datum/event/spider_infestation, 		-60,	list(ASSIGNMENT_SECURITY = 20, ASSIGNMENT_HOS = 10, ASSIGNMENT_WARDEN = 10, ASSIGNMENT_ANY = 3), 0),
 		//Metroids moved into horde infestation
