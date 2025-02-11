@@ -16,6 +16,10 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-popper": "^2.3.0",
+<<<<<<< HEAD
+=======
+    "tgui-core": "^1.8.0",
+>>>>>>> b0cfb0fa3d ([MIRROR] fix some UI isues (#10137))
     "tgui-dev-server": "workspace:*",
     "tgui-polyfill": "workspace:*"
   }
