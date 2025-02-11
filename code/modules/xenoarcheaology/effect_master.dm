@@ -144,7 +144,11 @@
 
 /datum/component/artifact_master/proc/generate_effects()
 	while(effect_generation_chance > 0)
+<<<<<<< HEAD
 		var/chosen_path = pick(subtypesof(/datum/artifact_effect))
+=======
+		var/chosen_path = pick(subtypesof(/datum/artifact_effect) - blacklisted_artifact_effects)
+>>>>>>> 1c8250aeb6 ([MIRROR] More xenoarch tweaks (#10139))
 		if(effect_generation_chance >= 100)	// If we're above 100 percent, just cut a flat amount and add an effect.
 			var/datum/artifact_effect/AE = new chosen_path(src)
 			if(istype(holder, AE.req_type))
