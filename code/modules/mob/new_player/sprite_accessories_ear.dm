@@ -428,6 +428,28 @@
 	do_colouration = 1
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "vulp_jackal-inner"
+<<<<<<< HEAD
+=======
+
+/datum/sprite_accessory/ears/vulp_jackal/tri
+	name = "vulpkanin thin, tri-color (tips)"
+	extra_overlay2 = "vulp_jackal-tips"
+
+/datum/sprite_accessory/ears/fox
+	name = "fox ears"
+	desc = ""
+	icon_state = "fox"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "fox-inner"
+
+/datum/sprite_accessory/ears/dog_floppy
+	name = "floppy dog ears, colorable"
+	desc = ""
+	icon_state = "dog_flop"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+>>>>>>> fd1b843106 ([MIRROR] Update sprite_accessories_ear.dm (#10138))
 
 /datum/sprite_accessory/ears/bunny_floppy
 	name = "floopy bunny ears (colorable)"
