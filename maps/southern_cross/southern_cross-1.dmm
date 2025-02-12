@@ -68,26 +68,6 @@
 /obj/effect/landmark/event_spawn/morphspawn,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/forestarboard)
-"aah" = (
-/obj/effect/floor_decal/borderfloor/corner{
-	dir = 1
-	},
-/obj/effect/floor_decal/corner/green/bordercorner{
-	dir = 1
-	},
-/turf/space,
-/turf/simulated/floor/tiled,
-/area/hallway/primary/firstdeck/port)
-"aai" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 4
-	},
-/turf/space,
-/turf/simulated/floor/tiled/monotile,
-/area/hallway/primary/firstdeck/port)
 "aaj" = (
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
@@ -100,7 +80,6 @@
 /obj/effect/floor_decal/corner/brown/bordercorner{
 	dir = 8
 	},
-/turf/space,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/port)
 "aal" = (
@@ -114,7 +93,6 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/warning,
-/turf/space,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/port)
 "aam" = (
@@ -130,7 +108,6 @@
 /obj/machinery/light,
 /obj/effect/floor_decal/borderfloor/corner,
 /obj/effect/floor_decal/corner/brown/bordercorner,
-/turf/space,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/port)
 "aao" = (
@@ -147,7 +124,6 @@
 "aaq" = (
 /obj/structure/closet/emcloset,
 /obj/structure/catwalk,
-/turf/space,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/centralport)
 "aas" = (
@@ -210,14 +186,6 @@
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled,
 /area/teleporter/firstdeck)
-"aaz" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 9
-	},
-/obj/effect/wingrille_spawn/reinforced,
-/turf/space,
-/turf/simulated/floor,
-/area/hallway/primary/firstdeck/auxdockaft)
 "aaA" = (
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/deployable/barrier,
@@ -9655,10 +9623,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
-"aWw" = (
-/turf/space,
-/turf/simulated/wall/r_wall,
-/area/hallway/primary/firstdeck/auxdockaft)
 "aXT" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -18575,8 +18539,30 @@
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/aftport)
 "hvg" = (
+<<<<<<< HEAD:maps/southern_cross/southern_cross-1.dmm
 /turf/simulated/wall,
 /area/medical/genetics)
+=======
+/obj/machinery/door/firedoor,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/door/airlock/medical{
+	name = "Morgue";
+	req_access = list(6)
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/turf/simulated/floor/tiled/steel_grid,
+/area/medical/morgue)
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-2.dmm
 "hvn" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
 	dir = 4
@@ -28932,7 +28918,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/airlock/glass{
 	name = "Research Access"
 	},
@@ -30544,8 +30529,31 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/firstdeck/starboard)
 "tDq" = (
+<<<<<<< HEAD:maps/southern_cross/southern_cross-1.dmm
 /turf/simulated/wall/r_wall,
 /area/medical/genetics)
+=======
+/obj/structure/table/steel,
+/obj/item/paper_bin{
+	pixel_y = -6
+	},
+/obj/item/camera{
+	name = "Autopsy Camera";
+	pixel_x = -2;
+	pixel_y = 7
+	},
+/obj/item/pen/red{
+	pixel_x = -1;
+	pixel_y = -9
+	},
+/obj/item/pen/blue{
+	pixel_x = 3;
+	pixel_y = -5
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled,
+/area/medical/morgue)
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-2.dmm
 "tDP" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
@@ -34344,10 +34352,6 @@
 /obj/machinery/shield_diffuser,
 /turf/simulated/floor/reinforced,
 /area/rnd/xenobiology)
-"xai" = (
-/turf/space,
-/turf/simulated/wall,
-/area/maintenance/firstdeck/centralport)
 "xaJ" = (
 /obj/machinery/door/firedoor/border_only,
 /turf/simulated/floor/tiled,
@@ -34833,7 +34837,6 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/tiled/steel_grid,
 /area/hallway/secondary/escape/firstdeck/ep_starboard)
@@ -57831,10 +57834,10 @@ mEN
 acy
 acX
 ril
-aah
-aai
+adQ
+anF
 aak
-xai
+hiR
 aaq
 agT
 apw
@@ -65611,7 +65614,7 @@ fBA
 aTh
 bhg
 aTl
-aWw
+aTh
 aaa
 aaa
 aaa
@@ -71289,7 +71292,7 @@ mHS
 cUu
 qyi
 eAA
-aaz
+tAT
 fCy
 uXr
 aaa

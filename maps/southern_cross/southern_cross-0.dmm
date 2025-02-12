@@ -495,9 +495,7 @@
 /obj/effect/floor_decal/industrial/arrows/yellow{
 	dir = 1
 	},
-/obj/effect/floor_decal/industrial/arrows/yellow{
-	dir = 3
-	},
+/obj/effect/floor_decal/industrial/arrows/yellow,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable{
@@ -3683,7 +3681,6 @@
 /area/maintenance/thrift)
 "oi" = (
 /obj/structure/table/marble,
-/obj/structure/table/marble,
 /obj/random/maintenance/foodstuff,
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/zerobar)
@@ -3892,12 +3889,16 @@
 /obj/structure/table/marble,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer{
 	pixel_y = 10;
-	pixel_z = 5;
 	pixel_x = 5
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-0.dmm
 /obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer{
 	pixel_y = 10;
 	pixel_z = 5
+=======
+/obj/item/reagent_containers/food/drinks/bottle/small/beer{
+	pixel_y = 10
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-1.dmm
 	},
 /obj/item/weapon/reagent_containers/food/drinks/cans/beercan,
 /obj/item/weapon/reagent_containers/food/drinks/cans/beercan{
@@ -4694,6 +4695,7 @@
 	},
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/abchemistry)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-0.dmm
 "sj" = (
 /obj/structure/catwalk,
 /obj/structure/cable{
@@ -4706,6 +4708,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /turf/simulated/floor/plating,
 /area/maintenance/fieldhallway)
+=======
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-1.dmm
 "sk" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 9
@@ -5911,9 +5915,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/zerocent)
 "xl" = (
-/obj/effect/floor_decal/industrial/arrows/yellow{
-	dir = 3
-	},
+/obj/effect/floor_decal/industrial/arrows/yellow,
 /obj/effect/floor_decal/industrial/arrows/yellow{
 	dir = 1
 	},
@@ -6711,9 +6713,7 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/thrift)
 "AV" = (
-/obj/effect/floor_decal/industrial/arrows/yellow{
-	dir = 3
-	},
+/obj/effect/floor_decal/industrial/arrows/yellow,
 /obj/effect/floor_decal/industrial/arrows/yellow{
 	dir = 1
 	},
@@ -7881,12 +7881,6 @@
 	},
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/zerobar)
-"FD" = (
-/obj/effect/wingrille_spawn/reinforced,
-/obj/machinery/door/firedoor/border_only,
-/turf/simulated/floor/plating/turfpack/station,
-/turf/simulated/floor/plating/turfpack/station,
-/area/maintenance/zeroaft)
 "FG" = (
 /obj/effect/floor_decal/industrial/arrows/yellow,
 /obj/effect/floor_decal/industrial/arrows/yellow{
@@ -8128,7 +8122,6 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/cable{
 	d1 = 1;
@@ -8833,11 +8826,14 @@
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/zeroaft)
 "Jk" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/wingrille_spawn/reinforced,
+/obj/machinery/door/firedoor/border_only,
+/obj/item/tape/engineering,
+/obj/item/stack/material/plastic{
+	amount = 2
+	},
 /turf/simulated/floor/plating/turfpack/station,
-/area/maintenance/fieldthrift)
+/area/maintenance/zeroport)
 "Jm" = (
 /obj/structure/dark_portal/minion,
 /turf/simulated/floor/weird_things/dark,
@@ -9281,13 +9277,6 @@
 	},
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/zeroport)
-"Lb" = (
-/obj/structure/lattice,
-/obj/structure/grille/broken,
-/obj/structure/grille/broken,
-/obj/item/stack/rods,
-/turf/space,
-/area/space)
 "Lc" = (
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/zerofore)
@@ -9999,9 +9988,7 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/fieldhallway)
 "Oo" = (
-/obj/effect/floor_decal/industrial/arrows/yellow{
-	dir = 3
-	},
+/obj/effect/floor_decal/industrial/arrows/yellow,
 /obj/effect/floor_decal/industrial/arrows/yellow{
 	dir = 1
 	},
@@ -11100,7 +11087,6 @@
 	},
 /obj/effect/wingrille_spawn/reinforced,
 /obj/machinery/door/firedoor/border_only,
-/turf/space,
 /turf/simulated/floor/plating/turfpack/station,
 /area/maintenance/zeroaft)
 "To" = (
@@ -11984,9 +11970,7 @@
 /turf/simulated/floor/tiled/white,
 /area/maintenance/abscience)
 "WO" = (
-/obj/effect/floor_decal/industrial/arrows/yellow{
-	dir = 3
-	},
+/obj/effect/floor_decal/industrial/arrows/yellow,
 /obj/effect/floor_decal/industrial/arrows/yellow{
 	dir = 1
 	},
@@ -34242,7 +34226,7 @@ ee
 ee
 PJ
 PJ
-pT
+Jk
 iP
 wZ
 wZ
@@ -46403,7 +46387,7 @@ dZ
 dZ
 CG
 dZ
-FD
+FV
 wZ
 wZ
 wZ
@@ -51508,7 +51492,7 @@ EC
 EC
 BI
 bB
-sj
+rZ
 rZ
 rZ
 rZ
@@ -56934,7 +56918,7 @@ Rr
 JX
 hr
 sS
-Jk
+hr
 cp
 xa
 mm
@@ -59500,7 +59484,7 @@ wZ
 wZ
 XU
 wZ
-Lb
+Du
 Du
 wZ
 wZ

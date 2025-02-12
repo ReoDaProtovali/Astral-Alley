@@ -135,10 +135,6 @@
 /obj/item/weapon/coin/gold,
 /obj/item/clothing/ears/earring/dangle/gold,
 /obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
 /turf/simulated/floor/flock,
 /area/vr/powered/rocks)
 "ajk" = (
@@ -3296,10 +3292,6 @@
 /obj/fiftyspawner/gold,
 /obj/item/weapon/coin/diamond,
 /obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
 /turf/simulated/floor/flock,
 /area/vr/powered/rocks)
 "cKr" = (
@@ -3316,10 +3308,6 @@
 "cME" = (
 /obj/item/weapon/coin/gold,
 /obj/item/weapon/coin/diamond,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced,
 /turf/simulated/floor/flock,
 /area/vr/powered/rocks)
@@ -3810,10 +3798,6 @@
 /obj/effect/floor_decal/corner/lime/diagonal,
 /turf/simulated/floor/tiled/old_tile/yellow,
 /area/vr/powered/mall)
-"diM" = (
-/turf/simulated/wall/titanium,
-/turf/simulated/wall/titanium,
-/area/vr/powered/dungeon)
 "diP" = (
 /obj/machinery/light{
 	dir = 2;
@@ -4670,10 +4654,6 @@
 /area/vr/powered/mall)
 "dRf" = (
 /obj/item/weapon/telecube/precursor,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced,
 /turf/simulated/floor/flock,
 /area/vr/powered/rocks)
@@ -6658,14 +6638,6 @@
 	},
 /turf/simulated/floor/wood,
 /area/vr/powered)
-"flS" = (
-/turf/space,
-/turf/simulated/floor/beach/sand/desert{
-	can_atmos_pass = 0;
-	outdoors = 1;
-	temperature = 311
-	},
-/area/vr/outdoors/powered)
 "fmm" = (
 /obj/machinery/sleep_console{
 	dir = 4
@@ -6869,10 +6841,6 @@
 /obj/structure/window/phoronreinforced{
 	dir = 4
 	},
-/obj/structure/window/phoronreinforced{
-	dir = 4
-	},
-/obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced,
 /turf/simulated/floor/redgrid/animated,
 /area/vr/powered/cult)
@@ -8122,12 +8090,6 @@
 "gAu" = (
 /obj/structure/window/phoronreinforced{
 	dir = 8
-	},
-/obj/structure/window/phoronreinforced{
-	dir = 8
-	},
-/obj/structure/window/phoronreinforced{
-	dir = 1
 	},
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -10833,11 +10795,16 @@
 /turf/simulated/floor/plating,
 /area/vr/powered/dungeon)
 "iMu" = (
-/obj/structure/table/rack/shelf/steel,
-/obj/random/maintenance/cargo,
-/obj/structure/table/marble,
-/turf/simulated/floor/wood,
-/area/vr/powered/shop)
+/obj/machinery/door/window/brigdoor/eastright{
+	req_access = null;
+	dir = 2
+	},
+/obj/machinery/door/window/brigdoor/eastleft{
+	req_access = null;
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/vr/powered/dungeon)
 "iMU" = (
 /obj/machinery/door/window/survival_pod{
 	dir = 8
@@ -17236,10 +17203,6 @@
 /obj/item/clothing/accessory/bracelet/material/gold,
 /obj/item/weapon/ore/diamond,
 /obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
-/obj/structure/window/phoronreinforced,
 /turf/simulated/floor/flock,
 /area/vr/powered/rocks)
 "nKv" = (
@@ -17320,12 +17283,6 @@
 "nMh" = (
 /obj/structure/window/phoronreinforced{
 	dir = 4
-	},
-/obj/structure/window/phoronreinforced{
-	dir = 4
-	},
-/obj/structure/window/phoronreinforced{
-	dir = 1
 	},
 /obj/structure/window/phoronreinforced{
 	dir = 1
@@ -29454,10 +29411,6 @@
 /obj/structure/window/phoronreinforced{
 	dir = 8
 	},
-/obj/structure/window/phoronreinforced{
-	dir = 8
-	},
-/obj/structure/window/phoronreinforced,
 /obj/structure/window/phoronreinforced,
 /obj/structure/prop/statue/phoron{
 	pixel_y = 0;
@@ -35945,7 +35898,7 @@ qKH
 qKH
 vVx
 unH
-iMu
+eAM
 kqN
 qKH
 uiA
@@ -42863,10 +42816,10 @@ xAF
 wbD
 dnC
 dnC
-shu
+iMu
 vzj
 lhj
-shu
+iMu
 dnC
 csG
 vmY
@@ -43895,10 +43848,10 @@ xAF
 wbD
 nai
 dnC
-shu
+iMu
 vzj
 lhj
-shu
+iMu
 dnC
 dOT
 vmY
@@ -44930,7 +44883,7 @@ dnC
 shu
 iwO
 lhj
-shu
+iMu
 dnC
 gmV
 vmY
@@ -45286,14 +45239,14 @@ fqb
 fqb
 fqb
 fqb
-flS
+fqb
 elg
 elg
 fqb
 fqb
 fqb
 fqb
-flS
+fqb
 tUn
 tUn
 tUn
@@ -46318,14 +46271,14 @@ fqb
 fqb
 fqb
 fqb
-flS
 fqb
 fqb
 fqb
 fqb
 fqb
 fqb
-flS
+fqb
+fqb
 fqb
 fqb
 fqb
@@ -52415,7 +52368,7 @@ axG
 axG
 axG
 xAF
-diM
+xAF
 xAF
 gFy
 rXL

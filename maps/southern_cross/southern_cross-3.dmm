@@ -27616,9 +27616,14 @@
 /area/hallway/primary/thirddeck/aftdoorm)
 "vuJ" = (
 /obj/structure/table/woodentable,
+<<<<<<< HEAD:maps/southern_cross/southern_cross-3.dmm
 /obj/structure/table/woodentable,
 /obj/item/device/communicator,
 /obj/item/device/starcaster_news,
+=======
+/obj/item/communicator,
+/obj/item/starcaster_news,
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-4.dmm
 /obj/machinery/light{
 	dir = 4
 	},
@@ -29397,9 +29402,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsstarboard)
 "wCl" = (
-/obj/machinery/atmospherics/pipe/simple/hidden{
-	dir = 4
-	},
 /obj/structure/cable{
 	d1 = 4;
 	d2 = 8;
