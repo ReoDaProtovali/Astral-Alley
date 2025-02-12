@@ -280,6 +280,7 @@
 	},
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/merchant)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 "aaS" = (
 /obj/item/weapon/stool/padded,
 /turf/space,
@@ -287,16 +288,16 @@
 	icon_state = "steel"
 	},
 /area/centcom/bar)
+=======
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-8.dmm
 "aaT" = (
 /obj/machinery/biogenerator,
-/turf/space,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
 /area/centcom/bar)
 "aaU" = (
 /obj/machinery/honey_extractor,
-/turf/space,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -305,7 +306,6 @@
 /obj/machinery/seed_storage/garden{
 	dir = 1
 	},
-/turf/space,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -314,7 +314,6 @@
 /obj/machinery/vending/hydronutrients{
 	dir = 1
 	},
-/turf/space,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
@@ -4469,18 +4468,17 @@
 /area/shadekin)
 "dBP" = (
 /obj/structure/bed/double/padded{
-	pixel_x = 10;
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded{
 	pixel_x = 10
 	},
 /obj/item/weapon/bedsheet/mimedouble{
 	pixel_x = 10;
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 	pixel_y = 27
 	},
 /obj/item/weapon/bedsheet/mimedouble{
 	pixel_x = 10;
+=======
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-8.dmm
 	pixel_y = 0
 	},
 /turf/simulated/floor/carpet/blue2,
@@ -5612,9 +5610,6 @@
 	},
 /turf/simulated/shuttle/floor/voidcraft/light,
 /area/shuttle/ninja)
-"eEJ" = (
-/turf/unsimulated/floor/dark,
-/area/space)
 "eEM" = (
 /turf/simulated/floor/carpet/gaycarpet,
 /area/shadekin)
@@ -7979,15 +7974,16 @@
 /area/wizard_station)
 "hbJ" = (
 /obj/structure/bed/double/padded{
-	pixel_y = 25
-	},
-/obj/structure/bed/double/padded{
 	pixel_y = 0
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /obj/item/weapon/bedsheet/mimedouble{
 	pixel_y = 26
 	},
 /obj/item/weapon/bedsheet/mimedouble,
+=======
+/obj/item/bedsheet/mimedouble,
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-8.dmm
 /turf/simulated/floor/carpet/blue2,
 /area/shadekin)
 "hcd" = (
@@ -8417,12 +8413,6 @@
 /obj/machinery/chemical_dispenser/bar_alc/full,
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/merchant)
-"hpw" = (
-/turf/space,
-/turf/unsimulated/floor{
-	icon_state = "steel"
-	},
-/area/centcom/bar)
 "hpU" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/unsimulated/floor{
@@ -13763,12 +13753,15 @@
 	icon_state = "steel"
 	},
 /area/centcom/living)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 "mcF" = (
 /turf/unsimulated/wall{
 	icon = 'icons/misc/title.dmi';
 	icon_state = "title"
 	},
 /area/space)
+=======
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-8.dmm
 "mcT" = (
 /obj/effect/floor_decal/corner/red/full,
 /turf/simulated/floor/holofloor/tiled,
@@ -17814,10 +17807,6 @@
 "qoU" = (
 /turf/simulated/floor/carpet/blucarpet,
 /area/shadekin)
-"qoX" = (
-/turf/space,
-/turf/simulated/shuttle/wall/dark,
-/area/shuttle/merchant)
 "qoY" = (
 /obj/structure/table/woodentable/holotable,
 /obj/structure/window/reinforced/holowindow{
@@ -22279,10 +22268,6 @@
 	},
 /turf/simulated/floor/tiled/milspec/sterile,
 /area/shadekin)
-"uyi" = (
-/turf/space,
-/turf/space,
-/area/space)
 "uyy" = (
 /obj/machinery/atmospherics/unary/freezer{
 	icon_state = "freezer"
@@ -25622,20 +25607,6 @@
 	},
 /turf/simulated/shuttle/floor/voidcraft/light,
 /area/shuttle/syndicate)
-"xMU" = (
-/obj/structure/shuttle/engine/heater{
-	dir = 4
-	},
-/obj/machinery/turretid{
-	pixel_x = 32;
-	req_access = list(150)
-	},
-/obj/machinery/turretid{
-	pixel_x = 32;
-	req_access = list(150)
-	},
-/turf/simulated/floor/airless,
-/area/shuttle/syndicate)
 "xNh" = (
 /obj/structure/toilet{
 	dir = 4
@@ -27326,7 +27297,7 @@ dtV
 dtV
 dtV
 dtV
-mcF
+dtV
 vFi
 vFi
 vFi
@@ -35593,7 +35564,7 @@ usZ
 usZ
 vaR
 xUf
-aaS
+kTG
 klP
 usZ
 vFi
@@ -35851,7 +35822,7 @@ usZ
 oXR
 vaR
 vaR
-hpw
+vaR
 uUT
 usZ
 vFi
@@ -37399,7 +37370,7 @@ jgt
 vaR
 vaR
 vaR
-hpw
+vaR
 vaR
 btt
 uhi
@@ -49148,7 +49119,7 @@ vwH
 lnu
 ffE
 vfc
-xbZ
+dBP
 dBP
 bMy
 xom
@@ -49406,7 +49377,7 @@ aLm
 bOS
 ffE
 vfc
-xbZ
+hbJ
 hbJ
 bMy
 cWu
@@ -51017,8 +50988,8 @@ vFi
 vFi
 vFi
 vFi
-uyi
-uyi
+vFi
+vFi
 vFi
 vFi
 vFi
@@ -52031,7 +52002,7 @@ vFi
 vFi
 vFi
 vFi
-uyi
+vFi
 vFi
 vFi
 vFi
@@ -52289,7 +52260,7 @@ vFi
 vFi
 vFi
 vFi
-uyi
+vFi
 vFi
 vFi
 vFi
@@ -52547,7 +52518,7 @@ vFi
 vFi
 vFi
 vFi
-uyi
+vFi
 vFi
 vFi
 vFi
@@ -52805,7 +52776,7 @@ vFi
 vFi
 vFi
 vFi
-uyi
+vFi
 vFi
 vFi
 vFi
@@ -70492,7 +70463,7 @@ uvs
 aga
 aga
 eVq
-qoX
+eVq
 eVq
 vFi
 vFi
@@ -88091,7 +88062,7 @@ mqj
 mDp
 mDp
 mDp
-xMU
+mDp
 mqj
 vFi
 vFi
@@ -90706,7 +90677,7 @@ vFi
 vFi
 vFi
 vFi
-eEJ
+vFi
 vFi
 vFi
 vFi
@@ -90964,7 +90935,7 @@ vFi
 vFi
 vFi
 vFi
-eEJ
+vFi
 vFi
 vFi
 vFi

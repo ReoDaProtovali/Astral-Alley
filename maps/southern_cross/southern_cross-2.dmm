@@ -42176,9 +42176,6 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 4
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -45661,6 +45658,19 @@
 /obj/effect/floor_decal/corner/purple/bordercorner,
 /turf/simulated/floor/tiled/white,
 /area/rnd/research)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
+=======
+"dLq" = (
+/obj/structure/disposalpipe/trunk{
+	dir = 8
+	},
+/obj/structure/disposaloutlet{
+	dir = 4
+	},
+/obj/machinery/shield_diffuser,
+/turf/simulated/floor/airless,
+/area/space)
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 "dLA" = (
 /obj/structure/bed/chair/office/dark{
 	dir = 4
@@ -56114,7 +56124,6 @@
 /area/hallway/primary/seconddeck/apcenter)
 "jgH" = (
 /obj/structure/table/standard,
-/obj/structure/table/standard,
 /obj/item/stack/cable_coil,
 /obj/item/device/multitool,
 /obj/machinery/cell_charger,
@@ -56130,6 +56139,9 @@
 	dir = 4;
 	id = "Xenobio";
 	pixel_x = -25
+	},
+/obj/item/stack/material/plastic{
+	amount = 2
 	},
 /turf/simulated/floor/reinforced,
 /area/rnd/misc_lab)
@@ -73417,6 +73429,26 @@
 	},
 /turf/simulated/open,
 /area/maintenance/substation/cargo)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
+=======
+"tnK" = (
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 10
+	},
+/obj/effect/floor_decal/corner/lime/border{
+	dir = 10
+	},
+/obj/effect/floor_decal/industrial/warning,
+/obj/machinery/disposal/wall{
+	dir = 4;
+	pixel_x = -37
+	},
+/obj/structure/disposalpipe/trunk{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/medical/genetics)
+>>>>>>> c53e9a7c73 (Southern Cross map fixes (#10146)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 "tnO" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 8;
