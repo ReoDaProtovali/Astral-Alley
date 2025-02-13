@@ -61,6 +61,7 @@
 		/obj/item/weapon/storage/belt/utility/alien,
 		/obj/item/clothing/suit/armor/alien,
 		/obj/item/clothing/glasses/monocoole,
+<<<<<<< HEAD
 		/obj/item/weapon/reagent_containers/spray/chemsprayer,
 		/obj/item/weapon/reagent_containers/glass/beaker/bluespace,
 		/obj/item/weapon/reagent_containers/glass/beaker/noreact,
@@ -104,6 +105,51 @@
 		/obj/item/weapon/dnainjector/runfast,
 		/obj/item/weapon/dnainjector/telemut,
 		/obj/item/weapon/dnainjector/xraymut,
+=======
+		/obj/item/reagent_containers/spray/chemsprayer,
+		/obj/item/reagent_containers/glass/beaker/bluespace,
+		/obj/item/reagent_containers/glass/beaker/noreact,
+		/obj/item/storage/box/casino/costume_whitebunny,
+		/obj/item/storage/box/casino/costume_blackbunny,
+		/obj/item/storage/box/casino/costume_sexymime,
+		/obj/item/storage/box/casino/costume_sexyclown,
+		/obj/item/storage/box/casino/costume_nyangirl,
+		/obj/item/storage/box/casino/costume_wizard,
+		/obj/item/storage/box/casino/costume_chicken,
+		/obj/item/storage/box/casino/costume_gladiator,
+		/obj/item/storage/box/casino/costume_pirate,
+		/obj/item/storage/box/casino/costume_commie,
+		/obj/item/storage/box/casino/costume_imperiummonk,
+		/obj/item/storage/box/casino/costume_plaguedoctor,
+		/obj/item/storage/box/casino/costume_cutewitch,
+		/obj/item/grenade/spawnergrenade/casino,
+		/obj/item/grenade/spawnergrenade/casino/goat,
+		/obj/item/grenade/spawnergrenade/casino/armadillo,
+		/obj/item/grenade/spawnergrenade/casino/cat,
+		/obj/item/grenade/spawnergrenade/casino/chicken,
+		/obj/item/grenade/spawnergrenade/casino/cow,
+		/obj/item/grenade/spawnergrenade/casino/corgi,
+		/obj/item/grenade/spawnergrenade/casino/fox,
+		/obj/item/grenade/spawnergrenade/casino/lizard,
+		/obj/item/grenade/spawnergrenade/casino/penguin,
+		/obj/item/grenade/spawnergrenade/casino/snake,
+		/obj/item/grenade/spawnergrenade/casino/yithian,
+		/obj/item/grenade/spawnergrenade/casino/tindalos,
+		/obj/item/grenade/spawnergrenade/casino/fennec,
+		/obj/item/grenade/spawnergrenade/casino/redpanda,
+		/obj/item/grenade/spawnergrenade/casino/horse,
+		/obj/item/grenade/spawnergrenade/casino/otie,
+		/obj/item/grenade/spawnergrenade/casino/otie/chubby,
+		/obj/item/grenade/spawnergrenade/casino/zorgoia,
+		/obj/item/grenade/spawnergrenade/casino/gygax,
+		/obj/item/lego,
+		/obj/item/dnainjector/set_trait/nobreathe,
+		/obj/item/dnainjector/set_trait/regenerate,
+		/obj/item/dnainjector/set_trait/remoteview,
+		/obj/item/dnainjector/set_trait/haste,
+		/obj/item/dnainjector/set_trait/tk,
+		/obj/item/dnainjector/set_trait/xray,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 		/obj/item/instrument/accordion,
 		/obj/item/instrument/banjo,
 		/obj/item/instrument/bikehorn,
@@ -163,12 +209,21 @@
 		/obj/item/weapon/rig/medical)
 
 	var/gift_type_chaos = pick(
+<<<<<<< HEAD
 		/obj/item/weapon/grenade/spawnergrenade/casino/gygax/gorilla,
 		/obj/item/weapon/dnainjector/hulkmut,
 		/obj/item/weapon/grenade/spawnergrenade/casino/infinitycake,
 		/obj/item/weapon/grenade/spawnergrenade/casino/universal_technomancer,
 		/obj/item/weapon/spellbook,
 		/obj/item/weapon/book/tome/imbued)
+=======
+		/obj/item/grenade/spawnergrenade/casino/gygax/gorilla,
+		/obj/item/dnainjector/set_trait/hulk,
+		/obj/item/grenade/spawnergrenade/casino/infinitycake,
+		/obj/item/grenade/spawnergrenade/casino/universal_technomancer,
+		/obj/item/spellbook,
+		/obj/item/book/tome/imbued)
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 
 	var/obj/item/I = null
 

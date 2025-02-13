@@ -1,10 +1,7 @@
-#ifndef GAUSSIAN_RANDOM
-#define GAUSSIAN_RANDOM(vars...)	((-2*log(rand()))**0.5 * cos(6.28318530718*rand()))
-#endif
-
 /datum/trait/negative/hollow
 	excludes = list(/datum/trait/positive/densebones)
 
+<<<<<<< HEAD
 /datum/trait/negative/slipperydirt
 	name = "Dirt Vulnerability"
 	desc = "Even the tiniest particles of dirt give you uneasy footing, even through several layers of footwear."
@@ -28,17 +25,13 @@
 	excludes = list(/datum/trait/negative/less_blood,/datum/trait/positive/more_blood,/datum/trait/positive/more_blood_extreme)
 	can_take = ORGANICS
 
+=======
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /datum/trait/negative/scrawny
 	name = "Scrawny"
 	desc = "You have a much harder time breaking free of grabs as well as creating and holding onto grabs on other people."
 	cost = -2
 	var_changes = list("grab_resist_divisor_victims" = 0.5, "grab_resist_divisor_self" = 3, "grab_power_victims" = 1, "grab_power_self" = -1)
-
-/datum/trait/negative/extreme_slowdown
-	name = "Slowdown, Extreme"
-	desc = "You move EXTREMELY slower than baseline"
-	cost = -8
-	var_changes = list("slowdown" = 4.0)
 
 /datum/trait/negative/deep_sleeper
 	name = "Deep Sleeper"
@@ -46,6 +39,7 @@
 	cost = -1
 	var_changes = list("waking_speed" = 0.25)
 
+<<<<<<< HEAD
 /datum/trait/negative/low_blood_sugar
 	name = "Low Blood Sugar"
 	desc = "If you let your nutrition get too low, you will start to experience adverse affects including hallucinations, unconsciousness, and weakness"
@@ -81,6 +75,8 @@
 /datum/trait/negative/blindness/handle_environment_special(var/mob/living/carbon/human/H)
 	H.sdisabilities |= BLIND 		//no matter what you do, the blindess still comes for you
 
+=======
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /datum/trait/negative/schizophrenia
 	name = "Episodic hallucinations."
 	desc = "You have a condition which causes you to spontaneously have hallucinations! Luckily for you, in the modern space age, our doctors have solutions for you, just make sure you don't forget to take your pills."
@@ -144,6 +140,7 @@
 		if(istype(reagent,/datum/reagent/tercozolam))
 			total_vol += reagent.volume
 	return total_vol
+<<<<<<< HEAD
 /datum/trait/negative/agoraphobia
 	name = "Agoraphobia"
 	desc = "You very much dislike being in crowded places. When in the company of more than two other people, you start to panic and experience adverse effects."
@@ -460,3 +457,5 @@
 	desc = "Your biochemistry is a little delicate, rendering you more susceptible to both deadly toxins and the more subtle ones. You'll probably want to list this in your medical records, and perhaps in your exploitable info as well. Toxin damages and knockout drugs are 25% stronger on you."
 	cost = -1
 	var_changes = list("chem_strength_tox" = 1.25)
+=======
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))

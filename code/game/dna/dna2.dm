@@ -1,20 +1,10 @@
-/**
-* DNA 2: The Spaghetti Strikes Back
-*
-* @author N3X15 <nexisentertainment@gmail.com>
-*/
-
 // What each index means:
 #define DNA_OFF_LOWERBOUND 1
 #define DNA_OFF_UPPERBOUND 2
 #define DNA_ON_LOWERBOUND  3
 #define DNA_ON_UPPERBOUND  4
 
-// For later:
-//# define DNA_SE_LENGTH 50 // Was STRUCDNASIZE, size 27. 15 new blocks added = 42, plus room to grow.
-
-
-// Defines which values mean "on" or "off".
+//  Defines which values mean "on" or "off".
 //  This is to make some of the more OP superpowers a larger PITA to activate,
 //  and to tell our new DNA datum which values to set in order to turn something
 //  on or off.
@@ -23,7 +13,19 @@ var/global/list/dna_activity_bounds[DNA_SE_LENGTH]
 // Used to determine what each block means (admin hax and species stuff on /vg/, mostly)
 var/global/list/assigned_blocks[DNA_SE_LENGTH]
 
-var/global/list/datum/dna/gene/dna_genes[0]
+// Traitgenes Genes accessible by global VV, and lists for good and bad mutations for quick randomized selection of traitgenes. Removed dna from gene's path
+GLOBAL_LIST_EMPTY_TYPED(dna_genes, /datum/gene)
+GLOBAL_LIST_EMPTY(trait_to_dna_genes) // Reverse lookup genes, use get_gene_from_trait(var/trait_path) to read this
+GLOBAL_LIST_EMPTY_TYPED(dna_genes_good, /datum/gene/trait)
+GLOBAL_LIST_EMPTY_TYPED(dna_genes_neutral, /datum/gene/trait)
+GLOBAL_LIST_EMPTY_TYPED(dna_genes_bad, /datum/gene/trait)
+
+/proc/get_gene_from_trait(var/trait_path) // ALWAYS USE THIS
+	RETURN_TYPE(/datum/gene/trait)
+	var/G = GLOB.trait_to_dna_genes[trait_path]
+	if(!G) // This SHOULD NOT HAPPEN, be sure any viruses or injectors that give trait paths are actually traitgenes.
+		stack_trace("[trait_path] was used as a traitgene, without being flagged as one.")
+	return G
 
 /////////////////
 // GENE DEFINES
@@ -64,7 +66,6 @@ var/global/list/datum/dna/gene/dna_genes[0]
 	var/list/custom_heat = list()
 	var/list/custom_cold = list()
 	var/digitigrade = 0 //0, Not FALSE, for future use as indicator for digitigrade types
-	// VOREStation
 
 	// New stuff
 	var/species = SPECIES_HUMAN
@@ -82,6 +83,7 @@ var/global/list/datum/dna/gene/dna_genes[0]
 	new_dna.real_name=real_name
 	new_dna.species=species
 	new_dna.body_markings=body_markings.Copy()
+<<<<<<< HEAD
 	new_dna.base_species=base_species //VOREStation Edit
 	new_dna.custom_species=custom_species //VOREStaton Edit
 	new_dna.species_traits=species_traits.Copy() //VOREStation Edit
@@ -93,6 +95,32 @@ var/global/list/datum/dna/gene/dna_genes[0]
 	new_dna.custom_heat=custom_heat //VOREStation Edit
 	new_dna.custom_cold=custom_cold //VOREStation Edit
 	new_dna.digitigrade=src.digitigrade //VOREStation Edit
+=======
+	new_dna.base_species=base_species
+	new_dna.custom_species=custom_species
+	new_dna.species_traits=species_traits.Copy()
+	new_dna.blood_color=blood_color
+	new_dna.blood_reagents=blood_reagents
+	new_dna.scale_appearance = scale_appearance
+	new_dna.offset_override = offset_override
+	new_dna.synth_markings = synth_markings
+	new_dna.custom_speech_bubble = custom_speech_bubble
+	new_dna.species_sounds = species_sounds
+	new_dna.gender_specific_species_sounds = gender_specific_species_sounds
+	new_dna.species_sounds_male = species_sounds_male
+	new_dna.species_sounds_female = species_sounds_female
+	new_dna.grad_style = grad_style
+	new_dna.r_grad = r_grad
+	new_dna.g_grad = g_grad
+	new_dna.b_grad = b_grad
+	new_dna.custom_say=custom_say
+	new_dna.custom_ask=custom_ask
+	new_dna.custom_whisper=custom_whisper
+	new_dna.custom_exclaim=custom_exclaim
+	new_dna.custom_heat=custom_heat
+	new_dna.custom_cold=custom_cold
+	new_dna.digitigrade=src.digitigrade
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	var/list/body_markings_genetic = (body_markings - body_marking_nopersist_list)
 	new_dna.body_markings=body_markings_genetic.Copy()
 	for(var/b=1;b<=DNA_SE_LENGTH;b++)
@@ -211,7 +239,19 @@ var/global/list/datum/dna/gene/dna_genes[0]
 	SetUIValueRange(DNA_UI_EARS3_G,   character.g_ears3,   255,    1)
 	SetUIValueRange(DNA_UI_EARS3_B,   character.b_ears3,   255,    1)
 
+<<<<<<< HEAD
 	// VORE Station Edit End
+=======
+	for(var/channel in 1 to DNA_UI_EARS_SECONDARY_COLOR_CHANNEL_COUNT)
+		var/offset = DNA_UI_EARS_SECONDARY_START + (channel - 1) * 3
+		var/list/read_rgb = ReadRGB(LAZYACCESS(character.ear_secondary_colors, channel) || "#ffffff")
+		var/red = read_rgb[1]
+		var/green = read_rgb[2]
+		var/blue = read_rgb[3]
+		SetUIValueRange(offset, red, 255, 1)
+		SetUIValueRange(offset + 1, green, 255, 1)
+		SetUIValueRange(offset + 2, blue, 255, 1)
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 
 	SetUIValueRange(DNA_UI_HAIR_R,    character.r_hair,    255,    1)
 	SetUIValueRange(DNA_UI_HAIR_G,    character.g_hair,    255,    1)
@@ -264,7 +304,7 @@ var/global/list/datum/dna/gene/dna_genes[0]
 	if (block<=0) return
 	ASSERT(maxvalue<=4095)
 	var/range = (4095 / maxvalue)
-	if(value!=null)	//CHOMPEdit DO NOT PORT VIRGO'S FIX FOR RESLEEVING. IT IS BAD. Also fuck travis
+	if(value!=null)
 		SetUIValue(block,round(value * range),defer)
 
 // Getter version of above.
@@ -380,6 +420,19 @@ var/global/list/datum/dna/gene/dna_genes[0]
 // Get hex-encoded SE block.
 /datum/dna/proc/GetSEBlock(var/block)
 	return EncodeDNABlock(GetSEValue(block))
+
+// Get activation intensity, returns 0 to 1, you MUST check if the gene is active first! This is used for future expansion where genetraits can have multiple levels of activation/intensity
+/datum/dna/proc/GetSEActivationIntensity(var/block)
+	if (block<=0) return 0
+	var/list/BOUNDS=GetDNABounds(block)
+	var/value=GetSEValue(block)
+	var/val = (value - BOUNDS[DNA_ON_LOWERBOUND]) / (BOUNDS[DNA_ON_UPPERBOUND] - BOUNDS[DNA_ON_LOWERBOUND])
+	return val
+
+// Gets the activation intensity index. ex: if a genetrait has 5 levels of activations, the gene will have 5 possible levels of activation. this is a future TODO.
+/datum/dna/proc/GetSEActivationLevel(var/block,var/number_of_levels)
+	var/raw_val = GetSEActivationIntensity(block)
+	return round(raw_val * number_of_levels) // TODO - If this should be round/floor/ceil
 
 // Do not use this unless you absolutely have to.
 // Set a block from a hex string.  This is inefficient.  If you can, use SetUIValue().

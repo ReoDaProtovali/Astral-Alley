@@ -42,6 +42,11 @@
 #define iscorgi(A)		istype(A, /mob/living/simple_mob/animal/passive/dog/corgi)
 #define isslime(A)		istype(A, /mob/living/simple_mob/slime)
 #define isxeno(A)		istype(A, /mob/living/simple_mob/animal/space/alien)
+<<<<<<< HEAD
+=======
+#define issimplekin(A)	istype(A, /mob/living/simple_mob/shadekin)
+#define isprotblob(A)	istype(A, /mob/living/simple_mob/protean_blob)
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 #define ismetroid(A)	istype(A, /mob/living/simple_mob/metroid) //CHOMP Addition
 
 #define iscarbon(A)		istype(A, /mob/living/carbon)

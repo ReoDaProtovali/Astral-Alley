@@ -8,9 +8,15 @@ import {
   LabeledList,
   ProgressBar,
   Section,
+<<<<<<< HEAD
 } from '../../components';
+=======
+} from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
+
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 import { stats } from './constants';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const DNAModifierOccupant = (props: { isDNAInvalid: BooleanLike }) => {
   const { act, data } = useBackend<Data>();

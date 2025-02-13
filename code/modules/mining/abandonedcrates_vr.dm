@@ -45,6 +45,7 @@
 			list(pick(subtypesof(/obj/item/toy/mecha)), 4) = 2,
 			list(pick(subtypesof(/obj/item/toy/figure)), 4) = 2,
 			list(pick(subtypesof(/obj/item/toy/plushie)), 4) = 2,
+<<<<<<< HEAD
 			list(pick(subtypesof(/obj/item/weapon/storage/firstaid)), 4) = 2,
 			list(/obj/item/weapon/pickaxe/silver, 3) = 2,
 			list(/obj/item/weapon/pickaxe/drill, 3) = 2,
@@ -78,6 +79,42 @@
 				prob(5);/obj/item/weapon/gun/energy/mouseray/teppi,
 				prob(1);/obj/item/weapon/gun/energy/mouseray/metamorphosis,
 				prob(1);/obj/item/weapon/gun/energy/mouseray/metamorphosis/advanced/random
+=======
+			list(pick(subtypesof(/obj/item/storage/firstaid)), 4) = 2,
+			list(/obj/item/pickaxe/silver, 3) = 2,
+			list(/obj/item/pickaxe/drill, 3) = 2,
+			list(/obj/item/pickaxe/jackhammer, 4) = 2,
+			list(/obj/item/pickaxe/gold, 4) = 2,
+			list(/obj/item/pickaxe/diamond, 5) = 2,
+			list(/obj/item/pickaxe/diamonddrill, 6) = 2,
+			list(/obj/item/pickaxe/plasmacutter, 5) = 2,
+			list(/obj/item/soulstone, 5) = 2,
+			list(/obj/item/material/sword/katana, 5) = 2,
+			list(/obj/item/storage/belt/utility/chief/full, 8) = 2,
+			list(/obj/item/personal_shield_generator/belt/mining/loaded, 6) = 2,
+			list(pick(subtypesof(/obj/item/melee/energy/sword) - /obj/item/melee/energy/sword/charge), 6) = 2,
+			// Traitgenes New injector loot
+			list(pick(/obj/item/dnainjector/random_good,/obj/item/dnainjector/random_good_labeled,/obj/item/dnainjector/random_labeled,/obj/item/dnainjector/random), 6) = 2,
+			list(/obj/item/gun/energy/netgun, 7) = 2,
+			list(pick(prob(300);/obj/item/gun/energy/mouseray,
+				prob(50);/obj/item/gun/energy/mouseray/corgi,
+				prob(50);/obj/item/gun/energy/mouseray/woof,
+				prob(50);/obj/item/gun/energy/mouseray/cat,
+				prob(50);/obj/item/gun/energy/mouseray/chicken,
+				prob(50);/obj/item/gun/energy/mouseray/lizard,
+				prob(50);/obj/item/gun/energy/mouseray/rabbit,
+				prob(50);/obj/item/gun/energy/mouseray/fennec,
+				prob(5);/obj/item/gun/energy/mouseray/monkey,
+				prob(5);/obj/item/gun/energy/mouseray/wolpin,
+				prob(5);/obj/item/gun/energy/mouseray/otie,
+				prob(5);/obj/item/gun/energy/mouseray/direwolf,
+				prob(5);/obj/item/gun/energy/mouseray/giantrat,
+				prob(50);/obj/item/gun/energy/mouseray/redpanda,
+				prob(5);/obj/item/gun/energy/mouseray/catslug,
+				prob(5);/obj/item/gun/energy/mouseray/teppi,
+				prob(1);/obj/item/gun/energy/mouseray/metamorphosis,
+				prob(1);/obj/item/gun/energy/mouseray/metamorphosis/advanced/random
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 				), 8) = 2,
 			list(/obj/item/weapon/gun/energy/pummeler, 11) = 2,
 			list(pick(subtypesof(/obj/item/weapon/reagent_containers/food/drinks/glass2/coffeemug)), 1) = 1,
@@ -102,7 +139,12 @@
 			list(/obj/item/weapon/card/emag, 11) = 1,
 			list(/obj/item/weapon/melee/shock_maul, 11) = 3,
 			list(/obj/item/clothing/suit/storage/vest/martian_miner/reinforced, 4) = 6,
+<<<<<<< HEAD
 			list(/obj/item/weapon/storage/backpack/sport/hyd/catchemall, 11) = 1
+=======
+			list(/obj/item/storage/backpack/sport/hyd/catchemall, 11) = 1,
+			list(/obj/item/prop/alien/junk, 12) = 1,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 			))
 		var/path = choice[1]
 		var/value = choice[2]

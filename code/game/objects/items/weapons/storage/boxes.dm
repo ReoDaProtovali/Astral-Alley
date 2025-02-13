@@ -150,9 +150,16 @@
 	name = "box of DNA injectors"
 	desc = "This box contains injectors it seems."
 	icon_state = "dna"
+	// Traitgenes New injector loot
 	starts_with = list(
+<<<<<<< HEAD
 		/obj/item/weapon/dnainjector/h2m = 3,
 		/obj/item/weapon/dnainjector/m2h = 3
+=======
+		/obj/item/dnainjector/random_good_labeled = 2,
+		/obj/item/dnainjector/random_neutral_labeled = 2,
+		/obj/item/dnainjector/random_labeled = 2
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	)
 
 /obj/item/weapon/storage/box/flashbangs
@@ -225,8 +232,13 @@
 
 /obj/item/weapon/storage/box/flare
 	name = "box of flares"
+<<<<<<< HEAD
 	desc = "A box containing 14 flares." // CHOMPedit: More flares.
 	starts_with = list(/obj/item/device/flashlight/flare = 14) // CHOMPedit: More flares.
+=======
+	desc = "A box containing 14 flares."
+	starts_with = list(/obj/item/flashlight/flare = 14)
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 
 /obj/item/weapon/storage/box/trackimp
 	name = "boxed tracking implant kit"

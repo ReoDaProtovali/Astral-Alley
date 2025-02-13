@@ -4529,6 +4529,7 @@
 /obj/structure/safe/floor{
 	name = "Vault of Memories"
 	},
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/tourmut{
 	name = "\improper DNA injector (???)"
 	},
@@ -4539,6 +4540,18 @@
 	name = "\improper DNA injector (???)"
 	},
 /obj/item/weapon/dnainjector/firemut{
+=======
+/obj/item/dnainjector/set_trait/tourettes{
+	name = "\improper DNA injector (???)"
+	},
+/obj/item/dnainjector/set_trait/flashproof{
+	name = "\improper DNA injector (???)"
+	},
+/obj/item/dnainjector/set_trait/heatadapt{
+	name = "\improper DNA injector (???)"
+	},
+/obj/item/dnainjector/set_trait/heatadapt{
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	name = "\improper DNA injector (???)"
 	},
 /obj/item/clothing/under/rank/geneticist{

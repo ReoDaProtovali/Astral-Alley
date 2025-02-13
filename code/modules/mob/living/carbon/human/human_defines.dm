@@ -164,4 +164,11 @@
 
 	var/block_hud
 
+<<<<<<< HEAD
 	var/phobias		//For holding a list of phobias
+=======
+	var/phobias		//For holding a list of phobias
+
+	var/loneliness_stage = 0
+	var/next_loneliness_time = 0
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))

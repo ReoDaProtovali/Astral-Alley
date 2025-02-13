@@ -105,9 +105,15 @@
 /area/submap/debris2)
 "G" = (
 /obj/structure/safe,
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/xraymut,
 /obj/item/weapon/dnainjector/runfast,
 /obj/item/weapon/dnainjector/antistutt,
+=======
+/obj/item/dnainjector/set_trait/xray,
+/obj/item/dnainjector/set_trait/haste,
+/obj/item/dnainjector/set_trait/anxiety/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/floor/tiled/airless,
 /area/submap/debris2)
 "H" = (

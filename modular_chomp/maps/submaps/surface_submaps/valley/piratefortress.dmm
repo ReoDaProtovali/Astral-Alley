@@ -297,7 +297,11 @@
 /turf/template_noop,
 /area/template_noop)
 "nj" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/telemut,
+=======
+/obj/item/dnainjector/set_trait/tk,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /obj/structure/closet/grave{
 	opened = 0
 	},
@@ -530,7 +534,11 @@
 /turf/simulated/floor/tiled/yellow,
 /area/submap/piratefortress)
 "Di" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/telemut,
+=======
+/obj/item/dnainjector/set_trait/tk,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/floor/outdoors/rocks,
 /area/submap/piratefortress)
 "DD" = (

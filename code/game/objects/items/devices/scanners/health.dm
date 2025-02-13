@@ -77,18 +77,34 @@
 		dat += "<span class='notice'>Analyzing Results for [M]:</span><br>"
 		dat += "<span class='notice'>Overall Status: dead</span><br>"
 	else
+<<<<<<< HEAD
 		dat += 	"<span class='notice'>Analyzing Results for [M]:\n\t Overall Status: [M.stat > 1 ? "dead" : "[round((M.health/M.getMaxHealth())*100) ]% healthy"]<br>"
 	dat += 		"\tKey: [span_cyan("Suffocation")]/[span_green("Toxin")]/[span_orange("Burns")]/[span_red("Brute")]<br>"
 	dat += 		"\tDamage Specifics: [span_cyan("[OX]")] - [span_green("[TX]")] - [span_orange("[BU]")] - [span_red("[BR]")]<br>"
 	dat +=		"Body Temperature: [M.bodytemperature-T0C]&deg;C ([M.bodytemperature*1.8-459.67]&deg;F)</span><br>"
 	//VOREStation edit/addition starts
+=======
+		analyzed_results += "Analyzing Results for [M]:\n\t Overall Status: [M.stat > 1 ? "dead" : "[round((M.health/M.getMaxHealth())*100) ]% healthy"]<br>"
+	analyzed_results += "\tKey: [span_cyan("Suffocation")]/[span_green("Toxin")]/[span_orange("Burns")]/[span_red("Brute")]<br>"
+	analyzed_results += "\tDamage Specifics: [span_cyan("[OX]")] - [span_green("[TX]")] - [span_orange("[BU]")] - [span_red("[BR]")]<br>"
+	analyzed_results +=	"Body Temperature: [M.bodytemperature-T0C]&deg;C ([M.bodytemperature*1.8-459.67]&deg;F)<br>"
+	if(!(M.status_flags & FAKEDEATH))
+		analyzed_results = span_notice(analyzed_results)
+	dat += analyzed_results
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	if(M.timeofdeath && (M.stat == DEAD || (M.status_flags & FAKEDEATH)))
 		dat += 	"<span class='notice'>Time of Death: [worldtime2stationtime(M.timeofdeath)]</span><br>"
 		var/tdelta = round(world.time - M.timeofdeath)
 		if(tdelta < (DEFIB_TIME_LIMIT * 10))
+<<<<<<< HEAD
 			dat += "<span class='notice'><b>Subject died [DisplayTimeText(tdelta)] ago - resuscitation may be possible!</b></span><br>"
 	//VOREStation edit/addition ends
 	if(istype(M, /mob/living/carbon/human) && mode == 1)
+=======
+			dat += span_boldnotice("Subject died [DisplayTimeText(tdelta)] ago - resuscitation may be possible!")
+			dat += "<br>"
+	if(ishuman(M) && mode == 1)
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 		var/mob/living/carbon/human/H = M
 		var/list/damaged = H.get_damaged_organs(1,1)
 		dat += 	"<span class='notice'>Localized Damage, Brute/Burn:</span><br>"
@@ -101,7 +117,23 @@
 					dat += "[(org.status & ORGAN_BLEEDING)?"<span class='danger'>\[Bleeding\]</span>":""] - "
 					dat += "[(org.burn_dam > 0) ? "[span_orange("[org.burn_dam]")]" : 0]</span><br>"
 		else
+<<<<<<< HEAD
 			dat += "<span class='notice'>    Limbs are OK.</span><br>"
+=======
+			dat += span_notice("    Limbs are OK.")
+			dat += "<br>"
+		// This handles genetic side effects and tells you the treatment, if any.
+		// These are handled in side_effects.dm
+		if(H.genetic_side_effects)
+			for(var/datum/genetics/side_effect/side_effect in H.genetic_side_effects)
+				var/datum/reagent/Rd = SSchemistry.chemical_reagents[side_effect.antidote_reagent]
+				dat += "<br>"
+				dat += span_danger("Patient is suffering from [side_effect.name]. ")
+				if(Rd)
+					dat += span_danger("Treatment: [Rd]<br>")
+				else
+					dat += "There is no known treatment.<br>"
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 
 	OX = M.getOxyLoss() > 50 ? 	 "[span_cyan("<b>Severe oxygen deprivation detected</b>")]" 			: 	"Subject bloodstream oxygen level normal"
 	TX = M.getToxLoss() > 50 ? 	 "[span_green("<b>Dangerous amount of toxins detected</b>")]" 	: 	"Subject bloodstream toxin level minimal"

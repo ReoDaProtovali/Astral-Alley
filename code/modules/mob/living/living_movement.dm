@@ -126,12 +126,10 @@ default behaviour is:
 			tmob.forceMove(oldloc)
 			now_pushing = 0
 			return
-		//VOREStation Edit - Begin
 		else if((tmob.mob_always_swap || (tmob.a_intent == I_HELP || tmob.restrained()) && (a_intent == I_HELP || src.restrained())) && canmove && can_swap && handle_micro_bump_helping(tmob))
 			forceMove(tmob.loc)
 			now_pushing = 0
 			return
-		//VOREStation Edit - End
 
 		if(!can_move_mob(tmob, 0, 0))
 			now_pushing = 0
@@ -139,12 +137,17 @@ default behaviour is:
 		if(a_intent == I_HELP || src.restrained())
 			now_pushing = 0
 			return
-		// VOREStation Edit - Begin
 		// Plow that nerd.
 		if(ishuman(tmob))
 			var/mob/living/carbon/human/H = tmob
 			if(H.species.lightweight == 1 && prob(50))
+<<<<<<< HEAD
 				H.visible_message("<span class='warning'>[src] bumps into [H], knocking them off balance!</span>")
+=======
+				if(HULK in H.mutations) //No knocking over the hulk
+					return
+				H.visible_message(span_warning("[src] bumps into [H], knocking them off balance!"))
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 				H.Weaken(5)
 				now_pushing = 0
 				return
