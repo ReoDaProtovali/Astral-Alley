@@ -6,8 +6,13 @@
 	aspect = null
 	var/glow_color = "#FFFFFF"
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/aura/New()
 	..()
+=======
+/obj/item/spell/aura/Initialize(mapload)
+	. = ..()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 	set_light(calculate_spell_power(7), calculate_spell_power(4), l_color = glow_color)
 	START_PROCESSING(SSobj, src)
 	log_and_message_admins("has started casting [src].")

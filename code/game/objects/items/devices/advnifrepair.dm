@@ -15,9 +15,14 @@
 	var/datum/reagents/supply
 	var/efficiency = 15 //How many units reagent per 1 unit nanopaste
 
+<<<<<<< HEAD
 
 /obj/item/device/nifrepairer/New()
 	..()
+=======
+/obj/item/nifrepairer/Initialize(mapload)
+	. = ..()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 
 	supply = new(max = 60, A = src)
 

@@ -125,9 +125,15 @@
 
 //Vorestation Edit Start
 
+<<<<<<< HEAD
 /obj/mecha/working/ripley/New()
 	..()
 	orescanner = new /obj/item/weapon/mining_scanner
+=======
+/obj/mecha/working/ripley/Initialize()
+	. = ..()
+	orescanner = new /obj/item/mining_scanner
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 
 /obj/mecha/working/ripley/verb/detect_ore()
 	set category = "Exosuit Interface"

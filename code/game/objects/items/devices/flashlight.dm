@@ -365,9 +365,13 @@
 	pickup_sound = 'sound/items/pickup/gloves.ogg'
 	light_system = MOVABLE_LIGHT
 
+<<<<<<< HEAD
 /obj/item/device/flashlight/flare/New()
+=======
+/obj/item/flashlight/flare/Initialize()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 	fuel = rand(800, 1000) // Sorry for changing this so much but I keep under-estimating how long X number of ticks last in seconds.
-	..()
+	. = ..()
 
 /obj/item/device/flashlight/flare/process()
 	var/turf/pos = get_turf(src)
@@ -428,9 +432,13 @@
 	var/fuel = 0
 	power_use = 0
 
+<<<<<<< HEAD
 /obj/item/device/flashlight/glowstick/New()
+=======
+/obj/item/flashlight/glowstick/Initialize()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 	fuel = rand(1600, 2000)
-	..()
+	. = ..()
 
 /obj/item/device/flashlight/glowstick/process()
 	fuel = max(fuel - 1, 0)

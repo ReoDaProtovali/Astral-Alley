@@ -546,6 +546,7 @@
 	name = "Diskette Box"
 	icon_state = "disk_kit"
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/box/disks/New()
 	..()
 	new /obj/item/weapon/disk/data(src)
@@ -555,6 +556,17 @@
 	new /obj/item/weapon/disk/data(src)
 	new /obj/item/weapon/disk/data(src)
 	new /obj/item/weapon/disk/data(src)
+=======
+/obj/item/storage/box/Initialize()
+	. = ..()
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+	new /obj/item/disk/body_record(src)
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 
 /*
  *	Manual -- A big ol' manual.

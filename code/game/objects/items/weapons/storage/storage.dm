@@ -53,7 +53,11 @@
 	/// If you can use this storage while in a pocket
 	var/pocketable = FALSE
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/Initialize()
+=======
+/obj/item/storage/Initialize(mapload)
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 	. = ..()
 
 	if(allow_quick_empty)
