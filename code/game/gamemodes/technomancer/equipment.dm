@@ -108,6 +108,7 @@
 	name = "hypo belt"
 	desc = "A medical belt designed to carry autoinjectors and other medical equipment."
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/belt/medical/technomancer/New()
 	new /obj/item/weapon/reagent_containers/hypospray/autoinjector/biginjector/brute(src)
 	new /obj/item/weapon/reagent_containers/hypospray/autoinjector/biginjector/burn(src)
@@ -118,6 +119,18 @@
 	new /obj/item/weapon/reagent_containers/hypospray/autoinjector/biginjector/organ(src)
 	new /obj/item/weapon/reagent_containers/hypospray/autoinjector/biginjector/combat(src)
 	..()
+=======
+/obj/item/storage/belt/medical/technomancer/Initialize(mapload)
+	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/brute(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/burn(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/toxin(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/oxy(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/purity(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/pain(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/organ(src)
+	new /obj/item/reagent_containers/hypospray/autoinjector/biginjector/combat(src)
+	. = ..()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 
 /datum/technomancer/equipment/belt_of_holding
 	name = "Belt of Holding"

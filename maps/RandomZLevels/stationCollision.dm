@@ -71,7 +71,12 @@ obj/item/weapon/gun/energy/laser/retro/sc_retro
 /obj/item/weapon/gun/projectile/silenced/sc_silenced
 
 //Make it so that these guns only spawn with a couple bullets... if any
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/gun/projectile/silenced/sc_silenced/New()
+=======
+/obj/item/gun/projectile/silenced/sc_silenced/Initialize(mapload)
+	. = ..()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148)):archive/maps/RandomZLevels/stationCollision.dm
 	for(var/ammo in loaded)
 		if(prob(95)) //95% chance
 			loaded -= ammo
@@ -79,7 +84,12 @@ obj/item/weapon/gun/energy/laser/retro/sc_retro
 //Syndicate sub-machine guns.
 /obj/item/weapon/gun/projectile/automatic/c20r/sc_c20r
 
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/gun/projectile/automatic/c20r/sc_c20r/New()
+=======
+/obj/item/gun/projectile/automatic/c20r/sc_c20r/Initialize(mapload)
+	. = ..()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148)):archive/maps/RandomZLevels/stationCollision.dm
 	for(var/ammo in loaded)
 		if(prob(95)) //95% chance
 			loaded -= ammo
@@ -87,7 +97,12 @@ obj/item/weapon/gun/energy/laser/retro/sc_retro
 //Barman's shotgun
 /obj/item/weapon/gun/projectile/shotgun/pump/sc_pump
 
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/gun/projectile/shotgun/pump/sc_pump/New()
+=======
+/obj/item/gun/projectile/shotgun/pump/sc_pump/Initialize(mapload)
+	. = ..()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148)):archive/maps/RandomZLevels/stationCollision.dm
 	for(var/ammo in loaded)
 		if(prob(95)) //95% chance
 			loaded -= ammo
@@ -113,13 +128,25 @@ var/sc_safecode5 = "[rand(0,9)]"
 /obj/item/weapon/paper/sc_safehint_paper_prison
 	name = "smudged paper"
 
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/paper/sc_safehint_paper_prison/New()
 	info = "<i>The ink is smudged, you can only make out a couple numbers:</i> '[sc_safecode1]**[sc_safecode4]*'"
+=======
+/obj/item/paper/sc_safehint_paper_prison/Initialize(mapload, text, title)
+	. = ..()
+	info = span_italics("The ink is smudged, you can only make out a couple numbers:") + " '[sc_safecode1]**[sc_safecode4]*'"
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148)):archive/maps/RandomZLevels/stationCollision.dm
 
 /obj/item/weapon/paper/sc_safehint_paper_hydro
 	name = "shredded paper"
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/paper/sc_safehint_paper_hydro/New()
 	info = "<i>Although the paper is shredded, you can clearly see the number:</i> '[sc_safecode2]'"
+=======
+/obj/item/paper/sc_safehint_paper_hydro/Initialize(mapload, text, title)
+	. = ..()
+	info = span_italics("Although the paper is shredded, you can clearly see the number:") + " '[sc_safecode2]'"
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148)):archive/maps/RandomZLevels/stationCollision.dm
 
 /obj/item/weapon/paper/sc_safehint_paper_caf
 	name = "blood-soaked paper"
@@ -128,10 +155,18 @@ var/sc_safecode5 = "[rand(0,9)]"
 
 /obj/item/weapon/paper/sc_safehint_paper_bible
 	name = "hidden paper"
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/paper/sc_safehint_paper_bible/New()
 	info = {"<i>It would appear that the pen hidden with the paper had leaked ink over the paper.
 			However you can make out the last three digits:</i>'[sc_safecode3][sc_safecode4][sc_safecode5]'
 			"}
+=======
+
+/obj/item/paper/sc_safehint_paper_bible/Initialize(mapload, text, title)
+	. = ..()
+	info = span_italics("It would appear that the pen hidden with the paper had leaked ink over the paper. \
+			However you can make out the last three digits:") + "' [sc_safecode3][sc_safecode4][sc_safecode5]'"
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148)):archive/maps/RandomZLevels/stationCollision.dm
 
 /obj/item/weapon/paper/sc_safehint_paper_shuttle
 	info = {"<b>Target:</b> Research-station Epsilon<br>

@@ -20,8 +20,13 @@
 	var/list/things_to_siphon = list() //Things which are actually drained as a result of the above not being null.
 	var/flow_rate = 1000 // Limits how much electricity can be drained per second.  Measured by default in god knows what.
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/energy_siphon/New()
 	..()
+=======
+/obj/item/spell/energy_siphon/Initialize(mapload)
+	. = ..()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 	START_PROCESSING(SSobj, src)
 
 /obj/item/weapon/spell/energy_siphon/Destroy()

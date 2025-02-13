@@ -21,8 +21,13 @@
 	drop_sound = 'sound/items/drop/paper.ogg'
 	pickup_sound = 'sound/items/pickup/paper.ogg'
 
+<<<<<<< HEAD
 /obj/item/weapon/deck/cards/New()
 	..()
+=======
+/obj/item/deck/cards/Initialize(mapload)
+	. = ..()
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 	var/datum/playingcard/P
 	for(var/suit in list("spades","clubs","diamonds","hearts"))
 
@@ -52,9 +57,15 @@
 		P.card_icon = "joker"
 		cards += P
 
+<<<<<<< HEAD
 /obj/item/weapon/deck/attackby(obj/O as obj, mob/user as mob)
 	if(istype(O,/obj/item/weapon/hand))
 		var/obj/item/weapon/hand/H = O
+=======
+/obj/item/deck/attackby(obj/O, mob/user)
+	if(istype(O,/obj/item/hand))
+		var/obj/item/hand/H = O
+>>>>>>> fe69ddd909 ([MIRROR] some more NEW to init (#10148))
 		if(H.parentdeck == src)
 			for(var/datum/playingcard/P in H.cards)
 				cards += P
