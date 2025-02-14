@@ -455,7 +455,7 @@
 		return
 
 	load_character(slotnum)
-	attempt_vr(user.client?.prefs_vr,"load_vore","") //VOREStation Edit
+	attempt_vr(user.client?.prefs_vr,"load_vore","")
 	sanitize_preferences()
 
 	return remember_default
@@ -467,7 +467,7 @@
 		return
 
 	load_character(remembered_default)
-	attempt_vr(user.client?.prefs_vr,"load_vore","") //VOREStation Edit
+	attempt_vr(user.client?.prefs_vr,"load_vore","")
 	sanitize_preferences()
 
 //

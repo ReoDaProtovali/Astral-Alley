@@ -47,7 +47,12 @@ var/list/preferences_datums = list()
 	var/blood_reagents = "default"		//blood restoration reagents
 	var/backbag = 2						//backpack type
 	var/pdachoice = 1					//PDA type
+<<<<<<< HEAD
 	//var/shoe_hater = FALSE				//RS ADD - if true, will spawn with no shoes //CHOMPRemove, remove RS No shoes
+=======
+	//var/shoe_hater = FALSE				//If true, will spawn with no shoes //CHOMPRemove, remove RS No shoes
+	var/no_jacket = FALSE				//if true, will not spawn with outfit's jacket/outer layer
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	var/h_style = "Bald"				//Hair type
 	var/r_hair = 0						//Hair color
 	var/g_hair = 0						//Hair color
@@ -77,10 +82,14 @@ var/list/preferences_datums = list()
 	var/gear_slot = 1					//The current gear save slot
 	var/list/traits						//Traits which modifier characters for better or worse (mostly worse).
 	var/synth_color	= 0					//Lets normally uncolorable synth parts be colorable.
+<<<<<<< HEAD
 	var/r_synth							//Used with synth_color to color synth parts that normaly can't be colored.
 	var/g_synth							//Same as above
 	var/b_synth							//Same as above
 	var/synth_markings = 1				//Enable/disable markings on synth parts. //VOREStation Edit - 1 by default
+=======
+	var/synth_markings = 1				//Enable/disable markings on synth parts.
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	var/digitigrade = 0
 
 		//Some faction information.
@@ -141,7 +150,6 @@ var/list/preferences_datums = list()
 	var/sec_record = ""
 	var/gen_record = ""
 	var/exploit_record = ""
-	var/disabilities = 0
 
 	var/economic_status = "Average"
 
@@ -357,12 +365,17 @@ var/list/preferences_datums = list()
 		return 1
 
 	if(href_list["save"])
+<<<<<<< HEAD
+=======
+		if(save_character())
+			to_chat(usr,span_notice("Character [player_setup?.preferences?.real_name] saved!"))
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 		save_preferences()
 		save_character()
 	else if(href_list["reload"])
 		load_preferences()
 		load_character()
-		attempt_vr(client.prefs_vr,"load_vore","") //VOREStation Edit
+		attempt_vr(client.prefs_vr,"load_vore","")
 		sanitize_preferences()
 	else if(href_list["load"])
 		if(!IsGuestKey(usr.key))
@@ -402,7 +415,17 @@ var/list/preferences_datums = list()
 	// Ask the preferences datums to apply their own settings to the new mob
 	player_setup.copy_to_mob(character)
 
+<<<<<<< HEAD
 	// VOREStation Edit - Sync up all their organs and species one final time
+=======
+	for(var/datum/preference/preference as anything in get_preferences_in_priority_order())
+		if(preference.savefile_identifier != PREFERENCE_CHARACTER)
+			continue
+
+		preference.apply_pref_to(character, read_preference(preference.type))
+
+	// Sync up all their organs and species one final time
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	character.force_update_organs()
 
 	if(icon_updates)
@@ -455,7 +478,7 @@ var/list/preferences_datums = list()
 		return
 
 	load_character(slotnum)
-	attempt_vr(user.client?.prefs_vr,"load_vore","") //VOREStation Edit
+	attempt_vr(user.client?.prefs_vr,"load_vore","")
 	sanitize_preferences()
 	ShowChoices(user)
 

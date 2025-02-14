@@ -133,11 +133,9 @@
 	else
 		H.dna = R.dna
 	H.UpdateAppearance()
+	H.sync_dna_traits(FALSE) // Traitgenes Sync traits to genetics if needed
 	H.sync_organ_dna()
-	if(heal_level < 60)
-		randmutb(H) //Sometimes the clones come out wrong.
-		H.dna.UpdateSE()
-		H.dna.UpdateUI()
+	H.initialize_vessel()
 
 	H.set_cloned_appearance()
 	update_icon()
@@ -338,6 +336,7 @@
 		var/mob/living/carbon/human/patient = occupant
 		if(!(patient.species.flags & NO_SCAN)) //If, for some reason, someone makes a genetically-unalterable clone, let's not make them permanently disabled.
 			domutcheck(occupant) //Waiting until they're out before possible transforming.
+			occupant.UpdateAppearance()
 	occupant = null
 
 	update_icon()
@@ -480,6 +479,7 @@
 
 #undef MINIMUM_HEAL_LEVEL
 
+<<<<<<< HEAD
 //Disk stuff.
 //The return of data disks?? Just for transferring between genetics machine/cloning machine.
 //TO-DO: Make the genetics machine accept them.
@@ -538,6 +538,8 @@
 	. = ..()
 	. += "The write-protect tab is set to [read_only ? "protected" : "unprotected"]."
 
+=======
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /*
  *	Diskette Box
  */

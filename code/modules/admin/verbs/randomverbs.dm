@@ -9,8 +9,13 @@
 		return
 
 	for(var/obj/item/W in M)
+<<<<<<< HEAD
 		if(istype(W, /obj/item/weapon/implant/backup) || istype(W, /obj/item/device/nif))	//VOREStation Edit - There's basically no reason to remove either of these
 			continue	//VOREStation Edit
+=======
+		if(istype(W, /obj/item/implant/backup) || istype(W, /obj/item/nif))	//There's basically no reason to remove either of these
+			continue
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 		M.drop_from_inventory(W)
 
 	log_admin("[key_name(usr)] made [key_name(M)] drop everything!")
@@ -432,8 +437,13 @@ Traitors and the like can also be revived with the previous role mostly intact.
 			return
 		if(samejob == "Yes")
 			charjob = record_found.fields["real_rank"]
+<<<<<<< HEAD
 		else if(samejob == USELESS_JOB) //VOREStation Edit - Visitor not Assistant
 			charjob = USELESS_JOB //VOREStation Edit - Visitor not Assistant
+=======
+		else if(samejob == JOB_ALT_VISITOR)
+			charjob = JOB_ALT_VISITOR
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	else
 		records = tgui_alert(src,"No data core entry detected. Would you like add them to the manifest, and sec/med/HR records?","Records",list("No", "Yes", "Cancel"))
 		if(!records || records == "Cancel")
@@ -465,10 +475,8 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	//For logging later
 	var/admin = key_name_admin(src)
 	var/player_key = picked_client.key
-	//VOREStation Add - Needed for persistence
 	var/picked_ckey = picked_client.ckey
 	var/picked_slot = picked_client.prefs.default_slot
-	//VOREStation Add End
 
 	var/mob/living/carbon/human/new_character
 	var/spawnloc
@@ -517,7 +525,9 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	picked_client.prefs.copy_to(new_character)
 	if(new_character.dna)
 		new_character.dna.ResetUIFrom(new_character)
+		new_character.sync_dna_traits(TRUE) // Traitgenes Sync traits to genetics if needed
 		new_character.sync_organ_dna()
+	new_character.initialize_vessel()
 	if(inhabit)
 		new_character.key = player_key
 		//Were they any particular special role? If so, copy.
@@ -527,11 +537,9 @@ Traitors and the like can also be revived with the previous role mostly intact.
 				antag_data.add_antagonist(new_character.mind)
 				antag_data.place_mob(new_character)
 
-	//VOREStation Add - Required for persistence
 	if(new_character.mind)
 		new_character.mind.loaded_from_ckey = picked_ckey
 		new_character.mind.loaded_from_slot = picked_slot
-	//VOREStation Add End
 
 	for(var/lang in picked_client.prefs.alternate_languages)
 		var/datum/language/chosen_language = GLOB.all_languages[lang]
@@ -555,7 +563,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	//A redraw for good measure
 	new_character.regenerate_icons()
 
-	new_character.update_transform() //VOREStation Edit
+	new_character.update_transform()
 
 	//If we're announcing their arrival
 	if(announce)
@@ -698,7 +706,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set category = "Special Verbs"
 	set name = "Explosion"
 
-	if(!check_rights(R_DEBUG|R_FUN))	return //VOREStation Edit
+	if(!check_rights(R_DEBUG|R_FUN))	return
 
 	var/devastation = tgui_input_number(usr, "Range of total devastation. -1 to none", text("Input"), min_value=-1)
 	if(devastation == null) return
@@ -726,7 +734,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set category = "Special Verbs"
 	set name = "EM Pulse"
 
-	if(!check_rights(R_DEBUG|R_FUN))	return //VOREStation Edit
+	if(!check_rights(R_DEBUG|R_FUN))	return
 
 	var/heavy = tgui_input_number(usr, "Range of heavy pulse.", text("Input"))
 	if(heavy == null) return
@@ -752,7 +760,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set category = "Special Verbs"
 	set name = "Gib"
 
-	if(!check_rights(R_ADMIN|R_FUN))	return //VOREStation Edit
+	if(!check_rights(R_ADMIN|R_FUN))	return
 
 	var/confirm = tgui_alert(src, "You sure?", "Confirm", list("Yes", "No"))
 	if(confirm != "Yes") return
@@ -853,7 +861,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 /client/proc/cmd_admin_check_contents(mob/living/M as mob in mob_list)
 	set category = "Admin.Investigate" //CHOMPEdit
 	set name = "Check Contents"
-	set popup_menu = FALSE //VOREStation Edit - Declutter.
+	set popup_menu = FALSE
 
 	if(!holder)
 		return
@@ -910,7 +918,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	mob.set_viewsize(view)
 
 	log_admin("[key_name(usr)] changed their view range to [view].")
-	message_admins("<font color='blue'>[key_name_admin(usr)] changed their view range to [view].</font>", 1)	//CHOMPEdit - Uncommented this.
+	message_admins("<font color='blue'>[key_name_admin(usr)] changed their view range to [view].</font>", 1)
 
 	feedback_add_details("admin_verb","CVRA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
@@ -921,7 +929,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if ((!( ticker ) || !emergency_shuttle.location()))
 		return
 
-	if(!check_rights(R_ADMIN))	return //VOREStation Edit
+	if(!check_rights(R_ADMIN))	return
 
 	var/confirm = tgui_alert(src, "You sure?", "Confirm", list("Yes", "No"))
 	if(confirm != "Yes") return
@@ -950,7 +958,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set category = "Admin.Events" //CHOMPEdit
 	set name = "Cancel Shuttle"
 
-	if(!check_rights(R_ADMIN|R_FUN))	return // CHOMPstation edit: Lets anyone cancel the shuttle.
+	if(!check_rights(R_ADMIN|R_FUN))	return
 
 	if(tgui_alert(src, "You sure?", "Confirm", list("Yes", "No")) != "Yes") return
 
@@ -971,7 +979,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	if (!ticker)
 		return
 
-	if(!check_rights(R_ADMIN))	return //VOREStation Edit
+	if(!check_rights(R_ADMIN))	return
 
 	emergency_shuttle.deny_shuttle = !emergency_shuttle.deny_shuttle
 
@@ -1027,7 +1035,7 @@ Traitors and the like can also be revived with the previous role mostly intact.
 	set name = "Toggle random events on/off"
 	set desc = "Toggles random events such as meteors, black holes, blob (but not space dust) on/off"
 
-	if(!check_rights(R_SERVER))	return //VOREStation Edit
+	if(!check_rights(R_SERVER))	return
 
 	if(!CONFIG_GET(flag/allow_random_events)) // CHOMPEdit
 		CONFIG_SET(flag/allow_random_events, TRUE) // CHOMPEdit

@@ -160,4 +160,21 @@
 		usr.client.debug_variables(chunk)
 */
 
+<<<<<<< HEAD
 #undef CHUNK_SIZE
+=======
+/datum/visualnet/proc/clear_references(list/moved_eyes, client/C)
+	if(!islist(moved_eyes))
+		moved_eyes = moved_eyes ? list(moved_eyes) : list()
+
+	var/list/chunks_pre_seen = list()
+
+	for(var/mob/observer/eye/eye as anything in moved_eyes)
+		if(C)
+			chunks_pre_seen |= eye.visibleChunks
+
+	if(C)
+		for(var/datum/chunk/c as anything in chunks_pre_seen)
+			for(var/mob/observer/eye/eye as anything in moved_eyes)
+				c.remove(eye)
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))

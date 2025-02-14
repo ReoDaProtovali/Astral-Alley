@@ -4090,7 +4090,11 @@
 	},
 /area/survivalpod)
 "bkv" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antistutt,
+=======
+/obj/item/dnainjector/set_trait/anxiety/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -6171,7 +6175,11 @@
 	},
 /area/survivalpod)
 "bQK" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/hallucination,
+=======
+/obj/item/dnainjector/set_trait/flashproof,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -7219,7 +7227,11 @@
 	},
 /area/survivalpod)
 "cgu" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/noprints,
+=======
+/obj/item/dnainjector/set_trait/noprints,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -7591,7 +7603,11 @@
 	},
 /area/survivalpod)
 "clx" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/tourmut,
+=======
+/obj/item/dnainjector/set_trait/tourettes,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -14005,7 +14021,11 @@
 	},
 /area/survivalpod)
 "eeW" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/anticough,
+=======
+/obj/item/dnainjector/set_trait/cough/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -14075,7 +14095,11 @@
 	},
 /area/survivalpod)
 "egn" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/glassesmut,
+=======
+/obj/item/dnainjector/set_trait/nearsighted,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -17728,7 +17752,11 @@
 	},
 /area/survivalpod)
 "fko" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antifire,
+=======
+/obj/item/dnainjector/set_trait/heatadapt/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -18258,7 +18286,11 @@
 	},
 /area/survivalpod)
 "ftt" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antiepi,
+=======
+/obj/item/dnainjector/set_trait/epilepsy/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -19736,7 +19768,11 @@
 	},
 /area/survivalpod)
 "fPz" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antimorph,
+=======
+/obj/item/dnainjector/set_trait/morph/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -20192,7 +20228,11 @@
 	},
 /area/survivalpod)
 "fVT" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antiregenerate,
+=======
+/obj/item/dnainjector/set_trait/regenerate/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -21832,7 +21872,11 @@
 	},
 /area/survivalpod)
 "gvF" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/clumsymut,
+=======
+/obj/item/dnainjector/set_trait/clumsy,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -24337,7 +24381,11 @@
 /turf/simulated/floor/atoll,
 /area/survivalpod)
 "hgB" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/m2h,
+=======
+/obj/item/dnainjector/set_trait/remotetalk,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -27135,7 +27183,11 @@
 	},
 /area/survivalpod)
 "hWt" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antitour,
+=======
+/obj/item/dnainjector/set_trait/tourettes/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -29050,7 +29102,11 @@
 	},
 /area/survivalpod)
 "iyg" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antiglasses,
+=======
+/obj/item/dnainjector/set_trait/nearsighted/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -29426,7 +29482,11 @@
 	},
 /area/survivalpod)
 "iDS" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antinoprints,
+=======
+/obj/item/dnainjector/set_trait/noprints/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -32750,7 +32810,11 @@
 	},
 /area/survivalpod)
 "jDH" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/insulation,
+=======
+/obj/item/dnainjector/set_trait/coldadapt,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -33329,7 +33393,11 @@
 	},
 /area/survivalpod)
 "jKU" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/xraymut,
+=======
+/obj/item/dnainjector/set_trait/xray,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -36242,7 +36310,11 @@
 	},
 /area/survivalpod)
 "kDt" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector,
+=======
+/obj/item/dnainjector/random,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -36290,7 +36362,11 @@
 	},
 /area/survivalpod)
 "kDX" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/coughmut,
+=======
+/obj/item/dnainjector/set_trait/cough,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -39829,7 +39905,11 @@
 	},
 /area/survivalpod)
 "lGo" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/deafmut,
+=======
+/obj/item/dnainjector/set_trait/deaf,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -43259,7 +43339,11 @@
 	},
 /area/survivalpod)
 "mGj" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/morph,
+=======
+/obj/item/dnainjector/set_trait/morph,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -43831,7 +43915,11 @@
 	},
 /area/survivalpod)
 "mPi" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/telemut,
+=======
+/obj/item/dnainjector/set_trait/tk,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -43909,7 +43997,11 @@
 	},
 /area/survivalpod)
 "mQw" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antirunfast,
+=======
+/obj/item/dnainjector/set_trait/haste/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -45962,7 +46054,11 @@
 	},
 /area/survivalpod)
 "ntI" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antiinsulation,
+=======
+/obj/item/dnainjector/set_trait/coldadapt/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -46022,7 +46118,11 @@
 	},
 /area/survivalpod)
 "nuY" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antihallucination,
+=======
+/obj/item/dnainjector/set_trait/flashproof/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -47375,7 +47475,11 @@
 	},
 /area/survivalpod)
 "nMU" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antitele,
+=======
+/obj/item/dnainjector/set_trait/tk/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -47947,7 +48051,11 @@
 	},
 /area/survivalpod)
 "nVr" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/blindmut,
+=======
+/obj/item/dnainjector/set_trait/blind,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -50472,7 +50580,11 @@
 	},
 /area/survivalpod)
 "oHT" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/nobreath,
+=======
+/obj/item/dnainjector/set_trait/nobreathe,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -53739,7 +53851,11 @@
 	},
 /area/survivalpod)
 "pIH" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/regenerate,
+=======
+/obj/item/dnainjector/set_trait/regenerate,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -57638,7 +57754,11 @@
 	},
 /area/survivalpod)
 "qSE" = (
+<<<<<<< HEAD
 /obj/item/weapon/disk/data/monkey,
+=======
+/obj/item/disk/body_record,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -60390,7 +60510,11 @@
 	},
 /area/survivalpod)
 "rJl" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/anticlumsy,
+=======
+/obj/item/dnainjector/set_trait/clumsy/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -61384,7 +61508,11 @@
 	},
 /area/survivalpod)
 "rYL" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/h2m,
+=======
+/obj/item/dnainjector/set_trait/remotetalk/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -64464,7 +64592,11 @@
 	},
 /area/survivalpod)
 "sVd" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antideaf,
+=======
+/obj/item/dnainjector/set_trait/deaf/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -65456,7 +65588,11 @@
 	},
 /area/survivalpod)
 "tiU" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/runfast,
+=======
+/obj/item/dnainjector/set_trait/haste,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -66176,7 +66312,11 @@
 	},
 /area/survivalpod)
 "ttB" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/stuttmut,
+=======
+/obj/item/dnainjector/set_trait/anxiety,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -68527,7 +68667,11 @@
 	},
 /area/survivalpod)
 "ueC" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antinobreath,
+=======
+/obj/item/dnainjector/set_trait/nobreathe/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -69577,7 +69721,11 @@
 	},
 /area/survivalpod)
 "uvF" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/firemut,
+=======
+/obj/item/dnainjector/set_trait/heatadapt,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -70686,7 +70834,11 @@
 	},
 /area/survivalpod)
 "uLL" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/remoteview,
+=======
+/obj/item/dnainjector/set_trait/remoteview,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -70722,7 +70874,11 @@
 	},
 /area/survivalpod)
 "uMw" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/epimut,
+=======
+/obj/item/dnainjector/set_trait/epilepsy,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -71106,7 +71262,11 @@
 	},
 /area/survivalpod)
 "uSj" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antixray,
+=======
+/obj/item/dnainjector/set_trait/xray/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -73588,7 +73748,11 @@
 	},
 /area/survivalpod)
 "vDD" = (
+<<<<<<< HEAD
 /obj/item/weapon/disk/data,
+=======
+/obj/item/disk/body_record,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -74066,7 +74230,11 @@
 	},
 /area/survivalpod)
 "vKJ" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antihulk,
+=======
+/obj/item/dnainjector/set_trait/hulk/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -75611,7 +75779,11 @@
 	},
 /area/survivalpod)
 "wgu" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antiblind,
+=======
+/obj/item/dnainjector/set_trait/blind/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -76305,7 +76477,11 @@
 	},
 /area/survivalpod)
 "wqM" = (
+<<<<<<< HEAD
 /obj/item/weapon/disk/data/demo,
+=======
+/obj/item/disk/body_record,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -77105,7 +77281,11 @@
 	},
 /area/survivalpod)
 "wCK" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/hulkmut,
+=======
+/obj/item/dnainjector/set_trait/hulk,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -79888,7 +80068,11 @@
 	},
 /area/survivalpod)
 "xsA" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/midgit,
+=======
+/obj/item/dnainjector/set_trait/table_passer,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -80656,7 +80840,11 @@
 	},
 /area/survivalpod)
 "xDX" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antimidgit,
+=======
+/obj/item/dnainjector/set_trait/table_passer/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -81192,7 +81380,11 @@
 	},
 /area/survivalpod)
 "xKQ" = (
+<<<<<<< HEAD
 /obj/item/weapon/dnainjector/antiremoteview,
+=======
+/obj/item/dnainjector/set_trait/remotetalk/disable,
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},

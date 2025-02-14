@@ -724,7 +724,6 @@
 	M.heal_organ_damage(3 * removed, 0)	//Gives the bones a chance to set properly even without other meds
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
-		//CHOMPEdit Begin
 		var/totalvol = 0
 		if(H.ingested)
 			for(var/datum/reagent/R in H.ingested.reagent_list)
@@ -735,9 +734,16 @@
 			for(var/obj/item/organ/external/O in H.bad_external_organs)
 				if(O.status & ORGAN_BROKEN)
 					O.mend_fracture()		//Only works if the bone won't rebreak, as usual
+<<<<<<< HEAD
 					H.custom_pain("You feel a terrible agony tear through your bones!",60)
 					H.AdjustWeakened(1)		//Bones being regrown will knock you over
 		//CHOMPEdit End
+=======
+					H.custom_pain(span_danger("<b><font size=2>You feel a terrible agony tear through your [O.name]!</font></b>"),60,TRUE)
+					H.AdjustWeakened(10)		//Bones being regrown will knock you over
+					H.adjustHalLoss(60)
+					H.AdjustStunned(1)		//Bones being regrown will knock you over
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 
 /datum/reagent/myelamine
 	name = "Myelamine"
@@ -745,11 +751,11 @@
 	description = "Used to rapidly clot internal hemorrhages by increasing the effectiveness of platelets."
 	reagent_state = LIQUID
 	color = "#4246C7"
-	metabolism = REM * 0.75	//CHOMPEdit
+	metabolism = REM * 0.75
 	overdose = REAGENTS_OVERDOSE * 0.5
 	overdose_mod = 1.5
 	scannable = 1
-	var/repair_strength = 6	//CHOMPEdit
+	var/repair_strength = 6
 
 /datum/reagent/myelamine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -923,6 +929,7 @@
 	overdose = 20
 	overdose_mod = 1.5
 	scannable = 1
+	metabolism = REM * 0.06
 
 /datum/reagent/immunosuprizine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	var/strength_mod = 1 * M.species.chem_strength_heal
@@ -970,14 +977,20 @@
 						H.adjustToxLoss((15 / strength_mod))
 						I.take_damage(1)
 
+<<<<<<< HEAD
 /datum/reagent/skrellimmuno
 	name = "Malish-Qualem"
 	id = "malish-qualem"
+=======
+/datum/reagent/skrellimmuno //skrell exist?
+	name = REAGENT_MALISHQUALEM
+	id = REAGENT_ID_MALISHQUALEM
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	description = "A strange, oily powder used by Malish-Katish to prevent organ rejection."
 	taste_description = "mordant"
 	reagent_state = SOLID
 	color = "#84B2B0"
-	metabolism = REM * 0.75
+	metabolism = REM * 0.06
 	overdose = 20
 	overdose_mod = 1.5
 	scannable = 1
@@ -1017,51 +1030,26 @@
 						I.take_damage(1)
 
 /datum/reagent/ryetalyn
+<<<<<<< HEAD
 	name = "Ryetalyn"
 	id = "ryetalyn"
 	description = "Ryetalyn can cure all genetic abnomalities via a catalytic process."
+=======
+	name = REAGENT_RYETALYN
+	id = REAGENT_ID_RYETALYN
+	description = REAGENT_RYETALYN + " can cure DNA, Cloning, and genetic damage via a catalytic process."
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	taste_description = "acid"
 	reagent_state = SOLID
 	color = "#004000"
 	overdose = REAGENTS_OVERDOSE
 
 /datum/reagent/ryetalyn/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
-	var/needs_update = M.mutations.len > 0
-
-	M.mutations = list()
-	M.disabilities = 0
-	M.sdisabilities = 0
-
-	var/mob/living/carbon/human/H = M
-	if(alien == IS_SLIME && istype(H)) //Shifts them toward white, faster than Rezadone does toward grey.
-		if(prob(50))
-			if(H.r_skin)
-				H.r_skin = round((H.r_skin + 510)/3)
-			if(H.r_hair)
-				H.r_hair = round((H.r_hair + 510)/3)
-			if(H.r_facial)
-				H.r_facial = round((H.r_facial + 510)/3)
-			H.adjustToxLoss(6 * removed)
-		if(prob(50))
-			if(H.g_skin)
-				H.g_skin = round((H.g_skin + 510)/3)
-			if(H.g_hair)
-				H.g_hair = round((H.g_hair + 510)/3)
-			if(H.g_facial)
-				H.g_facial = round((H.g_facial + 510)/3)
-			H.adjustToxLoss(6 * removed)
-		if(prob(50))
-			if(H.b_skin)
-				H.b_skin = round((H.b_skin + 510)/3)
-			if(H.b_hair)
-				H.b_hair = round((H.b_hair + 510)/3)
-			if(H.b_facial)
-				H.b_facial = round((H.b_facial + 510)/3)
-			H.adjustToxLoss(6 * removed)
-
-	// Might need to update appearance for hulk etc.
-	if(needs_update && ishuman(M))
-		H.update_mutations()
+	//Ryetalyn is for genetics damage curing not resetting mutations, breaks traitgenes
+	if(alien == IS_DIONA)
+		return
+	var/chem_effective = 1 * M.species.chem_strength_heal
+	M.adjustCloneLoss(-2 * removed * chem_effective)
 
 /*/datum/reagent/hyperzine
 	name = "Hyperzine"
@@ -1229,8 +1217,13 @@
 		if(M.bruteloss >= 60 && M.toxloss >= 60 && M.brainloss >= 30) //Total Structural Failure. Limbs start splattering.
 			var/obj/item/organ/external/O = pick(H.organs)
 			if(prob(20) && !istype(O, /obj/item/organ/external/chest/unbreakable/slime) && !istype(O, /obj/item/organ/external/groin/unbreakable/slime))
+<<<<<<< HEAD
 				to_chat(M, "<span class='critical'>You feel your [O] begin to dissolve, before it sloughs from your body.</span>")
 				O.droplimb() //Splat.
+=======
+				to_chat(M, span_critical("You feel your [O] begin to dissolve, before it sloughs from your body."))
+				O.droplimb(TRUE, DROPLIMB_ACID)
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 		return
 
 	//Based roughly on Levofloxacin's rather severe side-effects
@@ -1244,7 +1237,7 @@
 		M.hallucination = max(M.hallucination, 10)
 
 	//One of the levofloxacin side effects is 'spontaneous tendon rupture', which I'll immitate here. 1:1000 chance, so, pretty darn rare.
-	if(ishuman(M) && rand(1,10000) == 1) //VOREStation Edit (more rare)
+	if(ishuman(M) && rand(1,10000) == 1) //Adjusted to 1:10000
 		var/obj/item/organ/external/eo = pick(H.organs) //Misleading variable name, 'organs' is only external organs
 		eo.fracture()
 

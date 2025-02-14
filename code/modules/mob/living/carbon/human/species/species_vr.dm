@@ -67,7 +67,11 @@
 	else
 		..()
 
+<<<<<<< HEAD
 /datum/species/proc/produceCopy(var/list/traits, var/mob/living/carbon/human/H, var/custom_base)
+=======
+/datum/species/proc/produceCopy(var/list/traits, var/mob/living/carbon/human/H, var/custom_base, var/reset_dna = TRUE) // Traitgenes reset_dna flag required, or genes get reset on resleeve
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	ASSERT(src)
 	ASSERT(istype(H))
 	var/datum/species/new_copy = new src.type()

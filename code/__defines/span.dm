@@ -111,4 +111,96 @@
 #define span_maroon(str) ("<span class='maroon'>" + str + "</span>")
 #define span_brown(str) ("<span class='brown'>" + str + "</span>")
 #define span_lightpurple(str) ("<span class='lightpurple'>" + str + "</span>")
+<<<<<<< HEAD:code/__defines/span_vr.dm
 #define span_darkpink(str) ("<span class='lightpurple'>" + str + "</span>")
+=======
+#define span_darkpink(str) ("<span class='darkpink'>" + str + "</span>")
+#define span_rose(str) ("<span class='rose'>" + str + "</span>")
+
+/* System and Debug */
+// System filter
+#define span_boldannounce(str) ("<span class='boldannounce'>" + str + "</span>")
+#define span_world(str) ("<span class='world'>" + str + "</span>") // Bold system messages, use this for important world messages to make sure players can't filter them!
+#define span_filter_system(str) ("<span class='filter_system'>" + str + "</span>") // Plain system filter
+#define span_sinister(str) ("<span class='sinister'>" + str + "</span>")
+
+// Unfiltered
+#define span_prefix(str) ("<span class='prefix'>" + str + "</span>")
+#define span_admin(str) ("<span class='admin'>" + str + "</span>")
+#define span_linkOn(str) ("<span class='linkOn'>" + str + "</span>")
+#define span_linkOff(str) ("<span class='linkOff'>" + str + "</span>")
+#define span_filter_pray(str) ("<span class='filter_pray'>" + str + "</span>") // (Uses the chat message type directly)
+
+// Admin log filters
+#define span_log_message(str) ("<span class='log_message'>" + str + "</span>")
+#define span_filter_adminlog(str) ("<span class='filter_adminlog'>" + str + "</span>") // (Uses the chat message type directly)
+
+// Attack log filter
+#define span_filter_attacklog(str) ("<span class='filter_attacklog'>" + str + "</span>") // (Uses the chat message type directly)
+
+// Debug filter
+#define span_debug_error(str) ("<span class='debug_error'>" + str + "</span>")
+#define span_debug_warning(str) ("<span class='debug_warning'>" + str + "</span>")
+#define span_debug_info(str) ("<span class='debug_info'>" + str + "</span>")
+#define span_debug_debug(str) ("<span class='debug_debug'>" + str + "</span>")
+#define span_debug_trace(str) ("<span class='debug_trace'>" + str + "</span>")
+#define span_filter_debuglogs(str) ("<span class='filter_debuglogs'>" + str + "</span>") // (Uses the chat message type directly)
+
+/* Admin only usage */
+// Admin pm filter
+#define span_pm(str) ("<span class='pm'>" + str + "</span>")
+#define span_adminhelp(str) ("<span class='adminhelp'>" + str + "</span>")
+#define span_admin_pm_notice(str) ("<span class='pm notice'>" + str + "</span>")
+#define span_admin_pm_warning(str) ("<span class='pm warning'>" + str + "</span>")
+#define span_filter_pm(str) ("<span class='filter_pm'>" + str + "</span>")
+
+// Mentor pm filter
+#define span_mentor(str) ("<span class='mentor'>" + str + "</span>")
+#define span_mentor_pm_notice(str) ("<span class='mentor notice'>" + str + "</span>")
+#define span_mentor_pm_warning(str) ("<span class='mentor warning'>" + str + "</span>")
+
+/* Adminchat */
+// All of those have their own filter
+#define span_admin_channel(str) ("<span class='admin_channel'>" + str + "</span>")
+#define span_mod_channel(str) ("<span class='mod_channel'>" + str + "</span>")
+#define span_event_channel(str) ("<span class='event_channel'>" + str + "</span>")
+#define span_mentor_channel(str) ("<span class='mentor_channel'>" + str + "</span>")
+
+/* Byond Sizes */
+// Sizes only!
+#define span_small(str) "<font size='1'>" + str + "</font>"
+
+#define span_normal(str) "<font size='2'>" + str + "</font>"
+
+#define span_large(str) "<font size='3'>" + str + "</font>"
+
+#define span_huge(str) "<font size='4'>" + str + "</font>"
+
+#define span_giant(str) "<font size='5'>" + str + "</font>"
+
+#define span_giganteus(str) "<font size='6'>" + str + "</font>"
+
+#define span_massive(str) "<font size='7'>" + str + "</font>"
+
+#define span_narsie(str) "<font size='15'>" + str + "</font>"
+
+#define span_cascade(str) "<span style='font-size:22pt'>" + str + "</span>"
+
+/* Style spans */
+// text style only
+#define span_italics(str) ("<span class='italics'>" + str + "</span>")
+#define span_bold(str) ("<span class='bold'>" + str + "</span>")
+#define span_underline(str) ("<span class='underline'>" + str + "</span>")
+
+// Links!
+#define span_linkify(str) ("<span class='linkify'>" + str + "</span>")
+
+#define span_wingdings(str) ("<span class='wingdings'>" + str + "</span>")
+
+#define span_maptext(str) ("<span class='maptext'>" + str + "</span>")
+
+#define span_major_announcement_text(str) ("<span class='major_announcement_text'>" + str + "</span>")
+#define span_major_announcement_title(str) ("<span class='major_announcement_title'>" + str + "</span>")
+#define span_ooc_announcement_text(str) ("<span class='ooc_announcement_text'>" + str + "</span>")
+#define span_subheader_announcement_text(str) ("<span class='subheader_announcement_text'>" + str + "</span>")
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142)):code/__defines/span.dm

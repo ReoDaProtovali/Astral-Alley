@@ -1748,7 +1748,11 @@
 	})
 "gQ" = (
 /obj/structure/table/standard,
+<<<<<<< HEAD
 /obj/item/weapon/disk/data/demo{
+=======
+/obj/item/disk/body_record{
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	pixel_x = -14;
 	pixel_y = -1
 	},

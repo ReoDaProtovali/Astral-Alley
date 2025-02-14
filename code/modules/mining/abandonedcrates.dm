@@ -112,7 +112,11 @@
 		if(92)
 			new/obj/item/weapon/material/sword/katana(src)
 		if(93)
+<<<<<<< HEAD
 			new/obj/item/weapon/dnainjector/xraymut(src) // Probably the least OP
+=======
+			new/obj/item/dnainjector/set_trait/xray(src) // Probably the least OP
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 		if(94) // Why the hell not
 			new/obj/item/weapon/storage/backpack/clown(src)
 			new/obj/item/clothing/under/rank/clown(src)

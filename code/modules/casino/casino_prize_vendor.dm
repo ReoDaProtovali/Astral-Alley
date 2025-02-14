@@ -202,6 +202,7 @@
 		CASINO_PRIZE("Rig: Rescue suit control module", /obj/item/weapon/rig/medical, 1, 300, "mechs"),
 	)
 	item_list["Implants and Genemods"] = list(
+<<<<<<< HEAD
 		CASINO_PRIZE("Implanter (Remember to get one unless you want to borrow from station!)", /obj/item/weapon/implanter, 1, 100, "implants"),
 		CASINO_PRIZE("Implant: Tazer", /obj/item/weapon/implantcase/taser, 1, 1000, "implants"),
 		CASINO_PRIZE("Implant: Medkit", /obj/item/weapon/implantcase/medkit, 1, 500, "implants"),
@@ -227,6 +228,33 @@
 		CASINO_PRIZE("Genemod: Sprinter", /obj/item/weapon/dnainjector/runfast, 1, 1000, "implants"),
 		CASINO_PRIZE("Genemod: Telekinesis", /obj/item/weapon/dnainjector/telemut, 1, 1000, "implants"),
 		CASINO_PRIZE("Genemod: X-ray", /obj/item/weapon/dnainjector/xraymut, 1, 1000, "implants"),
+=======
+		CASINO_PRIZE("Implanter (Remember to get one unless you want to borrow from station!)", /obj/item/implanter, 1, 100, "implants"),
+		CASINO_PRIZE("Implant: Tazer", /obj/item/implantcase/taser, 1, 1000, "implants"),
+		CASINO_PRIZE("Implant: Medkit", /obj/item/implantcase/medkit, 1, 500, "implants"),
+		CASINO_PRIZE("Implant: Shades", /obj/item/implantcase/shades, 1, 750, "implants"),
+		CASINO_PRIZE("Implant: Sprinter", /obj/item/implantcase/sprinter, 1, 1000, "implants"),
+		CASINO_PRIZE("Implant: Toolkit", /obj/item/implantcase/toolkit, 1, 500, "implants"),
+		CASINO_PRIZE("Implant: Language", /obj/item/implantcase/vrlanguage, 1, 500, "implants"),
+		CASINO_PRIZE("Implant: Analyzer", /obj/item/implantcase/analyzer, 1, 500, "implants"),
+		CASINO_PRIZE("Implant: Size control", /obj/item/implant/sizecontrol , 1, 500, "implants"),
+		CASINO_PRIZE("Implant: Adrenaline", /obj/item/implantcase/adrenalin, 1, 500, "implants"),
+		CASINO_PRIZE("Implant: Armblade", /obj/item/implantcase/armblade, 1, 1000, "implants"),
+		CASINO_PRIZE("Implant: Wrist dartgun", /obj/item/implantcase/dart, 1, 1000, "implants"),
+		CASINO_PRIZE("Implant: Freedom", /obj/item/implantcase/freedom, 1, 500, "implants"),
+		CASINO_PRIZE("Implant: Handblade", /obj/item/implantcase/handblade, 1, 1000, "implants"),
+		CASINO_PRIZE("Implant: Hand laser", /obj/item/implantcase/laser, 1, 1000, "implants"),
+		CASINO_PRIZE("Implant: Loyalty", /obj/item/implantcase/loyalty, 1, 500, "implants"),
+		CASINO_PRIZE("Implant: Restraining bolt", /obj/item/implantcase/restrainingbolt, 1, 1000, "implants"),
+		CASINO_PRIZE("Implant: Surge", /obj/item/implantcase/surge, 1, 500, "implants"),
+		CASINO_PRIZE("Implant: Wrist sword", /obj/item/implantcase/sword, 1, 1000, "implants"),
+		CASINO_PRIZE("Genemod: No breath", /obj/item/dnainjector/set_trait/nobreathe, 1, 1000, "implants"),
+		CASINO_PRIZE("Genemod: Regenerate", /obj/item/dnainjector/set_trait/regenerate, 1, 1000, "implants"),
+		CASINO_PRIZE("Genemod: Remote view", /obj/item/dnainjector/set_trait/remoteview, 1, 1000, "implants"),
+		CASINO_PRIZE("Genemod: Sprinter", /obj/item/dnainjector/set_trait/haste, 1, 1000, "implants"),
+		CASINO_PRIZE("Genemod: Telekinesis", /obj/item/dnainjector/set_trait/tk, 1, 1000, "implants"),
+		CASINO_PRIZE("Genemod: X-ray", /obj/item/dnainjector/set_trait/xray, 1, 1000, "implants"),
+>>>>>>> 7bfffc808d ([MIRROR] Adds Trait Genetics (#10142))
 	)
 
 	item_list["Event"] = list(
