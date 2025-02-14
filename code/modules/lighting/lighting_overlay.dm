@@ -5,7 +5,7 @@
 	///whether we are already in the SSlighting.objects_queue list
 	var/needs_update = FALSE
 
-	var/sunlight_only = FALSE //CHOMPEdit
+	var/sunlight_only = FALSE
 
 	///the turf that our light is applied to
 	var/turf/affected_turf
@@ -49,7 +49,7 @@
 
 /datum/lighting_object/proc/update()
 
-	if(sunlight_only) return //CHOMPEdit
+	if(sunlight_only) return
 	// To the future coder who sees this and thinks
 	// "Why didn't he just use a loop?"
 	// Well my man, it's because the loop performed like shit.
@@ -105,7 +105,7 @@
 	else
 		affected_turf.underlays -= current_underlay
 		current_underlay.icon_state = "gradient"
-		current_underlay.color = null //CHOMPEdit
+		current_underlay.color = null
 		current_underlay.color = list(
 			rr, rg, rb, 00,
 			gr, gg, gb, 00,
@@ -124,7 +124,6 @@
 /datum/lighting_object/proc/addtoturf()
 	affected_turf.underlays |= current_underlay
 
-//CHOMPEdit Begin
 /datum/lighting_object/proc/update_sun()
 	//Used to have more code here, but it became redundant.
 	affected_turf.set_luminosity(1)
@@ -149,6 +148,3 @@
 			affected_turf.vis_contents += pshandler.vis_shade
 		if(FALSE)
 			affected_turf.underlays |= current_underlay
-
-
-//CHOMPEdit End
