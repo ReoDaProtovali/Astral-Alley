@@ -191,6 +191,39 @@
 	extra_overlay = "naga_markings"
 	//icon_sprite_tag = "naga2c"
 
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/tail/taur/naga/alt_2c
+	name = "Naga alt style dual-color (Taur)"
+	suit_sprites = 'icons/mob/taursuits_naga.dmi' //TODO: PORT CHOMPS NAGA_ALT AND MAKE THESE NAGA_ALT.
+	icon_state = "altnaga_s"
+	extra_overlay = "altnaga_markings"
+	//icon_sprite_tag = "altnaga2c"
+
+/datum/sprite_accessory/tail/taur/naga/alt_3c
+	name = "Naga alt style tri-color (Taur)"
+	suit_sprites = 'icons/mob/taursuits_naga_alt_ch.dmi' //TODO: PORT CHOMPS NAGA_ALT AND MAKE THESE NAGA_ALT. //CHOMPStation Edit
+	vore_tail_sprite_variant = "Naga3Piece" //CHOMPStation Add
+	fullness_icons = 1 //CHOMPStation Add
+	icon_state = "altnaga_s"
+	extra_overlay = "altnaga_markings"
+	extra_overlay2 = "altnaga_stripes"
+
+/datum/sprite_accessory/tail/taur/naga/alt_3c_rattler
+	name = "Naga alt style tri-color, rattler (Taur)"
+	suit_sprites = 'icons/mob/taursuits_naga.dmi' //TODO: PORT CHOMPS NAGA_ALT AND MAKE THESE NAGA_ALT.
+	icon_state = "altnaga_s"
+	extra_overlay = "altnaga_markings"
+	extra_overlay2 = "altnaga_rattler"
+
+/datum/sprite_accessory/tail/taur/naga/alt_3c_tailmaw
+	name = "Naga alt style tri-color, tailmaw (Taur)"
+	suit_sprites = 'icons/mob/taursuits_naga.dmi' //TODO: PORT CHOMPS NAGA_ALT AND MAKE THESE NAGA_ALT.
+	icon_state = "altnagatailmaw_s"
+	extra_overlay = "altnagatailmaw_markings"
+	extra_overlay2 = "altnagatailmaw_eyes"
+
+>>>>>>> 144553d5af ([MIRROR] Up-ports wings (#10163))
 /datum/sprite_accessory/tail/taur/horse
 	name = "Horse (Taur)"
 	icon_state = "horse_s"
