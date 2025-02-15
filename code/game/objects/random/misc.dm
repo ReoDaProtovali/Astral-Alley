@@ -386,6 +386,7 @@
 	icon_state = "whiskeybottle1"
 
 /obj/random/drinkbottle/item_to_spawn()
+<<<<<<< HEAD
 	return pick(/obj/item/weapon/reagent_containers/food/drinks/bottle/whiskey,
 				/obj/item/weapon/reagent_containers/food/drinks/bottle/gin,
 				/obj/item/weapon/reagent_containers/food/drinks/bottle/specialwhiskey,
@@ -413,6 +414,35 @@
 				/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer,
 				/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer/silverdragon,
 				/obj/item/weapon/reagent_containers/food/drinks/bottle/small/beer/meteor)
+=======
+	return pick(/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+				/obj/item/reagent_containers/food/drinks/bottle/gin,
+				/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey,
+				/obj/item/reagent_containers/food/drinks/bottle/vodka,
+				/obj/item/reagent_containers/food/drinks/bottle/tequila,
+				/obj/item/reagent_containers/food/drinks/bottle/absinthe,
+				/obj/item/reagent_containers/food/drinks/bottle/wine,
+				/obj/item/reagent_containers/food/drinks/bottle/cognac,
+				/obj/item/reagent_containers/food/drinks/bottle/rum,
+				/obj/item/reagent_containers/food/drinks/bottle/patron,
+				/obj/item/reagent_containers/food/drinks/bottle/vermouth,
+				/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
+				/obj/item/reagent_containers/food/drinks/bottle/kahlua,
+				/obj/item/reagent_containers/food/drinks/bottle/melonliquor,
+				/obj/item/reagent_containers/food/drinks/bottle/bluecuracao,
+				/obj/item/reagent_containers/food/drinks/bottle/grenadine,
+				/obj/item/reagent_containers/food/drinks/bottle/sake,
+				/obj/item/reagent_containers/food/drinks/bottle/champagne,
+				/obj/item/reagent_containers/food/drinks/bottle/peppermintschnapps,
+				/obj/item/reagent_containers/food/drinks/bottle/peachschnapps,
+				/obj/item/reagent_containers/food/drinks/bottle/lemonadeschnapps,
+				/obj/item/reagent_containers/food/drinks/bottle/jager,
+				/obj/item/reagent_containers/food/drinks/bottle/small/cider,
+				/obj/item/reagent_containers/food/drinks/bottle/small/litebeer,
+				/obj/item/reagent_containers/food/drinks/bottle/small/beer,
+				/obj/item/reagent_containers/food/drinks/bottle/small/beer/silverdragon,
+				/obj/item/reagent_containers/food/drinks/bottle/small/beer/meteor)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 
 /obj/random/drinksoft
 	name = "random soft drink"

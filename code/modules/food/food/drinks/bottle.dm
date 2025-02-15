@@ -264,16 +264,26 @@
 	. = ..()
 	reagents.add_reagent("vodka", 100)
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla
+=======
+/obj/item/reagent_containers/food/drinks/bottle/tequila
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	name = "Caccavo Guaranteed Quality Tequilla"
 	desc = "Made from premium petroleum distillates, pure thalidomide and other fine quality ingredients!"
 	icon_state = "tequilabottle"
 	center_of_mass_x = 16 //CHOMPEdit
 	center_of_mass_y= 3 //CHOMPEdit
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla/Initialize()
 	. = ..()
 	reagents.add_reagent("tequilla", 100)
+=======
+/obj/item/reagent_containers/food/drinks/bottle/tequila/Initialize()
+	. = ..()
+	reagents.add_reagent(REAGENT_ID_TEQUILA, 100)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/bottleofnothing
 	name = "Bottle of Nothing"
@@ -288,7 +298,7 @@
 
 /obj/item/weapon/reagent_containers/food/drinks/bottle/patron
 	name = "Wrapp Artiste Patron"
-	desc = "Silver laced tequilla, served in night clubs across the galaxy."
+	desc = "Silver laced tequila, served in night clubs across the galaxy."
 	icon_state = "patronbottle"
 	center_of_mass_x = 16 //CHOMPEdit
 	center_of_mass_y= 6 //CHOMPEdit

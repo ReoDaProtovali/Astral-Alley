@@ -15,6 +15,7 @@
 	desc = "A top of the line and experimental drink vendor, it uses bluespace technology for storage!" //CHOMPEdit
 	icon = 'icons/obj/casino.dmi'
 	icon_state = "premiumbooze"
+<<<<<<< HEAD
 	products = list(/obj/item/weapon/glass_extra/stick = 50,
 					/obj/item/weapon/glass_extra/straw = 50,
 					/obj/item/weapon/reagent_containers/food/drinks/glass2/square = 25,
@@ -75,6 +76,68 @@
 					/obj/item/weapon/reagent_containers/food/drinks/ice = 10,
 					/obj/item/weapon/reagent_containers/food/drinks/flask/barflask = 10, //CHOMPAdd
 					/obj/item/weapon/reagent_containers/food/drinks/flask/vacuumflask = 10 //CHOMPAdd
+=======
+	products = list(/obj/item/glass_extra/stick = 50,
+					/obj/item/glass_extra/straw = 50,
+					/obj/item/reagent_containers/food/drinks/glass2/square = 25,
+					/obj/item/reagent_containers/food/drinks/glass2/rocks = 25,
+					/obj/item/reagent_containers/food/drinks/glass2/shake = 25,
+					/obj/item/reagent_containers/food/drinks/glass2/cocktail = 25,
+					/obj/item/reagent_containers/food/drinks/glass2/shot = 25,
+					/obj/item/reagent_containers/food/drinks/glass2/pint = 25,
+					/obj/item/reagent_containers/food/drinks/glass2/mug = 25,
+					/obj/item/reagent_containers/food/drinks/glass2/wine = 25,
+					/obj/item/reagent_containers/food/drinks/glass2/carafe = 2,
+					/obj/item/reagent_containers/food/drinks/glass2/pitcher = 2,
+					/obj/item/reagent_containers/food/drinks/metaglass = 25,
+					/obj/item/reagent_containers/food/drinks/metaglass/metapint = 25,
+					/obj/item/reagent_containers/food/drinks/bottle/gin = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/absinthe = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/bluecuracao = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/cognac = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/grenadine = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/kahlua = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/melonliquor = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/rum = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/sake = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/tequila = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/vermouth = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/vodka = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/whiskey = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/wine = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/redeemersbrew = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/patron = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/goldschlager = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/champagne = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/bottleofnothing = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/snaps = 10, //CHOMPAdd
+					/obj/item/reagent_containers/food/drinks/bottle/holywater = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/small/ale = 50, //CHOMPEdit
+					/obj/item/reagent_containers/food/drinks/bottle/small/ale/hushedwhisper = 15,
+					/obj/item/reagent_containers/food/drinks/bottle/small/beer = 50, //CHOMPEdit
+					/obj/item/reagent_containers/food/drinks/bottle/small/beer/silverdragon = 15,
+					/obj/item/reagent_containers/food/drinks/bottle/small/beer/meteor = 15,
+					/obj/item/reagent_containers/food/drinks/bottle/small/litebeer = 15,
+					/obj/item/reagent_containers/food/drinks/bottle/small/cider = 15,
+					/obj/item/reagent_containers/food/drinks/cans/tonic = 50,
+					/obj/item/reagent_containers/food/drinks/cans/gingerale = 50,
+					/obj/item/reagent_containers/food/drinks/cans/sodawater = 50,
+					/obj/item/reagent_containers/food/drinks/tea = 50,
+					/obj/item/reagent_containers/food/drinks/bottle/cola = 15,
+					/obj/item/reagent_containers/food/drinks/bottle/space_up = 15,
+					/obj/item/reagent_containers/food/drinks/bottle/space_mountain_wind = 15,
+					/obj/item/reagent_containers/food/drinks/bottle/orangejuice = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/tomatojuice = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/limejuice = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/lemonjuice = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/applejuice = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/milk = 10,
+					/obj/item/reagent_containers/food/drinks/bottle/cream = 10,
+					/obj/item/reagent_containers/food/drinks/ice = 10,
+					/obj/item/reagent_containers/food/drinks/flask/barflask = 10, //CHOMPAdd
+					/obj/item/reagent_containers/food/drinks/flask/vacuumflask = 10 //CHOMPAdd
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 					)
 
 	contraband = list()

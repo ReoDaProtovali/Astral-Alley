@@ -767,6 +767,7 @@
 /obj/structure/window/basic{
 	dir = 8
 	},
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla{
 	pixel_x = -7
 	},
@@ -774,6 +775,15 @@
 	pixel_x = -7
 	},
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla{
+=======
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
+	pixel_x = -7
+	},
+/obj/item/reagent_containers/food/drinks/bottle/tequila{
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	pixel_x = -7
 	},
 /obj/item/weapon/reagent_containers/food/drinks/bottle/jager,

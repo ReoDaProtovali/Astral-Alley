@@ -352,6 +352,9 @@
 	glass_name = "Slow Comfortable Screw Against the Wall"
 	glass_desc = "The best accessory to daydrinking."
 
+/datum/reagent/drink
+	name = REAGENT_DEVELOPER_WARNING // Unit test ignore
+
 /datum/reagent/drink/choccymilk
 	name = "Choccy Milk"
 	id = "choccymilk"

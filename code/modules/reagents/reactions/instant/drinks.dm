@@ -1,3 +1,6 @@
+/decl/chemical_reaction/instant/drinks
+	name = REAGENT_DEVELOPER_WARNING // Unit test ignore
+
 /decl/chemical_reaction/instant/drinks/coffee
 	name = "Coffee"
 	id = "coffee"
@@ -55,10 +58,17 @@
 	result_amount = 10
 
 /decl/chemical_reaction/instant/drinks/patron
+<<<<<<< HEAD
 	name = "Patron"
 	id = "patron"
 	result = "patron"
 	required_reagents = list("tequilla" = 10, "silver" = 1)
+=======
+	name = REAGENT_PATRON
+	id = REAGENT_ID_PATRON
+	result = REAGENT_ID_PATRON
+	required_reagents = list(REAGENT_ID_TEQUILA = 10, REAGENT_ID_SILVER = 1)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 10
 
 /decl/chemical_reaction/instant/drinks/bilk
@@ -250,17 +260,30 @@
 	result_amount = 6
 
 /decl/chemical_reaction/instant/drinks/brave_bull
+<<<<<<< HEAD
 	name = "Brave Bull"
 	id = "bravebull"
 	result = "bravebull"
 	required_reagents = list("tequilla" = 2, "kahlua" = 1)
+=======
+	name = REAGENT_BRAVEBULL
+	id = REAGENT_ID_BRAVEBULL
+	result = REAGENT_ID_BRAVEBULL
+	required_reagents = list(REAGENT_ID_TEQUILA = 2, REAGENT_ID_KAHLUA = 1)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 3
 
-/decl/chemical_reaction/instant/drinks/tequilla_sunrise
+/decl/chemical_reaction/instant/drinks/tequila_sunrise
 	name = "Tequilla Sunrise"
+<<<<<<< HEAD
 	id = "tequillasunrise"
 	result = "tequillasunrise"
 	required_reagents = list("tequilla" = 2, "orangejuice" = 1)
+=======
+	id = REAGENT_ID_TEQUILASUNRISE
+	result = REAGENT_ID_TEQUILASUNRISE
+	required_reagents = list(REAGENT_ID_TEQUILA = 2, REAGENT_ID_ORANGEJUICE = 1)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 3
 
 /decl/chemical_reaction/instant/drinks/phoron_special
@@ -327,6 +350,7 @@
 	result_amount = 10
 
 /decl/chemical_reaction/instant/drinks/margarita
+<<<<<<< HEAD
 	name = "Margarita"
 	id = "margarita"
 	result = "margarita"
@@ -338,6 +362,19 @@
 	id = "longislandicedtea"
 	result = "longislandicedtea"
 	required_reagents = list("vodka" = 1, "gin" = 1, "tequilla" = 1, "rumandcola" = 3)
+=======
+	name = REAGENT_MARGARITA
+	id = REAGENT_ID_MARGARITA
+	result = REAGENT_ID_MARGARITA
+	required_reagents = list(REAGENT_ID_TEQUILA = 2, REAGENT_ID_LIMEJUICE = 1)
+	result_amount = 3
+
+/decl/chemical_reaction/instant/drinks/longislandicedtea
+	name = REAGENT_LONGISLANDICEDTEA
+	id = REAGENT_ID_LONGISLANDICEDTEA
+	result = REAGENT_ID_LONGISLANDICEDTEA
+	required_reagents = list(REAGENT_ID_VODKA = 1, REAGENT_ID_GIN = 1, REAGENT_ID_TEQUILA = 1, REAGENT_ID_RUMANDCOLA = 3)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 6
 
 /decl/chemical_reaction/instant/drinks/threemileisland
@@ -516,11 +553,19 @@
 	required_reagents = list("iron" = 1, "redwine" = 5, "vodka" = 5)
 	result_amount = 10
 
+<<<<<<< HEAD
 /decl/chemical_reaction/instant/drinks/changelingsting
 	name = "Changeling Sting"
 	id = "changelingsting"
 	result = "changelingsting"
 	required_reagents = list("screwdrivercocktail" = 1, "limejuice" = 1, "lemonjuice" = 1)
+=======
+/decl/chemical_reaction/instant/drinks/changeling_sting
+	name = REAGENT_CHANGELINGSTING
+	id = REAGENT_ID_CHANGELINGSTING
+	result = REAGENT_ID_CHANGELINGSTING
+	required_reagents = list(REAGENT_ID_SCREWDRIVERCOCKTAIL = 1, REAGENT_ID_LIMEJUICE = 1, REAGENT_ID_LEMONJUICE = 1)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 3
 
 /decl/chemical_reaction/instant/drinks/aloe
@@ -870,10 +915,17 @@
 	result_amount = 2
 
 /decl/chemical_reaction/instant/drinks/erebusmoonrise
+<<<<<<< HEAD
 	name = "Erebus Moonrise"
 	id = "erebusmoonrise"
 	result = "erebusmoonrise"
 	required_reagents = list("whiskey" = 1, "vodka" = 1, "tequilla" = 1)
+=======
+	name = REAGENT_EREBUSMOONRISE
+	id = REAGENT_ID_EREBUSMOONRISE
+	result = REAGENT_ID_EREBUSMOONRISE
+	required_reagents = list(REAGENT_ID_WHISKEY = 1, REAGENT_ID_VODKA = 1, REAGENT_ID_TEQUILA = 1)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 3
 
 /decl/chemical_reaction/instant/drinks/balloon
@@ -919,10 +971,17 @@
 	result_amount = 5
 
 /decl/chemical_reaction/instant/drinks/binmanbliss
+<<<<<<< HEAD
 	name = "Binman Bliss"
 	id = "binmanbliss"
 	result = "binmanbliss"
 	required_reagents = list("sake" = 1, "tequilla" = 1)
+=======
+	name = REAGENT_BINMANBLISS
+	id = REAGENT_ID_BINMANBLISS
+	result = REAGENT_ID_BINMANBLISS
+	required_reagents = list(REAGENT_ID_SAKE = 1, REAGENT_ID_TEQUILA = 1)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 2
 
 /decl/chemical_reaction/instant/drinks/chrysanthemum
@@ -962,11 +1021,19 @@
     catalysts = list("enzyme" = 10) //10u enzyme so it requires more than is usually added. Stops overlap with wine recipe
     result_amount = 5
 
+<<<<<<< HEAD
 /decl/chemical_reaction/instant/drinks/lovepotion
 	name = "Love Potion"
 	id = "lovepotion"
 	result = "lovepotion"
 	required_reagents = list("cream" = 1, "berryjuice" = 1, "sugar" = 1)
+=======
+/decl/chemical_reaction/instant/drinks/love_potion
+	name = REAGENT_LOVEPOTION
+	id = REAGENT_ID_LOVEPOTION
+	result = REAGENT_ID_LOVEPOTION
+	required_reagents = list(REAGENT_ID_CREAM = 1, REAGENT_ID_BERRYJUICE = 1, REAGENT_ID_SUGAR = 1)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 3
 
 /decl/chemical_reaction/instant/drinks/morningafter
@@ -1117,10 +1184,17 @@
 	result_amount = 4
 
 /decl/chemical_reaction/instant/drinks/paloma
+<<<<<<< HEAD
 	name = "Paloma"
 	id = "paloma"
 	result = "paloma"
 	required_reagents = list("sodawater" = 1, "tequillasunrise" = 2)
+=======
+	name = REAGENT_PALOMA
+	id = REAGENT_ID_PALOMA
+	result = REAGENT_ID_PALOMA
+	required_reagents = list(REAGENT_ID_SODAWATER = 1, REAGENT_ID_TEQUILASUNRISE = 2)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 3
 
 /decl/chemical_reaction/instant/drinks/mojito
@@ -1130,11 +1204,19 @@
 	required_reagents = list("rum" = 3, "limejuice" = 1, "mint" = 1)
 	result_amount = 5
 
+<<<<<<< HEAD
 /decl/chemical_reaction/instant/drinks/virginmojito
 	name = "Mojito"
 	id = "virginmojito"
 	result = "virginmojito"
 	required_reagents = list("sodawater" = 3, "limejuice" = 1, "mint" = 1, "sugar" = 1)
+=======
+/decl/chemical_reaction/instant/drinks/virgin_mojito
+	name = REAGENT_VIRGINMOJITO
+	id = REAGENT_ID_VIRGINMOJITO
+	result = REAGENT_ID_VIRGINMOJITO
+	required_reagents = list(REAGENT_ID_SODAWATER = 3, REAGENT_ID_LIMEJUICE = 1, REAGENT_ID_MINT = 1, REAGENT_ID_SUGAR = 1)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 5
 
 /decl/chemical_reaction/instant/drinks/piscosour

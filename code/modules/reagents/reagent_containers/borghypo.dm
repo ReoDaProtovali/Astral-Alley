@@ -141,6 +141,7 @@
 	recharge_time = 3
 	volume = 60
 	possible_transfer_amounts = list(5, 10, 20, 30)
+<<<<<<< HEAD
 	reagent_ids = list("ale",
 		"applejuice", //CHOMPADD it has literally every other type of juice..
 		"beer",
@@ -185,6 +186,52 @@
 		"water",
 		"watermelonjuice",
 		"whiskey")
+=======
+	reagent_ids = list(REAGENT_ID_ALE,
+		REAGENT_ID_APPLEJUICE, //CHOMPADD it has literally every other type of juice..
+		REAGENT_ID_BEER,
+		REAGENT_ID_BERRYJUICE,
+		REAGENT_ID_BITTERS,
+		REAGENT_ID_CIDER,
+		REAGENT_ID_COFFEE,
+		REAGENT_ID_COGNAC,
+		REAGENT_ID_COLA,
+		REAGENT_ID_CREAM,
+		REAGENT_ID_DRGIBB,
+		REAGENT_ID_EGG,
+		REAGENT_ID_GIN,
+		REAGENT_ID_GINGERALE,
+		REAGENT_ID_HOTCOCO,
+		REAGENT_ID_ICE,
+		REAGENT_ID_ICETEA,
+		REAGENT_ID_KAHLUA,
+		REAGENT_ID_LEMONJUICE,
+		REAGENT_ID_LEMONLIME,
+		REAGENT_ID_LIMEJUICE,
+		REAGENT_ID_MEAD,
+		REAGENT_ID_MILK,
+		REAGENT_ID_MINT,
+		REAGENT_ID_ORANGEJUICE,
+		REAGENT_ID_REDWINE,
+		REAGENT_ID_RUM,
+		REAGENT_ID_SAKE,
+		REAGENT_ID_SODAWATER,
+		REAGENT_ID_SOYMILK,
+		REAGENT_ID_SPACEUP,
+		REAGENT_ID_SPACEMOUNTAINWIND,
+		REAGENT_ID_SPACESPICE,
+		REAGENT_ID_SPECIALWHISKEY,
+		REAGENT_ID_SUGAR,
+		REAGENT_ID_TEA,
+		REAGENT_ID_TEQUILA,
+		REAGENT_ID_TOMATOJUICE,
+		REAGENT_ID_TONIC,
+		REAGENT_ID_VERMOUTH,
+		REAGENT_ID_VODKA,
+		REAGENT_ID_WATER,
+		REAGENT_ID_WATERMELONJUICE,
+		REAGENT_ID_WHISKEY)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 
 /obj/item/weapon/reagent_containers/borghypo/service/attack(var/mob/M, var/mob/user)
 	return

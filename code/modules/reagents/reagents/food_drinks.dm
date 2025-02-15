@@ -2371,9 +2371,15 @@
 	glass_desc = "You can almost smell the tranquility emanating from this."
 	//allergen_type = ALLERGEN_FRUIT Sorry to break the news, chief. Honey is not a fruit.
 
+<<<<<<< HEAD
 /datum/reagent/drink/lovepotion
 	name = "Love Potion"
 	id = "lovepotion"
+=======
+/datum/reagent/drink/love_potion
+	name = REAGENT_LOVEPOTION
+	id = REAGENT_ID_LOVEPOTION
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	description = "Creamy strawberries and sugar, simple and sweet."
 	taste_description = "strawberries and cream"
 	color = "#fc8a8a" // rgb(252, 138, 138)
@@ -2481,9 +2487,15 @@
 				if(D.water_based)
 					M.adjustToxLoss(removed * -2)
 
+<<<<<<< HEAD
 /datum/reagent/drink/mojito
 	name = "Mojito"
 	id = "virginmojito"
+=======
+/datum/reagent/drink/virgin_mojito
+	name = REAGENT_VIRGINMOJITO
+	id = REAGENT_ID_VIRGINMOJITO
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	description = "Mint, bubbly water, and citrus, made for sailing."
 	taste_description = "mint and lime"
 	color = "#FFF7B3"
@@ -2706,6 +2718,7 @@
 
 //Base type for alchoholic drinks containing coffee
 /datum/reagent/ethanol/coffee
+	name = REAGENT_DEVELOPER_WARNING
 	overdose = 45
 	allergen_type = ALLERGEN_COFFEE|ALLERGEN_STIMULANT //Contains coffee or is made from coffee
 
@@ -2816,8 +2829,13 @@
 	allergen_type = ALLERGEN_FRUIT //Made from orange juice
 
 /datum/reagent/ethanol/tequila
+<<<<<<< HEAD
 	name = "Tequila"
 	id = "tequilla"
+=======
+	name = REAGENT_TEQUILA
+	id = REAGENT_ID_TEQUILA
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	description = "A strong and mildly flavored, Mexican produced spirit. Feeling thirsty hombre?"
 	taste_description = "paint thinner"
 	color = "#FFFF91"
@@ -2960,6 +2978,9 @@
 					L.take_damage(10 * removed, 0)
 				else
 					L.take_damage(100, 0)
+
+/datum/reagent/ethanol/wine
+	name = REAGENT_DEVELOPER_WARNING // Unit test ignore
 
 /datum/reagent/ethanol/wine/champagne
 	name = "Champagne"
@@ -3227,9 +3248,15 @@
 	glass_name = "Brave Bull"
 	glass_desc = "Tequilla and coffee liquor, brought together in a mouthwatering mixture. Drink up."
 
+<<<<<<< HEAD
 /datum/reagent/ethanol/changelingsting
 	name = "Changeling Sting"
 	id = "changelingsting"
+=======
+/datum/reagent/ethanol/changeling_sting
+	name = REAGENT_CHANGELINGSTING
+	id = REAGENT_ID_CHANGELINGSTING
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	description = "You take a tiny sip and feel a burning sensation..."
 	taste_description = "constantly changing flavors"
 	color = "#2E6671"
@@ -3708,9 +3735,15 @@
 
 	allergen_type = ALLERGEN_GRAINS|ALLERGEN_STIMULANT //Made from beer(grain) and whiskeycola(whiskey(grain) and cola(caffeine))
 
+<<<<<<< HEAD
 /datum/reagent/ethanol/tequilla_sunrise
 	name = "Tequila Sunrise"
 	id = "tequillasunrise"
+=======
+/datum/reagent/ethanol/tequila_sunrise
+	name = REAGENT_TEQUILASUNRISE
+	id = REAGENT_ID_TEQUILASUNRISE
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	description = "Tequila and orange juice. Much like a Screwdriver, only Mexican~."
 	taste_description = "oranges"
 	color = "#FFE48C"

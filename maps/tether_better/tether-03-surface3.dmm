@@ -724,7 +724,11 @@
 /area/tether/surfacebase/outside/outside3)
 "abe" = (
 /obj/structure/closet,
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla,
+=======
+/obj/item/reagent_containers/food/drinks/bottle/tequila,
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 /turf/simulated/floor/plating,
 /area/maintenance/lower/medsec_maintenance)
 "abf" = (

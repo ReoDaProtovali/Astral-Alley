@@ -55,6 +55,7 @@
 	spawn_reagent = "calcium"
 
 // Bar, alcoholic
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/chem_disp_cartridge/beer
 	spawn_reagent = "beer"
 /obj/item/weapon/reagent_containers/chem_disp_cartridge/kahlua
@@ -85,6 +86,38 @@
 	spawn_reagent = "bitters"
 /obj/item/weapon/reagent_containers/chem_disp_cartridge/cider
 	spawn_reagent = "cider"
+=======
+/obj/item/reagent_containers/chem_disp_cartridge/beer
+	spawn_reagent = REAGENT_ID_BEER
+/obj/item/reagent_containers/chem_disp_cartridge/kahlua
+	spawn_reagent = REAGENT_ID_KAHLUA
+/obj/item/reagent_containers/chem_disp_cartridge/whiskey
+	spawn_reagent = REAGENT_ID_WHISKEY
+/obj/item/reagent_containers/chem_disp_cartridge/redwine
+	spawn_reagent = REAGENT_ID_REDWINE
+/obj/item/reagent_containers/chem_disp_cartridge/whitewine
+	spawn_reagent = REAGENT_ID_WHITEWINE
+/obj/item/reagent_containers/chem_disp_cartridge/vodka
+	spawn_reagent = REAGENT_ID_VODKA
+/obj/item/reagent_containers/chem_disp_cartridge/gin
+	spawn_reagent = REAGENT_ID_GIN
+/obj/item/reagent_containers/chem_disp_cartridge/rum
+	spawn_reagent = REAGENT_ID_RUM
+/obj/item/reagent_containers/chem_disp_cartridge/tequila
+	spawn_reagent = REAGENT_ID_TEQUILA
+/obj/item/reagent_containers/chem_disp_cartridge/vermouth
+	spawn_reagent = REAGENT_ID_VERMOUTH
+/obj/item/reagent_containers/chem_disp_cartridge/cognac
+	spawn_reagent = REAGENT_ID_COGNAC
+/obj/item/reagent_containers/chem_disp_cartridge/ale
+	spawn_reagent = REAGENT_ID_ALE
+/obj/item/reagent_containers/chem_disp_cartridge/mead
+	spawn_reagent = REAGENT_ID_MEAD
+/obj/item/reagent_containers/chem_disp_cartridge/bitters
+	spawn_reagent = REAGENT_ID_BITTERS
+/obj/item/reagent_containers/chem_disp_cartridge/cider
+	spawn_reagent = REAGENT_ID_CIDER
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 
 // Bar, soft
 /obj/item/weapon/reagent_containers/chem_disp_cartridge/ice
