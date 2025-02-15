@@ -902,8 +902,13 @@
 				slot_r_hand_str = 'icons/vore/custom_items_right_hand_vr.dmi',
 				)
 
+<<<<<<< HEAD
 /obj/item/weapon/material/twohanded/fluff/New(var/newloc)
 	..(newloc," ") //See materials_vr_dmi for more information as to why this is a blank space.
+=======
+/obj/item/material/twohanded/fluff/Initialize(mapload)
+	. = ..(mapload," ") //See materials_vr_dmi for more information as to why this is a blank space.
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 
 //jacknoir413:Areax Third
 /obj/item/weapon/melee/baton/fluff/stunstaff

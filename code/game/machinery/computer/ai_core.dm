@@ -10,6 +10,15 @@
 	var/obj/item/weapon/circuitboard/circuit = null
 	var/obj/item/device/mmi/brain = null
 
+<<<<<<< HEAD
+=======
+// VOREstation edit: Respect map config's default
+/obj/structure/AIcore/Initialize(mapload)
+	. = ..()
+	if(mapload)
+		laws = new global.using_map.default_law_type
+// VOREstation edit end
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 
 /obj/structure/AIcore/attackby(obj/item/P as obj, mob/user as mob)
 

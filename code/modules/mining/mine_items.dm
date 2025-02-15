@@ -161,7 +161,11 @@
 	item_state = "whiteshovel"
 	var/datum/material/material
 
+<<<<<<< HEAD
 /obj/item/weapon/shovel/wood/Initialize(var/ml, var/_mat)
+=======
+/obj/item/shovel/wood/Initialize(mapload, var/_mat)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 	. = ..()
 	material = get_material_by_name(_mat)
 	if(!istype(material))

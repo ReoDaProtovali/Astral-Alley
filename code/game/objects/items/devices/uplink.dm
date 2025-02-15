@@ -23,7 +23,15 @@
 	var/discount_amount					//The amount as a percent the item will be discounted by
 	var/compact_mode = FALSE
 
+<<<<<<< HEAD
 /obj/item/device/uplink/Initialize(var/mapload)
+=======
+	icon = 'icons/obj/device.dmi'
+	pickup_sound = 'sound/items/pickup/device.ogg'
+	drop_sound = 'sound/items/drop/device.ogg'
+
+/obj/item/uplink/Initialize(mapload)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 	. = ..()
 	addtimer(CALLBACK(src, PROC_REF(next_offer)), offer_time) //It seems like only the /hidden type actually makes use of this...
 

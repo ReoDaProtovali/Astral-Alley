@@ -22,8 +22,13 @@
 	var/base_icon = "bed"
 	var/applies_material_colour = 1
 
+<<<<<<< HEAD
 /obj/structure/bed/New(var/newloc, var/new_material, var/new_padding_material)
 	..(newloc)
+=======
+/obj/structure/bed/Initialize(mapload, var/new_material, var/new_padding_material)
+	..()
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 	color = null
 	if(!new_material)
 		new_material = MAT_STEEL
@@ -178,19 +183,32 @@
 	icon_state = "psychbed"
 	base_icon = "psychbed"
 
+<<<<<<< HEAD
 /obj/structure/bed/psych/New(var/newloc)
 	..(newloc,"wood","leather")
 
 /obj/structure/bed/padded/New(var/newloc)
 	..(newloc,"plastic","cotton")
+=======
+/obj/structure/bed/psych/Initialize(mapload)
+	. = ..(mapload,MAT_WOOD,MAT_LEATHER)
+
+/obj/structure/bed/padded/Initialize(mapload)
+	. = ..(mapload,MAT_PLASTIC,MAT_COTTON)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 
 /obj/structure/bed/double
 	name = "double bed"
 	icon_state = "doublebed"
 	base_icon = "doublebed"
 
+<<<<<<< HEAD
 /obj/structure/bed/double/padded/New(var/newloc)
 	..(newloc,"wood","cotton")
+=======
+/obj/structure/bed/double/padded/Initialize(mapload)
+	. = ..(mapload,MAT_WOOD,MAT_COTTON)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 
 /obj/structure/bed/double/post_buckle_mob(mob/living/M as mob)
 	if(M.buckled == src)
