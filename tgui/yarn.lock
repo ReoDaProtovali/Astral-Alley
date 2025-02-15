@@ -8226,7 +8226,13 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tgui-bench@workspace:packages/tgui-bench"
   dependencies:
+<<<<<<< HEAD
     "@fastify/static": "npm:^6.12.0"
+=======
+    "@fastify/static": "npm:^8.0.2"
+    "@types/react": "npm:^18.3.12"
+    "@types/react-dom": "npm:^18.3.1"
+>>>>>>> ddc5c0d818 ([MIRROR] moves runechat to a subsystem (#10167))
     common: "workspace:*"
     fastify: "npm:^3.29.5"
     lodash: "npm:^4.17.21"
@@ -8293,6 +8299,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "tgui-workspace@workspace:."
   dependencies:
+<<<<<<< HEAD
     "@swc/core": "npm:^1.4.11"
     "@swc/jest": "npm:^0.2.36"
     "@types/jest": "npm:^29.5.12"
@@ -8302,6 +8309,19 @@ __metadata:
     "@typescript-eslint/utils": "npm:^7.5.0"
     css-loader: "npm:^6.10.0"
     esbuild-loader: "npm:^4.1.0"
+=======
+    "@swc/core": "npm:^1.9.1"
+    "@swc/jest": "npm:^0.2.37"
+    "@types/jest": "npm:^29.5.14"
+    "@types/node": "npm:^22.9.0"
+    "@types/react": "npm:^18.3.12"
+    "@types/react-dom": "npm:^18.3.1"
+    "@types/webpack-env": "npm:^1.18.5"
+    "@typescript-eslint/parser": "npm:^8.13.0"
+    "@typescript-eslint/utils": "npm:^8.13.0"
+    css-loader: "npm:^7.1.2"
+    esbuild-loader: "npm:^4.2.2"
+>>>>>>> ddc5c0d818 ([MIRROR] moves runechat to a subsystem (#10167))
     eslint: "npm:^8.57.0"
     eslint-config-prettier: "npm:^9.1.0"
     eslint-plugin-react: "npm:^7.34.1"
