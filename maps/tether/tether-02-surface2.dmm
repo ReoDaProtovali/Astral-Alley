@@ -30121,6 +30121,7 @@
 /area/vacant/vacant_bar_upper)
 "biX" = (
 /obj/structure/table/rack/shelf/steel,
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/bottle/goldschlager,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/sake,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/kahlua,
@@ -30129,6 +30130,16 @@
 /obj/item/weapon/reagent_containers/food/drinks/bottle/absinthe,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla,
 /obj/item/weapon/reagent_containers/food/drinks/bottle/specialwhiskey,
+=======
+/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
+/obj/item/reagent_containers/food/drinks/bottle/sake,
+/obj/item/reagent_containers/food/drinks/bottle/kahlua,
+/obj/item/reagent_containers/food/drinks/bottle/wine,
+/obj/item/reagent_containers/food/drinks/bottle/patron,
+/obj/item/reagent_containers/food/drinks/bottle/absinthe,
+/obj/item/reagent_containers/food/drinks/bottle/tequila,
+/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey,
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 /turf/simulated/floor/wood,
 /area/vacant/vacant_bar_upper)
 "bje" = (

@@ -210,10 +210,17 @@
 //thirteen loko possible to make now, so easier to make arachnid slammer - Jack
 
 /decl/chemical_reaction/instant/drinks/thirteenloko
+<<<<<<< HEAD
 	name = "Thirteen Loko"
 	id = "thirteenloko"
 	result = "thirteenloko"
 	required_reagents = list("beer" = 1, "tequilla" = 1, "coffee" = 1)
+=======
+	name = REAGENT_THIRTEENLOKO
+	id = REAGENT_ID_THIRTEENLOKO
+	result = REAGENT_ID_THIRTEENLOKO
+	required_reagents = list(REAGENT_ID_BEER = 1, REAGENT_ID_TEQUILA = 1, REAGENT_ID_COFFEE = 1)
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	result_amount = 3
 
 //Arachnid slammer reactions - Jack

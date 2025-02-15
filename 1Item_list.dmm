@@ -35634,7 +35634,11 @@
 	},
 /area/survivalpod)
 "kuH" = (
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/drinks/bottle/tequilla,
+=======
+/obj/item/reagent_containers/food/drinks/bottle/tequila,
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},

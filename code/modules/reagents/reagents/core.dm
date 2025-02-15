@@ -1,8 +1,16 @@
 /datum/reagent/blood
+<<<<<<< HEAD
 	data = new/list("donor" = null, "viruses" = null, "species" = SPECIES_HUMAN, "blood_DNA" = null, "blood_type" = null, "blood_colour" = "#A10808", "resistances" = null, "trace_chem" = null, "antibodies" = list())
 	name = "Blood"
 	id = "blood"
 	taste_description = "iron"
+=======
+	data = new/list("donor" = null, "viruses" = null, "species" = SPECIES_HUMAN, "blood_DNA" = null, "blood_type" = null, "blood_colour" = "#A10808", "resistances" = null, "trace_chem" = null, REAGENT_ID_ANTIBODIES = list())
+	name = REAGENT_BLOOD
+	id = REAGENT_ID_BLOOD
+	description = "Blood."
+	taste_description = REAGENT_ID_IRON
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	taste_mult = 1.3
 	reagent_state = LIQUID
 	metabolism = REM * 5
@@ -121,8 +129,14 @@
 	remove_self(volume)
 
 /datum/reagent/blood/synthblood
+<<<<<<< HEAD
 	name = "synthetic blood"
 	id = "synthblood"
+=======
+	name = REAGENT_SYNTHBLOOD
+	description = "Synthetic Blood"
+	id = REAGENT_ID_SYNTHBLOOD
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	color = "#999966"
 	volume_mod = 2
 
@@ -142,8 +156,14 @@
 
 // pure concentrated antibodies
 /datum/reagent/antibodies
+<<<<<<< HEAD
 	data = list("antibodies"=list())
 	name = "Antibodies"
+=======
+	data = list(REAGENT_ID_ANTIBODIES=list())
+	name = REAGENT_ANTIBODIES
+	description = "Antibodies against some type of virus."
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 	taste_description = "slime"
 	id = "antibodies"
 	reagent_state = LIQUID

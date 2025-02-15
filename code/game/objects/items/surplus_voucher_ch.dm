@@ -14,6 +14,7 @@
 	spawn_item(get_turf(src))
 
 /obj/item/surplus_voucher/com/proc/spawn_item(var/turf/T)
+<<<<<<< HEAD
 	var/path = pick(prob(6);/obj/item/weapon/reagent_containers/food/drinks/bottle/whiskey,
 					prob(3);/obj/item/weapon/reagent_containers/food/drinks/bottle/specialwhiskey,
 					prob(3);/obj/item/weapon/reagent_containers/food/drinks/bottle/vodka,
@@ -28,6 +29,22 @@
 					prob(3);/obj/item/weapon/reagent_containers/food/snacks/bigbiteburger,
 					prob(3);/obj/item/weapon/reagent_containers/food/snacks/cheeseburger,
 					prob(3);/obj/item/weapon/reagent_containers/food/snacks/fries,
+=======
+	var/path = pick(prob(6);/obj/item/reagent_containers/food/drinks/bottle/whiskey,
+					prob(3);/obj/item/reagent_containers/food/drinks/bottle/specialwhiskey,
+					prob(3);/obj/item/reagent_containers/food/drinks/bottle/vodka,
+					prob(3);/obj/item/reagent_containers/food/drinks/bottle/tequila,
+					prob(3);/obj/item/reagent_containers/food/drinks/bottle/rum,
+					prob(3);/obj/item/reagent_containers/food/drinks/bottle/goldschlager,
+					prob(3);/obj/item/reagent_containers/food/drinks/bottle/vermouth,
+					prob(3);/obj/item/reagent_containers/food/drinks/bottle/cognac,
+					prob(3);/obj/item/reagent_containers/food/drinks/bottle/wine,
+					prob(3);/obj/item/spacecash/c50,
+					prob(3);/obj/item/spacecash/c100,
+					prob(3);/obj/item/reagent_containers/food/snacks/bigbiteburger,
+					prob(3);/obj/item/reagent_containers/food/snacks/cheeseburger,
+					prob(3);/obj/item/reagent_containers/food/snacks/fries,
+>>>>>>> 515df0c7ac ([MIRROR] Reagent unit testing (#10166))
 					prob(2);/obj/item/pizzabox/meat,
 					prob(2);/obj/item/pizzabox/vegetable,
 					prob(1);/obj/item/pizzabox/pineapple,
