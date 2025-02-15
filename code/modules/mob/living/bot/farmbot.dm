@@ -23,8 +23,13 @@
 	var/obj/structure/reagent_dispensers/watertank/tank
 
 
+<<<<<<< HEAD
 /mob/living/bot/farmbot/New(var/newloc, var/newTank)
 	..(newloc)
+=======
+/mob/living/bot/farmbot/Initialize(mapload, var/newTank)
+	. = ..()
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 	if(!newTank)
 		newTank = new /obj/structure/reagent_dispensers/watertank(src)
 	tank = newTank

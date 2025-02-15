@@ -15,7 +15,11 @@
 	var/potency = -1
 
 
+<<<<<<< HEAD
 /obj/item/weapon/reagent_containers/food/snacks/grown/Initialize(var/mapload, var/planttype)
+=======
+/obj/item/reagent_containers/food/snacks/grown/Initialize(mapload, var/planttype)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 	. = ..()
 
 	if(!dried_type)

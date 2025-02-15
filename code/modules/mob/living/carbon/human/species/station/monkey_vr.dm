@@ -68,23 +68,47 @@
 /mob/living/carbon/human/sharkm
 	low_sorting_priority = TRUE
 
+<<<<<<< HEAD
 /mob/living/carbon/human/sharkm/New(var/new_loc)
 	..(new_loc, "Sobaka")
+=======
+/mob/living/carbon/human/sharkm/Initialize(mapload)
+	. = ..(mapload, SPECIES_MONKEY_AKULA)
+	species.produceCopy(species.traits.Copy(),src,null,FALSE)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 
 /mob/living/carbon/human/sergallingm
 	low_sorting_priority = TRUE
 
+<<<<<<< HEAD
 /mob/living/carbon/human/sergallingm/New(var/new_loc)
 	..(new_loc, "Saru")
+=======
+/mob/living/carbon/human/sergallingm/Initialize(mapload)
+	. = ..(mapload, SPECIES_MONKEY_SERGAL)
+	species.produceCopy(species.traits.Copy(),src,null,FALSE)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 
 /mob/living/carbon/human/sparram
 	low_sorting_priority = TRUE
 
+<<<<<<< HEAD
 /mob/living/carbon/human/sparram/New(var/new_loc)
 	..(new_loc, "Sparra")
+=======
+/mob/living/carbon/human/sparram/Initialize(mapload)
+	. = ..(mapload, SPECIES_MONKEY_NEVREAN)
+	species.produceCopy(species.traits.Copy(),src,null,FALSE)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 
 /mob/living/carbon/human/wolpin
 	low_sorting_priority = TRUE
 
+<<<<<<< HEAD
 /mob/living/carbon/human/wolpin/New(var/new_loc)
 	..(new_loc, "Wolpin")
+=======
+/mob/living/carbon/human/wolpin/Initialize(mapload)
+	. = ..(mapload, SPECIES_MONKEY_VULPKANIN)
+	species.produceCopy(species.traits.Copy(),src,null,FALSE)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))

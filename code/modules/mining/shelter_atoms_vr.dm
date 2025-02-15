@@ -252,8 +252,13 @@ GLOBAL_LIST_EMPTY(unique_deployable)
 	icon = 'icons/obj/survival_pod.dmi'
 	icon_state = "bed"
 
+<<<<<<< HEAD
 /obj/structure/bed/pod/New(var/newloc)
 	..(newloc,MAT_STEEL,"cotton")
+=======
+/obj/structure/bed/pod/Initialize(mapload)
+	. = ..(mapload, MAT_STEEL, MAT_COTTON)
+>>>>>>> e4f07e43f3 ([MIRROR] cleans up INIT (#10164))
 
 //Survival Storage Unit
 /obj/machinery/smartfridge/survival_pod
