@@ -7,8 +7,14 @@
  */
 
 export const IMPL_MEMORY = 0;
+<<<<<<< HEAD:tgui/packages/common/storage.js
 export const IMPL_LOCAL_STORAGE = 1;
 export const IMPL_INDEXED_DB = 2;
+=======
+export const IMPL_HUB_STORAGE = 1;
+
+type StorageImplementation = typeof IMPL_MEMORY | typeof IMPL_HUB_STORAGE;
+>>>>>>> 39c89988b5 ([MIRROR] Revert "Revert "storage to typescript"" (#10181)):tgui/packages/common/storage.ts
 
 const INDEXED_DB_VERSION = 1;
 const INDEXED_DB_NAME = 'chomp'; // CHOMPEdit - CHOMPStation Localstore
@@ -17,7 +23,15 @@ const INDEXED_DB_STORE_NAME = 'storage-v1';
 const READ_ONLY = 'readonly';
 const READ_WRITE = 'readwrite';
 
-const testGeneric = (testFn) => () => {
+type StorageBackend = {
+  impl: StorageImplementation;
+  get(key: string): Promise<any>;
+  set(key: string, value: any): Promise<void>;
+  remove(key: string): Promise<void>;
+  clear(): Promise<void>;
+};
+
+const testGeneric = (testFn: () => boolean) => (): boolean => {
   try {
     return Boolean(testFn());
   } catch {
@@ -25,6 +39,7 @@ const testGeneric = (testFn) => () => {
   }
 };
 
+<<<<<<< HEAD:tgui/packages/common/storage.js
 // Localstorage can sometimes throw an error, even if DOM storage is not
 // disabled in IE11 settings.
 // See: https://superuser.com/questions/1080011
@@ -40,11 +55,21 @@ const testIndexedDb = testGeneric(() => (
 ));
 
 class MemoryBackend {
+=======
+const testHubStorage = testGeneric(
+  () => window.hubStorage && !!window.hubStorage.getItem,
+);
+
+class HubStorageBackend implements StorageBackend {
+  public impl: StorageImplementation;
+
+>>>>>>> 39c89988b5 ([MIRROR] Revert "Revert "storage to typescript"" (#10181)):tgui/packages/common/storage.ts
   constructor() {
     this.impl = IMPL_MEMORY;
     this.store = {};
   }
 
+<<<<<<< HEAD:tgui/packages/common/storage.js
   get(key) {
     return this.store[key];
   }
@@ -69,11 +94,17 @@ class LocalStorageBackend {
 
   get(key) {
     const value = localStorage.getItem(key);
+=======
+  async get(key: string): Promise<any> {
+    const value = await window.hubStorage.getItem('chomp-' + key); // CHOMPEdit
+>>>>>>> 39c89988b5 ([MIRROR] Revert "Revert "storage to typescript"" (#10181)):tgui/packages/common/storage.ts
     if (typeof value === 'string') {
       return JSON.parse(value);
     }
+    return undefined;
   }
 
+<<<<<<< HEAD:tgui/packages/common/storage.js
   set(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
   }
@@ -147,6 +178,18 @@ class IndexedDbBackend {
     // NOTE: We deliberately make this operation transactionless
     const store = await this.getStore(READ_WRITE);
     store.clear();
+=======
+  async set(key: string, value: any): Promise<void> {
+    window.hubStorage.setItem('chomp-' + key, JSON.stringify(value)); // CHOMPEdit
+  }
+
+  async remove(key: string): Promise<void> {
+    window.hubStorage.removeItem('chomp-' + key); // CHOMPEdit
+  }
+
+  async clear(): Promise<void> {
+    window.hubStorage.clear();
+>>>>>>> 39c89988b5 ([MIRROR] Revert "Revert "storage to typescript"" (#10181)):tgui/packages/common/storage.ts
   }
 }
 
@@ -154,7 +197,10 @@ class IndexedDbBackend {
  * Web Storage Proxy object, which selects the best backend available
  * depending on the environment.
  */
-class StorageProxy {
+class StorageProxy implements StorageBackend {
+  private backendPromise: Promise<StorageBackend>;
+  public impl: StorageImplementation = IMPL_MEMORY;
+
   constructor() {
     this.backendPromise = (async () => {
       if (testIndexedDb()) {
@@ -164,29 +210,33 @@ class StorageProxy {
           return backend;
         } catch {}
       }
+<<<<<<< HEAD:tgui/packages/common/storage.js
       if (testLocalStorage()) {
         return new LocalStorageBackend();
       }
       return new MemoryBackend();
     })();
+=======
+    })() as Promise<StorageBackend>;
+>>>>>>> 39c89988b5 ([MIRROR] Revert "Revert "storage to typescript"" (#10181)):tgui/packages/common/storage.ts
   }
 
-  async get(key) {
+  async get(key: string): Promise<any> {
     const backend = await this.backendPromise;
     return backend.get(key);
   }
 
-  async set(key, value) {
+  async set(key: string, value: any): Promise<void> {
     const backend = await this.backendPromise;
     return backend.set(key, value);
   }
 
-  async remove(key) {
+  async remove(key: string): Promise<void> {
     const backend = await this.backendPromise;
     return backend.remove(key);
   }
 
-  async clear() {
+  async clear(): Promise<void> {
     const backend = await this.backendPromise;
     return backend.clear();
   }
