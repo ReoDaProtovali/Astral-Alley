@@ -511,9 +511,14 @@
 		user.visible_message("<span class='warning'>[user] presses the big red button.</span>", "<span class='notice'>You press the button, it plays a loud noise!</span>", "<span class='notice'>The button clicks loudly.</span>")
 		playsound(src, 'sound/effects/explosionfar.ogg', 50, 0, 0)
 		for(var/mob/M in range(10, src)) // Checks range
+<<<<<<< HEAD
 			if(!M.stat && !istype(M, /mob/living/silicon/ai)) // Checks to make sure whoever's getting shaken is alive/not the AI
 				sleep(2) // Short delay to match up with the explosion sound
 				shake_camera(M, 2, 1)
+=======
+			if(!M.stat && !isAI(M)) // Checks to make sure whoever's getting shaken is alive/not the AI
+				addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(shake_camera), M, 2, 1), 0.2 SECONDS)
+>>>>>>> 9ffe6f5fcb ([MIRROR] cleans up some left over things (#10168))
 	else
 		to_chat(user, "<span class='alert'>Nothing happens.</span>")
 

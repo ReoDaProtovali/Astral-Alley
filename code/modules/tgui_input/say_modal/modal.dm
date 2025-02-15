@@ -64,10 +64,21 @@
 /datum/tgui_say/proc/load()
 	window_open = FALSE
 
+<<<<<<< HEAD
 	winset(client, "tgui_say", "pos=410,400;size=360,30;is-visible=0;")
 
 	window.send_message("props", list(
 		lightMode = client.is_preference_enabled(/datum/client_preference/tgui_say_light),
+=======
+	var/minimum_height = client?.prefs?.read_preference(/datum/preference/numeric/tgui_say_height) || 1
+	var/minimu_width = client?.prefs?.read_preference(/datum/preference/numeric/tgui_say_width) || 1
+	winset(client, "tgui_say", "pos=410,400;size=360,30;is-visible=0;")
+
+	window.send_message("props", list(
+		lightMode = client?.prefs?.read_preference(/datum/preference/toggle/tgui_say_light),
+		minimumHeight = minimum_height,
+		minimumWidth = minimu_width,
+>>>>>>> 9ffe6f5fcb ([MIRROR] cleans up some left over things (#10168))
 		maxLength = max_length,
 	))
 
