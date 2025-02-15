@@ -297,7 +297,12 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	else if(copytext(T,1,5) == "info")
 		var/input[] = params2list(T)
+<<<<<<< HEAD
 		if(input["key"] != CONFIG_GET(string/comms_password)) // CHOMPEdit
+=======
+		var/password = CONFIG_GET(string/comms_password)
+		if(!password || input["key"] != password)
+>>>>>>> f66c9de1bf ([MIRROR] no empty passwords ... (#10162))
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
 
 				spawn(50)
@@ -384,7 +389,12 @@ var/world_topic_spam_protect_time = world.timeofday
 
 
 		var/input[] = params2list(T)
+<<<<<<< HEAD
 		if(input["key"] != CONFIG_GET(string/comms_password)) // CHOMPEdit
+=======
+		var/password = CONFIG_GET(string/comms_password)
+		if(!password || input["key"] != password)
+>>>>>>> f66c9de1bf ([MIRROR] no empty passwords ... (#10162))
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
 
 				spawn(50)
@@ -434,7 +444,12 @@ var/world_topic_spam_protect_time = world.timeofday
 				2. validationkey = the key the bot has, it should match the gameservers commspassword in it's configuration.
 		*/
 		var/input[] = params2list(T)
+<<<<<<< HEAD
 		if(input["key"] != CONFIG_GET(string/comms_password)) // CHOMPEdit
+=======
+		var/password = CONFIG_GET(string/comms_password)
+		if(!password || input["key"] != password)
+>>>>>>> f66c9de1bf ([MIRROR] no empty passwords ... (#10162))
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
 
 				spawn(50)
@@ -449,7 +464,12 @@ var/world_topic_spam_protect_time = world.timeofday
 
 	else if(copytext(T,1,4) == "age")
 		var/input[] = params2list(T)
+<<<<<<< HEAD
 		if(input["key"] != CONFIG_GET(string/comms_password)) // CHOMPEdit
+=======
+		var/password = CONFIG_GET(string/comms_password)
+		if(!password || input["key"] != password)
+>>>>>>> f66c9de1bf ([MIRROR] no empty passwords ... (#10162))
 			if(world_topic_spam_protect_ip == addr && abs(world_topic_spam_protect_time - world.time) < 50)
 				spawn(50)
 					world_topic_spam_protect_time = world.time
