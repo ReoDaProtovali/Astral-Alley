@@ -46,8 +46,7 @@
 /spell/aoe_turf/conjure/floor/conjure_animation(var/atom/movable/overlay/animation, var/turf/target)
 	animation.icon_state = "cultfloor"
 	flick("cultfloor",animation)
-	spawn(10)
-		qdel(animation)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), animation), 1 SECOND)
 
 /spell/aoe_turf/conjure/wall
 	name = "Lesser Construction"
@@ -65,8 +64,7 @@
 /spell/aoe_turf/conjure/wall/conjure_animation(var/atom/movable/overlay/animation, var/turf/target)
 	animation.icon_state = "cultwall"
 	flick("cultwall",animation)
-	spawn(10)
-		qdel(animation)
+	addtimer(CALLBACK(GLOBAL_PROC, GLOBAL_PROC_REF(qdel), animation), 1 SECOND)
 
 /spell/aoe_turf/conjure/wall/reinforced
 	name = "Greater Construction"
@@ -194,15 +192,14 @@
 	return */
 	for(var/turf/T in targets)
 		for(var/obj/machinery/door/door in T.contents)
-			spawn(1)
-				if(istype(door,/obj/machinery/door/airlock))
-					var/obj/machinery/door/airlock/AL = door
-					AL.locked = 0 //The spirits of the damned care not for your locks.
-					AL.welded = 0 //Or your welding tools.
-				else if(istype(door, /obj/machinery/door/firedoor))
-					var/obj/machinery/door/firedoor/FD = door
-					FD.blocked = 0
-				door.open(1)
+			if(istype(door,/obj/machinery/door/airlock))
+				var/obj/machinery/door/airlock/AL = door
+				AL.locked = 0 //The spirits of the damned care not for your locks.
+				AL.welded = 0 //Or your welding tools.
+			else if(istype(door, /obj/machinery/door/firedoor))
+				var/obj/machinery/door/firedoor/FD = door
+				FD.blocked = 0
+			door.open(1)
 	return
 
 /*
@@ -522,6 +519,7 @@
 	var/obj/item/projectile/P = new projectile_type(get_turf(user))
 	return P
 
+<<<<<<< HEAD
 /obj/item/weapon/spell/construct/projectile/proc/set_up(atom/hit_atom, mob/living/user)
 	if(spell_projectile)
 		if(pay_energy(energy_cost_per_shot))
@@ -536,6 +534,26 @@
 				return FALSE // We got dropped before the firing occured.
 			return TRUE // No delay, no need to check.
 	return FALSE
+=======
+/obj/item/spell/construct/projectile/proc/set_up(atom/hit_atom, mob/living/user)
+	if(!spell_projectile || !pay_energy(energy_cost_per_shot) || !owner)
+		return FALSE
+	if(!pre_shot_delay)
+		return TRUE
+	var/succeeded = FALSE
+
+	var/turf/T = get_turf(hit_atom)
+	var/image/target_image = image(icon = 'icons/obj/spells.dmi', icon_state = "target")
+
+	T.add_overlay(target_image)
+
+	if(do_after(user, pre_shot_delay))
+		succeeded = TRUE
+
+	T.cut_overlay(target_image)
+	qdel(target_image)
+	return succeeded
+>>>>>>> 914b76a320 ([MIRROR] fixes constructs (#10176))
 
 /obj/item/weapon/spell/construct/spawner
 	name = "spawner template"
