@@ -3,7 +3,13 @@
   "name": "tgui-bench",
   "version": "5.0.1",
   "dependencies": {
+<<<<<<< HEAD
     "@fastify/static": "^6.12.0",
+=======
+    "@fastify/static": "^8.0.2",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+>>>>>>> ddc5c0d818 ([MIRROR] moves runechat to a subsystem (#10167))
     "common": "workspace:*",
     "fastify": "^3.29.5",
     "lodash": "^4.17.21",
