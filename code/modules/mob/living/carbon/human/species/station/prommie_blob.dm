@@ -79,6 +79,7 @@
 	set_light(0)
 	return ..()
 
+<<<<<<< HEAD
 /mob/living/carbon/human/Destroy()
 	if(stored_blob)
 		stored_blob.drop_l_hand()
@@ -88,6 +89,9 @@
 
 //ChompEDIT START - TGPanel
 /mob/living/simple_mob/slime/promethean/get_status_tab_items()
+=======
+/mob/living/simple_mob/slime/promethean/update_misc_tabs()
+>>>>>>> 42463a356a ([MIRROR] Consolidates some /Destroy()s to make them properly delete (#10171))
 	. = ..()
 	if(humanform)
 		humanform.species.Stat(humanform)

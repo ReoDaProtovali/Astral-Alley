@@ -99,6 +99,7 @@ SUBSYSTEM_DEF(mobs)
 /datum/controller/subsystem/mobs/critfail()
 	..()
 	log_recent()
+<<<<<<< HEAD
 
 //CHOMPEdit Begin
 //Mobs need to immediately removed from the SS list on Destroy
@@ -106,3 +107,5 @@ SUBSYSTEM_DEF(mobs)
 	. = ..()
 	SSmobs.currentrun -= src
 //CHOMPEdit End
+=======
+>>>>>>> 42463a356a ([MIRROR] Consolidates some /Destroy()s to make them properly delete (#10171))
