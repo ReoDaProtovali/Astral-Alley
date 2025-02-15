@@ -157,12 +157,27 @@ class IndexedDbBackend {
 class StorageProxy {
   constructor() {
     this.backendPromise = (async () => {
+<<<<<<< HEAD
       if (testIndexedDb()) {
         try {
           const backend = new IndexedDbBackend();
           await backend.dbPromise;
           return backend;
         } catch {}
+=======
+      if (!Byond.TRIDENT) {
+        if (!testHubStorage()) {
+          return new Promise((resolve) => {
+            const listener = () => {
+              document.removeEventListener('byondstorageupdated', listener);
+              resolve(new HubStorageBackend());
+            };
+
+            document.addEventListener('byondstorageupdated', listener);
+          });
+        }
+        return new HubStorageBackend();
+>>>>>>> 9ffe6f5fcb ([MIRROR] cleans up some left over things (#10168))
       }
       if (testLocalStorage()) {
         return new LocalStorageBackend();
