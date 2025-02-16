@@ -57,8 +57,18 @@ var/global/list/robot_modules = list(
 /obj/item/weapon/robot_module/proc/hide_on_manifest()
 	. = hide_on_manifest
 
+<<<<<<< HEAD
 /obj/item/weapon/robot_module/New(var/mob/living/silicon/robot/R)
 	..()
+=======
+/obj/item/robot_module/Initialize(mapload)
+	. = ..()
+
+	if(!isrobot(loc))
+		return
+
+	var/mob/living/silicon/robot/R = loc
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	R.module = src
 	R.can_buckle = 1 //Chomp Addition; Makes all borgs rideable.
 
@@ -194,9 +204,17 @@ var/global/list/robot_modules = list(
 			"Explorer" = 1 //CHOMP keep explo
 			)
 
+<<<<<<< HEAD
 /obj/item/weapon/robot_module/robot/New(var/mob/living/silicon/robot/R)
 	..()
+=======
+/obj/item/robot_module/robot/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
+	if(!isrobot(loc))
+		return
+	var/mob/living/silicon/robot/R = loc
 	if(R.sprite_datum)
 		R.sprite_datum.do_equipment_glamour(src)
 

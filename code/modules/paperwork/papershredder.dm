@@ -149,8 +149,13 @@
 	throw_range = 3
 	throw_speed = 1
 
+<<<<<<< HEAD
 /obj/item/weapon/shreddedp/New()
 	..()
+=======
+/obj/item/shreddedp/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	pixel_x = rand(-5,5)
 	pixel_y = rand(-5,5)
 	if(prob(65)) color = pick("#BABABA","#7F7F7F")

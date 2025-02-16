@@ -34,8 +34,13 @@
 	name = "biological disk box"
 	desc = "A box of biological data disks, apparently."
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/box/xenobiodisk/New()
 	..()
+=======
+/obj/item/storage/box/xenobiodisk/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	for(var/i = 0 to 7)
 		new /obj/item/weapon/disk/xenobio(src)
 

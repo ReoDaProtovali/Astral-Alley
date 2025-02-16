@@ -523,8 +523,13 @@ var/const/standard_monitor_styles = "blank=ipc_blank;\
 	parts = list(BP_L_LEG, BP_R_LEG, BP_L_FOOT, BP_R_FOOT)
 */// CHOMPRemove End
 
+<<<<<<< HEAD
 /obj/item/weapon/disk/limb/New(var/newloc)
 	..()
+=======
+/obj/item/disk/limb/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	if(company)
 		name = "[company] [initial(name)]"
 

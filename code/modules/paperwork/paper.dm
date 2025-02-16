@@ -74,6 +74,7 @@
 	desc = "A gift card with a heart on the cover."
 	icon_state = "greetingcard_heart"
 
+<<<<<<< HEAD
 /obj/item/weapon/paper/card/Initialize() //ChompEDIT New --> Initialize
 	..()
 	pixel_y = rand(-8, 8)
@@ -87,6 +88,9 @@
 		return
 
 /obj/item/weapon/paper/alien
+=======
+/obj/item/paper/alien
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	name = "alien tablet"
 	desc = "It looks highly advanced"
 	icon = 'icons/obj/abductor.dmi'
@@ -105,19 +109,27 @@
 	return
 
 
+<<<<<<< HEAD
 /obj/item/weapon/paper/Initialize(mapload, var/text, var/title)
     . = ..()
+=======
+/obj/item/paper/Initialize(mapload, var/text, var/title)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
-    if(istext(title))
-        name = title
-    if(istext(text))
-        info = text
+	if(istext(title))
+		name = title
+	if(istext(text))
+		info = text
 
-    if(mapload) // Jank, but we do this to prevent maploaded papers from somehow stacking across rounds if re-added to the board by a player.
-        was_maploaded = TRUE
+	if(mapload) // Jank, but we do this to prevent maploaded papers from somehow stacking across rounds if re-added to the board by a player.
+		was_maploaded = TRUE
 
+<<<<<<< HEAD
 /obj/item/weapon/paper/Initialize(var/newloc, var/text, var/title) //ChompEDIT New --> Initialize
 	..()
+=======
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	pixel_y = rand(-8, 8)
 	pixel_x = rand(-9, 9)
 	stamps = ""
@@ -136,11 +148,9 @@
 		info = replacetext(info, "\n", "<BR>")
 		info = parsepencode(info)
 
-	spawn(2)
-		update_icon()
-		update_space(info)
-		updateinfolinks()
-		return
+	update_icon()
+	update_space(info)
+	updateinfolinks()
 
 /obj/item/weapon/paper/update_icon()
 	if(icon_state == "paper_talisman")

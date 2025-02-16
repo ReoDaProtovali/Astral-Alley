@@ -44,9 +44,17 @@
     "jsdom": "^22.1.0",
     "mini-css-extract-plugin": "^2.8.1",
     "prettier": "^3.2.5",
+<<<<<<< HEAD
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
     "style-loader": "^3.3.4",
+=======
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.80.6",
+    "sass-loader": "^16.0.3",
+    "style-loader": "^4.0.0",
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
     "swc-loader": "^0.2.6",
     "typescript": "^5.4.3",
     "url-loader": "^4.1.1",

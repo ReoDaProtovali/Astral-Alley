@@ -44,10 +44,17 @@
 	ttone = "assist"
 	var/our_owner = null // Ref to a pAI
 
+<<<<<<< HEAD
 /obj/item/device/pda/ai/pai/New(mob/living/silicon/pai/P)
 	if(istype(P))
 		our_owner = REF(P)
 	return ..()
+=======
+/obj/item/pda/ai/pai/Initialize(mapload)
+	. = ..()
+	if(ispAI(loc))
+		our_owner = REF(loc)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
 /obj/item/device/pda/ai/pai/tgui_status(mob/living/silicon/pai/user, datum/tgui_state/state)
 	if(!istype(user) || REF(user) != our_owner) // Only allow our pAI to interface with us

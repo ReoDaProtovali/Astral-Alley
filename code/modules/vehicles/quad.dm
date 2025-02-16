@@ -27,21 +27,28 @@
 
 	var/outdoors_speed_mod = 0.7 //The general 'outdoors' speed. I.E., the general difference you'll be at when driving outside.
 
+<<<<<<< HEAD
 /obj/vehicle/train/engine/quadbike/New()
 	cell = new /obj/item/weapon/cell/high(src)
 	key = new key_type(src)
 	soundloop = new(list(src), FALSE)
+=======
+/obj/vehicle/train/engine/quadbike/Initialize(mapload, assembly)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	. = ..()
+	if(!assembly)
+		cell = new /obj/item/cell/high(src)
+		soundloop = new(list(src), FALSE)
+	key = new key_type(src)
 	turn_off()
 	update_icon()
 
-/obj/vehicle/train/engine/quadbike/built/New()
-	key = new key_type(src)
-	turn_off()
+/obj/vehicle/train/engine/quadbike/built/Initialize(mapload)
+	. = ..(mapload, TRUE)
 
-/obj/vehicle/train/engine/quadbike/random/New()
+/obj/vehicle/train/engine/quadbike/random/Initialize(mapload)
 	paint_color = rgb(rand(1,255),rand(1,255),rand(1,255))
-	..()
+	. = ..()
 
 /obj/vehicle/train/engine/quadbike/Destroy()
 	QDEL_NULL(soundloop)
@@ -202,9 +209,9 @@
 
 	paint_color = "#ffffff"
 
-/obj/vehicle/train/trolley/trailer/random/New()
+/obj/vehicle/train/trolley/trailer/random/Initialize(mapload)
 	paint_color = rgb(rand(1,255),rand(1,255),rand(1,255))
-	..()
+	. = ..()
 
 /obj/vehicle/train/trolley/trailer/proc/update_load()
 	if(load)

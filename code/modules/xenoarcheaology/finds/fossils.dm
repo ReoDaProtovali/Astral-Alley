@@ -9,12 +9,19 @@
 	desc = "It's a fossil."
 	var/animal = 1
 
+<<<<<<< HEAD
 /obj/item/weapon/fossil/base/New()
 	var/list/l = list(/obj/item/weapon/fossil/bone = 9,/obj/item/weapon/fossil/skull = 3,
 	/obj/item/weapon/fossil/skull/horned = 2)
+=======
+/obj/item/fossil/base/Initialize(mapload)
+	..()
+	var/list/l = list(/obj/item/fossil/bone = 9,/obj/item/fossil/skull = 3,
+	/obj/item/fossil/skull/horned = 2)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	var/t = pickweight(l)
 	new t(src.loc)
-	qdel(src)
+	return INITIALIZE_HINT_QDEL
 
 /obj/item/weapon/fossil/bone
 	name = "Fossilised bone"
@@ -30,8 +37,13 @@
 	icon_state = "hskull"
 	desc = "It's a fossilised, horned skull."
 
+<<<<<<< HEAD
 /obj/item/weapon/fossil/skull/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/weapon/fossil/bone))
+=======
+/obj/item/fossil/skull/attackby(obj/item/W, mob/user)
+	if(istype(W,/obj/item/fossil/bone))
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 		var/obj/o = new /obj/skeleton(get_turf(src))
 		var/a = new /obj/item/weapon/fossil/bone
 		var/b = new src.type
@@ -50,9 +62,10 @@
 	var/bstate = 0
 	var/plaque_contents = "Unnamed alien creature"
 
-/obj/skeleton/New()
-	src.breq = rand(6)+3
-	src.desc = "An incomplete skeleton, looks like it could use [src.breq-src.bnum] more bones."
+/obj/skeleton/Initialize(mapload)
+	. = ..()
+	breq = rand(6)+3
+	desc = "An incomplete skeleton, looks like it could use [breq-bnum] more bones."
 
 /obj/skeleton/attackby(obj/item/weapon/W as obj, mob/user as mob)
 	if(istype(W,/obj/item/weapon/fossil/bone))
@@ -97,5 +110,10 @@
 	desc = "It's fossilised plant remains."
 	animal = 0
 
+<<<<<<< HEAD
 /obj/item/weapon/fossil/plant/New()
+=======
+/obj/item/fossil/plant/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	icon_state = "plant[rand(1,4)]"

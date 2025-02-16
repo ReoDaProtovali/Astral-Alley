@@ -12,7 +12,11 @@
 	capacity = 3000
 
 /*
+<<<<<<< HEAD
 /obj/item/weapon/anobattery/New()
+=======
+/obj/item/anobattery/Initialize(mapload)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	battery_effect = new()
 */
 
@@ -38,8 +42,13 @@
 	var/turf/archived_loc
 	var/energy_consumed_on_touch = 100
 
+<<<<<<< HEAD
 /obj/item/weapon/anodevice/New()
 	..()
+=======
+/obj/item/anodevice/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	START_PROCESSING(SSobj, src)
 
 /obj/item/weapon/anodevice/attackby(var/obj/I as obj, var/mob/user as mob)

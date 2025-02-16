@@ -12,10 +12,19 @@
 
 	var/mob/my_mob = null // The mob that possesses this hud object.
 
+<<<<<<< HEAD
 /obj/screen/movable/ability_master/New(owner)
 	if(owner)
 		my_mob = owner
 		update_abilities(0, owner)
+=======
+/obj/screen/movable/ability_master/Initialize(mapload)
+	. = ..()
+	if(ismob(loc))
+		my_mob = loc
+		update_abilities(0, loc)
+		overlays.Add(closed_state)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	else
 		message_admins("ERROR: ability_master's New() was not given an owner argument.  This is a bug.")
 
@@ -178,8 +187,8 @@
 		ability_master.toggle_open(1)
 		client.screen -= ability_master
 
-/mob/New()
-	..()
+/mob/Initialize(mapload)
+	. = ..()
 	if(!ability_master)	//VOREStation Edit: S H A D E K I N
 		ability_master = new /obj/screen/movable/ability_master(src)
 
