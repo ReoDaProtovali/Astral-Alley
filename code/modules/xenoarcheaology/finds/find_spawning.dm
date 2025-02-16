@@ -173,6 +173,7 @@
 			"There appear to be [pick("dark red","dark purple","dark green","dark blue")] stains on it")]."
 		if(ARCHAEO_METAL)
 			apply_material_decorations = FALSE
+<<<<<<< HEAD
 			var/list/possible_spawns = list()
 			possible_spawns += /obj/item/stack/material/steel
 			possible_spawns += /obj/item/stack/material/plasteel
@@ -187,6 +188,24 @@
 
 			var/new_type = pick(possible_spawns)
 			new_item = new new_type(src.loc)
+=======
+			var/possible_object_paths = list()
+			possible_object_paths += subtypesof(/obj/item/stack/material)
+			possible_object_paths -= typesof(/obj/item/stack/material/cyborg)
+			//I looked through the code for any materials that should be banned...Most of the "DO NOT EVER GIVE THESE TO ANYONE EVER" materials are only in their /datum form and the ones that have sheets spawn in as normal sheets (ex: hull datums) so...This is here in case it's needed in the future.
+			var/list/banned_sheet_materials = list(
+				// Include if you enable in the .dme /obj/item/stack/material/debug
+				)
+			var/new_metal = /obj/item/stack/material/supermatter
+			for(var/x=1;x<=10;x++) //You got 10 chances to hit a metal that is NOT banned.
+				var/picked_metal = pick(possible_object_paths) //We select
+				if(picked_metal in banned_sheet_materials)
+					continue
+				else
+					new_metal = picked_metal
+					break
+			new_item = new new_metal(src.loc)
+>>>>>>> 3d73a30c9f ([MIRROR] whoops - fixes finds spawns (#10185))
 			new_item:amount = rand(5,45)
 		if(ARCHAEO_PEN)
 			if(prob(75))
