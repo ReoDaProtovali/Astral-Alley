@@ -15,6 +15,7 @@
 	var/datum/looping_sound/tcomms/soundloop // CHOMPStation Add: Hummy noises
 	var/noisy = TRUE  // CHOMPStation Add: Hummy noises
 
+<<<<<<< HEAD
 /obj/machinery/pda_multicaster/New()
 	..()
 	internal_PDAs = list("command" = new /obj/item/device/pda/multicaster/command(src),
@@ -25,6 +26,18 @@
 		"exploration" = new /obj/item/device/pda/multicaster/exploration(src), //VOREStation Add,
 		"cargo" = new /obj/item/device/pda/multicaster/cargo(src),
 		"civilian" = new /obj/item/device/pda/multicaster/civilian(src))
+=======
+/obj/machinery/pda_multicaster/Initialize(mapload)
+	. = ..()
+	internal_PDAs = list("command" = new /obj/item/pda/multicaster/command(src),
+		"security" = new /obj/item/pda/multicaster/security(src),
+		"engineering" = new /obj/item/pda/multicaster/engineering(src),
+		"medical" = new /obj/item/pda/multicaster/medical(src),
+		"research" = new /obj/item/pda/multicaster/research(src),
+		"exploration" = new /obj/item/pda/multicaster/exploration(src), //VOREStation Add,
+		"cargo" = new /obj/item/pda/multicaster/cargo(src),
+		"civilian" = new /obj/item/pda/multicaster/civilian(src))
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
 /obj/machinery/pda_multicaster/Initialize()
 	. = ..()

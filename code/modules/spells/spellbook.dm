@@ -250,8 +250,13 @@
 	max_uses = 1
 	desc = "This template spellbook was never meant for the eyes of man..."
 
+<<<<<<< HEAD
 /obj/item/weapon/spellbook/oneuse/New()
 	..()
+=======
+/obj/item/spellbook/oneuse/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	name += spellname
 
 /obj/item/weapon/spellbook/oneuse/attack_self(mob/user as mob)

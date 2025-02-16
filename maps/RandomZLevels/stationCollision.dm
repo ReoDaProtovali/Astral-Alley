@@ -46,15 +46,27 @@
 /obj/effect/landmark/sc_bible_spawner
 	name = "Safecode hint spawner"
 
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/effect/landmark/sc_bible_spawner/New()
 	var/obj/item/weapon/storage/bible/B = new /obj/item/weapon/storage/bible/booze(src.loc)
+=======
+/obj/effect/landmark/sc_bible_spawner/Initialize(mapload)
+	..()
+	var/obj/item/storage/bible/B = new /obj/item/storage/bible/booze(src.loc)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183)):archive/maps/gateway_archive_vr/stationCollision.dm
 	B.name = "The Holy book of the Geometer"
 	B.deity_name = "Narsie"
 	B.icon_state = "melted"
 	B.item_state = "melted"
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 	new /obj/item/weapon/paper/sc_safehint_paper_bible(B)
 	new /obj/item/weapon/pen(B)
 	qdel(src)
+=======
+	new /obj/item/paper/sc_safehint_paper_bible(B)
+	new /obj/item/pen(B)
+	return INITIALIZE_HINT_QDEL
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183)):archive/maps/gateway_archive_vr/stationCollision.dm
 
 /*
  * Guns - I'm making these specifically so that I dont spawn a pile of fully loaded weapons on the map.
@@ -71,7 +83,12 @@ obj/item/weapon/gun/energy/laser/retro/sc_retro
 /obj/item/weapon/gun/projectile/silenced/sc_silenced
 
 //Make it so that these guns only spawn with a couple bullets... if any
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/gun/projectile/silenced/sc_silenced/New()
+=======
+/obj/item/gun/projectile/silenced/sc_silenced/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183)):archive/maps/gateway_archive_vr/stationCollision.dm
 	for(var/ammo in loaded)
 		if(prob(95)) //95% chance
 			loaded -= ammo
@@ -79,7 +96,12 @@ obj/item/weapon/gun/energy/laser/retro/sc_retro
 //Syndicate sub-machine guns.
 /obj/item/weapon/gun/projectile/automatic/c20r/sc_c20r
 
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/gun/projectile/automatic/c20r/sc_c20r/New()
+=======
+/obj/item/gun/projectile/automatic/c20r/sc_c20r/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183)):archive/maps/gateway_archive_vr/stationCollision.dm
 	for(var/ammo in loaded)
 		if(prob(95)) //95% chance
 			loaded -= ammo
@@ -87,7 +109,12 @@ obj/item/weapon/gun/energy/laser/retro/sc_retro
 //Barman's shotgun
 /obj/item/weapon/gun/projectile/shotgun/pump/sc_pump
 
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/gun/projectile/shotgun/pump/sc_pump/New()
+=======
+/obj/item/gun/projectile/shotgun/pump/sc_pump/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183)):archive/maps/gateway_archive_vr/stationCollision.dm
 	for(var/ammo in loaded)
 		if(prob(95)) //95% chance
 			loaded -= ammo
@@ -113,13 +140,25 @@ var/sc_safecode5 = "[rand(0,9)]"
 /obj/item/weapon/paper/sc_safehint_paper_prison
 	name = "smudged paper"
 
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/paper/sc_safehint_paper_prison/New()
 	info = "<i>The ink is smudged, you can only make out a couple numbers:</i> '[sc_safecode1]**[sc_safecode4]*'"
+=======
+/obj/item/paper/sc_safehint_paper_prison/Initialize(mapload)
+	. = ..()
+	info = span_italics("The ink is smudged, you can only make out a couple numbers:") + " '[sc_safecode1]**[sc_safecode4]*'"
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183)):archive/maps/gateway_archive_vr/stationCollision.dm
 
 /obj/item/weapon/paper/sc_safehint_paper_hydro
 	name = "shredded paper"
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/paper/sc_safehint_paper_hydro/New()
 	info = "<i>Although the paper is shredded, you can clearly see the number:</i> '[sc_safecode2]'"
+=======
+/obj/item/paper/sc_safehint_paper_hydro/Initialize(mapload)
+	. = ..()
+	info = span_italics("Although the paper is shredded, you can clearly see the number:") + " '[sc_safecode2]'"
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183)):archive/maps/gateway_archive_vr/stationCollision.dm
 
 /obj/item/weapon/paper/sc_safehint_paper_caf
 	name = "blood-soaked paper"
@@ -128,10 +167,17 @@ var/sc_safecode5 = "[rand(0,9)]"
 
 /obj/item/weapon/paper/sc_safehint_paper_bible
 	name = "hidden paper"
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/paper/sc_safehint_paper_bible/New()
 	info = {"<i>It would appear that the pen hidden with the paper had leaked ink over the paper.
 			However you can make out the last three digits:</i>'[sc_safecode3][sc_safecode4][sc_safecode5]'
 			"}
+=======
+/obj/item/paper/sc_safehint_paper_bible/Initialize(mapload)
+	. = ..()
+	info = span_italics("It would appear that the pen hidden with the paper had leaked ink over the paper.\
+			However you can make out the last three digits:") + " '[sc_safecode3][sc_safecode4][sc_safecode5]'"
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183)):archive/maps/gateway_archive_vr/stationCollision.dm
 
 /obj/item/weapon/paper/sc_safehint_paper_shuttle
 	info = {"<b>Target:</b> Research-station Epsilon<br>
@@ -152,8 +198,13 @@ var/sc_safecode5 = "[rand(0,9)]"
 /obj/item/weapon/storage/secure/safe/sc_ssafe
 	name = "Captain's secure safe"
 
+<<<<<<< HEAD:maps/RandomZLevels/stationCollision.dm
 /obj/item/weapon/storage/secure/safe/sc_ssafe/New()
 	..()
+=======
+/obj/item/storage/secure/safe/sc_ssafe/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183)):archive/maps/gateway_archive_vr/stationCollision.dm
 	l_code = "[sc_safecode1][sc_safecode2][sc_safecode3][sc_safecode4][sc_safecode5]"
 	l_set = 1
 	new /obj/item/weapon/gun/energy/mindflayer(src)

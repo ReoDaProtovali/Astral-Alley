@@ -20,9 +20,16 @@
 
 	var/list/scrubbing_gas = list("phoron", "carbon_dioxide", "nitrous_oxide", "volatile_fuel")
 
+<<<<<<< HEAD
 /obj/machinery/portable_atmospherics/powered/scrubber/New()
 	..()
 	cell = new/obj/item/weapon/cell/apc(src)
+=======
+/obj/machinery/portable_atmospherics/powered/scrubber/Initialize(mapload, skip_cell)
+	. = ..()
+	if(!skip_cell)
+		cell = new/obj/item/cell/apc(src)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
 /obj/machinery/portable_atmospherics/powered/scrubber/emp_act(severity)
 	if(stat & (BROKEN|NOPOWER))
@@ -164,9 +171,8 @@
 	var/global/gid = 1
 	var/id = 0
 
-/obj/machinery/portable_atmospherics/powered/scrubber/huge/New()
-	..()
-	cell = null
+/obj/machinery/portable_atmospherics/powered/scrubber/huge/Initialize(mapload)
+	. = ..(mapload, TRUE)
 
 	id = gid
 	gid++

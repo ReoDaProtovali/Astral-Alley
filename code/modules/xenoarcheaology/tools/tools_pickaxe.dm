@@ -127,6 +127,7 @@
 	max_w_class = ITEMSIZE_SMALL
 	use_to_pickup = TRUE
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/excavation/New()
 	..()
 	new /obj/item/weapon/pickaxe/brush(src)
@@ -136,6 +137,17 @@
 	new /obj/item/weapon/pickaxe/four_pick(src)
 	new /obj/item/weapon/pickaxe/five_pick(src)
 	new /obj/item/weapon/pickaxe/six_pick(src)
+=======
+/obj/item/storage/excavation/Initialize(mapload)
+	. = ..()
+	new /obj/item/pickaxe/brush(src)
+	new /obj/item/pickaxe/one_pick(src)
+	new /obj/item/pickaxe/two_pick(src)
+	new /obj/item/pickaxe/three_pick(src)
+	new /obj/item/pickaxe/four_pick(src)
+	new /obj/item/pickaxe/five_pick(src)
+	new /obj/item/pickaxe/six_pick(src)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
 /obj/item/weapon/storage/excavation/handle_item_insertion()
 	..()

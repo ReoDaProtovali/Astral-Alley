@@ -21,9 +21,17 @@
 /obj/machinery/portable_atmospherics/powered/pump/filled
 	start_pressure = 90 * ONE_ATMOSPHERE
 
+<<<<<<< HEAD
 /obj/machinery/portable_atmospherics/powered/pump/New()
 	..()
 	cell = new/obj/item/weapon/cell/apc(src)
+=======
+/obj/machinery/portable_atmospherics/powered/pump/Initialize(mapload, skip_cell)
+	. = ..()
+
+	if(!skip_cell)
+		cell = new/obj/item/cell/apc(src)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
 	var/list/air_mix = StandardAirMix()
 	src.air_contents.adjust_multi("oxygen", air_mix["oxygen"], "nitrogen", air_mix["nitrogen"])

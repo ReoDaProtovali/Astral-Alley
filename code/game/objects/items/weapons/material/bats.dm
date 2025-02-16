@@ -13,6 +13,7 @@
 	slot_flags = SLOT_BACK
 
 //Predefined materials go here.
+<<<<<<< HEAD
 /obj/item/weapon/material/twohanded/baseballbat/metal/New(var/newloc)
 	..(newloc,"steel")
 
@@ -27,3 +28,19 @@
 
 /obj/item/weapon/material/twohanded/baseballbat/diamond/New(var/newloc)
 	..(newloc,"diamond")
+=======
+/obj/item/material/twohanded/baseballbat/metal/Initialize(mapload)
+	. = ..(mapload,MAT_STEEL)
+
+/obj/item/material/twohanded/baseballbat/uranium/Initialize(mapload)
+	. = ..(mapload,MAT_URANIUM)
+
+/obj/item/material/twohanded/baseballbat/gold/Initialize(mapload)
+	. = ..(mapload,MAT_GOLD)
+
+/obj/item/material/twohanded/baseballbat/platinum/Initialize(mapload)
+	. = ..(mapload,MAT_PLATINUM)
+
+/obj/item/material/twohanded/baseballbat/diamond/Initialize(mapload)
+	. = ..(mapload,MAT_DIAMOND)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))

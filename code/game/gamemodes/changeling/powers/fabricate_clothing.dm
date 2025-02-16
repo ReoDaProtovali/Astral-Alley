@@ -264,9 +264,16 @@ var/global/list/changeling_fabricated_clothing = list(
 	access = null
 	canremove = FALSE
 
+<<<<<<< HEAD
 /obj/item/weapon/card/id/syndicate/changeling/New(mob/user as mob)
 	..()
 	registered_user = user
+=======
+/obj/item/card/id/syndicate/changeling/Initialize(mapload)
+	. = ..()
+	if(ismob(loc))
+		registered_user = loc
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
 /obj/item/weapon/card/id/syndicate/changeling/Initialize()
 	. = ..()

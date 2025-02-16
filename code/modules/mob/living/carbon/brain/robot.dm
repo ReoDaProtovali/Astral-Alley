@@ -6,11 +6,19 @@
 	w_class = ITEMSIZE_NORMAL
 	origin_tech = list(TECH_ENGINEERING = 4, TECH_MATERIAL = 3, TECH_DATA = 4)
 
+<<<<<<< HEAD
 /obj/item/device/mmi/digital/robot/New()
 	..()
 	src.brainmob.name = "[pick(list("ADA","DOS","GNU","MAC","WIN"))]-[rand(1000, 9999)]"
 	src.brainmob.real_name = src.brainmob.name
 	src.name = "robotic intelligence circuit ([src.brainmob.name])"
+=======
+/obj/item/mmi/digital/robot/Initialize(mapload)
+	. = ..()
+	brainmob.name = "[pick(list("ADA","DOS","GNU","MAC","WIN"))]-[rand(1000, 9999)]"
+	brainmob.real_name = brainmob.name
+	name = "robotic intelligence circuit ([brainmob.name])"
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
 /obj/item/device/mmi/digital/robot/transfer_identity(var/mob/living/carbon/H)
 	..()
@@ -19,5 +27,10 @@
 	to_chat(brainmob, "<span class='notify'>You feel slightly disoriented. That's normal when you're little more than a complex circuit.</span>")
 	return
 
+<<<<<<< HEAD
 /obj/item/device/mmi/digital/robot/attack_self(mob/user as mob)
 	return //This object is technically a brain, and should not be dumping brains out of itself like its parent object does.
+=======
+/obj/item/mmi/digital/robot/attack_self(mob/user)
+	return //This object is technically a brain, and should not be dumping brains out of itself like its parent object does.
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))

@@ -37,12 +37,20 @@ var/global/photo_count = 0
 	var/icon/tiny
 	var/photo_size = 3
 
+<<<<<<< HEAD
 /obj/item/weapon/photo/New()
 	id = photo_count++
 
 
 
 /obj/item/weapon/photo/attack_self(mob/user as mob)
+=======
+/obj/item/photo/Initialize(mapload)
+	. = ..()
+	id = photo_count++
+
+/obj/item/photo/attack_self(mob/user as mob)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	user.examinate(src)
 
 /obj/item/weapon/photo/attackby(obj/item/weapon/P as obj, mob/user as mob)

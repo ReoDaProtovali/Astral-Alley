@@ -181,8 +181,17 @@
 	var/hasthermals = TRUE
 	var/isthermal = 0
 
+<<<<<<< HEAD
 /mob/living/simple_mob/Initialize()
 	remove_verb(src,/mob/verb/observe) //CHOMPEdit TGPanel
+=======
+	//vars for vore_icons toggle control
+	var/vore_icons_cache = null // null by default. Going from ON to OFF should store vore_icons val here, OFF to ON reset as null
+
+
+/mob/living/simple_mob/Initialize(mapload)
+	remove_verb(src, /mob/verb/observe)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	health = maxHealth
 
 	if(ID_provided) //VOREStation Edit

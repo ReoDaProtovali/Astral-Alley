@@ -23,8 +23,13 @@
 	name = "sample bag box"
 	desc = "A box claiming to contain sample bags."
 
+<<<<<<< HEAD
 /obj/item/weapon/storage/box/samplebags/New()
 	..()
+=======
+/obj/item/storage/box/samplebags/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	for(var/i = 1 to 7)
 		var/obj/item/weapon/evidencebag/S = new(src)
 		S.name = "sample bag"
@@ -229,8 +234,13 @@
 	var/scan_ticks = 0
 	var/obj/item/device/radio/target_radio
 
+<<<<<<< HEAD
 /obj/item/device/beacon_locator/New()
 	..()
+=======
+/obj/item/beacon_locator/Initialize(mapload)
+	. = ..()
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 	START_PROCESSING(SSobj, src)
 
 /obj/item/device/beacon_locator/Destroy()
@@ -330,9 +340,16 @@
 	var/obj/item/device/ano_scanner/anomaly_scanner = null
 	var/obj/item/device/depth_scanner/depth_scanner = null
 
+<<<<<<< HEAD
 /obj/item/device/xenoarch_multi_tool/New()
 	anomaly_scanner = new/obj/item/device/ano_scanner(src)
 	depth_scanner = new/obj/item/device/depth_scanner(src)
+=======
+/obj/item/xenoarch_multi_tool/Initialize(mapload)
+	. = ..()
+	anomaly_scanner = new/obj/item/ano_scanner(src)
+	depth_scanner = new/obj/item/depth_scanner(src)
+>>>>>>> e957f101c5 ([MIRROR] more new to Init (#10183))
 
 /obj/item/device/xenoarch_multi_tool/attack_self(var/mob/living/user)
 	depth_scanner.tgui_interact(user)
