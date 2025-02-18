@@ -462,19 +462,29 @@
 
 /client/verb/changes()
 	set name = "Changelog"
+<<<<<<< HEAD
 	set category = "OOC.Resources" //CHOMPEdit
 	// CHOMPedit Start - Better Changelog
 	//src << browse('html/changelog.html', "window=changes;size=675x650")
 	//return
+=======
+	set category = "OOC.Resources"
+>>>>>>> ba36a93f74 (Autochangelog Mirror from Virgo (#10195))
 
 	if(!GLOB.changelog_tgui)
 		GLOB.changelog_tgui = new /datum/changelog()
 	GLOB.changelog_tgui.tgui_interact(usr)
+<<<<<<< HEAD
 	// CHOMPedit END
 	if(prefs.lastchangelog != changelog_hash)
 		prefs.lastchangelog = changelog_hash
 		SScharacter_setup.queue_preferences_save(prefs)
 		// winset(src, "rpane.changelog", "background-color=none;font-style=;") //ChompREMOVE
+=======
+
+	if(prefs?.read_preference(/datum/preference/text/lastchangelog) != GLOB.changelog_hash)
+		prefs.write_preference_by_type(/datum/preference/text/lastchangelog, GLOB.changelog_hash)
+>>>>>>> ba36a93f74 (Autochangelog Mirror from Virgo (#10195))
 
 /mob/verb/observe()
 	set name = "Observe"

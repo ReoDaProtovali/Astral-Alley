@@ -285,9 +285,14 @@
 		void = new()
 	screen += void
 
+<<<<<<< HEAD
 	//disabled because we don't use the ingame changelog system any more // CHOMPEdit: Enabled because we do
 	if((prefs.lastchangelog != changelog_hash) && isnewplayer(src.mob)) //bolds the changelog button on the interface so we know there are updates.
 		to_chat(src, "<span class='info'>You have unread updates in the changelog.</span>")
+=======
+	if((prefs?.read_preference(/datum/preference/text/lastchangelog) != GLOB.changelog_hash) && isnewplayer(src.mob)) //bolds the changelog button on the interface so we know there are updates.
+		to_chat(src, span_info("You have unread updates in the changelog."))
+>>>>>>> ba36a93f74 (Autochangelog Mirror from Virgo (#10195))
 		winset(src, "rpane.changelog", "background-color=#eaeaea;font-style=bold")
 		if(CONFIG_GET(flag/aggressive_changelog)) // CHOMPEdit
 			src.changes()
