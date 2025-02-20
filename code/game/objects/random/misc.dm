@@ -267,11 +267,20 @@
 				prob(2);/obj/item/clothing/gloves/knuckledusters,
 				prob(1);/obj/item/weapon/material/knife/tacknife,
 				prob(1);/obj/item/clothing/suit/storage/vest/heavy/merc,
+<<<<<<< HEAD
 				prob(1);/obj/item/weapon/beartrap,
 				prob(1);/obj/item/weapon/handcuffs,
 				prob(1);/obj/item/weapon/handcuffs/legcuffs,
 				prob(2);/obj/item/weapon/reagent_containers/syringe/drugs,
 				prob(1);/obj/item/weapon/reagent_containers/syringe/steroid)
+=======
+				prob(1);/obj/item/beartrap,
+				prob(1);/obj/item/handcuffs,
+				prob(1);/obj/item/handcuffs/legcuffs,
+				prob(1);/obj/item/lockpick,
+				prob(2);/obj/item/reagent_containers/syringe/drugs,
+				prob(1);/obj/item/reagent_containers/syringe/steroid)
+>>>>>>> 5c1e9f9193 ([MIRROR] Update lockpicks (#10200))
 
 /obj/random/contraband/nofail
 	name = "Guaranteed Random Illegal Item"
