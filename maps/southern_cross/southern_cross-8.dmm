@@ -51,7 +51,35 @@
 /turf/unsimulated/floor{
 	icon_state = "wood"
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /area/centcom/bar)
+=======
+/area/syndicate_station)
+"aai" = (
+/obj/machinery/vending/cigarette{
+	dir = 4;
+	name = "hacked cigarette machine";
+	prices = list();
+	products = list(/obj/item/storage/fancy/cigarettes = 10, /obj/item/storage/box/matches = 10, /obj/item/flame/lighter/zippo = 4, /obj/item/clothing/mask/smokable/cigarette/cigar/havana = 2)
+	},
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/syndicate_station)
+"aaj" = (
+/obj/machinery/portable_atmospherics/canister/phoron,
+/obj/item/tank/vox,
+/turf/unsimulated/floor{
+	icon_state = "asteroid"
+	},
+/area/skipjack_station)
+"aak" = (
+/obj/item/clothing/head/philosopher_wig,
+/turf/unsimulated/floor{
+	icon_state = "asteroid"
+	},
+/area/skipjack_station)
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "aam" = (
 /obj/machinery/vending/cigarette{
 	dir = 8
@@ -60,6 +88,15 @@
 	icon_state = "lino"
 	},
 /area/tdome/tdomeobserve)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+"aan" = (
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/syndicate_station)
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "aao" = (
 /obj/machinery/vending/coffee{
 	dir = 8
@@ -68,6 +105,19 @@
 	icon_state = "lino"
 	},
 /area/tdome/tdomeobserve)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+"aap" = (
+/obj/structure/table/rack,
+/obj/item/clothing/shoes/magboots,
+/obj/item/clothing/suit/space/syndicate/black/red,
+/obj/item/clothing/mask/breath,
+/obj/item/clothing/head/helmet/space/syndicate/black/red,
+/turf/unsimulated/floor{
+	icon_state = "dark"
+	},
+/area/syndicate_station)
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "aaq" = (
 /obj/machinery/vending/snack{
 	dir = 8
@@ -280,6 +330,7 @@
 	},
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/merchant)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 "aaS" = (
 /obj/item/weapon/stool/padded,
 /turf/space,
@@ -331,6 +382,30 @@
 	icon_state = "lino"
 	},
 /area/centcom/bar)
+=======
+"aaQ" = (
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 8
+	},
+/obj/machinery/meter,
+/turf/simulated/shuttle/plating,
+/area/shuttle/skipjack)
+"aaR" = (
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	dir = 8;
+	frequency = 1331;
+	id_tag = "vox_west_control";
+	pixel_x = 27;
+	req_access = list(150)
+	},
+/obj/machinery/atmospherics/unary/vent_pump/high_volume{
+	dir = 8
+	},
+/obj/machinery/light/small,
+/obj/effect/map_helper/airlock/atmos/chamber_pump,
+/turf/simulated/shuttle/plating,
+/area/shuttle/skipjack)
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "aaZ" = (
 /obj/machinery/computer/pod{
 	dir = 4;
@@ -713,7 +788,11 @@
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /area/syndicate_mothership/elite_squad)
+=======
+/area/ninja_dojo/dojo)
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "agC" = (
 /obj/mecha/combat/marauder/mauler,
 /turf/unsimulated/floor{
@@ -1607,6 +1686,7 @@
 	},
 /obj/structure/reagent_dispensers/watertank/high,
 /turf/simulated/floor/tiled/techfloor,
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /area/shadekin)
 "aXs" = (
 /obj/effect/floor_decal/spline/fancy{
@@ -1626,6 +1706,9 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/shadekin)
+=======
+/area/centcom/security)
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "aZj" = (
 /obj/structure/inflatable,
 /turf/unsimulated/floor{
@@ -3123,6 +3206,7 @@
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/merchant)
 "cnm" = (
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /obj/structure/table/wooden_reinforced,
 /obj/item/weapon/material/sword/katana,
 /turf/unsimulated/floor{
@@ -3145,6 +3229,10 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/shadekin)
+=======
+/turf/unsimulated/wall,
+/area/syndicate_mothership/elite_squad)
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "cpo" = (
 /obj/structure/bed/chair/comfy/black,
 /turf/simulated/shuttle/floor/black,
@@ -7181,6 +7269,7 @@
 /obj/structure/window/reinforced/survival_pod{
 	dir = 1
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /turf/unsimulated/floor/dark,
 /area/shadekin)
 "guJ" = (
@@ -7198,6 +7287,10 @@
 /obj/machinery/autolathe,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/shadekin)
+=======
+/turf/simulated/floor/holofloor/wood,
+/area/holodeck/source_courtroom)
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "gvn" = (
 /obj/structure/table/steel_reinforced,
 /obj/item/weapon/storage/firstaid/adv{
@@ -8417,12 +8510,15 @@
 /obj/machinery/chemical_dispenser/bar_alc/full,
 /turf/simulated/shuttle/floor/black,
 /area/shuttle/merchant)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 "hpw" = (
 /turf/space,
 /turf/unsimulated/floor{
 	icon_state = "steel"
 	},
 /area/centcom/bar)
+=======
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "hpU" = (
 /obj/machinery/portable_atmospherics/hydroponics,
 /turf/unsimulated/floor{
@@ -11251,8 +11347,17 @@
 /obj/effect/floor_decal/carpet{
 	dir = 1
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /obj/structure/window/reinforced/holowindow{
 	dir = 1
+=======
+/turf/simulated/floor/holofloor/grass,
+/area/holodeck/source_picnicarea)
+"jSo" = (
+/obj/structure/flora/ausbushes/ywflowers,
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 4
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 	},
 /obj/structure/table/woodentable/holotable,
 /turf/simulated/floor/holofloor/carpet,
@@ -13763,12 +13868,15 @@
 	icon_state = "steel"
 	},
 /area/centcom/living)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 "mcF" = (
 /turf/unsimulated/wall{
 	icon = 'icons/misc/title.dmi';
 	icon_state = "title"
 	},
 /area/space)
+=======
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "mcT" = (
 /obj/effect/floor_decal/corner/red/full,
 /turf/simulated/floor/holofloor/tiled,
@@ -17801,6 +17909,7 @@
 /turf/simulated/shuttle/floor,
 /area/shuttle/escape/centcom)
 "qox" = (
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /obj/effect/landmark/costume,
 /obj/structure/table/rack/holorack,
 /turf/simulated/floor/holofloor/tiled/dark,
@@ -17818,6 +17927,10 @@
 /turf/space,
 /turf/simulated/shuttle/wall/dark,
 /area/shuttle/merchant)
+=======
+/turf/simulated/floor/holofloor/tiled,
+/area/holodeck/source_basketball)
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 "qoY" = (
 /obj/structure/table/woodentable/holotable,
 /obj/structure/window/reinforced/holowindow{
@@ -21176,7 +21289,33 @@
 	icon_state = "freezerfloor"
 	},
 /area/ninja_dojo/dojo)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 "tyg" = (
+=======
+"tSi" = (
+/obj/effect/floor_decal/corner/red{
+	dir = 10
+	},
+/turf/simulated/floor/holofloor/tiled,
+/area/holodeck/source_thunderdomecourt)
+"tTO" = (
+/turf/simulated/shuttle/floor/white,
+/area/shuttle/skipjack)
+"tVg" = (
+/turf/simulated/floor/tiled/eris/cafe,
+/area/centcom/bar)
+"tVq" = (
+/obj/machinery/door/airlock/angled_bay/standard/color/chaplain{
+	name = "Bar Bathroom";
+	req_access = null
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/centcom/bar)
+"tVt" = (
+/obj/structure/window/reinforced/survival_pod{
+	dir = 4
+	},
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 /obj/structure/window/reinforced/survival_pod{
 	dir = 8
 	},
@@ -22246,6 +22385,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 1
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 /turf/simulated/floor/wood/alt,
 /area/shadekin)
 "uxu" = (
@@ -22282,6 +22422,9 @@
 "uyi" = (
 /turf/space,
 /turf/space,
+=======
+/turf/unsimulated/wall,
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 /area/space)
 "uyy" = (
 /obj/machinery/atmospherics/unary/freezer{
@@ -27326,6 +27469,7 @@ dtV
 dtV
 dtV
 dtV
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 mcF
 vFi
 vFi
@@ -27333,6 +27477,15 @@ vFi
 vFi
 vFi
 vFi
+=======
+dtV
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 ivD
 ivD
 ivD
@@ -35593,6 +35746,7 @@ usZ
 usZ
 vaR
 xUf
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 aaS
 klP
 usZ
@@ -35608,6 +35762,28 @@ usZ
 usZ
 pNc
 pNc
+=======
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+dtV
+unx
+unx
+unx
+unx
+unx
+unx
+unx
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 pOI
 lFl
 lFl
@@ -35843,6 +36019,7 @@ mUJ
 mUJ
 mUJ
 rZY
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 vFi
 vFi
 vFi
@@ -35860,6 +36037,24 @@ vFi
 usZ
 aaX
 aaY
+=======
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+dtV
+unx
+bJi
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 tIw
 sjZ
 axR
@@ -36359,6 +36554,7 @@ mUJ
 mUJ
 mUJ
 rZY
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 vFi
 vFi
 vFi
@@ -36376,6 +36572,25 @@ vFi
 usZ
 cku
 swq
+=======
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+dtV
+unx
+bul
+ttq
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 seQ
 cku
 ttq
@@ -36617,6 +36832,7 @@ mUJ
 mUJ
 mUJ
 rZY
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 vFi
 vFi
 vFi
@@ -36635,6 +36851,26 @@ usZ
 cku
 cku
 cku
+=======
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+dtV
+ira
+tIw
+ttq
+nBm
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 aQb
 ttq
 lgS
@@ -36875,6 +37111,7 @@ mUJ
 mUJ
 mUJ
 rZY
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 vFi
 vFi
 vFi
@@ -36890,6 +37127,23 @@ usZ
 usZ
 usZ
 usZ
+=======
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+dtV
+unx
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 bJi
 ttq
 ttq
@@ -37263,6 +37517,7 @@ lyw
 lxX
 dtV
 dtV
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 vFi
 vFi
 vFi
@@ -37433,6 +37688,103 @@ pNc
 pNc
 lFl
 qRX
+=======
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+dtV
+dtV
+dtV
+dtV
+dtV
+dtV
+dtV
+dtV
+dtV
+dtV
+dtV
+unx
+bul
+ttq
+ttq
+ttq
+ttq
+ttq
+ttq
+ttq
+tIw
+unx
+lgh
+lgh
+xjH
+wOE
+tDt
+tDt
+pWF
+tDt
+tDt
+dGu
+lcm
+xIf
+xjH
+vCt
+lgh
+vCt
+wWS
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 mcu
 jAz
 uGt
@@ -37521,6 +37873,7 @@ lyw
 lxX
 dtV
 dtV
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 vFi
 vFi
 vFi
@@ -37693,6 +38046,105 @@ lFl
 qRX
 qRX
 jAz
+=======
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+dtV
+unx
+unx
+unx
+unx
+unx
+unx
+unx
+unx
+unx
+unx
+pfZ
+tIw
+ttq
+ttq
+ttq
+tIw
+tIw
+tIw
+tIw
+tIw
+unx
+lgh
+lgh
+xjH
+tDt
+tDt
+tDt
+pWF
+tDt
+mma
+xjH
+xjH
+xjH
+xjH
+vCt
+vCt
+vCt
+wWS
+iDR
+aiE
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 aGN
 qRX
 qRX
@@ -51066,6 +51518,111 @@ vFi
 vFi
 vFi
 vFi
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+dtV
+dtV
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+vFi
+mcs
+mcs
+mcs
+mcs
+mcs
+vFi
+vFi
+vFi
+uTB
+akg
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+rJt
+rJt
+rJt
+rJt
+rJt
+rJt
+rJt
+rJt
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 yah
 wvj
 hKV
@@ -52097,6 +52654,44 @@ vFi
 vFi
 vFi
 vFi
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+dtV
+dtV
+lHI
+lHI
+lHI
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+xMO
+xMO
+xMO
+xMO
+xMO
+efI
+efI
+efI
+ngU
+ngU
+ngU
+ngU
+ngU
+ngU
+ngU
+pTX
+lnJ
+ukg
+ngU
+ngU
+ngU
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 vFi
 yah
 yah
@@ -52873,6 +53468,44 @@ vFi
 vFi
 vFi
 vFi
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+dtV
+xMO
+wda
+wda
+wda
+wda
+lHI
+xMO
+kJd
+dNQ
+bzT
+dNQ
+kJd
+xMO
+lMY
+lMY
+lMY
+xMO
+xMO
+rXq
+rXq
+rXq
+ngU
+ngU
+ngU
+ngU
+ngU
+cxW
+cNG
+cNG
+mLa
+cNG
+qYa
+ngU
+ngU
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 vFi
 vFi
 vFi
@@ -59054,6 +59687,40 @@ vFi
 vFi
 vFi
 vFi
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+dtV
+qiJ
+qiJ
+qiJ
+qiJ
+qiJ
+pBQ
+aBz
+eDw
+nuO
+tpm
+kSi
+wda
+wda
+jFb
+wda
+wda
+kog
+lHI
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 vFi
 vFi
 vFi
@@ -59314,6 +59981,53 @@ vFi
 vFi
 vFi
 vFi
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+dtV
+qiJ
+gwC
+qiJ
+gwC
+qiJ
+ygl
+aBz
+dZb
+xMO
+wda
+wda
+fjX
+nTt
+bJb
+wda
+lHI
+wda
+hnj
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 vFi
 vFi
 vFi
@@ -59576,6 +60290,96 @@ vFi
 vFi
 vFi
 vFi
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+dtV
+qiJ
+idg
+qiJ
+idg
+qiJ
+reH
+vqV
+iQn
+xMO
+lHI
+lHI
+lHI
+lHI
+lHI
+lHI
+lHI
+lHI
+lHI
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+pKM
+akg
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+xUf
+dtV
+ded
+ded
+ded
+ded
+ded
+ded
+ded
+ded
+ded
+ded
+dtV
+ded
+ded
+ded
+ded
+ded
+ded
+ded
+ded
+ded
+ded
+dtV
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 vFi
 vFi
 vFi
@@ -62666,6 +63470,29 @@ vFi
 vFi
 vFi
 vFi
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+tOX
+cgL
+ppE
+ppE
+ppE
+ppE
+ppE
+jhj
+ppE
+ppE
+ppE
+vyw
+jhj
+ppE
+ppE
+ppE
+ppE
+ppE
+tOX
+tOX
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 vFi
 vFi
 vFi
@@ -62924,6 +63751,29 @@ vFi
 vFi
 vFi
 vFi
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+tOX
+neC
+ppE
+ppE
+ppE
+ppE
+ppE
+tOX
+ppE
+wMc
+ppE
+ppE
+tOX
+ppE
+ppE
+ppE
+ppE
+ppE
+nlG
+tOX
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 vFi
 vFi
 vFi
@@ -63698,6 +64548,29 @@ vFi
 vFi
 vFi
 vFi
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
+=======
+tOX
+eAE
+ppE
+ppE
+ppE
+ppE
+ppE
+tOX
+ppE
+ppE
+ppE
+ppE
+tOX
+ppE
+ppE
+ppE
+ppE
+ppE
+oTT
+tOX
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 vFi
 vFi
 vFi
@@ -69480,6 +70353,7 @@ vFi
 "}
 (169,1,1) = {"
 dtV
+<<<<<<< HEAD:maps/southern_cross/southern_cross-8.dmm
 dtV
 asc
 asc
@@ -69630,6 +70504,45 @@ vFi
 vFi
 vFi
 vFi
+=======
+bKr
+mwb
+puP
+baM
+baM
+woi
+woi
+xyj
+aaa
+gQF
+cFQ
+vFi
+mcs
+mcs
+mcs
+mcs
+mcs
+mcs
+vFi
+vFi
+rzA
+psx
+psx
+psx
+psx
+rzA
+cIR
+kQh
+kQh
+wes
+pWb
+rzA
+psx
+psx
+psx
+psx
+rzA
+>>>>>>> 89afca7307 (relic base and aerosat linter fixes (#10201)):modular_chomp/maps/relic_base/relicbase-12.dmm
 vFi
 vFi
 vFi
@@ -70234,7 +71147,7 @@ wOF
 iYC
 iYC
 iYC
-tTm
+uvs
 eVq
 uvs
 vFi
@@ -70492,7 +71405,7 @@ uvs
 aga
 aga
 eVq
-qoX
+eVq
 eVq
 vFi
 vFi
