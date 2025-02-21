@@ -89,10 +89,17 @@
 	if(istype(M, /mob/living/simple_mob/slime)) //I'm sure foam is water-based!
 		var/mob/living/simple_mob/slime/S = M
 		S.adjustToxLoss(15 * reac_volume)
+<<<<<<< HEAD
 		S.visible_message("<span class='warning'>[S]'s flesh sizzles where the foam touches it!</span>", "<span class='danger'>Your flesh burns in the foam!</span>")
 
 	M.adjust_fire_stacks(-reac_volume)
 	M.ExtinguishMob()
+=======
+		S.visible_message(span_warning("[S]'s flesh sizzles where the foam touches it!"), span_danger("Your flesh burns in the foam!"))
+	if(istype(M))
+		M.adjust_fire_stacks(-reac_volume)
+		M.ExtinguishMob()
+>>>>>>> 4ad64231f3 (Fixes firefighting foam hitting ghosts (#10204))
 
 /datum/reagent/liquid_protean
 	name = "Liquid protean"
