@@ -960,6 +960,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/security_port)
+"abB" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/machinery/door/airlock/maintenance{
+	name = "Central Maintenance Access"
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/central)
 "abC" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -3509,7 +3516,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Armoury Tactical Equipment";
 	req_access = list(3);
-	req_one_access = list(3)
+	req_one_access = null
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -8291,7 +8298,7 @@
 /obj/machinery/door/airlock/highsecurity{
 	name = "Secure Armoury Section";
 	req_access = list(3);
-	req_one_access = list(3)
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/armoury)
@@ -10222,8 +10229,7 @@
 "aET" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance{
-	name = "Central Maintenance Access";
-	req_one_access = list(12,19)
+	name = "Central Maintenance Access"
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -10978,7 +10984,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/security{
 	name = "Security Locker Room";
-	req_access = list(1)
+	req_access = list(1);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/security_lockerroom)
@@ -12041,7 +12048,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Equipment Storage";
-	req_access = list(2)
+	req_access = list(1);
+	req_one_access = null
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -12112,7 +12120,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/security{
 	name = "Evidence Storage";
-	req_access = list(1)
+	req_access = list(63);
+	req_one_access = null
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -12387,8 +12396,7 @@
 "aMc" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance{
-	name = "Central Maintenance Access";
-	req_one_access = list(12,19)
+	name = "Central Maintenance Access"
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -14073,7 +14081,8 @@
 /obj/machinery/door/airlock/glass_security{
 	id_tag = "prisonentry";
 	name = "Brig Entry";
-	req_access = list(2)
+	req_access = list(2);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/prison)
@@ -14082,7 +14091,8 @@
 /obj/machinery/door/airlock/glass_security{
 	id_tag = "prisonentry";
 	name = "Brig Entry";
-	req_access = list(2)
+	req_access = list(2);
+	req_one_access = null
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor/tiled/steel_grid,
@@ -14345,7 +14355,8 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/security{
 	name = "Warden's Office";
-	req_access = list(3)
+	req_access = list(3);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/warden)
@@ -14436,7 +14447,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/security{
 	name = "Evidence Storage";
-	req_access = list(1)
+	req_access = list(63);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/dark,
 /area/security/evidence_storage)
@@ -15698,7 +15710,8 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/glass_security{
 	name = "Firing Range";
-	req_access = list(1)
+	req_access = list(63);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/range)
@@ -16668,8 +16681,7 @@
 "aZF" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance{
-	name = "Central Maintenance Access";
-	req_one_access = list(12,19)
+	name = "Central Maintenance Access"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -17243,6 +17255,21 @@
 /obj/structure/sign/warning/radioactive,
 /turf/simulated/wall/r_wall,
 /area/engineering/engine_monitoring)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
+=======
+"baN" = (
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/freezer,
+/area/medical/medical_restroom)
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 "baO" = (
 /obj/machinery/atmospherics/binary/pump{
 	name = "Custom Mix to Connector"
@@ -17974,8 +18001,7 @@
 /obj/machinery/door/window/brigdoor/northright{
 	id = "Cell 2";
 	name = "Cell 2";
-	req_access = null;
-	req_one_access = list(2,4)
+	req_access = list(2)
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/brig)
@@ -18066,8 +18092,7 @@
 /obj/machinery/door/window/brigdoor/northright{
 	id = "Cell 1";
 	name = "Cell 1";
-	req_access = null;
-	req_one_access = list(2,4)
+	req_access = list(2)
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/brig)
@@ -18079,7 +18104,8 @@
 /obj/machinery/door/airlock/glass_security{
 	id_tag = "prisonexit";
 	name = "Brig Exit";
-	req_access = list(2)
+	req_access = list(2);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/prison)
@@ -18097,7 +18123,8 @@
 /obj/machinery/door/airlock/glass_security{
 	id_tag = "prisonexit";
 	name = "Brig Exit";
-	req_access = list(2)
+	req_access = list(2);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/prison)
@@ -18657,7 +18684,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Security Processing";
-	req_access = list(1)
+	req_access = list(63);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/security_processing)
@@ -22565,7 +22593,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/glass_security{
 	name = "Briefing Room";
-	req_access = list(1)
+	req_access = list(63);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/main)
@@ -22719,7 +22748,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/security{
 	name = "Riot Control";
-	req_access = list(2)
+	req_access = list(2);
+	req_one_access = null
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -22762,7 +22792,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/glass_security{
 	name = "Solitary Confinement 1";
-	req_access = list(2)
+	req_access = list(2);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/brig)
@@ -22772,7 +22803,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/door/airlock/glass_security{
 	name = "Solitary Confinement 2";
-	req_access = list(2)
+	req_access = list(2);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/brig)
@@ -23059,7 +23091,8 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/glass_security{
 	name = "Security Cells";
-	req_access = list(1)
+	req_access = list(2);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/brig)
@@ -23429,7 +23462,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Warden's Office";
-	req_access = list(3)
+	req_access = list(3);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/warden)
@@ -23638,7 +23672,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/security{
 	name = "Security Processing";
-	req_access = list(1)
+	req_access = list(63);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/security_processing)
@@ -24492,8 +24527,7 @@
 "bxg" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/maintenance{
-	name = "Disposal Access";
-	req_access = list(12)
+	name = "Disposal Access"
 	},
 /obj/structure/cable{
 	d1 = 4;
@@ -25064,7 +25098,8 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/glass_security{
 	name = "Security Cells";
-	req_access = list(1)
+	req_access = list(2);
+	req_one_access = null
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -25882,7 +25917,8 @@
 	},
 /obj/machinery/door/airlock/glass_security{
 	name = "Security Medical";
-	req_access = newlist()
+	req_access = list(1);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/white,
 /area/security/aid_station)
@@ -25906,7 +25942,8 @@
 	},
 /obj/machinery/door/airlock/security{
 	name = "Secondary Equipment Storage";
-	req_access = list(2)
+	req_access = list(1);
+	req_one_access = null
 	},
 /obj/structure/cable/green{
 	d1 = 2;
@@ -27481,7 +27518,9 @@
 /obj/machinery/door/airlock/glass_security{
 	id_tag = "BrigFoyer";
 	layer = 2.8;
-	name = "Security Wing"
+	name = "Security Wing";
+	req_access = list(63);
+	req_one_access = null
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -28660,7 +28699,8 @@
 /obj/machinery/door/airlock/security{
 	id_tag = "detdoor";
 	name = "Detective";
-	req_access = list(4)
+	req_access = list(4);
+	req_one_access = null
 	},
 /obj/machinery/door/firedoor/border_only,
 /obj/structure/cable/green{
@@ -28699,7 +28739,8 @@
 	id_tag = "BrigFoyer";
 	layer = 2.8;
 	name = "Security Wing";
-	req_access = list(63)
+	req_access = list(63);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/security_hallway)
@@ -28929,7 +28970,8 @@
 	id_tag = "BrigFoyer";
 	layer = 2.8;
 	name = "Security Wing";
-	req_access = list(63)
+	req_access = list(63);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/security_hallway)
@@ -29012,7 +29054,8 @@
 	id_tag = "BrigFoyer";
 	layer = 2.8;
 	name = "Security Wing";
-	req_access = list(63)
+	req_access = list(63);
+	req_one_access = null
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/security/security_hallway)
@@ -30411,7 +30454,8 @@
 /obj/machinery/door/airlock/command{
 	id_tag = "HoSdoor";
 	name = "Head of Security Quarters";
-	req_access = list(58)
+	req_access = list(58);
+	req_one_access = null
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -30759,8 +30803,8 @@
 /obj/machinery/door/firedoor/border_only,
 /obj/machinery/door/airlock/atmos{
 	name = "Riot Control Maintenance";
-	req_access = newlist();
-	req_one_access = list(2)
+	req_access = list(2);
+	req_one_access = null
 	},
 /turf/simulated/floor/plating,
 /area/security/riot_control)
@@ -31031,7 +31075,8 @@
 "bSD" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southleft{
-	name = "Secure Door"
+	name = "Secure Door";
+	req_access = list(63)
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -31068,7 +31113,8 @@
 "bSH" = (
 /obj/structure/table/reinforced,
 /obj/machinery/door/window/brigdoor/southright{
-	name = "Secure Door"
+	name = "Secure Door";
+	req_access = list(63)
 	},
 /obj/structure/cable/green{
 	d1 = 4;
@@ -32025,7 +32071,8 @@
 /obj/machinery/door/airlock/security{
 	id_tag = "detdoor";
 	name = "Detective";
-	req_access = list(4)
+	req_access = list(4);
+	req_one_access = null
 	},
 /obj/structure/cable/green{
 	d1 = 1;
@@ -53930,12 +53977,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/research)
 "hYU" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply{
-	dir = 10
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 9
-	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/landmark{
 	name = "xeno_spawn";
 	pixel_x = -1
@@ -57777,11 +57819,14 @@
 /obj/machinery/ai_status_display{
 	pixel_x = -32
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
 	},
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -62640,6 +62685,7 @@
 	},
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable/green{
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 	d1 = 2;
 	d2 = 8;
 	icon_state = "2-8"
@@ -62649,6 +62695,9 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
+=======
+	icon_state = "1-2"
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay2)
@@ -66343,11 +66392,14 @@
 	pixel_x = -21
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
 	},
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
 	},
@@ -73257,10 +73309,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/yellow,
 /turf/simulated/floor,
 /area/engineering/engine_room)
-"thh" = (
-/obj/machinery/atmospherics/unary/vent_pump/on,
-/turf/simulated/floor/plating,
-/area/maintenance/research_medical)
 "thu" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
@@ -75073,6 +75121,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/industrial/warning,
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
@@ -75084,6 +75133,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 /turf/simulated/floor/tiled,
 /area/maintenance/research_medical)
 "uvq" = (
@@ -75108,6 +75159,7 @@
 /area/chapel/office)
 "uwj" = (
 /obj/machinery/door/firedoor/border_only,
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 4
 	},
@@ -75119,15 +75171,20 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 /obj/machinery/door/airlock/maintenance{
 	req_access = null;
 	req_one_access = null
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/structure/cable/green{
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
 	},
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 /turf/simulated/floor/tiled/white,
 /area/maintenance/research_medical)
 "uwy" = (
@@ -75143,6 +75200,7 @@
 /obj/effect/floor_decal/corner/white/border,
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/dockhallway)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 "uxi" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -75157,6 +75215,8 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/research_medical)
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 "uxj" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -75167,6 +75227,7 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/secondary/entry/D2)
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 "uxr" = (
 /obj/structure/cable/green{
 	d1 = 1;
@@ -75176,6 +75237,8 @@
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/research_medical)
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 "uxW" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/effect/floor_decal/steeldecal/steel_decals6{
@@ -76760,6 +76823,7 @@
 	opacity = 0
 	},
 /obj/structure/disposalpipe/segment,
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/structure/cable/green{
 	d1 = 2;
 	d2 = 4;
@@ -76771,6 +76835,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 /turf/simulated/floor/tiled/dark,
 /area/maintenance/research_medical)
 "vEe" = (
@@ -76809,6 +76875,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 8;
@@ -76820,6 +76887,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 9
 	},
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 /turf/simulated/floor/tiled/dark,
 /area/maintenance/research_medical)
 "vGd" = (
@@ -76912,7 +76981,12 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/medical/cryo)
 "vIb" = (
-/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 10
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
 /turf/simulated/floor/tiled/freezer,
 /area/medical/medical_restroom)
 "vIn" = (
@@ -78032,6 +78106,7 @@
 	name = "Medical Access";
 	req_access = list(5)
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
@@ -78039,6 +78114,8 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/steel_grid,
 /area/medical/medbay2)
@@ -78696,10 +78773,12 @@
 /turf/simulated/floor/tiled,
 /area/hallway/primary/seconddeck/aft)
 "wTK" = (
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
 	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 4
@@ -79409,6 +79488,7 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
 	d1 = 1;
@@ -79418,6 +79498,8 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
 	},
+=======
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 /obj/effect/floor_decal/steeldecal/steel_decals4{
 	dir = 9
 	},
@@ -79488,9 +79570,6 @@
 /obj/structure/disposalpipe/segment{
 	dir = 2;
 	icon_state = "pipe-c"
-	},
-/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
-	dir = 10
 	},
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/structure/window/reinforced{
@@ -80824,11 +80903,16 @@
 	dir = 8;
 	pixel_x = -24
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/structure/cable/green{
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+=======
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 	},
 /obj/effect/floor_decal/borderfloorwhite{
 	dir = 8
@@ -80870,8 +80954,12 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/ai_monitored/storage/emergency/eva)
 "yiw" = (
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/item/device/radio/intercom{
+=======
+/obj/item/radio/intercom{
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 	dir = 4;
 	name = "Station Intercom (General)";
 	pixel_x = 21
@@ -80882,6 +80970,9 @@
 	},
 /obj/effect/floor_decal/corner/paleblue/border{
 	dir = 4
+	},
+/obj/machinery/atmospherics/unary/vent_pump/on{
+	dir = 8
 	},
 /turf/simulated/floor/tiled/white,
 /area/medical/medbay2)
@@ -114290,7 +114381,7 @@ dsj
 jEn
 kLo
 lJs
-mEJ
+abB
 aZC
 owO
 pmd
@@ -130035,6 +130126,7 @@ pGB
 qSA
 oiA
 oiA
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 thh
 uxi
 vHd
@@ -130044,6 +130136,17 @@ rJB
 bBk
 nCU
 xhM
+=======
+rJB
+rJB
+jjH
+aAu
+veJ
+lCc
+baN
+xgD
+jjH
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 ikX
 dTG
 pzi
@@ -130294,12 +130397,21 @@ qSS
 rQu
 oiA
 tiT
+<<<<<<< HEAD:maps/southern_cross/southern_cross-2.dmm
 uxr
 rJB
 xhM
 rJB
 hxN
 rJB
+=======
+hxN
+jjH
+qoZ
+pVZ
+hYU
+vIb
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-3.dmm
 sYY
 xhM
 iOS
