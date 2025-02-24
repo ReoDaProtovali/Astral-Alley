@@ -105,8 +105,13 @@
 	. += "<b>Spawn Point</b>: <a href='?src=\ref[src];spawnpoint=1'>[pref.spawnpoint]</a><br>"
 	if(CONFIG_GET(flag/allow_metadata)) // CHOMPEdit
 		//CHOMPEdit Start
+<<<<<<< HEAD
 		. += "<b>OOC Notes: <a href='?src=\ref[src];edit_ooc_notes=1'>Edit</a><a href='?src=\ref[src];edit_ooc_note_favs=1'>Favs</a><a href='?src=\ref[src];edit_ooc_note_likes=1'>Likes</a><a href='?src=\ref[src];edit_ooc_note_maybes=1'>Maybes</a><a href='?src=\ref[src];edit_ooc_note_dislikes=1'>Dislikes</a></b><br>"
 		. += "Detailed field or short list system? <a href='?src=\ref[src];edit_ooc_note_style=1'>[pref.matadata_ooc_style ? "Lists" : "Fields"]</a><br><br>"
+=======
+		. += span_bold("OOC Notes: <a href='byond://?src=\ref[src];edit_ooc_notes=1'>Edit</a><a href='byond://?src=\ref[src];edit_ooc_note_favs=1'>Favs</a><a href='byond://?src=\ref[src];edit_ooc_note_likes=1'>Likes</a><a href='byond://?src=\ref[src];edit_ooc_note_maybes=1'>Maybes</a><a href='byond://?src=\ref[src];edit_ooc_note_dislikes=1'>Dislikes</a>") + "<br>"
+		. += "Detailed field or short list system? <a href='byond://?src=\ref[src];edit_ooc_note_style=1'>[pref.read_preference(/datum/preference/toggle/living/ooc_notes_style) ? "Lists" : "Fields"]</a><br><br>"
+>>>>>>> 54551b984f (fix a small oversight during tg pref migration (#10221))
 		//CHOMPEdit End
 	. = jointext(.,null)
 
