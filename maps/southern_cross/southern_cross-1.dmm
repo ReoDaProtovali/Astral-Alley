@@ -14543,9 +14543,14 @@
 	d2 = 8;
 	icon_state = "2-8"
 	},
+<<<<<<< HEAD:maps/southern_cross/southern_cross-1.dmm
 /obj/machinery/chemical_dispenser/full{
 	density = 1
 	},
+=======
+/obj/structure/table/standard,
+/obj/machinery/chemical_dispenser/full,
+>>>>>>> cc6d732ace (Map Fixes and Access list update (#10217)):modular_chomp/maps/southern_cross/southern_cross-2.dmm
 /turf/simulated/floor/tiled/hydro,
 /area/rnd/xenobiology/xenoflora)
 "dZe" = (
