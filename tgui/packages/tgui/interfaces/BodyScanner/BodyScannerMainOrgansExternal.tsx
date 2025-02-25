@@ -1,5 +1,3 @@
-import { toFixed } from 'common/math';
-
 import {
   Box,
   Icon,
@@ -7,10 +5,12 @@ import {
   Section,
   Table,
   Tooltip,
-} from '../../components';
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+
 import { damageRange } from './constants';
 import { germStatus, reduceOrganStatus } from './functions';
-import { externalOrgan } from './types';
+import type { externalOrgan } from './types';
 
 export const BodyScannerMainOrgansExternal = (props: {
   organs: externalOrgan[];
@@ -36,7 +36,7 @@ export const BodyScannerMainOrgansExternal = (props: {
         {organs.map((o, i) => (
           <Table.Row key={i} style={{ textTransform: 'capitalize' }}>
             <Table.Cell width="33%">{o.name}</Table.Cell>
-            <Table.Cell textAlign="center" q>
+            <Table.Cell textAlign="center">
               <ProgressBar
                 minValue={0}
                 maxValue={o.maxHealth / 100}
@@ -51,18 +51,17 @@ export const BodyScannerMainOrgansExternal = (props: {
                   inline
                 >
                   {!!o.bruteLoss && (
-                    <Box inline position="relative">
-                      <Icon name="bone" />
+                    <Tooltip content="Brute damage" position="top">
+                      <Icon name="band-aid" />
                       {toFixed(o.bruteLoss)}&nbsp;
-                      <Tooltip position="top" content="Brute damage" />
-                    </Box>
+                    </Tooltip>
                   )}
                   {!!o.fireLoss && (
-                    <Box inline position="relative">
+                    <Tooltip content="Burn damage" position="top">
                       <Icon name="fire" />
                       {toFixed(o.fireLoss)}
                       <Tooltip position="top" content="Burn damage" />
-                    </Box>
+                    </Tooltip>
                   )}
                 </Box>
                 <Box inline>{toFixed(o.totalLoss)}</Box>

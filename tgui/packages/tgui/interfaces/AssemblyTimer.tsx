@@ -1,10 +1,13 @@
-import { round } from 'common/math';
-
-import { useBackend } from '../backend';
-import { Button, LabeledList, Section } from '../components';
-import { formatTime } from '../format';
-import { Window } from '../layouts';
-import { NumberInputModal } from './NumberInputModal';
+import { useBackend } from 'tgui/backend';
+import { Window } from 'tgui/layouts';
+import {
+  Button,
+  LabeledList,
+  NumberInput,
+  Section,
+} from 'tgui-core/components';
+import { formatTime } from 'tgui-core/format';
+import { round } from 'tgui-core/math';
 
 type Data = { timing: number; time: number };
 
@@ -12,7 +15,7 @@ export const AssemblyTimer = (props) => {
   const { act, data } = useBackend<Data>();
   const { timing, time } = data;
   return (
-    <Window>
+    <Window width={400} height={110}>
       <Window.Content>
         <Section title="Timing Unit">
           <LabeledList>
@@ -28,7 +31,7 @@ export const AssemblyTimer = (props) => {
                 </Button>
               }
             >
-              <NumberInputModal
+              <NumberInput
                 animated
                 fluid
                 step={1}

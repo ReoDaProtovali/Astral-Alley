@@ -29,7 +29,8 @@
 			else
 				icon = 'icons/obj/props/items.dmi'
 			icon_state = icon_state_on
-			src.visible_message("<span class='notice'>[text_activated]</span>")
+			if(user)
+				user.visible_message(span_notice("[text_activated]"))
 			update_icon()
 			if(effect == 1)
 				var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
@@ -47,13 +48,13 @@
 						continue
 
 					var/flash_time = 10
-					if(istype(O, /mob/living/carbon/human))
+					if(ishuman(O))
 						var/mob/living/carbon/human/H = O
-						//VOREStation Edit Start
 						if(H.nif && H.nif.flag_check(NIF_V_FLASHPROT,NIF_FLAGS_VISION))
 							H.nif.notify("High intensity light detected, and blocked!",TRUE)
 							continue
-						//VOREStation Edit End
+						if(FLASHPROOF in H.mutations)
+							continue
 						if(!H.eyecheck() <= 0)
 							continue
 						flash_time *= H.species.flash_mod
@@ -70,7 +71,7 @@
 					O.Weaken(flash_time)
 			if(effect == 4)
 				var/atom/o = new object(get_turf(user))
-				src.visible_message("<span class='notice'>[src] has produced [o]!</span>")
+				src.visible_message(span_notice("[src] has produced [o]!"))
 			if(sound_activated)
 				playsound(src, sound_activated, 50, 1)
 		else if(togglable)
@@ -83,12 +84,13 @@
 				icon = icon_off
 			else
 				icon = 'icons/obj/props/items.dmi'
-			src.visible_message("<span class='notice'>[text_deactivated]</span>")
+			if(user)
+				user.visible_message(span_notice("[text_deactivated]"))
 			update_icon()
 	return ..()
 
 /client/proc/generic_item()
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set name = "Spawn Generic Item"
 	set desc = "Spawn a customisable item with a range of different options."
 

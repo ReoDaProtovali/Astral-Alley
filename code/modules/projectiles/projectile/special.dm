@@ -109,7 +109,7 @@
 /obj/item/projectile/meteor
 	name = "meteor"
 	icon = 'icons/obj/meteor.dmi'
-	icon_state = "smallf"
+	icon_state = "small"
 	damage = 0
 	damage_type = BRUTE
 	nodamage = 1
@@ -121,8 +121,6 @@
 		loc = A.loc
 		return
 
-	sleep(-1) //Might not be important enough for a sleep(-1) but the sleep/spawn itself is necessary thanks to explosions and metoerhits
-
 	if(src)//Do not add to this if() statement, otherwise the meteor won't delete them
 		if(A)
 
@@ -130,7 +128,7 @@
 			playsound(src, 'sound/effects/meteorimpact.ogg', 40, 1)
 
 			for(var/mob/M in range(10, src))
-				if(!M.stat && !istype(M, /mob/living/silicon/ai))\
+				if(!M.stat && !isAI(M))\
 					shake_camera(M, 3, 1)
 			qdel(src)
 			return 1
@@ -173,6 +171,7 @@
 				else
 					randmutg(M)
 					domutcheck(M,null)
+				M.UpdateAppearance()
 			else
 				M.adjustFireLoss(rand(5,15))
 				M.show_message(span_red("The radiation beam singes you!"))
@@ -222,6 +221,32 @@
 	else
 		return 1
 
+/obj/item/projectile/energy/floraprune
+	name = "delta somatoray"
+	icon_state = "energy2"
+	fire_sound = 'sound/effects/stealthoff.ogg'
+	damage = 0
+	damage_type = TOX
+	nodamage = 1
+	check_armour = "energy"
+	light_range = 2
+	light_power = 0.5
+	light_color = "#FFFFFF"
+	impact_effect_type = /obj/effect/temp_visual/impact_effect/monochrome_laser
+	var/lasermod = 0
+	hud_state = "electrothermal"
+
+/obj/item/projectile/energy/floraprune/on_hit(var/atom/target, var/blocked = 0)
+	var/mob/living/M = target
+	if(ishuman(target)) //Make plantpeople thin, seeing as we're removing reagents from actual plants
+		var/mob/living/carbon/human/H = M
+		if((H.species.flags & IS_PLANT) && (M.nutrition > 30))
+			M.adjust_nutrition(-30)
+	else if (istype(target, /mob/living/carbon/))
+		M.show_message(span_blue("The radiation beam dissipates harmlessly through your body."))
+	else
+		return 1
+
 
 /obj/item/projectile/beam/mindflayer
 	name = "flayer ray"
@@ -259,7 +284,7 @@
 /obj/item/projectile/bola/on_hit(var/atom/target, var/blocked = 0)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		var/obj/item/weapon/handcuffs/legcuffs/bola/B = new(src.loc)
+		var/obj/item/handcuffs/legcuffs/bola/B = new(src.loc)
 		if(!B.place_legcuffs(M,firer))
 			if(B)
 				qdel(B)
@@ -279,7 +304,7 @@
 	if(isturf(target.loc))
 		var/obj/effect/spider/stickyweb/W = locate() in get_turf(target)
 		if(!W && prob(75))
-			visible_message("<span class='danger'>\The [src] splatters a layer of web on \the [target]!</span>")
+			visible_message(span_danger("\The [src] splatters a layer of web on \the [target]!"))
 			new /obj/effect/spider/stickyweb(target.loc)
 	..()
 
@@ -339,17 +364,17 @@
 					target_limb.dislocate()
 
 			if(armor_special > 1)
-				target.visible_message("<span class='cult'>\The [src] slams into \the [target]'s [target_limb], reverberating loudly!</span>")
+				target.visible_message(span_cult("\The [src] slams into \the [target]'s [target_limb], reverberating loudly!"))
 
 			else if(armor_special)
-				target.visible_message("<span class='cult'>\The [src] slams into \the [target]'s [target_limb] with a low rumble!</span>")
+				target.visible_message(span_cult("\The [src] slams into \the [target]'s [target_limb] with a low rumble!"))
 
 	..()
 
 /obj/item/projectile/beam/tungsten/on_impact(var/atom/A)
 	if(istype(A,/turf/simulated/shuttle/wall) || istype(A,/turf/simulated/wall) || (istype(A,/turf/simulated/mineral) && A.density) || istype(A,/obj/mecha) || istype(A,/obj/machinery/door))
 		var/blast_dir = src.dir
-		A.visible_message("<span class='danger'>\The [A] begins to glow!</span>")
+		A.visible_message(span_danger("\The [A] begins to glow!"))
 		spawn(2 SECONDS)
 			var/blastloc = get_step(A, blast_dir)
 			if(blastloc)

@@ -30,8 +30,8 @@ var/list/turf_edge_cache = list()
 /turf/simulated/floor/outdoors/proc/get_loot_type()
 	if(loot_count && prob(60))
 		return pick( \
-			12;/obj/item/weapon/reagent_containers/food/snacks/worm, \
-			1;/obj/item/weapon/material/knife/machete/hatchet/stone  \
+			12;/obj/item/reagent_containers/food/snacks/worm, \
+			1;/obj/item/material/knife/machete/hatchet/stone  \
 		)
 
 /turf/simulated/floor/outdoors/Initialize(mapload)
@@ -41,35 +41,35 @@ var/list/turf_edge_cache = list()
 
 /turf/simulated/floor/outdoors/attackby(obj/item/C, mob/user)
 
-	if(can_dig && istype(C, /obj/item/weapon/shovel))
-		var/obj/item/weapon/shovel/our_shovel = C
+	if(can_dig && istype(C, /obj/item/shovel))
+		var/obj/item/shovel/our_shovel = C
 		if(our_shovel.grave_mode)
 			if(contents.len > 0)
-				to_chat(user, SPAN_WARNING("You can't dig here!"))
+				to_chat(user, span_warning("You can't dig here!"))
 				return
-			to_chat(user, SPAN_NOTICE("\The [user] begins digging into \the [src] with \the [C]."))
+			to_chat(user, span_notice("\The [user] begins digging into \the [src] with \the [C]."))
 			var/delay = (5 SECONDS * C.toolspeed)
 			user.setClickCooldown(delay)
 			if(do_after(user, delay, src))
 				new/obj/structure/closet/grave/dirthole(src)
-				to_chat(user, SPAN_NOTICE("You dug up \a hole!"))
+				to_chat(user, span_notice("You dug up \a hole!"))
 				return
 		else
-			to_chat(user, SPAN_NOTICE("\The [user] begins digging into \the [src] with \the [C]."))
+			to_chat(user, span_notice("\The [user] begins digging into \the [src] with \the [C]."))
 			var/delay = (3 SECONDS * C.toolspeed)
 			user.setClickCooldown(delay)
 			if(do_after(user, delay, src))
 				if(!(locate(/obj/machinery/portable_atmospherics/hydroponics/soil) in contents))
 					var/obj/machinery/portable_atmospherics/hydroponics/soil/soil = new(src)
-					user.visible_message(SPAN_NOTICE("\The [src] digs \a [soil] into \the [src]."))
+					user.visible_message(span_notice("\The [src] digs \a [soil] into \the [src]."))
 				else
 					var/loot_type = get_loot_type()
 					if(loot_type)
 						loot_count--
 						var/obj/item/loot = new loot_type(src)
-						to_chat(user, SPAN_NOTICE("You dug up \a [loot]!"))
+						to_chat(user, span_notice("You dug up \a [loot]!"))
 					else
-						to_chat(user, SPAN_NOTICE("You didn't find anything of note in \the [src]."))
+						to_chat(user, span_notice("You didn't find anything of note in \the [src]."))
 				return
 
 	. = ..()
@@ -222,16 +222,6 @@ CHOMP Removal End */
 	desc = "Looks dirty."
 	icon = 'icons/turf/outdoors_vr.dmi'
 	icon_base = "dirt0"
-	footstep_sounds = list("human" = list(
-		'sound/effects/footstep/asteroid1.ogg',
-		'sound/effects/footstep/asteroid2.ogg',
-		'sound/effects/footstep/asteroid3.ogg',
-		'sound/effects/footstep/asteroid4.ogg',
-		'sound/effects/footstep/asteroid5.ogg',
-		'sound/effects/footstep/MedDirt1.ogg',
-		'sound/effects/footstep/MedDirt2.ogg',
-		'sound/effects/footstep/MedDirt3.ogg',
-		'sound/effects/footstep/MedDirt4.ogg'))
 
 /turf/simulated/floor/outdoors/newdirt/Initialize(mapload)
 	var/possibledirts = list(
@@ -290,12 +280,6 @@ CHOMP Removal End */
 	build_type = /obj/item/stack/tile/floor/sidewalk
 	can_paint = 1
 	can_engrave = FALSE
-
-	footstep_sounds = list("human" = list(
-		'sound/effects/footstep/LightStone1.ogg',
-		'sound/effects/footstep/LightStone2.ogg',
-		'sound/effects/footstep/LightStone3.ogg',
-		'sound/effects/footstep/LightStone4.ogg',))
 
 /obj/item/stack/tile/floor/sidewalk
 	name = "sidewalk tile"

@@ -33,27 +33,27 @@ SUBSYSTEM_DEF(supply)
 		else
 			qdel(P)
 
-	return SS_INIT_SUCCESS // CHOMPEdit
+	return SS_INIT_SUCCESS
 
 // Supply shuttle ticker - handles supply point regeneration. Just add points over time.
 /datum/controller/subsystem/supply/fire()
 	points += points_per_process
-//CHOMPEdit Begin
+
 /datum/controller/subsystem/supply/stat_entry(msg)
 	msg = "Points: [points]"
 	return ..()
-//CHOMPEdit End
+
 //To stop things being sent to CentCom which should not be sent to centcomm. Recursively checks for these types.
 /datum/controller/subsystem/supply/proc/forbidden_atoms_check(atom/A)
 	if(isliving(A))
 		return 1
-	if(istype(A,/obj/item/weapon/disk/nuclear))
+	if(istype(A,/obj/item/disk/nuclear))
 		return 1
 	if(istype(A,/obj/machinery/nuclearbomb))
 		return 1
-	if(istype(A,/obj/item/device/radio/beacon))
+	if(istype(A,/obj/item/radio/beacon))
 		return 1
-	if(istype(A,/obj/item/device/perfect_tele_beacon))	//VOREStation Addition: Translocator beacons
+	if(istype(A,/obj/item/perfect_tele_beacon))	//VOREStation Addition: Translocator beacons
 		return 1										//VOREStation Addition: Translocator beacons
 	if(istype(A,/obj/machinery/power/quantumpad)) //	//VOREStation Add: Quantum pads
 		return 1					//VOREStation Add: Quantum pads
@@ -97,8 +97,8 @@ SUBSYSTEM_DEF(supply)
 						)
 
 					// Sell manifests
-					if(find_slip && istype(A,/obj/item/weapon/paper/manifest))
-						var/obj/item/weapon/paper/manifest/slip = A
+					if(find_slip && istype(A,/obj/item/paper/manifest))
+						var/obj/item/paper/manifest/slip = A
 						if(!slip.is_copy && slip.stamped && slip.stamped.len) //yes, the clown stamp will work. clown is the highest authority on the station, it makes sense
 							points += points_per_slip
 							EC.contents[EC.contents.len]["value"] = points_per_slip
@@ -115,12 +115,47 @@ SUBSYSTEM_DEF(supply)
 						EC.value += EC.contents[EC.contents.len]["value"]
 
 					//Sell spacebucks
-					if(istype(A, /obj/item/weapon/spacecash))
-						var/obj/item/weapon/spacecash/cashmoney = A
+					if(istype(A, /obj/item/spacecash))
+						var/obj/item/spacecash/cashmoney = A
 						EC.contents[EC.contents.len]["value"] = cashmoney.worth * points_per_money
 						EC.contents[EC.contents.len]["quantity"] = cashmoney.worth
 						EC.value += EC.contents[EC.contents.len]["value"]
 
+					if(istype(A, /obj/item/reagent_containers/glass/bottle/vaccine))
+						var/obj/item/reagent_containers/glass/bottle/vaccine/sale_bottle = A
+						if(!istype(CR, /obj/structure/closet/crate/freezer))
+							EC.contents = list(
+								"error" = "Error: Product was improperly packaged. Send conents in freezer crate to preserve contents for transport."
+							)
+						else if(sale_bottle.reagents.reagent_list.len != 1 || sale_bottle.reagents.get_reagent_amount(REAGENT_ID_VACCINE) < sale_bottle.volume)
+							EC.contents = list(
+								"error" = "Error: Tainted product in batch. Was opened, contaminated, or was full. Payment rendered null under terms of agreement."
+							)
+						else
+							EC.contents[EC.contents.len]["value"] = 5
+							EC.value += EC.contents[EC.contents.len]["value"]
+
+					// CHOMPAdd Start - Sell salvage
+					if(istype(A, /obj/item/salvage))
+						var/obj/item/salvage/salvagedStuff = A
+						EC.contents[EC.contents.len]["value"] = salvagedStuff.worth
+					// CHOMPAdd End
+
+				// CHOMPedit begin - Selling engineered organs
+					if(istype(A, /obj/item/organ/internal))
+						var/obj/item/organ/internal/organ_stuff = A
+						if(!istype(CR,/obj/structure/closet/crate/freezer))
+							EC.contents = list(
+								"error" = "Error: Product was improperly packaged. Send contents in freezer crate to preserve contents for transport."
+							)
+						else if(organ_stuff.health != initial(organ_stuff.health) )
+							EC.contents = list(
+								"error" = "Error: Product was damaged on arrival."
+							)
+						else
+							EC.contents[EC.contents.len]["value"] = organ_stuff.supply_conversion_value
+							EC.value += EC.contents[EC.contents.len]["value"]
+					// CHOMPedit end
 
 
 			// Make a log of it, but it wasn't shipped properly, and so isn't worth anything
@@ -203,15 +238,15 @@ SUBSYSTEM_DEF(supply)
 					A.req_access = L.Copy()
 					LAZYCLEARLIST(A.req_one_access)
 				else
-					log_debug("<span class='danger'>Supply pack with invalid access restriction [SP.access] encountered!</span>")
+					log_debug(span_danger("Supply pack with invalid access restriction [SP.access] encountered!"))
 
 		//supply manifest generation begin
-		var/obj/item/weapon/paper/manifest/slip
+		var/obj/item/paper/manifest/slip
 		if(!SP.contraband)
 			if(A)
-				slip = new /obj/item/weapon/paper/manifest(A)
+				slip = new /obj/item/paper/manifest(A)
 			else
-				slip = new /obj/item/weapon/paper/manifest(pickedloc)
+				slip = new /obj/item/paper/manifest(pickedloc)
 			slip.is_copy = 0
 			slip.info = "<h3>[command_name()] Shipping Manifest</h3><hr><br>"
 			slip.info +="Order #[SO.ordernum]<br>"

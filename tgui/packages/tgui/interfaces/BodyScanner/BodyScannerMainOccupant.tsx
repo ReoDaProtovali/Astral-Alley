@@ -1,15 +1,15 @@
-import { toFixed } from 'common/math';
-
-import { useBackend } from '../../backend';
+import { useBackend } from 'tgui/backend';
 import {
   AnimatedNumber,
   Button,
   LabeledList,
   ProgressBar,
   Section,
-} from '../../components';
+} from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
+
 import { stats } from './constants';
-import { occupant } from './types';
+import type { occupant } from './types';
 
 export const BodyScannerMainOccupant = (props: { occupant: occupant }) => {
   const { act } = useBackend();
@@ -62,7 +62,7 @@ export const BodyScannerMainOccupant = (props: { occupant: occupant }) => {
             value={occupant.blood.volume}
             format={(value) => toFixed(value)}
           />
-          units&nbsp;(
+          u&nbsp;(
           <AnimatedNumber
             value={occupant.blood.percent}
             format={(value) => toFixed(value)}
@@ -70,10 +70,8 @@ export const BodyScannerMainOccupant = (props: { occupant: occupant }) => {
           %)
         </LabeledList.Item>
         <LabeledList.Item label="Weight">
-          {toFixed(occupant.weight) +
-            'lbs, ' +
-            toFixed(occupant.weight / 2.20463) +
-            'kgs'}
+          {toFixed(occupant.weight / 2.20463, 1) + 'kg, '}
+          {toFixed(occupant.weight) + 'lbs'}
         </LabeledList.Item>
       </LabeledList>
     </Section>

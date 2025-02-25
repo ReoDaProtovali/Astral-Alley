@@ -65,7 +65,7 @@
 		if(mem_count[type] < 10000) mem_count -= type
 	world.log << "[display_bytes(accounted_for)] of memory accounted for"
 	world.log << "Sorting and exporting data"
-	to_world("<span class='alert'>Memory profiler is exporting data. Expect server to freeze for 10-30 seconds.</span>")
+	to_world(span_alert("Memory profiler is exporting data. Expect server to freeze for 10-30 seconds."))
 	sortTim(types_count, /proc/cmp_numeric_desc, TRUE)
 	var/output = ""
 	for(var/type in types_count)
@@ -194,3 +194,6 @@
 	if(num_bytes > 10000)
 		return "[num_bytes/1000] kb"
 	return "[num_bytes] b"
+
+#undef LOOP_STEP_SIZE
+//#undef MEM_NO_CHECK_TICK

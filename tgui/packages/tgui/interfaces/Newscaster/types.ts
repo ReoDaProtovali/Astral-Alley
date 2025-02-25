@@ -1,4 +1,4 @@
-import { BooleanLike } from 'common/react';
+import { BooleanLike } from 'tgui-core/react';
 
 export type Data = {
   temp: { text: string; style: string } | null;
@@ -31,6 +31,7 @@ export type Data = {
     author: string;
     censored: BooleanLike;
     messages: {
+      title: string | null;
       body: string;
       img: string | null;
       type: string;

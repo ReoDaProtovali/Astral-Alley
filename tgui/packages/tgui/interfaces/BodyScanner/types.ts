@@ -1,4 +1,4 @@
-import { BooleanLike } from 'common/react';
+import { BooleanLike } from 'tgui-core/react';
 
 export type Data = {
   occupied: BooleanLike;
@@ -35,6 +35,7 @@ export type occupant = {
   humanPrey: number;
   objectPrey: number;
   weight: number;
+  husked: BooleanLike;
 };
 
 type reagent = { name: string; amount: number; overdose: BooleanLike };

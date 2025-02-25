@@ -1,8 +1,9 @@
-import { useBackend } from '../../backend';
-import { Box, Button, LabeledList, Section } from '../../components';
-import { modalOpen } from '../../interfaces/common/ComplexModal';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, LabeledList, Section } from 'tgui-core/components';
+
+import { modalOpen } from '../common/ComplexModal';
 import { doEdit } from '../GeneralRecords/functions';
-import { Data } from './types';
+import type { Data } from './types';
 
 export const MedicalRecordsViewMedical = (props) => {
   const { act, data } = useBackend<Data>();
@@ -24,7 +25,20 @@ export const MedicalRecordsViewMedical = (props) => {
           <LabeledList.Item key={i} label={field.field}>
             <Box preserveWhitespace>
               {field.value}
-              <Button icon="pen" ml="0.5rem" onClick={() => doEdit(field)} />
+              {!!field.edit &&
+                (field.edit === 'notes' ? (
+                  <Button
+                    icon="pen"
+                    ml="1rem"
+                    onClick={() => act('edit_notes')}
+                  />
+                ) : (
+                  <Button
+                    icon="pen"
+                    ml="0.5rem"
+                    onClick={() => doEdit(field)}
+                  />
+                ))}
             </Box>
           </LabeledList.Item>
         ))}

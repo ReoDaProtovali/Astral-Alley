@@ -8,7 +8,7 @@ var/global/list/env_messages = list()
 	mouse_opacity = TRUE
 	anchored = TRUE
 	var/list/message_list = list()
-	var/combined_message = "You should not see this"
+	var/combined_message = DEVELOPER_WARNING_NAME
 
 /obj/effect/env_message/Initialize(mapload)
 	.=..()
@@ -124,13 +124,13 @@ var/global/list/env_messages = list()
 /client/proc/create_gm_message()
 	set name = "Map Message - Create"
 	set desc = "Create an ooc message in the environment for other players to see."
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 
 	if(!check_rights(R_FUN))
 		return
 
 	if(isnewplayer(mob))
-		to_chat(src, "<span class='warning'>You must spawn or observe to place messages.</span>")
+		to_chat(src, span_warning("You must spawn or observe to place messages."))
 		return
 
 	if(!get_turf(mob) || !src.ckey)
@@ -154,7 +154,7 @@ var/global/list/env_messages = list()
 /client/proc/remove_gm_message()
 	set name = "Map Message - Remove"
 	set desc = "Remove any env/map message."
-	set category =  "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 
 	if(!istype(src) || !src.ckey)
 		return
@@ -167,7 +167,7 @@ var/global/list/env_messages = list()
 		all_map_messages |= A.combined_message
 
 	if(!all_map_messages.len)
-		to_chat(src, "<span class='warning'>There are no map or env messages.</span>")
+		to_chat(src, span_warning("There are no map or env messages."))
 		return
 
 	var/mob/chosen_message = tgui_input_list(src, "Which message do you want to remove?", "Make contact", all_map_messages)

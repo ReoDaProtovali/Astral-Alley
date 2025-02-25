@@ -86,7 +86,7 @@
 	desc = "For whatever reason, once you dead, that is final."
 	cost = -2
 	custom_only = TRUE
-	var_changes = list("flags" = NO_SCAN, NO_DEFIB)
+	var_changes = list("flags" = NO_SCAN | NO_DEFIB)
 	excludes = list(/datum/trait/negative/nodefib, /datum/trait/negative/noresleeve)
 
 /datum/trait/negative/lightweight_light
@@ -96,3 +96,8 @@
 	var_changes = list("lightweight_light" = 1)
 	excludes = list(/datum/trait/negative/lightweight)
 	custom_only = FALSE
+
+/datum/trait/negative/breathes/carbon_dioxide
+	name = "Carbon Dioxide Breather"
+	desc = "You breathe carbon dioxide instead of oxygen, much like a plant. Oxygen is not poisonous to you."
+	var_changes = list("breath_type" = GAS_CO2, "exhale_type" = GAS_O2, "ideal_air_type" = /datum/gas_mixture/belly_air/carbon_dioxide_breather)

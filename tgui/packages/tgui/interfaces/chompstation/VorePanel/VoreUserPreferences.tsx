@@ -1,7 +1,7 @@
-import { BooleanLike } from 'common/react';
+import { useBackend } from 'tgui/backend';
+import { Button, Divider, Section, Stack } from 'tgui-core/components';
+import { BooleanLike } from 'tgui-core/react';
 
-import { useBackend } from '../../../backend';
-import { Box, Button, Divider, Flex, Section } from '../../../components';
 import { digestModeToColor } from './constants';
 import { localPrefs, prefData, selectedData } from './types';
 import { VoreUserPreferencesAesthetic } from './VoreUserPreferencesTabs/VoreUserPreferencesAesthetic';
@@ -13,7 +13,7 @@ import { VoreUserPreferencesSpontaneous } from './VoreUserPreferencesTabs/VoreUs
 
 export const VoreUserPreferences = (props: {
   prefs: prefData;
-  selected: selectedData;
+  selected: selectedData | null;
   show_pictures: BooleanLike;
   icon_overflow: BooleanLike;
 }) => {
@@ -48,6 +48,7 @@ export const VoreUserPreferences = (props: {
     allow_spontaneous_tf,
     allow_mind_transfer,
     eating_privacy_global,
+    allow_mimicry,
     strip_mechanics_active,
     autotransferable,
     liq_rec,
@@ -510,6 +511,19 @@ export const VoreUserPreferences = (props: {
         disabled: 'Global Vore Privacy: Loud',
       },
     },
+    allow_mimicry: {
+      action: 'toggle_mimicry',
+      test: allow_mimicry,
+      tooltip: {
+        main: 'Allows some creatures to mimick your apperance.',
+        enable: ' Click here to allow mimicry.',
+        disable: ' Click here to forbid mimicry.',
+      },
+      content: {
+        enabled: 'Allow Mimicry: Yes',
+        disabled: 'Allow Mimicry: No',
+      },
+    },
     autotransferable: {
       action: 'toggle_autotransferable',
       test: autotransferable,
@@ -690,7 +704,7 @@ export const VoreUserPreferences = (props: {
   };
 
   return (
-    <Box nowrap>
+    <Section scrollable fill>
       <VoreUserPreferencesMechanical
         show_pictures={show_pictures}
         icon_overflow={icon_overflow}
@@ -727,19 +741,19 @@ export const VoreUserPreferences = (props: {
       />
       <Divider />
       <Section>
-        <Flex spacing={1}>
-          <Flex.Item basis="50%">
+        <Stack>
+          <Stack.Item basis="49%">
             <Button fluid icon="save" onClick={() => act('saveprefs')}>
               Save Prefs
             </Button>
-          </Flex.Item>
-          <Flex.Item basis="50%" grow={1}>
+          </Stack.Item>
+          <Stack.Item basis="49%" grow>
             <Button fluid icon="undo" onClick={() => act('reloadprefs')}>
               Reload Prefs
             </Button>
-          </Flex.Item>
-        </Flex>
+          </Stack.Item>
+        </Stack>
       </Section>
-    </Box>
+    </Section>
   );
 };

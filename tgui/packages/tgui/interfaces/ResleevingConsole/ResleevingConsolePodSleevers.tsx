@@ -1,7 +1,8 @@
-import { resolveAsset } from '../../assets';
-import { useBackend } from '../../backend';
-import { Box, Button, Image } from '../../components';
-import { Data } from './types';
+import { resolveAsset } from 'tgui/assets';
+import { useBackend } from 'tgui/backend';
+import { Box, Button, Image } from 'tgui-core/components';
+
+import type { Data } from './types';
 
 export const ResleevingConsolePodSleevers = (props) => {
   const { act, data } = useBackend<Data>();

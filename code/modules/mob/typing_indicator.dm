@@ -15,13 +15,13 @@
 	set name = "Say verb"
 	set category = "IC.TGUI Say" //CHOMPEdit
 
-	if(is_preference_enabled(/datum/client_preference/tgui_say))
+	if(client?.prefs?.read_preference(/datum/preference/toggle/tgui_say))
 		winset(src, null, "command=[client.tgui_say_create_open_command(SAY_CHANNEL)]")
 		return
 
 	client?.start_thinking()
 	client?.start_typing()
-	var/message = tgui_input_text(usr, "Type your message:", "Say")
+	var/message = tgui_input_text(src, "Type your message:", "Say")
 	client?.stop_thinking()
 
 	if(message)
@@ -31,13 +31,13 @@
 	set name = "Me verb"
 	set category = "IC.TGUI Say" //CHOMPEdit
 
-	if(is_preference_enabled(/datum/client_preference/tgui_say))
+	if(client?.prefs?.read_preference(/datum/preference/toggle/tgui_say) && client?.prefs?.read_preference(/datum/preference/toggle/tgui_say_emotes))
 		winset(src, null, "command=[client.tgui_say_create_open_command(ME_CHANNEL)]")
 		return
 
 	client?.start_thinking()
 	client?.start_typing()
-	var/message = tgui_input_text(usr, "Type your message:", "Emote", multiline = TRUE)
+	var/message = tgui_input_text(src, "Type your message:", "Emote", multiline = TRUE)
 	client?.stop_thinking()
 
 	if(message)
@@ -47,14 +47,14 @@
 	set name = "Whisper verb"
 	set category = "IC.TGUI Say" //CHOMPEdit
 
-	if(is_preference_enabled(/datum/client_preference/tgui_say))
+	if(client?.prefs?.read_preference(/datum/preference/toggle/tgui_say))
 		winset(src, null, "command=[client.tgui_say_create_open_command(WHIS_CHANNEL)]")
 		return
 
-	if(is_preference_enabled(/datum/client_preference/show_typing_indicator_subtle))
+	if(client?.prefs?.read_preference(/datum/preference/toggle/show_typing_indicator_subtle))
 		client?.start_thinking()
 		client?.start_typing()
-	var/message = tgui_input_text(usr, "Type your message:", "Whisper")
+	var/message = tgui_input_text(src, "Type your message:", "Whisper")
 	client?.stop_thinking()
 
 	if(message)
@@ -65,14 +65,14 @@
 	set category = "IC.TGUI Say" //CHOMPEdit
 	set desc = "Emote to nearby people (and your pred/prey)"
 
-	if(is_preference_enabled(/datum/client_preference/tgui_say))
+	if(client?.prefs?.read_preference(/datum/preference/toggle/tgui_say) && client?.prefs?.read_preference(/datum/preference/toggle/tgui_say_emotes))
 		winset(src, null, "command=[client.tgui_say_create_open_command(SUBTLE_CHANNEL)]")
 		return
 
-	if(is_preference_enabled(/datum/client_preference/show_typing_indicator_subtle))
+	if(client?.prefs?.read_preference(/datum/preference/toggle/show_typing_indicator_subtle))
 		client?.start_thinking()
 		client?.start_typing()
-	var/message = tgui_input_text(usr, "Type your message:", "Subtle", multiline = TRUE)
+	var/message = tgui_input_text(src, "Type your message:", "Subtle", multiline = TRUE)
 	client?.stop_thinking()
 
 	if(message)

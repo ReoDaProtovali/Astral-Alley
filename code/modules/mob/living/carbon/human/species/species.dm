@@ -18,9 +18,6 @@
 	var/fire_icon_state = "humanoid"						// The icon_state used inside OnFire.dmi for when on fire.
 	var/suit_storage_icon = 'icons/inventory/suit_store/mob.dmi' // Icons used for worn items in suit storage slot.
 
-	var/pixel_offset_x = 0                    // CHOMPedit. Used for offsetting 64x64 and up icons.
-	var/pixel_offset_y = 0                    // CHOMPedit. Used for offsetting 64x64 and up icons.
-
 	// Damage overlay and masks.
 	var/damage_overlays = 'icons/mob/human_races/masks/dam_human.dmi'
 	var/damage_mask = 'icons/mob/human_races/masks/dam_mask_human.dmi'
@@ -44,8 +41,8 @@
 	var/show_ssd = "fast asleep"
 	var/virus_immune
 	var/short_sighted										// Permanent weldervision.
-	var/blood_name = "blood"								// Name for the species' blood.
-	var/blood_reagents = "iron"								// Reagent(s) that restore lost blood. goes by reagent IDs.
+	var/blood_name = REAGENT_ID_BLOOD								// Name for the species' blood.
+	var/blood_reagents = REAGENT_ID_IRON								// Reagent(s) that restore lost blood. goes by reagent IDs.
 	var/blood_volume = 560									// Initial blood volume.
 	var/bloodloss_rate = 1									// Multiplier for how fast a species bleeds out. Higher = Faster
 	var/blood_level_safe = 0.85								//"Safe" blood level; above this, you're OK
@@ -109,9 +106,10 @@
 	var/gasp_volume = 50 // Self-explanatory, define this separately on your species if the sound files are louder.
 	var/death_volume = 50 // Self-explanatory, define this separately on your species if the sound files are louder.
 	// var/species_sounds_herm // If you want a custom sound played for other genders, just add them like so
+	// CHOMPEdit End
+
 	var/footstep = FOOTSTEP_MOB_HUMAN
 	var/list/special_step_sounds = null
-	// CHOMPEdit End
 
 	// Combat/health/chem/etc. vars.
 	var/total_health = 100								// How much damage the mob can take before entering crit.
@@ -150,7 +148,7 @@
 	var/vision_flags = SEE_SELF							// Same flags as glasses.
 
 	// Death vars.
-	var/meat_type = /obj/item/weapon/reagent_containers/food/snacks/meat/human
+	var/meat_type = /obj/item/reagent_containers/food/snacks/meat/human
 	var/remains_type = /obj/effect/decal/remains/xeno
 	var/gibbed_anim = "gibbed-h"
 	var/dusted_anim = "dust-h"
@@ -161,9 +159,9 @@
 
 	// Environment tolerance/life processes vars.
 	var/reagent_tag											//Used for metabolizing reagents.
-	var/breath_type = "oxygen"								// Non-oxygen gas breathed, if any.
-	var/poison_type = "phoron"								// Poisonous air.
-	var/exhale_type = "carbon_dioxide"						// Exhaled gas type.
+	var/breath_type = GAS_O2								// Non-oxygen gas breathed, if any.
+	var/poison_type = GAS_PHORON								// Poisonous air.
+	var/exhale_type = GAS_CO2								// Exhaled gas type.
 	var/water_breather = FALSE
 	var/suit_inhale_sound = 'sound/effects/mob_effects/suit_breathe_in.ogg'
 	var/suit_exhale_sound = 'sound/effects/mob_effects/suit_breathe_out.ogg'
@@ -239,8 +237,12 @@
 	var/has_glowing_eyes = 0								// Whether the eyes are shown above all lighting
 	var/water_movement = 0									// How much faster or slower the species is in water
 	var/snow_movement = 0									// How much faster or slower the species is on snow
+	var/dirtslip = FALSE									// If we slip over dirt or not.
 	var/can_space_freemove = FALSE							// Can we freely move in space?
 	var/can_zero_g_move	= FALSE								// What about just in zero-g non-space?
+
+	var/swim_mult = 1										//multiplier to our z-movement rate for swimming
+	var/climb_mult = 1										//multiplier to our z-movement rate for lattices/catwalks
 
 	var/item_slowdown_mod = 1								// How affected by item slowdown the species is.
 	var/primitive_form										// Lesser form, if any (ie. monkey for humans)
@@ -249,8 +251,24 @@
 	var/gluttonous											// Can eat some mobs. 1 for mice, 2 for monkeys, 3 for people.
 	var/soft_landing = FALSE								// Can fall down and land safely on small falls.
 
+	var/drippy = FALSE 										// If we drip or not. Primarily for goo beings.
+	var/photosynthesizing = FALSE							// If we get nutrition from light or not.
+	var/shrinks = FALSE										// If we shrink when we have no nutrition. Not added but here for downstream's sake.
+	var/grows = FALSE										// Same as above but if we grow when >1000 nutrition.
+	var/crit_mod = 1										// Used for when we go unconscious. Used downstream.
+	var/list/env_traits = list()
+	var/pixel_offset_x = 0									// Used for offsetting 64x64 and up icons.
+	var/pixel_offset_y = 0									// Used for offsetting 64x64 and up icons.
+	var/rad_levels = NORMAL_RADIATION_RESISTANCE		//For handle_mutations_and_radiation
+	var/rad_removal_mod = 1
+
+
 	var/rarity_value = 1									// Relative rarity/collector value for this species.
 	var/economic_modifier = 2								// How much money this species makes
+
+	var/vanity_base_fit 									//when shapeshifting using vanity_copy_to, this allows you to have add something so they can go back to their original species fit
+
+	var/mudking = FALSE										// If we dirty up tiles quicker
 
 	var/vore_belly_default_variant = "H"
 
@@ -353,8 +371,8 @@
 		inherent_verbs |= /mob/living/carbon/human/proc/regurgitate
 
 	update_sort_hint()
-// CHOMPadd
-/datum/species/proc/get_footstep_sounds()
+
+/datum/species/proc/get_footsep_sounds()
 	return footstep
 
 /datum/species/proc/update_sort_hint()
@@ -367,26 +385,26 @@
 	return sanitizeName(name, MAX_NAME_LEN, robot)
 
 /datum/species/proc/equip_survival_gear(var/mob/living/carbon/human/H,var/extendedtank = 0,var/comprehensive = 0)
-	var/boxtype = /obj/item/weapon/storage/box/survival //Default survival box
+	var/boxtype = /obj/item/storage/box/survival //Default survival box
 
 	var/synth = H.isSynthetic()
 
 	//Empty box for synths
 	if(synth)
-		boxtype = /obj/item/weapon/storage/box/survival/synth
+		boxtype = /obj/item/storage/box/survival/synth
 
 	//Special box with extra equipment
 	else if(comprehensive)
-		boxtype = /obj/item/weapon/storage/box/survival/comp
+		boxtype = /obj/item/storage/box/survival/comp
 
 	//Create the box
-	var/obj/item/weapon/storage/box/box = new boxtype(H)
+	var/obj/item/storage/box/box = new boxtype(H)
 
 	//If not synth, they get an air tank (if they breathe)
 	if(!synth && breath_type)
 		//Create a tank (if such a thing exists for this species)
-		var/tanktext = "/obj/item/weapon/tank/emergency/" + "[breath_type]"
-		var/obj/item/weapon/tank/emergency/tankpath //Will force someone to come look here if they ever alter this path.
+		var/tanktext = "/obj/item/tank/emergency/" + "[breath_type]"
+		var/obj/item/tank/emergency/tankpath //Will force someone to come look here if they ever alter this path.
 		if(extendedtank)
 			tankpath = text2path(tanktext + "/engi")
 			if(!tankpath) //Is it just that there's no /engi?
@@ -400,7 +418,7 @@
 
 	//If they are synth, they get a smol battery
 	else if(synth)
-		new /obj/item/device/fbp_backup_cell(box)
+		new /obj/item/fbp_backup_cell(box)
 
 	box.calibrate_size()
 
@@ -473,33 +491,33 @@
 	//VOREStation Edit Start - Headpats and Handshakes.
 	if(H.zone_sel.selecting == "head")
 		H.visible_message( \
-			"<span class='notice'>[H] pats [target] on the head.</span>", \
-			"<span class='notice'>You pat [target] on the head.</span>", )
+			span_notice("[H] pats [target] on the head."), \
+			span_notice("You pat [target] on the head."), )
 	else if(H.zone_sel.selecting == "r_hand" || H.zone_sel.selecting == "l_hand")
 		H.visible_message( \
-			"<span class='notice'>[H] shakes [target]'s hand.</span>", \
-			"<span class='notice'>You shake [target]'s hand.</span>", )
+			span_notice("[H] shakes [target]'s hand."), \
+			span_notice("You shake [target]'s hand."), )
 	else if(H.zone_sel.selecting == "mouth")
 		H.visible_message( \
-			"<span class='notice'>[H] boops [target]'s nose.</span>", \
-			"<span class='notice'>You boop [target] on the nose.</span>", )
+			span_notice("[H] boops [target]'s nose."), \
+			span_notice("You boop [target] on the nose."), )
 	else if(H.zone_sel.selecting == BP_GROIN) //CHOMPEdit
 		H.vore_bellyrub(target)
 	//VOREStation Edit End
 	else
-		H.visible_message("<span class='notice'>[H] hugs [target] to make [t_him] feel better!</span>", \
-						"<span class='notice'>You hug [target] to make [t_him] feel better!</span>")
+		H.visible_message(span_notice("[H] hugs [target] to make [t_him] feel better!"), \
+						span_notice("You hug [target] to make [t_him] feel better!"))
 
 /datum/species/proc/remove_inherent_verbs(var/mob/living/carbon/human/H)
 	if(inherent_verbs)
 		for(var/verb_path in inherent_verbs)
-			remove_verb(H,verb_path)  //CHOMPEdit
+			remove_verb(H, verb_path)
 	return
 
 /datum/species/proc/add_inherent_verbs(var/mob/living/carbon/human/H)
 	if(inherent_verbs)
 		for(var/verb_path in inherent_verbs)
-			add_verb(H,verb_path) //CHOMPEdit TGPanel
+			add_verb(H, verb_path)
 	return
 
 /datum/species/proc/handle_post_spawn(var/mob/living/carbon/human/H) //Handles anything not already covered by basic species assignment.
@@ -591,8 +609,8 @@
 	return FALSE
 
 // Allow species to display interesting information in the human stat panels
-/datum/species/proc/Stat(var/mob/living/carbon/human/H)
-	return
+/datum/species/proc/get_status_tab_items(var/mob/living/carbon/human/H)
+	return ""
 
 /datum/species/proc/handle_water_damage(var/mob/living/carbon/human/H, var/amount = 0)
 	amount *= 1 - H.get_water_protection()
@@ -610,12 +628,40 @@
 			return FALSE
 
 		if(!silent)
-			to_chat(H, SPAN_NOTICE("You manage to lower impact of the fall and land safely."))
-			landing.visible_message("<b>\The [H]</b> lowers down from above, landing safely.")
+			to_chat(H, span_notice("You manage to lower impact of the fall and land safely."))
+			landing.visible_message(span_infoplain(span_bold("\The [H]") + " lowers down from above, landing safely."))
 			playsound(H, "rustle", 25, 1)
 		return TRUE
 
 	return FALSE
 
 /datum/species/proc/post_spawn_special(mob/living/carbon/human/H)
+	return
+
+/datum/species/proc/update_misc_tabs(var/mob/living/carbon/human/H)
+	return
+
+/datum/species/proc/handle_base_eyes(var/mob/living/carbon/human/H, var/custom_base)
+	if(selects_bodytype && custom_base) // only bother if our src species datum allows bases and one is assigned
+		var/datum/species/S = GLOB.all_species[custom_base]
+
+		//extract default eye data from species datum
+		var/baseHeadPath = S.has_limbs[BP_HEAD]["path"] //has_limbs is a list of lists
+
+		if(!baseHeadPath)
+			return // exit if we couldn't find a head path from the base.
+
+		var/obj/item/organ/external/head/baseHead = new baseHeadPath()
+		if(!baseHead)
+			return // exit if we didn't create the base properly
+
+		var/obj/item/organ/external/head/targetHead = H.get_organ(BP_HEAD)
+		if(!targetHead)
+			return // don't bother if target mob has no head for whatever reason
+
+		targetHead.eye_icon = baseHead.eye_icon
+		targetHead.eye_icon_location = baseHead.eye_icon_location
+
+		if(!QDELETED(baseHead) && baseHead)
+			qdel(baseHead)
 	return

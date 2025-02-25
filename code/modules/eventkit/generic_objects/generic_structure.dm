@@ -35,7 +35,7 @@
 			else
 				icon = 'icons/obj/props/decor.dmi'
 			icon_state = icon_state_on
-			src.visible_message("<span class='notice'>[text_activated]</span>")
+			src.visible_message(span_notice("[text_activated]"))
 			update_icon()
 			if(effect == 1)
 				var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
@@ -53,13 +53,13 @@
 						continue
 
 					var/flash_time = 10
-					if(istype(O, /mob/living/carbon/human))
+					if(ishuman(O))
 						var/mob/living/carbon/human/H = O
-						//VOREStation Edit Start
 						if(H.nif && H.nif.flag_check(NIF_V_FLASHPROT,NIF_FLAGS_VISION))
 							H.nif.notify("High intensity light detected, and blocked!",TRUE)
 							continue
-						//VOREStation Edit End
+						if(FLASHPROOF in H.mutations)
+							continue
 						if(!H.eyecheck() <= 0)
 							continue
 						flash_time *= H.species.flash_mod
@@ -76,7 +76,15 @@
 					O.Weaken(flash_time)
 			if(effect == 4)
 				var/atom/o = new object(get_turf(src))
-				src.visible_message("<span class='notice'>[src] has produced [o]!</span>")
+				src.visible_message(span_notice("[src] has produced [o]!"))
+			if(effect == 5)
+				for (var/mob/O in viewers(src, null))
+					if(get_dist(src, O) > 7)
+						continue
+
+					if(ishuman(O))
+						var/mob/living/carbon/human/H = O
+						H.fear = 200
 			if(sound_activated)
 				playsound(src, sound_activated, 50, 1)
 		else if(togglable)
@@ -89,18 +97,18 @@
 				icon = icon_off
 			else
 				icon = 'icons/obj/props/decor.dmi'
-			src.visible_message("<span class='notice'>[text_deactivated]</span>")
+			src.visible_message(span_notice("[text_deactivated]"))
 			update_icon()
 	return ..()
 
-/obj/structure/generic_structure/attackby(obj/item/weapon/W as obj, mob/user as mob)
+/obj/structure/generic_structure/attackby(obj/item/W as obj, mob/user as mob)
 	if(wrenchable && W.has_tool_quality(TOOL_WRENCH))
 		add_fingerprint(user)
+		to_chat(user, span_notice("You [anchored? "un" : ""]secured \the [src]!"))
 		anchored = !anchored
-		to_chat(user, "<span class='notice'>You [anchored? "un" : ""]secured \the [src]!</span>")
 
 /client/proc/generic_structure()
-	set category = "Fun.Event Kit" //CHOMPEdit
+	set category = "Fun.Event Kit"
 	set name = "Spawn Generic Structure"
 	set desc = "Spawn a customisable structure with a range of different options."
 
@@ -268,7 +276,7 @@
 		if(s_icon_state_on == "Upload Own Sprite")
 			s_icon2 = input(usr, "Choose an image file to upload. Images that are not 32x32 will need to have their positions offset.","Upload Icon") as null|file
 		s_delay = tgui_input_number(src, "Do you want it to take time to put turn on? Choose a number of deciseconds to activate, or 0 for instant.", "Delay")
-		var/check_effect = tgui_alert(src, "Produce an effect on activation?", "Effect?", list("No", "Spark", "Flicker Lights", "Flash", "Spawn Item", "Cancel"))
+		var/check_effect = tgui_alert(src, "Produce an effect on activation?", "Effect?", list("No", "Spark", "Flicker Lights", "Flash", "Spawn Item", "Fear", "Cancel"))
 		if(!check_effect || check_effect == "Cancel")
 			return
 		if(check_effect == "No")
@@ -282,6 +290,8 @@
 		if(check_effect == "Spawn Item")
 			s_effect = 4
 			s_object = get_path_from_partial_text()
+		if(check_effect == "Fear")
+			s_effect = 5
 		var/check_sound = tgui_alert(src, "Play a sound when turning on?", "Sound", list("Yes", "No", "Cancel"))
 		if(!check_sound || check_sound == "Cancel")
 			return

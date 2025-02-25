@@ -1,8 +1,8 @@
-import { toFixed } from 'common/math';
+import { Box, LabeledList, ProgressBar, Section } from 'tgui-core/components';
+import { toFixed } from 'tgui-core/math';
 
-import { Box, LabeledList, ProgressBar, Section } from '../../components';
 import { damageRange, damages, stats, tempColors } from './constants';
-import { occupant } from './types';
+import type { occupant } from './types';
 
 export const OperatingComputerPatient = (props: { occupant: occupant }) => {
   const { occupant } = props;
@@ -74,7 +74,7 @@ export const OperatingComputerPatient = (props: { occupant: occupant }) => {
         </LabeledList>
       </Section>
       <Section title="Current Procedure">
-        {occupant.surgery && occupant.surgery.length ? (
+        {occupant.surgery?.length ? (
           <LabeledList>
             {occupant.surgery.map((limb) => (
               <LabeledList.Item key={limb.name} label={limb.name}>

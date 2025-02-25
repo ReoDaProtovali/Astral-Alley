@@ -23,9 +23,9 @@
 				if("alert")
 					post_status("alert", params["alert"])
 				if("setmsg1")
-					message1 = clean_input("Line 1", "Enter Message Text", message1)
+					message1 = tgui_input_text(ui.user,"Line 1", "Enter Message Text", message1, encode=TRUE)
 				if("setmsg2")
-					message2 = clean_input("Line 2", "Enter Message Text", message2)
+					message2 = tgui_input_text(ui.user, "Line 2", "Enter Message Text", message2, encode=TRUE)
 				else
 					post_status(params["statdisp"])
 			return TRUE
@@ -45,7 +45,7 @@
 			status_signal.data["msg1"] = data1
 			status_signal.data["msg2"] = data2
 			var/mob/user = pda.fingerprintslast
-			if(istype(pda.loc, /mob/living))
+			if(isliving(pda.loc))
 				user = pda.loc
 			log_admin("STATUS: [user] set status screen with [pda]. Message: [data1] [data2]")
 			message_admins("STATUS: [user] set status screen with [pda]. Message: [data1] [data2]")
@@ -264,7 +264,7 @@
 		JaniData["user_loc"] = list("x" = 0, "y" = 0)
 
 	var/MopData[0]
-	for(var/obj/item/weapon/mop/M in GLOB.all_mops)//GLOB.janitorial_equipment)
+	for(var/obj/item/mop/M in GLOB.all_mops)//GLOB.janitorial_equipment)
 		var/turf/ml = get_turf(M)
 		if(ml)
 			if(ml.z != cl.z)
