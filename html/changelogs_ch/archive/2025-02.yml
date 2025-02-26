@@ -475,3 +475,23 @@
       oriented. Power should flow now
   - maptweak: Tweaked security doors to have correct access levels. Main areas will
       now be Security instead of Security equipment.
+2025-02-26:
+  Astral-Alley-Bot:
+  - bugfix: cleanbot not reaching dirty turfs
+  - qol: lets proteans do weaver things again
+  - rscadd: Examining a mob now puts their description in a box. It's pretty.
+  - rscadd: Id card to exploration borg to transfer points from the cataloguer and
+      use on the vendor
+  - maptweak: Whiteship mk2 rewiring plus duplicate fax removal
+  - code_imp: Fax machine inits instead of new now, fixes superposed pod fax machines
+      not updating the list.
+  - qol: spacebar no longers triggers throw
+  - rscadd: New pAI chassis
+  - bugfix: liquid belly examine setting not saving
+  - rscadd: You can now hold spacebar to throw items.
+  - image: Added a new tail, the feathered raptor tail
+  CHOMPStation2StaffMirrorBot:
+  - code_imp: disabled some testing logs by default (now require -DTESTING to be set
+      while compiling)
+  - rscadd: Vampiric crew now have a source of nutrition in the loadout under the
+      Utility tab!
