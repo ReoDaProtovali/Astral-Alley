@@ -109097,7 +109097,6 @@
 /obj/item/storage/bible,
 /obj/structure/table/rack,
 /obj/effect/decal/cleanable/dirt,
-/obj/effect/decal/cleanable/dirt,
 /obj/random/maintenance/clean,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport)
@@ -134919,7 +134918,6 @@
 /area/hallway/primary/seconddeck/dockhallway)
 "vDz" = (
 /obj/structure/catwalk,
-/obj/structure/catwalk,
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -138517,12 +138515,6 @@
 /obj/random/tech_supply,
 /turf/simulated/floor/plating,
 /area/maintenance/research)
-"whK" = (
-/obj/structure/catwalk,
-/obj/structure/catwalk,
-/obj/random/trash,
-/turf/simulated/floor/plating/turfpack/station,
-/area/space)
 "whL" = (
 /obj/structure/table/marble,
 /obj/machinery/chemical_dispenser/bar_soft/full{
@@ -174469,7 +174461,7 @@ qbe
 aZR
 iEO
 glU
-whK
+eVY
 gTq
 nWz
 jtH
