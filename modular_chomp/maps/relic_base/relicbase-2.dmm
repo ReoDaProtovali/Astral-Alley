@@ -5112,7 +5112,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/floor_decal/rust,
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/zone_divider,
 /turf/simulated/floor/plating,
 /area/maintenance/firstdeck/foreport/simulated_caves)
@@ -17470,7 +17469,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/random/trash_pile,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
@@ -17914,7 +17912,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/vomit,
 /obj/effect/decal/cleanable/generic,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
@@ -17936,7 +17933,6 @@
 /obj/effect/decal/cleanable/greenglow,
 /obj/effect/decal/cleanable/blood,
 /obj/item/clothing/under/lawyer/female,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
@@ -17973,7 +17969,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/item/toy/plushie/squid/orange,
 /obj/random/contraband,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
@@ -17990,7 +17985,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/ammo_magazine/m762/empty,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
@@ -18005,7 +17999,6 @@
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/ash,
 /obj/effect/floor_decal/asteroid,
-/obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/water/indoors{
 	color = "#604838";
 	desc = "A body of water.  It seems shallow enough to walk through, if needed. It is also rather murky, no way of telling what might be in it...";
