@@ -369,6 +369,128 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+<<<<<<< HEAD
+=======
+/obj/effect/catwalk_plated/techmaint,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck3_Dorms_ForCorridor1)
+"acE" = (
+/obj/effect/floor_decal/spline/fancy/wood/corner{
+	dir = 8
+	},
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/Office_Lounge)
+"acF" = (
+/obj/structure/table/gamblingtable,
+/obj/effect/floor_decal/carpet{
+	dir = 1
+	},
+/turf/simulated/floor/carpet/blue,
+/area/crew_quarters/Rec_Lounge)
+"acG" = (
+/obj/structure/bed/chair/comfy/brown{
+	dir = 8
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 1
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 4
+	},
+/obj/effect/floor_decal/carpet{
+	dir = 5
+	},
+/turf/simulated/floor/carpet/blue,
+/area/crew_quarters/Rec_Lounge)
+"acH" = (
+/obj/item/stack/material/cardboard{
+	amount = 25
+	},
+/obj/item/packageWrap{
+	pixel_x = -4;
+	pixel_y = 6
+	},
+/obj/item/packageWrap{
+	pixel_x = -5;
+	pixel_y = 10
+	},
+/obj/item/hand_labeler{
+	pixel_y = 1;
+	pixel_x = 2
+	},
+/obj/item/tape_roll{
+	pixel_x = 12;
+	pixel_y = -3
+	},
+/obj/structure/table/sifwoodentable,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/wood/sif,
+/area/crew_quarters/Rec_Lounge)
+"acI" = (
+/obj/item/storage/pill_bottle/dice{
+	pixel_x = 7;
+	pixel_y = 6
+	},
+/obj/item/storage/pill_bottle/dice{
+	pixel_y = 0
+	},
+/obj/structure/table/sifwoodentable,
+/turf/simulated/floor/wood/sif,
+/area/crew_quarters/Rec_Lounge)
+"acJ" = (
+/obj/item/deck/cah/black{
+	pixel_x = -2;
+	pixel_y = -2
+	},
+/obj/item/deck/cah{
+	pixel_x = 2;
+	pixel_y = 2
+	},
+/obj/item/deck/schnapsen{
+	pixel_y = 8;
+	pixel_x = -6
+	},
+/obj/structure/table/sifwoodentable,
+/turf/simulated/floor/wood/sif,
+/area/crew_quarters/Rec_Lounge)
+"acK" = (
+/obj/item/storage/pill_bottle/dice_nerd{
+	pixel_y = 9;
+	pixel_x = 5
+	},
+/obj/item/storage/dicecup/loaded{
+	pixel_y = 5;
+	pixel_x = -6
+	},
+/obj/item/storage/dicecup/loaded{
+	pixel_y = 1
+	},
+/obj/structure/table/sifwoodentable,
+/obj/structure/noticeboard{
+	dir = 8;
+	pixel_x = 28
+	},
+/turf/simulated/floor/wood/sif,
+/area/crew_quarters/Rec_Lounge)
+"acL" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 6;
+	pixel_x = -1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
+"acM" = (
+/obj/effect/floor_decal/spline/plain/corner,
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/obj/structure/cable/green{
+	icon_state = "1-4"
+	},
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -384,6 +506,51 @@
 /obj/machinery/portable_atmospherics/powered/pump/filled,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Medical_ForStarChamber3)
+<<<<<<< HEAD
+=======
+"acP" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
+"acQ" = (
+/obj/machinery/door/firedoor/multi_tile/glass{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/arrows/blue{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/arrows/blue{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/airlock/angled_bay/double/color{
+	dir = 8;
+	name = "Recreational Lounge"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/crew_quarters/Rec_Lounge)
+"acR" = (
+/obj/structure/disposalpipe/sortjunction{
+	dir = 4;
+	name = "Rec Lounge";
+	sortType = "Rec Lounge"
+	},
+/turf/simulated/floor/wood/sif,
+/area/crew_quarters/Rec_Lounge)
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 "acS" = (
 /obj/structure/bed/chair/sofa/beige{
 	dir = 1
@@ -400,6 +567,100 @@
 	},
 /turf/simulated/floor/tiled,
 /area/crew_quarters/Chomp_Lounge)
+<<<<<<< HEAD
+=======
+"acZ" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1;
+	icon_state = "pipe-c"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals5{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 10
+	},
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/Office_Lounge)
+"ada" = (
+/obj/effect/floor_decal/industrial/arrows/blue{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/arrows/blue{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/crew_quarters/Office_Lounge)
+"adb" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
+"adc" = (
+/obj/effect/floor_decal/industrial/arrows/blue{
+	dir = 8
+	},
+/obj/effect/floor_decal/industrial/arrows/blue{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/crew_quarters/Rec_Lounge)
+"add" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
+/turf/simulated/floor/wood/sif,
+/area/crew_quarters/Rec_Lounge)
+"ade" = (
+/obj/effect/catwalk_plated/techmaint,
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck3_Center_Star)
+"adf" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 4
+	},
+/turf/simulated/floor/carpet,
+/area/crew_quarters/Office_Lounge)
+"adg" = (
+/obj/structure/table/woodentable,
+/turf/simulated/floor/carpet,
+/area/crew_quarters/Office_Lounge)
+"adh" = (
+/obj/structure/bed/chair/office/dark{
+	dir = 8
+	},
+/turf/simulated/floor/carpet,
+/area/crew_quarters/Office_Lounge)
+"adi" = (
+/obj/machinery/disposal,
+/obj/structure/disposalpipe/trunk,
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/Office_Lounge)
+"adj" = (
+/obj/effect/floor_decal/carpet,
+/turf/simulated/floor/carpet/blue,
+/area/crew_quarters/Rec_Lounge)
+"adk" = (
+/obj/effect/floor_decal/carpet{
+	dir = 4
+	},
+/obj/machinery/alarm{
+	pixel_y = 22
+	},
+/turf/simulated/floor/carpet,
+/area/crew_quarters/Office_Lounge)
+"adl" = (
+/obj/structure/table/woodentable,
+/obj/random/powercell/device,
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/Office_Lounge)
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 "adm" = (
 /obj/structure/cable/green{
 	icon_state = "2-4"
@@ -494,14 +755,160 @@
 	},
 /turf/space,
 /area/space)
+"aek" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
+"ael" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
+"aem" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 10
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
+"aen" = (
+/obj/effect/floor_decal/steeldecal/steel_decals5{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/turf/simulated/floor/wood/sif,
+/area/crew_quarters/Rec_Lounge)
+"aeo" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
 "aep" = (
 /obj/machinery/power/tesla_coil/relay,
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/engineering/Engine_Tech_Storage)
+"aeq" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
+"aer" = (
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
+"aes" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_3_Deck_Hall)
+"aet" = (
+/obj/random/trash_pile,
+/obj/random/junk,
+/obj/random/junk,
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck3_Center_Star)
+"aeu" = (
+/obj/random/trash_pile,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck3_Center_Star)
+"aev" = (
+/obj/random/trash,
+/obj/random/cutout,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck3_Center_Star)
+"aew" = (
+/obj/structure/table/rack/shelf,
+/obj/random/maintenance/misc,
+/obj/random/maintenance/misc,
+/obj/random/maintenance/misc,
+/obj/random/maintenance/misc,
+/obj/random/maintenance/morestuff,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck3_Center_Star)
 "aex" = (
 /turf/simulated/floor/glass,
 /area/medical/Stairwell)
+"aey" = (
+/obj/random/trash_pile,
+/obj/random/junk,
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck3_Center_Star)
+"aez" = (
+/obj/structure/table/rack/shelf,
+/obj/random/maintenance/clean,
+/obj/random/instrument,
+/turf/simulated/floor/plating,
+/area/hallway/Central_3_Deck_Hall)
+"aeA" = (
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/hallway/Central_3_Deck_Hall)
+"aeB" = (
+/obj/structure/table/standard,
+/obj/random/maintenance/morestuff,
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/hallway/Central_3_Deck_Hall)
+"aeC" = (
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/hallway/Central_3_Deck_Hall)
+"aeD" = (
+/obj/structure/table/standard,
+/obj/random/maintenance/misc,
+/obj/random/maintenance/misc,
+/turf/simulated/floor/plating,
+/area/hallway/Central_3_Deck_Hall)
+"aeE" = (
+/obj/structure/table/rack/shelf,
+/obj/random/maintenance/clean,
+/obj/random/maintenance/engineering,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/hallway/Central_3_Deck_Hall)
+"aeF" = (
+/obj/structure/table/rack/shelf,
+/obj/random/maintenance/clean,
+/obj/random/maintenance/medical,
+/obj/random/junk,
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/hallway/Central_3_Deck_Hall)
+"aeG" = (
+/obj/effect/floor_decal/spline/plain,
+/turf/simulated/floor/wood/alt,
+/area/crew_quarters/Chomp_Dinner_1)
+"aeH" = (
+/obj/effect/floor_decal/spline/plain,
+/turf/simulated/floor/wood/alt,
+/area/crew_quarters/Chomp_Dinner_2)
 "afc" = (
 /obj/structure/railing/grey{
 	dir = 8
@@ -5060,10 +5467,6 @@
 	color = "yellow"
 	},
 /obj/structure/disposalpipe/down,
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
-	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Bridge_AftStarCorridor1)
 "bQP" = (
@@ -6470,6 +6873,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
+/obj/effect/floor_decal/spline/plain{
+	dir = 4
+	},
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_2)
 "cpZ" = (
@@ -6491,17 +6897,6 @@
 /obj/effect/floor_decal/steeldecal/steel_decals_central2,
 /turf/simulated/floor/tiled,
 /area/hallway/Star_Breakroom)
-"cqo" = (
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 8
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 1
-	},
-/turf/simulated/open,
-/area/maintenance/Deck3_Medical_ForStarChamber2)
 "cqp" = (
 /turf/simulated/wall,
 /area/maintenance/Deck3_Medical_PortChamber2)
@@ -8282,10 +8677,22 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/hydro,
 /area/crew_quarters/Public_Hydroponics)
+=======
+/obj/effect/floor_decal/steeldecal/steel_decals5{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 6;
+	pixel_x = -1
+	},
+/turf/simulated/floor/wood/sif,
+/area/crew_quarters/Rec_Lounge)
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 "cXq" = (
 /obj/machinery/alarm{
 	pixel_y = 22
@@ -8597,7 +9004,6 @@
 /obj/machinery/alarm{
 	pixel_y = 25
 	},
-/obj/random/trash_pile,
 /obj/random/junk,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Center_Star)
@@ -10299,13 +10705,12 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/medical/Resleeving)
 "dKj" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/borderfloor/corner2,
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 1
-	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals5,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 8
 	},
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_2)
@@ -10428,10 +10833,6 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Dorms_ForPort_Corridor1)
 "dMf" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 9
-	},
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
@@ -10439,10 +10840,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 1
-	},
 /obj/structure/disposalpipe/junction,
+/obj/effect/floor_decal/steeldecal/steel_decals5,
+/obj/effect/floor_decal/steeldecal/steel_decals6,
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_2)
 "dMh" = (
@@ -11762,16 +12162,6 @@
 /obj/random/maintenance/misc,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Center_Star)
-"edc" = (
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
-	},
-/obj/structure/railing/grey{
-	color = "yellow"
-	},
-/turf/simulated/open,
-/area/maintenance/Deck3_Center_Port)
 "ede" = (
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
@@ -11912,10 +12302,6 @@
 	},
 /obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
 	dir = 1
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
 	},
 /turf/simulated/open,
 /area/maintenance/Bridge_Substation)
@@ -13536,9 +13922,6 @@
 /obj/structure/disposalpipe/down{
 	dir = 8
 	},
-/obj/structure/railing/grey{
-	color = "yellow"
-	},
 /obj/structure/lattice,
 /turf/simulated/open,
 /area/maintenance/Deck3_Center_Star)
@@ -13867,16 +14250,6 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/Engine1_Substation)
-"eNh" = (
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 1
-	},
-/obj/structure/railing/grey{
-	color = "yellow"
-	},
-/turf/simulated/open,
-/area/maintenance/Deck3_Dorms_StarChamber1)
 "eNk" = (
 /obj/structure/closet/secure_closet/personal/cabinet,
 /obj/structure/sign/poster{
@@ -14702,7 +15075,7 @@
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
-/turf/simulated/open,
+/turf/simulated/floor/glass/reinforced,
 /area/maintenance/Deck3_Engineering_AftStarCorridor1)
 "eWp" = (
 /obj/machinery/portable_atmospherics/canister/air,
@@ -15109,10 +15482,6 @@
 /area/crew_quarters/sleep/Dormitory_03)
 "fbp" = (
 /obj/structure/railing/grey{
-	color = "yellow";
-	dir = 8
-	},
-/obj/structure/railing/grey{
 	color = "yellow"
 	},
 /obj/structure/cable/green{
@@ -15312,10 +15681,6 @@
 /obj/structure/railing/grey{
 	color = "yellow";
 	dir = 4
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 8
 	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Bridge_ForStarChamber1)
@@ -16539,10 +16904,6 @@
 /obj/structure/railing/grey{
 	color = "yellow";
 	dir = 8
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 1
 	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Medical_StarCorridor1)
@@ -17792,20 +18153,6 @@
 /obj/effect/floor_decal/corner/beige/border,
 /turf/simulated/floor/tiled,
 /area/crew_quarters/Dorm_Corridor_2)
-"fNg" = (
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
-	},
-/obj/structure/railing/grey{
-	color = "yellow"
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 8
-	},
-/turf/simulated/open,
-/area/maintenance/Deck3_Dorms_StarChamber1)
 "fNB" = (
 /obj/item/radio/intercom{
 	dir = 4;
@@ -19599,9 +19946,6 @@
 	desc = "Ladder for emergency use only";
 	pixel_y = 32
 	},
-/obj/structure/railing/grey{
-	color = "yellow"
-	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Bridge_AftStarCorridor1)
 "grs" = (
@@ -21349,10 +21693,6 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/Engine3_Control_Room)
-"gXC" = (
-/obj/effect/floor_decal/steeldecal/steel_decals_central2,
-/turf/simulated/floor/tiled,
-/area/hallway/Central_3_Deck_Hall)
 "gXD" = (
 /obj/structure/table/glass,
 /obj/random/medical/pillbottle,
@@ -22020,9 +22360,7 @@
 /turf/simulated/open,
 /area/maintenance/Deck3_Dorms_AftCorridor2)
 "hlY" = (
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 1
-	},
+/obj/effect/floor_decal/steeldecal/steel_decals6,
 /turf/simulated/floor/tiled,
 /area/hallway/Central_3_Deck_Hall)
 "hmh" = (
@@ -22356,7 +22694,11 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/sign/small/warning/emerg_only{
 	desc = "Ladder for emergency use only";
+<<<<<<< HEAD
 	pixel_y = 32
+=======
+	pixel_y = -32
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 	},
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/Dorms_Substation)
@@ -24044,7 +24386,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
-/obj/effect/floor_decal/steeldecal/steel_decals_central2,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_3_Deck_Hall)
 "hVL" = (
@@ -24257,10 +24601,6 @@
 /obj/structure/sign/small/warning/emerg_only{
 	desc = "Ladder for emergency use only";
 	pixel_x = -32
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
 	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Dorms_AftCorridor2)
@@ -24872,10 +25212,6 @@
 	},
 /obj/machinery/atmospherics/pipe/zpipe/up/scrubbers{
 	dir = 1
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 8
 	},
 /obj/structure/lattice,
 /turf/simulated/open,
@@ -26094,10 +26430,6 @@
 /obj/structure/railing/grey{
 	color = "yellow"
 	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
-	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Dorms_ForPort_Corridor1)
 "iDQ" = (
@@ -27243,9 +27575,6 @@
 /obj/structure/sign/small/warning/emerg_only{
 	desc = "Ladder for emergency use only";
 	pixel_y = 32
-	},
-/obj/structure/railing/grey{
-	color = "yellow"
 	},
 /turf/simulated/open,
 /area/engineering/Atmospherics_Substation)
@@ -34933,7 +35262,9 @@
 /obj/structure/cable/green{
 	icon_state = "1-4"
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/Aft_3_Deck_Central_Corridor_1)
 "lDw" = (
@@ -38038,10 +38369,6 @@
 	color = "yellow";
 	dir = 4
 	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 1
-	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Center_Port)
 "mtv" = (
@@ -38579,10 +38906,6 @@
 /obj/machinery/atmospherics/pipe/zpipe/down/scrubbers{
 	dir = 8
 	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
-	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Engineering_StarChamber1)
 "mEC" = (
@@ -38602,10 +38925,6 @@
 	dir = 8
 	},
 /obj/structure/disposalpipe/down,
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
-	},
 /turf/simulated/open,
 /area/engineering/Atmospherics_Substation)
 "mFz" = (
@@ -40620,10 +40939,6 @@
 	},
 /obj/structure/disposalpipe/down{
 	dir = 1
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
 	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Medical_AftPortChamber1)
@@ -44565,10 +44880,6 @@
 	color = "yellow";
 	dir = 4
 	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 8
-	},
 /turf/simulated/open,
 /area/engineering/Construction_Area)
 "oDg" = (
@@ -45194,9 +45505,13 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+<<<<<<< HEAD
 /obj/effect/floor_decal/steeldecal/steel_decals_central2{
 	dir = 1
 	},
+=======
+/obj/effect/floor_decal/steeldecal/steel_decals6,
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /turf/simulated/floor/tiled,
 /area/crew_quarters/Public_Hydroponics)
 "oML" = (
@@ -46661,7 +46976,9 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
-/obj/effect/floor_decal/steeldecal/steel_decals_central2,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 4
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_3_Deck_Hall)
 "pnr" = (
@@ -47028,11 +47345,16 @@
 /area/bridge/HoP_Office)
 "ptV" = (
 /obj/structure/railing/grey{
+<<<<<<< HEAD
 	color = "yellow"
 	},
 /obj/structure/railing/grey{
 	color = "yellow";
 	dir = 4
+=======
+	color = "yellow";
+	dir = 1
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 	},
 /turf/simulated/open,
 /area/maintenance/Dorms_Substation)
@@ -47204,10 +47526,6 @@
 	id = "Med Lockdown";
 	desc = "A heavily reinforced gate, sector lockdown!";
 	name = "Lockdown Gate"
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
 	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Medical_AftCorridor1)
@@ -48640,7 +48958,9 @@
 /turf/simulated/wall/r_wall,
 /area/maintenance/Deck3_Dorms_ForStarChamber1)
 "pTW" = (
-/obj/effect/floor_decal/steeldecal/steel_decals_central2,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 1
+	},
 /turf/simulated/floor/tiled,
 /area/hallway/Aft_3_Deck_Central_Corridor_1)
 "pUa" = (
@@ -50165,10 +50485,6 @@
 /obj/structure/railing/grey{
 	color = "yellow"
 	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 4
-	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Center_Port)
 "qul" = (
@@ -50232,7 +50548,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
-/turf/simulated/open,
+/turf/simulated/floor/glass/reinforced,
 /area/maintenance/Deck3_Engineering_AftStarCorridor1)
 "qvB" = (
 /obj/structure/railing/grey{
@@ -50642,12 +50958,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Dorms_PortChamber1)
-"qBK" = (
-/obj/structure/railing/grey{
-	color = "yellow"
-	},
-/turf/simulated/open,
-/area/maintenance/Deck3_Bridge_ForStarChamber1)
 "qBN" = (
 /obj/machinery/atmospherics/unary/cryo_cell,
 /obj/effect/floor_decal/industrial/hatch/blue,
@@ -53578,17 +53888,6 @@
 	color = "#8bbbd5"
 	},
 /area/medical/Genetics_Lab)
-"rxL" = (
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 8
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 1
-	},
-/turf/simulated/open,
-/area/maintenance/Deck3_Center_Star)
 "rxM" = (
 /obj/effect/floor_decal/industrial/warning/color{
 	dir = 9
@@ -54175,9 +54474,12 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/structure/disposalpipe/segment,
 /obj/effect/floor_decal/spline/plain/corner,
+<<<<<<< HEAD
 /obj/effect/floor_decal/spline/plain/corner{
 	dir = 1
 	},
+=======
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_2)
 "rKL" = (
@@ -55806,6 +56108,9 @@
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 8
 	},
+/obj/effect/floor_decal/spline/plain{
+	dir = 8
+	},
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_1)
 "son" = (
@@ -55926,6 +56231,7 @@
 /obj/machinery/newscaster{
 	pixel_x = -28
 	},
+/obj/effect/floor_decal/spline/plain,
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_1)
 "spK" = (
@@ -56208,8 +56514,13 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+<<<<<<< HEAD
 /obj/structure/disposalpipe/segment,
 /turf/simulated/floor/tiled/techmaint,
+=======
+/obj/effect/floor_decal/steeldecal/steel_decals6,
+/turf/simulated/floor/tiled,
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /area/hallway/Central_3_Deck_Hall)
 "suQ" = (
 /obj/structure/bed/chair/comfy/blue{
@@ -62010,10 +62321,6 @@
 /obj/structure/railing/grey{
 	color = "yellow"
 	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 8
-	},
 /turf/simulated/open,
 /area/maintenance/Deck3_Medical_AftStarChamber1)
 "urv" = (
@@ -63578,16 +63885,11 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck3_Center_Star)
 "uRe" = (
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 9
-	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	icon_state = "4-8"
 	},
+/obj/effect/floor_decal/steeldecal/steel_decals5,
+/obj/effect/floor_decal/steeldecal/steel_decals6,
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_1)
 "uRh" = (
@@ -63983,17 +64285,6 @@
 /obj/effect/catwalk_plated,
 /turf/simulated/floor/plating,
 /area/harbor/Star_3_Deck_Airlock_Access)
-"uWK" = (
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 1
-	},
-/obj/structure/railing/grey{
-	color = "yellow";
-	dir = 8
-	},
-/turf/simulated/open,
-/area/maintenance/Deck3_Dorms_AftCorridor1)
 "uWM" = (
 /obj/structure/cable/green{
 	icon_state = "2-4"
@@ -65791,6 +66082,7 @@
 /turf/simulated/floor/plating,
 /area/engineering/Atmospherics_Chamber)
 "vAr" = (
+<<<<<<< HEAD
 /obj/machinery/door/firedoor/multi_tile/glass,
 /obj/effect/floor_decal/industrial/arrows/blue,
 /obj/effect/floor_decal/industrial/arrows/blue{
@@ -65802,6 +66094,18 @@
 	req_one_access = list(35,28)
 	},
 /turf/simulated/floor/tiled/techmaint,
+=======
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 /area/hallway/Central_3_Deck_Hall)
 "vAs" = (
 /obj/structure/table/bench/wooden,
@@ -68541,10 +68845,21 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+<<<<<<< HEAD
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/green/border,
 /turf/simulated/floor/tiled/hydro,
 /area/crew_quarters/Public_Hydroponics)
+=======
+/obj/effect/floor_decal/steeldecal/steel_decals5{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 5
+	},
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/Office_Lounge)
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 "wsh" = (
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/effect/catwalk_plated/techmaint,
@@ -69293,20 +69608,16 @@
 /turf/simulated/floor/wood/alt/tile,
 /area/bridge/sleep/CMO_Quarters)
 "wGk" = (
-/obj/effect/floor_decal/steeldecal/steel_decals6{
-	dir = 8
-	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/borderfloor/corner2,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
 	dir = 4
 	},
-/obj/effect/floor_decal/steeldecal/steel_decals_central2{
-	dir = 1
-	},
 /obj/structure/cable/green{
 	icon_state = "2-4"
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals5,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 8
 	},
 /turf/simulated/floor/wood/alt,
 /area/crew_quarters/Chomp_Dinner_1)
@@ -74129,9 +74440,6 @@
 /obj/structure/railing/grey{
 	color = "yellow";
 	dir = 8
-	},
-/obj/structure/railing/grey{
-	color = "yellow"
 	},
 /turf/simulated/open,
 /area/engineering/Construction_Area)
@@ -89427,8 +89735,8 @@ cHp
 uDZ
 ufa
 eaY
-hEy
-aPD
+pac
+gZd
 joW
 sOE
 jXa
@@ -89685,8 +89993,8 @@ cHp
 lyY
 ufa
 eaY
-pac
-gZd
+hEy
+aPD
 vlk
 rqi
 ciH
@@ -95874,7 +96182,7 @@ gbu
 xKv
 pKJ
 wOf
-lGS
+gbu
 oAF
 cji
 szC
@@ -100240,7 +100548,7 @@ aoa
 apc
 hbN
 hbN
-edc
+mtj
 jGw
 mqp
 yjc
@@ -101273,12 +101581,19 @@ nIK
 hRU
 yeI
 tFY
+<<<<<<< HEAD
 spz
 kjO
 kjO
 kjO
 ecn
 nVI
+=======
+adW
+adR
+adN
+aeG
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 krO
 abu
 abu
@@ -101533,6 +101848,13 @@ djz
 bDU
 sei
 xQe
+<<<<<<< HEAD
+=======
+adO
+aeG
+krO
+aNZ
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 kjO
 kjO
 ecn
@@ -101792,9 +102114,13 @@ bDU
 mbG
 krO
 iUN
+<<<<<<< HEAD
 abu
 ecn
 bDU
+=======
+aeG
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 krO
 abu
 abu
@@ -102047,12 +102373,19 @@ nIK
 uNS
 clM
 bDU
+<<<<<<< HEAD
 mbG
 dfC
 eGw
 eGw
 sLg
 nVI
+=======
+eDs
+bDU
+bDU
+aeG
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 fzr
 aii
 eGw
@@ -102145,7 +102478,7 @@ xvd
 fke
 uXD
 xNK
-iSZ
+uBy
 xWY
 dHa
 dHa
@@ -102307,10 +102640,16 @@ aci
 myk
 cDw
 aqL
+<<<<<<< HEAD
 uFS
 uFS
 soc
+=======
+adM
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 hyp
+soc
+uFS
 dFk
 uFS
 uFS
@@ -102402,7 +102741,7 @@ xso
 tja
 kWj
 ihy
-uWK
+iSZ
 uBy
 xWY
 dHa
@@ -102576,7 +102915,7 @@ bDU
 bDU
 uRe
 kqx
-gXC
+aes
 gnN
 nBA
 tSE
@@ -103874,6 +104213,7 @@ fMV
 fMV
 fMV
 xVX
+<<<<<<< HEAD
 hlY
 hNR
 vHG
@@ -103886,6 +104226,20 @@ mgf
 mgf
 mgf
 qTV
+=======
+adx
+aek
+vHG
+aeo
+hnK
+ael
+acL
+vOQ
+trw
+nhh
+mgf
+aek
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 eSH
 pTW
 rfG
@@ -104135,7 +104489,11 @@ llg
 eFE
 suJ
 dbX
+<<<<<<< HEAD
 iSr
+=======
+aeq
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 sCL
 urV
 elR
@@ -105167,7 +105525,11 @@ iyI
 cAb
 vAr
 qzC
+<<<<<<< HEAD
 loX
+=======
+aer
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 fdg
 hkm
 hvi
@@ -105424,6 +105786,7 @@ fMV
 kOv
 hlY
 dYZ
+<<<<<<< HEAD
 vHG
 mgf
 mgf
@@ -105439,6 +105802,22 @@ pTW
 rfG
 rfG
 rfG
+=======
+aes
+hnK
+aem
+acP
+gnN
+loO
+fIA
+loO
+abY
+abb
+jHx
+jHx
+jHx
+jHx
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 hAK
 ylX
 rfG
@@ -105670,6 +106049,7 @@ uOJ
 uDe
 bTy
 glv
+<<<<<<< HEAD
 kpt
 hKr
 trw
@@ -105679,6 +106059,17 @@ faZ
 hKr
 fSx
 trw
+=======
+adJ
+hJj
+aeE
+aeB
+aez
+hJj
+adD
+hJj
+adB
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 cBg
 qZw
 nDx
@@ -105929,6 +106320,14 @@ uDe
 bTy
 glv
 kpt
+<<<<<<< HEAD
+=======
+adH
+eJE
+aeC
+aeA
+hJj
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 fsM
 hHz
 eJK
@@ -105942,8 +106341,14 @@ uZq
 eZw
 xrz
 pqg
+<<<<<<< HEAD
 mAN
 jkH
+=======
+pqg
+adj
+aen
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 cXn
 klU
 kII
@@ -106187,6 +106592,7 @@ wUV
 xAP
 iaG
 kpt
+<<<<<<< HEAD
 hKr
 eyi
 fIA
@@ -106194,6 +106600,15 @@ loO
 fbn
 hKr
 opy
+=======
+hJj
+aeF
+aeD
+aez
+hJj
+adE
+hJj
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 mXc
 cwt
 rPK
@@ -106704,7 +107119,7 @@ dQh
 dQh
 dKj
 dYf
-gXC
+aeo
 vOQ
 trw
 nhh
@@ -106951,10 +107366,15 @@ azv
 niB
 bPo
 uLM
+<<<<<<< HEAD
 qba
 rkX
-cpV
+=======
 rKJ
+qba
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
+cpV
+qba
 mKX
 qba
 oHP
@@ -107047,7 +107467,7 @@ mnR
 lsX
 nUd
 aPi
-det
+gRp
 hKY
 dHa
 dHa
@@ -107207,7 +107627,13 @@ nIK
 uNS
 aAf
 sMS
+<<<<<<< HEAD
 qXA
+=======
+eBa
+dQh
+aeH
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 fvy
 fgj
 fgj
@@ -107482,6 +107908,7 @@ bmm
 dcT
 fWQ
 jIz
+<<<<<<< HEAD
 hJj
 gdv
 gqm
@@ -107489,6 +107916,15 @@ uCo
 cKW
 hSU
 pFB
+=======
+bmm
+aet
+vjD
+xDJ
+aet
+kUR
+adq
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 iKC
 rhR
 mAN
@@ -107740,6 +108176,7 @@ bmm
 xnB
 iaz
 tnv
+<<<<<<< HEAD
 hJj
 hyk
 emy
@@ -107747,6 +108184,15 @@ uCo
 aMG
 oum
 pFB
+=======
+bmm
+aew
+xDJ
+aeu
+xDJ
+kUR
+adr
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 hTf
 lzK
 uBr
@@ -107998,12 +108444,21 @@ bmm
 fbp
 oNI
 jdD
+<<<<<<< HEAD
 hJj
 cPX
 kcJ
 eiF
 kVg
 pjb
+=======
+bmm
+aeu
+vjD
+xDJ
+jgh
+kUR
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 soF
 wbf
 hCW
@@ -108256,6 +108711,7 @@ bmm
 kle
 nPk
 dES
+<<<<<<< HEAD
 hJj
 dOb
 lZm
@@ -108266,6 +108722,18 @@ moz
 iMo
 ers
 eMl
+=======
+bmm
+aey
+xDJ
+xDJ
+uQW
+kUR
+kUR
+kUR
+kUR
+kUR
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 dmd
 kxK
 kUR
@@ -108690,7 +109158,7 @@ dHa
 dHa
 dHa
 gEV
-qBK
+evx
 bHz
 gTB
 gTB
@@ -109044,7 +109512,7 @@ rFD
 rFD
 xGM
 mtz
-rxL
+iwG
 eXY
 eXY
 apc
@@ -109291,8 +109759,12 @@ eXY
 gMH
 hFX
 eXY
+<<<<<<< HEAD
 xDJ
 hxM
+=======
+aev
+>>>>>>> 2b291d8725 (Soluna Nexus Map fix 1.9 (#10402))
 eXY
 iwG
 iwG
@@ -110382,7 +110854,7 @@ uYL
 qMf
 msL
 tZq
-eNh
+fbj
 gwf
 gbc
 fbj
@@ -110641,7 +111113,7 @@ qMf
 phH
 mmM
 xtq
-fNg
+qSC
 gbc
 gms
 uER
@@ -125266,7 +125738,7 @@ boE
 jah
 boE
 pjr
-cqo
+xFd
 xFd
 isJ
 wLV
