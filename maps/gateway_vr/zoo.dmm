@@ -2614,15 +2614,6 @@
 	},
 /turf/simulated/shuttle/floor/darkred,
 /area/awaymission/zoo/syndieship)
-"hG" = (
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/obj/structure/bed/chair{
-	dir = 8
-	},
-/turf/simulated/shuttle/floor/darkred,
-/area/awaymission/zoo/syndieship)
 "hH" = (
 /obj/structure/closet,
 /turf/simulated/shuttle/floor/darkred,
@@ -33735,7 +33726,7 @@ gN
 gN
 gr
 hu
-hG
+hu
 hu
 hu
 gN
