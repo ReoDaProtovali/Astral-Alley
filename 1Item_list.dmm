@@ -9802,12 +9802,6 @@
 	icon_state = "vault"
 	},
 /area/survivalpod)
-"cSJ" = (
-/obj/item/clothing/suit/storage/labcoat/fluff/zeke_vincir_3/axis,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
 "cSK" = (
 /obj/item/reagent_containers/food/snacks/donut/homer/jelly,
 /turf/simulated/fitness{
@@ -11744,12 +11738,6 @@
 /area/survivalpod)
 "dwK" = (
 /obj/item/stack/tile/floor/eris/steel/violetcorener,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
-"dwO" = (
-/obj/item/clothing/head/axiscap/officer,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -15082,12 +15070,6 @@
 	icon_state = "vault"
 	},
 /area/survivalpod)
-"evu" = (
-/obj/item/clothing/under/axis,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
 "evA" = (
 /obj/machinery/power/rtg/abductor/built,
 /turf/simulated/fitness{
@@ -15514,12 +15496,6 @@
 /area/survivalpod)
 "eBw" = (
 /obj/item/fuel_assembly/phoron,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
-"eBC" = (
-/obj/item/clothing/suit/space/void/merc/axis/axisrig,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -28839,12 +28815,6 @@
 	icon_state = "vault"
 	},
 /area/survivalpod)
-"ivh" = (
-/obj/item/clothing/suit/space/void/merc/axis/sovrig,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
 "ivm" = (
 /obj/machinery/door/airlock/angled_bay/standard/color/security,
 /turf/simulated/fitness{
@@ -35911,12 +35881,6 @@
 	icon_state = "vault"
 	},
 /area/survivalpod)
-"kyF" = (
-/obj/item/clothing/suit/storage/labcoat/fluff/zeke_vincir_3/axis/officer,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
 "kyR" = (
 /obj/vehicle/train/rover/engine/dunebuggy,
 /turf/simulated/fitness{
@@ -38087,12 +38051,6 @@
 /mob/living/simple_mob/horror/Master,
 /turf/simulated/floor/atoll,
 /area/survivalpod)
-"ldJ" = (
-/obj/item/clothing/head/axiscap,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
 "ldO" = (
 /obj/item/clothing/accessory/solgov/department/exploration/jumper,
 /turf/simulated/fitness{
@@ -39315,12 +39273,6 @@
 /area/survivalpod)
 "lxU" = (
 /obj/item/clothing/suit/storage/hooded/wintercoat/security/hos,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
-"lxZ" = (
-/obj/item/clothing/head/helmet/space/void/axis/merc/sovrigh,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -42950,12 +42902,6 @@
 	icon_state = "vault"
 	},
 /area/survivalpod)
-"mBv" = (
-/obj/item/clothing/head/helmet/space/void/merc/axis/axisrigh,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
 "mBw" = (
 /obj/item/storage/belt/explorer/pathfinder,
 /turf/simulated/fitness{
@@ -46345,12 +46291,6 @@
 	icon_state = "vault"
 	},
 /area/survivalpod)
-"nyQ" = (
-/obj/item/clothing/head/helmet/axis,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
 "nyR" = (
 /obj/machinery/transhuman/synthprinter,
 /turf/simulated/fitness{
@@ -47490,12 +47430,6 @@
 /area/survivalpod)
 "nOM" = (
 /obj/item/clothing/under/away/daedalus,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
-"nON" = (
-/obj/item/clothing/under/axis/officer,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -57922,12 +57856,6 @@
 /area/survivalpod)
 "qXe" = (
 /obj/machinery/vending/hydronutrients/brig,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
-"qXp" = (
-/obj/item/clothing/suit/space/void/merc/axis,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -72058,12 +71986,6 @@
 /area/survivalpod)
 "vgS" = (
 /obj/item/stack/flag/yellow,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
-"vhb" = (
-/obj/item/clothing/head/helmet/space/void/merc/axis,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -100206,8 +100128,13 @@ eZW
 ecy
 apG
 viO
+<<<<<<< HEAD
 vOT
 ldJ
+=======
+bSW
+bSW
+>>>>>>> 0a1aca1221 (Removes the Nazi sprites in the code. Again. For like the umpteenth time. (#10407))
 chs
 iPo
 vGa
@@ -100407,9 +100334,15 @@ kQl
 wlP
 mnD
 gYy
+<<<<<<< HEAD
 vOT
 vOT
 dwO
+=======
+bSW
+bSW
+bSW
+>>>>>>> 0a1aca1221 (Removes the Nazi sprites in the code. Again. For like the umpteenth time. (#10407))
 bsR
 pbv
 kez
@@ -102588,7 +102521,7 @@ jKg
 rDt
 fyU
 ubC
-nyQ
+bSW
 fxM
 lvD
 wth
@@ -102807,8 +102740,13 @@ aBa
 rmi
 whe
 wov
+<<<<<<< HEAD
 sZf
 vhb
+=======
+wKe
+bSW
+>>>>>>> 0a1aca1221 (Removes the Nazi sprites in the code. Again. For like the umpteenth time. (#10407))
 hxh
 dNn
 tey
@@ -103010,7 +102948,7 @@ aQE
 eAQ
 jGW
 nCH
-mBv
+bSW
 dXS
 mnh
 tzO
@@ -103054,7 +102992,7 @@ tlR
 bRZ
 gXF
 pHC
-qXp
+bSW
 mEF
 trR
 gCt
@@ -103206,7 +103144,7 @@ dEJ
 cNT
 qay
 owM
-lxZ
+bSW
 azT
 lsS
 oUq
@@ -103256,8 +103194,8 @@ rcG
 edf
 jck
 fch
-eBC
-ivh
+bSW
+bSW
 tId
 qMt
 gRN
@@ -106305,7 +106243,7 @@ jPD
 hcY
 iMx
 fdu
-evu
+bSW
 aYV
 eka
 iKh
@@ -106507,7 +106445,7 @@ qxc
 mmT
 jlN
 qwZ
-nON
+bSW
 jpb
 vqW
 kif
@@ -107580,7 +107518,7 @@ eeF
 nAp
 mFl
 uXh
-cSJ
+bSW
 gqy
 jQc
 gKe
@@ -107782,7 +107720,7 @@ vwy
 gEF
 vAD
 lpT
-kyF
+bSW
 saf
 nVY
 vbW
