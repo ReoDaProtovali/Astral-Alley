@@ -240,11 +240,14 @@
 /obj/effect/decal/cleanable/blood,
 /turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
 /area/mine/explored/underdark)
+<<<<<<< HEAD
 "bf" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
 /area/mine/explored/underdark)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "bg" = (
 /obj/machinery/door/airlock/uranium,
 /obj/effect/decal/cleanable/blood/drip,
@@ -699,7 +702,7 @@ ad
 ad
 bd
 bd
-bf
+bd
 bg
 bh
 bh

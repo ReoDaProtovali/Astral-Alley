@@ -177,6 +177,7 @@
 	outdoors = 0
 	},
 /area/submap/DemonPool)
+<<<<<<< HEAD
 "lV" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -184,6 +185,8 @@
 	outdoors = 0
 	},
 /area/submap/DemonPool)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "md" = (
 /mob/living/simple_mob/animal/space/bats/cult/strong{
 	faction = "demon"
@@ -311,11 +314,14 @@
 /obj/random/junk,
 /turf/simulated/mineral/ignore_mapgen,
 /area/template_noop)
+<<<<<<< HEAD
 "yS" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor,
 /area/submap/DemonPool)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "yW" = (
 /obj/structure/cult/pylon,
 /turf/simulated/floor/cult,
@@ -341,6 +347,7 @@
 	outdoors = 0
 	},
 /area/submap/DemonPool)
+<<<<<<< HEAD
 "zU" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -356,6 +363,8 @@
 	outdoors = 0
 	},
 /area/submap/DemonPool)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "Ag" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -372,6 +381,7 @@
 /obj/structure/loot_pile/surface/bones,
 /turf/simulated/floor,
 /area/submap/DemonPool)
+<<<<<<< HEAD
 "AF" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -379,6 +389,8 @@
 	outdoors = 0
 	},
 /area/submap/DemonPool)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "AH" = (
 /obj/structure/cult/tome,
 /turf/simulated/floor/cult,
@@ -450,10 +462,6 @@
 	outdoors = 0
 	},
 /area/submap/DemonPool)
-"JM" = (
-/obj/effect/decal/cleanable/dirt,
-/turf/simulated/floor/outdoors/dirt,
-/area/submap/DemonPool)
 "JN" = (
 /obj/structure/flora/tree/sif,
 /turf/simulated/floor/outdoors/dirt,
@@ -478,6 +486,7 @@
 /obj/effect/gibspawner/human,
 /turf/simulated/floor/cult,
 /area/submap/DemonPool)
+<<<<<<< HEAD
 "Lh" = (
 /mob/living/simple_mob/animal/space/bats/cult/strong{
 	faction = "demon"
@@ -488,6 +497,8 @@
 	outdoors = 0
 	},
 /area/submap/DemonPool)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "Lu" = (
 /obj/fire,
 /turf/simulated/floor/outdoors/dirt,
@@ -561,6 +572,7 @@
 /obj/effect/spawner/lootdrop,
 /turf/simulated/floor/cult,
 /area/submap/DemonPool)
+<<<<<<< HEAD
 "Ro" = (
 /obj/structure/simple_door,
 /obj/effect/decal/cleanable/dirt,
@@ -584,6 +596,8 @@
 	outdoors = 0
 	},
 /area/submap/DemonPool)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "Vf" = (
 /mob/living/simple_mob/animal/space/bats/cult/strong{
 	faction = "demon"
@@ -729,8 +743,8 @@ Jo
 Jo
 YF
 KM
-zU
-zZ
+tq
+pX
 Jo
 Jo
 Jo
@@ -756,9 +770,9 @@ Jo
 Jo
 Jo
 Jo
-RP
+tq
 Zc
-RL
+zI
 YF
 Jo
 Jo
@@ -776,7 +790,7 @@ eW
 (5,1,1) = {"
 eW
 vJ
-Lh
+mU
 Jo
 Jo
 Jo
@@ -787,23 +801,23 @@ Jo
 YF
 fW
 tq
-RP
+tq
 Jo
 Jo
 Jo
 JV
 vJ
-JM
-JM
-JM
+Ag
+Ag
+Ag
 lr
 JN
 eW
 "}
 (6,1,1) = {"
 eW
-JM
-AF
+Ag
+tq
 dG
 YF
 YF
@@ -813,9 +827,9 @@ Jo
 Jo
 Jo
 Jo
-RP
+tq
 zI
-Ro
+bh
 lG
 Jo
 Jo
@@ -823,13 +837,13 @@ Hb
 JV
 Hb
 vJ
-JM
+Ag
 eW
 eW
 "}
 (7,1,1) = {"
 jv
-JM
+Ag
 CV
 Jo
 YF
@@ -1073,7 +1087,7 @@ eW
 (16,1,1) = {"
 bw
 jv
-RP
+tq
 Jo
 YF
 YF
@@ -1099,7 +1113,7 @@ eW
 "}
 (17,1,1) = {"
 jv
-JM
+Ag
 Ag
 dG
 YF
@@ -1107,7 +1121,7 @@ YF
 Jo
 Jo
 eR
-yS
+ag
 Jo
 Jo
 Jo
@@ -1127,7 +1141,7 @@ eW
 (18,1,1) = {"
 eW
 vJ
-AF
+tq
 Jo
 Jo
 Jo
@@ -1153,7 +1167,7 @@ eW
 "}
 (19,1,1) = {"
 eW
-JM
+Ag
 md
 YF
 Jo
@@ -1191,7 +1205,7 @@ Jo
 Jo
 Jo
 DZ
-lV
+hW
 hW
 Jo
 Jo
@@ -1270,8 +1284,8 @@ CV
 Jo
 Jo
 hr
-zU
-RP
+tq
+tq
 VK
 VK
 VK

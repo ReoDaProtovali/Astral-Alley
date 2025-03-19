@@ -708,8 +708,12 @@
 /turf/unsimulated/wall,
 /area/ai_multicam_room)
 "ce" = (
+<<<<<<< HEAD
 /obj/effect/step_trigger/teleporter/planetary_fall/virgo3b,
 /turf/space/transit/south,
+=======
+/turf/space/transit/south/virgo3b/planet_fall,
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 /area/space)
 "cf" = (
 /turf/space/transit/south,
