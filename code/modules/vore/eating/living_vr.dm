@@ -529,14 +529,26 @@
 		return
 
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+<<<<<<< HEAD
 	if(tasted == src) //CHOMPEdit Start
+=======
+
+	if(tasted == src)
+>>>>>>> e3ded73c26 ([MIRROR] Reflexive Biting and Personal Space Traits (#10452))
 		visible_message(span_vwarning("[src] licks themself!"),span_notice("You lick yourself. You taste rather like [tasted.get_taste_message()]."),span_infoplain(span_bold("Slurp!")))
 		balloon_alert_visible("Licks themself!", "Tastes like [tasted.get_taste_message()]")
 	else
+		if((tasted.touch_reaction_flags & SPECIES_TRAIT_PERSONAL_BUBBLE) && (!tasted.grabbed_by.len || !tasted.stat))
+			visible_message(span_warning("[src] tries to lick [tasted], but they dodge out of the way!"),span_warning("You try to lick [tasted], but they deftly avoid your attempt."))
+			return
 		visible_message(span_vwarning("[src] licks [tasted]!"),span_notice("You lick [tasted]. They taste rather like [tasted.get_taste_message()]."),span_infoplain(span_bold("Slurp!")))
+<<<<<<< HEAD
 		balloon_alert_visible("Licks [tasted]!", "Tastes like [tasted.get_taste_message()]")
 		//CHOMPEdit End
 
+=======
+		//balloon_alert_visible("licks [tasted]!", "tastes like [tasted.get_taste_message()]")
+>>>>>>> e3ded73c26 ([MIRROR] Reflexive Biting and Personal Space Traits (#10452))
 
 /mob/living/proc/get_taste_message(allow_generic = 1)
 	if(!vore_taste && !allow_generic)
@@ -574,13 +586,25 @@
 		return
 
 	setClickCooldown(DEFAULT_ATTACK_COOLDOWN)
+<<<<<<< HEAD
 	if(smelled == src) //CHOMPEdit Start
+=======
+
+	if(smelled == src)
+>>>>>>> e3ded73c26 ([MIRROR] Reflexive Biting and Personal Space Traits (#10452))
 		visible_message(span_vwarning("[src] smells themself!"),span_notice("You smell yourself. You smell like [smelled.get_smell_message()]."),span_infoplain(span_bold("Sniff!")))
 		balloon_alert_visible("Smells themself!", "Smells like [smelled.get_smell_message()]")
 	else
+		if((smelled.touch_reaction_flags & SPECIES_TRAIT_PERSONAL_BUBBLE) && (!smelled.grabbed_by.len || !smelled.stat))
+			visible_message(span_warning("[src] tries to smell [smelled], but they dodge out of the way!"),span_warning("You try to smell [smelled], but they deftly avoid your attempt."))
+			return
 		visible_message(span_vwarning("[src] smells [smelled]!"),span_notice("You smell [smelled]. They smell like [smelled.get_smell_message()]."),span_infoplain(span_bold("Sniff!")))
+<<<<<<< HEAD
 		balloon_alert_visible("Smells [smelled]!", "Smells like [smelled.get_smell_message()]")
 		//CHOMPEdit End
+=======
+		//balloon_alert_visible("smells [smelled]!", "smells like [smelled.get_smell_message()]")
+>>>>>>> e3ded73c26 ([MIRROR] Reflexive Biting and Personal Space Traits (#10452))
 
 /mob/living/proc/get_smell_message(allow_generic = 1)
 	if(!vore_smell && !allow_generic)
