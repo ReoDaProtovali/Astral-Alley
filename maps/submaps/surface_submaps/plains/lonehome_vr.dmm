@@ -81,11 +81,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/virgo3b,
 /area/submap/lonehome)
+<<<<<<< HEAD
 "ar" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/virgo3b,
 /area/submap/lonehome)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "as" = (
 /turf/simulated/floor/wood/broken,
 /area/submap/lonehome)
@@ -124,11 +127,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/virgo3b,
 /area/submap/lonehome)
+<<<<<<< HEAD
 "ax" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/tiled/white/virgo3b,
 /area/submap/lonehome)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "ay" = (
 /obj/item/clothing/suit/storage/apron/white,
 /obj/effect/decal/cleanable/dirt,
@@ -449,11 +455,14 @@
 	},
 /turf/simulated/floor/wood/virgo3b,
 /area/submap/lonehome)
+<<<<<<< HEAD
 "br" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/broken,
 /area/submap/lonehome)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "bs" = (
 /obj/item/pen,
 /turf/simulated/floor/wood/virgo3b,
@@ -644,11 +653,14 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet/virgo3b,
 /area/submap/lonehome)
+<<<<<<< HEAD
 "bT" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/carpet/sblucarpet/virgo3b,
 /area/submap/lonehome)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "bU" = (
 /obj/item/photo,
 /obj/item/photo{
@@ -952,11 +964,14 @@
 /obj/structure/simple_door/wood,
 /turf/simulated/floor/plating/external/virgo3b,
 /area/submap/lonehome)
+<<<<<<< HEAD
 "cM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/external/virgo3b,
 /area/submap/lonehome)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "cN" = (
 /obj/item/flashlight{
 	pixel_x = 2;
@@ -1168,7 +1183,7 @@ ab
 ab
 ae
 aj
-ar
+aq
 aE
 aQ
 aQ
@@ -1226,11 +1241,11 @@ aJ
 as
 aR
 aZ
-ar
+aq
 ad
 aq
 bM
-bT
+aZ
 aZ
 ck
 ct
@@ -1256,7 +1271,7 @@ ba
 bj
 ad
 bB
-br
+aj
 bU
 cd
 cl
@@ -1305,14 +1320,14 @@ af
 ad
 av
 ES
-ar
-ar
+aq
+aq
 bl
-br
+aj
 bC
 bN
-ar
-ar
+aq
+aq
 aq
 as
 ES
@@ -1370,7 +1385,7 @@ aj
 ak
 cv
 cC
-cM
+cv
 ad
 cy
 cU
@@ -1384,7 +1399,7 @@ aa
 aa
 ag
 am
-ax
+aw
 aH
 aq
 bc
@@ -1397,7 +1412,7 @@ ce
 cm
 ad
 cD
-cM
+cv
 ad
 cy
 cT
@@ -1438,7 +1453,7 @@ aa
 aa
 ad
 ao
-ax
+aw
 aw
 aT
 as

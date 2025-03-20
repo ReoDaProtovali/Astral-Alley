@@ -3293,7 +3293,7 @@
 /turf/simulated/floor/plating,
 /area/shuttle/bearcat/maintenance_engine_pod_starboard)
 "sg" = (
-/obj/machinery/pointdefense{
+/obj/machinery/power/pointdefense{
 	id_tag = "bearcat_pd"
 	},
 /turf/simulated/floor/airless,
@@ -3353,7 +3353,7 @@
 /turf/simulated/shuttle/plating/airless/carry,
 /area/shuttle/bearcat/maintenance_engine_pod_starboard)
 "Di" = (
-/obj/machinery/pointdefense{
+/obj/machinery/power/pointdefense{
 	id_tag = "bearcat_pd"
 	},
 /turf/simulated/floor/airless,

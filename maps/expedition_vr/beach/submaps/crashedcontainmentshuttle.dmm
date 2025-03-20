@@ -302,11 +302,14 @@
 /obj/effect/decal/remains/human,
 /turf/simulated/mineral/floor/ignore_mapgen/cave,
 /area/submap/crashedcontainmentshuttle)
+<<<<<<< HEAD
 "bn" = (
 /obj/effect/decal/cleanable/blood/drip,
 /obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/shuttle/floor/black,
 /area/submap/crashedcontainmentshuttle)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "bo" = (
 /obj/structure/extinguisher_cabinet,
 /turf/simulated/shuttle/wall/dark,
@@ -334,10 +337,6 @@
 /area/submap/crashedcontainmentshuttle)
 "bu" = (
 /obj/structure/loot_pile/maint/technical,
-/turf/simulated/shuttle/floor/white,
-/area/submap/crashedcontainmentshuttle)
-"bv" = (
-/obj/effect/decal/cleanable/blood/drip,
 /turf/simulated/shuttle/floor/white,
 /area/submap/crashedcontainmentshuttle)
 "bw" = (
@@ -638,7 +637,7 @@ an
 ak
 ak
 ak
-bn
+aF
 aD
 ak
 ak
@@ -884,7 +883,7 @@ ak
 ak
 ak
 bq
-bv
+bt
 bC
 aq
 ah

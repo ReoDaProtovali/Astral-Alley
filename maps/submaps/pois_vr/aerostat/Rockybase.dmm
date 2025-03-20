@@ -618,6 +618,7 @@
 /obj/machinery/vending/medical,
 /turf/simulated/floor/tiled/techfloor/virgo2,
 /area/submap/virgo2/Rockybase)
+<<<<<<< HEAD
 "ch" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -628,18 +629,23 @@
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "cj" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/material/shard,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
+<<<<<<< HEAD
 "ck" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/plating/virgo2,
 /area/submap/virgo2/Rockybase)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "cl" = (
 /obj/item/mecha_parts/part/gygax_armour,
 /turf/simulated/floor/plating/virgo2,
@@ -1856,9 +1862,9 @@ ao
 al
 bL
 bO
-ch
+bO
 ct
-ch
+bO
 ao
 al
 ag
@@ -1888,9 +1894,9 @@ ao
 al
 bM
 bS
-ci
-ck
-ci
+bU
+bU
+bU
 ao
 al
 ag
@@ -1921,7 +1927,7 @@ al
 bN
 bT
 cj
-ck
+bU
 bU
 cJ
 al
@@ -1952,8 +1958,8 @@ ao
 al
 bO
 bU
-ck
-ci
+bU
+bU
 bU
 bW
 al
@@ -1984,7 +1990,7 @@ ao
 al
 ao
 bV
-ci
+bU
 bV
 bU
 cJ

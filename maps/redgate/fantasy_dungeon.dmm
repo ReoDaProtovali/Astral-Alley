@@ -2073,11 +2073,14 @@
 "PY" = (
 /turf/simulated/floor/weird_things/dark,
 /area/redgate/fantasy/dark)
+<<<<<<< HEAD
 "Qb" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wmarble,
 /area/redgate/fantasy/dungeon)
+=======
+>>>>>>> 885731f044 (Mirror: Tooling Update and Maplint Port (#10462))
 "Qm" = (
 /turf/simulated/mineral/floor/ignore_cavegen/cave,
 /area/redgate/fantasy/mines)
@@ -17007,7 +17010,7 @@ KA
 cK
 xO
 Aj
-Qb
+Aj
 Aj
 Aj
 cK
@@ -17149,7 +17152,7 @@ cK
 Aj
 cK
 cK
-Qb
+Aj
 cK
 cK
 cK
