@@ -11,3 +11,10 @@
 
 /// Simply removes the < and > characters, and limits the length of the message.
 #define STRIP_HTML_SIMPLE(text, limit) (GLOB.angular_brackets.Replace(copytext(text, 1, limit), ""))
+<<<<<<< HEAD
+=======
+
+#define MAX_MESSAGE_CHUNKS 130
+
+#define MAX_TGUI_INPUT (MAX_MESSAGE_CHUNKS * 1024)
+>>>>>>> 547746c614 ([MIRROR] fix tgui asset loading (#10471))
