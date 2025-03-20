@@ -26,8 +26,10 @@
 	var/icon_update = 0									// Timer in ticks for icon update.
 	var/ui_tick = 0
 	should_be_mapped = TRUE
+	circuit = /obj/item/circuitboard/batteryrack
 
 
+<<<<<<< HEAD
 /obj/machinery/power/smes/batteryrack/New()
 	..()
 	add_parts()
@@ -40,6 +42,11 @@
 	component_parts += new /obj/item/stock_parts/capacitor
 	component_parts += new /obj/item/stock_parts/capacitor
 	component_parts += new /obj/item/stock_parts/matter_bin				// Matter Bin: Max. amount of cells.
+=======
+/obj/machinery/power/smes/batteryrack/Initialize(mapload)
+	. = ..()
+	default_apply_parts()
+>>>>>>> b25441e2b0 ([MIRROR] up port muffle items (#10476))
 
 /obj/machinery/power/smes/batteryrack/RefreshParts()
 	var/capacitor_efficiency = 0
