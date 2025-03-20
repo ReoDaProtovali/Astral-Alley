@@ -203,8 +203,12 @@
 		compiled_vis |= VIS_CH_VANTAG
 	//VOREStation Add End
 
+<<<<<<< HEAD
 	//Vore Stomach addition start. This goes here.
 	if(stomach_vision)
+=======
+	if(client?.prefs.read_preference(/datum/preference/toggle/tummy_sprites))
+>>>>>>> d00cd1e398 ([MIRROR] Make the belly Visibility pref a client one as opposed to a per-character one. (#10467))
 		compiled_vis += VIS_CH_STOMACH
 	//Vore Stomach addition end
 
