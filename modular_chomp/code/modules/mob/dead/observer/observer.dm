@@ -1,6 +1,7 @@
 /mob/observer
 	var/mob/living/body_backup = null //add reforming
 	low_priority = TRUE
+<<<<<<< HEAD
 
 /mob/observer/Destroy()
 	if(body_backup)
@@ -72,3 +73,5 @@
 	var/newname = sanitize(tgui_input_text(avatar, "You are entering virtual reality. Your username is currently [src.name]. Would you like to change it to something else?", "Name change", null, MAX_NAME_LEN), MAX_NAME_LEN)
 	if(newname)
 		avatar.real_name = newname
+=======
+>>>>>>> ddebf29f35 ([MIRROR] VR pod rewrite (#10484))
