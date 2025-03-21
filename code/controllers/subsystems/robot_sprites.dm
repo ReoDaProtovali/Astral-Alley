@@ -153,6 +153,21 @@ SUBSYSTEM_DEF(robot_sprites)
 				jobs -= "modules"
 				RS.module_type = jobs
 				continue
+<<<<<<< HEAD
+=======
+			// special overlays that also can be used as decals, as some names have - in them, seperated by _
+			if(findtext(icon, regex("^decals")))
+				var/list/decals = splittext(icon, "_")
+				decals -= "decals"
+				RS.sprite_decals |= decals
+				continue
+			// special overlays that also can be used as animations, as some names have - in them, seperated by _
+			if(findtext(icon, regex("^animations")))
+				var/list/animations = splittext(icon, "_")
+				animations -= "animations"
+				RS.sprite_animations |= animations
+				continue
+>>>>>>> 4e30b4fe99 ([MIRROR] adds animation flicks to robots (#10489))
 			// Check for all the possible overlays
 			if(findtext(icon, regex("-roll")))
 				RS.sprite_flags |= ROBOT_HAS_SPEED_SPRITE

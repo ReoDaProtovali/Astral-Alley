@@ -455,10 +455,65 @@
 	update_icon()
 
 /mob/living/silicon/robot/verb/toggle_robot_decals() // loads overlay UNDER lights.
+<<<<<<< HEAD
 	set category = "Abilities.Silicon"
 	set name = "Toggle extras"
 	robotdecal_on = !robotdecal_on
 	to_chat(src, span_filter_notice("You [robotdecal_on ? "enable" : "disable"] your extra apperances."))
+=======
+	set category = "Abilities.Settings"
+	set name = "Toggle Extra Decals"
+
+	if(!sprite_datum)
+		return
+	if(!LAZYLEN(sprite_datum.sprite_decals))
+		to_chat(src, span_warning("This module does not support decals."))
+		return
+
+	var/extra_message = "Enabled decals:\n"
+	for(var/decal in robotdecal_on)
+		extra_message += decal + "\n"
+
+	var/decal_to_toggle = tgui_input_list(src, "Please select which decal you want to toggle\n[extra_message]", "Decal Toggle", sprite_datum.sprite_decals)
+	if(!decal_to_toggle)
+		return
+
+	decal_to_toggle = lowertext(decal_to_toggle)
+
+	if(robotdecal_on.Find(decal_to_toggle))
+		robotdecal_on -= decal_to_toggle
+		to_chat(src, span_filter_notice("You disable your \"[decal_to_toggle]\" extra apperances."))
+	else
+		robotdecal_on += decal_to_toggle
+		to_chat(src, span_filter_notice("You enable your \"[decal_to_toggle]\" extra apperances."))
+	update_icon()
+
+/mob/living/silicon/robot/verb/flick_robot_animation()
+	set category = "Abilities.Settings"
+	set name = "Flick Animation"
+
+	if(!sprite_datum)
+		return
+	if(!LAZYLEN(sprite_datum.sprite_animations))
+		to_chat(src, span_warning("This module does not support animations."))
+		return
+
+	var/animation_to_play = tgui_input_list(src, "Please select which decal you want to flick", "Flick Decal", sprite_datum.sprite_animations)
+	if(!animation_to_play)
+		return
+
+	flick("[sprite_datum.sprite_icon_state]-[animation_to_play]", src)
+
+/mob/living/silicon/robot/verb/toggle_glowy_stomach()
+	set category = "Abilities.Settings"
+	set name = "Toggle Glowing Stomach & Accents"
+
+	glowy_enabled = !glowy_enabled
+	if(glowy_enabled)
+		to_chat(src, span_filter_notice("Your stomach will now glow and any naturally glowing accents you have will now appear!"))
+	else
+		to_chat(src, span_filter_notice("Your stomach will no longer glow, and any naturally glowing accents you have will be hidden!"))
+>>>>>>> 4e30b4fe99 ([MIRROR] adds animation flicks to robots (#10489))
 	update_icon()
 
 /mob/living/silicon/robot/verb/spark_plug() //So you can still sparkle on demand without violence.

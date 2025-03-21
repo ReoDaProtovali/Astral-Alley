@@ -32,6 +32,11 @@
 	var/whitelist_charname
 	var/list/belly_light_list = list() // Support multiple sleepers with r/g light "sleeper"
 	var/list/belly_capacity_list = list() //Support multiple bellies with multiple sizes, default: "sleeper" = 1
+<<<<<<< HEAD
+=======
+	var/list/sprite_decals = list() // Allow extra decals
+	var/list/sprite_animations = list() // Allows to flick animations
+>>>>>>> 4e30b4fe99 ([MIRROR] adds animation flicks to robots (#10489))
 
 /// Determines if the borg has the proper flags to show an overlay.
 /datum/robot_sprite/proc/sprite_flag_check(var/flag_to_check)
