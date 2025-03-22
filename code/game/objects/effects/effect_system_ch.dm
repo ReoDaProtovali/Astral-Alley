@@ -6,7 +6,7 @@
 
 /obj/effect/effect/confetti
 	name = "confetti"
-	icon = 'icons/effects/effects_ch.dmi'
+	icon = 'icons/effects/effects.dmi'
 	icon_state = "confetti"
 	opacity = 0
 	anchored = 0.0
@@ -86,6 +86,7 @@
 /obj/effect/effect/snow/heavy
 	name = "heavy snowfall"
 	icon_state = "snowfall_heavy"
+<<<<<<< HEAD
 
 ////////////////////////////////////////////
 // A fancier teleport, used in hyper pads
@@ -117,3 +118,5 @@
 /datum/effect/effect/system/teleport_greyscale/start()
 	var/obj/effect/effect/teleport_greyscale/tele = new /obj/effect/effect/teleport_greyscale(src.location)
 	tele.color = color
+=======
+>>>>>>> ddebf29f35 ([MIRROR] VR pod rewrite (#10484))
