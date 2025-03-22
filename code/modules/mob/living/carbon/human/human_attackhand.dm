@@ -42,10 +42,15 @@
 		if(H.hand)
 			temp = H.organs_by_name["l_hand"]
 		if(!temp || !temp.is_usable())
+<<<<<<< HEAD
 			to_chat(H, span_warning("You can't use your hand."))
 			return
 
 		for(var/thing in GetViruses())
+=======
+			has_hands = FALSE
+		for(var/thing in GetViruses()) //This is intentionally not having a has_hands check. If you are clicking on someone next to them, you're close enough to sneeze/cough on them!
+>>>>>>> 45a7802bc1 ([MIRROR] More  unarmed fixes (#10485))
 			var/datum/disease/D = thing
 			if(D.IsSpreadByTouch())
 				H.ContractDisease(D)
@@ -81,6 +86,15 @@
 				ContractDisease(D)
 
 	switch(M.a_intent)
+<<<<<<< HEAD
+=======
+		//VARS:  (Placed here for your convenience, because it's confusing)
+		// H = THE PERSON DOING THE ATTACK, BUT DEFINED AS A HUMAN. (This is for human specific interactions, such as CPR.)
+		// M = THE PERSON DOING THE ATTACK, AGAIN, DEFINED AS A MOB
+		// src = THE PERSON BEING ATTACKED
+		// TT = GENDER OF THE TARGET
+		// has_hands = Local variable. If the attacker has hands or not.
+>>>>>>> 45a7802bc1 ([MIRROR] More  unarmed fixes (#10485))
 		if(I_HELP)
 
 			// VOREStation Edit - Begin
@@ -154,6 +168,7 @@
 
 		if(I_HURT)
 
+<<<<<<< HEAD
 			if(M.zone_sel.selecting == "mouth" && wear_mask && istype(wear_mask, /obj/item/grenade))
 				var/obj/item/grenade/G = wear_mask
 				if(!G.active)
@@ -167,6 +182,168 @@
 			if(!istype(H))
 				attack_generic(H,rand(1,3),"punched")
 				return
+=======
+		if(I_DISARM)
+			attack_hand_disarm_intent(H, M, TT, has_hands)
+	return
+
+
+/// THE VARIOUS INTENTS.
+/// Theses used to be included in the above proc into a MEGA PROC that was over 300 lines long.
+/// This condenses them and makes it less of a cluster.
+
+///Help Intent
+/mob/living/carbon/human/proc/attack_hand_help_intent(var/mob/living/carbon/human/H, var/mob/living/M as mob, var/datum/gender/TT, var/has_hands)
+	PRIVATE_PROC(TRUE)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	if(M.restrained()) //If we're restrained, we can't help them. If you want to add snowflake stuff that you can do while restrained, add it here.
+		return FALSE
+	if(!has_hands) //This is here so if you WANT to do special code for 'if we don't have hands, do stuff' it can be done here!
+		return FALSE
+	if(istype(M) && attempt_to_scoop(M))
+		return FALSE;
+
+	//todo: make this whole CPR check into it's own individual proc instead of hogging up attack_hand_help_intent
+	if(istype(H) && health < CONFIG_GET(number/health_threshold_crit)) //Only humans can do CPR.
+		if(!H.check_has_mouth())
+			to_chat(H, span_danger("You don't have a mouth, you cannot perform CPR!"))
+			return FALSE
+		if(!check_has_mouth())
+			to_chat(H, span_danger("They don't have a mouth, you cannot perform CPR!"))
+			return FALSE
+		if((H.head && (H.head.body_parts_covered & FACE)) || (H.wear_mask && (H.wear_mask.body_parts_covered & FACE)))
+			to_chat(H, span_notice("Remove your mask!"))
+			return FALSE
+		if((head && (head.body_parts_covered & FACE)) || (wear_mask && (wear_mask.body_parts_covered & FACE)))
+			to_chat(H, span_notice("Remove [src]'s mask!"))
+			return FALSE
+
+		if (!cpr_time)
+			return FALSE
+
+		cpr_time = 0
+		addtimer(VARSET_CALLBACK(src, cpr_time, 1), 3 SECONDS, TIMER_DELETE_ME)
+
+		H.visible_message(span_danger("\The [H] is trying to perform CPR on \the [src]!"))
+
+		if(!do_after(H, 30))
+			return FALSE
+
+		H.visible_message(span_danger("\The [H] performs CPR on \the [src]!"))
+		to_chat(H, span_warning("Repeat at least every 7 seconds."))
+
+		if(istype(H) && health > CONFIG_GET(number/health_threshold_dead))
+			adjustOxyLoss(-(min(getOxyLoss(), 5)))
+			updatehealth()
+			to_chat(src, span_notice("You feel a breath of fresh air enter your lungs. It feels good."))
+
+	else if(!(M == src && apply_pressure(M, M.zone_sel.selecting)))
+		help_shake_act(M)
+	return TRUE
+
+//Disarm Intent
+/mob/living/carbon/human/proc/attack_hand_disarm_intent(var/mob/living/carbon/human/H, var/mob/living/M as mob, var/datum/gender/TT, var/has_hands)
+	PRIVATE_PROC(TRUE)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	if(M.restrained()) //If we're restrained, we can't disarm them. If you want to add snowflake stuff that you can do while restrained, add it here.
+		return
+	if(!has_hands)  //This is here so if you WANT to do special code for 'if we don't have hands, do stuff' it can be done here!
+		return
+
+	M.do_attack_animation(src)
+
+	if(w_uniform)
+		w_uniform.add_fingerprint(M)
+
+	if(M.lying && (M.loc == src.loc)) //If we are on the ground and they're on top of us, we don't have enough space to push them! Also antispam.
+		if(world.time <= (last_push_time + 6 SECONDS))
+			return
+		visible_message(span_warning("[M] struggles under [src]!"))
+		last_push_time = world.time
+		return
+
+	add_attack_logs(H,src,"Disarmed")
+
+	var/obj/item/organ/external/affecting = get_organ(ran_zone(M.zone_sel.selecting))
+
+	var/list/holding = list(get_active_hand() = 40, get_inactive_hand = 20)
+
+	//See if they have any guns that might go off
+	for(var/obj/item/gun/W in holding)
+		if(W && prob(holding[W]))
+			var/list/turfs = list()
+			for(var/turf/T in view())
+				turfs += T
+			if(turfs.len)
+				var/turf/target = pick(turfs)
+				visible_message(span_danger("[src]'s [W] goes off during the struggle!"))
+				return W.afterattack(target,src)
+
+	if(last_push_time + 30 > world.time) //The fact that we're repeatedly doing it doesn't lessen the severity of the action! Send it full blast!
+		if(M.lying)
+			visible_message(span_filter_combat("[span_red(span_bold("[M] attempted to sweep [src] to the floor!"))]"))
+		else
+			visible_message(span_filter_combat("[span_red(span_bold("[M] attempted to disarm [src]!"))]"))
+		return
+
+	var/randn = rand(1, 100)
+	last_push_time = world.time
+	// We ARE wearing shoes OR
+	// We as a species CAN be slipped when barefoot
+	// And also 1 in 4 because rngesus
+	if((shoes || !(species.flags & NO_SLIP)) && randn <= 25)
+		var/armor_check = run_armor_check(affecting, "melee")
+		apply_effect(3, WEAKEN, armor_check)
+		playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		if(armor_check < 60)
+			drop_both_hands()	// CHOMPEdit - We've been pushed! Drop our stuff as well
+			if(M.lying)
+				visible_message(span_danger("[M] swept [src] down onto the floor!"))
+			else
+				visible_message(span_danger("[M] has pushed [src]!"))
+			break_all_grabs(M)
+			for(var/obj/item/I in holding)
+				drop_from_inventory(I)
+		else
+			visible_message(span_warning("[M] attempted to push [src]!"))
+		return
+
+	if(randn <= 60)
+		//See about breaking grips or pulls
+		if(break_all_grabs(M))
+			playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+			return
+
+		//Actually disarm them
+		for(var/obj/item/I in holding)
+			if(I)
+				drop_from_inventory(I)
+				visible_message(span_danger("[M] has disarmed [src]!"))
+				playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+				return
+
+	playsound(src, 'sound/weapons/punchmiss.ogg', 25, 1, -1)
+	if(M.lying)
+		visible_message(span_filter_combat("[span_red(span_bold("[M] attempted to sweep [src] to the floor!"))]"))
+	else
+		visible_message(span_filter_combat("[span_red(span_bold("[M] attempted to disarm [src]!"))]"))
+//Grab Intent
+/mob/living/carbon/human/proc/attack_hand_grab_intent(var/mob/living/carbon/human/H, var/mob/living/M as mob, var/datum/gender/TT, var/has_hands)
+	PRIVATE_PROC(TRUE)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	if(M.restrained()) //If we're restrained, we can't grab them. If you want to add snowflake stuff that you can do while restrained, add it here.
+		return
+	if(!has_hands)  //This is here so if you WANT to do special code for 'if we don't have hands, do stuff' it can be done here!
+		return
+	if(M == src || anchored)
+		return
+	for(var/obj/item/grab/G in src.grabbed_by)
+		if(G.assailant == M)
+			to_chat(M, span_notice("You already grabbed [src]."))
+			return
+	if(w_uniform)
+		w_uniform.add_fingerprint(M)
+>>>>>>> 45a7802bc1 ([MIRROR] More  unarmed fixes (#10485))
 
 			var/rand_damage = rand(1, 5)
 			var/block = 0
@@ -174,9 +351,29 @@
 			var/hit_zone = H.zone_sel.selecting
 			var/obj/item/organ/external/affecting = get_organ(hit_zone)
 
+<<<<<<< HEAD
 			if(!affecting || affecting.is_stump())
 				to_chat(M, span_danger("They are missing that limb!"))
 				return TRUE
+=======
+	M.do_attack_animation(src)
+	playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+	visible_message(span_warning("[M] has grabbed [src] [(M.zone_sel.selecting == BP_L_HAND || M.zone_sel.selecting == BP_R_HAND)? "by [(gender==FEMALE)? "her" : ((gender==MALE)? "his": "their")] hands": "passively"]!"))
+//Harm Intent
+/mob/living/carbon/human/proc/attack_hand_harm_intent(var/mob/living/carbon/human/H, var/mob/living/M as mob, var/datum/gender/TT, var/has_hands)
+	PRIVATE_PROC(TRUE)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	//As a note: This intentionally doesn't immediately return if has_hands is false. This is because you can attack with kicks/bites!
+	if(has_hands && M.zone_sel.selecting == "mouth" && wear_mask && istype(wear_mask, /obj/item/grenade))
+		var/obj/item/grenade/G = wear_mask
+		if(!G.active)
+			visible_message(span_danger("\The [M] pulls the pin from \the [src]'s [G.name]!"))
+			G.activate(M)
+			update_inv_wear_mask()
+		else
+			to_chat(M, span_warning("\The [G] is already primed! Run!"))
+		return
+>>>>>>> 45a7802bc1 ([MIRROR] More  unarmed fixes (#10485))
 
 			switch(src.a_intent)
 				if(I_HELP)
@@ -205,8 +402,14 @@
 					ran_zone() will pick out of 11 zones, thus the chance for hitting
 					our target where we want to hit them is circa 9.1%.
 
+<<<<<<< HEAD
 					Now since we want to statistically hit our target organ a bit more
 					often than other organs, we add a base chance of 20% for hitting it.
+=======
+	if(M.grabbed_by.len)
+		// Someone got a good grip on them, they won't be able to do much damage
+		rand_damage = max(1, rand_damage - 2)
+>>>>>>> 45a7802bc1 ([MIRROR] More  unarmed fixes (#10485))
 
 					This leaves us with the following chances:
 
