@@ -1159,8 +1159,11 @@ GLOBAL_LIST_EMPTY(damage_icon_parts) //see UpdateDamageIcon()
 
 	var/image/wing_image = get_wing_image(FALSE)
 
+<<<<<<< HEAD
 	var/obj/item/organ/external/chest = organs_by_name[BP_TORSO]
 
+=======
+>>>>>>> f95f69638e ([MIRROR] adds spoiler function to statpanel (#10515))
 	if(wing_image)
 		wing_image.layer = BODY_LAYER+WING_LAYER
 		wing_image.alpha = chest?.transparent ? 180 : 255 //VORESTATION EDIT: transparent instead of nonsolid
