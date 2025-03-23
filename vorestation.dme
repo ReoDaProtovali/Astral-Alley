@@ -172,6 +172,7 @@
 #include "code\__defines\verb_manager.dm"
 #include "code\__defines\visualnet.dm"
 #include "code\__defines\vore.dm"
+#include "code\__defines\vore_prefs.dm"
 #include "code\__defines\vote.dm"
 #include "code\__defines\vv.dm"
 #include "code\__defines\webhooks.dm"
@@ -4606,6 +4607,13 @@
 #include "code\modules\vore\eating\silicon_vr.dm"
 #include "code\modules\vore\eating\simple_animal_vr.dm"
 #include "code\modules\vore\eating\slipvore_vr.dm"
+<<<<<<< HEAD
+=======
+#include "code\modules\vore\eating\soulcatcher.dm"
+#include "code\modules\vore\eating\soulcatcher_import.dm"
+#include "code\modules\vore\eating\soulcatcher_mob.dm"
+#include "code\modules\vore\eating\soulcatcher_observer.dm"
+>>>>>>> 5c4162270b ([MIRROR] allows soulcatcher import and export (#10512))
 #include "code\modules\vore\eating\stumblevore_vr.dm"
 #include "code\modules\vore\eating\transforming_vr.dm"
 #include "code\modules\vore\eating\vertical_nom_vr.dm"
