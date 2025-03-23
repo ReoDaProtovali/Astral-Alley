@@ -139,7 +139,11 @@
 	var/tmp/digested_prey_count = 0				// Amount of prey that have been digested
 
 	var/item_digest_mode = IM_DIGEST_FOOD	// Current item-related mode from item_digest_modes
+<<<<<<< HEAD
 	var/contaminates = TRUE					// Whether the belly will contaminate stuff // CHOMPedit: reset to true like it always was
+=======
+	var/contaminates = TRUE					// Whether the belly will contaminate stuff // CHOMPEdit
+>>>>>>> bf5b03c0d4 ([MIRROR] makes contamination off by default (#10511))
 	var/contamination_flavor = "Generic"	// Determines descriptions of contaminated items
 	var/contamination_color = "green"		// Color of contamination overlay
 
