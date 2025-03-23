@@ -5,6 +5,7 @@ export type Data = {
   db_repo: string;
   mob_name: string;
   bellies?: Belly[];
+  soulcatcher?: Soulcatcher;
 };
 
 export type Belly = {
@@ -119,4 +120,16 @@ export type Belly = {
 
   absorbchance: number;
   digestchance: number;
+};
+
+export type Soulcatcher = {
+  name: string;
+  inside_flavor: string;
+  capture_message: string;
+  transit_message: string;
+  release_message: string;
+  transfer_message: string;
+  delete_message: string;
+  linked_belly: string;
+  setting_flags: number;
 };

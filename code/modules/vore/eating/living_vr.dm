@@ -245,6 +245,7 @@
 
 	var/datum/vore_preferences/P = client.prefs_vr
 
+<<<<<<< HEAD
 	P.digestable = src.digestable
 	P.devourable = src.devourable
 	P.feeding = src.feeding
@@ -299,6 +300,9 @@
 	P.belly_rub_target = src.belly_rub_target
 	P.soulcatcher_pref_flags = src.soulcatcher_pref_flags
 	//CHOMP Stuff End
+=======
+	VORE_PREF_TRANSFER(P, src)
+>>>>>>> 5c4162270b ([MIRROR] allows soulcatcher import and export (#10512))
 
 	var/list/serialized = list()
 	for(var/obj/belly/B as anything in src.vore_organs)
@@ -319,6 +323,7 @@
 
 	var/datum/vore_preferences/P = client.prefs_vr
 
+<<<<<<< HEAD
 	digestable = P.digestable
 	devourable = P.devourable
 	feeding = P.feeding
@@ -373,6 +378,9 @@
 	no_latejoin_prey_warning_persists = P.no_latejoin_prey_warning_persists
 	belly_rub_target = P.belly_rub_target
 	soulcatcher_pref_flags = P.soulcatcher_pref_flags
+=======
+	VORE_PREF_TRANSFER(src, P)
+>>>>>>> 5c4162270b ([MIRROR] allows soulcatcher import and export (#10512))
 
 	if(bellies)
 		if(isliving(src))
