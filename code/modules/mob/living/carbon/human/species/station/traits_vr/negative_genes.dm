@@ -59,25 +59,12 @@
 	cost = -2
 	custom_only = FALSE
 
-	is_genetrait = TRUE
-	hidden = FALSE
+	is_genetrait = TRUE 	//VOREStation Note: TRAITGENETICS - Disabled on VS //CHOMPStation Edit - Enable
+	hidden = FALSE			//VOREStation Note: TRAITGENETICS - Disabled on VS //CHOMPStation Edit - Enable
 
 	disability=TOURETTES
 	activation_message="You twitch."
 	primitive_expression_messages=list("twitches and chitters.")
-
-/datum/trait/negative/disability_anxiety
-	name = "Anxiety Disorder"
-	desc = "You have extreme anxiety, often stuttering words."
-	cost = -1
-	custom_only = FALSE
-
-	is_genetrait = TRUE
-	hidden = FALSE
-
-	disability=NERVOUS
-	activation_message="You feel nervous."
-	primitive_expression_messages=list("anxiously chitters.")
 
 /* Replaced by /datum/trait/negative/blindness
 /datum/trait/negative/disability_blind
@@ -175,8 +162,8 @@
 	cost = -4
 	custom_only = FALSE
 
-	is_genetrait = TRUE
-	hidden = FALSE
+	is_genetrait = TRUE	//VOREStation Note: TRAITGENETICS - Disabled on VS //CHOMPStation Edit - Enable
+	hidden = FALSE			//VOREStation Note: TRAITGENETICS - Disabled on VS //CHOMPStation Edit - Enable
 
 	disability=DETERIORATE
 	activation_message="You feel sore..."
@@ -195,6 +182,7 @@
 	activation_message="You feel bloated..."
 	primitive_expression_messages=list("shudders.","gasps.","chokes.")
 
+<<<<<<< HEAD
 /datum/trait/negative/disability_censored
 	name = "Censored"
 	desc = "You are unable to speak profanity. To an excessive degree..."
@@ -207,3 +195,18 @@
 	disability=CENSORED
 	activation_message="You feel less rude..."
 	primitive_expression_messages=list("BEEPS!")
+=======
+/datum/trait/negative/disability_damagedspine
+	name = "Lumbar Impairment"
+	desc = "Due to neurological damage, you are unable to use your legs. Collapsing to the ground as soon as you try to stand. You should check the loadout menu for something to assist you."
+	cost = -3
+	custom_only = FALSE
+	can_take = ORGANICS
+
+	is_genetrait = TRUE
+	hidden = FALSE
+	activity_bounds = DNA_HARDER_BOUNDS // Shouldn't be easy for genetics to find this
+
+	sdisability=SPINE
+	activation_message="Your legs shake..."
+>>>>>>> 2a25fdbc51 ([MIRROR] Trait Adjustments (#10514))
