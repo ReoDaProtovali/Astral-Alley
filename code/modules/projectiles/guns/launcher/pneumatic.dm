@@ -17,11 +17,19 @@
 	var/obj/item/storage/item_storage
 	var/pressure_setting = 10                           // Percentage of the gas in the tank used to fire the projectile.
 	var/possible_pressure_amounts = list(5,10,20,25,50) // Possible pressure settings.
+<<<<<<< HEAD
 	var/force_divisor = 400                             // Force equates to speed. Speed/5 equates to a damage multiplier for whoever you hit.
 	                                                    // For reference, a fully pressurized oxy tank at 50% gas release firing a health
 	                                                    // analyzer with a force_divisor of 10 hit with a damage multiplier of 3000+.
 /obj/item/gun/launcher/pneumatic/New()
 	..()
+=======
+	var/force_divisor = 400								// Force equates to speed. Speed/5 equates to a damage multiplier for whoever you hit.
+														// For reference, a fully pressurized oxy tank at 50% gas release firing a health
+														// analyzer with a force_divisor of 10 hit with a damage multiplier of 3000+.
+/obj/item/gun/launcher/pneumatic/Initialize(mapload)
+	. = ..()
+>>>>>>> 55d696e503 ([MIRROR] next new to init (#10524))
 	item_storage = new(src)
 	item_storage.name = "hopper"
 	item_storage.max_w_class = max_w_class

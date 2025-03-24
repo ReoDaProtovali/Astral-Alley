@@ -83,6 +83,7 @@
 			wearer.custom_pain("Your hands feel strange!",1)
 	..()
 
+<<<<<<< HEAD
 /obj/item/clothing/gloves/stamina/dropped(var/mob/living/carbon/human/H)
 	..()
 	if(wearer)
@@ -92,8 +93,11 @@
 		wearer = null
 
 /obj/item/clothing/gloves/stamina/New()
+=======
+/obj/item/clothing/gloves/stamina/Initialize(mapload)
+	. = ..()
+>>>>>>> 55d696e503 ([MIRROR] next new to init (#10524))
 	START_PROCESSING(SSobj, src)
-	..()
 
 /obj/item/clothing/gloves/stamina/Destroy()
 	wearer = null

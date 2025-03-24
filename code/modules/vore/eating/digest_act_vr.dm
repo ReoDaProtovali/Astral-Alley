@@ -124,7 +124,7 @@
 		//CHOMPEdit End
 			g_damage = w_class / 2
 			if(B.item_digest_logs)
-				to_chat(B.owner,span_notice("[src] was digested inside your [lowertext(B.name)]."))
+				to_chat(B.owner, span_vnotice("[src] was digested inside your [lowertext(B.name)]."))
 			qdel(src)
 		else if(istype(src,/obj/item/stack))
 			var/obj/item/stack/S = src
@@ -147,9 +147,15 @@
 						new goodmeal.package_trash(src)
 					if(goodmeal.trash)
 						new goodmeal.trash(src)
+<<<<<<< HEAD
 			if(B.item_digest_logs)
 				to_chat(B.owner,span_notice("[src] was digested inside your [lowertext(B.name)]."))
 			qdel(src)//CHOMPEdit End
+=======
+			if(istype(B) && B.item_digest_logs)
+				to_chat(B.owner, span_vnotice("[src] was digested inside your [lowertext(B.name)]."))
+			qdel(src)
+>>>>>>> 55d696e503 ([MIRROR] next new to init (#10524))
 	if(g_damage > w_class)
 		return w_class
 	return g_damage
