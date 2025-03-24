@@ -234,6 +234,7 @@
 	item_state = "fedcoat"
 
 	blood_overlay_type = "coat"
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	allowed = list(
 				/obj/item/tank/emergency/oxygen,
@@ -248,6 +249,11 @@
 //				/obj/item/detective_scanner,
 				/obj/item/taperecorder)
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0) //CHOMPEdit: No armor, just fluff item.
+=======
+	body_parts_covered = CHEST|ARMS
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_SECURITY, POCKET_DETECTIVE)
+	armor = list(melee = 10, bullet = 20, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0) //As much armor as the cyberpunk jacket. Also priced the same.
+>>>>>>> ca9b47057c ([MIRROR] Makes a few loadout fluff items NOT give you 50% armor (#10463))
 	var/unbuttoned = 0
 
 /obj/item/clothing/suit/storage/fluff/fedcoat/verb/toggle()
@@ -277,21 +283,33 @@
 	desc = "A uniform jacket from the United Federation. Starfleet still uses this uniform and there are variations of it. Wearing this may make you feel all scientific."
 	icon_state = "fedblue"
 	item_state = "fedblue"
+<<<<<<< HEAD
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0) //CHOMPEdit: No armor, just fluff item.
+=======
+	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 50, rad = 0) //As much armor as a normal labcoat.
+>>>>>>> ca9b47057c ([MIRROR] Makes a few loadout fluff items NOT give you 50% armor (#10463))
 
 /obj/item/clothing/suit/storage/fluff/fedcoat/fedeng
 	name = "Federation Uniform Jacket (Yellow)"
 	desc = "A uniform jacket from the United Federation. Starfleet still uses this uniform and there are variations of it.Wearing it may make you feel like checking a warp core, whatever that is."
 	icon_state = "fedeng"
 	item_state = "fedeng"
+<<<<<<< HEAD
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 10, bomb = 0, bio = 10, rad = 0) //CHOMPEdit: No armor, just fluff item.
+=======
+	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 20) //I was going to say 'as much as a hazard vest' but then I checked and found that hazard vests either never HAD rad resistance or had it removed... Whatever. I gave the hazard vest it's rad resistance back as well.
+>>>>>>> ca9b47057c ([MIRROR] Makes a few loadout fluff items NOT give you 50% armor (#10463))
 
 /obj/item/clothing/suit/storage/fluff/fedcoat/fedcapt
 	name = "Federation Uniform Jacket (Command)"
 	desc = "A uniform jacket from the United Federation. Starfleet still uses this uniform and there are variations of it. You feel like a commanding officer of Starfleet."
 	icon_state = "fedcapt"
 	item_state = "fedcapt"
+<<<<<<< HEAD
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0) //CHOMPEdit: No armor, just fluff item.
+=======
+	armor = list(melee = 10, bullet = 20, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
+>>>>>>> ca9b47057c ([MIRROR] Makes a few loadout fluff items NOT give you 50% armor (#10463))
 
 /obj/item/clothing/suit/storage/fluff/modernfedcoat
 	name = "Modern Federation Uniform Jacket (Command)"
@@ -304,6 +322,7 @@
 	item_state = "fedmodern"
 
 	blood_overlay_type = "coat"
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|ARMS
 	allowed = list(
 				/obj/item/tank/emergency/oxygen,
@@ -318,6 +337,11 @@
 //				/obj/item/detective_scanner,
 				/obj/item/taperecorder)
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0) //CHOMPEdit: No armor, just fluff item.
+=======
+	body_parts_covered = CHEST|ARMS
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_SECURITY, POCKET_DETECTIVE)
+	armor = list(melee = 10, bullet = 20, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
+>>>>>>> ca9b47057c ([MIRROR] Makes a few loadout fluff items NOT give you 50% armor (#10463))
 
 	//Variants
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/modernfedblue
@@ -332,14 +356,22 @@
 	desc = "A modern uniform jacket from the United Federation. Their Starfleet had recently started using these uniforms. You feel like you can handle any type of technical engineering problems."
 	icon_state = "fedmoderneng"
 	item_state = "fedmoderneng"
+<<<<<<< HEAD
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 00, bomb = 0, bio = 10, rad = 0) //CHOMPEdit: No armor, just fluff item.
+=======
+	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 0, rad = 20)
+>>>>>>> ca9b47057c ([MIRROR] Makes a few loadout fluff items NOT give you 50% armor (#10463))
 
 /obj/item/clothing/suit/storage/fluff/modernfedcoat/modernfedsec
 	name = "Modern Federation Uniform Jacket (Red)"
 	desc = "A modern uniform jacket from the United Federation. Their Starfleet had recently started using these uniforms. This uniform makes you want to protect and serve as an officer."
 	icon_state = "fedmodernsec"
 	item_state = "fedmodernsec"
+<<<<<<< HEAD
 	armor = list(melee = 0, bullet = 0, laser = 0, energy = 0, bomb = 0, bio = 10, rad = 0) //CHOMPEdit: No armor, just fluff item.
+=======
+	armor = list(melee = 10, bullet = 20, laser = 10, energy = 0, bomb = 0, bio = 0, rad = 0)
+>>>>>>> ca9b47057c ([MIRROR] Makes a few loadout fluff items NOT give you 50% armor (#10463))
 
 /obj/item/clothing/head/caphat/formal/fedcover
 	name = "Federation Officer's Cap"
