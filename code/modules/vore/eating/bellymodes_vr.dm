@@ -106,8 +106,13 @@
 					if(fancy_vore)
 						M.playsound_local(get_turf(owner), play_sound, vol = sound_volume, vary = 1, falloff = VORE_SOUND_FALLOFF, frequency = noise_freq) //CHOMPEdit
 					else
+<<<<<<< HEAD
 						M.playsound_local(get_turf(owner), play_sound, vol = sound_volume, vary = 1, falloff = VORE_SOUND_FALLOFF, frequency = noise_freq) //CHOMPEdit
 					 //these are all external sound triggers now, so it's ok.
+=======
+						M.playsound_local(get_turf(owner), play_sound, vol = sound_volume, vary = 1, falloff = VORE_SOUND_FALLOFF, frequency = noise_freq)
+				//these are all external sound triggers now, so it's ok.
+>>>>>>> e501986575 ([MIRROR] only tab indentation (#10517))
 		return
 
 ///////////////////// Prey Loop Refresh/hack //////////////////////
@@ -133,8 +138,13 @@
 				if(fancy_vore)
 					M.playsound_local(get_turf(owner), play_sound, vol = sound_volume, vary = 1, falloff = VORE_SOUND_FALLOFF, frequency = noise_freq) //CHOMPEdit
 				else
+<<<<<<< HEAD
 					M.playsound_local(get_turf(owner), play_sound, vol = sound_volume, vary = 1, falloff = VORE_SOUND_FALLOFF, frequency = noise_freq) //CHOMPEdit
 				 //these are all external sound triggers now, so it's ok.
+=======
+					M.playsound_local(get_turf(owner), play_sound, vol = sound_volume, vary = 1, falloff = VORE_SOUND_FALLOFF, frequency = noise_freq)
+				//these are all external sound triggers now, so it's ok.
+>>>>>>> e501986575 ([MIRROR] only tab indentation (#10517))
 
 	if(emote_active)
 		//ChompEDIT START runtime, emote_lists can be = ""
