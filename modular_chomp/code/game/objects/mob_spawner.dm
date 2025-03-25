@@ -38,6 +38,6 @@
 	/mob/living/simple_mob/animal/passive/mouse/rat = 10, // Because I'm a horrible person. <3
 	/obj/effect/spider/spiderling/non_growing = 5)
 
-/obj/structure/mob_spawner/mouse_nest/mousehole/New()
-	..()
+/obj/structure/mob_spawner/mouse_nest/mousehole/Initialize(mapload)
+	. = ..()
 	icon_state = "tunnel_hole"

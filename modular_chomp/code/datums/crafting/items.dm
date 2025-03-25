@@ -283,9 +283,9 @@
 			wearer.custom_pain("Your hands hurt like hell!",1)
 		wearer = null
 
-/obj/item/clothing/gloves/toxinregen/New()
+/obj/item/clothing/gloves/toxinregen/Initialize(mapload)
+	. = ..()
 	START_PROCESSING(SSobj, src)
-	..()
 
 /obj/item/clothing/gloves/toxinregen/Destroy()
 	wearer = null
