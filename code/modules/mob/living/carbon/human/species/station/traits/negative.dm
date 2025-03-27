@@ -704,3 +704,42 @@
 	cost = -5
 	var_changes = list("dirtslip" = TRUE)
 	excludes = list(/datum/trait/positive/absorbent) // CHOMPAdd
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/negative.dm
+=======
+
+/datum/trait/negative/nodefib
+	name = "Unreviveable"
+	desc = "For whatever strange genetic reason, defibs cannot restart your heart."
+	cost = -1
+	custom_only = FALSE
+	var_changes = list("flags" = NO_DEFIB)
+	can_take = ORGANICS
+	excludes = list(/datum/trait/negative/noresleeve, /datum/trait/negative/onelife)
+
+/datum/trait/negative/noresleeve
+	name = "Unsleeveable"
+	desc = "Your genetics have been ruined, to the point where resleeving can no longer bring you back. Your DNA is unappealing to slimes as a result." //The autoresleever still resleeves on Virgo as that section has been commented out, but eh, whatever. It's not really a big concern. -1+-1 = -2 is all I care about.
+	cost = -1
+	custom_only = TRUE
+	var_changes = list("flags" = NO_SLEEVE)
+	excludes = list(/datum/trait/negative/nodefib, /datum/trait/negative/onelife)
+
+/datum/trait/negative/onelife
+	name = "One Life"
+	desc = "Once you are dead, you are incapable of being resleeved or revived using a defib."
+	cost = -2
+	custom_only = TRUE
+	var_changes = list("flags" = NO_SLEEVE | NO_DEFIB)
+	excludes = list(/datum/trait/negative/nodefib, /datum/trait/negative/noresleeve)
+
+// Why put this on Xenochimera of all species? I have no idea, but someone may be enough of a lunatic to take it.
+/datum/trait/negative/neural_hypersensitivity/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Neural Hypersensitivity"
+	desc = "Despite your evolutionary efforts, you are unusually sensitive to pain. \
+	Given your species' typical reactions to pain, this can only end well for you!"
+	cost = 0
+	category = 0
+	custom_only = FALSE
+>>>>>>> 013bac9816 ([MIRROR] Consolidates Species Files (#10530)):code/modules/mob/living/carbon/human/species/station/traits/negative.dm
