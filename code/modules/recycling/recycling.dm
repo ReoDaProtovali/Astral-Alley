@@ -228,9 +228,15 @@
 	icon_state = "debris"
 	w_class = ITEMSIZE_NORMAL
 
+<<<<<<< HEAD
 /obj/item/debris_pack/New(newloc, list/matter)
 	..()
 	src.matter = matter.Copy()
+=======
+/obj/item/debris_pack/Initialize(mapload, list/matter_init)
+	matter = matter_init.Copy()
+	. = ..()
+>>>>>>> 7ad101eca9 ([MIRROR] handle the datum new for vorespawn (#10537))
 
 /obj/item/material_dust
 	name = "dust"

@@ -7,6 +7,7 @@
 	..()
 	turfs = GLOB.latejoin_gatewaystation
 
+<<<<<<< HEAD
 /datum/spawnpoint/vore
 	display_name = "Vorespawn - Prey"
 	msg = "has arrived on the station"
@@ -24,6 +25,8 @@
 	..()
 	turfs = latejoin
 
+=======
+>>>>>>> 7ad101eca9 ([MIRROR] handle the datum new for vorespawn (#10537))
 /datum/spawnpoint/plainspath
 	display_name = "Sif plains"
 	msg = "has checked in at the plains gate"

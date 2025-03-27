@@ -114,3 +114,23 @@ var/global/list/latejoin_tram   = list()
 /datum/spawnpoint/tram/New()
 	..()
 	turfs = latejoin_tram
+<<<<<<< HEAD
+=======
+
+/datum/spawnpoint/vore
+	display_name = "Vorespawn - Prey"
+	msg = "has arrived on the station"
+	allow_offmap_spawn = TRUE
+
+/datum/spawnpoint/vore/pred
+	display_name = "Vorespawn - Pred"
+	msg = "has arrived on the station"
+
+/datum/spawnpoint/vore/itemtf
+	display_name = "Item TF spawn"
+	msg = "has arrived on the station"
+
+/datum/spawnpoint/vore/New()
+	..()
+	turfs = latejoin
+>>>>>>> 7ad101eca9 ([MIRROR] handle the datum new for vorespawn (#10537))
