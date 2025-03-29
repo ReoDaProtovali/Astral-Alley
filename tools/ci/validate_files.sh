@@ -91,6 +91,23 @@ echo -e "${RED}DISABLED"
 #   FAILED=1
 # fi
 
+<<<<<<< HEAD
+=======
+part "space indentation"
+if grep -P '(^ {2})|(^ [^ * ])|(^    +)' $code_files; then
+	echo
+	echo -e "${RED}ERROR: space indentation detected.${NC}"
+	FAILED=1
+fi;
+
+part "mixed tab/space indentation"
+if grep -P '^\t+ [^ *]' $code_files; then
+	echo
+	echo -e "${RED}ERROR: mixed <tab><space> indentation detected.${NC}"
+	FAILED=1
+fi;
+
+>>>>>>> 8d0febfbb6 ([MIRROR] next grep, no spaces (#10548))
 part "improperly pathed static lists"
 if $grep -i 'var/list/static/.*' $code_files; then
 	echo

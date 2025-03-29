@@ -2,7 +2,11 @@
 //Thanks to Kilakk for the admin-button portion of this code.
 
 var/global/send_emergency_team = 0 // Used for automagic response teams
+<<<<<<< HEAD
                                    // 'admin_emergency_team' for admin-spawned response teams
+=======
+									// 'admin_emergency_team' for admin-spawned response teams
+>>>>>>> 8d0febfbb6 ([MIRROR] next grep, no spaces (#10548))
 var/ert_base_chance = 10 // Default base chance. Will be incremented by increment ERT chance.
 var/can_call_ert
 var/silent_ert = 0
