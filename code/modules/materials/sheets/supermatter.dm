@@ -34,8 +34,13 @@
 
 		if(burn_user)
 			H.visible_message(span_danger("\The [src] flashes as it scorches [H]'s hands!"))
+<<<<<<< HEAD
 			H.apply_damage(amount / 2 + 5, BURN, "r_hand", used_weapon="Supermatter Chunk")
 			H.apply_damage(amount / 2 + 5, BURN, "l_hand", used_weapon="Supermatter Chunk")
+=======
+			H.apply_damage(amount / 2 + 5, BURN, BP_R_HAND, used_weapon=src)
+			H.apply_damage(amount / 2 + 5, BURN, BP_L_HAND, used_weapon=src)
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
 			H.drop_from_inventory(src, get_turf(H))
 			return
 

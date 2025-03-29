@@ -1,7 +1,12 @@
 import { Box, Collapsible, Section } from 'tgui-core/components';
 import type { BooleanLike } from 'tgui-core/react';
 
+<<<<<<< HEAD
 import { digestModeToColor, digestModeToPreyMode } from './constants';
+=======
+import { digestModeToPreyMode, reagentToColor } from './constants';
+import { digestModeToColor } from './constants';
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
 import type { insideData } from './types';
 import { VoreContentsPanel } from './VoreContentsPanel';
 

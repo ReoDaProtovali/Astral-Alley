@@ -489,11 +489,28 @@
 			if(FEMALE)
 				t_him = "her"
 	//VOREStation Edit Start - Headpats and Handshakes.
+<<<<<<< HEAD
 	if(H.zone_sel.selecting == "head")
 		H.visible_message( \
 			span_notice("[H] pats [target] on the head."), \
 			span_notice("You pat [target] on the head."), )
 	else if(H.zone_sel.selecting == "r_hand" || H.zone_sel.selecting == "l_hand")
+=======
+	if(H.zone_sel.selecting == BP_HEAD)
+		if(target.touch_reaction_flags & SPECIES_TRAIT_PATTING_DEFENCE)
+			H.visible_message( \
+				span_warning("[target] reflexively bites the hand of [H] to prevent head patting!"), \
+				span_warning("[target] reflexively bites your hand!"), )
+			if(H.hand)
+				H.apply_damage(1, BRUTE, BP_L_HAND)
+			else
+				H.apply_damage(1, BRUTE, BP_R_HAND)
+		else
+			H.visible_message( \
+				span_notice("[H] pats [target] on the head."), \
+				span_notice("You pat [target] on the head."), )
+	else if(H.zone_sel.selecting == BP_R_HAND || H.zone_sel.selecting == BP_L_HAND)
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
 		H.visible_message( \
 			span_notice("[H] shakes [target]'s hand."), \
 			span_notice("You shake [target]'s hand."), )

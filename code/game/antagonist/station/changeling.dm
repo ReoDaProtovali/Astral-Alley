@@ -72,7 +72,11 @@
 				var/datum/species/S = GLOB.all_species[player.current.client.prefs.species]
 				if(S && (S.flags & NO_SCAN))
 					return 0
+<<<<<<< HEAD
 				if(player.current.client.prefs.organ_data["torso"] == "cyborg") // Full synthetic.
+=======
+				if(player.current.client.prefs.organ_data[BP_TORSO] == "cyborg") // Full synthetic. // TODO, this to issynthetic()?
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
 					return 0
 				return 1
 	return 0
