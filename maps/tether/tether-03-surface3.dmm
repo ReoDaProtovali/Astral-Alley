@@ -386,10 +386,18 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/security/breakroom)
 "aaH" = (
+<<<<<<< HEAD
 /obj/structure/catwalk,
 /obj/structure/catwalk,
 /turf/simulated/floor/tiled/steel_dirty/virgo3b,
 /area/tether/surfacebase/outside/outside3)
+=======
+/obj/structure/bed/chair/office/light{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/library)
+>>>>>>> 0a19a6916c ([MIRROR] Bingle computers (#10549))
 "aaI" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/cyan{
 	dir = 10
@@ -17930,7 +17938,8 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/obj/structure/bookcase/bookcart,
+/obj/structure/table/woodentable,
+/obj/machinery/librarywikicomp,
 /turf/simulated/floor/wood,
 /area/library)
 "aEI" = (
@@ -18043,6 +18052,7 @@
 /obj/structure/cable/green{
 	icon_state = "0-8"
 	},
+/obj/structure/bookcase/bookcart,
 /turf/simulated/floor/wood,
 /area/library)
 "aER" = (
@@ -57025,7 +57035,7 @@ aBv
 azT
 aXC
 aFe
-azT
+aaH
 aBq
 axg
 axg
