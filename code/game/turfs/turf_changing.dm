@@ -51,7 +51,7 @@
 	var/old_dynamic_lumcount = dynamic_lumcount
 	var/oldtype = src.type
 	var/old_density = src.density
-	var/was_open = istype(src,/turf/simulated/open)
+	var/was_open = isopenturf(src)
 	var/datum/sunlight_handler/old_shandler
 	var/turf/simulated/simself = src
 	if(istype(simself) && simself.shandler)
@@ -141,11 +141,11 @@
 			if(SUNLIGHT_ONLY_SHADE)
 				vis_contents += sim_self.shandler.pshandler.vis_shade
 
-	var/is_open = istype(W,/turf/simulated/open)
+	var/is_open = isopenturf(W)
 
 
-	propogate_sunlight_changes(oldtype, old_density, W)
 	var/turf/simulated/cur_turf = src
+<<<<<<< HEAD
 	if(istype(cur_turf) && is_open != was_open)
 		do
 			cur_turf = GetBelow(cur_turf)
@@ -155,6 +155,24 @@
 				cur_turf.make_indoors()
 			cur_turf.propogate_sunlight_changes(oldtype, old_density, W, above = TRUE)
 		while(istype(cur_turf,/turf/simulated/open) && HasBelow(cur_turf.z))
+=======
+	if(istype(cur_turf))
+		var/area/A = cur_turf.loc
+		if(is_outdoors() && !A.isAlwaysIndoors())
+			propogate_sunlight_changes(oldtype, old_density, W)
+		if(is_open != was_open)
+			do
+				cur_turf = GetBelow(cur_turf)
+				if(!istype(cur_turf, /turf/simulated))
+					break
+				A = cur_turf.loc
+				if(is_open && !A.isAlwaysIndoors())
+					cur_turf.make_outdoors()
+					cur_turf.propogate_sunlight_changes(oldtype, old_density, W, above = TRUE)
+				else
+					cur_turf.make_indoors()
+			while(isopenturf(cur_turf) && HasBelow(cur_turf.z))
+>>>>>>> 5b42b1ffd8 ([MIRROR] ignore light recalc in shuttles and elevators (#10559))
 
 	if(old_shandler) old_shandler.holder_change()
 	if(preserve_outdoors)
