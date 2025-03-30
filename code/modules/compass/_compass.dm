@@ -2,11 +2,19 @@
 #define COMPASS_PERIOD        15
 #define COMPASS_LABEL_OFFSET 150
 
+<<<<<<< HEAD
 /*
   This folder contains an abstract type (/obj/compass_holder) which contains a set of 
   waypoints (/datum/compass_waypoint) and generates a circular compass with markers for 
   mobs that have the object in their screen list. See GPS for an example implementation.
 */
+=======
+/**
+ * This folder contains an abstract type (/obj/compass_holder) which contains a set of
+ * waypoints (/datum/compass_waypoint) and generates a circular compass with markers for
+ * mobs that have the object in their screen list. See GPS for an example implementation.
+ */
+>>>>>>> 8d0febfbb6 ([MIRROR] next grep, no spaces (#10548))
 
 /image/compass_marker
 	maptext_height = 64
