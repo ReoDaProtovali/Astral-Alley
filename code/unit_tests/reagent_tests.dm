@@ -24,7 +24,15 @@
 			log_unit_test("[Rpath]: Reagents - reagent ID blank.")
 			failed = TRUE
 
+<<<<<<< HEAD
 		if(collection_name[R.name])
+=======
+		if(R.id != lowertext(R.id))
+			log_unit_test("[Rpath]: Reagents - Reagent ID must be all lowercase.")
+			failed = TRUE
+
+		if(collection_name[R.name] && !(R.wiki_flag & WIKI_SPOILER)) // If wiki hidden it's probably intentional!
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
 			log_unit_test("[Rpath]: Reagents - WARNING - reagent name \"[R.name]\" is not unique, used first in [collection_name[R.name]]. Is this intentional?")
 		collection_name[R.name] = R.type
 

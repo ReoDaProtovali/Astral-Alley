@@ -1,6 +1,9 @@
 import { useBackend } from 'tgui/backend';
 import { Stack } from 'tgui-core/components';
+<<<<<<< HEAD
 import { Box, Divider, Icon, Section, Tabs } from 'tgui-core/components';
+=======
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
 import type { BooleanLike } from 'tgui-core/react';
 
 import { digestModeToColor } from './constants';

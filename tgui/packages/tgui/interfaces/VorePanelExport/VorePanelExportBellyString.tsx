@@ -1,6 +1,14 @@
 import { ItemModeSpan, ModeSpan } from './constants';
 import type { Belly } from './types';
+<<<<<<< HEAD
 import { GetAddons } from './VorePanelExportBellyStringHelpers';
+=======
+import {
+  GetAddons,
+  GetAutotransferFlags,
+  GetLiquidAddons,
+} from './VorePanelExportBellyStringHelpers';
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
 
 // prettier-ignore
 export const generateBellyString = (belly: Belly, index: number) => {

@@ -71,7 +71,7 @@ const loadChatFromStorage = async (store: Store<number, Action<string>>) => {
     return;
   }
   if (messages) {
-    for (let message of messages) {
+    for (const message of messages) {
       if (message.html) {
         message.html = DOMPurify.sanitize(message.html, {
           FORBID_TAGS: blacklisted_tags,
@@ -89,7 +89,7 @@ const loadChatFromStorage = async (store: Store<number, Action<string>>) => {
     });
   }
   if (archivedMessages) {
-    for (let archivedMessage of archivedMessages as message[]) {
+    for (const archivedMessage of archivedMessages as message[]) {
       if (archivedMessage.html) {
         archivedMessage.html = DOMPurify.sanitize(archivedMessage.html, {
           FORBID_TAGS: blacklisted_tags,
@@ -109,7 +109,7 @@ const loadChatFromStorage = async (store: Store<number, Action<string>>) => {
       settings.exportStart = 0;
       settings.exportEnd = 0;
 
-      for (let message of archivedMessages as message[]) {
+      for (const message of archivedMessages as message[]) {
         const currentId = message.roundId || 0;
         if (currentId !== oldId) {
           const round = currentId;
@@ -136,6 +136,86 @@ const loadChatFromStorage = async (store: Store<number, Action<string>>) => {
   store.dispatch(loadChat(state));
 };
 
+<<<<<<< HEAD
+=======
+const loadChatFromDBStorage = async (
+  store: Store<number, Action<string>>,
+  user_payload: { ckey: string; token: string },
+) => {
+  const game = selectGame(store.getState());
+  const settings = selectSettings(store.getState());
+  const [state] = await Promise.all([storage.get('chat-state')]);
+  // Discard incompatible versions
+  if (state && state.version <= 4) {
+    store.dispatch(loadChat());
+    return;
+  }
+
+  const messages: message[] = []; // FIX ME, load from DB, first load has errors => check console
+
+  // Thanks for inventing async/await
+  await new Promise<void>((resolve) => {
+    fetch(
+      `${game.chatlogApiEndpoint}/api/logs/${user_payload.ckey}/${settings.persistentMessageLimit}`,
+      {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          Authorization: `Bearer ${user_payload.token}`,
+          'Content-Type': 'application/json',
+        },
+      },
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        json.forEach(
+          (obj: {
+            msg_type: string | null;
+            text_raw: string;
+            created_at: number;
+            round_id: number;
+          }) => {
+            const msg: message = {
+              type: obj.msg_type ? obj.msg_type : '',
+              html: obj.text_raw,
+              createdAt: obj.created_at,
+              roundId: obj.round_id,
+            };
+
+            messages.push(msg);
+          },
+        );
+
+        if (messages) {
+          for (const message of messages) {
+            if (message.html) {
+              message.html = DOMPurify.sanitize(message.html, {
+                FORBID_TAGS: blacklisted_tags,
+              });
+            }
+          }
+          const batch = [
+            ...messages,
+            createMessage({
+              type: 'internal/reconnected',
+            }),
+          ];
+          chatRenderer.processBatch(batch, {
+            prepend: true,
+          });
+        }
+
+        store.dispatch(loadChat(state));
+        resolve();
+      })
+      .catch(() => {
+        store.dispatch(loadChat(state));
+        resolve();
+      });
+  });
+};
+
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
 export const chatMiddleware = (store) => {
   let initialized = false;
   let loaded = false;

@@ -10,6 +10,10 @@ import { Box, Button, Stack, Tabs } from 'tgui-core/components';
 import { openChatSettings } from '../settings/actions';
 import { addChatPage, changeChatPage } from './actions';
 import { selectChatPages, selectCurrentChatPage } from './selectors';
+<<<<<<< HEAD
+=======
+import type { Page } from './types';
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
 
 const UnreadCountWidget = ({ value }) => (
   <Box

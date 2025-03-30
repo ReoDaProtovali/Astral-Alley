@@ -29,6 +29,11 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/webpack-env": "^1.18.5",
+<<<<<<< HEAD
+=======
+    "@types/wicg-file-system-access": "^2023.10.5",
+    "@typescript-eslint/eslint-plugin": "7.18.0",
+>>>>>>> 16a213f699 ([MIRROR] Have you bingled that (#10545))
     "@typescript-eslint/parser": "^8.13.0",
     "@typescript-eslint/utils": "^8.13.0",
     "css-loader": "^7.1.2",
@@ -54,6 +59,7 @@
     "swc-loader": "^0.2.6",
     "tgui-core": "^1.8.0",
     "typescript": "5.6.3",
+    "typescript-eslint": "^8.28.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.96.1",
     "webpack-bundle-analyzer": "^4.10.2",
