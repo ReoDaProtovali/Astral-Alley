@@ -3145,6 +3145,11 @@
 /obj/machinery/librarypubliccomp,
 /turf/simulated/floor/wood,
 /area/library)
+"fY" = (
+/obj/structure/table/woodentable,
+/obj/machinery/librarywikicomp,
+/turf/simulated/floor/wood,
+/area/library)
 "fZ" = (
 /obj/machinery/camera/network/civilian{
 	dir = 5
@@ -36121,7 +36126,7 @@ FL
 iq
 Ck
 AH
-iq
+fY
 mo
 FT
 kM
