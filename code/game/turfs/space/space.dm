@@ -113,8 +113,13 @@
 
 		// Patch holes in the ceiling
 		if(T)
+<<<<<<< HEAD
 			if(istype(T, /turf/simulated/open) || istype(T, /turf/space))
 			 	// Must be build adjacent to an existing floor/wall, no floating floors
+=======
+			if(isopenturf(T))
+				// Must be build adjacent to an existing floor/wall, no floating floors
+>>>>>>> 5b42b1ffd8 ([MIRROR] ignore light recalc in shuttles and elevators (#10559))
 				var/turf/simulated/A = locate(/turf/simulated/floor) in T.CardinalTurfs()
 				if(!A)
 					A = locate(/turf/simulated/wall) in T.CardinalTurfs()

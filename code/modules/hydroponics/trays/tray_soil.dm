@@ -50,12 +50,19 @@
 	icon = 'icons/obj/seeds.dmi'
 	icon_state = "blank"
 
+<<<<<<< HEAD
 /obj/machinery/portable_atmospherics/hydroponics/soil/invisible/New(var/newloc,var/datum/seed/newseed)
 	//VOREStation Addition Start
 	if(istype(loc, /turf/simulated/open) || istype(loc, /turf/space))
 		qdel(src)
 	//VOREStation Addition End
 	..()
+=======
+/obj/machinery/portable_atmospherics/hydroponics/soil/invisible/Initialize(mapload,var/datum/seed/newseed)
+	. = ..()
+	if(isopenturf(loc))
+		return INITIALIZE_HINT_QDEL
+>>>>>>> 5b42b1ffd8 ([MIRROR] ignore light recalc in shuttles and elevators (#10559))
 	seed = newseed
 	dead = 0
 	age = 1
