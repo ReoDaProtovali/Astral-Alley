@@ -578,3 +578,19 @@ Talon pin
 	..()
 	gear_tweaks += gear_tweak_free_color_choice
 
+<<<<<<< HEAD
+=======
+/datum/gear/accessory/legwarmer_selection
+	display_name = "legwarmers (selection, colorable)"
+	path = /obj/item/clothing/accessory/legwarmers
+
+/datum/gear/accessory/legwarmer_selection/New()
+	..()
+	var/list/legwarmer_lists = list(
+	"Legwarmers, thigh" = /obj/item/clothing/accessory/legwarmers,
+	"Legwarmers, medium" = /obj/item/clothing/accessory/legwarmersmedium,
+	"Legwarmers, short" = /obj/item/clothing/accessory/legwarmersshort
+	)
+	gear_tweaks += new/datum/gear_tweak/path(legwarmer_lists)
+	gear_tweaks += gear_tweak_free_color_choice
+>>>>>>> 6d39b7d43d ([MIRROR] Adds leg warmers + modern labcoat to loadout (#10560))
