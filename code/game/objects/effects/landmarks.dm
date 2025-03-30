@@ -23,6 +23,7 @@
 			delete_me = 1
 			return
 		if("JoinLate") // Bit difference, since we need the spawn point to move.
+<<<<<<< HEAD
 			latejoin += src
 			simulated = TRUE
 		//	delete_me = 1
@@ -39,6 +40,15 @@
 			delete_me = 1
 			// CHOMPEdit End
 			return
+=======
+			latejoin += loc
+			delete_me = TRUE
+		//VOREStation Add end
+		if("JoinLateGateway")
+			latejoin_gateway += loc
+			// latejoin += loc				//VOREStation Addition // CHOMPRemove
+			delete_me = TRUE
+>>>>>>> d0636cd608 ([MIRROR] fix admin spawn or error (#10552))
 		//CHOMPEdit Begin
 		if("JoinLateStationGateway")
 			GLOB.latejoin_gatewaystation += loc
