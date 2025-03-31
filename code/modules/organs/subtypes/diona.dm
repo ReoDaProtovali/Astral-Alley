@@ -213,9 +213,14 @@
 
 /obj/item/organ/internal/brain/cephalon/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	spawn(30 SECONDS)	// FBP Dionaea need some way to be disassembled through surgery, if absolutely necessary.
 		if(!owner.isSynthetic())
 			vital = FALSE
+=======
+	if(!owner?.isSynthetic())
+		vital = FALSE
+>>>>>>> 6b24d0d65e ([MIRROR] fix diona xenoarch organ init (#10565))
 
 /obj/item/organ/internal/brain/cephalon/robotize()
 	return
