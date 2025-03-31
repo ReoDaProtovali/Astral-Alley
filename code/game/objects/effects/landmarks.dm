@@ -25,6 +25,7 @@
 		if("JoinLate") // Bit difference, since we need the spawn point to move.
 			latejoin += src
 			simulated = TRUE
+<<<<<<< HEAD
 		//	delete_me = 1
 			return
 		//VOREStation Add end
@@ -33,6 +34,9 @@
 			simulated = TRUE
 			return
 		//VOREStation Add end
+=======
+			//delete_me = TRUE // see above, moving, always use this list with get_turf
+>>>>>>> 46fc30e83e ([MIRROR] oups shuttles move (#10563))
 		if("JoinLateGateway")
 			latejoin_gateway += loc
 			// CHOMPEdit Start
