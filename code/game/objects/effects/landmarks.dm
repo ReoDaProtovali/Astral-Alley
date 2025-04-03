@@ -54,8 +54,15 @@
 			return
 		if("JoinLateTyrVillage")
 			GLOB.latejoin_tyrvillage += loc
+<<<<<<< HEAD
 			delete_me = 1
 			return
+=======
+			delete_me = TRUE
+		if("JoinLateTheDark")
+			GLOB.latejoin_thedark += loc
+			delete_me = TRUE
+>>>>>>> 17b49be098 (Shadekin dark spawn (#10576))
 		//CHOMPEdit End
 		if("JoinLateElevator")
 			latejoin_elevator += loc
