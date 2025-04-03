@@ -194,9 +194,6 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/tiled/techmaint,
 /area/security/HoS_Office)
-"aan" = (
-/turf/simulated/wall/r_wall,
-/area/space)
 "aao" = (
 /obj/item/bedsheet/piratedouble{
 	pixel_y = 4;
@@ -4213,6 +4210,55 @@
 	},
 /turf/simulated/floor/carpet/blue2,
 /area/security/Internal_Affairs_Office)
+<<<<<<< HEAD
+=======
+"ajR" = (
+/obj/machinery/door/firedoor/glass,
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/grille,
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 1
+	},
+/obj/structure/sign/directions/medical{
+	dir = 4;
+	layer = 3.5
+	},
+/obj/structure/sign/directions/science{
+	dir = 4;
+	layer = 3.5;
+	pixel_y = 9
+	},
+/obj/structure/sign/directions/security{
+	pixel_y = -9;
+	dir = 1;
+	layer = 3.5
+	},
+/turf/simulated/floor/plating,
+/area/hallway/Central_2_Deck_Hall)
+"ajS" = (
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/effect/floor_decal/borderfloor{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_2_Deck_Hall)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "ajT" = (
 /obj/machinery/power/breakerbox/activated{
 	RCon_tag = "Engineering Substation Bypass"
@@ -4220,6 +4266,60 @@
 /obj/effect/floor_decal/industrial/hatch/yellow,
 /turf/simulated/floor/plating,
 /area/maintenance/Engineering_Substation)
+<<<<<<< HEAD
+=======
+"ajU" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium{
+	dir = 4
+	},
+/obj/structure/window/titanium{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Civilian_AftPortCorridor1)
+"ajV" = (
+/obj/machinery/door/firedoor/glass,
+/obj/effect/floor_decal/industrial/arrows/blue{
+	dir = 1
+	},
+/obj/effect/floor_decal/industrial/arrows/blue,
+/obj/machinery/door/airlock/angled_bay/standard/glass/common{
+	dir = 4;
+	name = "Central Lobby";
+	tintable = 1;
+	id_tint = "sc-WTkitchen"
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/turf/simulated/floor/tiled/techmaint,
+/area/hallway/Star_2_Deck_Central_Corridor_1)
+"ajW" = (
+/obj/machinery/firealarm{
+	pixel_y = 25
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 1
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 6
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Star_2_Deck_Central_Corridor_1)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "ajX" = (
 /obj/random/tech_supply,
 /obj/random/tech_supply,
@@ -4363,6 +4463,52 @@
 /obj/effect/catwalk_plated/techmaint,
 /turf/simulated/floor/plating,
 /area/maintenance/Deck2_For_Corridor)
+<<<<<<< HEAD
+=======
+"akx" = (
+/obj/machinery/alarm{
+	pixel_y = 25
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/obj/effect/catwalk_plated/techmaint,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Port_Corridor)
+"aky" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/effect/catwalk_plated/techmaint,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Port_Corridor)
+"akz" = (
+/obj/random/junk,
+/obj/random/trash,
+/obj/random/tech_supply,
+/obj/random/maintenance/clean,
+/turf/simulated/floor/tiled/techmaint,
+/area/maintenance/Deck2_Civilian_StarChamber2)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "akA" = (
 /obj/machinery/firealarm{
 	dir = 8;
@@ -4377,6 +4523,60 @@
 /obj/machinery/vending/emergencyfood/filled,
 /turf/simulated/floor/tiled,
 /area/quartermaster/Breakroom)
+<<<<<<< HEAD
+=======
+"akB" = (
+/obj/random/junk,
+/obj/random/maintenance/clean,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Civilian_StarChamber2)
+"akC" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 10
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4,
+/turf/simulated/floor/tiled,
+/area/hallway/Star_Transit_Foyer)
+"akD" = (
+/obj/machinery/door/firedoor/glass,
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/grille,
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment,
+/obj/structure/sign/directions/bar{
+	pixel_y = 9;
+	layer = 3.5;
+	dir = 1
+	},
+/obj/structure/sign/directions/cryo{
+	dir = 1;
+	layer = 3.5
+	},
+/turf/simulated/floor/plating,
+/area/hallway/Central_2_Deck_Hall)
+"akE" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4;
+	icon_state = "pipe-c"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Central_2_Deck_Hall)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "akF" = (
 /obj/structure/filingcabinet/chestdrawer,
 /obj/machinery/vending/wallmed1{
@@ -4971,6 +5171,7 @@
 	pixel_x = 27;
 	pixel_y = -12
 	},
+<<<<<<< HEAD
 /obj/machinery/button/windowtint{
 	id = "sc-WTdronefab";
 	name = "E-window tint control";
@@ -4982,6 +5183,20 @@
 	},
 /turf/simulated/floor/plating,
 /area/engineering/Drone_Fab)
+=======
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/Chomp_Kitchen)
+"ani" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/rnd/Toxins_Viewing_Port)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "anj" = (
 /obj/effect/floor_decal/milspec/box,
 /turf/simulated/floor/tiled/steel_ridged,
@@ -5287,12 +5502,56 @@
 "aop" = (
 /turf/simulated/wall/r_wall,
 /area/harbor/Port_Shuttlebay)
+<<<<<<< HEAD
+=======
+"aoq" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/hatch,
+/obj/structure/grille,
+/obj/structure/window/titanium,
+/obj/structure/window/titanium{
+	dir = 1
+	},
+/obj/structure/window/titanium{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/crew_quarters/Midnight_Kitchen)
+"aor" = (
+/obj/effect/catwalk_plated,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 6;
+	pixel_x = -1
+	},
+/turf/simulated/floor/plating/turfpack/airless,
+/area/harbor/Port_Shuttlebay)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "aos" = (
 /obj/structure/cable/white{
 	icon_state = "1-4"
 	},
 /turf/simulated/wall/r_wall,
 /area/crew_quarters/Emergency_EVA)
+<<<<<<< HEAD
+=======
+"aot" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/effect/catwalk_plated,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 5
+	},
+/turf/simulated/floor/plating/turfpack/airless,
+/area/harbor/Port_Shuttlebay)
+"aou" = (
+/obj/structure/reagent_dispensers/cookingoil,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/crew_quarters/Chomp_Kitchen)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "aov" = (
 /turf/simulated/wall/r_wall,
 /area/maintenance/Deck2_Security_AftPortCorridor1)
@@ -5715,6 +5974,21 @@
 	},
 /turf/simulated/floor/tiled,
 /area/medical/Treatment_Hall)
+<<<<<<< HEAD
+=======
+"apQ" = (
+/obj/random/multiple/corp_crate/no_weapons,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Civilian_AftPortCorridor1)
+"apR" = (
+/obj/machinery/floodlight,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Civilian_AftPortCorridor1)
+"apS" = (
+/obj/random/tank,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Civilian_AftPortCorridor1)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "apU" = (
 /obj/structure/disposalpipe/segment{
 	dir = 8;
@@ -6236,6 +6510,97 @@
 	},
 /turf/simulated/floor/tiled,
 /area/hallway/Central_2_Deck_Hall)
+<<<<<<< HEAD
+=======
+"asb" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/Drone_Fab)
+"asc" = (
+/obj/machinery/power/apc{
+	dir = 8;
+	pixel_x = -26
+	},
+/obj/machinery/light_switch{
+	dir = 4;
+	pixel_x = -25;
+	pixel_y = 11
+	},
+/obj/machinery/button/windowtint{
+	id = "sc-WTdronefab";
+	name = "W-window tint control";
+	pixel_x = -27;
+	pixel_y = -11
+	},
+/obj/structure/cable/green{
+	icon_state = "0-2"
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/Drone_Fab)
+"asd" = (
+/obj/effect/floor_decal/industrial/outline/cut_corners/blue,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 6
+	},
+/obj/structure/cable/green{
+	icon_state = "2-4"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 6
+	},
+/turf/simulated/floor/tiled/monotile{
+	color = "#989898"
+	},
+/area/crew_quarters/Emergency_EVA)
+"ase" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/turf/simulated/floor/tiled/dark,
+/area/security/Lobby)
+"asf" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 9
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 9
+	},
+/obj/structure/cable/green{
+	icon_state = "1-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/security/Lobby)
+"asg" = (
+/obj/machinery/light/small{
+	dir = 8
+	},
+/obj/structure/reagent_dispensers/fueltank,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck2_Security_AftStarCorridor2)
+"ash" = (
+/obj/effect/catwalk_plated,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/turf/simulated/floor/plating/turfpack/airless,
+/area/harbor/Port_Shuttlebay)
+"asi" = (
+/obj/effect/catwalk_plated,
+/obj/machinery/shield_diffuser,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 10
+	},
+/turf/simulated/floor/plating/turfpack/airless,
+/area/harbor/Port_Shuttlebay)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "ask" = (
 /obj/machinery/door/firedoor/glass/hidden/steel,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
@@ -20018,11 +20383,11 @@
 /area/hallway/AftStar_2_Deck_Observatory)
 "bmb" = (
 /obj/machinery/suit_storage_unit/standard_unit,
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
 	},
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Emergency_EVA)
 "bmd" = (
@@ -21173,7 +21538,7 @@
 "bqr" = (
 /obj/machinery/air_sensor{
 	frequency = 1430;
-	id_tag = "SC-toxins_mixing_exterior";
+	id_tag = "toxins_mixing_exterior";
 	output = 63
 	},
 /turf/simulated/floor/reinforced/airless,
@@ -21443,8 +21808,8 @@
 /area/crew_quarters/Emergency_EVA)
 "brG" = (
 /obj/machinery/suit_storage_unit/standard_unit,
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/light,
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Emergency_EVA)
 "brH" = (
@@ -24105,7 +24470,7 @@
 /area/hallway/AftPort_2_Deck_Observatory)
 "bAj" = (
 /obj/structure/dispenser/oxygen,
-/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Emergency_EVA)
 "bAk" = (
@@ -27481,12 +27846,17 @@
 /area/crew_quarters/Emergency_EVA)
 "bOr" = (
 /obj/machinery/suit_storage_unit/standard_unit,
-/obj/effect/floor_decal/industrial/hatch/yellow,
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Emergency_EVA)
 "bOt" = (
+<<<<<<< HEAD
 /obj/machinery/portable_atmospherics/canister/air,
 /obj/effect/floor_decal/industrial/hatch/yellow,
+=======
+/obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/effect/floor_decal/industrial/hatch/blue,
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Emergency_EVA)
 "bOx" = (
@@ -44168,6 +44538,7 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/plating,
 /area/maintenance/Medical_Substation)
 "dIY" = (
@@ -48315,7 +48686,6 @@
 	dir = 8;
 	layer = 2.6
 	},
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/item/tank/emergency/oxygen{
 	pixel_y = 11;
 	pixel_x = 7
@@ -48362,6 +48732,7 @@
 	name = "1S-requests console";
 	department = "EVA"
 	},
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Emergency_EVA)
 "eMA" = (
@@ -51887,6 +52258,9 @@
 "fGb" = (
 /obj/machinery/r_n_d/circuit_imprinter,
 /obj/effect/floor_decal/industrial/outline/yellow,
+/obj/structure/reagent_dispensers/acid{
+	pixel_y = 28
+	},
 /turf/simulated/floor/plating,
 /area/engineering/Technical_Storage)
 "fGl" = (
@@ -51929,6 +52303,9 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
+	},
+/obj/effect/map_helper/airlock/button/int_button{
+	pixel_y = -14
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/Toxins_Viewing_Port)
@@ -57276,11 +57653,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck2_Security_AftStarCorridor2)
 "gTi" = (
-/obj/machinery/atmospherics/valve/shutoff{
-	name = "Security automatic shutoff valve";
+/obj/effect/floor_decal/industrial/outline/blue,
+/obj/machinery/atmospherics/valve/open{
 	dir = 4
 	},
-/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/plating,
 /area/maintenance/Security_Substation)
 "gTx" = (
@@ -59041,7 +59417,9 @@
 	autoclose = 0;
 	frequency = 1379;
 	id_tag = "SC-tox_airlock_exterior";
-	locked = 1
+	locked = 1;
+	req_access = list(7);
+	req_one_access = list(47)
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/Toxins_Mixing_Room)
@@ -64119,9 +64497,7 @@
 /turf/simulated/open,
 /area/maintenance/Deck2_Civilian_PortChamber2)
 "iHv" = (
-/obj/random/junk,
-/obj/random/trash,
-/obj/random/tech_supply,
+/obj/random/maintenance/clean,
 /turf/simulated/floor/tiled/techmaint,
 /area/maintenance/Deck2_Civilian_StarChamber2)
 "iHz" = (
@@ -64886,10 +65262,10 @@
 /area/quartermaster/Recycling)
 "iQL" = (
 /obj/machinery/suit_storage_unit/standard_unit,
-/obj/effect/floor_decal/industrial/hatch/yellow,
 /obj/machinery/newscaster{
 	pixel_y = -30
 	},
+/obj/effect/floor_decal/industrial/hatch/blue,
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Emergency_EVA)
 "iRm" = (
@@ -66115,6 +66491,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/atmospherics/valve/digital/open,
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/plating,
 /area/maintenance/Research_Substation)
 "jiD" = (
@@ -78132,8 +78509,44 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
+<<<<<<< HEAD
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/Chomp_Kitchen)
+=======
+/obj/structure/sign/directions/kitchen{
+	pixel_y = 9;
+	layer = 3.5;
+	dir = 1
+	},
+/obj/structure/sign/directions/science/exploration{
+	pixel_y = 0;
+	dir = 1;
+	layer = 3.5
+	},
+/turf/simulated/floor/plating,
+/area/hallway/Central_2_Deck_Hall)
+"mCd" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/ai_status_display{
+	pixel_y = -32
+	},
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/orange/bordercorner{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/For_2_Deck_Central_Corridor_1)
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 "mCf" = (
 /obj/structure/closet/emcloset,
 /obj/structure/disposalpipe/segment{
@@ -92653,6 +93066,7 @@
 	regulate_mode = 0;
 	unlocked = 1
 	},
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/plating,
 /area/maintenance/Research_Substation)
 "qBO" = (
@@ -93176,10 +93590,10 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck2_Science_StarCorridor2)
 "qKI" = (
-/obj/machinery/atmospherics/valve/shutoff{
-	name = "Domicile automatic shutoff valve"
-	},
 /obj/effect/floor_decal/industrial/outline/blue,
+/obj/machinery/atmospherics/valve/open{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/Distro_Civilian)
 "qKQ" = (
@@ -97020,7 +97434,7 @@
 "rHy" = (
 /obj/machinery/air_sensor{
 	frequency = 1430;
-	id_tag = "SC-toxins_mixing_interior";
+	id_tag = "toxins_mixing_interior";
 	output = 63
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
@@ -97218,6 +97632,9 @@
 	dir = 1
 	},
 /obj/effect/map_helper/airlock/door/ext_door,
+/obj/effect/map_helper/airlock/button/ext_button{
+	pixel_y = -14
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/Toxins_Viewing_Port)
 "rIN" = (
@@ -108006,10 +108423,10 @@
 /turf/simulated/floor/grass,
 /area/hallway/Aft_2_Deck_Central_Corridor_1)
 "uHv" = (
-/obj/machinery/atmospherics/valve/shutoff{
-	name = "Cargo automatic shutoff valve"
-	},
 /obj/effect/floor_decal/industrial/outline/blue,
+/obj/machinery/atmospherics/valve/open{
+	dir = 1
+	},
 /turf/simulated/floor/plating,
 /area/maintenance/Cargo_Substation)
 "uHU" = (
@@ -110224,6 +110641,7 @@
 /area/crew_quarters/Library)
 "vpe" = (
 /obj/machinery/atmospherics/valve/digital/open,
+/obj/effect/floor_decal/industrial/outline/blue,
 /turf/simulated/floor/plating,
 /area/maintenance/Medical_Substation)
 "vpj" = (
@@ -112030,7 +112448,25 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
+<<<<<<< HEAD
 /turf/simulated/wall/r_wall,
+=======
+/obj/structure/sign/directions/cargo{
+	dir = 8;
+	layer = 3.5
+	},
+/obj/structure/sign/directions/engineering{
+	dir = 8;
+	layer = 3.5;
+	pixel_y = 9
+	},
+/obj/structure/sign/directions/command{
+	pixel_y = -9;
+	dir = 1;
+	layer = 3.5
+	},
+/turf/simulated/floor/plating,
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 /area/hallway/Central_2_Deck_Hall)
 "vTu" = (
 /obj/structure/closet/emcloset,
@@ -113922,8 +114358,9 @@
 /turf/simulated/floor/tiled/dark,
 /area/security/Processing_Room)
 "woW" = (
-/obj/machinery/atmospherics/valve/shutoff{
-	name = "Science automatic shutoff valve"
+/obj/effect/floor_decal/industrial/outline/blue,
+/obj/machinery/atmospherics/valve/open{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/Research_Substation)
@@ -118795,7 +119232,9 @@
 	autoclose = 0;
 	frequency = 1379;
 	id_tag = "SC-tox_airlock_exterior";
-	locked = 1
+	locked = 1;
+	req_access = list(7);
+	req_one_access = list(47)
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/rnd/Toxins_Mixing_Room)
@@ -120298,8 +120737,9 @@
 /obj/structure/cable/green{
 	icon_state = "1-2"
 	},
-/obj/machinery/atmospherics/valve/shutoff{
-	name = "Medical automatic shutoff valve"
+/obj/effect/floor_decal/industrial/outline/blue,
+/obj/machinery/atmospherics/valve/open{
+	dir = 1
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/Medical_Substation)
@@ -133218,6 +133658,9 @@ aaa
 aaa
 aaa
 aaa
+aaf
+onO
+aaf
 aaa
 aaa
 aaa
@@ -133235,12 +133678,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+onO
+aaf
 aaa
 aaa
 aaa
@@ -133468,6 +133908,39 @@ aaa
 aaa
 aaa
 aaa
+cCw
+mAT
+iiP
+lVS
+cCw
+aaa
+aaa
+aaa
+dqa
+bCe
+dqa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+<<<<<<< HEAD
+aaa
+=======
+ctj
+ctj
+ctj
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+<<<<<<< HEAD
 aaa
 aaa
 aaa
@@ -133484,21 +133957,11 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+=======
+dqa
+bCe
+dqa
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 aaa
 aaa
 aaa
@@ -133727,17 +134190,25 @@ onO
 onO
 aaa
 cCw
-mAT
-iiP
-lVS
+aYr
+oht
+oht
 cCw
 aaa
 aaa
+<<<<<<< HEAD
 onO
 dqa
 bCe
 dqa
 onO
+=======
+aaa
+ctj
+sOr
+ctj
+aaa
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 aaa
 aaa
 aaa
@@ -133753,11 +134224,19 @@ aaa
 aaa
 aaa
 aaa
+<<<<<<< HEAD
 onO
 dqa
 bCe
 dqa
 onO
+=======
+aaa
+ctj
+sOr
+ctj
+aaa
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 aaa
 aaa
 aaa
@@ -133985,7 +134464,7 @@ bCe
 aaf
 aaa
 cCw
-aYr
+oht
 oht
 oht
 cCw
@@ -133993,7 +134472,7 @@ aaa
 aaa
 aaa
 ctj
-sOr
+key
 ctj
 aaa
 aaa
@@ -134013,7 +134492,7 @@ aaa
 aaa
 aaa
 ctj
-sOr
+key
 ctj
 aaa
 aaa
@@ -134495,7 +134974,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+ctj
 cCw
 uKl
 cCw
@@ -134753,7 +135232,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+ctj
 qmn
 vZd
 fsb
@@ -134921,8 +135400,8 @@ aop
 oGx
 uhW
 bNF
-klj
-klj
+ash
+aor
 klj
 paJ
 amH
@@ -135011,7 +135490,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+ctj
 rCD
 ocV
 oht
@@ -135269,7 +135748,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+ctj
 tAR
 jbZ
 wLS
@@ -136578,17 +137057,17 @@ aaa
 aaa
 aaa
 aaa
+ctj
+ctj
+ctj
+ctj
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+ctj
+ctj
+ctj
+ctj
 aaa
 aaa
 aaa
@@ -136985,8 +137464,8 @@ foi
 foi
 foi
 foi
-foi
-wFO
+asi
+aot
 klj
 gKx
 lVo
@@ -139674,17 +140153,17 @@ aaa
 aaa
 aaa
 aaa
+ctj
+ctj
+ctj
+ctj
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+ctj
+ctj
+ctj
+ctj
 aaa
 aaa
 aaa
@@ -143019,7 +143498,7 @@ bFD
 bFD
 bFD
 bFD
-aan
+aaa
 aaa
 aaa
 aaa
@@ -143272,13 +143751,21 @@ bcs
 aKA
 sIx
 wRf
+<<<<<<< HEAD
 xDR
 xDR
 xDR
 xDR
 xDR
+=======
+aqf
+aqc
+scW
+apX
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 wZn
 oEW
+ajU
 jnk
 wZn
 aaa
@@ -166745,7 +167232,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+ctj
 eBy
 pin
 pwn
@@ -167003,7 +167490,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+ctj
 gFx
 kfm
 sQq
@@ -167261,7 +167748,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+ctj
 qcZ
 fWy
 apw
@@ -167519,7 +168006,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+ctj
 qcZ
 pUY
 qcZ
@@ -167783,7 +168270,7 @@ sOr
 aaf
 aaa
 qcZ
-xss
+akB
 iHv
 sQq
 qcZ
@@ -168041,15 +168528,15 @@ xBF
 aaf
 aaa
 qcZ
-qJo
-kUm
-wyG
+xss
+akz
+lGm
 qcZ
 aaa
 aaa
 aaa
 ctj
-sOr
+key
 ctj
 aaa
 aaa
@@ -168069,7 +168556,7 @@ aaa
 aaa
 aaa
 ctj
-sOr
+key
 ctj
 aaa
 aaa
@@ -168299,17 +168786,25 @@ onO
 onO
 aaa
 qcZ
-sbk
-tKS
-gky
+qJo
+kUm
+wyG
 qcZ
 aaa
 aaa
+<<<<<<< HEAD
 onO
 dqa
 oBS
 dqa
 onO
+=======
+aaa
+ctj
+sOr
+ctj
+aaa
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 aaa
 aaa
 aaa
@@ -168325,11 +168820,19 @@ aaa
 aaa
 aaa
 aaa
+<<<<<<< HEAD
 onO
 dqa
 oBS
 dqa
 onO
+=======
+aaa
+ctj
+sOr
+ctj
+aaa
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 aaa
 aaa
 aaa
@@ -168556,6 +169059,39 @@ aaa
 aaa
 aaa
 aaa
+qcZ
+sbk
+tKS
+gky
+qcZ
+aaa
+aaa
+aaa
+dqa
+oBS
+dqa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+<<<<<<< HEAD
+aaa
+=======
+ctj
+ctj
+ctj
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+aaa
+<<<<<<< HEAD
 aaa
 aaa
 aaa
@@ -168572,21 +169108,11 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+=======
+dqa
+oBS
+dqa
+>>>>>>> 0c62b9c3fd (Soluna Nexus map fix 2.1 (#10575))
 aaa
 aaa
 aaa
@@ -168822,6 +169348,9 @@ aaa
 aaa
 aaa
 aaa
+aaf
+gWp
+aaf
 aaa
 aaa
 aaa
@@ -168839,12 +169368,9 @@ aaa
 aaa
 aaa
 aaa
-aaa
-aaa
-aaa
-aaa
-aaa
-aaa
+aaf
+gWp
+aaf
 aaa
 aaa
 aaa
@@ -172594,7 +173120,7 @@ wWX
 wWX
 cAy
 tZJ
-moa
+ani
 uRn
 moa
 hcl
