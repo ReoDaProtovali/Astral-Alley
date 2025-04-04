@@ -187,7 +187,13 @@
 /mob/living/simple_mob/vore/leopardmander/exotic/init_vore()
 	if(!voremob_loaded)
 		return
+<<<<<<< HEAD
 	//.=..() //Dont need this, it just spawns the parent's guts
+=======
+	if(LAZYLEN(vore_organs))
+		return
+
+>>>>>>> 8a845268f7 ([MIRROR] tgui update (#10586))
 	var/obj/belly/B = new /obj/belly(src)
 	B.name = "stomach"
 	B.desc = "The exotic leopardmander tosses its head back with you firmly clasped in its jaws, and in a few swift moments it finishes swallowing you down into its hot, brightly glowing gut. Your weight makes absolutely no impact on its form, the doughy walls giving way beneath you, with their unnatural softness. The thick, humid air is tinged with an oddly pleasant smell, and the surrounding flesh wastes no time in clenching and massaging down over its newfound fodder, smothering you in thick hot gutflesh~ You can only really sort of see outside that thick-walled gut."
@@ -242,6 +248,7 @@
 	B.autotransferlocation = "stomach"
 	B.escapetime = 1 SECONDS
 	B.escapechance = 75
+	. = ..()
 
 /obj/random/mob/leopardmander/item_to_spawn() //Random map spawner
 	return pick(prob(89);/mob/living/simple_mob/vore/leopardmander,
