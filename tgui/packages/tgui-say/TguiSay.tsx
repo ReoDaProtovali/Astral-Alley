@@ -57,6 +57,7 @@ export function TguiSay() {
   const [lightMode, setLightMode] = useState(false);
   const [position, setPosition] = useState([window.screenX, window.screenY]);
   const [value, setValue] = useState('');
+  const [rescale, setRescale] = useState(false);
 
   function handleArrowKeys(direction: KEY.PageUp | KEY.PageDown): void {
     const chat = chatHistory.current;
@@ -287,8 +288,11 @@ export function TguiSay() {
   function handleOpen(data: ByondOpen): void {
     setTimeout(() => {
       innerRef.current?.focus();
+<<<<<<< HEAD
       windowSet(WindowSize.Width, WindowSize.Small);
       setSize(WindowSize.Width);
+=======
+>>>>>>> f81b273417 ([MIRROR] dependency update (#10589))
     }, 1);
 
     const { channel } = data;
@@ -300,6 +304,7 @@ export function TguiSay() {
 
     setButtonContent(iterator.current());
     windowOpen(iterator.current());
+    setRescale(true);
   }
 
   function handleProps(data: ByondProps): void {
@@ -318,7 +323,13 @@ export function TguiSay() {
     setCurrentPrefix(null);
     setButtonContent(channelIterator.current.current());
     setValue('');
+    setRescale(false);
   }
+
+  useEffect(() => {
+    setSize(minimumHeight);
+    windowSet(minimumWidth, minimumHeight);
+  }, [rescale]);
 
   /** Subscribe to Byond messages */
   useEffect(() => {
