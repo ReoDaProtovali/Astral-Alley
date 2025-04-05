@@ -5,9 +5,15 @@ var/global/list/latejoin_talon = list()
 	name = "JoinLateTalon"
 	delete_me = 1
 
+<<<<<<< HEAD
 /obj/effect/landmark/talon/New()
 	latejoin_talon += loc // Register this turf as tram latejoin.
 	..()
+=======
+/obj/effect/landmark/talon/Initialize(mapload)
+	latejoin_talon += loc // Register this turf as tram latejoin.
+	. = ..()
+>>>>>>> 253b577e46 ([MIRROR] Various fixes & tweaks (#10582))
 
 /datum/spawnpoint/talon
 	display_name = "ITV Talon Cryo"
