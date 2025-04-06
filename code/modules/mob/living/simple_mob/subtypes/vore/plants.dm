@@ -75,9 +75,13 @@
 		var/mob/living/L = AM
 		if(L.devourable && L.allowmobvore && (src.vore_fullness < src.vore_capacity))
 			perform_the_nom(src,L,src,src.vore_selected,1)
+<<<<<<< HEAD
 			return
 		else
 			return
+=======
+			eaten_mobs += L
+>>>>>>> 7bb2f6dc9c (Revert "Revert "[MIRROR] split tgui html"" (#10598))
 
 
 ////////////////////////////PITCHER PLANT////////////////////////////////////////////////
