@@ -671,7 +671,11 @@ var/list/global/tank_gauge_cache = list()
 		log_debug("DEBUG: HasProximity called without reference on [src].")
 		return
 	assembly?.HasProximity(T, WEAKREF(AM), old_loc)
+<<<<<<< HEAD
 // CHOMPEdit End
+=======
+
+>>>>>>> e67d91e80b (Revert "[MIRROR] split tgui html" (#10597))
 /obj/item/tankassemblyproxy/Moved(old_loc, direction, forced)
 	if(isturf(old_loc))
 		unsense_proximity(callback = TYPE_PROC_REF(/atom,HasProximity), center = old_loc) // CHOMPEdit
