@@ -64,7 +64,10 @@
 	if(isnull(AM))
 		log_debug("DEBUG: HasProximity called without reference on [src].")
 	attached_device?.HasProximity(T, WEAKREF(AM), old_loc)
+<<<<<<< HEAD
 // CHOMPEdit End
+=======
+>>>>>>> e67d91e80b (Revert "[MIRROR] split tgui html" (#10597))
 
 /obj/item/transfer_valve/Moved(old_loc, direction, forced)
 	. = ..()
