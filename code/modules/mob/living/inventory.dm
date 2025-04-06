@@ -183,7 +183,13 @@
 // This handles the drag-open inventory panel.
 /mob/living/MouseDrop(atom/over_object)
 	var/mob/living/L = over_object
+<<<<<<< HEAD
 	if(istype(L) && L != src && L == usr && Adjacent(L) && !L.is_incorporeal()) // CHOMPEdit
+=======
+	if(L.is_incorporeal())
+		return
+	if(istype(L) && L != src && L == usr && Adjacent(L))
+>>>>>>> 5069c8c6a6 ([MIRROR] Reworks weather effects to no longer hurt phased entities (#10595))
 		show_inventory_panel(L)
 	. = ..()
 
