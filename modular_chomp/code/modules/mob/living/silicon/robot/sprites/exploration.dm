@@ -32,6 +32,16 @@
 	has_vore_belly_sprites = TRUE
 	rest_sprite_options = list("Default", "Sit")
 
+/datum/robot_sprite/dogborg/tall/explorer/bulwark
+	name = "Bulwark"
+	sprite_icon = 'icons/mob/robot/tallrobot/tallrobots.dmi'
+	sprite_icon_state = "bulwark"
+	has_eye_light_sprites = FALSE
+	rest_sprite_options = list("Default")
+	icon_x = 32
+	pixel_x = 0
+
+
 /* placeholder
 /datum/robot_sprite/dogborg/tall/explorer
 	module_type = "Exploration"
