@@ -4451,7 +4451,10 @@
 /obj/structure/cliff/automatic{
 	dir = 2
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "dNs" = (
 /obj/structure/window/reinforced/survival_pod{
@@ -4865,7 +4868,10 @@
 	},
 /area/vr/powered/mall/backrooms)
 "dXs" = (
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "dXG" = (
 /obj/structure/table/standard,
@@ -7615,7 +7621,10 @@
 /obj/structure/cliff/automatic{
 	dir = 5
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "gfv" = (
 /obj/structure/closet,
@@ -8000,7 +8009,10 @@
 /obj/structure/cliff/automatic{
 	dir = 4
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "gBI" = (
 /obj/machinery/light{
@@ -8245,7 +8257,10 @@
 /area/vr/powered/motel)
 "gNU" = (
 /obj/structure/cliff/automatic/corner,
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "gOb" = (
 /obj/machinery/vending/medical{
@@ -11182,7 +11197,10 @@
 /obj/structure/cliff/automatic/corner{
 	dir = 6
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "jjV" = (
 /obj/item/fossil/skull,
@@ -16337,7 +16355,10 @@
 /obj/structure/cliff/automatic{
 	dir = 8
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "nmx" = (
 /obj/machinery/computer/operating{
@@ -17801,7 +17822,10 @@
 /obj/structure/cliff/automatic{
 	dir = 9
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "ono" = (
 /obj/effect/map_effect/portal/line/side_a,
@@ -17919,7 +17943,10 @@
 /area/vr/powered/mall)
 "oqz" = (
 /obj/effect/decal/remains/unathi,
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "oqE" = (
 /obj/effect/floor_decal/corner/black/diagonal,
@@ -20047,7 +20074,10 @@
 /obj/structure/cliff/automatic/corner{
 	dir = 10
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "qab" = (
 /obj/effect/zone_divider,
@@ -20375,7 +20405,10 @@
 /area/vr/powered/mall/dorms/dorms1)
 "qiO" = (
 /obj/structure/cliff/automatic,
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "qiV" = (
 /obj/structure/bed/chair/bay/comfy/black{
@@ -22302,7 +22335,10 @@
 /obj/structure/cliff/automatic/corner{
 	dir = 9
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "rSb" = (
 /obj/structure/bed/chair/office/dark{
@@ -24041,7 +24077,10 @@
 /obj/structure/cliff/automatic{
 	dir = 10
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "tph" = (
 /obj/structure/bed/chair/oldsofa/left{
@@ -25892,7 +25931,10 @@
 /area/vr/powered/mall)
 "uIK" = (
 /obj/effect/decal/remains/ribcage,
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "uIR" = (
 /obj/machinery/light{
@@ -28471,7 +28513,10 @@
 /obj/structure/cliff/automatic{
 	dir = 6
 	},
-/turf/simulated/floor/lava,
+/turf/simulated/floor/lava{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/outdoors/powered/lava)
 "wPJ" = (
 /obj/structure/table/steel_reinforced,
