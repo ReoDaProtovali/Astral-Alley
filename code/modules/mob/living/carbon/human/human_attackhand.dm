@@ -154,6 +154,7 @@
 
 		if(I_HURT)
 
+<<<<<<< HEAD
 			if(M.zone_sel.selecting == "mouth" && wear_mask && istype(wear_mask, /obj/item/grenade))
 				var/obj/item/grenade/G = wear_mask
 				if(!G.active)
@@ -162,6 +163,142 @@
 					update_inv_wear_mask()
 				else
 					to_chat(M, span_warning("\The [G] is already primed! Run!"))
+=======
+		if(I_DISARM)
+			attack_hand_disarm_intent(H, M, TT, has_hands)
+	return
+
+
+/// THE VARIOUS INTENTS.
+/// Theses used to be included in the above proc into a MEGA PROC that was over 300 lines long.
+/// This condenses them and makes it less of a cluster.
+
+///Help Intent
+/mob/living/carbon/human/proc/attack_hand_help_intent(var/mob/living/carbon/human/H, var/mob/living/M as mob, var/datum/gender/TT, var/has_hands)
+	PRIVATE_PROC(TRUE)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	if(M.restrained()) //If we're restrained, we can't help them. If you want to add snowflake stuff that you can do while restrained, add it here.
+		return FALSE
+	if(!has_hands) //This is here so if you WANT to do special code for 'if we don't have hands, do stuff' it can be done here!
+		return FALSE
+	if(istype(M) && attempt_to_scoop(M))
+		return FALSE;
+
+	//todo: make this whole CPR check into it's own individual proc instead of hogging up attack_hand_help_intent
+	if(istype(H) && health < CONFIG_GET(number/health_threshold_crit)) //Only humans can do CPR.
+		if(!H.check_has_mouth())
+			to_chat(H, span_danger("You don't have a mouth, you cannot perform CPR!"))
+			return FALSE
+		if(!check_has_mouth())
+			to_chat(H, span_danger("They don't have a mouth, you cannot perform CPR!"))
+			return FALSE
+		if((H.head && (H.head.body_parts_covered & FACE)) || (H.wear_mask && (H.wear_mask.body_parts_covered & FACE)))
+			to_chat(H, span_notice("Remove your mask!"))
+			return FALSE
+		if((head && (head.body_parts_covered & FACE)) || (wear_mask && (wear_mask.body_parts_covered & FACE)))
+			to_chat(H, span_notice("Remove [src]'s mask!"))
+			return FALSE
+
+		if (!cpr_time)
+			return FALSE
+
+		cpr_time = 0
+		addtimer(VARSET_CALLBACK(src, cpr_time, 1), 3 SECONDS, TIMER_DELETE_ME)
+
+		H.visible_message(span_danger("\The [H] is trying to perform CPR on \the [src]!"))
+
+		if(!do_after(H, 30))
+			return FALSE
+
+		H.visible_message(span_danger("\The [H] performs CPR on \the [src]!"))
+		to_chat(H, span_warning("Repeat at least every 7 seconds."))
+
+		perform_cpr(H)
+
+	else if(!(M == src && apply_pressure(M, M.zone_sel.selecting)))
+		help_shake_act(M)
+	return TRUE
+
+//Disarm Intent
+/mob/living/carbon/human/proc/attack_hand_disarm_intent(var/mob/living/carbon/human/H, var/mob/living/M as mob, var/datum/gender/TT, var/has_hands)
+	PRIVATE_PROC(TRUE)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	if(M.restrained()) //If we're restrained, we can't disarm them. If you want to add snowflake stuff that you can do while restrained, add it here.
+		return
+	if(!has_hands)  //This is here so if you WANT to do special code for 'if we don't have hands, do stuff' it can be done here!
+		return
+
+	M.do_attack_animation(src)
+
+	if(w_uniform)
+		w_uniform.add_fingerprint(M)
+
+	if(M.lying && (M.loc == src.loc)) //If we are on the ground and they're on top of us, we don't have enough space to push them! Also antispam.
+		if(world.time <= (last_push_time + 6 SECONDS))
+			return
+		visible_message(span_warning("[M] struggles under [src]!"))
+		last_push_time = world.time
+		return
+
+	add_attack_logs(H,src,"Disarmed")
+
+	var/obj/item/organ/external/affecting = get_organ(ran_zone(M.zone_sel.selecting))
+
+	var/list/holding = list(get_active_hand() = 40, get_inactive_hand = 20)
+
+	//See if they have any guns that might go off
+	for(var/obj/item/gun/W in holding)
+		if(W && prob(holding[W]))
+			var/list/turfs = list()
+			for(var/turf/T in view())
+				turfs += T
+			if(turfs.len)
+				var/turf/target = pick(turfs)
+				visible_message(span_danger("[src]'s [W] goes off during the struggle!"))
+				return W.afterattack(target,src)
+
+	if(last_push_time + 30 > world.time) //The fact that we're repeatedly doing it doesn't lessen the severity of the action! Send it full blast!
+		if(M.lying)
+			visible_message(span_filter_combat("[span_red(span_bold("[M] attempted to sweep [src] to the floor!"))]"))
+		else
+			visible_message(span_filter_combat("[span_red(span_bold("[M] attempted to disarm [src]!"))]"))
+		return
+
+	var/randn = rand(1, 100)
+	last_push_time = world.time
+	// We ARE wearing shoes OR
+	// We as a species CAN be slipped when barefoot
+	// And also 1 in 4 because rngesus
+	if((shoes || !(species.flags & NO_SLIP)) && randn <= 25)
+		var/armor_check = run_armor_check(affecting, "melee")
+		apply_effect(3, WEAKEN, armor_check)
+		playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+		if(armor_check < 60)
+			drop_both_hands()	// CHOMPEdit - We've been pushed! Drop our stuff as well
+			if(M.lying)
+				visible_message(span_danger("[M] swept [src] down onto the floor!"))
+			else
+				visible_message(span_danger("[M] has pushed [src]!"))
+			break_all_grabs(M)
+			for(var/obj/item/I in holding)
+				drop_from_inventory(I)
+		else
+			visible_message(span_warning("[M] attempted to push [src]!"))
+		return
+
+	if(randn <= 60)
+		//See about breaking grips or pulls
+		if(break_all_grabs(M))
+			playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+			return
+
+		//Actually disarm them
+		for(var/obj/item/I in holding)
+			if(I)
+				drop_from_inventory(I)
+				visible_message(span_danger("[M] has disarmed [src]!"))
+				playsound(src, 'sound/weapons/thudswoosh.ogg', 50, 1, -1)
+>>>>>>> 8f6c3fee0e ([MIRROR] Medical Adjustments (#10604))
 				return
 
 			if(!istype(H))
@@ -494,3 +631,81 @@
 
 /mob/living/carbon/human/proc/set_default_attack(var/datum/unarmed_attack/u_attack)
 	default_attack = u_attack
+
+
+/mob/living/carbon/human/proc/perform_cpr(var/mob/living/carbon/human/reviver)
+	// Check for sanity
+	if(!istype(reviver,/mob/living/carbon/human))
+		return
+	//The below is what actually allows metabolism.
+	add_modifier(/datum/modifier/bloodpump_corpse/cpr, 2 SECONDS)
+
+	// Toggle for 'realistic' CPR. Use this if you want a more grim CPR approach that mimicks the damage that CPR can do to someone. This means more extensive internal damage, almost guaranteed rib breakage, etc.
+	// DEFAULT: FALSE
+	var/realistic_cpr = FALSE
+
+	// brute damage
+	if(prob(3))
+		apply_damage(1, BRUTE, BP_TORSO)
+		if(prob(25) || (realistic_cpr)) //This being a 25% chance on top of the 3% chance means you have a 0.75% chance every compression to break ribs (and do minor internal damage). Realism mode means it's a 100% chance every time that 3% procs.
+			var/obj/item/organ/external/chest = get_organ(BP_TORSO)
+			if(chest)
+				chest.fracture()
+
+	// standard CPR ahead, adjust oxy and refresh health
+	if(health > CONFIG_GET(number/health_threshold_crit) && prob(10))
+		if(istype(species, /datum/species/xenochimera))
+			visible_message(span_danger("\The [src]'s body twitches and gurgles a bit."))
+			to_chat(reviver, span_danger("You get the feeling [src] can't be revived by CPR alone."))
+			return // Handle xenochim, can't cpr them back to life
+		if(HUSK in mutations)
+			visible_message(span_danger("\The [src]'s body crunches and snaps."))
+			to_chat(reviver, span_danger("You get the feeling [src] is going to need surgical intervention to be revived."))
+			return // Handle husked, cure it before you can revive
+		if(!can_defib)
+			visible_message(span_danger("\The [src]'s neck shifts and cracks!"))
+			to_chat(reviver, span_danger("You get the feeling [src] is going to need surgical intervention to be revived."))
+			return // Handle broken neck/no attached brain
+		var/bad_vital_organ = check_vital_organs()
+		if(bad_vital_organ)
+			visible_message(span_danger("\The [src]'s body lays completely limp and lifeless!"))
+			to_chat(reviver, span_danger("You get the feeling [src] is missing something vital."))
+			return // Handle vital organs being missing.
+
+		// allow revive chance
+		var/mob/observer/dead/ghost = get_ghost()
+		if(ghost)
+			ghost.notify_revive("Someone is trying to resuscitate you. Re-enter your body if you want to be revived!", 'sound/effects/genetics.ogg', source = src)
+		visible_message(span_warning("\The [src]'s body convulses a bit."))
+
+		// REVIVE TIME, basically stolen from defib.dm
+		dead_mob_list.Remove(src)
+		if((src in living_mob_list) || (src in dead_mob_list))
+			WARNING("Mob [src] was cpr revived by [reviver], but already in the living or dead list still!")
+		living_mob_list += src
+
+		timeofdeath = 0
+		set_stat(UNCONSCIOUS) //Life() can bring them back to consciousness if it needs to.
+		failed_last_breath = 0 //So mobs that died of oxyloss don't revive and have perpetual out of breath.
+		reload_fullscreen()
+
+		emote("gasp")
+		Weaken(rand(10,25))
+		updatehealth()
+		//SShaunting.influence(HAUNTING_RESLEEVE) // Used for the Haunting module downstream. Not implemented upstream.
+
+		// This is measures in `Life()` ticks. E.g. 10 minute defib timer = 300 `Life()` ticks.				// Original math was VERY off. Life() tick occurs every ~2 seconds, not every 2 world.time ticks.
+		var/brain_damage_timer = ((CONFIG_GET(number/defib_timer) MINUTES) / 20) - ((CONFIG_GET(number/defib_braindamage_timer) MINUTES) / 20)
+		var/obj/item/organ/internal/brain/brain = internal_organs_by_name[O_BRAIN]
+		if(should_have_organ(O_BRAIN) && brain && brain.defib_timer <= brain_damage_timer)
+			// As the brain decays, this will be between 0 and 1, with 1 being the most fresh.
+			var/brain_death_scale = brain.defib_timer / brain_damage_timer
+			// This is backwards from what you might expect, since 1 = fresh and 0 = rip.
+			var/damage_calc = LERP(brain.max_damage, getBrainLoss(), brain_death_scale)
+			// A bit of sanity.
+			var/brain_damage = between(getBrainLoss(), damage_calc, brain.max_damage)
+			setBrainLoss(brain_damage)
+	else if(health > CONFIG_GET(number/health_threshold_dead))
+		adjustOxyLoss(-(min(getOxyLoss(), 5)))
+		updatehealth()
+		to_chat(src, span_notice("You feel a breath of fresh air enter your lungs. It feels good."))
