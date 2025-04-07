@@ -3782,7 +3782,10 @@
 /obj/structure/table/rack/shelf/steel,
 /obj/item/clothing/head/cowboy,
 /obj/item/clothing/glasses/fakesunglasses/aviator,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "djt" = (
 /obj/structure/window/basic{
@@ -5026,7 +5029,10 @@
 /turf/simulated/shuttle/floor/white,
 /area/vr/powered/space/whiteship)
 "ebE" = (
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "ebH" = (
 /obj/structure/railing{
@@ -5819,7 +5825,10 @@
 /obj/machinery/light{
 	layer = 3
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "eHU" = (
 /obj/machinery/vending/dinnerware{
@@ -6426,7 +6435,10 @@
 /obj/item/ammo_magazine/hectate,
 /obj/item/ammo_magazine/hectate,
 /obj/item/ammo_magazine/hectate,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "ffS" = (
 /obj/structure/table/rack/shelf/steel,
@@ -7429,7 +7441,10 @@
 /area/vr/powered/armory)
 "fVr" = (
 /obj/machinery/vending/deathmatch,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "fVG" = (
 /obj/structure/table/rack/shelf/steel,
@@ -7468,7 +7483,10 @@
 /obj/item/cell/slime,
 /obj/item/cell/slime,
 /obj/item/cell/slime,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "fWQ" = (
 /obj/machinery/vending/deluxe_dinner,
@@ -8720,7 +8738,10 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/vr/powered/dungeon)
 "hkZ" = (
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "hlj" = (
 /obj/effect/floor_decal/corner/black/diagonal,
@@ -8792,7 +8813,10 @@
 /obj/item/material/knife/machete,
 /obj/structure/table/rack/shelf/steel,
 /obj/item/material/knife/machete,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "hoq" = (
 /turf/simulated/shuttle/floor/white,
@@ -13102,7 +13126,10 @@
 /obj/structure/table/rack/shelf/steel,
 /obj/item/material/knife/machete,
 /obj/item/material/knife/machete,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "kNU" = (
 /obj/machinery/recharge_station,
@@ -15423,7 +15450,10 @@
 	hacked = 1;
 	name = "hacked autolathe"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "mzl" = (
 /obj/structure/window/reinforced,
@@ -15913,7 +15943,10 @@
 /obj/machinery/light{
 	layer = 3
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "mUd" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -16275,7 +16308,10 @@
 	pixel_y = -34
 	},
 /obj/machinery/vending/deathmatch,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "nkj" = (
 /obj/effect/floor_decal/techfloor/corner{
@@ -17765,7 +17801,10 @@
 /area/vr/powered/mall)
 "olz" = (
 /obj/machinery/vending/deathmatch/red,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "olK" = (
 /obj/structure/table/marble,
@@ -18337,7 +18376,10 @@
 /obj/structure/table/rack/shelf/steel,
 /obj/item/clothing/head/cowboy,
 /obj/item/clothing/glasses/fakesunglasses/aviator,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "oDn" = (
 /obj/structure/table/marble,
@@ -21052,7 +21094,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "qHR" = (
 /obj/machinery/atmospherics/unary/vent_pump/on{
@@ -22330,7 +22375,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "rSM" = (
 /obj/effect/decal/cleanable/fruit_smudge,
@@ -22572,7 +22620,10 @@
 	pixel_y = 24
 	},
 /obj/machinery/vending/deathmatch/red,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "sbG" = (
 /obj/effect/floor_decal/spline/fancy{
@@ -23134,7 +23185,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "syC" = (
 /obj/machinery/bodyscanner,
@@ -25693,7 +25747,10 @@
 	hacked = 1;
 	name = "hacked autolathe"
 	},
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "uCI" = (
 /obj/machinery/vending/tool{
@@ -29035,7 +29092,10 @@
 /obj/item/ammo_magazine/hectate,
 /obj/item/ammo_magazine/hectate,
 /obj/item/ammo_magazine/hectate,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/bluebase)
 "xkt" = (
 /obj/machinery/chem_master,
@@ -29309,7 +29369,10 @@
 /obj/item/gun/projectile/automatic/serdy/hectate,
 /obj/item/gun/projectile/automatic/serdy/awp,
 /obj/item/gun/projectile/automatic/serdy/awp,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "xys" = (
 /turf/simulated/mineral/alt{
@@ -29860,7 +29923,10 @@
 /obj/item/cell/slime,
 /obj/item/cell/slime,
 /obj/item/cell/slime,
-/turf/simulated/floor/reinforced,
+/turf/simulated/floor/reinforced{
+	nitrogen = 93.7835;
+	oxygen = 20.7263
+	},
 /area/vr/powered/redbase)
 "xXa" = (
 /obj/machinery/light/small{
