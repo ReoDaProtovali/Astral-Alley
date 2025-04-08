@@ -1526,7 +1526,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 						if(should_proceed_with_revive)
 							dead_mob_list.Remove(H)
 							if((H in living_mob_list) || (H in dead_mob_list))
-								WARNING("Mob [H] was defibbed but already in the living or dead list still!")
+								WARNING("Mob [H] was reformed but already in the living or dead list still!")
 							living_mob_list += H
 
 							H.timeofdeath = 0
