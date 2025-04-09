@@ -6,15 +6,12 @@
 @use 'sass:color';
 @use 'sass:meta';
 
-@use '~tgui/styles/colors.scss';
-@use '~tgui/styles/base.scss';
-
 // A fat warning to anyone who wants to use this: this only half works.
 // It was made almost purely for the nuke ui, and requires a good amount of manual hacks to get it working as intended.
 .theme-vchatdark {
-  // Atomic classes
-  @include meta.load-css('~tgui/styles/atomic/color.scss');
+  --chat-text-color: var(--color-white);
 
+<<<<<<< HEAD
   // Components
   @include meta.load-css('~tgui-core/styles/components/Tabs.scss');
   @include meta.load-css('~tgui-core/styles/components/Section.scss');
@@ -38,5 +35,8 @@
   @include meta.load-css('~tgui/styles/layouts/TitleBar.scss');
 
   // tgchat styles
+=======
+  // Chat styles
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
   @include meta.load-css('../tgchat/chat-vchatdark.scss');
 }

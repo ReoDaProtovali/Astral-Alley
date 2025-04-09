@@ -64,6 +64,7 @@
 /datum/tgui_say/proc/load()
 	window_open = FALSE
 
+<<<<<<< HEAD
 	var/minimum_height = client?.prefs?.read_preference(/datum/preference/numeric/tgui_say_height) || 1
 	var/minimu_width = client?.prefs?.read_preference(/datum/preference/numeric/tgui_say_width) || 1
 	winset(client, "tgui_say", "pos=410,400;size=360,30;is-visible=0;")
@@ -73,6 +74,18 @@
 		minimumHeight = minimum_height,
 		minimumWidth = minimu_width,
 		maxLength = max_length,
+=======
+	var/minimum_width = client?.prefs?.read_preference(/datum/preference/numeric/tgui_say_width) || 1
+	var/minimum_height = (client?.prefs?.read_preference(/datum/preference/numeric/tgui_say_height) || 1) * 20 + 10
+	winset(client, "tgui_say", "pos=410,400;is-visible=0;")
+
+	window.send_message("props", list(
+		"lightMode" = client?.prefs?.read_preference(/datum/preference/toggle/tgui_say_light),
+		"scale" = client.prefs?.read_preference(/datum/preference/toggle/ui_scale),
+		"minimumWidth" = minimum_width,
+		"minimumHeight" = minimum_height,
+		"maxLength" = max_length,
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
 	))
 
 	stop_thinking()

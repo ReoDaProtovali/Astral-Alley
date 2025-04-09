@@ -30,10 +30,13 @@ var/message_delay = 0 // To make sure restarting the recentmessages list is kept
 	//Linked bluespace radios
 	var/list/linked_radios_weakrefs = list()
 
+<<<<<<< HEAD
 /obj/machinery/telecomms/processor/Initialize()
 	. = ..()
 	default_apply_parts()
 
+=======
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
 /obj/machinery/telecomms/broadcaster/proc/link_radio(var/obj/item/radio/R)
 	if(!istype(R))
 		return

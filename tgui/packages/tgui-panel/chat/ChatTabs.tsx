@@ -11,6 +11,7 @@ import { openChatSettings } from '../settings/actions';
 import { addChatPage, changeChatPage } from './actions';
 import { selectChatPages, selectCurrentChatPage } from './selectors';
 
+<<<<<<< HEAD
 const UnreadCountWidget = ({ value }) => (
   <Box
     style={{
@@ -24,6 +25,10 @@ const UnreadCountWidget = ({ value }) => (
   >
     {Math.min(value, 99)}
   </Box>
+=======
+const UnreadCountWidget = ({ value }: { value: number }) => (
+  <Box className="UnreadCount">{Math.min(value, 99)}</Box>
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
 );
 
 export const ChatTabs = (props) => {
@@ -38,12 +43,6 @@ export const ChatTabs = (props) => {
             <Tabs.Tab
               key={page.id}
               selected={page === currentPage}
-              rightSlot={
-                !page.hideUnreadCount &&
-                page.unreadCount > 0 && (
-                  <UnreadCountWidget value={page.unreadCount} />
-                )
-              }
               onClick={() =>
                 dispatch(
                   changeChatPage({
@@ -53,6 +52,9 @@ export const ChatTabs = (props) => {
               }
             >
               {page.name}
+              {!page.hideUnreadCount && page.unreadCount > 0 && (
+                <UnreadCountWidget value={page.unreadCount} />
+              )}
             </Tabs.Tab>
           ))}
         </Tabs>
