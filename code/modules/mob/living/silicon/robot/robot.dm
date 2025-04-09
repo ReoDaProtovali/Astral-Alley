@@ -946,6 +946,23 @@
 		pixel_x = sprite_datum.pixel_x
 		old_x = sprite_datum.pixel_x
 
+<<<<<<< HEAD
+=======
+	//Want to know how to make an overlay appear in darkness? Look at the below. Add a mutable and then emissive overlay.
+	//These get applied first and foremost, as things will get applied overtop of them.
+	//Only borgs that have specialty glow sprites get this.
+	if(sprite_datum.has_glow_sprites && glowy_enabled)
+		add_overlay(mutable_appearance(sprite_datum.sprite_icon, sprite_datum.get_glow_overlay(src)))
+		add_overlay(emissive_appearance(sprite_datum.sprite_icon, sprite_datum.get_glow_overlay(src)))
+
+	if(LAZYLEN(robotdecal_on) && LAZYLEN(sprite_datum.sprite_decals))
+		if(!shell || deployed) // Shell borgs that are not deployed will have no eyes.
+			for(var/enabled_decal in robotdecal_on)
+				var/robotdecal_overlay = sprite_datum.get_robotdecal_overlay(src, enabled_decal)
+				if(robotdecal_overlay)
+					add_overlay(robotdecal_overlay)
+
+>>>>>>> c253c28e3e ([MIRROR] one too many  indents (#10613))
 	if(stat == CONSCIOUS)
 		update_fullness()
 		for(var/belly_class in vore_fullness_ex)
