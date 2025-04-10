@@ -179,3 +179,12 @@
 
 	/// If this client has been fully initialized or not
 	var/fully_created = FALSE
+<<<<<<< HEAD
+=======
+
+	/// Token used for the external chatlog api. Only valid for the current round.
+	var/chatlog_token
+
+	/// The DPI scale of the client. 1 is equivalent to 100% window scaling, 2 will be 200% window scaling
+	var/window_scaling
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))

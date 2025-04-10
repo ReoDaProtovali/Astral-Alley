@@ -27,6 +27,7 @@ type ByondProps = {
   minimumHeight: number;
   minimumWidth: number;
   lightMode: BooleanLike;
+  scale: BooleanLike;
 };
 
 const ROWS: Record<keyof typeof WindowSize, number> = {
@@ -43,6 +44,9 @@ export function TguiSay() {
   const channelIterator = useRef(new ChannelIterator());
   const chatHistory = useRef(new ChatHistory());
   const messages = useRef(byondMessages);
+  const scale = useRef(true);
+  const minimumHeight = useRef(WindowSize.Small);
+  const minimumWidth = useRef(WindowSize.Width);
 
   // I initially wanted to make these an object or a reducer, but it's not really worth it.
   // You lose the granulatity and add a lot of boilerplate.
@@ -52,8 +56,6 @@ export function TguiSay() {
   >(null);
   const [size, setSize] = useState(WindowSize.Small);
   const [maxLength, setMaxLength] = useState(4096);
-  const [minimumHeight, setMinimumHeight] = useState(WindowSize.Small);
-  const [minimumWidth, setMinimumWidth] = useState(WindowSize.Width);
   const [lightMode, setLightMode] = useState(false);
   const [position, setPosition] = useState([window.screenX, window.screenY]);
   const [value, setValue] = useState('');
@@ -104,7 +106,7 @@ export function TguiSay() {
 
   function handleClose(): void {
     innerRef.current?.blur();
-    windowClose();
+    windowClose(minimumWidth.current, minimumHeight.current, scale.current);
 
     setTimeout(() => {
       chatHistory.current.reset();
@@ -285,6 +287,7 @@ export function TguiSay() {
   }
 
   function handleOpen(data: ByondOpen): void {
+    setSize(minimumHeight.current);
     setTimeout(() => {
       innerRef.current?.focus();
       windowSet(WindowSize.Width, WindowSize.Small);
@@ -299,19 +302,29 @@ export function TguiSay() {
     }
 
     setButtonContent(iterator.current());
+<<<<<<< HEAD
     windowOpen(iterator.current());
+=======
+    windowOpen(
+      iterator.current(),
+      minimumWidth.current,
+      minimumHeight.current,
+      scale.current,
+    );
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
   }
 
   function handleProps(data: ByondProps): void {
     setMaxLength(data.maxLength);
-    setMinimumHeight(data.minimumHeight);
     const minWidth = clamp(
       data.minimumWidth,
       WindowSize.Width,
       WindowSize.MaxWidth,
     );
-    setMinimumWidth(minWidth);
+    minimumHeight.current = data.minimumHeight;
+    minimumWidth.current = minWidth;
     setLightMode(!!data.lightMode);
+    scale.current = !!data.scale;
   }
 
   function unloadChat(): void {
@@ -339,11 +352,15 @@ export function TguiSay() {
     } else {
       newSize = WindowSize.Small;
     }
+<<<<<<< HEAD
     newSize = clamp(newSize, minimumHeight * 20 + 10, WindowSize.Max);
+=======
+    newSize = clamp(newSize, minimumHeight.current, WindowSize.Max);
+>>>>>>> 8164837ba0 ([MIRROR] [TGUI v6] Migration to CSS Variables, styles refactor & React 19  (#10615))
 
     if (size !== newSize) {
       setSize(newSize);
-      windowSet(minimumWidth, newSize);
+      windowSet(minimumWidth.current, newSize, scale.current);
     }
   }, [value]);
 
@@ -356,11 +373,19 @@ export function TguiSay() {
     <>
       <div
         className={`window window-${theme} window-${size}`}
+        style={{
+          zoom: scale.current ? '' : `${100 / window.devicePixelRatio}%`,
+        }}
         onMouseDown={dragStartHandler}
       >
         {!lightMode && <div className={`shine shine-${theme}`} />}
       </div>
-      <div className={classes(['content', lightMode && 'content-lightMode'])}>
+      <div
+        className={classes(['content', lightMode && 'content-lightMode'])}
+        style={{
+          zoom: scale.current ? '' : `${100 / window.devicePixelRatio}%`,
+        }}
+      >
         <button
           className={`button button-${theme}`}
           onClick={handleIncrementChannel}
