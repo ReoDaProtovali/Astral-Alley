@@ -13,5 +13,9 @@ Xenobiological product lives here as a basic type.
 	
 /obj/item/xenoproduct/Destroy()
 	QDEL_NULL(traits)
+<<<<<<< HEAD
 	..()
 	
+=======
+	. = ..()
+>>>>>>> 5d2435611d ([MIRROR] Fixes some bad Destroy()s (#10629))

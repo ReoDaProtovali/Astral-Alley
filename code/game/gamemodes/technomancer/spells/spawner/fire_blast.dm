@@ -30,4 +30,8 @@
 
 /obj/effect/temporary_effect/fire_blast/Destroy()
 	explosion(get_turf(src), -1, 1, 2, 5, adminlog = 1)
+<<<<<<< HEAD
 	..()
+=======
+	. = ..()
+>>>>>>> 5d2435611d ([MIRROR] Fixes some bad Destroy()s (#10629))
