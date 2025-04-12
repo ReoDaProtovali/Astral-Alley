@@ -1,6 +1,11 @@
 import { useBackend } from 'tgui/backend';
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSpawn.tsx
 import { Box, Button, NumberInput, Section, Stack } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
+=======
+import { Button, NumberInput, Section, Stack } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
+>>>>>>> da9d408106 ([MIRROR] re adds the gap beteen section buttons (#10632)):tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSpawn.tsx
 
 import { localPrefs } from '../types';
 import { VoreUserPreferenceItem } from '../VoreUserPreferenceItem';
@@ -29,16 +34,20 @@ export const VoreUserPreferencesSpawn = (props: {
     <Section
       title="Spawn Preferences"
       buttons={
-        <Box nowrap>
-          <VoreUserPreferenceItem
-            spec={preferences.spawnbelly}
-            tooltipPosition="top"
-          />
-          <VoreUserPreferenceItem
-            spec={preferences.spawnprey}
-            tooltipPosition="top"
-          />
-        </Box>
+        <Stack>
+          <Stack.Item>
+            <VoreUserPreferenceItem
+              spec={preferences.spawnbelly}
+              tooltipPosition="top"
+            />
+          </Stack.Item>
+          <Stack.Item>
+            <VoreUserPreferenceItem
+              spec={preferences.spawnprey}
+              tooltipPosition="top"
+            />
+          </Stack.Item>
+        </Stack>
       }
     >
       <Stack wrap="wrap" justify="center">

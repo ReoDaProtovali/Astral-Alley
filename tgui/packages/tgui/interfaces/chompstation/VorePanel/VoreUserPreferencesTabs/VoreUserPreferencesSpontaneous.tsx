@@ -1,5 +1,10 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSpontaneous.tsx
 import { Box, Section, Stack } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
+=======
+import { Section, Stack } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
+>>>>>>> da9d408106 ([MIRROR] re adds the gap beteen section buttons (#10632)):tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSpontaneous.tsx
 
 import { localPrefs } from '../types';
 import { VoreUserPreferenceItem } from '../VoreUserPreferenceItem';
@@ -15,16 +20,20 @@ export const VoreUserPreferencesSpontaneous = (props: {
     <Section
       title="Spontaneous Preferences"
       buttons={
-        <Box nowrap>
-          <VoreUserPreferenceItem
-            spec={preferences.dropnom_prey}
-            tooltipPosition="top"
-          />
-          <VoreUserPreferenceItem
-            spec={preferences.dropnom_pred}
-            tooltipPosition="top"
-          />
-        </Box>
+        <Stack>
+          <Stack.Item>
+            <VoreUserPreferenceItem
+              spec={preferences.dropnom_prey}
+              tooltipPosition="top"
+            />
+          </Stack.Item>
+          <Stack.Item>
+            <VoreUserPreferenceItem
+              spec={preferences.dropnom_pred}
+              tooltipPosition="top"
+            />
+          </Stack.Item>
+        </Stack>
       }
     >
       {can_be_drop_prey || can_be_drop_pred ? (

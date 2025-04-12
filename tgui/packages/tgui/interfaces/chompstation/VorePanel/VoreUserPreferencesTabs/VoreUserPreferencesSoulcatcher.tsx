@@ -1,5 +1,10 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSoulcatcher.tsx
 import { Box, Section, Stack } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
+=======
+import { Section, Stack } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
+>>>>>>> da9d408106 ([MIRROR] re adds the gap beteen section buttons (#10632)):tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSoulcatcher.tsx
 
 import { localPrefs } from '../types';
 import { VoreUserPreferenceItem } from '../VoreUserPreferenceItem';
@@ -14,12 +19,10 @@ export const VoreUserPreferencesSoulcatcher = (props: {
     <Section
       title="Soulcatcher Preferences"
       buttons={
-        <Box nowrap>
-          <VoreUserPreferenceItem
-            spec={preferences.soulcatcher}
-            tooltipPosition="top"
-          />
-        </Box>
+        <VoreUserPreferenceItem
+          spec={preferences.soulcatcher}
+          tooltipPosition="top"
+        />
       }
     >
       {soulcatcher_allow_capture ? (

@@ -6,6 +6,7 @@ import {
   Dimmer,
   LabeledList,
   Section,
+  Stack,
 } from 'tgui-core/components';
 
 import { SYNTAX_COLOR, SYNTAX_REGEX } from '../constants';
@@ -126,6 +127,44 @@ export const VoreSelectedBellyDescriptions = (props: {
           </Section>
         </Dimmer>
       )}
+<<<<<<< HEAD
+=======
+      <Stack>
+        <Stack.Item>
+          <Box color="label" mt={1} mb={1}>
+            Description:
+          </Box>
+        </Stack.Item>
+        <Stack.Item>
+          <Button
+            icon="pencil"
+            onClick={() => act('set_attribute', { attribute: 'b_desc' })}
+          >
+            Edit
+          </Button>
+        </Stack.Item>
+        <Stack.Item>
+          <Button
+            icon="question"
+            tooltip="Formatting help"
+            onClick={() => setShowFormatHelp(!showFormatHelp)}
+            selected={showFormatHelp}
+          />
+        </Stack.Item>
+      </Stack>
+      <DescriptionSyntaxHighlighting desc={desc} />
+      <Box color="label" mt={2} mb={1}>
+        Description (Absorbed):{' '}
+        <Button
+          icon="pencil"
+          onClick={() => act('set_attribute', { attribute: 'b_absorbed_desc' })}
+        >
+          Edit
+        </Button>
+      </Box>
+      <DescriptionSyntaxHighlighting desc={absorbed_desc} />
+      <Box mb={2} />
+>>>>>>> da9d408106 ([MIRROR] re adds the gap beteen section buttons (#10632))
       <LabeledList>
         <LabeledList.Item label="Vore Verb">
           <Button onClick={() => act('set_attribute', { attribute: 'b_verb' })}>
