@@ -257,10 +257,39 @@
 
 //CHOMPedit start VR fix
 		occupant.enter_vr(avatar)
+<<<<<<< HEAD
 		//Yes, I am using a aheal just so your markings transfer over, I could not get .prefs.copy_to working. This is very stupid, and I can't be assed to rewrite this.  Too bad!
 		avatar.revive()
 		avatar.species.equip_survival_gear(avatar)
 		add_verb(avatar, /mob/living/carbon/human/proc/exit_vr) //ahealing removes the prommie verbs and the VR verbs, giving it back
+=======
+		if(spawn_with_clothing)
+			job_master.EquipRank(avatar,"Visitor", 1, FALSE)
+		add_verb(avatar,/mob/living/carbon/human/proc/perform_exit_vr)
+		add_verb(avatar,/mob/living/carbon/human/proc/vr_transform_into_mob)
+		add_verb(avatar,/mob/living/proc/set_size)
+		avatar.virtual_reality_mob = TRUE
+
+		//This handles all the 'We make it look like ourself' code.
+		//We do this BEFORE any mob tf so prefs  carry over properly!
+		if(perfect_replica)
+			avatar.species.create_organs(avatar) // Reset our organs/limbs.
+			avatar.restore_all_organs()
+			avatar.client.prefs.copy_to(avatar)
+			avatar.dna.ResetUIFrom(avatar)
+			avatar.sync_dna_traits(TRUE) // Traitgenes Sync traits to genetics if needed
+			avatar.sync_organ_dna()
+			avatar.initialize_vessel()
+
+		if(tf)
+			var/mob/living/new_form = avatar.transform_into_mob(tf, TRUE) // No need to check prefs when the occupant already chose to transform.
+			if(isliving(new_form)) // Make sure the mob spawned properly.
+				add_verb(new_form,/mob/living/proc/vr_revert_mob_tf)
+				new_form.virtual_reality_mob = TRUE
+
+		add_verb(avatar, /mob/living/carbon/human/proc/perform_exit_vr) //ahealing removes the prommie verbs and the VR verbs, giving it back
+		avatar.Sleeping(1)
+>>>>>>> 86ba87e574 ([MIRROR] Fixes broken exit-vr button (#10631))
 
 //CHOMPedit end
 		// Prompt for username after they've enterred the body.

@@ -29,7 +29,11 @@
 		spawn(50)
 			if(QDELETED(character) || QDELETED(pref))
 				return // They might have been deleted during the wait
+<<<<<<< HEAD
 			if(!character.virtual_reality_mob && !(/mob/living/carbon/human/proc/exit_vr in character.verbs)) // CHOMPedit start: janky fix to prevent resleeving VR avatars but beats refactoring transcore
+=======
+			if(!character.virtual_reality_mob && !(/mob/living/carbon/human/proc/perform_exit_vr in character.verbs)) //Janky fix to prevent resleeving VR avatars but beats refactoring transcore
+>>>>>>> 86ba87e574 ([MIRROR] Fixes broken exit-vr button (#10631))
 				if(pref.resleeve_scan)
 					var/datum/transhuman/body_record/BR = new()
 					BR.init_from_mob(character, pref.resleeve_scan, pref.resleeve_lock)

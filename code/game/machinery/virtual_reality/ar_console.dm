@@ -102,6 +102,24 @@
 		avatar.Sleeping(6)
 
 		occupant.enter_vr(avatar)
+<<<<<<< HEAD
+=======
+		if(spawn_with_clothing)
+			job_master.EquipRank(avatar,"Visitor", 1, FALSE)
+		add_verb(avatar,/mob/living/carbon/human/proc/perform_exit_vr)
+		avatar.virtual_reality_mob = FALSE //THIS IS THE BIG DIFFERENCE WITH ALIEN VR PODS. THEY ARE NOT VR, THEY ARE REAL.
+
+		//This handles all the 'We make it look like ourself' code.
+		//We do this BEFORE any mob tf so prefs  carry over properly!
+		if(perfect_replica)
+			avatar.species.create_organs(avatar) // Reset our organs/limbs.
+			avatar.restore_all_organs()
+			avatar.client.prefs.copy_to(avatar)
+			avatar.dna.ResetUIFrom(avatar)
+			avatar.sync_dna_traits(TRUE) // Traitgenes Sync traits to genetics if needed
+			avatar.sync_organ_dna()
+			avatar.initialize_vessel()
+>>>>>>> 86ba87e574 ([MIRROR] Fixes broken exit-vr button (#10631))
 
 		var/newname = sanitize(tgui_input_text(avatar, "Your mind feels foggy. You're certain your name is [occupant.real_name], but it could also be [avatar.name]. Would you like to change it to something else?", "Name change", null, MAX_NAME_LEN), MAX_NAME_LEN)
 		if (newname)
