@@ -1,6 +1,11 @@
 import { useBackend } from 'tgui/backend';
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreSoulcatcherSettings/CatchSettings.tsx
 import { Box, Button, LabeledList } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
+=======
+import { Button, LabeledList, Stack } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
+>>>>>>> da9d408106 ([MIRROR] re adds the gap beteen section buttons (#10632)):tgui/packages/tgui/interfaces/VorePanel/VoreSoulcatcherSettings/CatchSettings.tsx
 
 export const CatchSettings = (props: {
   catch_self: BooleanLike;
@@ -14,56 +19,64 @@ export const CatchSettings = (props: {
 
   return (
     <LabeledList.Item label="Catch Settings">
-      <Box>
-        <Button
-          icon="circle-user"
-          tooltip={
-            (catch_self ? 'Allow' : 'Disallow') +
-            ' your own soulcatcher to capture your own soul upon vore death.'
-          }
-          tooltipPosition="bottom"
-          color={catch_self ? 'green' : 'red'}
-          onClick={() => act('toggle_self_catching')}
-        >
-          Catch User
-        </Button>
-        <Button
-          icon="person"
-          tooltip={
-            (catch_prey ? 'Allow' : 'Disallow') +
-            ' your own soulcatcher to capture prey souls upon vore death.'
-          }
-          tooltipPosition="bottom"
-          color={catch_prey ? 'green' : 'red'}
-          onClick={() => act('toggle_prey_catching')}
-        >
-          Catch Prey
-        </Button>
-        <Button
-          icon="person-falling-burst"
-          tooltip={
-            (catch_drain ? 'Allow' : 'Disallow') +
-            ' catching prey with draining abilities like "Succubus Drain" (Lethal).'
-          }
-          tooltipPosition="bottom"
-          color={catch_drain ? 'green' : 'red'}
-          onClick={() => act('toggle_drain_catching')}
-        >
-          Catch Drain
-        </Button>
-        <Button
-          icon="ghost"
-          tooltip={
-            (catch_ghost ? 'Allow' : 'Disallow') +
-            ' ghosts to join your soulcatcher.'
-          }
-          tooltipPosition="bottom"
-          color={catch_ghost ? 'green' : 'red'}
-          onClick={() => act('toggle_ghost_catching')}
-        >
-          Catch Ghost
-        </Button>
-      </Box>
+      <Stack>
+        <Stack.Item>
+          <Button
+            icon="circle-user"
+            tooltip={
+              (catch_self ? 'Allow' : 'Disallow') +
+              ' your own soulcatcher to capture your own soul upon vore death.'
+            }
+            tooltipPosition="bottom"
+            color={catch_self ? 'green' : 'red'}
+            onClick={() => act('toggle_self_catching')}
+          >
+            Catch User
+          </Button>
+        </Stack.Item>
+        <Stack.Item>
+          <Button
+            icon="person"
+            tooltip={
+              (catch_prey ? 'Allow' : 'Disallow') +
+              ' your own soulcatcher to capture prey souls upon vore death.'
+            }
+            tooltipPosition="bottom"
+            color={catch_prey ? 'green' : 'red'}
+            onClick={() => act('toggle_prey_catching')}
+          >
+            Catch Prey
+          </Button>
+        </Stack.Item>
+        <Stack.Item>
+          <Button
+            icon="person-falling-burst"
+            tooltip={
+              (catch_drain ? 'Allow' : 'Disallow') +
+              ' catching prey with draining abilities like "Succubus Drain" (Lethal).'
+            }
+            tooltipPosition="bottom"
+            color={catch_drain ? 'green' : 'red'}
+            onClick={() => act('toggle_drain_catching')}
+          >
+            Catch Drain
+          </Button>
+        </Stack.Item>
+        <Stack.Item>
+          <Button
+            icon="ghost"
+            tooltip={
+              (catch_ghost ? 'Allow' : 'Disallow') +
+              ' ghosts to join your soulcatcher.'
+            }
+            tooltipPosition="bottom"
+            color={catch_ghost ? 'green' : 'red'}
+            onClick={() => act('toggle_ghost_catching')}
+          >
+            Catch Ghost
+          </Button>
+        </Stack.Item>
+      </Stack>
     </LabeledList.Item>
   );
 };

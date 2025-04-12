@@ -1,6 +1,11 @@
 import { useBackend } from 'tgui/backend';
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesDevouring.tsx
 import { Box, Button, Section, Stack } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
+=======
+import { Button, Section, Stack } from 'tgui-core/components';
+import type { BooleanLike } from 'tgui-core/react';
+>>>>>>> da9d408106 ([MIRROR] re adds the gap beteen section buttons (#10632)):tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesDevouring.tsx
 import { capitalize } from 'tgui-core/string';
 
 import { localPrefs } from '../types';
@@ -20,12 +25,10 @@ export const VoreUserPreferencesDevouring = (props: {
     <Section
       title="Devouring Preferences"
       buttons={
-        <Box nowrap>
-          <VoreUserPreferenceItem
-            spec={preferences.devour}
-            tooltipPosition="top"
-          />
-        </Box>
+        <VoreUserPreferenceItem
+          spec={preferences.devour}
+          tooltipPosition="top"
+        />
       }
     >
       {devourable ? (
