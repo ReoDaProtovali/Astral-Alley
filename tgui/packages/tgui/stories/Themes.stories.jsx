@@ -20,8 +20,13 @@ const Story = (props) => {
         <LabeledList.Item label="Use theme">
           <Input
             placeholder="theme_name"
+<<<<<<< HEAD:tgui/packages/tgui/stories/Themes.stories.jsx
             value={theme}
             onInput={(e, value) => setTheme(value)}
+=======
+            value={props.theme}
+            onChange={(value) => props.setTheme(value)}
+>>>>>>> fb18560061 ([MIRROR] RS pack port and tgui core 3.0.4 (#10638)):tgui/packages/tgui/stories/Themes.stories.tsx
           />
         </LabeledList.Item>
       </LabeledList>
