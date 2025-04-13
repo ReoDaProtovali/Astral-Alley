@@ -74,10 +74,15 @@
 	if(isliving(AM))
 		var/mob/living/L = AM
 		if(L.devourable && L.allowmobvore && (src.vore_fullness < src.vore_capacity))
+<<<<<<< HEAD
 			perform_the_nom(src,L,src,src.vore_selected,1)
 			return
 		else
 			return
+=======
+			perform_the_nom(src,L,src,src.vore_selected,-1)
+			eaten_mobs += L
+>>>>>>> f59c850005 ([MIRROR] Fixes stumble & flight vore (#10642))
 
 
 ////////////////////////////PITCHER PLANT////////////////////////////////////////////////
