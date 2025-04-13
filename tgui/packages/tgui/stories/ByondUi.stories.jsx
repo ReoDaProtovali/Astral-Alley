@@ -56,7 +56,11 @@ const Story = (props) => {
           as="textarea"
           width="100%"
           height="10em"
+<<<<<<< HEAD:tgui/packages/tgui/stories/ByondUi.stories.jsx
           onChange={(e) => setCode(e.target.value)}
+=======
+          onChange={(value) => setCode(value)}
+>>>>>>> fb18560061 ([MIRROR] RS pack port and tgui core 3.0.4 (#10638)):tgui/packages/tgui/stories/ByondUi.stories.tsx
         >
           {code}
         </Box>

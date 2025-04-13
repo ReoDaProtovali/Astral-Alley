@@ -5,6 +5,7 @@
  */
 
 /**
+<<<<<<< HEAD
  * Iterates over elements of collection, returning an array of all elements
  * iteratee returns truthy for. The predicate is invoked with three
  * arguments: (value, index|key, collection).
@@ -135,6 +136,8 @@ export const sortBy = <T>(
 export const sort = <T>(array: T[]): T[] => sortBy(array);
 
 /**
+=======
+>>>>>>> fb18560061 ([MIRROR] RS pack port and tgui core 3.0.4 (#10638))
  * Returns a range of numbers from start to end, exclusively.
  * For example, range(0, 5) will return [0, 1, 2, 3, 4].
  */
@@ -161,26 +164,6 @@ type ReduceFunction = {
       array: T[],
     ) => T,
   ): T;
-};
-
-/**
- * A fast implementation of reduce.
- */
-export const reduce: ReduceFunction = (array, reducerFn, initialValue?) => {
-  const length = array.length;
-  let i: number;
-  let result;
-  if (initialValue === undefined) {
-    i = 1;
-    result = array[0];
-  } else {
-    i = 0;
-    result = initialValue;
-  }
-  for (; i < length; i++) {
-    result = reducerFn(result, array[i], i, array);
-  }
-  return result;
 };
 
 /**

@@ -130,7 +130,7 @@ export const ComplexModal = (props) => {
         my="0.5rem"
         autoFocus
         autoSelect
-        onChange={(_e, val) => {
+        onChange={(val) => {
           curValue = val;
         }}
       />
