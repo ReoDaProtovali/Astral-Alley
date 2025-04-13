@@ -301,17 +301,6 @@
 		enabled = FALSE
 		icon_state = "scrub0"
 
-/obj/item/gun/energy/taser/mounted/cyborg/ertgun //Not a taser, but it's being used as a base so it takes energy and actually works.
-	name = "disabler"
-	desc = "A small and nonlethal gun produced by NT.."
-	icon = 'icons/mob/dogborg_vr.dmi'
-	icon_state = "ertgunstun"
-	fire_sound = 'sound/weapons/eLuger.ogg'
-	projectile_type = /obj/item/projectile/beam/disable
-	charge_cost = 240 //Normal cost of a taser. It used to be 1000, but after some testing it was found that it would sap a borg's battery to quick
-	recharge_time = 1 //Takes ten ticks to recharge a laser, so don't waste them all!
-	//cell_type = null //Same cell as a taser until edits are made.
-
 /obj/item/lightreplacer/dogborg
 	name = "light replacer"
 	desc = "A device to automatically replace lights. This version is capable to produce a few replacements using your internal matter reserves."
@@ -557,3 +546,16 @@
 	if(custom_range)
 		range = custom_range
 		to_chat(user, span_notice("Scanner will now look up to [range] tile(s) away."))
+<<<<<<< HEAD:code/modules/mob/living/silicon/robot/dogborg/dog_modules_vr.dm
+=======
+
+//CHOMPEnable Start
+/obj/item/robot_tongue/examine(user)
+	. = ..()
+	if(Adjacent(user))
+		if(water.energy)
+			. += span_notice("[src] is wet. Just like it should be.")
+		if(water.energy < 5)
+			. += span_notice("[src] is dry.")
+// CHOMPEnable End
+>>>>>>> 8dbb9f68e9 ([MIRROR] some robot file splitting (#10643)):code/modules/mob/living/silicon/robot/dogborg/dog_modules.dm
