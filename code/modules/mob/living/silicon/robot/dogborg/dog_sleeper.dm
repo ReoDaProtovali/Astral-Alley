@@ -737,6 +737,7 @@
 			STOP_PROCESSING(SSobj, src)
 			return
 
+<<<<<<< HEAD:code/modules/mob/living/silicon/robot/dogborg/dog_sleeper_vr.dm
 /obj/item/dogborg/sleeper/K9 //The K9 portabrig
 	name = "Brig-Belly"
 	desc = "A mounted portable-brig that holds criminals for processing or 'processing'."
@@ -927,4 +928,6 @@
 	max_item_count = 35
 	digest_multiplier = 3
 
+=======
+>>>>>>> 8dbb9f68e9 ([MIRROR] some robot file splitting (#10643)):code/modules/mob/living/silicon/robot/dogborg/dog_sleeper.dm
 #undef SLEEPER_INJECT_COST
