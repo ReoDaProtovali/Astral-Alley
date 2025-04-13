@@ -15,6 +15,7 @@ export type Belly = {
   absorbed_desc: string;
   vore_verb: string;
   release_verb: string;
+  prevent_saving: BooleanLike;
 
   // Controls
   mode: string;
