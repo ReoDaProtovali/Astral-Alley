@@ -4606,6 +4606,14 @@
 #include "code\modules\vore\eating\silicon_vr.dm"
 #include "code\modules\vore\eating\simple_animal_vr.dm"
 #include "code\modules\vore\eating\slipvore_vr.dm"
+<<<<<<< HEAD
+=======
+#include "code\modules\vore\eating\soulcatcher.dm"
+#include "code\modules\vore\eating\soulcatcher_import.dm"
+#include "code\modules\vore\eating\soulcatcher_mob.dm"
+#include "code\modules\vore\eating\soulcatcher_observer.dm"
+#include "code\modules\vore\eating\special_bellies.dm"
+>>>>>>> 3ac7ee10fa ([MIRROR] Non-savable vore bellies and Special Vorebelly Variant Support (#10636))
 #include "code\modules\vore\eating\stumblevore_vr.dm"
 #include "code\modules\vore\eating\transforming_vr.dm"
 #include "code\modules\vore\eating\vertical_nom_vr.dm"

@@ -13,7 +13,13 @@ export const downloadPrefs = (extension: string) => {
     return;
   }
 
+<<<<<<< HEAD
   let datesegment = getCurrentTimestamp();
+=======
+  const validBellies = bellies.filter((belly) => !belly.prevent_saving);
+
+  const datesegment = getCurrentTimestamp();
+>>>>>>> 3ac7ee10fa ([MIRROR] Non-savable vore bellies and Special Vorebelly Variant Support (#10636))
 
   let filename = mob_name + datesegment + extension;
   let blob;
@@ -27,7 +33,7 @@ export const downloadPrefs = (extension: string) => {
           '<meta charset="utf-8">' +
           '<meta name="viewport" content="width=device-width, initial-scale=1">' +
           '<title>' +
-          bellies.length +
+          validBellies.length +
           ' Exported Bellies (DB_VER: ' +
           db_repo +
           '-' +
@@ -46,7 +52,7 @@ export const downloadPrefs = (extension: string) => {
         type: 'text/html',
       },
     );
-    bellies.forEach((belly, i) => {
+    validBellies.forEach((belly, i) => {
       blob = new Blob([blob, generateBellyString(belly, i)], {
         type: 'text/html',
       });
@@ -63,7 +69,16 @@ export const downloadPrefs = (extension: string) => {
   }
 
   if (extension === '.vrdb') {
+<<<<<<< HEAD
     blob = new Blob([JSON.stringify(bellies)], { type: 'application/json' });
+=======
+    blob = new Blob(
+      [JSON.stringify({ bellies: validBellies, soulcatcher: soulcatcher })],
+      {
+        type: 'application/json',
+      },
+    );
+>>>>>>> 3ac7ee10fa ([MIRROR] Non-savable vore bellies and Special Vorebelly Variant Support (#10636))
   }
 
   Byond.saveBlob(blob, filename, extension);
