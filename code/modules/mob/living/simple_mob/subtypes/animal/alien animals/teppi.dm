@@ -821,7 +821,13 @@ GLOBAL_VAR_INIT(teppi_count, 0)	// How mant teppi DO we have?
 	ai_holder.set_busy(FALSE)
 
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/alienanimals/teppi/perform_the_nom(user, mob/living/prey, user, belly, delay)
+=======
+/mob/living/simple_mob/vore/alienanimals/teppi/perform_the_nom(mob/living/user, mob/living/prey, mob/living/pred, obj/belly/belly, delay_time)
+	if(!pred)
+		pred = user
+>>>>>>> f59c850005 ([MIRROR] Fixes stumble & flight vore (#10642))
 	if(client)
 		return ..()
 	var/current_affinity = affinity[prey.real_name]
