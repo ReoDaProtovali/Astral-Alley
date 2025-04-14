@@ -195,8 +195,16 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/security/HoS_Office)
 "aan" = (
+<<<<<<< HEAD
 /turf/simulated/wall/r_wall,
 /area/space)
+=======
+/obj/machinery/computer/cryopod/robot{
+	pixel_x = 30
+	},
+/turf/simulated/floor/tiled/techfloor/grid,
+/area/engineering/Drone_Fab)
+>>>>>>> a64ae69661 (Soluna Nexus mapfix 2.2 (#10647))
 "aao" = (
 /obj/item/bedsheet/piratedouble{
 	pixel_y = 4;
@@ -4081,6 +4089,25 @@
 	},
 /turf/simulated/floor/carpet/brown/turfpack/station,
 /area/security/Prison_Wing)
+<<<<<<< HEAD
+=======
+"ajx" = (
+/obj/machinery/camera/network/security{
+	dir = 1;
+	c_tag = "D2-Com-Central Hall2";
+	network = list("Commons")
+	},
+/turf/simulated/floor/glass,
+/area/hallway/Central_2_Deck_Hall)
+"ajy" = (
+/obj/structure/cable{
+	icon_state = "1-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/tiled,
+/area/hallway/Star_2_Deck_Central_Corridor_1)
+>>>>>>> a64ae69661 (Soluna Nexus mapfix 2.2 (#10647))
 "ajz" = (
 /obj/machinery/computer/skills{
 	pixel_y = -7;
@@ -22857,6 +22884,7 @@
 /turf/simulated/floor/boxing/gym,
 /area/crew_quarters/Gym)
 "bwJ" = (
+<<<<<<< HEAD
 /obj/effect/floor_decal/borderfloor,
 /obj/machinery/power/apc{
 	name = "south bump";
@@ -22866,6 +22894,17 @@
 	icon_state = "0-8"
 	},
 /obj/effect/floor_decal/corner/lightgrey/border,
+=======
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/borderfloor/corner{
+	dir = 8
+	},
+/obj/effect/floor_decal/corner/lightgrey/bordercorner{
+	dir = 8
+	},
+>>>>>>> a64ae69661 (Soluna Nexus mapfix 2.2 (#10647))
 /turf/simulated/floor/tiled,
 /area/hallway/Star_2_Deck_Central_Corridor_1)
 "bwK" = (
@@ -116488,8 +116527,8 @@
 	dir = 1;
 	icon_state = "pipe-c"
 	},
-/obj/effect/floor_decal/borderfloor,
-/obj/effect/floor_decal/corner/lightgrey/border,
+/obj/effect/floor_decal/borderfloor/corner,
+/obj/effect/floor_decal/corner/lightgrey/bordercorner,
 /turf/simulated/floor/tiled,
 /area/hallway/Star_2_Deck_Central_Corridor_1)
 "wZI" = (
@@ -139822,7 +139861,7 @@ aaa
 aaa
 uZK
 bNY
-mYL
+aan
 cge
 cgc
 ani
