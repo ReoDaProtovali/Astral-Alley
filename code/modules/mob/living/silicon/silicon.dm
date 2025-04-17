@@ -29,6 +29,7 @@
 
 	var/hudmode = null
 
+<<<<<<< HEAD
 /mob/living/silicon/New()
 	silicon_mob_list |= src
 	..()
@@ -36,8 +37,18 @@
 	apply_default_language(GLOB.all_languages[LANGUAGE_GALCOM])
 	init_id()
 	init_subsystems()
+=======
+/mob/living/silicon/Initialize(mapload, is_decoy = FALSE)
+	. = ..()
+	silicon_mob_list += src
+	if(!is_decoy)
+		add_language(LANGUAGE_GALCOM)
+		apply_default_language(GLOB.all_languages[LANGUAGE_GALCOM])
+		init_id()
+		init_subsystems()
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
-	AddElement(/datum/element/footstep, FOOTSTEP_MOB_SHOE, 1, -6)
+		AddElement(/datum/element/footstep, FOOTSTEP_MOB_SHOE, 1, -6)
 
 /mob/living/silicon/Destroy()
 	silicon_mob_list -= src

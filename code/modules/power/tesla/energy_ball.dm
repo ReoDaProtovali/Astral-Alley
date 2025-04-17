@@ -23,12 +23,17 @@
 	var/energy_to_raise = 32
 	var/energy_to_lower = -20
 
+<<<<<<< HEAD
 /obj/singularity/energy_ball/New(loc, starting_energy = 50, is_miniball = FALSE)
 	..()
 	miniball = is_miniball
 
 /obj/singularity/energy_ball/Initialize()
+=======
+/obj/singularity/energy_ball/Initialize(mapload, starting_energy = 50, is_miniball = FALSE)
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 	. = ..()
+	miniball = is_miniball
 	if(!miniball)
 		set_light(10, 7, "#EEEEFF")
 

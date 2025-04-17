@@ -110,6 +110,7 @@
 			return
 		//VORE Station Add End
 
+<<<<<<< HEAD
 	landmarks_list += src
 	return 1
 
@@ -118,11 +119,15 @@
 
 /obj/effect/landmark/Initialize()
 	. = ..()
+=======
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 	if(delete_me)
 		return INITIALIZE_HINT_QDEL
+	else
+		landmarks_list += src
 
 /obj/effect/landmark/Destroy(var/force = FALSE)
-	if(delete_me || force)
+	if(force)
 		landmarks_list -= src
 		return ..()
 	return QDEL_HINT_LETMELIVE

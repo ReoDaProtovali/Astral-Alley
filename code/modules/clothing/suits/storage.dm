@@ -1,8 +1,8 @@
 /obj/item/clothing/suit/storage
 	var/obj/item/storage/internal/pockets
 
-/obj/item/clothing/suit/storage/New()
-	..()
+/obj/item/clothing/suit/storage/Initialize(mapload)
+	. = ..()
 	pockets = new/obj/item/storage/internal(src)
 	pockets.max_w_class = ITEMSIZE_SMALL		//fit only pocket sized items
 	pockets.max_storage_space = ITEMSIZE_COST_SMALL * 2
@@ -91,8 +91,8 @@
 	icon_state = "[toggleicon][open ? "_open" : ""][hood_up ? "_t" : ""]"
 
 //New Vest 4 pocket storage and badge toggles, until suit accessories are a thing.
-/obj/item/clothing/suit/storage/vest/heavy/New()
-	..()
+/obj/item/clothing/suit/storage/vest/heavy/Initialize(mapload)
+	. = ..()
 	pockets = new/obj/item/storage/internal(src)
 	pockets.max_w_class = ITEMSIZE_SMALL
 	pockets.max_storage_space = ITEMSIZE_COST_SMALL * 4

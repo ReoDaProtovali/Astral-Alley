@@ -11,7 +11,11 @@
 
 	var/obj/item/paper/internalPaper
 
+<<<<<<< HEAD
 /obj/item/paperplane/Initialize(loc, obj/item/paper/newPaper) //ChompEDIT New --> Initialize
+=======
+/obj/item/paperplane/Initialize(mapload, obj/item/paper/newPaper)
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 	. = ..()
 	pixel_y = rand(-8, 8)
 	pixel_x = rand(-9, 9)

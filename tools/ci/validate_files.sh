@@ -33,8 +33,13 @@ else
 	map_files="-r --include=maps/**/**.dmm"
 	modular_map_files="-r --include=modular_chomp/maps/**/**.dmm" # CHOMPEdit - Modular maps
 	# shuttle_map_files="-r --include=_maps/shuttles/**.dmm"
+<<<<<<< HEAD
 	# code_x_515="-r --include=code/**/!(__byond_version_compat).dm"
 fi
+=======
+	code_x_515="-r --include=code/**/!(__byond_version_compat).dm"
+fi;
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 echo -e "${BLUE}Using grep provider at $(which $grep)${NC}"
 
@@ -57,9 +62,15 @@ part "step_[xy]"
 (! $grep 'step_[xy]' $map_files)
 retVal=$?
 if [ $retVal -ne 0 ]; then
+<<<<<<< HEAD
   echo -e "${RED}The variables 'step_x' and 'step_y' are present on a map, and they 'break' movement ingame.${NC}"
   FAILED=1
 fi
+=======
+	echo -e "${RED}The variables 'step_x' and 'step_y' are present on a map, and they 'break' movement ingame.${NC}"
+	FAILED=1
+fi;
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 # ChompEDIT START
 (! $grep 'step_[xy]' $modular_map_files)
@@ -75,9 +86,15 @@ part "test map included"
 (! $grep 'maps\\.*test.*' *.dme)
 retVal=$?
 if [ $retVal -ne 0 ]; then
+<<<<<<< HEAD
   echo -e "${RED}A map containing the word 'test' is included. This is not allowed to be committed.${NC}"
   FAILED=1
 fi
+=======
+	echo -e "${RED}A map containing the word 'test' is included. This is not allowed to be committed.${NC}"
+	FAILED=1
+fi;
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 section "code issues"
 
@@ -103,31 +120,95 @@ part "changelog"
 md5sum -c - <<< "0c56937110d88f750a32d9075ddaab8b *html/changelogs_ch/example.yml" # CHOMPedit - Better changelogs
 retVal=$?
 if [ $retVal -ne 0 ]; then
+<<<<<<< HEAD
   echo -e "${RED}Do not modify the example.yml changelog file.${NC}"
   FAILED=1
 fi
+=======
+	echo -e "${RED}Do not modify the example.yml changelog file.${NC}"
+	FAILED=1
+fi;
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 part "color macros"
 #Checking for color macros
 (num=`$grep -n '\\\\(red|blue|green|black|b|i[^mnct])' $code_files | wc -l`; echo "$num escapes (expecting ${MACRO_COUNT} or less)"; [ $num -le ${MACRO_COUNT} ]) # CHOMPEdit, we alos need to ignore item paths
 retVal=$?
 if [ $retVal -ne 0 ]; then
+<<<<<<< HEAD
   echo -e "${RED}Do not use any byond color macros (such as \blue), they are deprecated.${NC}"
   FAILED=1
 fi
+=======
+	echo -e "${RED}Do not use any byond color macros (such as \blue), they are deprecated.${NC}"
+	FAILED=1
+fi;
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 part "html tag matching"
 #Checking for missed tags
 python tools/TagMatcher/tag-matcher.py ../..
 retVal=$?
 if [ $retVal -ne 0 ]; then
+<<<<<<< HEAD
   echo -e "${RED}Some HTML tags are missing their opening/closing partners. Please correct this.${NC}"
   FAILED=1
 fi
+=======
+	echo -e "${RED}Some HTML tags are missing their opening/closing partners. Please correct this.${NC}"
+	FAILED=1
+fi;
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 if [ "$pcre2_support" -eq 1 ]; then
 	section "regexes requiring PCRE2"
 
+<<<<<<< HEAD
+=======
+	part "empty variable values"
+	if $grep -PU '{\n\t},' $map_files; then
+		echo
+		echo -e "${RED}ERROR: Empty variable value list detected in map file. Please remove the curly brackets entirely.${NC}"
+		FAILED=1
+	fi;
+
+	part "to_chat sanity"
+	if $grep -P 'to_chat\((?!.*,).*\)' $code_files; then
+		echo
+		echo -e "${RED}ERROR: to_chat() missing arguments.${NC}"
+		FAILED=1
+	fi;
+
+	part "timer flag sanity"
+	if $grep -P 'addtimer\((?=.*TIMER_OVERRIDE)(?!.*TIMER_UNIQUE).*\)' $code_files; then
+		echo
+		echo -e "${RED}ERROR: TIMER_OVERRIDE used without TIMER_UNIQUE.${NC}"
+		FAILED=1
+	fi;
+
+	part "trailing newlines"
+	if $grep -PU '[^\n]$(?!\n)' $code_files; then
+		echo
+		echo -e "${RED}ERROR: File(s) with no trailing newline detected, please add one.${NC}"
+		FAILED=1
+	fi;
+
+	part "improper atom initialize args"
+	if $grep -P '^/(obj|mob|turf|area|atom)/.+/Initialize\((?!mapload).*\)' $code_files; then
+		echo
+		echo -e "${RED}ERROR: Initialize override without 'mapload' argument.${NC}"
+		FAILED=1
+	fi;
+
+	part "improper atom New usage"
+	(num=`$grep -n '^/?(obj|mob|turf|area|atom)/?.*/New\(' $code_files | wc -l`; echo "$num New (expecting 2 or less)"; [ $num -le 2 ])
+	retVal=$?
+	if [ $retVal -ne 0 ]; then
+		echo -e "${RED}Do not use any New() calls, they've been replaced by Initialize(mapload).${NC}"
+		FAILED=1
+	fi;
+
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 	part "tag"
 	#Checking for 'tag' set to something on maps
 	(! $grep -Pn '( |\t|;|{)tag( ?)=' $map_files)
@@ -135,7 +216,7 @@ if [ "$pcre2_support" -eq 1 ]; then
 	if [ $retVal -ne 0 ]; then
 		echo -e "${RED}A map has 'tag' set on an atom. It may cause problems and should be removed.${NC}"
 		FAILED=1
-	fi
+	fi;
 
 	(! $grep -Pn '( |\t|;|{)tag( ?)=' $modular_map_files)
 	retVal=$?
@@ -152,7 +233,7 @@ if [ "$pcre2_support" -eq 1 ]; then
 	if [ $retVal -ne 0 ]; then
 		echo -e "${RED}A broken span tag class is present (check quotes).${NC}"
 		FAILED=1
-	fi
+	fi;
 
 	part "old style hrefs"
 	(! $grep -Pn "href[\s='\"\\ ]*\?" $code_files)
@@ -160,19 +241,25 @@ if [ "$pcre2_support" -eq 1 ]; then
 	if [ $retVal -ne 0 ]; then
 		echo -e "${RED}old-style hrefs detected, see ripgrep output.${NC}"
 		FAILED=1
-	fi
+	fi;
 else
 	echo -e "${RED}pcre2 not supported, skipping checks requiring pcre2"
 	echo -e "if you want to run these checks install ripgrep with pcre2 support.${NC}"
-fi
+fi;
 
 if [ $FAILED = 0 ]; then
     echo
     echo -e "${GREEN}No errors found using $grep!${NC}"
 else
+<<<<<<< HEAD
     echo
     echo -e "${RED}Errors found, please fix them and try again.${NC}"
 fi
+=======
+	echo
+	echo -e "${RED}Errors found, please fix them and try again.${NC}"
+fi;
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 # Quit with our status code
 exit $FAILED

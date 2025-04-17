@@ -22,7 +22,19 @@
 #define LANGUAGE_LLEILL "Glamour Speak"
 #define LANGUAGE_MARISH "Marish" // CHOMPedit
 
+<<<<<<< HEAD
 //CHOMPedit Start - Xeno languages selectable
 #define LANGUAGE_XENOLINGUA "Xenolingua"
 #define LANGUAGE_HIVEMIND "Hivemind"
 // CHOMPedit End.
+=======
+#define LANGUAGE_SPARKLE "Sparkle"
+
+// CHOMPAdd Start
+#define LANGUAGE_MARISH "Marish"
+// CHOMPAdd End
+
+// Xeno languages selectable
+#define LANGUAGE_XENOLINGUA "Xenolingua"
+#define LANGUAGE_HIVEMIND "Hivemind"
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))

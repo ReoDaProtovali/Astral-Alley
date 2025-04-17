@@ -1,5 +1,5 @@
 /datum/material/flockium
-	name = "flockium"
+	name = MAT_FLOKIUM
 	//stack_type = /obj/item/stack/material/sandstone
 	icon_base = "flock"
 	icon_reinf = "flock"
@@ -19,5 +19,10 @@
 	icon = 'icons/goonstation/featherzone.dmi'
 	icon_state = "flockdoor"
 
+<<<<<<< HEAD
 /obj/structure/simple_door/flock/New(var/newloc, var/newmat)
 	..(newloc, "flockium")
+=======
+/obj/structure/simple_door/flock/Initialize(mapload, var/newmat)
+	. = ..(mapload, MAT_FLOKIUM)
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
