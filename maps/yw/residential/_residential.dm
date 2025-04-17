@@ -51,10 +51,17 @@
     icon_state = "reinf_preview"
 
 
+<<<<<<< HEAD:maps/yw/residential/_residential.dm
 /obj/structure/table/leadreinforcedwood/New()
     material = get_material_by_name(MAT_LEAD)
     reinforced = get_material_by_name(MAT_WOOD)
     ..()
+=======
+/obj/structure/table/leadreinforcedwood/Initialize(mapload)
+	material = get_material_by_name(MAT_LEAD)
+	reinforced = get_material_by_name(MAT_WOOD)
+	. = ..()
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649)):archive/maps/old_yw/yw/residential/_residential.dm
 
 // Spawn points
 

@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 /mob/living/silicon/ai/New(loc, var/datum/ai_laws/L, var/obj/item/mmi/B, var/safety = 0)
 	..(loc, L, B, safety)
+=======
+/mob/living/silicon/ai/Initialize(mapload, is_decoy, var/datum/ai_laws/L, var/obj/item/mmi/B, var/safety = FALSE)
+	. = ..()
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 	add_language(LANGUAGE_BIRDSONG,		1)
 	add_language(LANGUAGE_SAGARU,		1)
 	add_language(LANGUAGE_CANILUNZT,	1)

@@ -41,13 +41,17 @@
 	teleport_z = z
 
 //This does nothing right now, but is framework if we do POIs for this place
+
 /obj/away_mission_init/debrisfield
 	name = "away mission initializer - debrisfield"
 
+<<<<<<< HEAD
 /obj/away_mission_init/debrisfield/Initialize()
 	flags |= ATOM_INITIALIZED
 	return INITIALIZE_HINT_QDEL
 
+=======
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 /area/tether_away/debrisfield
 	name = "Away Mission - Debris Field"
 	icon = 'icons/turf/areas_vr.dmi'

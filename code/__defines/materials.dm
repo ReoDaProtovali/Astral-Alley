@@ -67,6 +67,11 @@
 #define MAT_DARKGLASS		"darkglass"
 #define MAT_FLESH			"flesh"
 #define MAT_FANCYBLACK		"fancyblack"
+<<<<<<< HEAD
+=======
+#define MAT_FOAM			"foam"
+#define MAT_FLOKIUM			"flockium"
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 // cloth materials
 #define MAT_WOOL			"wool"

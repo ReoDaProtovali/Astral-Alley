@@ -7,8 +7,8 @@
 	name = "Inactive AI Eye"
 	icon_state = "AI-eye"
 
-/mob/observer/eye/aiEye/New()
-	..()
+/mob/observer/eye/aiEye/Initialize(mapload)
+	. = ..()
 	visualnet = cameranet
 
 /mob/observer/eye/aiEye/Destroy()
@@ -73,6 +73,7 @@
 		client.eye = eyeobj
 	SetName(src.name)
 
+<<<<<<< HEAD
 // Intiliaze the eye by assigning it's "ai" variable to us. Then set it's loc to us.
 /mob/living/silicon/ai/Initialize()
 	. = ..()
@@ -84,6 +85,8 @@
 	destroy_eyeobj()
 	return ..()
 
+=======
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 /atom/proc/move_camera_by_click()
 	if(isAI(usr))
 		var/mob/living/silicon/ai/AI = usr

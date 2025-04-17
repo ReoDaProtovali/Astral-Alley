@@ -16,8 +16,13 @@
 	var/footer = null
 	var/footerOn = FALSE
 
+<<<<<<< HEAD
 /obj/item/paper/admin/Initialize() //ChompEDIT New --> Initialize
 	..()
+=======
+/obj/item/paper/admin/Initialize(mapload, text, title)
+	. = ..()
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 	generateInteractions()
 
 

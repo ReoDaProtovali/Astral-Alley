@@ -213,9 +213,17 @@
 	)
 */
 
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/synx/New() //this is really cool. Should be able to ventcrawl canonicaly, contort, and make random speech.
 //some things should be here that arent tho.
 	..()
+=======
+/mob/living/simple_mob/animal/synx/Initialize(mapload, is_pet) //this is really cool. Should be able to ventcrawl canonicaly, contort, and make random speech.
+//some things should be here that arent tho.
+	. = ..()
+	if(is_pet)
+		return
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 	add_verb(src,/mob/living/proc/ventcrawl) //CHOMPEdit TGPanel
 	add_verb(src,/mob/living/simple_mob/animal/synx/proc/distend_stomach) //CHOMPEdit TGPanel
 	add_verb(src,/mob/living/simple_mob/proc/contort) //CHOMPEdit TGPanel
@@ -960,7 +968,12 @@
 	set category = "DEBUG"
 	icon_state = input(usr, "What would you like to change icon_state to?", "Respriting", null)
 
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/synx/ai/pet/debug/New()
+=======
+/mob/living/simple_mob/animal/synx/ai/pet/debug/Initialize(mapload)
+	. = ..(mapload, TRUE)
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 	add_verb(src,/mob/living/simple_mob/animal/synx/ai/pet/debug/proc/rename) //CHOMPEdit TGPanel
 	add_verb(src,/mob/living/simple_mob/animal/synx/ai/pet/debug/proc/resprite) //CHOMPEdit TGPanel
 	add_verb(src,/mob/living/simple_mob/animal/synx/ai/pet/debug/proc/redesc) //CHOMPEdit TGPanel

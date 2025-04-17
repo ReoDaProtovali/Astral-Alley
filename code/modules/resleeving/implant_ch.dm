@@ -1,6 +1,7 @@
 //Infinite use implanter. Feel free to make proper sprites for it or whatnot.
 //I guess this would make more sense as a machine but there's all that extra machine code it doesn't need.
 /obj/structure/backup_implanter_ch
+<<<<<<< HEAD
     name = "\improper Backup implanter"
     icon = 'icons/obj/computer3.dmi'
     icon_state = "laptop-gun"
@@ -10,6 +11,14 @@
 /obj/structure/backup_implanter_ch/New()
     ..()
     germ_level = 0
+=======
+	name = "\improper Backup implanter"
+	icon = 'icons/obj/computer3.dmi'
+	icon_state = "laptop-gun"
+	desc = "After discovering clients constantly lacked staff to replace implants, Vey-Medical designed this version capable of creating implants on demand."
+	anchored = TRUE
+	germ_level = 0
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 
 //Click to get implant.
 /obj/structure/backup_implanter_ch/attack_hand(mob/user)

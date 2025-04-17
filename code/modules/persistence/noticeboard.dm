@@ -179,7 +179,12 @@
 	notices = 5
 	icon_state = "nboard05"
 
+<<<<<<< HEAD
 /obj/structure/noticeboard/anomaly/Initialize() //ChompEDIT New --> Initialize
+=======
+/obj/structure/noticeboard/anomaly/Initialize(mapload)
+	. = ..()
+>>>>>>> 5853b61b55 ([MIRROR] New to init final (#10649))
 	var/obj/item/paper/P = new()
 	P.name = "Memo RE: proper analysis procedure"
 	P.info = "<br>We keep test dummies in pens here for a reason, so standard procedure should be to activate newfound alien artifacts and place the two in close proximity. Promising items I might even approve monkey testing on."
@@ -214,4 +219,3 @@
 	P.stamped = list(/obj/item/stamp/rd)
 	P.add_overlay("paper_stamped_rd")
 	contents += P
-	. = ..() //ChompEDIT New --> Initialize
