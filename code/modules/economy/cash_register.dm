@@ -25,11 +25,23 @@
 
 
 // Claim machine ID
+<<<<<<< HEAD
 /obj/machinery/cash_register/New()
 	machine_id = "[station_name()] RETAIL #[num_financial_terminals++]"
+=======
+/obj/machinery/cash_register/Initialize(mapload)
+	machine_id = "[station_name()] RETAIL #[GLOB.num_financial_terminals++]"
+	. = ..()
+>>>>>>> f7219329ca ([MIRROR] Conversion many Globals to Managed Globals (Part 1) (#10665))
 	cash_stored = rand(10, 70)*10
-	transaction_devices += src // Global reference list to be properly set up by /proc/setup_economy()
+	GLOB.transaction_devices += src // Global reference list to be properly set up by /proc/setup_economy()
 
+<<<<<<< HEAD
+=======
+/obj/machinery/cash_register/Destroy()
+	GLOB.transaction_devices -= src
+	. = ..()
+>>>>>>> f7219329ca ([MIRROR] Conversion many Globals to Managed Globals (Part 1) (#10665))
 
 /obj/machinery/cash_register/examine(mob/user as mob)
 	. = ..(user)
@@ -257,7 +269,7 @@
 					T.purpose = transaction_purpose
 					T.amount = "([transaction_amount])"
 					T.source_terminal = machine_id
-					T.date = current_date_string
+					T.date = GLOB.current_date_string
 					T.time = stationtime2text()
 					D.transaction_log.Add(T)
 
@@ -267,7 +279,7 @@
 					T.purpose = transaction_purpose
 					T.amount = "[transaction_amount]"
 					T.source_terminal = machine_id
-					T.date = current_date_string
+					T.date = GLOB.current_date_string
 					T.time = stationtime2text()
 					linked_account.transaction_log.Add(T)
 
@@ -305,7 +317,7 @@
 			T.purpose = transaction_purpose
 			T.amount = "[transaction_amount]"
 			T.source_terminal = machine_id
-			T.date = current_date_string
+			T.date = GLOB.current_date_string
 			T.time = stationtime2text()
 			linked_account.transaction_log.Add(T)
 

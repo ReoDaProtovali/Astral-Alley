@@ -69,8 +69,13 @@
 
 /datum/genetics/side_effect/confuse/start(mob/living/carbon/human/H)
 	..()
+<<<<<<< HEAD
 	var/datum/gender/T = gender_datums[H.get_visible_gender()]
 	H.custom_emote(VISIBLE_MESSAGE, "has drool running down from [T.his] mouth.")
+=======
+	var/datum/gender/T = GLOB.gender_datums[H.get_visible_gender()]
+	H.automatic_custom_emote(VISIBLE_MESSAGE, "has drool running down from [T.his] mouth.", check_stat = TRUE)
+>>>>>>> f7219329ca ([MIRROR] Conversion many Globals to Managed Globals (Part 1) (#10665))
 
 /datum/genetics/side_effect/confuse/finish(datum/weakref/WR)
 	if(..()) return

@@ -1,4 +1,4 @@
-var/global/list/micro_tunnels = list()
+GLOBAL_LIST_EMPTY(micro_tunnels)
 
 /obj/structure/micro_tunnel
 	name = "mouse hole"
@@ -22,10 +22,14 @@ var/global/list/micro_tunnels = list()
 
 /obj/structure/micro_tunnel/New()
 	. = ..()
+<<<<<<< HEAD
 	micro_tunnels.Add(src)
 
 /obj/structure/micro_tunnel/Initialize()
 	. = ..()
+=======
+	GLOB.micro_tunnels.Add(src)
+>>>>>>> f7219329ca ([MIRROR] Conversion many Globals to Managed Globals (Part 1) (#10665))
 	if(name == initial(name))
 		var/area/our_area = get_area(src)
 		name = "[our_area.name] [name]"
@@ -40,7 +44,7 @@ var/global/list/micro_tunnels = list()
 		thing.forceMove(get_turf(src.loc))
 		thing.cancel_camera()
 
-	micro_tunnels.Remove(src)
+	GLOB.micro_tunnels.Remove(src)
 
 	return ..()
 
@@ -70,8 +74,12 @@ var/global/list/micro_tunnels = list()
 	for(var/datum/planet/P in SSplanets.planets)
 		if(myturf.z in P.expected_z_levels)
 			planet = P
+<<<<<<< HEAD
 		else
 	for(var/obj/structure/micro_tunnel/t in micro_tunnels)
+=======
+	for(var/obj/structure/micro_tunnel/t in GLOB.micro_tunnels)
+>>>>>>> f7219329ca ([MIRROR] Conversion many Globals to Managed Globals (Part 1) (#10665))
 		if(t == src)
 			continue
 		if(magic || t.magic)
