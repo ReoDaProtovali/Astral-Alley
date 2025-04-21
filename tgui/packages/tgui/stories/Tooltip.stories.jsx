@@ -4,13 +4,25 @@
  * @license MIT
  */
 
+<<<<<<< HEAD:tgui/packages/tgui/stories/Tooltip.stories.jsx
 import { Box, Button, Section, Tooltip } from 'tgui-core/components';
+=======
+import { type ComponentProps } from 'react';
+import {
+  Box,
+  Button,
+  type Floating,
+  Section,
+  Tooltip,
+} from 'tgui-core/components';
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/packages/tgui/stories/Tooltip.stories.tsx
 
 export const meta = {
   title: 'Tooltip',
   render: () => <Story />,
 };
 
+<<<<<<< HEAD:tgui/packages/tgui/stories/Tooltip.stories.jsx
 const Story = () => {
   const positions = [
     'top',
@@ -20,7 +32,20 @@ const Story = () => {
     'bottom-start',
     'bottom-end',
   ];
+=======
+type Placement = ComponentProps<typeof Floating>['placement'];
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/packages/tgui/stories/Tooltip.stories.tsx
 
+const positions = [
+  'top',
+  'left',
+  'right',
+  'bottom',
+  'bottom-start',
+  'bottom-end',
+] as Placement[];
+
+function Story() {
   return (
     <Section>
       <Box>
@@ -45,4 +70,4 @@ const Story = () => {
       </Box>
     </Section>
   );
-};
+}

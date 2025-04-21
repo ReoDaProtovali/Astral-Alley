@@ -19,7 +19,7 @@ export const meta = {
   render: () => <Story />,
 };
 
-const Story = (props) => {
+function Story() {
   const [progress, setProgress] = useState(0.5);
   const [color, setColor] = useState('');
 
@@ -30,7 +30,11 @@ const Story = (props) => {
           good: [0.5, Infinity],
           bad: [-Infinity, 0.1],
           average: [0, 0.5],
+<<<<<<< HEAD:tgui/packages/tgui/stories/ProgressBar.stories.jsx
         },
+=======
+        } as Record<string, [number, number]>,
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/packages/tgui/stories/ProgressBar.stories.tsx
       };
 
   return (
@@ -39,7 +43,11 @@ const Story = (props) => {
         Value: {Number(progress).toFixed(1)}
       </ProgressBar>
       <Box mt={1}>
+<<<<<<< HEAD:tgui/packages/tgui/stories/ProgressBar.stories.jsx
         <LabeledList mt="2em">
+=======
+        <LabeledList>
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/packages/tgui/stories/ProgressBar.stories.tsx
           <LabeledList.Item label="Adjust value">
             <Button onClick={() => setProgress(progress - 0.1)}>-0.1</Button>
             <Button onClick={() => setProgress(progress + 0.1)}>+0.1</Button>
@@ -51,4 +59,4 @@ const Story = (props) => {
       </Box>
     </Section>
   );
-};
+}

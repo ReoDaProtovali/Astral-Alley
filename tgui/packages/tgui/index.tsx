@@ -22,7 +22,7 @@ import './styles/themes/abstract.scss';
 import { perf } from 'common/perf';
 import { setupGlobalEvents } from 'tgui-core/events';
 import { setupHotKeys } from 'tgui-core/hotkeys';
-import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
+import { setupHotReloading } from 'tgui-dev-server/link/client.mjs';
 
 import { setGlobalStore } from './backend';
 import { loadIconRefMap } from './icons';
@@ -62,8 +62,9 @@ function setupApp() {
   Byond.subscribe((type, payload) => store.dispatch({ type, payload }));
 
   // Enable hot module reloading
-  if (module.hot) {
+  if (import.meta.webpackHot) {
     setupHotReloading();
+<<<<<<< HEAD
     // prettier-ignore
     module.hot.accept([
       './components',
@@ -73,6 +74,14 @@ function setupApp() {
     ], () => {
       renderApp();
     });
+=======
+    import.meta.webpackHot.accept(
+      ['./debug', './layouts', './routes', './App'],
+      () => {
+        render(<App />);
+      },
+    );
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681))
   }
 }
 

@@ -14,13 +14,13 @@ import {
   toggleKitchenSink,
 } from './actions';
 
-// prettier-ignore
-const relayedTypes = [
-  'backend/update',
-  'chat/message',
-];
+const relayedTypes = ['backend/update', 'chat/message'];
 
+<<<<<<< HEAD:tgui/packages/tgui/debug/middleware.js
 export const debugMiddleware = (store) => {
+=======
+export function debugMiddleware(store) {
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/packages/tgui/debug/middleware.ts
   acquireHotKey(KEY_F11);
   acquireHotKey(KEY_F12);
   globalEvents.on('keydown', (key) => {
@@ -34,19 +34,24 @@ export const debugMiddleware = (store) => {
       // NOTE: We need to call this in a timeout, because we need a clean
       // stack in order for this to be a fatal error.
       setTimeout(() => {
-        // prettier-ignore
         throw new Error(
-          'OOPSIE WOOPSIE!! UwU We made a fucky wucky!! A wittle'
-          + ' fucko boingo! The code monkeys at our headquarters are'
-          + ' working VEWY HAWD to fix this!');
+          'OOPSIE WOOPSIE!! UwU We made a fucky wucky!! A wittle' +
+            ' fucko boingo! The code monkeys at our headquarters are' +
+            ' working VEWY HAWD to fix this!',
+        );
       });
     }
   });
   return (next) => (action) => next(action);
-};
+}
 
+<<<<<<< HEAD:tgui/packages/tgui/debug/middleware.js
 export const relayMiddleware = (store) => {
   const devServer = require('tgui-dev-server/link/client.cjs');
+=======
+export function relayMiddleware(store) {
+  const devServer = require('tgui-dev-server/link/client.mjs');
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/packages/tgui/debug/middleware.ts
   const externalBrowser = location.search === '?external';
   if (externalBrowser) {
     devServer.subscribe((msg) => {
@@ -67,7 +72,11 @@ export const relayMiddleware = (store) => {
     });
   }
   return (next) => (action) => {
+<<<<<<< HEAD:tgui/packages/tgui/debug/middleware.js
     const { type, payload, relayed } = action;
+=======
+    const { type, relayed } = action;
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/packages/tgui/debug/middleware.ts
     if (type === openExternalBrowser.type) {
       window.open(location.href + '?external', '_blank');
       return;
@@ -83,4 +92,4 @@ export const relayMiddleware = (store) => {
     }
     return next(action);
   };
-};
+}
