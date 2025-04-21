@@ -99,11 +99,19 @@
 		icon_state = "holo_medical"
 
 /obj/structure/holosign/barrier/medical/proc/CheckHuman(mob/living/carbon/human/H)
+<<<<<<< HEAD:modular_chomp/code/game/objects/structures/holosign.dm
 	if(istype(H.species, /datum/species/xenochimera))
 		return FALSE
 	if(H.viruses)
 		for(var/datum/disease/D in H.viruses)
 			if(D.severity == NONTHREAT)
+=======
+	if(H.get_species() == SPECIES_XENOCHIMERA)
+		return FALSE
+	if(H.GetViruses())
+		for(var/datum/disease/D in H.GetSpreadableViruses())
+			if(D.danger == DISEASE_POSITIVE || D.danger == DISEASE_BENEFICIAL)
+>>>>>>> 5193d70d2b ([MIRROR] Virology Update #3 (#10690)):code/game/objects/structures/holosign.dm
 				continue
 			return FALSE
 	return TRUE
