@@ -1063,6 +1063,7 @@
 		updateVRPanel()
 
 		log_admin("VORE: [src] used Eat Trash to swallow [I].")
+<<<<<<< HEAD
 
 		if(istype(I,/obj/item/flashlight/flare) || istype(I,/obj/item/flame/match) || istype(I,/obj/item/storage/box/matches))
 			to_chat(src, span_notice("You can taste the flavor of spicy cardboard."))
@@ -1152,6 +1153,10 @@
 		else
 			to_chat(src, span_notice("You can taste the flavor of garbage. Delicious."))
 		visible_message(span_vwarning("[src] demonstrates the voracious capabilities of their [lowertext(vore_selected.name)] by making [I] disappear!")) //CHOMPedit
+=======
+		I.after_trash_eaten(src)
+		visible_message(span_vwarning(src.vore_selected.belly_format_string(src.vore_selected.trash_eater_in, I, item=I)))
+>>>>>>> d60567c70a ([MIRROR] Trash Eater Customization (#10688))
 		return
 	to_chat(src, span_notice("This snack is too powerful to go down that easily.")) //CHOMPEdit
 	return

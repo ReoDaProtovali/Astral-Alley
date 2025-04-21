@@ -169,6 +169,13 @@
 		"Their body looks somewhat larger than usual around the area of their %belly.",
 		"Their %belly looks larger than usual.")
 
+	var/list/trash_eater_in = list(
+		"%pred demonstrates their voracious capabilities by swallowing %item whole!"
+	)
+	var/list/trash_eater_out = list( //handles all item expulsions regardless of whether they have the trash perk
+		"%pred expels %item from their %belly!"
+	)
+
 GLOBAL_LIST_INIT(vore_words_goo, list("muck","goo","sludge","slime","mire","ectoplasm","quagmire","glop","jelly","ooze","slush","mush","quicksand"))//%goo
 GLOBAL_LIST_INIT(vore_words_hbellynoises, list("gurgle","gloorp","squelch","gloosh","squish","groan","grrrrrrn","sloooooOrp","slooosh","grrrbles","worbles"))//%happybelly
 GLOBAL_LIST_INIT(vore_words_fat, list("love handles","fat","pudge","plumpness","squish","chunk","meat","softness","blubber","flab","paunch","hip dip","mass","dough","chub","marshmellowy goodness","girth","fluff","thickness","jello","adipose "))//%fat
@@ -279,7 +286,11 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 // This is useful in customization boxes and such. The delimiter right now is \n\n so
 // in message boxes, this looks nice and is easily delimited.
 /obj/belly/proc/get_messages(type, delim = "\n\n")
+<<<<<<< HEAD
 	ASSERT(type == "smo" || type == "smi" || type == "asmo" || type == "asmi" || type == "escao" || type == "escap" || type == "escp" || type == "esco" || type == "escout" || type == "escip" || type == "escio" || type == "esciout" || type == "escfp" || type == "escfo" || type == "aescao" || type == "aescap" || type == "aescp" || type == "aesco" || type == "aescout" || type == "aescfp" || type == "aescfo" || type == "trnspp" || type == "trnspo" || type == "trnssp" || type == "trnsso" || type == "atrnspp" || type == "atrnspo" || type == "atrnssp" || type == "atrnsso" || type == "stmodp" || type == "stmodo" || type == "stmoap" || type == "stmoao" || type == "dmo" || type == "dmp" || type == "amo" || type == "amp" || type == "uamo" || type == "uamp" || type == "em" || type == "ema" || type == "im_digest" || type == "im_hold" || type == "im_holdabsorbed" || type == "im_absorb" || type == "im_heal" || type == "im_drain" || type == "im_steal" || type == "im_egg" || type == "im_shrink" || type == "im_grow" || type == "im_unabsorb") //CHOMPEdit
+=======
+	VB_MESSAGE_SANITY(type)
+>>>>>>> d60567c70a ([MIRROR] Trash Eater Customization (#10688))
 
 	var/list/raw_messages
 	switch(type)
@@ -389,6 +400,11 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 			raw_messages = emote_lists[DM_GROW]
 		if("im_unabsorb")
 			raw_messages = emote_lists[DM_UNABSORB]
+		if(BELLY_TRASH_EATER_IN)
+			raw_messages = trash_eater_in
+		if(BELLY_TRASH_EATER_OUT)
+			raw_messages = trash_eater_out
+
 	var/messages = null
 	if(raw_messages)
 		messages = raw_messages.Join(delim)
@@ -401,7 +417,11 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 /obj/belly/proc/set_messages(raw_text, type, delim = "\n\n", limit)
 	if(!limit)
 		CRASH("[src] set message called without limit!")
+<<<<<<< HEAD
 	ASSERT(type == "smo" || type == "smi" || type == "asmo" || type == "asmi" || type == "escao" || type == "escap" || type == "escp" || type == "esco" || type == "escout" || type == "escip" || type == "escio" || type == "esciout" || type == "escfp" || type == "escfo" || type == "aescao" || type == "aescap" || type == "aescp" || type == "aesco" || type == "aescout" || type == "aescfp" || type == "aescfo" || type == "trnspp" || type == "trnspo" || type == "trnssp" || type == "trnsso" || type == "atrnspp" || type == "atrnspo" || type == "atrnssp" || type == "atrnsso" || type == "stmodp" || type == "stmodo" || type == "stmoap" || type == "stmoao" || type == "dmo" || type == "dmp" || type == "amo" || type == "amp" || type == "uamo" || type == "uamp" || type == "em" || type == "ema" || type == "im_digest" || type == "im_hold" || type == "im_holdabsorbed" || type == "im_absorb" || type == "im_heal" || type == "im_drain" || type == "im_steal" || type == "im_egg" || type == "im_shrink" || type == "im_grow" || type == "im_unabsorb") //CHOMPEdit
+=======
+	VB_MESSAGE_SANITY(type)
+>>>>>>> d60567c70a ([MIRROR] Trash Eater Customization (#10688))
 
 	var/list/raw_list
 
@@ -540,3 +560,7 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 			emote_lists[DM_GROW] = raw_list
 		if("im_unabsorb")
 			emote_lists[DM_UNABSORB] = raw_list
+		if(BELLY_TRASH_EATER_IN)
+			trash_eater_in = raw_list
+		if(BELLY_TRASH_EATER_OUT)
+			trash_eater_out = raw_list
