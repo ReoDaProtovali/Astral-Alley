@@ -1,6 +1,10 @@
 import './styles/main.scss';
 
+<<<<<<< HEAD
 import { FormEvent, KeyboardEvent, useEffect, useRef, useState } from 'react';
+=======
+import { useEffect, useRef, useState } from 'react';
+>>>>>>> 5567180490 ([MIRROR] tgui say focus fix (#10695))
 import { dragStartHandler } from 'tgui/drag';
 import { isEscape, KEY } from 'tgui-core/keys';
 import { clamp } from 'tgui-core/math';
@@ -29,15 +33,6 @@ type ByondProps = {
   lightMode: BooleanLike;
 };
 
-const ROWS: Record<keyof typeof WindowSize, number> = {
-  Small: 1,
-  Medium: 2,
-  Large: 3,
-  Max: 20,
-  Width: 360,
-  MaxWidth: 800,
-} as const;
-
 export function TguiSay() {
   const innerRef = useRef<HTMLTextAreaElement>(null);
   const channelIterator = useRef(new ChannelIterator());
@@ -50,10 +45,13 @@ export function TguiSay() {
   const [currentPrefix, setCurrentPrefix] = useState<
     keyof typeof RADIO_PREFIXES | null
   >(null);
-  const [size, setSize] = useState(WindowSize.Small);
   const [maxLength, setMaxLength] = useState(4096);
+<<<<<<< HEAD
   const [minimumHeight, setMinimumHeight] = useState(WindowSize.Small);
   const [minimumWidth, setMinimumWidth] = useState(WindowSize.Width);
+=======
+  const [size, setSize] = useState(WindowSize.Small);
+>>>>>>> 5567180490 ([MIRROR] tgui say focus fix (#10695))
   const [lightMode, setLightMode] = useState(false);
   const [position, setPosition] = useState([window.screenX, window.screenY]);
   const [value, setValue] = useState('');
@@ -102,6 +100,33 @@ export function TguiSay() {
     }
   }
 
+<<<<<<< HEAD
+=======
+  function handleButtonClick(event: React.MouseEvent<HTMLButtonElement>): void {
+    isDragging.current = true;
+
+    setTimeout(() => {
+      // So the button doesn't jump around accidentally
+      if (isDragging.current) {
+        dragStartHandler(event.nativeEvent);
+      }
+    }, 50);
+  }
+
+  // Prevents the button from changing channels if it's dragged
+  function handleButtonRelease(): void {
+    isDragging.current = false;
+    const currentPosition = [window.screenX, window.screenY];
+
+    if (JSON.stringify(position.current) !== JSON.stringify(currentPosition)) {
+      position.current = currentPosition;
+      return;
+    }
+
+    handleIncrementChannel();
+  }
+
+>>>>>>> 5567180490 ([MIRROR] tgui say focus fix (#10695))
   function handleClose(): void {
     innerRef.current?.blur();
     windowClose();
@@ -175,7 +200,7 @@ export function TguiSay() {
     );
   }
 
-  function handleInput(event: FormEvent<HTMLTextAreaElement>): void {
+  function handleInput(event: React.FormEvent<HTMLTextAreaElement>): void {
     const iterator = channelIterator.current;
     let newValue = event.currentTarget.value;
 
@@ -200,7 +225,9 @@ export function TguiSay() {
     setValue(newValue);
   }
 
-  function handleKeyDown(event: KeyboardEvent<HTMLTextAreaElement>): void {
+  function handleKeyDown(
+    event: React.KeyboardEvent<HTMLTextAreaElement>,
+  ): void {
     if (event.getModifierState('AltGraph')) return;
 
     switch (event.key) {
@@ -285,6 +312,7 @@ export function TguiSay() {
   }
 
   function handleOpen(data: ByondOpen): void {
+<<<<<<< HEAD
     setTimeout(() => {
       innerRef.current?.focus();
       windowSet(WindowSize.Width, WindowSize.Small);
@@ -300,6 +328,21 @@ export function TguiSay() {
 
     setButtonContent(iterator.current());
     windowOpen(iterator.current());
+=======
+    setSize(minimumHeight.current);
+    channelIterator.current.set(data.channel);
+
+    setCurrentPrefix(null);
+    setButtonContent(channelIterator.current.current());
+    windowOpen(
+      channelIterator.current.current(),
+      minimumWidth.current,
+      minimumHeight.current,
+      scale.current,
+    );
+
+    innerRef.current?.focus();
+>>>>>>> 5567180490 ([MIRROR] tgui say focus fix (#10695))
   }
 
   function handleProps(data: ByondProps): void {
@@ -342,8 +385,13 @@ export function TguiSay() {
     newSize = clamp(newSize, minimumHeight * 20 + 10, WindowSize.Max);
 
     if (size !== newSize) {
+<<<<<<< HEAD
       setSize(newSize);
       windowSet(minimumWidth, newSize);
+=======
+      windowSet(minimumWidth.current, newSize, scale.current);
+      setSize(newSize);
+>>>>>>> 5567180490 ([MIRROR] tgui say focus fix (#10695))
     }
   }, [value]);
 
@@ -371,13 +419,20 @@ export function TguiSay() {
         </button>
         <textarea
           autoCorrect="off"
-          className={`textarea textarea-${theme}`}
+          className={classes([
+            'textarea',
+            `textarea-${theme}`,
+            value.length > LineLength.Large && 'textarea-large',
+          ])}
           maxLength={maxLength}
           onInput={handleInput}
           onKeyDown={handleKeyDown}
           ref={innerRef}
+<<<<<<< HEAD
           spellCheck={false}
           rows={ROWS[size] || 1}
+=======
+>>>>>>> 5567180490 ([MIRROR] tgui say focus fix (#10695))
           value={value}
         />
       </div>
