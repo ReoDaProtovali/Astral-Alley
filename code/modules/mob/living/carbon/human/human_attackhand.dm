@@ -255,7 +255,13 @@
 			if(!attack_message)
 				attack.show_attack(H, src, hit_zone, rand_damage)
 			else
+<<<<<<< HEAD
 				H.visible_message(span_danger("[attack_message]"))
+=======
+				attack_message = "[H] attempted to strike [src], but [TT.he] rolled out of the way!"
+				src.set_dir(pick(GLOB.cardinal))
+			miss_type = 1
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 
 			playsound(src, ((miss_type) ? (miss_type == 1 ? attack.miss_sound : 'sound/weapons/thudswoosh.ogg') : attack.attack_sound), 25, 1, -1)
 

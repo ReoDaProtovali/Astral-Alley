@@ -92,6 +92,7 @@
 		stack_storage[s_matname] = 0
 		stack_paths[s_matname] = S
 
+<<<<<<< HEAD
 	spawn( 5 )
 		for (var/dir in cardinal)
 			src.input = locate(/obj/machinery/mineral/input, get_step(src, dir))
@@ -101,6 +102,14 @@
 			if(src.output) break
 		return
 	return
+=======
+	for (var/dir in GLOB.cardinal)
+		src.input = locate(/obj/machinery/mineral/input, get_step(src, dir))
+		if(src.input) break
+	for (var/dir in GLOB.cardinal)
+		src.output = locate(/obj/machinery/mineral/output, get_step(src, dir))
+		if(src.output) break
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 
 /obj/machinery/mineral/stacking_machine/proc/toggle_speed(var/forced)
 	if(forced)

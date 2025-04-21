@@ -20,7 +20,11 @@
 		write_data_to_pin(new_data)
 
 /datum/integrated_io/dir/write_data_to_pin(var/new_data)
+<<<<<<< HEAD
 	if(isnull(new_data) || (new_data in alldirs + list(UP, DOWN)))
+=======
+	if(isnull(new_data) || (new_data in (GLOB.alldirs + list(UP, DOWN))))
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		data = new_data
 		holder.on_data_written()
 

@@ -8,8 +8,13 @@
 	Returns
 	standard 0 if fail
 */
+<<<<<<< HEAD
 /mob/living/proc/apply_damage(var/damage = 0,var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/soaked = 0, var/used_weapon = null, var/sharp = FALSE, var/edge = FALSE, var/obj/used_weapon = null, var/projectile = 0)
 	if(Debug2)
+=======
+/mob/living/proc/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/soaked = 0, var/sharp = FALSE, var/edge = FALSE, var/obj/used_weapon = null, var/projectile = 0)
+	if(GLOB.Debug2)
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		to_world_log("## DEBUG: apply_damage() was called on [src], with [damage] damage, and an armor value of [blocked].")
 	if(!damage || (blocked >= 100))
 		return 0
@@ -140,7 +145,7 @@
 
 
 /mob/living/proc/apply_effect(var/effect = 0,var/effecttype = STUN, var/blocked = 0, var/check_protection = 1)
-	if(Debug2)
+	if(GLOB.Debug2)
 		to_world_log("## DEBUG: apply_effect() was called.  The type of effect is [effecttype].  Blocked by [blocked].")
 	if(!effect || (blocked >= 100))
 		return 0

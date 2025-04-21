@@ -84,6 +84,7 @@
 			if(L.z != z || get_dist(src,L) > 10)
 				continue
 
+<<<<<<< HEAD
 			if(prob(destroy_lights))
 				spawn(rand(5,25))
 					L.broken()
@@ -91,6 +92,29 @@
 				L.flicker(10)
 		*/
 		handle_phasein_flicker() // CHOMPEdit, special handle for phase-in light flicker
+=======
+	// Do this after the potential vore, so we get the belly
+	update_icon()
+
+	/* CHOMPRemove Start
+	//Affect nearby lights
+	var/destroy_lights = 0
+	if(eye_state == RED_EYES)
+		destroy_lights = 80
+	if(eye_state == PURPLE_EYES)
+		destroy_lights = 25
+
+	for(var/obj/machinery/light/L in GLOB.machines)
+		if(L.z != z || get_dist(src,L) > 10)
+			continue
+
+		if(prob(destroy_lights))
+			addtimer(CALLBACK(L, TYPE_PROC_REF(/obj/machinery/light, broken)), rand(5,25), TIMER_DELETE_ME)
+		else
+			L.flicker(10)
+	*/// CHOMPRemove End
+	handle_phasein_flicker() // CHOMPEdit, special handle for phase-in light flicker
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 
 /mob/living/simple_mob/shadekin/proc/phase_out(var/turf/T)
 	if(!(ability_flags & AB_PHASE_SHIFTED))
