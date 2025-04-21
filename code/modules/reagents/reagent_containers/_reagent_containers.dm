@@ -160,3 +160,14 @@
 	// to_chat(user, span_notice("You transfer [trans] units of the solution to [target]."))
 	balloon_alert(user, "Transfered [trans] units to [target]") // CHOMPEdit - Balloon alerts! They're the future, I tell you.
 	return 1
+<<<<<<< HEAD
+=======
+
+/obj/item/reagent_containers/proc/liquid_belly_check()
+	if(!reagents)
+		return FALSE
+	for(var/datum/reagent/R in reagents.reagent_list)
+		if(R.from_belly)
+			return TRUE
+	return FALSE
+>>>>>>> b672ca8693 ([MIRROR] fix a bunch of runtimes (#10683))
