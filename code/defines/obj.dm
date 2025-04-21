@@ -10,7 +10,11 @@
 /obj/structure/signpost/attack_hand(mob/user as mob)
 	if(tgui_alert(user, "Travel back to ss13?","Return?",list("Yes","No")) == "Yes")
 		if(user.z != src.z)	return
+<<<<<<< HEAD
 		user.forceMove(pick(latejoin))
+=======
+		user.forceMove(get_turf(pick(GLOB.latejoin)))
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 
 /obj/structure/signpost_fake
 	icon = 'icons/obj/stationobjs.dmi'

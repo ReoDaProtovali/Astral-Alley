@@ -15,6 +15,7 @@
 
 	switch(name)			//some of these are probably obsolete
 		if("monkey")
+<<<<<<< HEAD
 			monkeystart += loc
 			delete_me = 1
 			return
@@ -22,8 +23,15 @@
 			newplayer_start += loc
 			delete_me = 1
 			return
+=======
+			GLOB.monkeystart += loc
+			delete_me = TRUE
+		if("start")
+			GLOB.newplayer_start += loc
+			delete_me = TRUE
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		if("JoinLate") // Bit difference, since we need the spawn point to move.
-			latejoin += src
+			GLOB.latejoin += src
 			simulated = TRUE
 		//	delete_me = 1
 			return
@@ -34,11 +42,17 @@
 			return
 		//VOREStation Add end
 		if("JoinLateGateway")
+<<<<<<< HEAD
 			latejoin_gateway += loc
 			// CHOMPEdit Start
 			delete_me = 1
 			// CHOMPEdit End
 			return
+=======
+			GLOB.latejoin_gateway += loc
+			//GLOB.latejoin += loc				//VOREStation Addition // CHOMPRemove
+			delete_me = TRUE
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		//CHOMPEdit Begin
 		if("JoinLateStationGateway")
 			GLOB.latejoin_gatewaystation += loc
@@ -58,6 +72,7 @@
 			return
 		//CHOMPEdit End
 		if("JoinLateElevator")
+<<<<<<< HEAD
 			latejoin_elevator += loc
 			delete_me = 1
 			return
@@ -73,17 +88,31 @@
 			prisonwarp += loc
 			delete_me = 1
 			return
+=======
+			GLOB.latejoin_elevator += loc
+			delete_me = TRUE
+		if("JoinLateCryo")
+			GLOB.latejoin_cryo += loc
+			delete_me = TRUE
+		if("JoinLateCyborg")
+			GLOB.latejoin_cyborg += loc
+			delete_me = TRUE
+		if("prisonwarp")
+			GLOB.prisonwarp += loc
+			delete_me = TRUE
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		if("Holding Facility")
-			holdingfacility += loc
+			GLOB.holdingfacility += loc
 		if("tdome1")
-			tdome1 += loc
+			GLOB.tdome1 += loc
 		if("tdome2")
-			tdome2 += loc
+			GLOB.tdome2 += loc
 		if("tdomeadmin")
-			tdomeadmin += loc
+			GLOB.tdomeadmin += loc
 		if("tdomeobserve")
-			tdomeobserve += loc
+			GLOB.tdomeobserve += loc
 		if("prisonsecuritywarp")
+<<<<<<< HEAD
 			prisonsecuritywarp += loc
 			delete_me = 1
 			return
@@ -95,6 +124,16 @@
 			xeno_spawn += loc
 			delete_me = 1
 			return
+=======
+			GLOB.prisonsecuritywarp += loc
+			delete_me = TRUE
+		if("blobstart")
+			GLOB.blobstart += loc
+			delete_me = TRUE
+		if("xeno_spawn")
+			GLOB.xeno_spawn += loc
+			delete_me = TRUE
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		if("endgame_exit")
 			endgame_safespawns += loc
 			delete_me = 1
@@ -105,9 +144,14 @@
 			return
 		//VOREStation Add Start
 		if("vinestart")
+<<<<<<< HEAD
 			vinestart += loc
 			delete_me = 1
 			return
+=======
+			GLOB.vinestart += loc
+			delete_me = TRUE
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 		//VORE Station Add End
 
 	landmarks_list += src

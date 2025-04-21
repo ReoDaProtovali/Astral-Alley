@@ -22,16 +22,26 @@
 	name = "marble stairs"
 	icon_state = "stairs"
 
+<<<<<<< HEAD
 /obj/effect/floor_decal/atoll/stairs/Initialize()
 	dir = pick(cardinal)
+=======
+/obj/effect/floor_decal/atoll/stairs/Initialize(mapload)
+	dir = pick(GLOB.cardinal)
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 	. = ..()
 
 /obj/effect/floor_decal/atoll/moss
 	name = "moss"
 	icon_state = "moss"
 
+<<<<<<< HEAD
 /obj/effect/floor_decal/atoll/moss/random/Initialize()
 	dir = pick(alldirs)
+=======
+/obj/effect/floor_decal/atoll/moss/random/Initialize(mapload)
+	dir = pick(GLOB.alldirs)
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 	. = ..()
 
 /obj/effect/floor_decal/atoll/power

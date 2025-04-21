@@ -12,12 +12,29 @@
 
 	return text
 
+<<<<<<< HEAD
 //Sends resource files to client cache
 /client/proc/getFiles()
 	for(var/file in args)
 		src << browse_rsc(file)
 
 /client/proc/browse_files(root="data/logs/", max_iterations=10, list/valid_extensions=list(".txt",".log",".htm"))
+=======
+/**
+ * For FTP requests. (i.e. downloading runtime logs.)
+ *
+ * However it'd be ok to use for accessing attack logs and such too, which are even laggier.
+ */
+
+/client/proc/browse_files(root_type=BROWSE_ROOT_ALL_LOGS, max_iterations=10, list/valid_extensions=list("txt","log","htm", "html", "gz", "json"))
+	// wow why was this ever a parameter
+	var/root = "data/logs/"
+	switch(root_type)
+		if(BROWSE_ROOT_ALL_LOGS)
+			root = "data/logs/"
+		if(BROWSE_ROOT_CURRENT_LOGS)
+			root = GLOB.log_directory
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 	var/path = root
 
 	for(var/i=0, i<max_iterations, i++)

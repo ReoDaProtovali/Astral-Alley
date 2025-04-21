@@ -94,7 +94,7 @@
 	. = ..()
 	if(!antilight_cache)
 		antilight_cache = list()
-		for(var/diag in cornerdirs)
+		for(var/diag in GLOB.cornerdirs)
 			var/image/I = image(LIGHTING_ICON, null, icon_state = "diagonals", layer = 10, dir = diag)
 			I.plane = PLANE_LIGHTING
 			antilight_cache["[diag]"] = I
@@ -115,6 +115,15 @@
 			add_overlay(antilight_cache["[join_flags]"], TRUE)
 			return
 	cut_overlay(antilight_cache["[join_flags]"], TRUE)
+<<<<<<< HEAD
+=======
+	if(!(join_flags in GLOB.cornerdirs)) //We're not joined at an angle
+		return
+	//Dynamic lighting dissolver
+	var/turf/T = get_step(src, turn(join_flags,180))
+	if(!T || !T.dynamic_lighting || !get_area(T).dynamic_lighting)
+		add_overlay(antilight_cache["[join_flags]"], TRUE)
+>>>>>>> f04f992cfe ([MIRROR] code/global.dm => code/_global_vars/ (#10689))
 
 /turf/simulated/shuttle/proc/underlay_update()
 	if(!takes_underlays)
