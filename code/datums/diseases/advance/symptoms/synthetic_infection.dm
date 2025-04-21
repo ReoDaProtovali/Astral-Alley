@@ -16,6 +16,7 @@ Bonus
 */
 
 /datum/symptom/infect_synthetics
+<<<<<<< HEAD
     name = "Synthetic Infection"
     stealth = 1
     resistance = 2
@@ -23,6 +24,15 @@ Bonus
     transmittable = 1
     level = 5
     severity = 3
+=======
+	name = "Synthetic Infection"
+	stealth = 1
+	resistance = 2
+	stage_speed = 0
+	transmission = 1
+	level = 5
+	severity = 3
+>>>>>>> 5193d70d2b ([MIRROR] Virology Update #3 (#10690))
 
 /datum/symptom/infect_synthetics/Start(datum/disease/advance/A)
 	A.infect_synthetics = TRUE

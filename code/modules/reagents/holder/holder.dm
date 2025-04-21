@@ -131,6 +131,12 @@
 		R.holder = src
 		R.volume = amount
 		R.initialize_data(data)
+<<<<<<< HEAD
+=======
+		SetViruses(R,data)
+		if(was_from_belly)
+			R.from_belly = was_from_belly
+>>>>>>> 5193d70d2b ([MIRROR] Virology Update #3 (#10690))
 		update_total()
 		if(!safety)
 			handle_reactions()
