@@ -12,10 +12,27 @@ export const meta = {
   render: () => <Story />,
 };
 
+<<<<<<< HEAD:tgui/packages/tgui/stories/Tabs.stories.jsx
 const TAB_RANGE = ['Tab #1', 'Tab #2', 'Tab #3', 'Tab #4'];
 
 const Story = (props) => {
   const [tabProps, setTabProps] = useState({});
+=======
+const TAB_RANGE = ['Tab #1', 'Tab #2', 'Tab #3', 'Tab #4'] as const;
+
+type TabProps = Partial<{
+  centered: boolean;
+  fluid: boolean;
+  icon: boolean;
+  leftSlot: boolean;
+  rightSlot: boolean;
+  vertical: boolean;
+}>;
+
+function Story() {
+  const [tabProps, setTabProps] = useState<TabProps>({});
+
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/packages/tgui/stories/Tabs.stories.tsx
   return (
     <>
       <Section>
@@ -29,7 +46,7 @@ const Story = (props) => {
             })
           }
         >
-          vertical
+          Vertical
         </Button.Checkbox>
         <Button.Checkbox
           inline
@@ -105,11 +122,18 @@ const Story = (props) => {
       <TabsPrefab />
     </>
   );
-};
+}
 
+<<<<<<< HEAD:tgui/packages/tgui/stories/Tabs.stories.jsx
 const TabsPrefab = (props) => {
   const [tabIndex, setTabIndex] = useState(0);
   const [tabProps] = useState({});
+=======
+function TabsPrefab() {
+  const [tabIndex, setTabIndex] = useState(0);
+  const [tabProps] = useState<TabProps>({});
+
+>>>>>>> 335ff75144 ([MIRROR] tgstation/tgstation#90646 (#10681)):tgui/packages/tgui/stories/Tabs.stories.tsx
   return (
     <Tabs
       vertical={tabProps.vertical}
@@ -138,4 +162,4 @@ const TabsPrefab = (props) => {
       ))}
     </Tabs>
   );
-};
+}
