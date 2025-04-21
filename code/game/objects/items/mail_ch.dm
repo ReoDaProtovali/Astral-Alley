@@ -193,9 +193,17 @@
 	return after_unwrap(user)
 
 /obj/item/mail/proc/unwrap(mob/user)
+<<<<<<< HEAD:code/game/objects/items/mail_ch.dm
 	if(recipient && user != recipient)
 		balloon_alert(user, "You can't open somebody's mail! That's <em>illegal</em>")
 		return FALSE
+=======
+	if(recipient_ref)
+		var/datum/mind/recipient = recipient_ref.resolve()
+		if(recipient && recipient.current?.dna.unique_enzymes != user.dna.unique_enzymes)
+			to_chat(user, span_danger("You can't open somebody's mail! That's <em>illegal</em>"))
+			return FALSE
+>>>>>>> b672ca8693 ([MIRROR] fix a bunch of runtimes (#10683)):code/game/objects/mail.dm
 
 	if(opening)
 		balloon_alert(user, "You are already opening that!")
