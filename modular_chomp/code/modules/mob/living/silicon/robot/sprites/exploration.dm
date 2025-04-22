@@ -24,6 +24,7 @@
 	has_eye_light_sprites = TRUE
 	has_vore_belly_sprites = TRUE
 	rest_sprite_options = list("Default", "Sit")
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/silicon/robot/sprites/exploration.dm
 
 /datum/robot_sprite/dogborg/tall/explorer/dullahan/exploreralt
 	name = "Dullahan v2"
@@ -31,6 +32,21 @@
 	has_eye_light_sprites = TRUE
 	has_vore_belly_sprites = TRUE
 	rest_sprite_options = list("Default", "Sit")
+=======
+	sprite_decals = list("breastplate","loincloth","eyecover")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/explorer/bulwark
+	name = "Bulwark"
+	sprite_icon = 'icons/mob/robot/tallrobot/tallrobots.dmi'
+	sprite_icon_state = "bulwark"
+	has_eye_light_sprites = FALSE
+	rest_sprite_options = list("Default")
+	icon_x = 32
+	pixel_x = 0
+
+>>>>>>> d031ee4aa5 ([MIRROR] Dullahan chestpieces + resting overlays + more decals + condensed dullahans of v1 and v2 (#10713)):code/modules/mob/living/silicon/robot/subtypes/exploration/exploration-sprites.dm
 
 /* placeholder
 /datum/robot_sprite/dogborg/tall/explorer

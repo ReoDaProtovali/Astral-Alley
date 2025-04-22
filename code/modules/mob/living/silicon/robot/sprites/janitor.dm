@@ -202,6 +202,7 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/janitor/dullahanv3
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
@@ -209,6 +210,49 @@
 /datum/robot_sprite/dogborg/tall/janitor/dullahanv3/janitordully
 	name = "Dullahan janitor v3"
 	sprite_icon_state = "dullahanjanitor"
+=======
+/datum/robot_sprite/dogborg/tall/janitor/dullahan
+	name = "Dullahan"
+	sprite_icon_state = "dullahanjani"
+	module_type = "Janitor"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_jani.dmi'
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("breastplate", "eyecover")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/janitor/dullahanv3
+	name = "Dullahan v3"
+	sprite_icon = 'icons/mob/robot/dullahan/v3/janitor.dmi'
+	sprite_icon_state = "dullahanjanitor"
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("decals")
+	icon_x = 64
+	pixel_x = -16
+
+/datum/robot_sprite/dogborg/janitor/cat
+	name = "Cat"
+	sprite_icon = 'icons/mob/robot/catborg_variant.dmi'
+	sprite_icon_state = "vixjani"
+	has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+
+/datum/robot_sprite/dogborg/smolraptorjanitorsprite
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_jani.dmi'
+	module_type = "Janitor"
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor"
+	has_dead_sprite_overlay = FALSE
+	has_eye_light_sprites = TRUE
+>>>>>>> d031ee4aa5 ([MIRROR] Dullahan chestpieces + resting overlays + more decals + condensed dullahans of v1 and v2 (#10713))
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
