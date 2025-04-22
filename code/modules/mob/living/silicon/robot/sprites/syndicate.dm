@@ -69,6 +69,20 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
+=======
+/datum/robot_sprite/dogborg/tall/combat_medic/dullahancombatmedic
+	name = "Dullahan Combat Medic"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_syndie.dmi'
+	sprite_icon_state = "dullahansyndi"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("breastplate","loincloth","eyecover")
+	icon_x = 32
+	pixel_x = 0
+
+>>>>>>> d031ee4aa5 ([MIRROR] Dullahan chestpieces + resting overlays + more decals + condensed dullahans of v1 and v2 (#10713))
 /datum/robot_sprite/dogborg/tall/syndie/dullahanv3syndi
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	sprite_icon_state = "dullahansyndi"

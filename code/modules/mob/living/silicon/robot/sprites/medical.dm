@@ -140,16 +140,42 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/medical/dullahanv3
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
 
 /datum/robot_sprite/dogborg/tall/medical/dullahanv3/medicaldully
+=======
+/datum/robot_sprite/dogborg/tall/medical/dullahanmed
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_med.dmi'
+	name = "Dullahan"
+	sprite_icon_state = "dullahanmed"
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("breastplate","loincloth","eyecover")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/medical/dullahanmedv3
+>>>>>>> d031ee4aa5 ([MIRROR] Dullahan chestpieces + resting overlays + more decals + condensed dullahans of v1 and v2 (#10713))
 	name = "Dullahan medical v3"
 	sprite_icon_state = "dullahanmedical"
+<<<<<<< HEAD
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+	icon_x = 64
+	pixel_x = -16
+>>>>>>> d031ee4aa5 ([MIRROR] Dullahan chestpieces + resting overlays + more decals + condensed dullahans of v1 and v2 (#10713))
 
 // Surgeon
 

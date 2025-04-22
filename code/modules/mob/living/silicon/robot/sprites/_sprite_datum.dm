@@ -123,20 +123,36 @@
 /datum/robot_sprite/proc/get_eyes_overlay(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.resting && has_rest_sprites))
 		return "[sprite_icon_state]-eyes"
-	else
-		return
+	else if(ourborg.resting && has_rest_sprites)
+		return "[get_rest_sprite(ourborg)]-eyes"
 
 /datum/robot_sprite/proc/get_eye_light_overlay(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.resting && has_rest_sprites))
 		return "[sprite_icon_state]-lights"
-	else
-		return
+	else if(ourborg.resting && has_rest_sprites)
+		return "[get_rest_sprite(ourborg)]-lights"
 
+<<<<<<< HEAD
 /datum/robot_sprite/proc/get_robotdecal_overlay(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.resting && has_robotdecal_sprites))
 		return "[sprite_icon_state]-decals"
 	else
 		return
+=======
+// This can not use the get_rest_sprite function as it could use belly overlays as decals
+/datum/robot_sprite/proc/get_robotdecal_overlay(var/mob/living/silicon/robot/ourborg, var/type)
+	if(LAZYLEN(sprite_decals))
+		if(!ourborg.resting)
+			return "[sprite_icon_state]-[type]"
+		switch(ourborg.rest_style)
+			if("Sit")
+				return "[sprite_icon_state]-[type]-sit"
+			if("Bellyup")
+				return "[sprite_icon_state]-[type]-bellyup"
+			else
+				return "[sprite_icon_state]-[type]-rest"
+
+>>>>>>> d031ee4aa5 ([MIRROR] Dullahan chestpieces + resting overlays + more decals + condensed dullahans of v1 and v2 (#10713))
 
 /datum/robot_sprite/proc/get_rest_sprite(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.rest_style in rest_sprite_options))

@@ -212,9 +212,53 @@
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/science/dullahanv3/sciencedully
 	name = "Dullahan science v3"
 	sprite_icon_state = "dullahanscience"
+=======
+/datum/robot_sprite/dogborg/tall/science/dullahan
+	name = "Dullahan"
+	sprite_icon_state = "dullahansci"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_sci.dmi'
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	sprite_hud_icon_state = "sci-borg"
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("breastplate","loincloth","eyecover")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/science/dullahanv3
+	name = "Dullahan v3"
+	sprite_icon = 'icons/mob/robot/dullahan/v3/science.dmi'
+	has_vore_belly_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	sprite_icon_state = "dullahanscience"
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("decals")
+	icon_x = 64
+	pixel_x = -16
+
+/datum/robot_sprite/dogborg/science/cat
+	name = "Cat"
+	sprite_icon = 'icons/mob/robot/catborg_variant.dmi'
+	sprite_icon_state = "vixsci"
+	sprite_hud_icon_state = "sci-borg"
+	has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+
+
+/datum/robot_sprite/dogborg/science/smolraptor
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_sci.dmi'
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor"
+	has_dead_sprite_overlay = FALSE
+	has_eye_light_sprites = TRUE
+>>>>>>> d031ee4aa5 ([MIRROR] Dullahan chestpieces + resting overlays + more decals + condensed dullahans of v1 and v2 (#10713))
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
