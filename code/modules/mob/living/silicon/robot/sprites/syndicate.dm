@@ -69,6 +69,23 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
+=======
+/datum/robot_sprite/dogborg/tall/combat_medic/dullahancombatmedic
+	name = "Dullahan Combat Medic"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_syndie.dmi'
+	sprite_icon_state = "dullahansyndi"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("breastplate","loincloth","eyecover")
+	icon_x = 32
+	pixel_x = 0
+
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 /datum/robot_sprite/dogborg/tall/syndie/dullahanv3syndi
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	sprite_icon_state = "dullahansyndi"

@@ -17,6 +17,8 @@
 	var/has_sleeper_light_indicator = FALSE //Moved here because there's no reason lights should be limited to just medical borgs. Or redefined every time they ARE used.
 	var/max_belly_size = 1 //If larger bellies are made, set this to the value of the largest size
 	var/has_rest_sprites = FALSE
+	var/has_rest_eyes_sprites = FALSE
+	var/has_rest_lights_sprites = FALSE
 	var/list/rest_sprite_options
 	var/has_dead_sprite = FALSE
 	var/has_dead_sprite_overlay = FALSE
@@ -123,14 +125,39 @@
 /datum/robot_sprite/proc/get_eyes_overlay(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.resting && has_rest_sprites))
 		return "[sprite_icon_state]-eyes"
+<<<<<<< HEAD
+=======
+	else if(ourborg.resting && has_rest_eyes_sprites)
+		return "[get_rest_sprite(ourborg)]-eyes"
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 	else
 		return
 
 /datum/robot_sprite/proc/get_eye_light_overlay(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.resting && has_rest_sprites))
 		return "[sprite_icon_state]-lights"
+<<<<<<< HEAD
 	else
 		return
+=======
+	else if(ourborg.resting && has_rest_lights_sprites)
+		return "[get_rest_sprite(ourborg)]-lights"
+	else
+		return
+
+// This can not use the get_rest_sprite function as it could use belly overlays as decals
+/datum/robot_sprite/proc/get_robotdecal_overlay(var/mob/living/silicon/robot/ourborg, var/type)
+	if(LAZYLEN(sprite_decals))
+		if(!ourborg.resting)
+			return "[sprite_icon_state]-[type]"
+		switch(ourborg.rest_style)
+			if("Sit")
+				return "[sprite_icon_state]-[type]-sit"
+			if("Bellyup")
+				return "[sprite_icon_state]-[type]-bellyup"
+			else
+				return "[sprite_icon_state]-[type]-rest"
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 
 /datum/robot_sprite/proc/get_robotdecal_overlay(var/mob/living/silicon/robot/ourborg)
 	if(!(ourborg.resting && has_robotdecal_sprites))
