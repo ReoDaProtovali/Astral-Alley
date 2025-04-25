@@ -311,10 +311,29 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
+=======
+/datum/robot_sprite/dogborg/tall/service/dullahan
+	name = "Dullahan"
+	sprite_icon_state = "dullahanserv"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_serv.dmi'
+	rest_sprite_options = list("Default", "Sit")
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate", "loincloth","loinclothbreastplate","eyecover")
+	pixel_x = 0
+	icon_x = 32
+
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 /datum/robot_sprite/dogborg/tall/service/dullahanv3
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/service/dullahanv3/basic
 	name = "Dullahan service v3"
 	sprite_icon_state = "dullahanservice"
@@ -324,6 +343,11 @@
 
 /datum/robot_sprite/dogborg/tall/service/dullahanv3/barista
 	name = "Dullahan matcha v3"
+=======
+/datum/robot_sprite/dogborg/tall/service/dullahanv3/servicealt3
+	name = "Dullahan v3 matcha"
+	sprite_icon = 'icons/mob/robot/dullahan/v3/barista.dmi'
+>>>>>>> 9ab4e3681d ([MIRROR] fixes code that makes resting borgs show missing sprite error (#10735))
 	sprite_icon_state = "dullahanbarista"
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
