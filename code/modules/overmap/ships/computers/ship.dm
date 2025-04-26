@@ -82,7 +82,14 @@ somewhere on that shuttle. Subtypes of these can be then used to perform ship ov
 	// TODO GLOB.stat_set_event.register(user, src, /obj/machinery/computer/ship/proc/unlook)
 	LAZYDISTINCTADD(viewers, WEAKREF(user))
 
+<<<<<<< HEAD
 /obj/machinery/computer/ship/proc/unlook(var/mob/user)
+=======
+/obj/machinery/computer/ship/proc/unlook(var/mob/user, forced)
+	SIGNAL_HANDLER
+	if(!linked && !forced) //If we have no linked computer, return early. Forcing is for when we do a one-time action that we want to clear the UI.
+		return
+>>>>>>> ed532c2574 ([MIRROR] adds missing SIGNAL_HANDLERs (#10768))
 	user.reset_view()
 	if(linked?.real_appearance)
 		user.client?.images -= linked.real_appearance
