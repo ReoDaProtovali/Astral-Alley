@@ -12827,6 +12827,7 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/effect/recycler_beacon,
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck2/portfore)
 "Cv" = (
@@ -12882,6 +12883,7 @@
 /obj/structure/cable{
 	icon_state = "1-4"
 	},
+/obj/effect/recycler_beacon,
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck2/portsolars)
 "CB" = (
