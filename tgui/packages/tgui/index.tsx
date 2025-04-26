@@ -18,6 +18,11 @@ import './styles/themes/retro.scss';
 import './styles/themes/syndicate.scss';
 import './styles/themes/wizard.scss';
 import './styles/themes/abstract.scss';
+<<<<<<< HEAD
+=======
+import './styles/themes/bingle.scss';
+import './styles/themes/algae.scss';
+>>>>>>> 09d5d8d52b ([MIRROR] Make a custom theme for the algae farm (#10747))
 
 import { perf } from 'common/perf';
 import { setupGlobalEvents } from 'tgui-core/events';
