@@ -1097,6 +1097,7 @@
 /obj/structure/railing{
 	dir = 4
 	},
+/obj/effect/recycler_beacon,
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "acg" = (
@@ -2161,6 +2162,10 @@
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/tcommsat/chamber)
+"adO" = (
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor,
+/area/maintenance/station/exploration)
 "adP" = (
 /obj/effect/floor_decal/corner/lightgrey{
 	dir = 9
@@ -2288,6 +2293,7 @@
 	icon_state = "4-8"
 	},
 /obj/effect/floor_decal/rust,
+/obj/effect/recycler_beacon,
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "aea" = (
@@ -2755,6 +2761,11 @@
 /obj/item/personal_shield_generator/belt/mining/loaded,
 /turf/simulated/floor/tiled,
 /area/quartermaster/belterdock/gear)
+"aeJ" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor,
+/area/maintenance/station/exploration)
 "aeK" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -2804,6 +2815,10 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /turf/simulated/floor,
 /area/storage/tech)
+"aeN" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor,
+/area/maintenance/station/eng_lower)
 "aeO" = (
 /turf/simulated/shuttle/wall/voidcraft/green{
 	hard_corner = 1
@@ -2827,6 +2842,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
+"aeR" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/recycler_beacon,
+/turf/simulated/floor,
+/area/maintenance/station/eng_lower)
 "aeS" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -2850,6 +2870,11 @@
 	},
 /turf/simulated/floor/tiled,
 /area/engineering/engine_monitoring)
+"aeT" = (
+/obj/effect/floor_decal/rust,
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor,
+/area/maintenance/station/eng_lower)
 "aeU" = (
 /obj/machinery/door/firedoor/glass/hidden/steel,
 /turf/simulated/floor/tiled,
@@ -24323,6 +24348,7 @@
 	dir = 1
 	},
 /obj/effect/floor_decal/rust,
+/obj/effect/recycler_vendor_beacon,
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "lEZ" = (
@@ -24880,6 +24906,7 @@
 /area/engineering/engineering_airlock)
 "mnj" = (
 /obj/effect/floor_decal/rust,
+/obj/effect/recycler_beacon,
 /turf/simulated/floor,
 /area/maintenance/station/cargo)
 "mnt" = (
@@ -27011,6 +27038,7 @@
 /area/tether/station/dock_two)
 "oRj" = (
 /obj/effect/landmark/stardog,
+/obj/effect/recycler_vendor_beacon,
 /turf/simulated/floor,
 /area/maintenance/station/eng_lower)
 "oRC" = (
@@ -27478,6 +27506,7 @@
 	},
 /obj/structure/catwalk,
 /obj/effect/floor_decal/rust,
+/obj/effect/recycler_vendor_beacon,
 /turf/simulated/floor/plating,
 /area/maintenance/station/cargo)
 "pJm" = (
@@ -43162,7 +43191,7 @@ aaN
 caS
 auI
 aik
-ack
+aeN
 adG
 kNF
 upj
@@ -43449,22 +43478,22 @@ hcW
 qHy
 gCZ
 fgA
-ach
+aeT
 abC
 abC
 abC
 abC
-ach
+aeR
 ack
 ack
 cYG
-ack
+aeN
 ack
 kkH
 ack
 ioI
 ach
-ack
+aeN
 acw
 ahq
 aiX
@@ -43744,7 +43773,7 @@ mIs
 mIs
 ack
 ack
-ach
+aeR
 oer
 xTg
 euy
@@ -43752,7 +43781,7 @@ oer
 euy
 xTg
 oer
-ack
+aeN
 bhG
 wku
 aDM
@@ -43894,7 +43923,7 @@ oer
 xuP
 qTD
 oer
-ack
+aeN
 azJ
 wku
 pBP
@@ -46599,7 +46628,7 @@ fYY
 oGG
 voI
 xNg
-pMf
+adO
 juI
 aaq
 aat
@@ -47025,7 +47054,7 @@ pMf
 pMf
 pMf
 aaq
-uEU
+aeJ
 jyP
 aaq
 aaq
@@ -47451,7 +47480,7 @@ pMf
 pMf
 pMf
 aaq
-pMf
+adO
 juI
 etY
 aac
@@ -47582,7 +47611,7 @@ aac
 aac
 etY
 aZv
-pMf
+adO
 dVT
 cCM
 biX

@@ -420,6 +420,28 @@
 	},
 /turf/simulated/floor/tiled,
 /area/stellardelight/deck3/aft)
+<<<<<<< HEAD
+=======
+"aY" = (
+/obj/structure/sign/small/nosmoking{
+	pixel_y = 27
+	},
+/obj/structure/railing/grey{
+	dir = 4
+	},
+/obj/item/trash/cigbutt,
+/obj/effect/floor_decal/shuttle/blue,
+/turf/simulated/floor/airless,
+/area/stellardelight/deck3/exterior)
+"aZ" = (
+/obj/machinery/maint_recycler,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/aftstarroom)
+"ba" = (
+/obj/machinery/maint_vendor,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/aftstarroom)
+>>>>>>> 7f2f47325f ([MIRROR] Maint Recycler and Vendor (#10773))
 "bb" = (
 /obj/effect/floor_decal/techfloor/orange{
 	dir = 8
@@ -427,6 +449,10 @@
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/techfloor,
 /area/stellardelight/deck3/transitgateway)
+"bc" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/portaft)
 "bd" = (
 /obj/structure/closet,
 /turf/simulated/floor,
@@ -441,9 +467,17 @@
 	fancy_shuttle_tag = "sdboat"
 	},
 /turf/simulated/floor/reinforced/airless,
+<<<<<<< HEAD
 /area/shuttle/sdboat/fore{
 	base_turf = /turf/simulated/floor/reinforced/airless
 	})
+=======
+/area/shuttle/sdboat/fore/airless_base)
+"bf" = (
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/starboardaft)
+>>>>>>> 7f2f47325f ([MIRROR] Maint Recycler and Vendor (#10773))
 "bg" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
@@ -477,10 +511,18 @@
 	},
 /turf/simulated/floor/tiled/steel_ridged,
 /area/maintenance/stellardelight/deck3/starboardfore)
+"bi" = (
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/starboardcent)
 "bj" = (
 /obj/structure/flora/pottedplant/stoutbush,
 /turf/simulated/floor/tiled/dark,
 /area/lawoffice)
+"bk" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/portfore)
 "bl" = (
 /obj/structure/lattice,
 /obj/structure/cable/green{
@@ -508,6 +550,10 @@
 	},
 /turf/simulated/open,
 /area/stellardelight/deck2/fore)
+"bo" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck3/starboardfore)
 "bp" = (
 /obj/effect/floor_decal/industrial/warning{
 	dir = 4
@@ -8824,6 +8870,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 5
 	},
+/obj/effect/recycler_vendor_beacon,
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck3/portaft)
 "FH" = (
@@ -21608,15 +21655,15 @@ bd
 NE
 nV
 ZB
-dE
+bc
 NR
 dE
 hd
 dE
+bc
 dE
 dE
-dE
-dE
+bc
 fP
 HY
 ed
@@ -21725,12 +21772,12 @@ IP
 YD
 bC
 ms
-Ns
+bk
 Ns
 Hk
 Ns
-Ns
-Ns
+bk
+bk
 Ns
 Ns
 KW
@@ -26855,7 +26902,7 @@ ON
 Xd
 Ja
 Ly
-KJ
+bf
 by
 ow
 aC
@@ -26988,7 +27035,7 @@ Vg
 Vg
 RE
 RE
-xH
+bi
 DE
 me
 od
@@ -27254,16 +27301,16 @@ On
 DQ
 DQ
 DQ
-DQ
+bo
 DQ
 WB
 TP
+bo
 DQ
 DQ
 DQ
 DQ
-DQ
-DQ
+bo
 Mu
 zA
 Ln
@@ -27587,7 +27634,7 @@ SK
 Jh
 Jh
 hQ
-lq
+ba
 lq
 rq
 lq
@@ -27734,7 +27781,7 @@ Qv
 Al
 VZ
 tu
-lq
+aZ
 nT
 xE
 YS
