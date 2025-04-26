@@ -7,6 +7,7 @@
 	icon = 'icons/obj/rig_modules_vr.dmi'
 	default_mob_icon = null	//Actually having a forced sprite for Proteans is ugly af. I'm not gonna make this a toggle
 	icon_state = "nanomachine_rig"
+	interface_intro = "Protean"
 	armor = list(melee = 0, bullet = 0, laser = 0,energy = 0, bomb = 0, bio = 100, rad = 100)
 	siemens_coefficient= 1
 	slowdown = 0
