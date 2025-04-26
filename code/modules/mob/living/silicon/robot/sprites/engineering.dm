@@ -217,6 +217,54 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
+=======
+/datum/robot_sprite/dogborg/tall/engineering/dullahan
+	name = "Dullahan"
+	sprite_icon_state = "dullahaneng"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_eng.dmi'
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("breastplate","loincloth","eyecover")
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/engineering/dullataurengi
+	name = "Dullataur"
+	sprite_icon_state = "dullataurengi"
+	sprite_icon = 'icons/mob/robot/dullahan/dullataurs/dullataur.dmi'
+	rest_sprite_options = list("Default")
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = FALSE
+	has_vore_belly_resting_sprites = FALSE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/engineering/dullataurengitwo
+	name = "Dullataur v2"
+	sprite_icon_state = "dullataurengitwo"
+	sprite_icon = 'icons/mob/robot/dullahan/dullataurs/dullataur.dmi'
+	rest_sprite_options = list("Default")
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = FALSE
+	has_vore_belly_resting_sprites = FALSE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate","loincloth","maidoutfit")
+	icon_x = 32
+	pixel_x = 0
+
+>>>>>>> cdd34d1df9 ([MIRROR] dullahan taurs (#10769))
 /datum/robot_sprite/dogborg/tall/engineering/dullahanv3
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream

@@ -144,7 +144,26 @@
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
 
+<<<<<<< HEAD
 /datum/robot_sprite/dogborg/tall/medical/dullahanv3/medicaldully
+=======
+/datum/robot_sprite/dogborg/tall/medical/dullataurmed
+	name = "Dullataur"
+	sprite_icon_state = "dullataurmed"
+	sprite_icon = 'icons/mob/robot/dullahan/dullataurs/dullataur.dmi'
+	rest_sprite_options = list("Default")
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = FALSE
+	has_vore_belly_resting_sprites = FALSE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/medical/dullahanmedv3
+>>>>>>> cdd34d1df9 ([MIRROR] dullahan taurs (#10769))
 	name = "Dullahan medical v3"
 	sprite_icon_state = "dullahanmedical"
 	has_vore_belly_sprites = TRUE
