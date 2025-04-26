@@ -12,7 +12,14 @@
 	can_pain_emote = FALSE // CHOMPEdit: Sanity/safety
 	low_priority = TRUE //CHOMPEdit
 
+<<<<<<< HEAD
 /mob/living/carbon/brain/Initialize()
+=======
+	can_pain_emote = FALSE
+	low_priority = TRUE
+
+/mob/living/carbon/brain/Initialize(mapload)
+>>>>>>> 667e08ee0a ([MIRROR] Kitchen Sink PR (#10745))
 	. = ..()
 	var/datum/reagents/R = new/datum/reagents(1000)
 	reagents = R

@@ -62,6 +62,8 @@
 	if(!vis_enabled)
 		vis_enabled = list()
 	client.screen += plane_holder.plane_masters
+	if(GLOB.global_vantag_hud)
+		vantag_hud = TRUE
 	recalculate_vis()
 
 	// AO support
@@ -87,3 +89,9 @@
 		client.images += cloaked_selfimage
 	client.init_verbs()
 	SEND_SIGNAL(src, COMSIG_MOB_CLIENT_LOGIN, client)
+<<<<<<< HEAD
+=======
+	SEND_SIGNAL(client, COMSIG_CLIENT_MOB_LOGIN, src)
+
+	set_listening(LISTENING_PLAYER)
+>>>>>>> 667e08ee0a ([MIRROR] Kitchen Sink PR (#10745))

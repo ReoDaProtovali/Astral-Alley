@@ -81,16 +81,8 @@
 	//Soundy emotey things.
 	var/scream_verb_1p = "scream"
 	var/scream_verb_3p = "screams"
-	// CHOMPEdit Start: Overriding with our own species-specific sounds.
-	// If you're wanting to know where the lists are per-species, go to sound.dm
-	/*
-	var/male_scream_sound = list('sound/effects/mob_effects/m_scream_1.ogg','sound/effects/mob_effects/m_scream_2.ogg','sound/effects/mob_effects/m_scream_3.ogg','sound/effects/mob_effects/m_scream_4.ogg') //CHOMpedit start : Added tgstation screams
-	var/female_scream_sound = list('sound/effects/mob_effects/f_scream_1.ogg','sound/effects/mob_effects/f_scream_2.ogg','sound/effects/mob_effects/f_scream_3.ogg','sound/effects/mob_effects/f_scream_4.ogg') //CHOMPedit end
-	var/male_cough_sounds = list('sound/effects/mob_effects/m_cougha.ogg','sound/effects/mob_effects/m_coughb.ogg', 'sound/effects/mob_effects/m_coughc.ogg')
-	var/female_cough_sounds = list('sound/effects/mob_effects/f_cougha.ogg','sound/effects/mob_effects/f_coughb.ogg')
-	var/male_sneeze_sound = 'sound/effects/mob_effects/sneeze.ogg'
-	var/female_sneeze_sound = 'sound/effects/mob_effects/f_sneeze.ogg'
-	*/
+	var/pain_verb_1p = list("shout", "growl", "grunt", "gasp")
+	var/pain_verb_3p = list("shouts", "growls", "grunts", "gasps")
 	/* Our base species sounds.
 	 * Note that species_sounds is meant to be used in the place of gendered sound.
 	 * If your species has gendered sounds, set 'gender_specific_species_sounds' to TRUE, and define your gendered sounds below.
@@ -106,7 +98,6 @@
 	var/gasp_volume = 50 // Self-explanatory, define this separately on your species if the sound files are louder.
 	var/death_volume = 50 // Self-explanatory, define this separately on your species if the sound files are louder.
 	// var/species_sounds_herm // If you want a custom sound played for other genders, just add them like so
-	// CHOMPEdit End
 
 	var/footstep = FOOTSTEP_MOB_HUMAN
 	var/list/special_step_sounds = null
@@ -488,12 +479,36 @@
 				t_him = "him"
 			if(FEMALE)
 				t_him = "her"
+<<<<<<< HEAD
 	//VOREStation Edit Start - Headpats and Handshakes.
 	if(H.zone_sel.selecting == "head")
 		H.visible_message( \
 			span_notice("[H] pats [target] on the head."), \
 			span_notice("You pat [target] on the head."), )
 	else if(H.zone_sel.selecting == "r_hand" || H.zone_sel.selecting == "l_hand")
+=======
+
+	if(target.touch_reaction_flags & SPECIES_TRAIT_PERSONAL_BUBBLE)
+		H.visible_message( \
+			span_notice("[target] moves to avoid being touched by [H]!"), \
+			span_notice("[target] moves to avoid being touched by you!"), )
+		return
+
+	if(H.zone_sel.selecting == BP_HEAD)
+		if(target.touch_reaction_flags & SPECIES_TRAIT_PATTING_DEFENCE)
+			H.visible_message( \
+				span_warning("[target] reflexively bites the hand of [H] to prevent head patting!"), \
+				span_warning("[target] reflexively bites your hand!"), )
+			if(H.hand)
+				H.apply_damage(1, BRUTE, BP_L_HAND)
+			else
+				H.apply_damage(1, BRUTE, BP_R_HAND)
+		else
+			H.visible_message( \
+				span_notice("[H] pats [target] on the head."), \
+				span_notice("You pat [target] on the head."), )
+	else if(H.zone_sel.selecting == BP_R_HAND || H.zone_sel.selecting == BP_L_HAND)
+>>>>>>> 667e08ee0a ([MIRROR] Kitchen Sink PR (#10745))
 		H.visible_message( \
 			span_notice("[H] shakes [target]'s hand."), \
 			span_notice("You shake [target]'s hand."), )
