@@ -202,6 +202,40 @@
 	has_vore_belly_sprites = FALSE
 	rest_sprite_options = list("Default", "Bellyup")
 
+<<<<<<< HEAD
+=======
+/datum/robot_sprite/dogborg/tall/janitor/dullahan
+	name = "Dullahan"
+	sprite_icon_state = "dullahanjani"
+	module_type = "Janitor"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_jani.dmi'
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("breastplate", "eyecover")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/janitor/dullataurjani
+	name = "Dullataur"
+	sprite_icon_state = "dullataurjani"
+	sprite_icon = 'icons/mob/robot/dullahan/dullataurs/dullataur.dmi'
+	rest_sprite_options = list("Default")
+	has_eye_light_sprites = TRUE
+	has_rest_sprites = TRUE
+	has_vore_belly_sprites = FALSE
+	has_vore_belly_resting_sprites = FALSE
+	has_rest_lights_sprites = TRUE
+	has_rest_eyes_sprites = TRUE
+	sprite_decals = list("breastplate")
+	icon_x = 32
+	pixel_x = 0
+
+>>>>>>> cdd34d1df9 ([MIRROR] dullahan taurs (#10769))
 /datum/robot_sprite/dogborg/tall/janitor/dullahanv3
 	sprite_icon = 'icons/mob/tallborg/dullahans64x64.dmi'
 	//named v3 to avoid conflicts with downstream
