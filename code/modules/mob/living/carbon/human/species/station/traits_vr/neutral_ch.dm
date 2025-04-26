@@ -84,6 +84,7 @@
 	desc = "You will eat anything instantly, in one bite."
 	cost = 0
 	var_changes = list("bite_mod" = 16) // Setting this intentionally ridiculously high, so anything will overflow and be eaten in one go.
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/neutral_ch.dm
 	custom_only = FALSE
 
 // CHOMPNote: Moving YW additions here, to sync our files better with VORE in the event of edits.
@@ -102,6 +103,8 @@
 	),
 	autohiss_exempt = list("Vespinae"))
 	excludes = list(/datum/trait/neutral/autohiss_tajaran, /datum/trait/neutral/autohiss_unathi)
+=======
+>>>>>>> ea0f307f5a ([MIRROR] Ported Autohisses and Autohiss Unit Test (#10744)):code/modules/mob/living/carbon/human/species/station/traits/neutral_ch.dm
 
 /datum/trait/neutral/slip_reflex
 	name ="Slippery Reflexes"
