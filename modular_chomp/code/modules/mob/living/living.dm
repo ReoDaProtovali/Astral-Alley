@@ -61,6 +61,7 @@ Maybe later, gotta figure out a way to click yourself when in a locker etc.
 
 /mob/living/proc/handle_vorefootstep(m_intent, turf/T) // Moved from living_ch.dm
 	return FALSE
+<<<<<<< HEAD
 
 // Gross proc which is called on Life() to check for escaped VR mobs. Tried to do this with Exited() on area/vr but ended up being too heavy.
 /mob/living/proc/handle_vr_derez()
@@ -228,3 +229,5 @@ Maybe later, gotta figure out a way to click yourself when in a locker etc.
 	if(reopen)
 		ooc_notes_window(user)
 //ChompEDIT END - Removal of usr
+=======
+>>>>>>> ca9de6648e ([MIRROR] Kitchen Sink P2 TGUI Prefs (#10770))
