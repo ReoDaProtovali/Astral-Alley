@@ -1340,10 +1340,16 @@
 			set_metainfo_dislikes(usr) //ChompEDIT - usr arg
 	if(href_list["save_ooc_panel"])
 		if(usr == src)
+<<<<<<< HEAD
 			save_ooc_panel(usr) //ChompEDIT - usr arg
 	if(href_list["print_ooc_notes_to_chat"])
 		print_ooc_notes_to_chat(usr) //ChompEDIT - usr arg
 	//CHOMPEdit Start
+=======
+			save_ooc_panel(usr)
+	if(href_list["print_ooc_notes_chat"])
+		print_ooc_notes_chat(usr)
+>>>>>>> ca9de6648e ([MIRROR] Kitchen Sink P2 TGUI Prefs (#10770))
 	if(href_list["edit_ooc_note_favs"])
 		if(usr == src)
 			set_metainfo_favs(usr) //ChompEDIT - usr arg
@@ -1351,8 +1357,12 @@
 		if(usr == src)
 			set_metainfo_maybes(usr) //ChompEDIT - usr arg
 	if(href_list["set_metainfo_ooc_style"])
+<<<<<<< HEAD
 		set_metainfo_ooc_style(usr) //ChompEDIT - usr arg
 	//CHOMPEdit End
+=======
+		set_metainfo_ooc_style(usr)
+>>>>>>> ca9de6648e ([MIRROR] Kitchen Sink P2 TGUI Prefs (#10770))
 	if(href_list["save_private_notes"])
 		if(usr == src)
 			save_private_notes(usr)

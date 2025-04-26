@@ -22,11 +22,17 @@
 	ooc_notes = client.prefs.read_preference(/datum/preference/text/living/ooc_notes)
 	ooc_notes_likes = client.prefs.read_preference(/datum/preference/text/living/ooc_notes_likes)
 	ooc_notes_dislikes = client.prefs.read_preference(/datum/preference/text/living/ooc_notes_dislikes)
+<<<<<<< HEAD
 	//CHOMPAdd Start
 	ooc_notes_favs = read_preference(/datum/preference/text/living/ooc_notes_favs)
 	ooc_notes_maybes = read_preference(/datum/preference/text/living/ooc_notes_maybes)
 	ooc_notes_style = read_preference(/datum/preference/toggle/living/ooc_notes_style)
 	//CHOMPAdd End
+=======
+	ooc_notes_favs = read_preference(/datum/preference/text/living/ooc_notes_favs)
+	ooc_notes_maybes = read_preference(/datum/preference/text/living/ooc_notes_maybes)
+	ooc_notes_style = read_preference(/datum/preference/toggle/living/ooc_notes_style)
+>>>>>>> ca9de6648e ([MIRROR] Kitchen Sink P2 TGUI Prefs (#10770))
 	private_notes = client.prefs.read_preference(/datum/preference/text/living/private_notes)
 	digestable = client.prefs_vr.digestable
 	devourable = client.prefs_vr.devourable
