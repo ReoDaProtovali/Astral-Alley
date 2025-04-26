@@ -193,6 +193,52 @@ var/list/blob_cores = list()
 		update_icon()
 		return TRUE
 
+<<<<<<< HEAD
+=======
+	overmind_get_delay = world.time + 15 SECONDS //if this fails, we'll try again in 15 seconds
+
+	if(overmind)
+		qdel(overmind)
+
+
+	var/client/C = null
+	if(!new_overmind)
+		Q = new /datum/ghost_query/blob()
+		RegisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE, PROC_REF(get_winner))
+		Q.query()
+
+	else
+		C = new_overmind
+		overmind_creation(C)
+	controller = null //Controller has been set. Let's null it now.
+
+/obj/structure/blob/core/proc/get_winner()
+	SIGNAL_HANDLER
+	if(Q && Q.candidates.len) //Q should NEVER get deleted but...whatever, sanity.
+		var/mob/observer/dead/D = Q.candidates[1]
+		var/client/C
+		C = D.client
+		overmind_creation(C)
+	UnregisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE)
+	qdel_null(Q) //get rid of the query
+
+
+
+/obj/structure/blob/core/proc/overmind_creation(var/client/new_overmind)
+	if(new_overmind)
+		if(!desired_blob_type && !isnull(difficulty_threshold))
+			desired_blob_type = get_random_blob_type()
+		var/mob/observer/blob/B = new(loc, TRUE, 60, desired_blob_type)
+		B.key = new_overmind.key
+		B.blob_core = src
+		src.overmind = B
+		update_icon()
+		if(B.mind && !B.mind.special_role)
+			B.mind.special_role = "Blob Overmind"
+		return TRUE
+	return FALSE
+
+>>>>>>> ed532c2574 ([MIRROR] adds missing SIGNAL_HANDLERs (#10768))
 /obj/structure/blob/core/proc/get_random_blob_type()
 	if(!difficulty_threshold)
 		return

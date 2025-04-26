@@ -22,8 +22,17 @@
 	if(adminalert)
 		log_and_message_admins(adminalert)
 	busy = TRUE
+<<<<<<< HEAD
 	var/datum/ghost_query/Q = new ghost_query_type()
 	var/list/winner = Q.query()
+=======
+	Q = new ghost_query_type()
+	RegisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE, PROC_REF(get_winner))
+	Q.query()
+
+/obj/structure/ghost_pod/proc/get_winner()
+	SIGNAL_HANDLER
+>>>>>>> ed532c2574 ([MIRROR] adds missing SIGNAL_HANDLERs (#10768))
 	busy = FALSE
 	if(winner.len)
 		var/mob/observer/dead/D = winner[1]

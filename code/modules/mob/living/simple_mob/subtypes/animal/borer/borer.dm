@@ -182,10 +182,21 @@
 	host = null
 
 /mob/living/simple_mob/animal/borer/proc/request_player()
+<<<<<<< HEAD
 	var/datum/ghost_query/Q = new /datum/ghost_query/borer()
 	var/list/winner = Q.query() // This will sleep the proc for awhile.
 	if(winner.len)
 		var/mob/observer/dead/D = winner[1]
+=======
+	Q = new /datum/ghost_query/borer()
+	RegisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE, PROC_REF(get_winner))
+	Q.query() // This will sleep the proc for awhile.
+
+/mob/living/simple_mob/animal/borer/proc/get_winner()
+	SIGNAL_HANDLER
+	if(Q && Q.candidates.len) //Q should NEVER get deleted but...whatever, sanity.
+		var/mob/observer/dead/D = Q.candidates[1]
+>>>>>>> ed532c2574 ([MIRROR] adds missing SIGNAL_HANDLERs (#10768))
 		transfer_personality(D)
 
 /mob/living/simple_mob/animal/borer/proc/transfer_personality(mob/candidate)
