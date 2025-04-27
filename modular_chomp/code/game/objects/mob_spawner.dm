@@ -7,7 +7,7 @@
 	total_spawns = 2
 	destructible = 0
 	anchored = 1
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 	spawn_types = list(
 		/mob/living/simple_mob/mechanical/hivebot/swarm = 1,
 		/mob/living/simple_mob/animal/space/carp = 10,

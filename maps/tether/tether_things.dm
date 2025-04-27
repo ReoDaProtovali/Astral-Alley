@@ -72,8 +72,14 @@
 /obj/effect/step_trigger/teleporter/to_underdark
 	icon = 'icons/obj/structures/stairs_64x64.dmi'
 	icon_state = ""
+<<<<<<< HEAD
 	invisibility = 0
 /obj/effect/step_trigger/teleporter/to_underdark/Initialize()
+=======
+	invisibility = INVISIBILITY_NONE
+
+/obj/effect/step_trigger/teleporter/to_underdark/Initialize(mapload)
+>>>>>>> 94940d84ab ([MIRROR] move invisibility to defines (#10787))
 	. = ..()
 	teleport_x = x
 	teleport_y = y
@@ -85,8 +91,14 @@
 /obj/effect/step_trigger/teleporter/from_underdark
 	icon = 'icons/obj/structures/stairs_64x64.dmi'
 	icon_state = ""
+<<<<<<< HEAD
 	invisibility = 0
 /obj/effect/step_trigger/teleporter/from_underdark/Initialize()
+=======
+	invisibility = INVISIBILITY_NONE
+
+/obj/effect/step_trigger/teleporter/from_underdark/Initialize(mapload)
+>>>>>>> 94940d84ab ([MIRROR] move invisibility to defines (#10787))
 	. = ..()
 	teleport_x = x
 	teleport_y = y

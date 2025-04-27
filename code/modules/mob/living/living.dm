@@ -1488,6 +1488,6 @@
 			drop.basecolor = rgb(H.r_skin,H.g_skin,H.b_skin)
 			drop.update_icon()
 			drop.fluorescent  = 0
-			drop.invisibility = 0
+			drop.invisibility = INVISIBILITY_NONE
 	//else
 		// come up with drips for other mobs someday

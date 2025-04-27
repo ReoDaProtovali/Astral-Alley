@@ -5,13 +5,18 @@
 	anchored = TRUE
 	unacidable = TRUE
 	simulated = FALSE
+<<<<<<< HEAD
 	invisibility = 100
 	var/delete_me = 0
+=======
+	invisibility = INVISIBILITY_MAXIMUM
+	var/delete_me = FALSE
+>>>>>>> 94940d84ab ([MIRROR] move invisibility to defines (#10787))
 
 /obj/effect/landmark/New()
 	..()
 	tag = text("landmark*[]", name)
-	invisibility = 101
+	invisibility = INVISIBILITY_ABSTRACT
 
 	switch(name)			//some of these are probably obsolete
 		if("monkey")
