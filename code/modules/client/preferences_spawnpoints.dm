@@ -113,4 +113,27 @@ var/global/list/latejoin_tram   = list()
 
 /datum/spawnpoint/tram/New()
 	..()
+<<<<<<< HEAD
 	turfs = latejoin_tram
+=======
+	turfs = GLOB.latejoin_tram
+
+/datum/spawnpoint/vore
+	display_name = "Vorespawn - Prey"
+	msg = "has arrived on the station"
+	allow_offmap_spawn = TRUE
+
+/datum/spawnpoint/vore/pred
+	display_name = "Vorespawn - Pred"
+	msg = "has arrived on the station"
+
+// CHOMPEnable Start
+/datum/spawnpoint/vore/itemtf
+	display_name = "Item TF spawn"
+	msg = "has arrived on the station"
+// CHOMPEnable End
+
+/datum/spawnpoint/vore/New()
+	..()
+	turfs = GLOB.latejoin
+>>>>>>> decd0e3c86 ([MIRROR] hides item tf spawn from spawnpoint options (#10786))
