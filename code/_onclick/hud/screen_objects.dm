@@ -700,6 +700,7 @@
 /obj/screen/setup_preview/bg/Click(params)
 	pref?.bgstate = next_in_list(pref.bgstate, pref.bgstate_options)
 	pref?.update_preview_icon()
+<<<<<<< HEAD
 
 /obj/screen/splash
 	screen_loc = "1,1"
@@ -742,6 +743,8 @@
 	return ..()
 
 
+=======
+>>>>>>> 66a437de08 ([MIRROR] CMSS Lobby Screen (#10774))
 /**
  * This object holds all the on-screen elements of the mapping unit.
  * It has a decorative frame and onscreen buttons. The map itself is drawn

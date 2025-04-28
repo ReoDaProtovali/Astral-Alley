@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ///var/atom/movable/lobby_image = new /atom/movable{icon = 'icons/misc/title.dmi'; icon_state = lobby_image_state; screen_loc = "1,1"; name = "Polaris"}
 
 var/obj/effect/lobby_image = new /obj/effect/lobby_image
@@ -26,6 +27,8 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 /mob/new_player
 	var/client/my_client // Need to keep track of this ourselves, since by the time Logout() is called the client has already been nulled
 
+=======
+>>>>>>> 66a437de08 ([MIRROR] CMSS Lobby Screen (#10774))
 /mob/new_player/Login()
 	update_Login_details()	//handles setting lastKnownIP and computer_id for use by the ban systems as well as checking for multikeying
 	if(join_motd)
@@ -41,14 +44,25 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 		mind.active = 1
 		mind.current = src
 
+<<<<<<< HEAD
 	//loc = null CHOMPEdit Removal
 	//client.screen += lobby_image CHOMPEdit Removal
 	my_client = client
+=======
+	if(client)
+		persistent_ckey = client.ckey
+
+	loc = null
+>>>>>>> 66a437de08 ([MIRROR] CMSS Lobby Screen (#10774))
 	sight |= SEE_TURFS
+
+	initialize_lobby_screen()
+
 	player_list |= src
 
 	created_for = ckey
 
+<<<<<<< HEAD
 	new_player_panel()
 	client.init_verbs()
 	spawn(40)
@@ -56,6 +70,17 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 			handle_privacy_poll()
 			client.playtitlemusic()
 			version_warnings()
+=======
+	if(!QDELETED(src))
+		addtimer(CALLBACK(src, PROC_REF(do_after_login)), 4 SECONDS, TIMER_DELETE_ME)
+
+/mob/new_player/proc/do_after_login()
+	PRIVATE_PROC(TRUE)
+	if(client)
+		handle_privacy_poll()
+		client.playtitlemusic()
+		version_warnings()
+>>>>>>> 66a437de08 ([MIRROR] CMSS Lobby Screen (#10774))
 
 /mob/new_player/proc/version_warnings()
 	var/problems // string to store message to present to player as a problem
