@@ -5,9 +5,8 @@
 	var/spawning = 0			//Referenced when you want to delete the new_player later on in the code.
 	var/totalPlayers = 0		//Player counts for the Lobby tab
 	var/totalPlayersReady = 0
-	var/show_hidden_jobs = 0	//Show jobs that are set to "Never" in preferences
 	var/has_respawned = FALSE	//Determines if we're using RESPAWN_MESSAGE
-	var/datum/browser/panel
+	var/datum/tgui_window/lobby_window = null
 	var/datum/tgui_module/crew_manifest/new_player/manifest_dialog = null
 	var/datum/tgui_module/late_choices/late_choices_dialog = null
 	universal_speak = 1
@@ -35,14 +34,13 @@
 
 
 /mob/new_player/Destroy()
-	if(panel)
-		QDEL_NULL(panel)
 	if(manifest_dialog)
 		QDEL_NULL(manifest_dialog)
 	if(late_choices_dialog)
 		QDEL_NULL(late_choices_dialog)
 	. = ..()
 
+<<<<<<< HEAD
 /mob/new_player/verb/new_player_panel()
 	set src = usr
 	new_player_panel_proc()
@@ -132,6 +130,8 @@
 	panel.open()
 	return
 
+=======
+>>>>>>> 66a437de08 ([MIRROR] CMSS Lobby Screen (#10774))
 /mob/new_player/get_status_tab_items()
 	. = ..()
 	. += ""
@@ -169,6 +169,7 @@
 /mob/new_player/Topic(href, href_list[])
 	if(!client)	return 0
 
+<<<<<<< HEAD
 	if(href_list["show_preferences"])
 		client.prefs.ShowChoices(src)
 		return 1
@@ -238,6 +239,8 @@
 	if(href_list["manifest"])
 		ViewManifest()
 
+=======
+>>>>>>> 66a437de08 ([MIRROR] CMSS Lobby Screen (#10774))
 	if(href_list["privacy_poll"])
 		establish_db_connection()
 		if(!SSdbcore.IsConnected())
@@ -280,13 +283,6 @@
 	if(!ready && href_list["preference"])
 		if(client)
 			client.prefs.process_link(src, href_list)
-	else if(!href_list["late_join"])
-		new_player_panel()
-
-	if(href_list["showpoll"])
-
-		handle_player_polling()
-		return
 
 	if(href_list["pollid"])
 
@@ -338,27 +334,6 @@
 					if(!isnull(href_list["option_[optionid]"]))	//Test if this optionid was selected
 						vote_on_poll(pollid, optionid, 1)
 
-	if(href_list["shownews"])
-		handle_server_news()
-		return
-
-	if(href_list["hidden_jobs"])
-		show_hidden_jobs = !show_hidden_jobs
-		LateChoices()
-
-	if(href_list["give_feedback"])
-		if(!SSsqlite.can_submit_feedback(my_client))
-			return
-
-		if(client.feedback_form)
-			client.feedback_form.display() // In case they closed the form early.
-		else
-			client.feedback_form = new(client)
-
-	if(href_list["open_changelog"])
-		write_preference_directly(/datum/preference/text/lastchangelog, GLOB.changelog_hash)
-		client.changes()
-		return
 
 /mob/new_player/proc/handle_server_news()
 	if(!client)
@@ -486,9 +461,6 @@
 	var/mob/living/character = create_character(T)	//creates the human and transfers vars and mind
 	character = job_master.EquipRank(character, rank, 1)					//equips the human
 	UpdateFactionList(character)
-	if(character && character.client)
-		var/obj/screen/splash/Spl = new(character.client, TRUE)
-		Spl.Fade(TRUE)
 
 	var/datum/job/J = SSjob.get_job(rank)
 
@@ -691,7 +663,6 @@
 	src << browse(null, "window=latechoices") //closes late choices window
 	src << browse(null, "window=preferences_window") //VOREStation Edit?
 	src << browse(null, "window=News") //closes news window
-	panel.close()
 
 /mob/new_player/proc/has_admin_rights()
 	return check_rights(R_ADMIN, 0, src)
