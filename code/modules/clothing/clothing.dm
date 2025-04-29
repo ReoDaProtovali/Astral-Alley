@@ -617,6 +617,11 @@
 	var/snow_speed = 0		//Speed boost/decrease on snow, lower/negative values mean more speed
 
 	var/step_volume_mod = 1	//How quiet or loud footsteps in this shoe are
+<<<<<<< HEAD
+=======
+	var/obj/item/clothing/shoes/shoes = null	//If we are wearing shoes in our shoes. Used primarily for magboots.
+	var/blocks_footsteps = TRUE //Does this shoe block custom footstep sounds?
+>>>>>>> 435939ba48 ([MIRROR] Makes specific footwear use barefoot stepping sounds (CLOTH FOOTWRAPS) (#10808))
 
 	permeability_coefficient = 0.50
 	slowdown = SHOES_SLOWDOWN
