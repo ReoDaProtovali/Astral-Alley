@@ -1408,6 +1408,26 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/security/Brig)
+<<<<<<< HEAD
+=======
+"acO" = (
+/obj/machinery/status_display{
+	layer = 4;
+	pixel_y = 32
+	},
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Aft_2_Deck_Stairwell)
+"acP" = (
+/obj/structure/disposalpipe/segment{
+	dir = 8;
+	icon_state = "pipe-c"
+	},
+/turf/simulated/wall,
+/area/crew_quarters/Gym)
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 "acR" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -14155,9 +14175,6 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/Deck2_Science_StarCorridor1)
-"aTa" = (
-/turf/unsimulated/mask,
-/area/hallway/Central_2_Deck_Hall)
 "aTb" = (
 /obj/structure/cable/green{
 	icon_state = "4-8"
@@ -47422,9 +47439,6 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/crew_quarters/Gallery)
-"eCc" = (
-/turf/unsimulated/mask,
-/area/maintenance/Deck2_Cargo_AftCorridor2)
 "eCo" = (
 /obj/item/book/codex,
 /obj/structure/disposalpipe/segment,
@@ -63424,7 +63438,7 @@
 /turf/simulated/floor/tiled,
 /area/quartermaster/Breakroom)
 "ixK" = (
-/turf/unsimulated/mask,
+/turf/simulated/open,
 /area/hallway/Star_2_Deck_Stairwell)
 "ixX" = (
 /obj/structure/table/rack/shelf/steel,
@@ -73053,7 +73067,7 @@
 	},
 /area/hallway/Port_Transit_Foyer)
 "ldn" = (
-/turf/unsimulated/mask,
+/turf/simulated/open,
 /area/hallway/Port_2_Deck_Stairwell)
 "ldq" = (
 /obj/machinery/atmospherics/pipe/simple/hidden{
@@ -99574,7 +99588,7 @@
 /turf/simulated/floor/plating,
 /area/maintenance/Deck2_Civilian_AftCorridor1)
 "sqR" = (
-/turf/unsimulated/mask,
+/turf/simulated/open,
 /area/hallway/For_2_Deck_Stairwell)
 "sqT" = (
 /obj/structure/cable/green{
@@ -136003,11 +136017,11 @@ xxE
 xzm
 cFK
 krZ
-eCc
-eCc
-eCc
-eCc
-eCc
+apt
+apt
+apt
+apt
+apt
 iOV
 piF
 pMs
@@ -136261,11 +136275,11 @@ fOY
 pHf
 xet
 bKY
-eCc
-eCc
-eCc
-eCc
-eCc
+apt
+apt
+apt
+apt
+apt
 iOV
 qut
 oEG
@@ -136519,11 +136533,11 @@ tKo
 byX
 cam
 gKw
-eCc
-eCc
-eCc
-eCc
-eCc
+apt
+apt
+apt
+apt
+apt
 iOV
 dJr
 oEG
@@ -136777,11 +136791,11 @@ nYf
 epi
 bxb
 uuS
-eCc
-eCc
-eCc
-eCc
-eCc
+apt
+apt
+apt
+apt
+apt
 iOV
 xkX
 fug
@@ -137035,11 +137049,11 @@ xMI
 nSV
 aWn
 chp
-eCc
-eCc
-eCc
-eCc
-eCc
+apt
+apt
+apt
+apt
+apt
 iOV
 vBb
 nSM
@@ -150424,6 +150438,7 @@ gud
 azO
 jAh
 rCc
+<<<<<<< HEAD
 ikH
 bFb
 apJ
@@ -150432,6 +150447,16 @@ aTa
 aTa
 aTa
 aTa
+=======
+hff
+ala
+aji
+bdd
+bdd
+bdd
+bdd
+bdd
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 pDh
 ayH
 dlL
@@ -150491,12 +150516,21 @@ xcc
 xcc
 dSY
 mdZ
+<<<<<<< HEAD
 qRs
 kVd
 iKm
 mSd
 tkz
 mZV
+=======
+cmu
+tkz
+tkz
+tkz
+tkz
+tkz
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 cuG
 kij
 cOH
@@ -150685,11 +150719,11 @@ wfN
 ikH
 mhU
 apJ
-aTa
-aTa
-aTa
-aTa
-aTa
+bdd
+bdd
+bdd
+bdd
+bdd
 aZm
 bbq
 aVG
@@ -150749,12 +150783,21 @@ xcc
 xcc
 dSY
 fhX
+<<<<<<< HEAD
 qXc
 vKX
 bNt
 ctK
 ctK
 mZV
+=======
+cmu
+tkz
+tkz
+tkz
+tkz
+tkz
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 mnK
 kRq
 mnK
@@ -150940,6 +150983,7 @@ bpF
 fYE
 jAh
 vft
+<<<<<<< HEAD
 ikH
 ggY
 gVv
@@ -150948,6 +150992,22 @@ aTa
 aTa
 aTa
 aTa
+=======
+vft
+amv
+vft
+vft
+vft
+vft
+alq
+ala
+aqY
+bdd
+bdd
+bdd
+bdd
+bdd
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 ahr
 ayL
 wfl
@@ -151007,12 +151067,21 @@ xcc
 xcc
 dSY
 xha
+<<<<<<< HEAD
 qXc
 xof
 bNt
 ctJ
 gVl
 qXc
+=======
+cmu
+tkz
+tkz
+tkz
+tkz
+tkz
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 bXA
 yic
 pKB
@@ -151200,12 +151269,21 @@ jAh
 owj
 ikH
 akl
+<<<<<<< HEAD
 apJ
 aTa
 aTa
 aTa
 aTa
 aTa
+=======
+gVv
+bdd
+bdd
+bdd
+bdd
+bdd
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 bMy
 mPt
 aVG
@@ -151265,12 +151343,21 @@ xcc
 xcc
 dSY
 vSv
+<<<<<<< HEAD
 qXc
 lKh
 pdc
 aMx
 cux
 qXc
+=======
+cmu
+tkz
+tkz
+tkz
+tkz
+tkz
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 cjy
 fyL
 nNA
@@ -151456,6 +151543,7 @@ gud
 lOz
 jAh
 nqB
+<<<<<<< HEAD
 ikH
 xQQ
 apJ
@@ -151464,6 +151552,16 @@ aTa
 aTa
 aTa
 aTa
+=======
+als
+ala
+akP
+bdd
+bdd
+bdd
+bdd
+bdd
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 sMt
 bbr
 aVG
@@ -151529,7 +151627,19 @@ gki
 ctL
 cuy
 qXc
+<<<<<<< HEAD
 vjM
+=======
+ady
+afi
+cmu
+tkz
+tkz
+tkz
+tkz
+tkz
+cmu
+>>>>>>> c9a7047f87 (replaces elevator shafts with proper tiles (#10809))
 kqn
 sgK
 fhu
