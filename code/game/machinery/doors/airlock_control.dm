@@ -63,10 +63,21 @@
 			unlock()
 			close()
 
+<<<<<<< HEAD
 			lock()
 			sleep(2)
 
 	send_status()
+=======
+		if("update")
+			check_completion(delayed_status = TRUE)
+
+/obj/machinery/door/airlock/proc/do_secure_open()
+	PRIVATE_PROC(TRUE)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	open()
+	addtimer(CALLBACK(src, PROC_REF(check_completion), TRUE), anim_length_before_density + anim_length_before_finalize)
+>>>>>>> b4b4f1c9ad ([MIRROR] Airlock Controller Spawn Removal (#10839))
 
 /obj/machinery/door/airlock/proc/command_completed(var/command)
 	switch(command)
@@ -87,6 +98,9 @@
 
 		if("secure_close")
 			return (locked && density)
+
+		if("update")
+			return TRUE // We just want the send_status() call from check_completion()
 
 	return 1	//Unknown command. Just assume it's completed.
 
