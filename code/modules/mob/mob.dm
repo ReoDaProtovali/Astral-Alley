@@ -14,8 +14,13 @@
 	if(mind && mind.current == src)
 		spellremove(src)
 	if(!istype(src,/mob/observer))
+<<<<<<< HEAD
 		ghostize()
 	QDEL_NULL(soulgem) // CHOMPAdd Soulcatcher
+=======
+		ghostize(FALSE)
+	QDEL_NULL(soulgem) //Soulcatcher
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853))
 	QDEL_NULL(dna)
 	QDEL_NULL(plane_holder)
 	QDEL_NULL(hud_used)
