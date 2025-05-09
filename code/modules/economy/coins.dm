@@ -72,17 +72,27 @@
 	if(istype(W,/obj/item/stack/cable_coil))
 		var/obj/item/stack/cable_coil/CC = W
 		if(string_attached)
+<<<<<<< HEAD
 			// to_chat(user, span_notice("There already is a string attached to this coin."))
 			balloon_alert(user, "There is a string already attached to \the [src]") // CHOMPEdit - Changed to balloon alert
+=======
+			balloon_alert(user, "there is a string already attached to \the [src]")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 			return
 		if (CC.use(1))
 			add_overlay("coin_string_overlay")
 			string_attached = 1
+<<<<<<< HEAD
 			// to_chat(user, span_notice("You attach a string to the coin."))
 			balloon_alert(user, "String attached to \the [src]") // CHOMPEdit - Changed to balloon alert
 		else
 			// to_chat(user, span_notice("This cable coil appears to be empty."))
 			balloon_alert(user, "The coil seems to be empty...") // CHOMPEdit - Changed to balloon alert
+=======
+			balloon_alert(user, "string attached to \the [src]")
+		else
+			balloon_alert(user, "the coil seems to be empty...")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 		return
 	else if(W.has_tool_quality(TOOL_WIRECUTTER))
 		if(!string_attached)
@@ -93,8 +103,12 @@
 		CC.update_icon()
 		cut_overlays()
 		string_attached = null
+<<<<<<< HEAD
 		// to_chat(user, span_notice("You detach the string from the coin."))
 		balloon_alert(user, "String detached") // CHOMPEdit - Changed to balloon alert
+=======
+		balloon_alert(user, "string detached")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 	else ..()
 
 /obj/item/coin/attack_self(mob/user as mob)
