@@ -2150,6 +2150,7 @@
 #include "code\modules\awaymissions\zlevel.dm"
 #include "code\modules\awaymissions\overmap_renamer\debrisfield_renamer.dm"
 #include "code\modules\awaymissions\overmap_renamer\overmap_renamer.dm"
+#include "code\modules\balloon_alert\balloon_alert.dm"
 #include "code\modules\blob\blob.dm"
 #include "code\modules\blob2\_defines.dm"
 #include "code\modules\blob2\core_chunk.dm"
@@ -4461,7 +4462,7 @@
 #include "code\modules\surgery\implant.dm"
 #include "code\modules\surgery\limb_reattach.dm"
 #include "code\modules\surgery\neck.dm"
-#include "code\modules\surgery\organ_ripper_vr.dm"
+#include "code\modules\surgery\organ_ripper.dm"
 #include "code\modules\surgery\organs_internal.dm"
 #include "code\modules\surgery\other.dm"
 #include "code\modules\surgery\robotics.dm"
@@ -4767,10 +4768,12 @@
 #include "modular_chomp\code\coalesce_ch.dm"
 #include "modular_chomp\code\global.dm"
 #include "modular_chomp\code\__defines\_planes+layers.dm"
-#include "modular_chomp\code\__defines\text.dm"
 #include "modular_chomp\code\_global_vars\list\names.dm"
+<<<<<<< HEAD
 #include "modular_chomp\code\_HELPERS\game.dm"
 #include "modular_chomp\code\_HELPERS\mobs.dm"
+=======
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 #include "modular_chomp\code\_onclick\hud\alert.dm"
 #include "modular_chomp\code\ATMOSPHERICS\atmospherics.dm"
 #include "modular_chomp\code\datums\http.dm"
@@ -4862,7 +4865,6 @@
 #include "modular_chomp\code\modules\artifice\deadringer.dm"
 #include "modular_chomp\code\modules\asset_cache\belly_assets.dm"
 #include "modular_chomp\code\modules\awaymissions\tank.dm"
-#include "modular_chomp\code\modules\balloon_alert\balloon_alert.dm"
 #include "modular_chomp\code\modules\casino\casino_book.dm"
 #include "modular_chomp\code\modules\casino\casino_items.dm"
 #include "modular_chomp\code\modules\casino\casino_machines.dm"

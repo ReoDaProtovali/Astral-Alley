@@ -95,7 +95,11 @@
 			set_content = FALSE
 		user.drop_item()
 		W.forceMove(src)
+<<<<<<< HEAD:code/game/objects/items/mail_ch.dm
 		balloon_alert(user, "Placed the [W] into the [src]")
+=======
+		balloon_alert(user, "placed \the [W] into \the [src]")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856)):code/game/objects/mail.dm
 		set_content = TRUE
 		description_info = "Click with an empty hand to seal it, or Alt-Click to retrieve the object out."
 		return
@@ -177,14 +181,24 @@
 		var/obj/item/destTagger/O = W
 		if(O.currTag)
 			if(src.sortTag != O.currTag)
+<<<<<<< HEAD:code/game/objects/items/mail_ch.dm
 				balloon_alert(user, "You have labeled the destination as [O.currTag].")
+=======
+				balloon_alert(user, "labeled for [O.currTag].")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856)):code/game/objects/mail.dm
 				src.sortTag = O.currTag
 				playsound(src, 'sound/machines/twobeep.ogg', 50, 1)
 				W.description_info = " It is labeled for [O.currTag]"
 			else
+<<<<<<< HEAD:code/game/objects/items/mail_ch.dm
 				balloon_alert(user, "The mail is already labeled for [O.currTag].")
 		else
 			balloon_alert(user, "You need to set a destination first!")
+=======
+				balloon_alert(user, "already labeled for [O.currTag].")
+		else
+			balloon_alert(user, "destination not set!")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856)):code/game/objects/mail.dm
 		return
 
 /obj/item/mail/attack_self(mob/user)
@@ -193,12 +207,23 @@
 	return after_unwrap(user)
 
 /obj/item/mail/proc/unwrap(mob/user)
+<<<<<<< HEAD:code/game/objects/items/mail_ch.dm
 	if(recipient && user != recipient)
 		balloon_alert(user, "You can't open somebody's mail! That's <em>illegal</em>")
 		return FALSE
 
 	if(opening)
 		balloon_alert(user, "You are already opening that!")
+=======
+	if(recipient_ref)
+		var/datum/mind/recipient = recipient_ref.resolve()
+		if(recipient && recipient.current?.dna.unique_enzymes != user.dna.unique_enzymes)
+			balloon_alert(user, "you can't open somebody's mail! That's <em>illegal</em>")
+			return FALSE
+
+	if(opening)
+		balloon_alert(user, "already opening that!")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856)):code/game/objects/mail.dm
 		return FALSE
 
 	opening = TRUE
@@ -374,19 +399,32 @@
 	if(istype(A, /obj/item/mail))
 		var/obj/item/mail/saved_mail = A
 		if(saved_mail.scanned)
+<<<<<<< HEAD:code/game/objects/items/mail_ch.dm
 			user.balloon_alert(user, "This letter has already been scanned!")
 			playsound(loc, 'modular_chomp/sound/items/mail/maildenied.ogg', 50, TRUE)
 			return
 		user.balloon_alert(user, "Mail added to database")
 		playsound(loc, 'modular_chomp/sound/items/mail/mailscanned.ogg', 50, TRUE)
+=======
+			balloon_alert(user, "already scanned!")
+			playsound(loc, 'sound/items/mail/maildenied.ogg', 50, TRUE)
+			return
+		balloon_alert(user, "added to database")
+		playsound(loc, 'sound/items/mail/mailscanned.ogg', 50, TRUE)
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856)):code/game/objects/mail.dm
 		saved = A
 		return
 	if(isliving(A))
 		var/mob/living/M = A
 
 		if(!saved)
+<<<<<<< HEAD:code/game/objects/items/mail_ch.dm
 			user.balloon_alert(user, "No logged mail!")
 			playsound(loc, 'modular_chomp/sound/items/mail/maildenied.ogg', 50, TRUE)
+=======
+			balloon_alert(user, "no logged mail!")
+			playsound(loc, 'sound/items/mail/maildenied.ogg', 50, TRUE)
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856)):code/game/objects/mail.dm
 			return
 
 		var/mob/living/recipient = saved.recipient

@@ -36,8 +36,12 @@
 			return
 
 	if(reagents.total_volume < amount_per_transfer_from_this)
+<<<<<<< HEAD
 		// to_chat(user, span_notice("\The [src] is empty!"))
 		balloon_alert(user, "\The [src] is empty!") // CHOMPEdit - Changed to balloon alert
+=======
+		balloon_alert(user, "\the [src] is empty!")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 		return
 
 	Spray_at(A, user, proximity)
@@ -77,8 +81,12 @@
 		return
 	amount_per_transfer_from_this = next_in_list(amount_per_transfer_from_this, possible_transfer_amounts)
 	spray_size = next_in_list(spray_size, spray_sizes)
+<<<<<<< HEAD
 	// to_chat(user, span_notice("You adjusted the pressure nozzle. You'll now use [amount_per_transfer_from_this] units per spray."))
 	balloon_alert(user, "Pressure nozzle adjusted to [amount_per_transfer_from_this] units per spray.") // CHOMPEdit - Changed to balloon alert
+=======
+	balloon_alert(user, "pressure nozzle adjusted to [amount_per_transfer_from_this] units per spray.")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 
 /obj/item/reagent_containers/spray/examine(mob/user)
 	. = ..()
@@ -94,8 +102,12 @@
 	if (tgui_alert(usr, "Are you sure you want to empty that?", "Empty Bottle:", list("Yes", "No")) != "Yes")
 		return
 	if(isturf(usr.loc))
+<<<<<<< HEAD
 		// to_chat(usr, span_notice("You empty \the [src] onto the floor."))
 		balloon_alert(usr, "Empted \the [src] onto the floor.") // CHOMPEdit - Changed to balloon alert
+=======
+		balloon_alert(usr, "empted \the [src] onto the floor.")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 		reagents.splash(usr.loc, reagents.total_volume)
 
 //space cleaner
@@ -143,8 +155,12 @@
 
 /obj/item/reagent_containers/spray/pepper/attack_self(var/mob/user)
 	safety = !safety
+<<<<<<< HEAD
 	// to_chat(user, span_notice("You switch the safety [safety ? "on" : "off"]."))
 	balloon_alert(user, "Safety [safety ? "on" : "off"].") // CHOMPEdit - Changed to balloon alert
+=======
+	balloon_alert(user, "safety [safety ? "on" : "off"].")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 
 /obj/item/reagent_containers/spray/pepper/Spray_at(atom/A as mob|obj, mob/user)
 	if(safety)
@@ -253,8 +269,12 @@
 /obj/item/reagent_containers/spray/chemsprayer/hosed/AltClick(mob/living/carbon/user)
 	if(++spray_particles > 3) spray_particles = 1
 
+<<<<<<< HEAD
 	// to_chat(user, span_notice("You turn the dial on \the [src] to [spray_particles]."))
 	balloon_alert(user, "Dial turned to [spray_particles].")
+=======
+	balloon_alert(user, "dial turned to [spray_particles].")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 	return
 
 /obj/item/reagent_containers/spray/chemsprayer/hosed/CtrlClick(var/mob/user)
@@ -273,8 +293,12 @@
 	var/list/the_targets = list(T, T1, T2)
 
 	if(src.reagents.total_volume < 1)
+<<<<<<< HEAD
 		// to_chat(user, span_notice("\The [src] is empty."))
 		balloon_alert(user, "\The [src] is empty.")
+=======
+		balloon_alert(user, "\the [src] is empty.")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 		return
 
 	if(!heavy_spray)

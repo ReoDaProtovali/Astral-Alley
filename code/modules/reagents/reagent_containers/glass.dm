@@ -38,7 +38,7 @@
 		/mob/living/bot/medbot,
 		/obj/item/storage/secure/safe,
 		/obj/machinery/iv_drip,
-		/obj/structure/medical_stand, //VOREStation Add,
+		/obj/structure/medical_stand,
 		/obj/machinery/disposal,
 		/mob/living/simple_mob/animal/passive/cow,
 		/mob/living/simple_mob/animal/goat,
@@ -78,12 +78,19 @@
 /obj/item/reagent_containers/glass/attack_self(mob/user)
 	..()
 	if(is_open_container())
+<<<<<<< HEAD
 		// to_chat(user, span_notice("You put the lid on \the [src]."))
 		balloon_alert(user, "Lid put on \the [src]")
 		flags ^= OPENCONTAINER
 	else
 		// to_chat(user, span_notice("You take the lid off \the [src]."))
 		balloon_alert(user, "Lid removed off \the [src]") // CHOMPEdit - Changed to ballopn alert
+=======
+		balloon_alert(user, "lid put on \the [src]")
+		flags ^= OPENCONTAINER
+	else
+		balloon_alert(user, "lid removed off \the [src]")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 		flags |= OPENCONTAINER
 	update_icon()
 
@@ -106,8 +113,12 @@
 	return ..()
 
 /obj/item/reagent_containers/glass/self_feed_message(var/mob/user)
+<<<<<<< HEAD
 	// to_chat(user, span_notice("You swallow a gulp from \the [src]."))
 	balloon_alert(user, "Swallowed from \the [src]") // CHOMPEdit - Changed to balloon alert
+=======
+	balloon_alert(user, "swallowed from \the [src]")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 
 /obj/item/reagent_containers/glass/proc/attempt_snake_milking(mob/living/user, mob/living/target)
 	var/reagent
@@ -148,8 +159,12 @@
 		if(standard_splash_mob(user,target))
 			return 1
 		if(reagents && reagents.total_volume)
+<<<<<<< HEAD
 			// to_chat(user, span_notice("You splash the solution onto [target].")) //They are on harm intent, aka wanting to spill it.
 			balloon_alert(user, "Splashed the solution onto [target]")
+=======
+			balloon_alert(user, "splashed the solution onto [target]")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 			reagents.splash(target, reagents.total_volume)
 			return 1
 	..()
@@ -160,6 +175,7 @@
 		if(length(tmp_label) > 50)
 			to_chat(user, span_notice("The label can be at most 50 characters long."))
 		else if(length(tmp_label) > 10)
+<<<<<<< HEAD
 			// to_chat(user, span_notice("You set the label."))
 			balloon_alert(user, "Label set.") // CHOMPEdit - Changed to balloon alert
 			label_text = tmp_label
@@ -167,13 +183,19 @@
 		else
 			// to_chat(user, span_notice("You set the label to \"[tmp_label]\"."))
 			balloon_alert(user, "Label set to \"[tmp_label]\"") // CHOMPEdit - Changed to balloon alert
+=======
+			balloon_alert(user, "label set")
+			label_text = tmp_label
+			update_name_label()
+		else
+			balloon_alert(user, "label set to \"[tmp_label]\"")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 			label_text = tmp_label
 			update_name_label()
 	if(istype(W,/obj/item/storage/bag))
 		..()
 	if(W && W.w_class <= w_class && (flags & OPENCONTAINER) && user.a_intent != I_HELP)
-		// to_chat(user, span_notice("You dip \the [W] into \the [src]."))
-		balloon_alert(user, "[W] dipped into \the [src].") // CHOMPEdit - Changed to balloon alert
+		balloon_alert(user, "[W] dipped into \the [src].")
 		reagents.touch_obj(W, reagents.total_volume)
 
 /obj/item/reagent_containers/glass/proc/update_name_label()
@@ -341,8 +363,12 @@
 		qdel(src)
 		return
 	else if(D.has_tool_quality(TOOL_WIRECUTTER))
+<<<<<<< HEAD
 		// to_chat(user, span_notice("You cut a big hole in \the [src] with \the [D].  It's kinda useless as a bucket now."))
 		balloon_alert(user, "You cut a big hole in \the [src] with \the [D]. It's kinda useless now.") // CHOMPEdit - Changed to balloon alert
+=======
+		balloon_alert(user, "you cut a big hole in \the [src] with \the [D]. It's kinda useless now.")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 		user.put_in_hands(new /obj/item/clothing/head/helmet/bucket)
 		user.drop_from_inventory(src)
 		qdel(src)
@@ -352,19 +378,30 @@
 		if (M.use(1))
 			var/obj/item/secbot_assembly/edCLN_assembly/B = new /obj/item/secbot_assembly/edCLN_assembly
 			B.loc = get_turf(src)
+<<<<<<< HEAD
 			// to_chat(user, span_notice("You armed the robot frame."))
 			balloon_alert(user, "Armed the robot frame.")
+=======
+			balloon_alert(user, "armed the robot frame.")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 			if (user.get_inactive_hand()==src)
 				user.remove_from_mob(src)
 				user.put_in_inactive_hand(B)
 			qdel(src)
 		else
+<<<<<<< HEAD
 			// to_chat(user, span_warning("You need one sheet of metal to arm the robot frame."))
 			balloon_alert(user, "One sheet of metal is needed to arm the robot frame.") // CHOMPEdit - Changed to balloon alert
 	else if(istype(D, /obj/item/mop) || istype(D, /obj/item/soap) || istype(D, /obj/item/reagent_containers/glass/rag))  //VOREStation Edit - "Allows soap and rags to be used on buckets"
 		if(reagents.total_volume < 1)
 			// to_chat(user, span_warning("\The [src] is empty!"))
 			balloon_alert(user, "\The [src] is empty!") // CHOMPEdit - Changed to balloon alert
+=======
+			balloon_alert(user, "one sheet of metal is needed to arm the robot frame.")
+	else if(istype(D, /obj/item/mop) || istype(D, /obj/item/soap) || istype(D, /obj/item/reagent_containers/glass/rag))
+		if(reagents.total_volume < 1)
+			balloon_alert(user, "\the [src] is empty!")
+>>>>>>> be0504b0de ([MIRROR] Balloon Alerts (#10856))
 		else
 			reagents.trans_to_obj(D, 5)
 			to_chat(user, span_notice("You wet \the [D] in \the [src]."))
