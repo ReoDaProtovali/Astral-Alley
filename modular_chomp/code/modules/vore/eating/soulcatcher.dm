@@ -35,11 +35,19 @@
 	. = ..()
 	if(ismob(loc))
 		owner = loc
-		owner.recalculate_vis()
 
 // Store the vars_to_save into the save file
 /obj/soulgem/deserialize(list/data)
 	. = ..()
+<<<<<<< HEAD:modular_chomp/code/modules/vore/eating/soulcatcher.dm
+=======
+	if(apply_stored_belly(data["linked_belly"], TRUE))
+		return
+	linked_belly = null
+	owner.recalculate_vis()
+
+/obj/soulgem/proc/apply_stored_belly(var/belly_string, var/skip_unreg = FALSE)
+>>>>>>> f5ac9b2555 ([MIRROR] soulcatcher patches and tgui core update (#10853)):code/modules/vore/eating/soulcatcher.dm
 	for(var/obj/belly in owner.vore_organs)
 		if(belly.name == data["linked_belly"])
 			update_linked_belly(belly, TRUE)
