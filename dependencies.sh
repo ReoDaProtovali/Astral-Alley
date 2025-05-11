@@ -5,7 +5,11 @@
 
 # byond version
 export BYOND_MAJOR=516
+<<<<<<< HEAD
 export BYOND_MINOR=1655
+=======
+export BYOND_MINOR=1662
+>>>>>>> 56a4a1a592 ([MIRROR] lobby screen subsystem (#10859))
 
 # Macro Count
 export MACRO_COUNT=8
