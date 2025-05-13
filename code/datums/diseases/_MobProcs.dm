@@ -59,6 +59,9 @@
 	if(!CanContractDisease(D))
 		return 0
 
+	if(species.virus_immune && !global_flag_check(D.virus_modifiers, BYPASSES_IMMUNITY))
+		return FALSE
+
 	var/obj/item/clothing/Cl = null
 	var/passed = 1
 
