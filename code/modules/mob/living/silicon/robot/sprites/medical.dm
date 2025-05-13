@@ -148,8 +148,15 @@
 	name = "Dullahan medical v3"
 	sprite_icon_state = "dullahanmedical"
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("decals")
+	icon_x = 64
+	pixel_x = -16
+>>>>>>> f4f62a8ba6 ([MIRROR] decal fix for v3s (#10869))
 
 // Surgeon
 
