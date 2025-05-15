@@ -808,3 +808,23 @@
 #define COMSIG_OBSERVER_ITEM_UNEQUIPPED "observer_item_unequipped"
 #define COMSIG_OBSERVER_APC "observer_apc"
 #define COMSIG_OBSERVER_GLOBALMOVED "observer_global_move"
+<<<<<<< HEAD
+=======
+
+// Bellies
+///from /obj/belly/HandleBellyReagents() and /obj/belly/update_internal_overlay()
+#define COMSIG_BELLY_UPDATE_VORE_FX "update_vore_fx"
+///from /obj/belly/process()
+#define COMSIG_BELLY_UPDATE_PREY_LOOP "update_prey_loop"
+/// COMSIG used to get messages where they need to go
+#define COMSIG_VISIBLE_MESSAGE "visible_message"
+
+// Species Components
+///from /datum/species/xenochimera/handle_environment_special()
+#define COMSIG_XENOCHIMERA_COMPONENT "xenochimera_component"
+
+//Unittest data update
+#ifdef UNIT_TEST
+#define COMSIG_UNITTEST_DATA "unittest_send_data"
+#endif
+>>>>>>> c6b9ab647c ([MIRROR] Shadekin and Xenochimera variable refactor (#10872))
