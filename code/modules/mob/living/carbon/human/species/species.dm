@@ -336,6 +336,65 @@
 	var/gun_accuracy_dispersion_mod = 0	// More is worse
 
 	var/sort_hint = SPECIES_SORT_NORMAL
+<<<<<<< HEAD
+=======
+	//This is so that if a race is using the chimera revive they can't use it more than once.
+	//Shouldn't really be seen in play too often, but it's case an admin event happens and they give a non chimera the chimera revive. Only one person can use the chimera revive at a time per race.
+	//var/reviving = 0 //commented out 'cause moved to mob
+
+	var/organic_food_coeff = 1
+	var/synthetic_food_coeff = 0
+	var/robo_ethanol_proc = 0 //can we get fuel from booze, as a synth?
+	var/robo_ethanol_drunk = 0 //can we get *drunk* from booze, as a synth?
+	var/digestion_efficiency = 1 //VORE specific digestion var
+	//var/vore_numbing = 0
+	var/metabolism = 0.0015
+	var/lightweight = FALSE //Oof! Nonhelpful bump stumbles.
+	var/trashcan = FALSE //It's always sunny in the wrestling ring.
+	var/eat_minerals = FALSE //HEAVY METAL DIET
+	var/base_species = null // Unused outside of a few species
+	var/selects_bodytype = SELECTS_BODYTYPE_FALSE // Allows the species to choose from body types like custom species can, affecting suit fitting and etcetera as you would expect.
+
+	var/bloodsucker = FALSE // Allows safely getting nutrition from blood.
+	var/bloodsucker_controlmode = "always loud" //Allows selecting between bloodsucker control modes. Always Loud corresponds to original implementation.
+
+	var/is_weaver = FALSE
+	var/silk_production = FALSE
+	var/silk_reserve = 100
+	var/silk_max_reserve = 500
+	var/silk_color = "#FFFFFF"
+
+	var/list/traits = list()
+	//Vars that need to be copied when producing a copy of species.
+	var/list/copy_vars = list("base_species", "icobase", "deform", "tail", "tail_animation", "icobase_tail", "color_mult", "primitive_form", "appearance_flags", "flesh_color", "base_color", "blood_mask", "damage_mask", "damage_overlays", "move_trail", "has_floating_eyes")
+	var/trait_points = 0
+
+	var/ideal_air_type = null	// Set to something else if you breathe something else from default composition. Used for inbelly air.
+
+	var/micro_size_mod = 0		// How different is our size for interactions that involve us being small?
+	var/macro_size_mod = 0		// How different is our size for interactions that involve us being big?
+	var/digestion_nutrition_modifier = 1
+	var/center_offset = 0.5
+	var/can_climb = FALSE
+	var/climbing_delay = 1.5	// We climb with a quarter delay
+
+	var/list/food_preference = list() //RS edit
+	var/food_preference_bonus = 0
+
+	var/datum/component/species_component = null // The component that this species uses. Example: Xenochimera use /datum/component/xenochimera
+
+	// For Lleill and Hanner
+	var/lleill_energy = 200
+	var/lleill_energy_max = 200
+
+	var/bite_mod = 1 //NYI - Used Downstream
+	var/grab_resist_divisor_victims = 1 //NYI - Used Downstream
+	var/grab_resist_divisor_self = 1 //NYI - Used Downstream
+	var/grab_power_victims = 0 //NYI - Used Downstream
+	var/grab_power_self = 0 //NYI - Used Downstream
+	var/waking_speed = 1 //NYI - Used Downstream
+	var/lightweight_light = 0 //NYI - Used Downstream
+>>>>>>> c6b9ab647c ([MIRROR] Shadekin and Xenochimera variable refactor (#10872))
 
 /datum/species/proc/update_attack_types()
 	unarmed_attacks = list()
@@ -534,6 +593,23 @@
 /datum/species/proc/handle_environment_special(var/mob/living/carbon/human/H)
 	return
 
+/datum/species/proc/handle_species_components(var/mob/living/carbon/human/H)
+	SHOULD_NOT_OVERRIDE(TRUE)
+
+	//Xenochimera Species Component
+	var/datum/component/xenochimera/xc = H.get_xenochimera_component()
+	if(xc)
+		if(!H.stat || !(xc.revive_ready == REVIVING_NOW || xc.revive_ready == REVIVING_DONE))
+			SEND_SIGNAL(H, COMSIG_XENOCHIMERA_COMPONENT)
+
+	//Shadekin Species Component.
+	/* //For when shadekin actually have their component control everything.
+	var/datum/component/shadekin/sk = H.get_xenochimera_component()
+	if(sk)
+		if(!H.stat || !(xc.revive_ready == REVIVING_NOW || xc.revive_ready == REVIVING_DONE))
+			SEND_SIGNAL(H, COMSIG_SHADEKIN_COMPONENT)
+	*/
+
 // Used to update alien icons for aliens.
 /datum/species/proc/handle_login_special(var/mob/living/carbon/human/H)
 	return
@@ -665,3 +741,92 @@
 		if(!QDELETED(baseHead) && baseHead)
 			qdel(baseHead)
 	return
+<<<<<<< HEAD
+=======
+
+/datum/species/proc/give_numbing_bite() //Holy SHIT this is hacky, but it works. Updating a mob's attacks mid game is insane.
+	unarmed_attacks = list()
+	unarmed_types += /datum/unarmed_attack/bite/sharp/numbing
+	for(var/u_type in unarmed_types)
+		unarmed_attacks += new u_type()
+
+/datum/species/create_organs(var/mob/living/carbon/human/H)
+	if(H.nif)
+		/*var/type = H.nif.type
+		var/durability = H.nif.durability
+		var/list/nifsofts = H.nif.nifsofts
+		var/list/nif_savedata = H.nif.save_data.Copy()*/
+		..()
+		H.nif = null //A previous call during the rejuvenation path deleted it, so we no longer should have it here
+		/*var/obj/item/nif/nif = new type(H,durability,nif_savedata)
+		nif.nifsofts = nifsofts*/
+	else
+		..()
+
+/datum/species/proc/apply_components(var/mob/living/carbon/human/H)
+	if(species_component)
+		H.LoadComponent(species_component)
+
+/datum/species/proc/produceCopy(var/list/traits, var/mob/living/carbon/human/H, var/custom_base, var/reset_dna = TRUE) // Traitgenes reset_dna flag required, or genes get reset on resleeve
+	ASSERT(src)
+	ASSERT(istype(H))
+	var/datum/species/new_copy = new src.type()
+	new_copy.race_key = race_key
+	if (selects_bodytype && custom_base)
+		new_copy.base_species = custom_base
+		if(selects_bodytype == SELECTS_BODYTYPE_CUSTOM) //If race selects a bodytype, retrieve the custom_base species and copy needed variables.
+			var/datum/species/S = GLOB.all_species[custom_base]
+			S.copy_variables(new_copy, copy_vars)
+
+		if(selects_bodytype == SELECTS_BODYTYPE_SHAPESHIFTER)
+			H.shapeshifter_change_shape(custom_base, FALSE)
+
+	for(var/organ in has_limbs) //Copy important organ data generated by species.
+		var/list/organ_data = has_limbs[organ]
+		new_copy.has_limbs[organ] = organ_data.Copy()
+
+	new_copy.traits = traits
+	//If you had traits, apply them
+	if(new_copy.traits)
+		for(var/trait in new_copy.traits)
+			var/datum/trait/T = GLOB.all_traits[trait]
+			T.apply(new_copy, H, new_copy.traits[trait])
+
+	//Set up a mob
+	H.species = new_copy
+	H.icon_state = new_copy.get_bodytype()
+
+	if(new_copy.holder_type)
+		H.holder_type = new_copy.holder_type
+
+	if(H.dna && reset_dna)
+		H.dna.ready_dna(H)
+	handle_base_eyes(H, custom_base)
+
+	if(H.species.has_vibration_sense)
+		H.motiontracker_subscribe()
+
+	return new_copy
+
+//We REALLY don't need to go through every variable. Doing so makes this lag like hell on 515
+/datum/species/proc/copy_variables(var/datum/species/S, var/list/whitelist)
+	//List of variables to ignore, trying to copy type will runtime.
+	//var/list/blacklist = list("type", "loc", "client", "ckey")
+	//Makes thorough copy of species datum.
+	for(var/i in whitelist)
+		if(!(i in S.vars)) //Don't copy incompatible vars.
+			continue
+		if(S.vars[i] != vars[i] && !islist(vars[i])) //If vars are same, no point in copying.
+			S.vars[i] = vars[i]
+
+/datum/species/get_bodytype()
+	return base_species
+
+/datum/species/proc/update_vore_belly_def_variant()
+	// Determine the actual vore_belly_default_variant, if the base species in the VORE tab is set
+	switch (base_species)
+		if("Teshari")
+			vore_belly_default_variant = "T"
+		if("Unathi")
+			vore_belly_default_variant = "L"
+>>>>>>> c6b9ab647c ([MIRROR] Shadekin and Xenochimera variable refactor (#10872))
