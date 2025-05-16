@@ -500,6 +500,32 @@
 	impact_type = /obj/effect/projectile/impact/rainbow
 	hud_state = "laser"
 	damage = 20
+<<<<<<< HEAD
+=======
+
+/obj/item/projectile/beam/sparkledog
+	name = "rainbow"
+	fire_sound = 'sound/weapons/sparkle.ogg'
+	icon_state = "rainbow"
+	light_color = "#ffffff"
+	muzzle_type = /obj/effect/projectile/muzzle/rainbow
+	tracer_type = /obj/effect/projectile/tracer/rainbow
+	impact_type = /obj/effect/projectile/impact/rainbow
+	hud_state = "laser"
+	damage = 0
+	nodamage = TRUE
+
+/obj/item/projectile/beam/sparkledog/on_hit(var/atom/target, var/blocked = 0)
+	if(ishuman(target))
+		var/mob/living/carbon/human/M = target
+		M.druggy = max(M.druggy, 20)
+		if(M.health < M.getMaxHealth())
+			to_chat(target, span_notice("As the beam strikes you, you feel a little healthier!"))
+			M.adjustBruteLoss(-5)
+			M.adjustFireLoss(-5)
+	return 1
+
+>>>>>>> 4ce45f8cc4 ([MIRROR] Proper MaxHealth checks and Crit Point (#10881))
 //
 // Projectile Beam Definitions
 //
@@ -564,7 +590,7 @@
 /obj/item/projectile/beam/medigun/on_hit(var/atom/target, var/blocked = 0)
 	if(ishuman(target))
 		var/mob/living/carbon/human/M = target
-		if(M.health < M.maxHealth)
+		if(M.health < M.getMaxHealth())
 			var/obj/effect/overlay/pulse = new /obj/effect/overlay(get_turf(M))
 			pulse.icon = 'icons/effects/effects.dmi'
 			pulse.icon_state = XENO_CHEM_HEAL
