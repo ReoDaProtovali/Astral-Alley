@@ -1627,7 +1627,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			return TRUE
 		if("Health")
 			var/mob/living/ourtarget = target
-			to_chat(user, span_notice("Current health reading for \The [ourtarget]: [ourtarget.health] / [ourtarget.maxHealth] "))
+			to_chat(user, span_notice("Current health reading for \The [ourtarget]: [ourtarget.health] / [ourtarget.getMaxHealth()] "))
 			return TRUE
 		//CHOMPEdit End
 		if("Process")
