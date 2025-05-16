@@ -61,7 +61,6 @@
 		handle_organs()
 		stabilize_body_temperature() //Body temperature adjusts itself (self-regulation)
 		weightgain()
-		process_weaver_silk()
 		handle_shock()
 
 		handle_pain()
@@ -180,6 +179,7 @@
 	if(stat != CONSCIOUS) //Let's not worry about tourettes if you're not conscious.
 		return
 
+<<<<<<< HEAD
 	if (disabilities & EPILEPSY)
 		if ((prob(1) && prob(1) && paralysis < 1))
 			to_chat(src, span_red("You have a seizure!"))
@@ -243,6 +243,10 @@
 			stuttering = max(15, stuttering)
 			if(jitteriness < 50)
 				make_jittery(65)
+=======
+	if(isbelly(loc)) //Let's not have you seizing, coughing, or falling apart if you're in a belly.
+		return
+>>>>>>> b65ce59551 ([MIRROR] Component Traits. (#10886))
 
 	var/rn = rand(0, 200)
 	if(getBrainLoss() >= 5)
