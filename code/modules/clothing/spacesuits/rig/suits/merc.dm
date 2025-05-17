@@ -14,6 +14,7 @@
 	siemens_coefficient = 0.3
 	glove_type = /obj/item/clothing/gloves/gauntlets/rig/eva
 	helm_type = /obj/item/clothing/head/helmet/space/rig/merc
+<<<<<<< HEAD
 	allowed = list(
 		/obj/item/flashlight,
 		/obj/item/tank,
@@ -26,6 +27,9 @@
 		/obj/item/handcuffs,
 		/obj/item/storage
 		)
+=======
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_ALL_TANKS, POCKET_SUIT_REGULATORS, POCKET_SECURITY, POCKET_BAYSUIT)
+>>>>>>> 1e5d31ff04 ([MIRROR] Vendor and Phasegun adjustments (#10900))
 
 	initial_modules = list(
 		/obj/item/rig_module/mounted,

@@ -20,10 +20,14 @@
 	glove_type = null
 	cell_type =  null
 
+<<<<<<< HEAD
 	allowed = list(
 		/obj/item/flashlight,
 		/obj/item/storage/box
 		)
+=======
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, /obj/item/storage/box, /obj/item/storage/belt, /obj/item/defib_kit/compact)
+>>>>>>> 1e5d31ff04 ([MIRROR] Vendor and Phasegun adjustments (#10900))
 
 	req_access = list()
 	req_one_access = list()
