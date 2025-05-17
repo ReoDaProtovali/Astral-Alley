@@ -12,6 +12,7 @@
 	req_access = list(access_cent_specops)
 
 	armor = list(melee = 60, bullet = 50, laser = 35,energy = 15, bomb = 30, bio = 100, rad = 95)
+<<<<<<< HEAD
 	allowed = list(
 		/obj/item/flashlight,
 		/obj/item/tank,
@@ -31,6 +32,10 @@
 		/obj/item/reagent_containers/hypospray,
 		/obj/item/roller
 		)
+=======
+
+	allowed = list(POCKET_GENERIC, POCKET_EMERGENCY, POCKET_ALL_TANKS, POCKET_SUIT_REGULATORS, POCKET_ENGINEERING, POCKET_SECURITY, POCKET_MEDICAL, POCKET_HEAVYTOOLS, POCKET_BAYSUIT, /obj/item/storage/firstaid)
+>>>>>>> 1e5d31ff04 ([MIRROR] Vendor and Phasegun adjustments (#10900))
 
 /obj/item/rig/pmc/commander
 	name = "PMC-C hardsuit control module"

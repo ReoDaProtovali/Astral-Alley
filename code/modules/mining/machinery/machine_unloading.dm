@@ -3,15 +3,19 @@
 
 /obj/machinery/mineral/unloading_machine
 	name = "unloading machine"
-	icon = 'icons/obj/machines/mining_machines_vr.dmi' // VOREStation Edit
+	icon = 'icons/obj/machines/mining_machines.dmi'
 	icon_state = "unloader"
 	density = TRUE
 	anchored = TRUE
 	var/obj/machinery/mineral/input = null
 	var/obj/machinery/mineral/output = null
 
+<<<<<<< HEAD
 
 /obj/machinery/mineral/unloading_machine/Initialize()
+=======
+/obj/machinery/mineral/unloading_machine/Initialize(mapload)
+>>>>>>> 1e5d31ff04 ([MIRROR] Vendor and Phasegun adjustments (#10900))
 	. = ..()
 	for(var/dir in cardinal)
 		input = locate(/obj/machinery/mineral/input, get_step(src, dir))

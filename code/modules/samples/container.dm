@@ -34,6 +34,7 @@
 			S.loc = src
 			update_icon()
 			to_chat(user, span_notice("You scoop \the [S] into \the [src]."))
+<<<<<<< HEAD
 
 //Splice research sample containers into the list of valid items for these belts *without* overriding the lists entirely
 /obj/item/storage/belt/explorer/New()
@@ -64,3 +65,5 @@
 /obj/machinery/mineral/equipment_vendor/survey/Initialize(mapload)
 	. = ..()
 	prize_list["Gear"] += list(EQUIPMENT("Survey Tools - Exotic Sample Container",				/obj/item/storage/sample_container,									100))
+=======
+>>>>>>> 1e5d31ff04 ([MIRROR] Vendor and Phasegun adjustments (#10900))
