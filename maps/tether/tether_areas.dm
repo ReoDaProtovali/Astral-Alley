@@ -156,7 +156,7 @@
 /area/tether/surfacebase/outside/wilderness
 	name = "Outside - Wilderness"
 	icon_state = "invi"
-	forced_ambience = list('sound/music/Sacred_Grove.ogg')
+	forced_ambience = list('sound/music/sacred_grove.ogg')
 
 /area/tether/surfacebase/temple
 	name = "Outside - Wilderness" // ToDo: Make a way to hide spoiler areas off the list of areas ghosts can jump to.
@@ -1410,6 +1410,13 @@
 	requires_power = 0
 	dynamic_lighting = 0
 
+<<<<<<< HEAD
+=======
+/area/syndicate_station/southwest/outside
+	base_turf = /turf/simulated/floor/outdoors/dirt/virgo3b
+	forced_ambience = list('sound/music/sacred_grove.ogg')
+
+>>>>>>> 55215f896f ([MIRROR] Properly paths sound files and folders (#10899))
 //Merc shuttle
 /area/shuttle/mercenary
 	name = "\improper Mercenary Shuttle"
