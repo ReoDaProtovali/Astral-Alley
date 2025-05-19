@@ -1418,3 +1418,219 @@
 	cost = 0
 	var_changes = list("mudking" = TRUE)
 	custom_only = FALSE
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/neutral.dm
+=======
+
+/datum/trait/neutral/patting_defence
+	name = "Reflexive Biting"
+	desc = "You will reflexively bite hands that attempt to pat your head or boop your nose, this can be toggled off."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/patting_defence/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..()
+	H.touch_reaction_flags |= SPECIES_TRAIT_PATTING_DEFENCE
+	add_verb(H, /mob/living/proc/toggle_patting_defence)
+
+/datum/trait/neutral/personal_space
+	name = "Personal Space Bubble"
+	desc = "You are adept at avoiding unwanted physical contact and dodge it with ease. You will reflexively dodge any attempt to hug, pat, boop, lick, sniff you or even shake your hand, this can be toggled off."
+	cost = 0
+	custom_only = FALSE
+
+/datum/trait/neutral/personal_space/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..()
+	H.touch_reaction_flags |= SPECIES_TRAIT_PERSONAL_BUBBLE
+	add_verb(H, /mob/living/proc/toggle_personal_space)
+
+/* // Commented out in lieu of finding a better solution.
+/datum/trait/neutral/coldadapt/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Temp. Adapted, Cold"
+	desc = "You have adapted to withstand much colder temperatures than other species, and can even be comfortable in extremely cold environments. You are also more vulnerable to hot environments, and have a lower body temperature as a consequence of these adaptations, thanks to your evolutionary efforts."
+	cost = 0
+	category = 0
+	can_take = ORGANICS // (Not sure if this is needed for Xenochimera-specific sub-version.)
+	custom_only = FALSE
+	excludes = list(/datum/trait/neutral/hotadapt, /datum/trait/neutral/hotadapt/xenochimera)
+/datum/trait/neutral/hotadapt/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Temp. Adapted, Heat"
+	desc = "You have adapted to withstand much hotter temperatures than other species, and can even be comfortable in extremely hot environments. You are also more vulnerable to cold environments, and have a higher body temperature as a consequence of these adaptations, thanks to your evolutionary efforts."
+	cost = 0
+	category = 0
+	can_take = ORGANICS // negates the need for suit coolers entirely for synths, so no. (Not sure if this is needed for Xenochimera-specific sub-version.)
+	custom_only = FALSE
+	excludes = list(/datum/trait/neutral/coldadapt, /datum/trait/neutral/coldadapt/xenochimera)
+*/
+
+/datum/trait/neutral/autohiss_unathi/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Autohiss (Unathi)"
+	desc = "You roll your S's and x's"
+	cost = 0
+	custom_only = FALSE
+	var_changes = list(
+	autohiss_basic_map = list(
+			"s" = list("ss", "sss", "ssss")
+		),
+	autohiss_extra_map = list(
+			"x" = list("ks", "kss", "ksss")
+		),
+	autohiss_exempt = list("Sinta'unathi"))
+	excludes = list(
+		/datum/trait/neutral/autohiss_unathi,
+		/datum/trait/neutral/autohiss_tajaran,
+		/datum/trait/neutral/autohiss_zaddat,
+		/datum/trait/neutral/autohiss_vassilian,
+		/datum/trait/neutral/autohiss_yingish,
+		/datum/trait/neutral/autohiss_tajaran/xenochimera,
+		/datum/trait/neutral/autohiss_zaddat/xenochimera,
+		/datum/trait/neutral/autohiss_vassilian/xenochimera,
+		/datum/trait/neutral/autohiss_yingish/xenochimera)
+
+/datum/trait/neutral/autohiss_tajaran/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Autohiss (Tajaran)"
+	desc = "You roll your R's."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list(
+	autohiss_basic_map = list(
+			"r" = list("rr", "rrr", "rrrr")
+		),
+	autohiss_exempt = list("Siik"))
+	excludes = list(
+		/datum/trait/neutral/autohiss_unathi,
+		/datum/trait/neutral/autohiss_tajaran,
+		/datum/trait/neutral/autohiss_zaddat,
+		/datum/trait/neutral/autohiss_vassilian,
+		/datum/trait/neutral/autohiss_yingish,
+		/datum/trait/neutral/autohiss_unathi/xenochimera,
+		/datum/trait/neutral/autohiss_zaddat/xenochimera,
+		/datum/trait/neutral/autohiss_vassilian/xenochimera,
+		/datum/trait/neutral/autohiss_yingish/xenochimera)
+
+/datum/trait/neutral/autohiss_zaddat/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Autohiss (Zaddat)"
+	desc = "You buzz your S's and F's."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list(
+	autohiss_basic_map = list(
+			"f" = list("v","vh"),
+			"ph" = list("v", "vh")
+		),
+	autohiss_extra_map = list(
+			"s" = list("z", "zz", "zzz"),
+			"ce" = list("z", "zz"),
+			"ci" = list("z", "zz"),
+			"v" = list("vv", "vvv")
+		),
+	autohiss_exempt = list(LANGUAGE_ZADDAT,LANGUAGE_VESPINAE))
+	excludes = list(
+		/datum/trait/neutral/autohiss_tajaran,
+		/datum/trait/neutral/autohiss_unathi,
+		/datum/trait/neutral/autohiss_zaddat,
+		/datum/trait/neutral/autohiss_vassilian,
+		/datum/trait/neutral/autohiss_yingish,
+		/datum/trait/neutral/autohiss_unathi/xenochimera,
+		/datum/trait/neutral/autohiss_tajaran/xenochimera,
+		/datum/trait/neutral/autohiss_vassilian/xenochimera,
+		/datum/trait/neutral/autohiss_yingish/xenochimera)
+
+/datum/trait/neutral/autohiss_vassilian/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Autohiss (Vassilian)"
+	desc = "You buzz your S's, F's, Th's, and R's."
+	cost = 0
+	custom_only = FALSE
+	var_changes = list(
+	autohiss_basic_map = list(
+		"s" = list("sz", "z", "zz"),
+		"f" = list("zk")
+		),
+	autohiss_extra_map = list(
+		"th" = list("zk", "szk"),
+		"r" = list("rk")
+	),
+	autohiss_exempt = list(LANGUAGE_VESPINAE))
+	excludes = list(
+		/datum/trait/neutral/autohiss_tajaran,
+		/datum/trait/neutral/autohiss_unathi,
+		/datum/trait/neutral/autohiss_zaddat,
+		/datum/trait/neutral/autohiss_vassilian,
+		/datum/trait/neutral/autohiss_yingish,
+		/datum/trait/neutral/autohiss_unathi/xenochimera,
+		/datum/trait/neutral/autohiss_tajaran/xenochimera,
+		/datum/trait/neutral/autohiss_zaddat/xenochimera,
+		/datum/trait/neutral/autohiss_yingish/xenochimera)
+
+/datum/trait/neutral/autohiss_yingish/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Autohiss (Yingish)"
+	desc = "You pronounce th's with a lisp, a bit like zhis!"
+	cost = 0
+	custom_only = FALSE
+	var_changes = list(
+	autohiss_basic_map = list(
+			"thi" = list("z"),
+			"shi" = list("z"),
+			"tha" = list("z"),
+			"tho" = list("z")
+		),
+	autohiss_extra_map = list(
+			"the" = list("z"),
+			"so" = list("z")
+		),
+	autohiss_exempt = list())
+	excludes = list(
+		/datum/trait/neutral/autohiss_tajaran,
+		/datum/trait/neutral/autohiss_unathi,
+		/datum/trait/neutral/autohiss_zaddat,
+		/datum/trait/neutral/autohiss_vassilian,
+		/datum/trait/neutral/autohiss_yingish,
+		/datum/trait/neutral/autohiss_unathi/xenochimera,
+		/datum/trait/neutral/autohiss_tajaran/xenochimera,
+		/datum/trait/neutral/autohiss_zaddat/xenochimera,
+		/datum/trait/neutral/autohiss_vassilian/xenochimera)
+
+/datum/trait/neutral/waddle
+	name = "Waddle / Animated Movement (Adjustable)"
+	desc = "You move with a waddle or otherwise animated movement! Has adjustable settings with more adjustments able to be made in game!"
+	cost = 0
+	custom_only = FALSE
+	is_genetrait = TRUE
+	hidden = FALSE
+	has_preferences = list("waddler" = list(TRAIT_PREF_TYPE_BOOLEAN, "Waddle on Spawn", TRAIT_NO_VAREDIT_TARGET, TRUE))
+	added_component_path = /datum/component/waddle_trait
+
+/datum/trait/neutral/waddle/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/list/trait_prefs)
+	..()
+	var/datum/component/waddle_trait/G = H.GetComponent(added_component_path)
+	G.waddling = trait_prefs["waddler"]
+
+/datum/trait/neutral/nutritiongrow
+	name = "Growing"
+	desc = "After you consume enough nutrition, you start to slowly grow while metabolizing nutrition faster."
+	excludes = list(/datum/trait/neutral/nutritionshrink)
+	cost = 0
+	hidden = FALSE //Disabled on Virgo // CHOMPEdit
+	added_component_path = /datum/component/nutrition_size_change/growing
+
+/datum/trait/neutral/nutritionshrink
+	name = "Shrinking"
+	desc = "If you don't eat enough, your body starts shrinking to make up the difference!"
+	excludes = list(/datum/trait/neutral/nutritiongrow)
+	cost = 0
+	hidden = FALSE //Disabled on Virgo // CHOMPEdit
+	added_component_path = /datum/component/nutrition_size_change/shrinking
+>>>>>>> 0f390c4e92 ([MIRROR] Nutrition Resizing Component (#10904)):code/modules/mob/living/carbon/human/species/station/traits/neutral.dm
