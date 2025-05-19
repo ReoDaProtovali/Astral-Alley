@@ -72,7 +72,6 @@
 
 // CHOMPEdit Start
 /obj/item/assembly_holder/HasProximity(turf/T, datum/weakref/WF, old_loc)
-	SIGNAL_HANDLER
 	if(isnull(WF))
 		return
 	var/atom/movable/AM = WF.resolve()

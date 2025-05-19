@@ -663,7 +663,6 @@ var/list/global/tank_gauge_cache = list()
 
 // CHOMPEdit Start
 /obj/item/tankassemblyproxy/HasProximity(turf/T, datum/weakref/WF, old_loc)
-	SIGNAL_HANDLER
 	if(isnull(WF))
 		return
 	var/atom/movable/AM = WF

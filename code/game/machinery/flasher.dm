@@ -99,7 +99,6 @@
 
 // CHOMPEdit Start
 /obj/machinery/flasher/portable/HasProximity(turf/T, datum/weakref/WF, oldloc)
-	SIGNAL_HANDLER
 	if(isnull(WF))
 		return
 
