@@ -215,6 +215,31 @@
 /datum/robot_sprite/dogborg/tall/science/dullahanv3/sciencedully
 	name = "Dullahan science v3"
 	sprite_icon_state = "dullahanscience"
+<<<<<<< HEAD
 	has_vore_belly_sprites = TRUE
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("decals")
+	icon_x = 64
+	pixel_x = -16
+
+/datum/robot_sprite/dogborg/science/cat
+	name = "Cat"
+	sprite_icon = 'icons/mob/robot/catborg_variant.dmi'
+	sprite_icon_state = "vixsci"
+	sprite_hud_icon_state = "sci-borg"
+	has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+
+/datum/robot_sprite/dogborg/science/smolraptor
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_sci.dmi'
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+	rest_sprite_options = list("Default", "Sit", "Bellyup")
+>>>>>>> 96d877eacd ([MIRROR] Smolraptor updates (#10934))

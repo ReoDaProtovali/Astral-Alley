@@ -210,5 +210,39 @@
 	name = "Dullahan janitor v3"
 	sprite_icon_state = "dullahanjanitor"
 	has_vore_belly_sprites = TRUE
+<<<<<<< HEAD
 	has_robotdecal_sprites = TRUE
 	rest_sprite_options = list("Default", "sit")
+=======
+	rest_sprite_options = list("Default", "Sit")
+	sprite_decals = list("decals")
+	icon_x = 64
+	pixel_x = -16
+
+/datum/robot_sprite/dogborg/janitor/cat
+	name = "Cat"
+	sprite_icon = 'icons/mob/robot/catborg_variant.dmi'
+	sprite_icon_state = "vixjani"
+	has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+
+/datum/robot_sprite/dogborg/janitor/smolraptor
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_serv.dmi'
+	module_type = "Janitor"
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor_alt"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+	rest_sprite_options = list("Default", "Sit", "Bellyup")
+
+/datum/robot_sprite/dogborg/janitor/possum
+	name = "0-P0SSm"
+	sprite_icon = 'icons/mob/robot/possumborg.dmi'
+	sprite_icon_state = "possjani"
+	//has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+	rest_sprite_options = list("Default")
+>>>>>>> 96d877eacd ([MIRROR] Smolraptor updates (#10934))
