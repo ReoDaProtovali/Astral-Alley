@@ -25,12 +25,23 @@
 	has_vore_belly_sprites = TRUE
 	rest_sprite_options = list("Default", "Sit")
 
+<<<<<<< HEAD:modular_chomp/code/modules/mob/living/silicon/robot/sprites/exploration.dm
 /datum/robot_sprite/dogborg/tall/explorer/dullahan/exploreralt
 	name = "Dullahan v2"
 	sprite_icon_state = "dullahanexplo_alt"
 	has_eye_light_sprites = TRUE
 	has_vore_belly_sprites = TRUE
 	rest_sprite_options = list("Default", "Sit")
+=======
+/datum/robot_sprite/dogborg/explorer/smolraptor
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_ninja.dmi'
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+	rest_sprite_options = list("Default", "Sit", "Bellyup")
+>>>>>>> 96d877eacd ([MIRROR] Smolraptor updates (#10934)):code/modules/mob/living/silicon/robot/subtypes/exploration/exploration-sprites.dm
 
 /* placeholder
 /datum/robot_sprite/dogborg/tall/explorer

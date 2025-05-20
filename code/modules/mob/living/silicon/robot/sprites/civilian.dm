@@ -404,3 +404,82 @@
 
 		// None yet
 */
+<<<<<<< HEAD
+=======
+
+/datum/robot_sprite/dogborg/clown
+	module_type = "Clown"
+	sprite_icon = 'icons/mob/robot/widerobot/widerobot.dmi'
+
+/datum/robot_sprite/dogborg/clown/vale
+	name = "Honkhound V2"
+	sprite_icon_state = "honkborg"
+	has_eye_light_sprites = TRUE
+
+/datum/robot_sprite/dogborg/tall/clown
+	module_type = "Clown"
+	sprite_icon = 'icons/mob/robot/tallrobot/tallrobots.dmi'
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/tall/clown/k4t
+	name = "K4T"
+	sprite_icon_state = "k4tclown"
+	has_eye_light_sprites = TRUE
+	has_custom_open_sprites = FALSE
+	has_vore_belly_sprites = FALSE
+	rest_sprite_options = list("Default", "Bellyup")
+	icon_x = 32
+
+/datum/robot_sprite/dogborg/tall/clown/dullahan
+	name = "Dullahan"
+	sprite_icon = 'icons/mob/robot/dullahan/v1/dullahan_clown.dmi'
+	sprite_icon_state = "dullahanclown"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	sprite_decals = list("breastplate")
+	rest_sprite_options = list("Default", "Sit")
+	pixel_x = 0
+	icon_x = 32
+
+/datum/robot_sprite/dogborg/clown/stoat
+	name = "ST-04t"
+	sprite_icon = 'icons/mob/robot/stoatborg.dmi'
+	sprite_icon_state = "stoatclown"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_resting_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+	rest_sprite_options = list("Default")
+
+/datum/robot_sprite/dogborg/service/valech
+	name = "ServicehoundV2 - Alt"
+	sprite_icon = 'icons/mob/robot/widerobot/widerobot.dmi'
+	sprite_icon_state = "servborg"
+	rest_sprite_options = list("Default")
+	has_eye_light_sprites = TRUE
+
+/datum/robot_sprite/dogborg/service/cat
+	name = "Cat"
+	sprite_icon = 'icons/mob/robot/catborg_variant.dmi'
+	sprite_icon_state = "vixserv"
+	has_vore_belly_resting_sprites = TRUE
+	has_eye_light_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+
+/datum/robot_sprite/dogborg/tall/service/mekaserve_alt
+	sprite_icon = 'icons/mob/robot/tallrobot/tallrobots.dmi'
+	name = "MEKA Alt"
+	sprite_icon_state = "mekaserve_alt"
+	rest_sprite_options = list("Default", "Sit")
+	icon_x = 32
+	pixel_x = 0
+
+/datum/robot_sprite/dogborg/service/smolraptor
+	sprite_icon = 'icons/mob/robot/smallraptors/smolraptor_serv.dmi'
+
+	name = "Small Raptor"
+	sprite_icon_state = "smolraptor"
+	has_eye_light_sprites = TRUE
+	has_vore_belly_sprites = TRUE
+	has_dead_sprite_overlay = FALSE
+	rest_sprite_options = list("Default", "Sit", "Bellyup")
+>>>>>>> 96d877eacd ([MIRROR] Smolraptor updates (#10934))
