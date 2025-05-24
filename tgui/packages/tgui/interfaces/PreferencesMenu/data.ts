@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 import { sendAct } from '../../backend';
+=======
+import type { sendAct } from 'tgui/backend';
+
+import type { LegacyConstant } from './bay_prefs/data';
+>>>>>>> 9805115973 (Character Setup Rework (#10930))
 
 export enum GamePreferencesSelectedPage {
   Settings,
@@ -32,5 +38,6 @@ export type PreferencesMenuData = {
 };
 
 export type ServerData = {
+  legacy: LegacyConstant;
   [otheyKey: string]: unknown;
 };

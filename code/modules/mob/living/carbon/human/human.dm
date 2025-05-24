@@ -1317,6 +1317,7 @@
 	pixel_y = default_pixel_y
 	center_offset = species.center_offset
 
+<<<<<<< HEAD
 	if(LAZYLEN(descriptors))
 		descriptors = null
 
@@ -1329,6 +1330,10 @@
 	//This was the old location of initialize_vessel. A race condiiton happened here because of species code being JANK. This resulted in runtimes during unit test, but worked perfectly fine in game.
 	//Now, initialize_vessel has been moved to human/Initialize()
 	// addtimer(CALLBACK(src, PROC_REF(initialize_vessel)), 0, TIMER_DELETE_ME) //Doing ASYNC fails here. This used to be a spawn(0)
+=======
+	if(vessel)
+		initialize_vessel()
+>>>>>>> 9805115973 (Character Setup Rework (#10930))
 
 	// Rebuild the HUD. If they aren't logged in then login() should reinstantiate it for them.
 	update_hud()
