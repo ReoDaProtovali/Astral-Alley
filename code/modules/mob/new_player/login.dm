@@ -27,6 +27,12 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 	var/client/my_client // Need to keep track of this ourselves, since by the time Logout() is called the client has already been nulled
 
 /mob/new_player/Login()
+	// Happens sometimes
+	if(QDELETED(src))
+		var/mob/new_player/replacement = new /mob/new_player()
+		replacement.key = key
+		return
+
 	update_Login_details()	//handles setting lastKnownIP and computer_id for use by the ban systems as well as checking for multikeying
 	if(join_motd)
 		join_motd = GLOB.is_valid_url.Replace(join_motd,span_linkify("$1"))
