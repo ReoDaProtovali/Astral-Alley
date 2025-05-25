@@ -178,7 +178,6 @@ var/list/mining_overlay_cache = list()
 	update_general()
 
 /turf/simulated/mineral/proc/update_general()
-	update_icon(1)
 	recalculate_directional_opacity()
 	if(ticker && ticker.current_state == GAME_STATE_PLAYING)
 		reconsider_lights()
@@ -208,7 +207,7 @@ var/list/mining_overlay_cache = list()
 	. = ..()
 	if(prob(20))
 		overlay_detail = "asteroid[rand(0,9)]"
-	update_icon(1)
+	update_icon(!mapload)
 	if(density && mineral)
 		. = INITIALIZE_HINT_LATELOAD
 	if(random_icon)
@@ -219,8 +218,7 @@ var/list/mining_overlay_cache = list()
 	if(density && mineral)
 		MineralSpread()
 
-/turf/simulated/mineral/update_icon(var/update_neighbors)
-
+/turf/simulated/mineral/update_icon(var/update_neighbors, ignore_list)
 	cut_overlays()
 
 	//We are a wall (why does this system work like this??)
@@ -236,7 +234,7 @@ var/list/mining_overlay_cache = list()
 		//Apply overlays if we should have borders
 		for(var/direction in cardinal)
 			var/turf/T = get_step(src,direction)
-			if(istype(T) && !T.density)
+			if(T && !T.density)
 				add_overlay(get_cached_border(rock_side_icon_state,direction,icon,rock_side_icon_state))
 
 			if(archaeo_overlay)
@@ -255,20 +253,25 @@ var/list/mining_overlay_cache = list()
 			add_overlay("dug_overlay")
 
 		//Apply overlays if there's space
+<<<<<<< HEAD
 		for(var/direction in cardinal)
 			if(istype(get_step(src, direction), /turf/space) && !istype(get_step(src, direction), /turf/space/cracked_asteroid))
+=======
+		for(var/direction in GLOB.cardinal)
+			var/turf/T = get_step(src, direction)
+			if(istype(T, /turf/space) && !istype(T, /turf/space/cracked_asteroid))
+>>>>>>> 7f4da4eb22 ([MIRROR] Startup Time Optimization (#10940))
 				add_overlay(get_cached_border("asteroid_edge",direction,icon,"asteroid_edges", 0))
-
 			//Or any time
 			else
-				var/turf/T = get_step(src, direction)
-				if(istype(T) && T.density)
+				if(T?.density)
 					add_overlay(get_cached_border(rock_side_icon_state,direction,rock_icon_path,rock_side_icon_state))
 
 		if(overlay_detail)
 			add_overlay(overlay_detail_icon_path,overlay_detail)
 
 		if(update_neighbors)
+<<<<<<< HEAD
 			for(var/direction in alldirs)
 				if(istype(get_step(src, direction), /turf/simulated/mineral))
 					var/turf/simulated/mineral/M = get_step(src, direction)
@@ -276,6 +279,19 @@ var/list/mining_overlay_cache = list()
 				if(istype(get_step(src, direction), /turf/simulated/wall/solidrock))
 					var/turf/simulated/wall/solidrock/M = get_step(src, direction)
 					M.update_icon()
+=======
+			for(var/direction in GLOB.alldirs)
+				var/turf/T = get_step(src, direction)
+				// don't double update during cave generation
+				if(LAZYACCESS(ignore_list, T))
+					continue
+
+				if(istype(T, /turf/simulated/mineral))
+					T.update_icon()
+
+				if(istype(T, /turf/simulated/wall/solidrock))
+					T.update_icon()
+>>>>>>> 7f4da4eb22 ([MIRROR] Startup Time Optimization (#10940))
 
 /turf/simulated/mineral/ex_act(severity)
 
