@@ -36,8 +36,11 @@
 
 	if(get_restraining_bolt())	// Borgs with Restraining Bolts move slower.
 		. += 1
+<<<<<<< HEAD
 	if(nutrition > 1000) //CHOMPAdd
 		. += nutrition / 2000 //CHOMPAdd
+=======
+>>>>>>> 34596f5cf0 ([MIRROR] Fix a bunch of oversights in the kitchen sink PRs (#10870))
 
 	. += CONFIG_GET(number/robot_delay)
 

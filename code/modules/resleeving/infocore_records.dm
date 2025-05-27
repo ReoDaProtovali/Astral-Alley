@@ -129,15 +129,22 @@
 	//Person OOCly doesn't want people impersonating them
 	locked = ckeylock
 
+<<<<<<< HEAD
 	//CHOMPEdit Start, keep the lock
 	//Prevent people from printing restricted and whitelisted species
+=======
+>>>>>>> 34596f5cf0 ([MIRROR] Fix a bunch of oversights in the kitchen sink PRs (#10870))
 	var/datum/species/S = GLOB.all_species["[M.dna.species]"]
 	if(S)
-		toocomplex = (S.spawn_flags & SPECIES_IS_WHITELISTED) || (S.spawn_flags & SPECIES_IS_RESTRICTED)
 		// Force ckey locking if species is whitelisted
+<<<<<<< HEAD
 		//if((S.spawn_flags & SPECIES_IS_WHITELISTED) || (S.spawn_flags & SPECIES_IS_RESTRICTED))
 			//locked = TRUE
 	//CHOMPEdit End
+=======
+		if((S.spawn_flags & SPECIES_IS_WHITELISTED) || (S.spawn_flags & SPECIES_IS_RESTRICTED))
+			locked = TRUE
+>>>>>>> 34596f5cf0 ([MIRROR] Fix a bunch of oversights in the kitchen sink PRs (#10870))
 
 	//General stuff about them
 	synthetic = M.isSynthetic()
