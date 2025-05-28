@@ -1,5 +1,6 @@
 ///var/atom/movable/lobby_image = new /atom/movable{icon = 'icons/misc/title.dmi'; icon_state = lobby_image_state; screen_loc = "1,1"; name = "Polaris"}
 
+<<<<<<< HEAD
 var/obj/effect/lobby_image = new /obj/effect/lobby_image
 
 /obj/effect/lobby_image
@@ -36,6 +37,9 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 		to_chat(src, CONFIG_GET(string/respawn_message))
 		has_respawned = FALSE
 
+=======
+	update_Login_details()    //handles setting lastKnownIP and computer_id for use by the ban systems as well as checking for multikeying
+>>>>>>> e736a4ed7e ([MIRROR] Fixes Nulls getting into the player list (#10966))
 	if(!mind)
 		mind = new /datum/mind(key)
 		mind.active = 1
@@ -45,10 +49,15 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 	//client.screen += lobby_image CHOMPEdit Removal
 	my_client = client
 	sight |= SEE_TURFS
+<<<<<<< HEAD
+=======
+
+>>>>>>> e736a4ed7e ([MIRROR] Fixes Nulls getting into the player list (#10966))
 	player_list |= src
 
 	created_for = ckey
 
+<<<<<<< HEAD
 	new_player_panel()
 	client.init_verbs()
 	spawn(40)
@@ -56,6 +65,23 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 			handle_privacy_poll()
 			client.playtitlemusic()
 			version_warnings()
+=======
+	addtimer(CALLBACK(src, PROC_REF(do_after_login)), 4 SECONDS, TIMER_DELETE_ME)
+	initialize_lobby_screen()
+
+/mob/new_player/proc/do_after_login()
+	PRIVATE_PROC(TRUE)
+	if(client)
+		if(GLOB.join_motd)
+			to_chat(src, examine_block("<div class=\"motd\">[GLOB.join_motd]</div>"))
+
+		if(has_respawned)
+			to_chat(src, CONFIG_GET(string/respawn_message))
+		has_respawned = FALSE
+		handle_privacy_poll()
+		client.playtitlemusic()
+		version_warnings()
+>>>>>>> e736a4ed7e ([MIRROR] Fixes Nulls getting into the player list (#10966))
 
 /mob/new_player/proc/version_warnings()
 	var/problems // string to store message to present to player as a problem

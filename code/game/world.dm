@@ -505,7 +505,11 @@ var/world_topic_spam_protect_time = world.timeofday
 	return 1
 
 /world/proc/load_motd()
+<<<<<<< HEAD
 	join_motd = file2text("config/motd.txt")
+=======
+	GLOB.join_motd = GLOB.is_valid_url.Replace(file2text("config/motd.txt"), span_linkify("$1"))
+>>>>>>> e736a4ed7e ([MIRROR] Fixes Nulls getting into the player list (#10966))
 
 /* Replaced with configuration controller
 /proc/load_configuration()
