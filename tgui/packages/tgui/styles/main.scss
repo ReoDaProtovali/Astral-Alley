@@ -72,6 +72,11 @@
 @include meta.load-css('./interfaces/IDCard.scss');
 @include meta.load-css('./interfaces/TinderMessaging.scss');
 @include meta.load-css('./interfaces/Turbolift.scss');
+<<<<<<< HEAD
+=======
+@include meta.load-css('./interfaces/VorePanel.scss');
+@include meta.load-css('./interfaces/Wires.scss');
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 // Layouts
 @include meta.load-css('./layouts/Layout.scss');

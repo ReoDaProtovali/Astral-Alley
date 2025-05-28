@@ -1,14 +1,20 @@
-import { useBackend } from 'tgui/backend';
-import { Button, LabeledList, Stack } from 'tgui-core/components';
-import { capitalize } from 'tgui-core/string';
+import { Stack } from 'tgui-core/components';
 
+<<<<<<< HEAD
 import type { hostMob, selectedData } from '../types';
 import { VoreSelectedMobTypeBellyButtons } from './VoreSelectedMobTypeBellyButtons';
+=======
+import type { bellyOptionData, hostMob } from '../types';
+import { BellyOptionsLeft } from './OptionTab/BellyOptionsLeft';
+import { BellyOptionsRight } from './OptionTab/BellyOptionsRight';
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 export const VoreSelectedBellyOptions = (props: {
-  belly: selectedData;
+  editMode: boolean;
+  bellyOptionData: bellyOptionData;
   host_mobtype: hostMob;
 }) => {
+<<<<<<< HEAD
   const { act } = useBackend();
 
   const { belly, host_mobtype } = props;
@@ -34,10 +40,14 @@ export const VoreSelectedBellyOptions = (props: {
     eating_privacy_local,
     drainmode,
   } = belly;
+=======
+  const { editMode, bellyOptionData, host_mobtype } = props;
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
   return (
-    <Stack wrap="wrap">
+    <Stack fill>
       <Stack.Item basis="49%" grow>
+<<<<<<< HEAD
         <LabeledList>
           <LabeledList.Item label="Can Taste">
             <Button
@@ -141,10 +151,16 @@ export const VoreSelectedBellyOptions = (props: {
         </LabeledList>
         <VoreSelectedMobTypeBellyButtons
           belly={belly}
+=======
+        <BellyOptionsLeft
+          editMode={editMode}
+          bellyOptionData={bellyOptionData}
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
           host_mobtype={host_mobtype}
         />
       </Stack.Item>
       <Stack.Item basis="49%" grow>
+<<<<<<< HEAD
         <LabeledList>
           <LabeledList.Item label="Idle Emotes">
             <Button
@@ -235,6 +251,12 @@ export const VoreSelectedBellyOptions = (props: {
             </Button>
           </LabeledList.Item>
         </LabeledList>
+=======
+        <BellyOptionsRight
+          editMode={editMode}
+          bellyOptionData={bellyOptionData}
+        />
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
       </Stack.Item>
     </Stack>
   );

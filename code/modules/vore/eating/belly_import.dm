@@ -138,264 +138,482 @@
 				new_belly.release_verb = new_release_verb
 
 		if(islist(belly_data["digest_messages_prey"]))
-			var/new_digest_messages_prey = sanitize(jointext(belly_data["digest_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_digest_messages_prey = sanitize(jointext(belly_data["digest_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_digest_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_digest_messages_prey,"dmp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_digest_messages_prey,DIGEST_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["digest_messages_owner"]))
-			var/new_digest_messages_owner = sanitize(jointext(belly_data["digest_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_digest_messages_owner = sanitize(jointext(belly_data["digest_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_digest_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_digest_messages_owner,"dmo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_digest_messages_owner,DIGEST_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["absorb_messages_prey"]))
-			var/new_absorb_messages_prey = sanitize(jointext(belly_data["absorb_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_absorb_messages_prey = sanitize(jointext(belly_data["absorb_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_absorb_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_absorb_messages_prey,"amp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_absorb_messages_prey,ABSORB_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["absorb_messages_owner"]))
-			var/new_absorb_messages_owner = sanitize(jointext(belly_data["absorb_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_absorb_messages_owner = sanitize(jointext(belly_data["absorb_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_absorb_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_absorb_messages_owner,"amo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_absorb_messages_owner,ABSORB_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["unabsorb_messages_prey"]))
-			var/new_unabsorb_messages_prey = sanitize(jointext(belly_data["unabsorb_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_unabsorb_messages_prey = sanitize(jointext(belly_data["unabsorb_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_unabsorb_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_unabsorb_messages_prey,"uamp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_unabsorb_messages_prey,UNABSORBS_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["unabsorb_messages_owner"]))
-			var/new_unabsorb_messages_owner = sanitize(jointext(belly_data["unabsorb_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_unabsorb_messages_owner = sanitize(jointext(belly_data["unabsorb_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_unabsorb_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_unabsorb_messages_owner,"uamo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_unabsorb_messages_owner,UNABSORBS_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["struggle_messages_outside"]))
-			var/new_struggle_messages_outside = sanitize(jointext(belly_data["struggle_messages_outside"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_struggle_messages_outside = sanitize(jointext(belly_data["struggle_messages_outside"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_struggle_messages_outside)
+<<<<<<< HEAD
 				new_belly.set_messages(new_struggle_messages_outside,"smo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_struggle_messages_outside,STRUGGLE_OUTSIDE, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["struggle_messages_inside"]))
-			var/new_struggle_messages_inside = sanitize(jointext(belly_data["struggle_messages_inside"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_struggle_messages_inside = sanitize(jointext(belly_data["struggle_messages_inside"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_struggle_messages_inside)
+<<<<<<< HEAD
 				new_belly.set_messages(new_struggle_messages_inside,"smi", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_struggle_messages_inside,STRUGGLE_INSIDE, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["absorbed_struggle_messages_outside"]))
-			var/new_absorbed_struggle_messages_outside = sanitize(jointext(belly_data["absorbed_struggle_messages_outside"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_absorbed_struggle_messages_outside = sanitize(jointext(belly_data["absorbed_struggle_messages_outside"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_absorbed_struggle_messages_outside)
+<<<<<<< HEAD
 				new_belly.set_messages(new_absorbed_struggle_messages_outside,"asmo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_absorbed_struggle_messages_outside,ABSORBED_STRUGGLE_OUSIDE, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["absorbed_struggle_messages_inside"]))
-			var/new_absorbed_struggle_messages_inside = sanitize(jointext(belly_data["absorbed_struggle_messages_inside"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_absorbed_struggle_messages_inside = sanitize(jointext(belly_data["absorbed_struggle_messages_inside"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_absorbed_struggle_messages_inside)
+<<<<<<< HEAD
 				new_belly.set_messages(new_absorbed_struggle_messages_inside,"asmi", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_absorbed_struggle_messages_inside,ABSORBED_STRUGGLE_INSIDE, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_attempt_messages_prey"]))
-			var/new_escape_attempt_messages_prey = sanitize(jointext(belly_data["escape_attempt_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_attempt_messages_prey = sanitize(jointext(belly_data["escape_attempt_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_attempt_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_attempt_messages_prey,"escap", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_attempt_messages_prey,ESCAPE_ATTEMPT_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_attempt_messages_owner"]))
-			var/new_escape_attempt_messages_owner = sanitize(jointext(belly_data["escape_attempt_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_attempt_messages_owner = sanitize(jointext(belly_data["escape_attempt_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_attempt_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_attempt_messages_owner,"escao", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_attempt_messages_owner,ESCAPE_ATTEMPT_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_messages_prey"]))
-			var/new_escape_messages_prey = sanitize(jointext(belly_data["escape_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_messages_prey = sanitize(jointext(belly_data["escape_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_messages_prey,"escp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_messages_prey,ESCAPE_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_messages_owner"]))
-			var/new_escape_messages_owner = sanitize(jointext(belly_data["escape_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_messages_owner = sanitize(jointext(belly_data["escape_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_messages_owner,"esco", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_messages_owner,ESCAPE_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_messages_outside"]))
-			var/new_escape_messages_outside = sanitize(jointext(belly_data["escape_messages_outside"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_messages_outside = sanitize(jointext(belly_data["escape_messages_outside"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_messages_outside)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_messages_outside,"escout", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_messages_outside,ESCAPE_OUTSIDE, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_item_messages_prey"]))
-			var/new_escape_item_messages_prey = sanitize(jointext(belly_data["escape_item_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_item_messages_prey = sanitize(jointext(belly_data["escape_item_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_item_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_item_messages_prey,"escip", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_item_messages_prey,ESCAPE_ITEM_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_item_messages_owner"]))
-			var/new_escape_item_messages_owner = sanitize(jointext(belly_data["escape_item_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_item_messages_owner = sanitize(jointext(belly_data["escape_item_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_item_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_item_messages_owner,"escio", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_item_messages_owner,ESCAPE_ITEM_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_item_messages_outside"]))
-			var/new_escape_item_messages_outside = sanitize(jointext(belly_data["escape_item_messages_outside"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_item_messages_outside = sanitize(jointext(belly_data["escape_item_messages_outside"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_item_messages_outside)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_item_messages_outside,"esciout", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_item_messages_outside,ESCAPE_ITEM_OUTSIDE, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_fail_messages_prey"]))
-			var/new_escape_fail_messages_prey = sanitize(jointext(belly_data["escape_fail_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_fail_messages_prey = sanitize(jointext(belly_data["escape_fail_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_fail_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_fail_messages_prey,"escfp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_fail_messages_prey,ESCAPE_FAIL_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_fail_messages_owner"]))
-			var/new_escape_fail_messages_owner = sanitize(jointext(belly_data["escape_fail_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_fail_messages_owner = sanitize(jointext(belly_data["escape_fail_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_fail_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_fail_messages_owner,"escfo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_fail_messages_owner,ESCAPE_FAIL_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_attempt_absorbed_messages_prey"]))
-			var/new_escape_attempt_absorbed_messages_prey = sanitize(jointext(belly_data["escape_attempt_absorbed_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_attempt_absorbed_messages_prey = sanitize(jointext(belly_data["escape_attempt_absorbed_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_attempt_absorbed_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_attempt_absorbed_messages_prey,"aescap", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_attempt_absorbed_messages_prey,ABSORBED_ESCAPE_ATTEMPT_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_attempt_absorbed_messages_owner"]))
-			var/new_escape_attempt_absorbed_messages_owner = sanitize(jointext(belly_data["escape_attempt_absorbed_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_attempt_absorbed_messages_owner = sanitize(jointext(belly_data["escape_attempt_absorbed_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_attempt_absorbed_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_attempt_absorbed_messages_owner,"aescao", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_attempt_absorbed_messages_owner,ABSORBED_ESCAPE_ATTEMPT_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_absorbed_messages_prey"]))
-			var/new_escape_absorbed_messages_prey = sanitize(jointext(belly_data["escape_absorbed_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_absorbed_messages_prey = sanitize(jointext(belly_data["escape_absorbed_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_absorbed_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_absorbed_messages_prey,"aescp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_absorbed_messages_prey,ABSORBED_ESCAPE_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_absorbed_messages_owner"]))
-			var/new_escape_absorbed_messages_owner = sanitize(jointext(belly_data["escape_absorbed_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_absorbed_messages_owner = sanitize(jointext(belly_data["escape_absorbed_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_absorbed_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_absorbed_messages_owner,"aesco", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_absorbed_messages_owner,ABSORBED_ESCAPE_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_absorbed_messages_outside"]))
-			var/new_escape_absorbed_messages_outside = sanitize(jointext(belly_data["escape_absorbed_messages_outside"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_absorbed_messages_outside = sanitize(jointext(belly_data["escape_absorbed_messages_outside"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_absorbed_messages_outside)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_absorbed_messages_outside,"aescout", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_absorbed_messages_outside,ABSORBED_ESCAPE_OUTSIDE, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_fail_absorbed_messages_prey"]))
-			var/new_escape_fail_absorbed_messages_prey = sanitize(jointext(belly_data["escape_fail_absorbed_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_fail_absorbed_messages_prey = sanitize(jointext(belly_data["escape_fail_absorbed_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_fail_absorbed_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_fail_absorbed_messages_prey,"aescfp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_fail_absorbed_messages_prey,ABSORBED_ESCAPE_FAIL_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["escape_fail_absorbed_messages_owner"]))
-			var/new_escape_fail_absorbed_messages_owner = sanitize(jointext(belly_data["escape_fail_absorbed_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_escape_fail_absorbed_messages_owner = sanitize(jointext(belly_data["escape_fail_absorbed_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_escape_fail_absorbed_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_escape_fail_absorbed_messages_owner,"aescfo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_escape_fail_absorbed_messages_owner,ABSORBED_ESCAPE_FAIL_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["primary_transfer_messages_prey"]))
-			var/new_primary_transfer_messages_prey = sanitize(jointext(belly_data["primary_transfer_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_primary_transfer_messages_prey = sanitize(jointext(belly_data["primary_transfer_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_primary_transfer_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_primary_transfer_messages_prey,"trnspp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_primary_transfer_messages_prey,PRIMARY_TRANSFER_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["primary_transfer_messages_owner"]))
-			var/new_primary_transfer_messages_owner = sanitize(jointext(belly_data["primary_transfer_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_primary_transfer_messages_owner = sanitize(jointext(belly_data["primary_transfer_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_primary_transfer_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_primary_transfer_messages_owner,"trnspo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_primary_transfer_messages_owner,PRIMARY_TRANSFER_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["secondary_transfer_messages_prey"]))
-			var/new_secondary_transfer_messages_prey = sanitize(jointext(belly_data["secondary_transfer_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_secondary_transfer_messages_prey = sanitize(jointext(belly_data["secondary_transfer_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_secondary_transfer_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_secondary_transfer_messages_prey,"trnssp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_secondary_transfer_messages_prey,SECONDARY_TRANSFER_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["secondary_transfer_messages_owner"]))
-			var/new_secondary_transfer_messages_owner = sanitize(jointext(belly_data["secondary_transfer_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_secondary_transfer_messages_owner = sanitize(jointext(belly_data["secondary_transfer_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_secondary_transfer_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_secondary_transfer_messages_owner,"trnsso", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_secondary_transfer_messages_owner,SECONDARY_TRANSFER_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["primary_autotransfer_messages_prey"]))
-			var/new_primary_autotransfer_messages_prey = sanitize(jointext(belly_data["primary_autotransfer_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_primary_autotransfer_messages_prey = sanitize(jointext(belly_data["primary_autotransfer_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_primary_autotransfer_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_primary_autotransfer_messages_prey,"atrnspp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_primary_autotransfer_messages_prey,PRIMARY_AUTO_TRANSFER_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["primary_autotransfer_messages_owner"]))
-			var/new_primary_autotransfer_messages_owner = sanitize(jointext(belly_data["primary_autotransfer_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_primary_autotransfer_messages_owner = sanitize(jointext(belly_data["primary_autotransfer_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_primary_autotransfer_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_primary_autotransfer_messages_owner,"atrnspo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_primary_autotransfer_messages_owner,PRIMARY_AUTO_TRANSFER_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["secondary_autotransfer_messages_prey"]))
-			var/new_secondary_autotransfer_messages_prey = sanitize(jointext(belly_data["secondary_autotransfer_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_secondary_autotransfer_messages_prey = sanitize(jointext(belly_data["secondary_autotransfer_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_secondary_autotransfer_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_secondary_autotransfer_messages_prey,"atrnssp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_secondary_autotransfer_messages_prey,SECONDARY_AUTO_TRANSFER_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["secondary_autotransfer_messages_owner"]))
-			var/new_secondary_autotransfer_messages_owner = sanitize(jointext(belly_data["secondary_autotransfer_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_secondary_autotransfer_messages_owner = sanitize(jointext(belly_data["secondary_autotransfer_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_secondary_autotransfer_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_secondary_autotransfer_messages_owner,"atrnsso", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_secondary_autotransfer_messages_owner,SECONDARY_AUTO_TRANSFER_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["digest_chance_messages_prey"]))
-			var/new_digest_chance_messages_prey = sanitize(jointext(belly_data["digest_chance_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_digest_chance_messages_prey = sanitize(jointext(belly_data["digest_chance_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_digest_chance_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_digest_chance_messages_prey,"stmodp", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_digest_chance_messages_prey,DIGEST_CHANCE_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["digest_chance_messages_owner"]))
-			var/new_digest_chance_messages_owner = sanitize(jointext(belly_data["digest_chance_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_digest_chance_messages_owner = sanitize(jointext(belly_data["digest_chance_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_digest_chance_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_digest_chance_messages_owner,"stmodo", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_digest_chance_messages_owner,DIGEST_CHANCE_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["absorb_chance_messages_prey"]))
-			var/new_absorb_chance_messages_prey = sanitize(jointext(belly_data["absorb_chance_messages_prey"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_absorb_chance_messages_prey = sanitize(jointext(belly_data["absorb_chance_messages_prey"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_absorb_chance_messages_prey)
+<<<<<<< HEAD
 				new_belly.set_messages(new_absorb_chance_messages_prey,"stmoap", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_absorb_chance_messages_prey,ABSORB_CHANCE_PREY, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["absorb_chance_messages_owner"]))
-			var/new_absorb_chance_messages_owner = sanitize(jointext(belly_data["absorb_chance_messages_owner"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_absorb_chance_messages_owner = sanitize(jointext(belly_data["absorb_chance_messages_owner"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_absorb_chance_messages_owner)
+<<<<<<< HEAD
 				new_belly.set_messages(new_absorb_chance_messages_owner,"stmoao", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_absorb_chance_messages_owner,ABSORB_CHANCE_OWNER, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["examine_messages"]))
-			var/new_examine_messages = sanitize(jointext(belly_data["examine_messages"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_examine_messages = sanitize(jointext(belly_data["examine_messages"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_examine_messages)
+<<<<<<< HEAD
 				new_belly.set_messages(new_examine_messages,"em", limit = MAX_MESSAGE_LEN / 2)
+=======
+				new_belly.set_messages(new_examine_messages,EXAMINES, limit = BELLIES_EXAMINE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["examine_messages_absorbed"]))
-			var/new_examine_messages_absorbed = sanitize(jointext(belly_data["examine_messages_absorbed"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_examine_messages_absorbed = sanitize(jointext(belly_data["examine_messages_absorbed"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_examine_messages_absorbed)
+<<<<<<< HEAD
 				new_belly.set_messages(new_examine_messages_absorbed,"ema", limit = MAX_MESSAGE_LEN / 2)
+=======
+				new_belly.set_messages(new_examine_messages_absorbed,EXAMINES_ABSORBED, limit = BELLIES_EXAMINE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_digest"]))
-			var/new_emotes_digest = sanitize(jointext(belly_data["emotes_digest"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_digest = sanitize(jointext(belly_data["emotes_digest"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_digest)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_digest,"im_digest", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_digest,BELLY_MODE_DIGEST, limit = BELLIES_MESSAGE_MAX)
+
+		if(islist(belly_data["trash_eater_in"]))
+			var/new_trash_eater_in = sanitize(jointext(belly_data["trash_eater_in"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
+			if(new_trash_eater_in)
+				new_belly.set_messages(new_trash_eater_in ,BELLY_TRASH_EATER_IN, limit = BELLIES_EXAMINE_MAX)
+
+		if(islist(belly_data["trash_eater_out"]))
+			var/new_trash_eater_out = sanitize(jointext(belly_data["trash_eater_out"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
+			if(new_trash_eater_out)
+				new_belly.set_messages(new_trash_eater_out,BELLY_TRASH_EATER_OUT, limit = BELLIES_EXAMINE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_hold"]))
-			var/new_emotes_hold = sanitize(jointext(belly_data["emotes_hold"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_hold = sanitize(jointext(belly_data["emotes_hold"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_hold)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_hold,"im_hold", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_hold,BELLY_MODE_HOLD, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_holdabsorbed"]))
-			var/new_emotes_holdabsorbed = sanitize(jointext(belly_data["emotes_holdabsorbed"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_holdabsorbed = sanitize(jointext(belly_data["emotes_holdabsorbed"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_holdabsorbed)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_holdabsorbed,"im_holdabsorbed", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_holdabsorbed,BELLY_MODE_HOLD_ABSORB, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_absorb"]))
-			var/new_emotes_absorb = sanitize(jointext(belly_data["emotes_absorb"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_absorb = sanitize(jointext(belly_data["emotes_absorb"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_absorb)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_absorb,"im_absorb", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_absorb,BELLY_MODE_ABSORB, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_heal"]))
-			var/new_emotes_heal = sanitize(jointext(belly_data["emotes_heal"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_heal = sanitize(jointext(belly_data["emotes_heal"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_heal)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_heal,"im_heal", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_heal,BELLY_MODE_HEAL, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_drain"]))
-			var/new_emotes_drain = sanitize(jointext(belly_data["emotes_drain"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_drain = sanitize(jointext(belly_data["emotes_drain"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_drain)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_drain,"im_drain", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_drain,BELLY_MODE_DRAIN, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_steal"]))
-			var/new_emotes_steal = sanitize(jointext(belly_data["emotes_steal"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_steal = sanitize(jointext(belly_data["emotes_steal"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_steal)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_steal,"im_steal", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_steal,BELLY_MODE_STEAL, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_egg"]))
-			var/new_emotes_egg = sanitize(jointext(belly_data["emotes_egg"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_egg = sanitize(jointext(belly_data["emotes_egg"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_egg)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_egg,"im_egg", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_egg,BELLY_MODE_EGG, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_shrink"]))
-			var/new_emotes_shrink = sanitize(jointext(belly_data["emotes_shrink"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_shrink = sanitize(jointext(belly_data["emotes_shrink"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_shrink)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_shrink,"im_shrink", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_shrink,BELLY_MODE_SHRINK, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_grow"]))
-			var/new_emotes_grow = sanitize(jointext(belly_data["emotes_grow"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_grow = sanitize(jointext(belly_data["emotes_grow"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_grow)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_grow,"im_grow", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_grow,BELLY_MODE_GROW, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		if(islist(belly_data["emotes_unabsorb"]))
-			var/new_emotes_unabsorb = sanitize(jointext(belly_data["emotes_unabsorb"],"\n\n"),MAX_MESSAGE_LEN * 1.5,0,0,0)
+			var/new_emotes_unabsorb = sanitize(jointext(belly_data["emotes_unabsorb"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_emotes_unabsorb)
+<<<<<<< HEAD
 				new_belly.set_messages(new_emotes_unabsorb,"im_unabsorb", limit = MAX_MESSAGE_LEN / 4)
+=======
+				new_belly.set_messages(new_emotes_unabsorb,BELLY_MODE_UNABSORB, limit = BELLIES_IDLE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		// Options
 		if(isnum(belly_data["can_taste"]))
@@ -1148,30 +1366,34 @@
 				new_belly.liquid_fullness5_messages = TRUE
 
 		if(islist(belly_data["fullness1_messages"]))
-			var/new_fullness1_messages = sanitize(jointext(belly_data["fullness1_messages"],"\n\n"),MAX_MESSAGE_LEN,0,0,0)
+			var/new_fullness1_messages = sanitize(jointext(belly_data["fullness1_messages"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_fullness1_messages)
-				new_belly.set_reagent_messages(new_fullness1_messages,"full1")
+				new_belly.set_messages(new_fullness1_messages,BELLY_LIQUID_MESSAGE1, limit = BELLIES_MESSAGE_MAX)
 
 		if(islist(belly_data["fullness2_messages"]))
-			var/new_fullness2_messages = sanitize(jointext(belly_data["fullness2_messages"],"\n\n"),MAX_MESSAGE_LEN,0,0,0)
+			var/new_fullness2_messages = sanitize(jointext(belly_data["fullness2_messages"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_fullness2_messages)
-				new_belly.set_reagent_messages(new_fullness2_messages,"full2")
+				new_belly.set_messages(new_fullness2_messages,BELLY_LIQUID_MESSAGE2, limit = BELLIES_MESSAGE_MAX)
 
 		if(islist(belly_data["fullness3_messages"]))
-			var/new_fullness3_messages = sanitize(jointext(belly_data["fullness3_messages"],"\n\n"),MAX_MESSAGE_LEN,0,0,0)
+			var/new_fullness3_messages = sanitize(jointext(belly_data["fullness3_messages"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_fullness3_messages)
-				new_belly.set_reagent_messages(new_fullness3_messages,"full3")
+				new_belly.set_messages(new_fullness3_messages,BELLY_LIQUID_MESSAGE3, limit = BELLIES_MESSAGE_MAX)
 
 		if(islist(belly_data["fullness4_messages"]))
-			var/new_fullness4_messages = sanitize(jointext(belly_data["fullness4_messages"],"\n\n"),MAX_MESSAGE_LEN,0,0,0)
+			var/new_fullness4_messages = sanitize(jointext(belly_data["fullness4_messages"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_fullness4_messages)
-				new_belly.set_reagent_messages(new_fullness4_messages,"full4")
+				new_belly.set_messages(new_fullness4_messages,BELLY_LIQUID_MESSAGE4, limit = BELLIES_MESSAGE_MAX)
 
 		if(islist(belly_data["fullness5_messages"]))
-			var/new_fullness5_messages = sanitize(jointext(belly_data["fullness5_messages"],"\n\n"),MAX_MESSAGE_LEN,0,0,0)
+			var/new_fullness5_messages = sanitize(jointext(belly_data["fullness5_messages"],"\n\n"),BELLIES_MESSAGE_COMBINED,0,0,0)
 			if(new_fullness5_messages)
+<<<<<<< HEAD
 				new_belly.set_reagent_messages(new_fullness5_messages,"full5")
 		// CHOMPEnable End
+=======
+				new_belly.set_messages(new_fullness5_messages,BELLY_LIQUID_MESSAGE5, limit = BELLIES_MESSAGE_MAX)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 		// After import updates
 		new_belly.items_preserved.Cut()

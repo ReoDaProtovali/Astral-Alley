@@ -1,13 +1,17 @@
+<<<<<<< HEAD
 import { ReactNode, useEffect, useState } from 'react';
 import { useBackend } from 'tgui/backend';
+=======
+import { useState } from 'react';
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 import {
-  Box,
   Button,
   Dimmer,
   LabeledList,
   Section,
 } from 'tgui-core/components';
 
+<<<<<<< HEAD
 import { SYNTAX_COLOR, SYNTAX_REGEX } from '../constants';
 import type { Data, selectedData } from '../types';
 import { VoreSelectedBellyDescriptionsBellymode } from '../VoreSelectedBellyDescriptionTexts/VoreSelectedBellyDescriptionsBellymode';
@@ -58,20 +62,42 @@ export const VoreSelectedBellyDescriptions = (props: {
   const [showFormatHelp, setShowFormatHelp] = useState(false);
 
   const { belly } = props;
+=======
+import type { bellyDescriptionData } from '../types';
+import { VorePanelEditNumber } from '../VorePanelElements/VorePanelEditNumber';
+import { VorePanelEditSwitch } from '../VorePanelElements/VorePanelEditSwitch';
+import { VorePanelEditText } from '../VorePanelElements/VorePanelEditText';
+import { VoreSelectedBellyDescriptionMatrix } from './DescriptionTab/VoreSelectedBellyDescriptionMatrix';
+
+export const VoreSelectedBellyDescriptions = (props: {
+  editMode: boolean;
+  bellyDescriptionData: bellyDescriptionData;
+  vore_words: Record<string, string[]>;
+}) => {
+  const [showFormatHelp, setShowFormatHelp] = useState(false);
+
+  const { editMode, bellyDescriptionData, vore_words } = props;
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
   const {
     verb,
     release_verb,
-    desc,
-    absorbed_desc,
-    mode,
     message_mode,
+<<<<<<< HEAD
     escapable,
     interacts,
+=======
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
     emote_active,
-  } = belly;
+    emote_time,
+    show_liq_fullness,
+    entrance_logs,
+    item_digest_logs,
+    name_length,
+    name_min,
+  } = bellyDescriptionData;
 
   return (
-    <Box>
+    <>
       {showFormatHelp && (
         <Dimmer>
           <Section
@@ -126,6 +152,7 @@ export const VoreSelectedBellyDescriptions = (props: {
           </Section>
         </Dimmer>
       )}
+<<<<<<< HEAD
       <LabeledList>
         <LabeledList.Item label="Vore Verb">
           <Button onClick={() => act('set_attribute', { attribute: 'b_verb' })}>
@@ -254,5 +281,131 @@ export const VoreSelectedBellyDescriptions = (props: {
       <DescriptionSyntaxHighlighting desc={absorbed_desc} />
       <Box mb={2} />
     </Box>
+=======
+      <Stack fill vertical>
+        <Stack.Item>
+          <LabeledList>
+            <LabeledList.Item label="Vore Verb">
+              <VorePanelEditText
+                editMode={editMode}
+                limit={name_length}
+                min={name_min}
+                entry={verb}
+                action={'set_attribute'}
+                subAction={'b_verb'}
+                tooltip={
+                  'Adjust vore verb. [' +
+                  name_min +
+                  '-' +
+                  name_length +
+                  ' characters].'
+                }
+              />
+            </LabeledList.Item>
+            <LabeledList.Item label="Release Verb">
+              <VorePanelEditText
+                editMode={editMode}
+                limit={name_length}
+                min={name_min}
+                entry={release_verb}
+                action={'set_attribute'}
+                subAction={'b_release_verb'}
+                tooltip={
+                  'Adjust release verb. [' +
+                  name_min +
+                  '-' +
+                  name_length +
+                  ' characters].'
+                }
+              />
+            </LabeledList.Item>
+          </LabeledList>
+        </Stack.Item>
+        <Stack.Divider />
+        <Stack.Item>
+          <Stack fill>
+            <Stack.Item basis="49%" grow>
+              <LabeledList>
+                <LabeledList.Item label="Idle Emotes">
+                  <VorePanelEditSwitch
+                    action="set_attribute"
+                    subAction="b_emoteactive"
+                    editMode={editMode}
+                    active={!!emote_active}
+                    content={emote_active ? 'Active' : 'Inactive'}
+                    tooltip={
+                      (emote_active ? 'Dis' : 'En') + 'ables idle emotes.'
+                    }
+                  />
+                </LabeledList.Item>
+                <LabeledList.Item label="Idle Emote Delay">
+                  <VorePanelEditNumber
+                    action="set_attribute"
+                    subAction="b_emotetime"
+                    editMode={editMode}
+                    value={emote_time}
+                    unit="seconds"
+                    tooltip="Choose the period it takes for idle belly emotes to be shown to prey."
+                    maxValue={600}
+                    minValue={60}
+                  />
+                </LabeledList.Item>
+                <LabeledList.Item label="Liquid Fullness Examines">
+                  <VorePanelEditSwitch
+                    action="set_attribute"
+                    subAction="b_show_liq_fullness"
+                    editMode={editMode}
+                    active={!!show_liq_fullness}
+                    content={show_liq_fullness ? 'Active' : 'Inactive'}
+                    tooltip={
+                      (show_liq_fullness ? 'Dis' : 'En') +
+                      'ables liquid fullness examine messages.'
+                    }
+                  />
+                </LabeledList.Item>
+              </LabeledList>
+            </Stack.Item>
+            <Stack.Item basis="49%" grow>
+              <LabeledList>
+                <LabeledList.Item label="Entrance Logs">
+                  <VorePanelEditSwitch
+                    action="set_attribute"
+                    subAction="b_entrance_logs"
+                    editMode={editMode}
+                    active={!!entrance_logs}
+                    tooltip={
+                      (entrance_logs ? 'Dis' : 'En') +
+                      'ables auto transfer messages and spawn messages being shown to yourself.'
+                    }
+                  />
+                </LabeledList.Item>
+                <LabeledList.Item label="Item Digestion Logs">
+                  <VorePanelEditSwitch
+                    action="set_attribute"
+                    subAction="b_item_digest_logs"
+                    editMode={editMode}
+                    active={!!item_digest_logs}
+                    tooltip={
+                      (item_digest_logs ? 'Dis' : 'En') +
+                      'ables item digest messages being shown to yourself.'
+                    }
+                  />
+                </LabeledList.Item>
+              </LabeledList>
+            </Stack.Item>
+          </Stack>
+        </Stack.Item>
+        <Stack.Item grow>
+          <VoreSelectedBellyDescriptionMatrix
+            showAll={message_mode}
+            editMode={editMode}
+            bellyDescriptionData={bellyDescriptionData}
+            showFormatHelp={showFormatHelp}
+            onShowFormatHelp={setShowFormatHelp}
+          />
+        </Stack.Item>
+      </Stack>
+    </>
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
   );
 };

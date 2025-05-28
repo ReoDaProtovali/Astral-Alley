@@ -171,6 +171,7 @@
 	new_mob.selective_preference = selective_preference
 	new_mob.appendage_color = appendage_color
 	new_mob.appendage_alt_setting = appendage_alt_setting
+<<<<<<< HEAD
 	new_mob.drop_vore = drop_vore
 	new_mob.stumble_vore = stumble_vore
 	new_mob.slip_vore = slip_vore
@@ -188,6 +189,8 @@
 	new_mob.allow_mimicry = allow_mimicry
 	new_mob.text_warnings = text_warnings
 	new_mob.allow_mind_transfer = allow_mind_transfer
+=======
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 	//CHOMP stuff Start
 	new_mob.phase_vore = phase_vore

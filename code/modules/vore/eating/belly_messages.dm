@@ -321,9 +321,15 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 			raw_messages = escape_absorbed_messages_prey
 		if("aescout")
 			raw_messages = escape_absorbed_messages_outside
+<<<<<<< HEAD
 		if("aescfo")
 			raw_messages = escape_fail_absorbed_messages_owner
 		if("aescfp")
+=======
+		if(ABSORBED_ESCAPE_FAIL_OWNER)
+			raw_messages = escape_fail_absorbed_messages_owner
+		if(ABSORBED_ESCAPE_FAIL_PREY)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 			raw_messages = escape_fail_absorbed_messages_prey
 		if("trnspo")
 			raw_messages = primary_transfer_messages_owner
@@ -389,6 +395,24 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 			raw_messages = emote_lists[DM_GROW]
 		if("im_unabsorb")
 			raw_messages = emote_lists[DM_UNABSORB]
+<<<<<<< HEAD
+=======
+		if(BELLY_TRASH_EATER_IN)
+			raw_messages = trash_eater_in
+		if(BELLY_TRASH_EATER_OUT)
+			raw_messages = trash_eater_out
+		if(BELLY_LIQUID_MESSAGE1)
+			raw_messages = fullness1_messages
+		if(BELLY_LIQUID_MESSAGE2)
+			raw_messages = fullness2_messages
+		if(BELLY_LIQUID_MESSAGE3)
+			raw_messages = fullness3_messages
+		if(BELLY_LIQUID_MESSAGE4)
+			raw_messages = fullness4_messages
+		if(BELLY_LIQUID_MESSAGE5)
+			raw_messages = fullness5_messages
+
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 	var/messages = null
 	if(raw_messages)
 		messages = raw_messages.Join(delim)
@@ -405,11 +429,15 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 
 	var/list/raw_list
 
-	if(findtext(raw_text, delim))
-		raw_list = splittext(html_encode(raw_text), delim)
+	if(islist(raw_text))
+		raw_list = raw_text
+	else if(findtext(raw_text, delim))
+		raw_list = splittext(raw_text, delim)
 	else
 		raw_list = list(raw_text)
+
 	for(var/i = 1, i <= raw_list.len, i++)
+		raw_list[i] = html_encode(raw_list[i])
 		if(!length(raw_list[i]))
 			raw_list.Cut(i, i + 1)
 			i--
@@ -472,9 +500,15 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 			escape_absorbed_messages_prey = raw_list
 		if("aescout")
 			escape_absorbed_messages_outside = raw_list
+<<<<<<< HEAD
 		if("aescfo")
 			escape_fail_absorbed_messages_owner = raw_list
 		if("aescfp")
+=======
+		if(ABSORBED_ESCAPE_FAIL_OWNER)
+			escape_fail_absorbed_messages_owner = raw_list
+		if(ABSORBED_ESCAPE_FAIL_PREY)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 			escape_fail_absorbed_messages_prey = raw_list
 		if("trnspo")
 			primary_transfer_messages_owner = raw_list
@@ -540,3 +574,20 @@ GLOBAL_LIST_INIT(vore_words_snake, list("snake","serpent","reptilian","noodle","
 			emote_lists[DM_GROW] = raw_list
 		if("im_unabsorb")
 			emote_lists[DM_UNABSORB] = raw_list
+<<<<<<< HEAD
+=======
+		if(BELLY_TRASH_EATER_IN)
+			trash_eater_in = raw_list
+		if(BELLY_TRASH_EATER_OUT)
+			trash_eater_out = raw_list
+		if(BELLY_LIQUID_MESSAGE1)
+			fullness1_messages = raw_list
+		if(BELLY_LIQUID_MESSAGE2)
+			fullness2_messages = raw_list
+		if(BELLY_LIQUID_MESSAGE3)
+			fullness3_messages = raw_list
+		if(BELLY_LIQUID_MESSAGE4)
+			fullness4_messages = raw_list
+		if(BELLY_LIQUID_MESSAGE5)
+			fullness5_messages = raw_list
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))

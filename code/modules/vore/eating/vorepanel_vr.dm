@@ -2,6 +2,7 @@
 // Vore management panel for players
 //
 
+<<<<<<< HEAD
 /* //Chomp REMOVE - Use our solution, not upstream's
 //INSERT COLORIZE-ONLY STOMACHS HERE
 var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
@@ -20,6 +21,13 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 */ //Chomp REMOVE End
 
 #define VORE_RESIZE_COST 125 //CHOMPAdd
+=======
+#define STATION_PREF_NAME "Chomp" // CHOMPEdit
+#define VORE_BELLY_TAB 0
+#define SOULCATCHER_TAB 1
+#define GENERAL_TAB 2
+#define PREFERENCE_TAB 3
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 /mob
 	var/datum/vore_look/vorePanel
@@ -52,8 +60,20 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 	var/mob/host // Note, we do this in case we ever want to allow people to view others vore panels
 	var/unsaved_changes = FALSE
 	var/show_pictures = TRUE
+<<<<<<< HEAD
 	var/icon_overflow = FALSE //CHOMPEdit
 	var/max_icon_content = 21 //CHOMPedit: Contents above this disable icon mode. 21 for nice 3 rows to fill the default panel window.
+=======
+	var/icon_overflow = FALSE
+	var/max_icon_content = 21 //Contents above this disable icon mode. 21 for nice 3 rows to fill the default panel window.
+	var/active_tab = 0 // our current tab
+	var/active_vore_tab = 0 // our vore sub tab
+	var/message_option = 0 // our examine subtab
+	var/message_subtab // our examine subtab
+	var/sc_message_subtab // our soulcatcher message subtab
+	var/aset_message_subtab
+	var/selected_message
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 /datum/vore_look/New(mob/new_host)
 	if(istype(new_host))
@@ -130,7 +150,9 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 	if(!host)
 		return data
 
+	// General Data
 	data["unsaved_changes"] = unsaved_changes
+<<<<<<< HEAD
 	data["show_pictures"] = show_pictures
 	data["icon_overflow"] = icon_overflow //CHOMPEdit
 
@@ -610,6 +632,53 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 		"resize_cost" = VORE_RESIZE_COST
 	)
 	//CHOMPAdd End, Soulcatcher
+=======
+	data["active_tab"] = active_tab
+
+	// Inisde Data
+	data["inside"] = get_inside_data(host)
+
+	data["host_mobtype"] = null
+	data["show_pictures"] = null
+	data["icon_overflow"] = null
+	data["our_bellies"] = null
+	data["selected"] = null
+	data["soulcatcher"] = null
+	data["abilities"] = null
+	data["prefs"] = null
+	data["general_pref_data"] = null
+
+	if(active_tab == VORE_BELLY_TAB)
+		data["active_vore_tab"] = active_vore_tab
+		data["host_mobtype"] = get_host_mobtype(host)
+
+		// Content Data
+		data["show_pictures"] = show_pictures
+		data["icon_overflow"] = icon_overflow
+
+		// List of all our bellies
+		data["our_bellies"] = get_vorebellies(host)
+
+		// Selected belly data. TODO, split this into sub data per tab, we don't need all of this at once, ever!
+		data["selected"] = get_selected_data(host)
+
+	if(active_tab == SOULCATCHER_TAB)
+		// Soulcatcher and abilities
+		data["our_bellies"] = get_vorebellies(host, FALSE)
+		data["soulcatcher"] = get_soulcatcher_data(host)
+		data["abilities"] = get_ability_data(host)
+
+	if(active_tab == PREFERENCE_TAB)
+		// Preference data, we only ever need that when we go to the pref page!
+		data["prefs"] = get_preference_data(host)
+		// Content Data
+		data["show_pictures"] = show_pictures
+		data["icon_overflow"] = icon_overflow
+
+	if(active_tab == GENERAL_TAB)
+		data["general_pref_data"] = get_general_data(host)
+		data["our_bellies"] = get_vorebellies(host, FALSE)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 
 	return data
 
@@ -618,15 +687,53 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 		return TRUE
 
 	switch(action)
+		if("change_tab")
+			var/new_tab = params["tab"]
+			if(isnum(new_tab))
+				active_tab = new_tab
+			return TRUE
+
+		if("change_vore_tab")
+			var/new_tab = params["tab"]
+			if(isnum(new_tab))
+				active_vore_tab = new_tab
+			return TRUE
+
+		if("change_message_option")
+			var/new_tab = params["tab"]
+			if(isnum(new_tab))
+				message_option = new_tab
+				message_subtab = null
+				selected_message = null
+			return TRUE
+
+		if("change_message_type")
+			var/new_tab = params["tab"]
+			if(istext(new_tab))
+				message_subtab = new_tab
+				selected_message = null
+			return TRUE
+
+		if("set_current_message")
+			var/new_tab = params["tab"]
+			if(istext(new_tab))
+				selected_message = new_tab
+			return TRUE
+
+		if("change_sc_message_option")
+			var/new_tab = params["tab"]
+			if(istext(new_tab))
+				sc_message_subtab = new_tab
+			return TRUE
+
+		if("change_aset_message_option")
+			var/new_tab = params["tab"]
+			if(istext(new_tab))
+				aset_message_subtab = new_tab
+			return TRUE
+
 		if("show_pictures")
 			show_pictures = !show_pictures
-			return TRUE
-		if("int_help")
-			tgui_alert(ui.user, "These control how your belly responds to someone using 'resist' while inside you. The percent chance to trigger each is listed below, \
-					and you can change them to whatever you see fit. Setting them to 0% will disable the possibility of that interaction. \
-					These only function as long as interactions are turned on in general. Keep in mind, the 'belly mode' interactions (digest/absorb) \
-					will affect all prey in that belly, if one resists and triggers digestion/absorption. If multiple trigger at the same time, \
-					only the first in the order of 'Escape > Transfer > Absorb > Digest' will occur.","Interactions Help")
 			return TRUE
 
 		// Host is inside someone else, and is trying to interact with something else inside that person.
@@ -738,6 +845,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			exportPanel.open_export_panel(ui.user)
 
 			return TRUE
+<<<<<<< HEAD
 		//CHOMPEdit End
 		if("setflavor")
 			var/new_flavor = html_encode(tgui_input_text(ui.user,"What your character tastes like (400ch limit). This text will be printed to the pred after 'X tastes of...' so just put something like 'strawberries and cream':","Character Flavor",host.vore_taste))
@@ -749,18 +857,14 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				tgui_alert_async(ui.user, "Entered flavor/taste text too long. [FLAVOR_MAX] character limit.","Error!")
 				return FALSE
 			host.vore_taste = new_flavor
+=======
+		if(TASTE_FLAVOR)
+			host.vore_taste = sanitize(params["val"], FLAVOR_MAX, FALSE, TRUE, FALSE)
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 			unsaved_changes = TRUE
 			return TRUE
-		if("setsmell")
-			var/new_smell = html_encode(tgui_input_text(ui.user,"What your character smells like (400ch limit). This text will be printed to the pred after 'X smells of...' so just put something like 'strawberries and cream':","Character Smell",host.vore_smell))
-			if(!new_smell)
-				return FALSE
-
-			new_smell = readd_quotes(new_smell)
-			if(length(new_smell) > FLAVOR_MAX)
-				tgui_alert_async(ui.user, "Entered perfume/smell text too long. [FLAVOR_MAX] character limit.","Error!")
-				return FALSE
-			host.vore_smell = new_smell
+		if(SMELL_FLAVOR)
+			host.vore_smell = sanitize(params["val"], FLAVOR_MAX, FALSE, TRUE, FALSE)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_dropnom_pred")
@@ -904,8 +1008,6 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 		//CHOMPedit start: liquid belly code
 		if("liq_set_attribute")
 			return liq_set_attr(ui.user, params)
-		if("liq_set_messages")
-			return liq_set_msg(ui.user, params)
 		if("toggle_liq_rec")
 			host.receive_reagents = !host.receive_reagents
 			if(host.client.prefs_vr)
@@ -1005,24 +1107,34 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			unsaved_changes = TRUE
 			return TRUE
 		if("set_vs_color")
-			var/belly_choice = tgui_input_list(ui.user, "Which vore sprite are you going to edit the color of?", "Vore Sprite Color", host.vore_icon_bellies)
-			if(belly_choice)
-				var/newcolor = tgui_color_picker(ui.user, "Choose a color.", "", host.vore_sprite_color[belly_choice])
-				if(newcolor)
-					host.vore_sprite_color[belly_choice] = newcolor
-					var/multiply = tgui_input_list(ui.user, "Set the color to be applied multiplicatively or additively? Currently in [host.vore_sprite_multiply[belly_choice] ? "Multiply" : "Add"]", "Vore Sprite Color", list("Multiply", "Add"))
-					if(multiply == "Multiply")
-						host.vore_sprite_multiply[belly_choice] = TRUE
-					else if(multiply == "Add")
-						host.vore_sprite_multiply[belly_choice] = FALSE
-					host.update_icons_body()
-					unsaved_changes = TRUE
+			var/belly_choice = params["attribute"]
+			if(!(belly_choice in host.vore_icon_bellies))
+				return FALSE
+			var/newcolor = tgui_color_picker(ui.user, "Choose a color.", "", host.vore_sprite_color[belly_choice])
+			if(!newcolor)
+				return FALSE
+			host.vore_sprite_color[belly_choice] = newcolor
+			host.update_icons_body()
+			unsaved_changes = TRUE
+			return TRUE
+		if("toggle_vs_multiply")
+			var/belly_choice = params["attribute"]
+			if(!(belly_choice in host.vore_icon_bellies))
+				return FALSE
+			if(!host.vore_sprite_multiply[belly_choice])
+				host.vore_sprite_multiply[belly_choice] = TRUE
+			else
+				host.vore_sprite_multiply[belly_choice] = !host.vore_sprite_multiply[belly_choice]
+			host.update_icons_body()
+			unsaved_changes = TRUE
 			return TRUE
 		//CHOMPAdd start - vore sprites color
 		if("set_belly_rub")
-			host.belly_rub_target = tgui_input_list(ui.user, "Which belly would you prefer to be rubbed?","Select Target", host.vore_organs)
-			if(!(host.belly_rub_target))
+			var/rub_target = params["val"]
+			if(rub_target == "Current Selected")
 				host.belly_rub_target = null
+			else
+				host.belly_rub_target = rub_target
 			if(host.client.prefs_vr)
 				host.client.prefs_vr.belly_rub_target = host.belly_rub_target
 			unsaved_changes = TRUE
@@ -1140,9 +1252,11 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			unsaved_changes = TRUE
 			return TRUE
 		if("soulcatcher_sfx")
-			var/obj/belly = locate(params["selected_belly"])
-			if(istype(belly))
-				host.soulgem.update_linked_belly(belly)
+			var/obj/belly = locate(params["val"])
+			if(!istype(belly))
+				host.soulgem.update_linked_belly(null)
+				return TRUE
+			host.soulgem.update_linked_belly(belly)
 			unsaved_changes = TRUE
 			return TRUE
 		if("toggle_self_catching")
@@ -1186,56 +1300,46 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			unsaved_changes = TRUE
 			return TRUE
 		if("soulcatcher_rename")
-			var/new_name = tgui_input_text(host, "Adjust the name of your soulcatcher. Limit 60 chars.", \
-				"New Name", html_decode(host.soulgem.name), 60, prevent_enter = TRUE)
-			if(new_name)
-				unsaved_changes = TRUE
-				host.soulgem.rename(new_name)
+			var/new_name = params["val"]
+			if(!host.soulgem.rename(new_name))
+				return FALSE
+			unsaved_changes = TRUE
 			return TRUE
-		if("soulcatcher_interior_design")
-			var/new_flavor = tgui_input_text(host, "Type what the prey sees after being 'caught'. This will be \
-				printed after an intro set in the capture message to the prey. If you already \
-				have prey, this will be printed to them after the transit message. Limit [MAX_MESSAGE_LEN * 2] chars.", \
-				"VR Environment", html_decode(host.soulgem.inside_flavor), MAX_MESSAGE_LEN * 2, TRUE, prevent_enter = TRUE)
+		if(SC_INTERIOR_MESSAGE)
+			var/new_flavor = params["val"]
 			if(new_flavor)
 				unsaved_changes = TRUE
 				host.soulgem.adjust_interior(new_flavor)
 			return TRUE
-		if("soulcatcher_capture_message")
-			var/message = tgui_input_text(host, "Type what the prey sees while being 'caught'. This will be \
-				printed before the iterior design to the prey. Limit [MAX_MESSAGE_LEN / 4] chars.", \
-				"VR Capture", html_decode(host.soulgem.capture_message), MAX_MESSAGE_LEN / 4, TRUE, prevent_enter = TRUE)
+		if(SC_CAPTURE_MEESAGE)
+			var/message = params["val"]
 			if(message)
 				unsaved_changes = TRUE
-				host.soulgem.set_custom_message(message, "capture")
+				host.soulgem.set_custom_message(message, SC_CAPTURE_MEESAGE)
 			return TRUE
-		if("soulcatcher_transit_message")
-			var/message = tgui_input_text(host, "Type what the prey sees when you change the interior with them already captured. \
-				Limit [MAX_MESSAGE_LEN / 4] chars.", "VR Transit", html_decode(host.soulgem.transit_message), MAX_MESSAGE_LEN / 4, TRUE, prevent_enter = TRUE)
+		if(SC_TRANSIT_MESSAGE)
+			var/message = params["val"]
 			if(message)
 				unsaved_changes = TRUE
-				host.soulgem.set_custom_message(message, "transit")
+				host.soulgem.set_custom_message(message, SC_TRANSIT_MESSAGE)
 			return TRUE
-		if("soulcatcher_release_message")
-			var/message = tgui_input_text(host, "Type what the prey sees when they are released. \
-				Limit [MAX_MESSAGE_LEN / 4] chars.", "VR Release", html_decode(host.soulgem.release_message), MAX_MESSAGE_LEN / 4, TRUE, prevent_enter = TRUE)
+		if(SC_RELEASE_MESSAGE)
+			var/message = params["val"]
 			if(message)
 				unsaved_changes = TRUE
-				host.soulgem.set_custom_message(message, "release")
+				host.soulgem.set_custom_message(message, SC_RELEASE_MESSAGE)
 			return TRUE
-		if("soulcatcher_transfer_message")
-			var/message = tgui_input_text(host, "Type what the prey sees when they are transfered. \
-				Limit [MAX_MESSAGE_LEN / 4] chars.", "VR Transfer", html_decode(host.soulgem.transfer_message), MAX_MESSAGE_LEN / 4, TRUE, prevent_enter = TRUE)
+		if(SC_TRANSFERE_MESSAGE)
+			var/message = params["val"]
 			if(message)
 				unsaved_changes = TRUE
-				host.soulgem.set_custom_message(message, "transfer")
+				host.soulgem.set_custom_message(message, SC_TRANSFERE_MESSAGE)
 			return TRUE
-		if("soulcatcher_delete_message")
-			var/message = tgui_input_text(host, "Type what the prey sees when they are deleted. \
-				Limit [MAX_MESSAGE_LEN / 4] chars.", "VR Transfer", html_decode(host.soulgem.delete_message), MAX_MESSAGE_LEN / 4, TRUE, prevent_enter = TRUE)
+		if(SC_DELETE_MESSAGE)
+			var/message = params["val"]
 			if(message)
 				unsaved_changes = TRUE
-				host.soulgem.set_custom_message(message, "delete")
+				host.soulgem.set_custom_message(message, SC_DELETE_MESSAGE)
 			return TRUE
 		//CHOMPAdd end
 
@@ -1276,7 +1380,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			return TRUE
 
 	if(!isliving(target))
-		return
+		return FALSE
 
 	var/mob/living/M = target
 	switch(intent)
@@ -1329,12 +1433,9 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 
 	//Handle the [All] choice. Ugh inelegant. Someone make this pretty.
 	if(params["pickall"])
-		intent = tgui_alert(user, "Eject all, Move all?","Query",list("Eject all","Cancel","Move all"))
+		intent = params["intent"]
 		switch(intent)
-			if("Cancel")
-				return TRUE
-
-			if("Eject all")
+			if("eject_all")
 				if(host.stat)
 					to_chat(user,span_warning("You can't do that in your state!"))
 					return TRUE
@@ -1342,12 +1443,12 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				host.vore_selected.release_all_contents()
 				return TRUE
 
-			if("Move all")
+			if("move_all")
 				if(host.stat)
 					to_chat(user,span_warning("You can't do that in your state!"))
 					return TRUE
 
-				var/obj/belly/choice = tgui_input_list(user, "Move all where?","Select Belly", host.vore_organs)
+				var/obj/belly/choice = locate(params["val"])
 				if(!choice)
 					return FALSE
 
@@ -1357,7 +1458,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 					to_chat(host.vore_selected.get_belly_surrounding(target.contents),span_warning("You're squished along with [target] from [host]'s [lowertext(host.vore_selected)] to their [lowertext(choice.name)]!"))
 					host.vore_selected.transfer_contents(target, choice, 1)
 				return TRUE
-		return
+		return FALSE
 
 	var/atom/movable/target = locate(params["pick"])
 	if(!(target in host.vore_selected))
@@ -1465,10 +1566,10 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 
 			var/mob/living/carbon/human/H = target
 			if(!istype(H))
-				return
+				return FALSE
 
 			if(!H.allow_spontaneous_tf)
-				return
+				return FALSE
 
 			var/datum/tgui_module/appearance_changer/vore/V = new(host, H)
 			V.tgui_interact(user)
@@ -1646,27 +1747,27 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				process_options += "Cancel"
 			else
 				to_chat(user, span_vwarning("You cannot instantly process [ourtarget]."))
-				return
+				return FALSE
 
 			var/ourchoice = tgui_input_list(user, "How would you prefer to process \the [target]? This will perform the given action instantly if the prey accepts.","Instant Process", process_options)
 			if(!ourchoice)
-				return
+				return FALSE
 			if(!ourtarget.client)
 				to_chat(user, span_vwarning("You cannot instantly process [ourtarget]."))
-				return
+				return FALSE
 			var/obj/belly/b = ourtarget.loc
 			switch(ourchoice)
 				if("Digest")
 					if(ourtarget.absorbed)
 						to_chat(user, span_vwarning("\The [ourtarget] is absorbed, and cannot presently be digested."))
-						return
+						return FALSE
 					if(tgui_alert(ourtarget, "\The [user] is attempting to instantly digest you. Is this something you are okay with happening to you?","Instant Digest", list("No", "Yes")) != "Yes")
 						to_chat(user, span_vwarning("\The [ourtarget] declined your digest attempt."))
 						to_chat(ourtarget, span_vwarning("You declined the digest attempt."))
-						return
+						return FALSE
 					if(ourtarget.loc != b)
 						to_chat(user, span_vwarning("\The [ourtarget] is no longer in \the [b]."))
-						return
+						return FALSE
 					if(isliving(user))
 						var/mob/living/l = user
 						var/thismuch = ourtarget.health + 100
@@ -1687,10 +1788,10 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 					if(tgui_alert(ourtarget, "\The [user] is attempting to instantly absorb you. Is this something you are okay with happening to you?","Instant Absorb", list("No", "Yes")) != "Yes")
 						to_chat(user, span_vwarning("\The [ourtarget] declined your absorb attempt."))
 						to_chat(ourtarget, span_vwarning("You declined the absorb attempt."))
-						return
+						return FALSE
 					if(ourtarget.loc != b)
 						to_chat(user, span_vwarning("\The [ourtarget] is no longer in \the [b]."))
-						return
+						return FALSE
 					if(isliving(user))
 						var/mob/living/l = user
 						l.adjust_nutrition(ourtarget.nutrition)
@@ -1701,14 +1802,14 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 					if(tgui_alert(ourtarget, "\The [user] is attempting to instantly make you unconscious, you will be unable until ejected from the pred. Is this something you are okay with happening to you?","Instant Knockout", list("No", "Yes")) != "Yes")
 						to_chat(user, span_vwarning("\The [ourtarget] declined your knockout attempt."))
 						to_chat(ourtarget, span_vwarning("You declined the knockout attempt."))
-						return
+						return FALSE
 					if(ourtarget.loc != b)
 						to_chat(user, span_vwarning("\The [ourtarget] is no longer in \the [b]."))
-						return
+						return FALSE
 					ourtarget.AdjustSleeping(500000)
 					to_chat(ourtarget, span_vwarning("\The [user] has put you to sleep, you will remain unconscious until ejected from the belly."))
 				if("Cancel")
-					return
+					return FALSE
 		if("Health Check")
 			var/mob/living/carbon/human/H = target
 			var/target_health = round((H.health/H.getMaxHealth())*100)
@@ -1732,32 +1833,26 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				condition_consequences += "hear or do anything"
 			if(condition)
 				to_chat(user, span_vwarning("\The [target] is currently [condition], they will not be able to [condition_consequences]."))
-			return
+			return FALSE
 
+/datum/vore_look/proc/sanitize_fixed_list(var/list/messages, type, delim = "\n\n", limit)
+	if(!limit)
+		CRASH("[type] set message called without limit!")
+	VPPREF_MESSAGE_SANITY(type)
 
-/datum/vore_look/proc/set_attr(mob/user, params)
-	if(!host.vore_selected)
-		tgui_alert_async(user, "No belly selected to modify.")
-		return FALSE
-	var/attr = params["attribute"]
-	switch(attr)
-		if("b_name")
-			var/new_name = html_encode(tgui_input_text(user,"Belly's new name:","New Name"))
+	if(!islist(messages) || LAZYLEN(messages) != 10)
+		CRASH("[type] set message lists with invalid length!")
 
-			var/failure_msg
-			if(length(new_name) > BELLIES_NAME_MAX || length(new_name) < BELLIES_NAME_MIN)
-				failure_msg = "Entered belly name length invalid (must be longer than [BELLIES_NAME_MIN], no more than than [BELLIES_NAME_MAX])."
-			// else if(whatever) //Next test here.
-			else
-				for(var/obj/belly/B as anything in host.vore_organs)
-					if(lowertext(new_name) == lowertext(B.name))
-						failure_msg = "No duplicate belly names, please."
-						break
+	for(var/i = 1, i <= messages.len, i++)
+		messages[i] = sanitize(messages[i], limit, FALSE, TRUE, FALSE)
 
-			if(failure_msg) //Something went wrong.
-				tgui_alert_async(user,failure_msg,"Error!")
-				return FALSE
+	switch(type)
+		if(GENERAL_EXAMINE_NUTRI)
+			host.nutrition_messages = messages
+		if(GENERAL_EXAMINE_WEIGHT)
+			host.weight_messages = messages
 
+<<<<<<< HEAD
 			host.vore_selected.name = new_name
 			. = TRUE
 		if("b_message_mode")
@@ -3194,3 +3289,10 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 //CHOMPedit end
 
 #undef VORE_RESIZE_COST //CHOMPAdd
+=======
+#undef STATION_PREF_NAME
+#undef VORE_BELLY_TAB
+#undef SOULCATCHER_TAB
+#undef PREFERENCE_TAB
+#undef GENERAL_TAB
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))

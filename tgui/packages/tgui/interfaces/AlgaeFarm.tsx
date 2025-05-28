@@ -48,6 +48,7 @@ export const AlgaeFarm = (props) => {
   return (
     <Window width={500} height={300}>
       <Window.Content>
+<<<<<<< HEAD
         {errorText && (
           <NoticeBox warning>
             <Box inline verticalAlign="middle">
@@ -62,6 +63,31 @@ export const AlgaeFarm = (props) => {
               icon="power-off"
               selected={usePower === 2}
               onClick={() => act('toggle')}
+=======
+        <Stack fill vertical>
+          {errorText && (
+            <Stack.Item>
+              <NoticeBox>
+                <Box inline verticalAlign="middle">
+                  {errorText}
+                </Box>
+              </NoticeBox>
+            </Stack.Item>
+          )}
+          <Stack.Item grow>
+            <Section
+              title="Status"
+              fill
+              buttons={
+                <Button
+                  icon="power-off"
+                  selected={usePower === 2}
+                  onClick={() => act('toggle')}
+                >
+                  Processing
+                </Button>
+              }
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
             >
               Processing
             </Button>
