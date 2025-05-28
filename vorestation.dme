@@ -4613,7 +4613,16 @@
 #include "code\modules\vore\eating\vorehooks_vr.dm"
 #include "code\modules\vore\eating\vorepanel_ch.dm"
 #include "code\modules\vore\eating\vorepanel_vr.dm"
+<<<<<<< HEAD
 #include "code\modules\vore\fluffstuff\axisrus_yw.dm"
+=======
+#include "code\modules\vore\eating\panel_databackend\vorepanel_pref_data.dm"
+#include "code\modules\vore\eating\panel_databackend\vorepanel_set_attribute.dm"
+#include "code\modules\vore\eating\panel_databackend\vorepanel_set_liqattribute.dm"
+#include "code\modules\vore\eating\panel_databackend\vorepanel_soulcatcher_data.dm"
+#include "code\modules\vore\eating\panel_databackend\vorepanel_vore_data.dm"
+#include "code\modules\vore\eating\panel_databackend\vorepanel_vore_subdata.dm"
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
 #include "code\modules\vore\fluffstuff\custom_boxes_ch.dm"
 #include "code\modules\vore\fluffstuff\custom_boxes_vr.dm"
 #include "code\modules\vore\fluffstuff\custom_boxes_yw.dm"

@@ -3,8 +3,13 @@ import { Box, Button, Section, Stack } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
 import { capitalize } from 'tgui-core/string';
 
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesDevouring.tsx
 import { localPrefs } from '../types';
 import { VoreUserPreferenceItem } from '../VoreUserPreferenceItem';
+=======
+import type { localPrefs } from '../types';
+import { VoreUserPreferenceItem } from '../VorePanelElements/VoreUserPreferenceItem';
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961)):tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesDevouring.tsx
 
 export const VoreUserPreferencesDevouring = (props: {
   devourable: BooleanLike;

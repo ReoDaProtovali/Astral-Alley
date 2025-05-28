@@ -71,7 +71,11 @@ export const AlertModal = (props) => {
       <Window.Content onKeyDown={(e) => handleKeyDown(e)}>
         <Section fill>
           <Stack fill vertical>
+<<<<<<< HEAD
             <Stack.Item grow m={1}>
+=======
+            <Stack.Item m={1} grow>
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961))
               <Box color="label" overflow="hidden">
                 {message}
               </Box>

@@ -1,8 +1,13 @@
 import { Box, Section, Stack } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
 
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSpontaneous.tsx
 import { localPrefs } from '../types';
 import { VoreUserPreferenceItem } from '../VoreUserPreferenceItem';
+=======
+import type { localPrefs } from '../types';
+import { VoreUserPreferenceItem } from '../VorePanelElements/VoreUserPreferenceItem';
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961)):tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSpontaneous.tsx
 
 export const VoreUserPreferencesSpontaneous = (props: {
   can_be_drop_prey: BooleanLike;

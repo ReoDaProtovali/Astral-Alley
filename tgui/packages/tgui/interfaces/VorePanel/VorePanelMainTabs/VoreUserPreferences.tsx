@@ -1,19 +1,32 @@
-import { useBackend } from 'tgui/backend';
-import { Button, Divider, Section, Stack } from 'tgui-core/components';
+import { Section } from 'tgui-core/components';
 import type { BooleanLike } from 'tgui-core/react';
 
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferences.tsx
 import type { prefData } from './types';
 import { VoreUserPreferencesAesthetic } from './VoreUserPreferencesTabs/VoreUserPreferencesAesthetic ';
 import { VoreUserPreferencesMechanical } from './VoreUserPreferencesTabs/VoreUserPreferencesMechanical ';
+=======
+import { digestModeToColor } from '../constants';
+import type { localPrefs, prefData } from '../types';
+import { VoreUserPreferencesDevouring } from '../VoreUserPreferencesTabs/VoreUserPreferencesDevouring';
+import { VoreUserPreferencesMechanical } from '../VoreUserPreferencesTabs/VoreUserPreferencesMechanical';
+import { VoreUserPreferencesSoulcatcher } from '../VoreUserPreferencesTabs/VoreUserPreferencesSoulcatcher';
+import { VoreUserPreferencesSpawn } from '../VoreUserPreferencesTabs/VoreUserPreferencesSpawn';
+import { VoreUserPreferencesSpontaneous } from '../VoreUserPreferencesTabs/VoreUserPreferencesSpontaneous';
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreUserPreferences.tsx
 
 export const VoreUserPreferences = (props: {
   prefs: prefData;
   show_pictures: BooleanLike;
 }) => {
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferences.tsx
   const { act } = useBackend();
 
   const { prefs, show_pictures } = props;
 
+=======
+  const { prefs, show_pictures, icon_overflow } = props;
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreUserPreferences.tsx
   const {
     digestable,
     devourable,
@@ -29,6 +42,7 @@ export const VoreUserPreferences = (props: {
     allow_inbelly_spawning,
     allow_spontaneous_tf,
     allow_mind_transfer,
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferences.tsx
     step_mechanics_active,
     pickup_mechanics_active,
     noisy,
@@ -42,6 +56,27 @@ export const VoreUserPreferences = (props: {
     weight_message_visible,
     eating_privacy_global,
     allow_mimicry,
+=======
+    eating_privacy_global,
+    allow_mimicry,
+    strip_mechanics_active,
+    autotransferable,
+    liq_rec,
+    liq_giv,
+    liq_apply,
+    consume_liquid_belly,
+    no_spawnpred_warning,
+    no_spawnprey_warning,
+    no_spawnpred_warning_time,
+    no_spawnprey_warning_time,
+    no_spawnpred_warning_save,
+    no_spawnprey_warning_save,
+    selective_active,
+    soulcatcher_allow_capture,
+    soulcatcher_allow_transfer,
+    soulcatcher_allow_deletion,
+    soulcatcher_allow_takeover,
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreUserPreferences.tsx
   } = prefs;
 
   const preferences = {
@@ -384,6 +419,7 @@ export const VoreUserPreferences = (props: {
         disabled: 'Mind Transfer Disabled',
       },
     },
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferences.tsx
     examine_nutrition: {
       action: 'toggle_nutrition_ex',
       test: nutrition_message_visible,
@@ -408,6 +444,23 @@ export const VoreUserPreferences = (props: {
       content: {
         enabled: 'Examine Weight Messages Active',
         disabled: 'Examine Weight Messages Inactive',
+=======
+    strippref: {
+      action: 'toggle_strippref',
+      test: strip_mechanics_active,
+      tooltip: {
+        main: '',
+        enable:
+          'Regardless of Predator Setting, you will not be stripped inside their bellies.' +
+          ' Click this to allow stripping.',
+        disable:
+          'Your Predator must have this setting enabled in their belly modes to allow stripping your gear,' +
+          ' if they do not, they will not strip your gear, even with this on. Click to disable stripping.',
+      },
+      content: {
+        enabled: 'Allow Worn Item Stripping',
+        disabled: 'Do Not Allow Worn Item Stripping',
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreUserPreferences.tsx
       },
     },
     eating_privacy_global: {
@@ -447,6 +500,7 @@ export const VoreUserPreferences = (props: {
         show_pictures={show_pictures}
         preferences={preferences}
       />
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferences.tsx
       <VoreUserPreferencesAesthetic preferences={preferences} />
       <Divider />
       <Section>
@@ -472,6 +526,32 @@ export const VoreUserPreferences = (props: {
           </Stack.Item>
         </Stack>
       </Section>
+=======
+      <VoreUserPreferencesDevouring
+        devourable={devourable}
+        digestModeToColor={digestModeToColor}
+        selective_active={selective_active}
+        preferences={preferences}
+      />
+      <VoreUserPreferencesSpontaneous
+        can_be_drop_prey={can_be_drop_prey}
+        can_be_drop_pred={can_be_drop_pred}
+        preferences={preferences}
+      />
+      <VoreUserPreferencesSoulcatcher
+        soulcatcher_allow_capture={soulcatcher_allow_capture}
+        preferences={preferences}
+      />
+      <VoreUserPreferencesSpawn
+        latejoin_vore={latejoin_vore}
+        no_spawnpred_warning_time={no_spawnpred_warning_time}
+        preferences={preferences}
+        no_spawnpred_warning_save={no_spawnpred_warning_save}
+        latejoin_prey={latejoin_prey}
+        no_spawnprey_warning_time={no_spawnprey_warning_time}
+        no_spawnprey_warning_save={no_spawnprey_warning_save}
+      />
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961)):tgui/packages/tgui/interfaces/VorePanel/VorePanelMainTabs/VoreUserPreferences.tsx
     </Section>
   );
 };

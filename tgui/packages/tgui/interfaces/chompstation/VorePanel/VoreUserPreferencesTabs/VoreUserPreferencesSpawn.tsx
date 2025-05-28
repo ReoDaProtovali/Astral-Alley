@@ -2,8 +2,13 @@ import { useBackend } from 'tgui/backend';
 import { Box, Button, NumberInput, Section, Stack } from 'tgui-core/components';
 import { BooleanLike } from 'tgui-core/react';
 
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSpawn.tsx
 import { localPrefs } from '../types';
 import { VoreUserPreferenceItem } from '../VoreUserPreferenceItem';
+=======
+import type { localPrefs } from '../types';
+import { VoreUserPreferenceItem } from '../VorePanelElements/VoreUserPreferenceItem';
+>>>>>>> e707f50344 ([MIRROR] vorepanel reloaded (#10961)):tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesSpawn.tsx
 
 export const VoreUserPreferencesSpawn = (props: {
   latejoin_vore: BooleanLike;
