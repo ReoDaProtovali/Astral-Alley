@@ -253,7 +253,13 @@
 		/obj/item/sleevemate,
 		/obj/item/mass_spectrometer,
 		/obj/item/surgical,
+<<<<<<< HEAD
 		/obj/item/clothing/mask/chewable/candy/lolli // VOREstation edit end
+=======
+		/obj/item/clothing/mask/chewable/candy/lolli,
+		/obj/item/extrapolator,
+		/obj/item/gene_scanner,
+>>>>>>> 2b63c0d3b6 ([MIRROR] Gene Scanner Tool (#10953))
 		)
 
 /obj/item/storage/belt/medical/emt
