@@ -61,3 +61,48 @@
 		analyzing = FALSE
 		update_icon()
 		return
+<<<<<<< HEAD
+=======
+
+/obj/machinery/chemical_analyzer/attack_hand(mob/user)
+	if(!found_reagents.len)
+		return ..()
+	tgui_interact(user) // Show last analysis
+
+/obj/machinery/chemical_analyzer/tgui_interact(mob/user, datum/tgui/ui)
+	ui = SStgui.try_update_ui(user, src, ui)
+	if(!ui)
+		ui = new(user, src, "ChemAnalyzerPro", name)
+		ui.open()
+
+/obj/machinery/chemical_analyzer/tgui_data(mob/user)
+	var/list/data = list()
+
+	var/total_vol = 0
+	var/list/reagents_sent = list()
+	var/obj/item/reagent_containers/glass/beaker/large/beaker_path = /obj/item/reagent_containers/glass/beaker/large
+	for(var/ID in found_reagents)
+		var/datum/reagent/R = SSchemistry.chemical_reagents[ID]
+		if(!R)
+			continue
+		var/list/subdata = list()
+		subdata["title"] = R.name
+		SSinternal_wiki.add_icon(subdata, initial(beaker_path.icon), initial(beaker_path.icon_state), R.color)
+		// Get internal data
+		subdata["description"] = R.description
+		subdata["addictive"] = 0
+		if(R.id in get_addictive_reagents(ADDICT_ALL))
+			subdata["addictive"] = TRUE
+		subdata["flavor"] = R.taste_description
+		subdata["allergen"] = SSinternal_wiki.assemble_allergens(R.allergen_type)
+		subdata["beakerAmount"] = found_reagents[ID]
+		total_vol += found_reagents[ID]
+		SSinternal_wiki.assemble_reaction_data(subdata, R)
+		// Send as a big list of lists
+		reagents_sent += list(subdata)
+	data["scannedReagents"] = reagents_sent
+	data["beakerTotal"] = total_vol
+	data["beakerMax"] = initial(beaker_path.volume)
+
+	return data
+>>>>>>> dc9ccc60c2 ([MIRROR] Reagent Addictions (#10888))
