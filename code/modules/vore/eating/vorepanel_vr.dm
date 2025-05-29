@@ -131,8 +131,13 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 		return data
 
 	data["unsaved_changes"] = unsaved_changes
+<<<<<<< HEAD
 	data["show_pictures"] = show_pictures
 	data["icon_overflow"] = icon_overflow //CHOMPEdit
+=======
+	data["active_tab"] = active_tab
+	data["persist_edit_mode"] = host.persistend_edit_mode
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
 
 	var/atom/hostloc = host.loc
 	//CHOMPAdd Start - Allow VorePanel to show pred belly details even while indirectly inside
@@ -627,6 +632,10 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 					These only function as long as interactions are turned on in general. Keep in mind, the 'belly mode' interactions (digest/absorb) \
 					will affect all prey in that belly, if one resists and triggers digestion/absorption. If multiple trigger at the same time, \
 					only the first in the order of 'Escape > Transfer > Absorb > Digest' will occur.","Interactions Help")
+			return TRUE
+
+		if("toggle_editmode_persistence")
+			host.persistend_edit_mode = !host.persistend_edit_mode
 			return TRUE
 
 		// Host is inside someone else, and is trying to interact with something else inside that person.

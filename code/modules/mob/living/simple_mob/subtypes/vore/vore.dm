@@ -76,7 +76,11 @@
 	no_latejoin_prey_warning_persists = client.prefs_vr.no_latejoin_prey_warning_persists
 	belly_rub_target = client.prefs_vr.belly_rub_target
 	soulcatcher_pref_flags = client.prefs_vr.soulcatcher_pref_flags
+<<<<<<< HEAD
 	//CHOMP Stuff End
+=======
+	persistend_edit_mode = client.prefs_vr.persistend_edit_mode
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
 
 /mob/living/simple_mob/proc/set_name()
 	set name = "Set Name"

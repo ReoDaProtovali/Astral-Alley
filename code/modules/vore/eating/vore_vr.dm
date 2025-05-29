@@ -91,7 +91,11 @@ V::::::V           V::::::VO:::::::OOO:::::::ORR:::::R     R:::::REE::::::EEEEEE
 	var/belly_rub_target = null
 	var/soulcatcher_pref_flags = 0
 	var/list/soulcatcher_prefs = list()
+<<<<<<< HEAD
 	//CHOMP stuff end
+=======
+	var/persistend_edit_mode = FALSE
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
 
 	var/list/belly_prefs = list()
 	var/vore_taste = "nothing in particular"
@@ -248,7 +252,11 @@ V::::::V           V::::::VO:::::::OOO:::::::ORR:::::R     R:::::REE::::::EEEEEE
 	belly_rub_target = json_from_file["belly_rub_target"]
 	soulcatcher_pref_flags = json_from_file["soulcatcher_pref_flags"]
 	soulcatcher_prefs = json_from_file["soulcatcher_prefs"]
+<<<<<<< HEAD
 	//CHOMP stuff End
+=======
+	persistend_edit_mode = json_from_file["persistend_edit_mode"]
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
 
 	//Quick sanitize
 	if(isnull(digestable))
@@ -377,7 +385,12 @@ V::::::V           V::::::VO:::::::OOO:::::::ORR:::::R     R:::::REE::::::EEEEEE
 		soulcatcher_pref_flags = 0
 	if(isnull(soulcatcher_prefs))
 		soulcatcher_prefs = list()
+<<<<<<< HEAD
 	//CHOMP stuff End
+=======
+	if(isnull(persistend_edit_mode))
+		persistend_edit_mode = FALSE
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
 
 	return TRUE
 
@@ -429,6 +442,7 @@ V::::::V           V::::::VO:::::::OOO:::::::ORR:::::R     R:::::REE::::::EEEEEE
 			"eating_privacy_global"		= eating_privacy_global,
 			"vore_sprite_color"			= vore_sprite_color,
 			"allow_mimicry"				= allow_mimicry,
+<<<<<<< HEAD
 			"vore_sprite_multiply"		= vore_sprite_multiply, //CHOMPEdit
 			"strip_pref" 			= strip_pref, //CHOMPEdit
 			"no_latejoin_vore_warning"		= no_latejoin_vore_warning, //CHOMPEdit
@@ -440,6 +454,20 @@ V::::::V           V::::::VO:::::::OOO:::::::ORR:::::R     R:::::REE::::::EEEEEE
 			"belly_rub_target" = belly_rub_target, //CHOMPEdit
 			"soulcatcher_pref_flags" = soulcatcher_pref_flags, //CHOMPAdd
 			"soulcatcher_prefs"			= soulcatcher_prefs //CHOMPAdd
+=======
+			"vore_sprite_multiply"		= vore_sprite_multiply,
+			"strip_pref" 			= strip_pref,
+			"no_latejoin_vore_warning"		= no_latejoin_vore_warning,
+			"no_latejoin_prey_warning"		= no_latejoin_prey_warning,
+			"no_latejoin_vore_warning_time"		= no_latejoin_vore_warning_time,
+			"no_latejoin_prey_warning_time"		= no_latejoin_prey_warning_time,
+			"no_latejoin_vore_warning_persists"		= no_latejoin_vore_warning_persists,
+			"no_latejoin_prey_warning_persists"		= no_latejoin_prey_warning_persists,
+			"belly_rub_target" = belly_rub_target,
+			"soulcatcher_pref_flags" = soulcatcher_pref_flags,
+			"soulcatcher_prefs"			= soulcatcher_prefs,
+			"persistend_edit_mode" = persistend_edit_mode
+>>>>>>> 17a58042c3 ([MIRROR] vorepanel hotfix (#10970))
 		)
 
 	//List to JSON
