@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /datum/gear/suit/zaddat
 	sort_category = "Xenowear"
 	whitelisted = SPECIES_ZADDAT
@@ -213,6 +214,8 @@
 		cloaks[initial(cloak_type.name)] = cloak_type
 	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(cloaks))
 
+=======
+>>>>>>> 218458debc (Unneeded override removal (#10873))
 /datum/gear/uniform/harness_white
 	display_name = "white gear harness (Full Body Prosthetic, Diona)"
 	path = /obj/item/clothing/under/harness_white
