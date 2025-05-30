@@ -586,6 +586,12 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/ReleaseVirus,
 	/client/proc/add_hidden_area,
 	/client/proc/remove_hidden_area,
+<<<<<<< HEAD
+=======
+	/client/proc/hide_motion_tracker_feedback,
+	/client/proc/modify_event_collector,
+	/client/proc/induce_malfunction,
+>>>>>>> baaced85c4 ([MIRROR] Collector event machine (#10962))
 	/datum/admins/proc/quick_nif, //CHOMPStation Add,
 	/datum/admins/proc/quick_authentic_nif, //CHOMPStation add
 	/client/proc/reload_jobwhitelist, //ChompADD
