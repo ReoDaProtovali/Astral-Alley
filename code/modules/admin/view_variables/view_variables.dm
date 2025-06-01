@@ -1,3 +1,6 @@
+#define ICON_STATE_CHECKED 1 /// this dmi is checked. We don't check this one anymore.
+#define ICON_STATE_NULL 2 /// this dmi has null-named icon_state, allowing it to show a sprite on vv editor.
+
 /client/proc/debug_variables(datum/D in world)
 	set category = "Debug.Investigate"
 	set name = "View Variables"
@@ -11,8 +14,14 @@
 	if(!D)
 		return
 
-	var/islist = islist(D)
-	if (!islist && !istype(D))
+	var/dark = usr.client.prefs ? usr.client.prefs.read_preference(/datum/preference/toggle/holder/vv_dark) : TRUE
+	var/use_gfi = usr.client.prefs ? usr.client.prefs.read_preference(/datum/preference/toggle/holder/vv_gfi) : TRUE
+
+	var/datum/asset/asset_cache_datum = get_asset_datum(/datum/asset/simple/vv)
+	asset_cache_datum.send(usr)
+
+	var/islist = islist(D) || (!isdatum(D) && hascall(D, "Cut")) // Some special lists don't count as lists, but can be detected by if they have list procs
+	if(!islist && !isdatum(D))
 		return
 
 	//VOREStation Edit Start - the rest of this proc in a spawn
@@ -22,29 +31,57 @@
 		var/icon/sprite
 		var/hash
 
-		var/type = /list
-		if (!islist)
-			type = D.type
+		var/type = islist ? /list : D.type
+		var/no_icon = FALSE
 
-		if(istype(D, /atom))
+		if(isatom(D))
 			var/atom/AT = D
-			if(AT.icon && AT.icon_state)
+			if(use_gfi)
+				sprite = getFlatIcon(D)
+				if(!sprite)
+					no_icon = TRUE
+			else if(AT.icon && AT.icon_state)
 				sprite = new /icon(AT.icon, AT.icon_state)
-				hash = md5(AT.icon)
-				hash = md5(hash + AT.icon_state)
-				src << browse_rsc(sprite, "vv[hash].png")
+			else
+				no_icon = TRUE
+
+		else if(isimage(D))
+			// icon_state=null shows first image even if dmi has no icon_state for null name.
+			// This list remembers which dmi has null icon_state, to determine if icon_state=null should display a sprite
+			// (NOTE: icon_state="" is correct, but saying null is obvious)
+			var/static/list/dmi_nullstate_checklist = list()
+			var/image/image_object = D
+			var/icon_filename_text = "[image_object.icon]" // "icon(null)" type can exist. textifying filters it.
+			if(icon_filename_text)
+				if(image_object.icon_state)
+					sprite = icon(image_object.icon, image_object.icon_state)
+
+				else // it means: icon_state=""
+					if(!dmi_nullstate_checklist[icon_filename_text])
+						dmi_nullstate_checklist[icon_filename_text] = ICON_STATE_CHECKED
+						if(icon_exists(image_object.icon, ""))
+							// this dmi has nullstate. We'll allow "icon_state=null" to show image.
+							dmi_nullstate_checklist[icon_filename_text] = ICON_STATE_NULL
+
+					if(dmi_nullstate_checklist[icon_filename_text] == ICON_STATE_NULL)
+						sprite = icon(image_object.icon, image_object.icon_state)
+
+		var/sprite_text
+		if(sprite)
+			hash = md5(sprite)
+			src << browse_rsc(sprite, "vv[hash].png")
+			sprite_text = no_icon ? "\[NO ICON\]" : "<img src='vv[hash].png'></td><td>"
 
 		title = "[D] (\ref[D]) = [type]"
 		var/formatted_type = replacetext("[type]", "/", "<wbr>/")
 
-		var/sprite_text
-		if(sprite)
-			sprite_text = "<img src='vv[hash].png'></td><td>"
 		var/list/header = islist(D)? list(span_bold("/list")) : D.vv_get_header()
 
-		var/marked
+		var/ref_line = "@[copytext(refid, 2, -1)]" // get rid of the brackets, add a @ prefix for copy pasting in asay
+
+		var/marked_line
 		if(holder && holder.marked_datum && holder.marked_datum == D)
-			marked = VV_MSG_MARKED
+			marked_line = VV_MSG_MARKED
 		var/varedited_line = ""
 		if(!islist && (D.datum_flags & DF_VAR_EDITED))
 			varedited_line = VV_MSG_EDITED
@@ -84,25 +121,28 @@
 		//sleep(1)//For some reason, without this sleep, VVing will cause client to disconnect on certain objects. //VOREStation edit - commented out, replaced with spawn(0) above
 
 		var/list/variable_html = list()
-		if (islist)
+		if(islist)
 			var/list/L = D
 			for (var/i in 1 to L.len)
 				var/key = L[i]
 				var/value
-				if (IS_NORMAL_LIST(L) && IS_VALID_ASSOC_KEY(key))
+				if(IS_NORMAL_LIST(L) && IS_VALID_ASSOC_KEY(key))
 					value = L[key]
 				variable_html += debug_variable(i, value, 0, D)
 		else
-
 			names = sortList(names)
 			for (var/V in names)
 				if(D.can_vv_get(V))
 					variable_html += D.vv_get_var(V)
 
 		var/html = {"
-	<html>
+	<!DOCTYPE html>
+	<html class="[dark ? "dark" : ""]">
 		<head>
+			<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+			<meta charset="utf-8" />
 			<title>[title]</title>
+<<<<<<< HEAD
 			<style>
 				body {
 					font-family: Verdana, sans-serif;
@@ -113,6 +153,10 @@
 					font-size: 8pt;
 				}
 			</style>
+=======
+			<link rel="stylesheet" type="text/css" href="[SSassets.transport.get_asset_url("view_variables.css")]">
+			[!ui_scale && window_scaling ? "<style>body {zoom: [100 / window_scaling]%;}</style>" : ""]
+>>>>>>> 3118b7aad8 ([MIRROR] View Variables Dark Mode (#10987))
 		</head>
 		<body onload='selectTextField()' onkeydown='return handle_keydown()' onkeyup='handle_keyup()'>
 			<script type="text/javascript">
@@ -226,7 +270,12 @@
 							</table>
 							<div align='center'>
 								<b><font size='1'>[formatted_type]</font></b>
+<<<<<<< HEAD
 								<span id='marked'>[marked]</span>
+=======
+								<br><b><font size='1'>[ref_line]</font></b>
+								<span id='marked'>[marked_line]</span>
+>>>>>>> 3118b7aad8 ([MIRROR] View Variables Dark Mode (#10987))
 								<span id='varedited'>[varedited_line]</span>
 								<span id='deleted'>[deleted_line]</span>
 							</div>
@@ -249,11 +298,17 @@
 				</table>
 			</div>
 			<hr>
+<<<<<<< HEAD
 			<font size='1'>
 				<b>E</b> - Edit, tries to determine the variable type by itself.<br>
 				<b>C</b> - Change, asks you for the var type first.<br>
 				<b>M</b> - Mass modify: changes this variable for all objects of this type.<br>
 			</font>
+=======
+				<b>E</b> - Edit, tries to determine the variable type by itself.<br>
+				<b>C</b> - Change, asks you for the var type first.<br>
+				<b>M</b> - Mass modify: changes this variable for all objects of this type.<br>
+>>>>>>> 3118b7aad8 ([MIRROR] View Variables Dark Mode (#10987))
 			<hr>
 			<table width='100%'>
 				<tr>
@@ -283,3 +338,6 @@
 
 /client/proc/vv_update_display(datum/D, span, content)
 	src << output("[span]:[content]", "variables\ref[D].browser:replace_span")
+
+#undef ICON_STATE_CHECKED
+#undef ICON_STATE_NULL
