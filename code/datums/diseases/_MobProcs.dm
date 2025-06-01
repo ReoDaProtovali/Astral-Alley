@@ -5,6 +5,27 @@
 			return TRUE
 	return FALSE
 
+<<<<<<< HEAD
+=======
+/mob/proc/addDisease(datum/disease/D)
+	LAZYADD(viruses, D)
+	return TRUE
+
+/mob/proc/RemoveDisease(datum/disease/D)
+	LAZYREMOVE(viruses, D)
+	return TRUE
+
+/mob/proc/HasResistance(resistance)
+	if(LAZYFIND(resistances, resistance))
+		return TRUE
+	return FALSE
+
+/mob/proc/IsInfected()
+	if(isemptylist(GetViruses()))
+		return FALSE
+	return TRUE
+
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 /mob/proc/CanContractDisease(datum/disease/D)
 	if(stat == DEAD && !D.allow_dead)
 		return FALSE
@@ -15,8 +36,13 @@
 	if(HasDisease(D))
 		return FALSE
 
-	if(istype(D, /datum/disease/advance) && count_by_type(GetViruses(), /datum/disease/advance) > 0)
-		return FALSE
+	if(istype(D, /datum/disease/advance))
+		var/active_diseases = 0
+		for(var/datum/disease/AD in GetViruses())
+			if(!(AD.virus_modifiers & DORMANT)) // You can have as many dormant diseases as you want
+				active_diseases++
+		if(active_diseases > 0) // But ONLY one active disease
+			return FALSE
 
 	if(!(type in D.viable_mobtypes))
 		return -1
@@ -31,9 +57,10 @@
 /mob/proc/ContractDisease(datum/disease/D)
 	if(!CanContractDisease(D))
 		return 0
-	AddDisease(D)
+	D.infect(src)
 	return TRUE
 
+<<<<<<< HEAD
 /mob/proc/AddDisease(datum/disease/D, respect_carrier = FALSE)
 	var/datum/disease/DD = new D.type(1, D, 0)
 	DD.start_cure_timer()
@@ -56,6 +83,9 @@
 	log_admin("[key_name(src)] has contracted the virus \"[DD]\"")
 
 /mob/living/carbon/ContractDisease(datum/disease/D)
+=======
+/mob/living/carbon/human/ContractDisease(datum/disease/D, target_zone)
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 	if(!CanContractDisease(D))
 		return 0
 
@@ -124,14 +154,29 @@
 		passed = (prob((50*D.permeability_mod) -1))
 
 	if(passed)
+<<<<<<< HEAD
 		AddDisease(D)
 	return passed
+=======
+		D.infect(src)
+
+/mob/living/proc/AirborneContractDisease(datum/disease/D, force_spread)
+	if(((D.spread_flags & DISEASE_SPREAD_AIRBORNE) || force_spread) && prob(50*D.spreading_modifier) - 1)
+		ForceContractDisease(D)
+
+/mob/living/carbon/AirborneContractDisease(datum/disease/D, force_spread)
+	if(internal)
+		return
+	if(mNobreath in mutations)
+		return
+	..()
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 
 /mob/proc/ForceContractDisease(datum/disease/D, respect_carrier)
 	if(!CanContractDisease(D))
 		return FALSE
 
-	AddDisease(D, respect_carrier)
+	D.infect(src, respect_carrier)
 	return TRUE
 
 /mob/living/carbon/human/CanContractDisease(datum/disease/D)

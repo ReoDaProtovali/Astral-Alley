@@ -55,6 +55,8 @@ GLOBAL_LIST_INIT(advance_cures, list(
 /datum/disease/advance/stage_act()
 	if(!..())
 		return FALSE
+	if(global_flag_check(virus_modifiers, DORMANT))
+		return FALSE
 	if(symptoms && length(symptoms))
 
 		if(!s_processing)
@@ -88,8 +90,28 @@ GLOBAL_LIST_INIT(advance_cures, list(
 		remove_virus()
 	qdel(src)
 
+<<<<<<< HEAD
 /datum/disease/advance/Copy(process = 0)
 	return new /datum/disease/advance(process, src, 1)
+=======
+/datum/disease/advance/Copy()
+	var/datum/disease/advance/A = ..()
+	QDEL_LIST(A.symptoms)
+	for(var/datum/symptom/S as anything in symptoms)
+		A.symptoms += S.Copy()
+	A.virus_modifiers = virus_modifiers
+	A.spread_flags = spread_flags
+	A.disease_flags = disease_flags
+	A.resistance = resistance
+	A.stealth = stealth
+	A.stage_rate = stage_rate
+	A.transmission = transmission
+	A.severity = severity
+	A.speed = speed
+	A.id = id
+	A.Refresh()
+	return A
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 
 /datum/disease/advance/proc/Mix(datum/disease/advance/D)
 	if(!(IsSame(D)))
@@ -178,6 +200,7 @@ GLOBAL_LIST_INIT(advance_cures, list(
 		properties["transmittable"] += S.transmittable
 		properties["severity"] = max(properties["severity"], S.severity) // severity is based on the highest severity symptom
 
+<<<<<<< HEAD
 	return properties
 
 /datum/disease/advance/proc/AssignProperties(list/properties = list())
@@ -196,9 +219,14 @@ GLOBAL_LIST_INIT(advance_cures, list(
 		stage_prob = max(properties["stage rate"], 2)
 		SetSeverity(properties["severity"])
 		GenerateCure(properties)
+=======
+	if(global_flag_check(virus_modifiers, DORMANT) || stealth >= 2)
+		visibility_flags |= HIDDEN_SCANNER
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 	else
 		CRASH("Our properties were empty or null!")
 
+<<<<<<< HEAD
 /datum/disease/advance/proc/SetSpread(spread_id)
 	switch(spread_id)
 		if(NON_CONTAGIOUS, SPECIAL)
@@ -211,6 +239,33 @@ GLOBAL_LIST_INIT(advance_cures, list(
 			spread_text = "Blood"
 
 	spread_flags = spread_id
+=======
+	SetSpread()
+	permeability_mod = max(CEILING(0.4 * transmission, 1), 1)
+	cure_chance = 15 - clamp(resistance, -5, 5) // can be between 10 and 20
+	stage_prob = max(stage_rate, 2)
+	SetSeverity(severity)
+	GenerateCure()
+
+/datum/disease/advance/proc/SetSpread()
+	if(global_flag_check(virus_modifiers, FALTERED))
+		spread_flags = DISEASE_SPREAD_FALTERED
+		spread_text = "Intentional Injection"
+	if(global_flag_check(virus_modifiers, DORMANT))
+		spread_flags = DISEASE_SPREAD_NON_CONTAGIOUS
+		spread_text = "None"
+	else
+		switch(transmission)
+			if(-INFINITY to 5)
+				spread_flags = DISEASE_SPREAD_BLOOD
+				spread_text = "Blood"
+			if(6 to 10)
+				spread_flags = DISEASE_SPREAD_BLOOD | DISEASE_SPREAD_FLUIDS
+				spread_text = "Fluids"
+			if(11 to INFINITY)
+				spread_flags = DISEASE_SPREAD_BLOOD | DISEASE_SPREAD_FLUIDS | DISEASE_SPREAD_CONTACT
+				spread_text = "On Contact"
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 
 /datum/disease/advance/proc/SetSeverity(level_sev)
 
@@ -262,6 +317,26 @@ GLOBAL_LIST_INIT(advance_cures, list(
 			Refresh(1)
 	return
 
+<<<<<<< HEAD
+=======
+// Randomly neuter a symptom.
+/datum/disease/advance/proc/Neuter()
+	if(symptoms.len)
+		var/s = safepick(symptoms)
+		if(s)
+			NeuterSymptom(s)
+			Refresh(TRUE)
+
+// Falter the disease, making it non-spreadable.
+/datum/disease/advance/proc/Falter()
+	if(global_flag_check(virus_modifiers, FALTERED))
+		return
+	else
+		virus_modifiers |= FALTERED
+		spread_flags = DISEASE_SPREAD_BLOOD
+		spread_text = "Intentional Injection"
+
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 // Name the disease.
 /datum/disease/advance/proc/AssignName(name = "Unknown")
 	src.name = name
@@ -324,7 +399,12 @@ GLOBAL_LIST_INIT(advance_cures, list(
 
 	// Should be only 1 entry left, but if not let's only return a single entry
 	var/datum/disease/advance/to_return = pick(diseases)
+<<<<<<< HEAD
 	to_return.Refresh(1)
+=======
+	to_return.disease_flags &= ~DORMANT
+	to_return.Refresh(new_name = TRUE)
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 	return to_return
 
 /proc/SetViruses(datum/reagent/R, list/data)
@@ -395,6 +475,7 @@ GLOBAL_LIST_INIT(advance_cures, list(
 
 		return TRUE
 
+<<<<<<< HEAD
 /datum/disease/advance/proc/totalStageSpeed()
 	var/total_stage_speed = 0
 	for(var/i in symptoms)
@@ -422,3 +503,12 @@ GLOBAL_LIST_INIT(advance_cures, list(
 		var/datum/symptom/S = i
 		total_transmittable += S.transmittable
 	return total_transmittable
+=======
+/datum/disease/advance/infect(var/mob/living/infectee, make_copy = TRUE)
+	var/datum/disease/advance/A = make_copy ? Copy() : src
+	infectee.addDisease(A)
+	A.affected_mob = infectee
+	GLOB.active_diseases += A
+
+	log_admin("[key_name(src)] has contracted the virus \"[A]\"")
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))

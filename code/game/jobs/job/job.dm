@@ -66,6 +66,15 @@
 
 	var/requestable = TRUE
 
+<<<<<<< HEAD
+=======
+	VAR_PROTECTED/list/mail_goodies = null		  // Goodies that can be received via the mail system
+	VAR_PROTECTED/exclusive_mail_goodies = FALSE	  // If this job's mail goodies compete with generic goodies.
+	VAR_PROTECTED/mail_color = "#FFF"
+
+	var/list/symptoms // A list of symptoms that this job might have when we roll a dormant diseas.
+
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 /datum/job/New()
 	. = ..()
 	department_accounts = department_accounts || departments_managed
