@@ -95,6 +95,17 @@
 	if (body_color == "black")
 		holder_type = /obj/item/holder/mouse/black
 
+<<<<<<< HEAD
+=======
+	if(prob(40))
+		LAZYINITLIST(rat_diseases)
+		rat_diseases += new /datum/disease/advance/random(rand(1, 5), 9, 1)
+
+/mob/living/simple_mob/animal/passive/mouse/extrapolator_act(mob/living/user, obj/item/extrapolator/extrapolator, dry_run = FALSE)
+	. = ..()
+	EXTRAPOLATOR_ACT_ADD_DISEASES(., rat_diseases)
+
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 /mob/living/simple_mob/animal/passive/mouse/Crossed(atom/movable/AM as mob|obj)
 	if(AM.is_incorporeal())
 		return

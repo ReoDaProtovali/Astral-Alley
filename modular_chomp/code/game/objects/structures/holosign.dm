@@ -101,9 +101,15 @@
 /obj/structure/holosign/barrier/medical/proc/CheckHuman(mob/living/carbon/human/H)
 	if(istype(H.species, /datum/species/xenochimera))
 		return FALSE
+<<<<<<< HEAD:modular_chomp/code/game/objects/structures/holosign.dm
 	if(H.viruses)
 		for(var/datum/disease/D in H.viruses)
 			if(D.severity == NONTHREAT)
+=======
+	if(H.GetViruses())
+		for(var/datum/disease/D in H.GetSpreadableViruses())
+			if(D.danger == DISEASE_POSITIVE || D.danger == DISEASE_BENEFICIAL || D.disease_flags & DORMANT || D.spread_flags & DISEASE_SPREAD_FALTERED)
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985)):code/game/objects/structures/holosign.dm
 				continue
 			return FALSE
 	return TRUE

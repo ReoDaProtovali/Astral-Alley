@@ -44,6 +44,7 @@ Bonus
 	return
 
 /datum/symptom/fire/proc/Firestacks_stage_4(mob/living/M, datum/disease/advance/A)
+<<<<<<< HEAD
 	var/get_stacks = max((sqrtor0(20 + A.totalStageSpeed() * 2)) - (sqrtor0(16 + A.totalStealth())), 1)
 	M.adjust_fire_stacks(get_stacks)
 	M.adjustFireLoss(get_stacks * 0.5)
@@ -54,3 +55,17 @@ Bonus
 	M.adjust_fire_stacks(get_stacks)
 	M.adjustFireLoss(get_stacks)
 	return 1
+=======
+	M.adjust_fire_stacks(1 * power)
+	M.take_overall_damage(burn = 2 * power)
+	if(infective && !(A.spread_flags & DISEASE_SPREAD_FALTERED))
+		M.visible_message(span_danger("[M] bursts into flames, spreading burning sparks about the area!"))
+	return TRUE
+
+/datum/symptom/fire/proc/Firestacks_stage_5(mob/living/M, datum/disease/advance/A)
+	M.adjust_fire_stacks(3 * power)
+	M.take_overall_damage(burn = 5 * power)
+	if(infective && !(A.spread_flags & DISEASE_SPREAD_FALTERED))
+		M.visible_message(span_danger("[M] bursts into flames, spreading burning sparks about the area!"))
+	return TRUE
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))

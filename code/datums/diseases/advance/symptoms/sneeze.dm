@@ -32,6 +32,7 @@ Bonus
 		switch(A.stage)
 			if(1, 2, 3)
 				M.emote("sniff")
+<<<<<<< HEAD
 			else
 				M.emote("sneeze")
 				if(!M.wear_mask) // Spread only if they're not covering their face
@@ -42,6 +43,12 @@ Bonus
 					icky.viruses |= A.Copy()
 
 	return
+=======
+		else
+			M.emote("sneeze")
+			if(infective && !(A.spread_flags & DISEASE_SPREAD_FALTERED))
+				addtimer(CALLBACK(A, TYPE_PROC_REF(/datum/disease, spread), 4), 20)
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 
 /*
 //////////////////////////////////////

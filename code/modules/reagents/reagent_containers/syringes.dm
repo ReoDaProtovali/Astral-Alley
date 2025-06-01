@@ -38,8 +38,12 @@
 	drop_sound = 'sound/items/drop/glass.ogg'
 	pickup_sound = 'sound/items/pickup/glass.ogg'
 
+<<<<<<< HEAD
 
 /obj/item/reagent_containers/syringe/Initialize()
+=======
+/obj/item/reagent_containers/syringe/Initialize(mapload)
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 	. = ..()
 	update_icon()
 
@@ -490,6 +494,17 @@
 
 	icon_state = "[rounded_vol]"
 	item_state = "syringe_[rounded_vol]"
+
+/obj/item/reagent_containers/syringe/old
+	name = "old syringe"
+	desc = "An old, broken syringe. Are you sure it's a good idea to pick it up without gloves?"
+	mode = SYRINGE_BROKEN
+
+/obj/item/reagent_containers/syringe/old/Initialize(mapload)
+	. = ..()
+	if(prob(75))
+		var/datum/disease/advance/new_disease = new /datum/disease/advance/random(rand(1, 3), rand(7, 9), 2)
+		src.viruses += new_disease
 
 #undef SYRINGE_DRAW
 #undef SYRINGE_INJECT

@@ -63,7 +63,11 @@ BONUS
 
 	if(A.spread_flags & CONTACT_GENERAL)
 		for(var/datum/disease/D in M.GetViruses())
+<<<<<<< HEAD
 			if((D.spread_flags & SPECIAL) || (D.spread_flags & NON_CONTAGIOUS))
+=======
+			if((D.spread_flags & DISEASE_SPREAD_SPECIAL) || (D.spread_flags & DISEASE_SPREAD_CONTACT) || (D.spread_flags & DISEASE_SPREAD_FALTERED))
+>>>>>>> 05b57277bf ([MIRROR] Faltered & Dormant diseases update (#10985))
 				continue
 			if(D == A)
 				continue
