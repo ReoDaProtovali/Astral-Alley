@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /mob/living/carbon/human/verb/hide_headset()
 	set name = "Show/Hide Headset"
 	set category = "IC.Settings"
@@ -21,6 +22,8 @@
 	rest_dir = !rest_dir
 	update_transform(TRUE)
 
+=======
+>>>>>>> c8f4469b94 ([MIRROR] Converts cache to a GLOB. Other overlay tweaks (#10981))
 /mob/living/carbon/human/proc/synth_reag_toggle()
 	set name = "Toggle Reagent Processing"
 	set category = "Abilities.Vore"

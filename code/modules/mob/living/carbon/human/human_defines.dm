@@ -169,3 +169,10 @@
 
 	var/loneliness_stage = 0
 	var/next_loneliness_time = 0
+<<<<<<< HEAD
+=======
+
+	var/redgate_restricted = FALSE
+	var/hide_headset = FALSE
+	var/hide_glasses = FALSE
+>>>>>>> c8f4469b94 ([MIRROR] Converts cache to a GLOB. Other overlay tweaks (#10981))
