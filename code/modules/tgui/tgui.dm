@@ -261,7 +261,6 @@
 		"interface" = interface,
 		//"refreshing" = refreshing,
 		"refreshing" = FALSE,
-		"map" = (using_map && using_map.path) ? using_map.path : "Unknown",
 		"mapZLevel" = map_z_level,
 		"window" = list(
 			"key" = window_key,
