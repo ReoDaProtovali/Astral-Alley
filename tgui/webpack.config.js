@@ -80,6 +80,7 @@ module.exports = (env = {}, argv) => {
           ],
         },
         {
+<<<<<<< HEAD:tgui/webpack.config.js
           test: /\.(png|jpg|svg)$/,
           use: [
             {
@@ -90,6 +91,31 @@ module.exports = (env = {}, argv) => {
             },
           ],
         },
+=======
+          test: /\.(png|jpg)$/,
+          oneOf: [
+            {
+              issuer: /\.(s)?css$/,
+              type: 'asset/inline',
+            },
+            {
+              type: 'asset/resource',
+            },
+          ],
+        },
+        {
+          test: /\.svg$/,
+          oneOf: [
+            {
+              issuer: /\.(s)?css$/,
+              type: 'asset/inline',
+            },
+            {
+              type: 'asset/resource',
+            },
+          ],
+        },
+>>>>>>> c3b71b3d12 ([MIRROR] dependency cleanup and loader removal (#10995)):tgui/rspack.config.cjs
       ],
     },
     optimization: {
