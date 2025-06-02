@@ -27,6 +27,7 @@
 	drop_sound = 'sound/items/drop/device.ogg'
 	pickup_sound = 'sound/items/pickup/device.ogg'
 
+<<<<<<< HEAD
 /obj/item/soap
 	name = "soap"
 	desc = "A cheap bar of soap. Smells of lye."
@@ -138,6 +139,8 @@
 	desc = "Smells like honey."
 	icon_state = "golden_soap"
 
+=======
+>>>>>>> 4558eaab04 ([MIRROR] Soap & clean proc refactor  (#10989))
 /obj/item/bikehorn
 	name = "bike horn"
 	desc = "A horn off of a bicycle."
