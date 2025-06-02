@@ -13,6 +13,9 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 	var/age = 0
 	var/list/random_icon_states = list()
 
+	///The type of cleaning required to clean the decal, CLEAN_TYPE_LIGHT_DECAL can be cleaned with mops and soap, CLEAN_TYPE_HARD_DECAL can be cleaned by soap, see __DEFINES/cleaning.dm for the others
+	var/clean_type = CLEAN_TYPE_LIGHT_DECAL
+
 /obj/effect/decal/cleanable/Initialize(mapload, var/_age)
 	if(!isnull(_age))
 		age = _age
@@ -23,10 +26,18 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 	. = ..()
 	update_icon()
 
+/obj/effect/decal/cleanable/wash(clean_types)
+	. = ..()
+	if (. || (clean_types & clean_type))
+		qdel(src)
+		return TRUE
+	return .
+
 /obj/effect/decal/cleanable/Destroy()
 	SSpersistence.forget_value(src, /datum/persistent/filth)
 	. = ..()
 
+<<<<<<< HEAD
 /obj/effect/decal/cleanable/clean_blood(var/ignore = 0)
 	if(!ignore)
 		qdel(src)
@@ -37,6 +48,12 @@ generic_filth = TRUE means when the decal is saved, it will be switched out for 
 	if (random_icon_states && length(src.random_icon_states) > 0)
 		src.icon_state = pick(src.random_icon_states)
 	..()
+=======
+/obj/effect/decal/cleanable/Initialize(mapload, _age)
+	. = ..()
+	if (random_icon_states && length(random_icon_states) > 0)
+		icon_state = pick(random_icon_states)
+>>>>>>> 4558eaab04 ([MIRROR] Soap & clean proc refactor  (#10989))
 
 
 /obj/effect/decal/cleanable/update_icon()

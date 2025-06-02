@@ -14,6 +14,7 @@
 	if(isliving(AM))
 		var/mob/living/M = AM
 		M.slip("the [src.name]",4)
+<<<<<<< HEAD
 /*
  * Soap
  */
@@ -64,6 +65,8 @@
 		user.setClickCooldown(DEFAULT_QUICK_COOLDOWN) //prevent spam
 		return
 	..()
+=======
+>>>>>>> 4558eaab04 ([MIRROR] Soap & clean proc refactor  (#10989))
 
 /*
  * Bike Horns
