@@ -1216,6 +1216,7 @@
 	if(status_flags & GODMODE)
 		return 0	//godmode
 
+<<<<<<< HEAD
 	if(species.light_dam)
 		var/light_amount = 0
 		if(isturf(loc))
@@ -1231,6 +1232,8 @@
 			var/turf/T = loc
 			light_amount = T.get_lumcount() / 10
 		adjust_nutrition(light_amount)
+=======
+>>>>>>> c0112761bd ([MIRROR] Light-Based Damage Component For Zaddat and Shadows (#10908))
 	// nutrition decrease
 	if(nutrition <= 0 &&  species.shrinks && size_multiplier > RESIZE_TINY)
 		nutrition = 0.1
