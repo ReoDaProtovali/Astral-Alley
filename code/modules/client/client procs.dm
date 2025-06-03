@@ -253,6 +253,7 @@
 
 	// Instantiate tgui panel
 	tgui_say = new(src, "tgui_say")
+	tgui_shocker = new(src, "tgui_shock")
 	initialize_commandbar_spy()
 	tgui_panel = new(src, "browseroutput")
 
@@ -297,7 +298,11 @@
 
 	// Initialize tgui panel
 	tgui_say.initialize()
+<<<<<<< HEAD
 	tgui_panel.initialize()
+=======
+	tgui_shocker.initialize()
+>>>>>>> 74d886613b ([MIRROR] Add Multishock integration (#11003))
 
 	connection_time = world.time
 	connection_realtime = world.realtime
