@@ -73,7 +73,12 @@ GLOBAL_LIST_INIT(digest_modes, list())
 	L.adjustOxyLoss(B.digest_oxy)
 	L.adjustToxLoss(B.digest_tox)
 	L.adjustCloneLoss(B.digest_clone)
+<<<<<<< HEAD
 	//CHOMPEdit start - Send a message when a prey-thing enters hard crit.
+=======
+	L.attempt_multishock(SHOCKFLAG_DIGESTION)
+	// Send a message when a prey-thing enters hard crit.
+>>>>>>> 74d886613b ([MIRROR] Add Multishock integration (#11003))
 	if(iscarbon(L) && old_health > 0 && L.health <= 0)
 		to_chat(B.owner, span_notice("You feel [L] go still within your [lowertext(B.name)]."))
 	//CHOMPEdit end
