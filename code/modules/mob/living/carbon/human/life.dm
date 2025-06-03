@@ -1232,6 +1232,7 @@
 			light_amount = T.get_lumcount() / 10
 		adjust_nutrition(light_amount)
 	// nutrition decrease
+<<<<<<< HEAD
 	if(nutrition <= 0 &&  species.shrinks && size_multiplier > RESIZE_TINY)
 		nutrition = 0.1
 	if(nutrition > 0 && stat != DEAD)
@@ -1246,6 +1247,19 @@
 		if(nutrition < 50 && species.shrinks)
 			nutrition_reduction *= 0.3
 			resize(size_multiplier-0.01, animate = FALSE, uncapped = has_large_resize_bounds()) //Bringing this code in line with micro and macro shrooms
+=======
+	// Species controls hunger rate for humans, otherwise use defaults
+	if(nutrition > 0 && stat != DEAD)
+		var/nutrition_reduction = DEFAULT_HUNGER_FACTOR
+		nutrition_reduction = species.hunger_factor
+		// Modifiers can increase or decrease nutrition cost
+		for(var/datum/modifier/mod in modifiers)
+			if(!isnull(mod.metabolism_percent))
+				nutrition_reduction *= mod.metabolism_percent
+		var/datum/component/nutrition_size_change/comp = GetComponent(/datum/component/nutrition_size_change)
+		if(comp)
+			nutrition_reduction *= comp.get_nutrition_multiplier()
+>>>>>>> 991f558472 ([MIRROR] Nutrition fix (#11001))
 		adjust_nutrition(-nutrition_reduction)
 
 	if(noisy == TRUE && nutrition < 250 && prob(10))
