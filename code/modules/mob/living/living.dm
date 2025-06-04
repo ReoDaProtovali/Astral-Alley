@@ -989,12 +989,25 @@
 						else
 							T.add_vomit_floor(src, 1)
 
+<<<<<<< HEAD
 					if(blood_vomit)
 						if(getBruteLoss() < 50)
 							adjustBruteLoss(3)
 					else
 						adjust_nutrition(-40)
 						adjustToxLoss(-3)
+=======
+	if(distance)
+		for(var/i=0 to distance)
+			if(blood)
+				if(T)
+					blood_splatter(T, src, large = TRUE)
+				if(stun)
+					adjustBruteLoss(2)
+			else if(T)
+				T.add_vomit_floor(src, vomit_type, purge)
+			T = get_step(T, dir)
+>>>>>>> 6d73a10ec5 ([MIRROR] Bloody Vomit fix (#11006))
 
 		spawn(350)
 			lastpuke = 0
