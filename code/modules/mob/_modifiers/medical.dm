@@ -33,6 +33,18 @@
 	if(holder.stat != DEAD)
 		src.expire()
 
+<<<<<<< HEAD
+=======
+/datum/modifier/bloodpump_corpse/expire(silent)
+	human_being_pumped = null
+	..()
+
+//This INTENTIONALLY only happens on DEAD people. Alive people are metabolizing already (and can be healed quicker through things like brute packs) meaning they don't need this extra assistance!
+//Why does it not make you bleed out? Because we'll let medical have a few benefits that don't come with innate downsides. It takes 2 seconds to resleeve someone. It takes a good amount of time to repair a corpse. Let's make the latter more appealing.
+/datum/modifier/bloodpump_corpse/tick()
+	for(var/i in 1 to 5) //It's a controlled machine. 5 pumps per tick.
+		process_blood() // Circulates chemicals throughout the body.
+>>>>>>> c487e78339 ([MIRROR] Spooky/Horror modifier & various tweaks/fixes (#11004))
 /*
  * Modifiers caused by chemicals or organs specifically.
  */
