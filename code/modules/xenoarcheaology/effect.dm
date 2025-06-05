@@ -20,6 +20,11 @@
 
 	// The last time the effect was toggled.
 	var/last_activation = 0
+<<<<<<< HEAD
+=======
+	// If we can start activated or not! Note: This is only really disabled on artifacts that can REALLY do some MAJOR DAMAGE to the server itself. See: Atmos & temperature artifacts destroying an entire Z-level's atmos.
+	var/can_start_activated = TRUE
+>>>>>>> 05d03bf5ae ([MIRROR] Xenoarch adjustments (#11011))
 
 /datum/artifact_effect/Destroy()
 	master = null //Master still exists even if our effect gets destroyed. No need to qdel_null.
@@ -49,6 +54,7 @@
 	artifact_id = "[pick("kappa","sigma","antaeres","beta","omicron","iota","epsilon","omega","gamma","delta","tau","alpha")]-[rand(100,999)]"
 
 	//random charge time and distance
+<<<<<<< HEAD
 	switch(pick(100;1, 50;2, 25;3))
 		if(1)
 			//short range, short charge time
@@ -62,6 +68,32 @@
 			//large range, long charge time
 			chargelevelmax = rand(20, 120)
 			effectrange = rand(20, 100) //VOREStation Edit - Map size.
+=======
+	switch(effect)
+		if(EFFECT_PULSE)
+			switch(pick(100;1, 50;2, 25;3))
+				if(1)
+					//short range, short charge time
+					chargelevelmax = rand(3, 20)
+					effectrange = rand(1, 3)
+				if(2)
+					//medium range, medium charge time
+					chargelevelmax = rand(15, 40)
+					effectrange = rand(5, 15)
+				if(3)
+					//large range, long charge time
+					chargelevelmax = rand(20, 120)
+					effectrange = rand(20, 100)
+		if(EFFECT_AURA)
+			if(prob(1)) //1% chance for a BIG range.
+				effectrange = rand(1, 100)
+			else
+				effectrange = rand(2,7)
+		if(EFFECT_TOUCH)
+			effectrange = 1
+	if(can_start_activated && prob(50))
+		ToggleActivate(TRUE, TRUE)
+>>>>>>> 05d03bf5ae ([MIRROR] Xenoarch adjustments (#11011))
 
 /datum/artifact_effect/proc/ToggleActivate(var/reveal_toggle = 1)
 	//so that other stuff happens first
