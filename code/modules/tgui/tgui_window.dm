@@ -24,6 +24,7 @@
 	var/initial_inline_html
 	var/initial_inline_js
 	var/initial_inline_css
+<<<<<<< HEAD
 	var/mouse_event_macro_set = FALSE
 
 	/**
@@ -37,6 +38,10 @@
 		"Ctrl" = "byond/ctrldown",
 		"Ctrl+UP" = "byond/ctrlup",
 	)
+=======
+
+	var/list/oversized_payloads = list()
+>>>>>>> 05d03bf5ae ([MIRROR] Xenoarch adjustments (#11011))
 
 /**
  * public
@@ -233,8 +238,6 @@
 /datum/tgui_window/proc/close(can_be_suspended = TRUE, logout = FALSE)
 	if(!client)
 		return
-	if(mouse_event_macro_set)
-		remove_mouse_macro()
 	if(can_be_suspended && can_be_suspended())
 		#ifdef TGUI_DEBUGGING
 		log_tgui(client, "[id]/close: suspending")
@@ -406,6 +409,7 @@
 /datum/tgui_window/vv_edit_var(var_name, var_value)
 	return var_name != NAMEOF(src, id) && ..()
 
+<<<<<<< HEAD
 
 /datum/tgui_window/proc/set_mouse_macro()
 	if(mouse_event_macro_set)
@@ -434,3 +438,33 @@
 	for(var/mouseMacro in byondToTguiEventMap)
 		winset(client, null, "[mouseMacro]Window[id]Macro.parent=null")
 	mouse_event_macro_set = FALSE
+=======
+/datum/tgui_window/proc/create_oversized_payload(payload_id, message_type, chunk_count)
+	if(oversized_payloads[payload_id])
+		stack_trace("Attempted to create oversized tgui payload with duplicate ID.")
+		return
+	oversized_payloads[payload_id] = list(
+		"type" = message_type,
+		"count" = chunk_count,
+		"chunks" = list(),
+		"timeout" = addtimer(CALLBACK(src, PROC_REF(remove_oversized_payload), payload_id), 1 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+	)
+
+/datum/tgui_window/proc/append_payload_chunk(payload_id, chunk)
+	var/list/payload = oversized_payloads[payload_id]
+	if(!payload)
+		return
+	var/list/chunks = payload["chunks"]
+	chunks += chunk
+	if(length(chunks) >= payload["count"])
+		deltimer(payload["timeout"])
+		var/message_type = payload["type"]
+		var/final_payload = chunks.Join()
+		remove_oversized_payload(payload_id)
+		on_message(message_type, json_decode(final_payload), list("type" = message_type, "payload" = final_payload, "tgui" = TRUE, "window_id" = id))
+	else
+		payload["timeout"] = addtimer(CALLBACK(src, PROC_REF(remove_oversized_payload), payload_id), 1 SECONDS, TIMER_UNIQUE|TIMER_OVERRIDE|TIMER_STOPPABLE)
+
+/datum/tgui_window/proc/remove_oversized_payload(payload_id)
+	oversized_payloads -= payload_id
+>>>>>>> 05d03bf5ae ([MIRROR] Xenoarch adjustments (#11011))
