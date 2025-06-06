@@ -105,10 +105,15 @@ var/list/organ_cache = list()
 					if(E.internal_organs == null)
 						E.internal_organs = list()
 					E.internal_organs |= src
+<<<<<<< HEAD
 			if(dna)
 				if(!blood_DNA)
 					blood_DNA = list()
 				blood_DNA[dna.unique_enzymes] = dna.b_type
+=======
+			if(data)
+				add_blooddna_organ(data)
+>>>>>>> d7cd22d2d0 ([MIRROR] Forensics Datum (#11015))
 	else
 		species = GLOB.all_species["Human"]
 
@@ -131,10 +136,16 @@ var/list/organ_cache = list()
 
 /obj/item/organ/proc/set_dna(var/datum/dna/new_dna)
 	if(new_dna)
+<<<<<<< HEAD
 		qdel_swap(dna, new_dna.Clone())
 		if(blood_DNA)
 			blood_DNA.Cut()
 			blood_DNA[dna.unique_enzymes] = dna.b_type
+=======
+		data.setup_from_dna(new_dna)
+		forensic_data?.clear_blooddna()
+		add_blooddna_organ(data)
+>>>>>>> d7cd22d2d0 ([MIRROR] Forensics Datum (#11015))
 
 /obj/item/organ/proc/die()
 	if(robotic < ORGAN_ROBOT)
@@ -463,10 +474,8 @@ var/list/organ_cache = list()
 
 	// Pass over the blood.
 	reagents.trans_to(O, reagents.total_volume)
-
-	if(fingerprints) O.fingerprints = fingerprints.Copy()
-	if(fingerprintshidden) O.fingerprintshidden = fingerprintshidden.Copy()
-	if(fingerprintslast) O.fingerprintslast = fingerprintslast
+	transfer_fingerprints_to(O)
+	transfer_blooddna_to(O)
 
 	user.put_in_active_hand(O)
 	qdel(src)

@@ -528,6 +528,7 @@
 			throw EXCEPTION("Shelter template ([template_id]) not found!")
 			return FALSE
 
+<<<<<<< HEAD
 	var/turf/deploy_location = get_turf(src)
 	var/status = template.check_deploy(deploy_location)
 
@@ -808,3 +809,12 @@
 
 	for(var/obj/effect/abstract/dark_maw/dm in SK.active_dark_maws)
 		dm.dispel()
+=======
+	log_admin("[key_name_admin(src)] was stunned out of phase at [T.x],[T.y],[T.z] by [dephaser.name], last touched by [dephaser.forensic_data?.get_lastprint()].")
+	message_admins("[key_name_admin(src)] was stunned out of phase at [T.x],[T.y],[T.z] by [dephaser.name], last touched by [dephaser.forensic_data?.get_lastprint()]. (<A href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[T.x];Y=[T.y];Z=[T.z]'>JMP</a>)", 1)
+	// start the dephase
+	phase_in(T)
+	shadekin_adjust_energy(-20) // loss of energy for the interception
+	// apply a little extra stun for good measure
+	src.Weaken(3)
+>>>>>>> d7cd22d2d0 ([MIRROR] Forensics Datum (#11015))
