@@ -367,6 +367,7 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 /obj/structure/janitorialcart/ex_act(severity)
 	spill(100 / severity)
 	..()
+<<<<<<< HEAD
 
 
 
@@ -501,3 +502,5 @@ GLOBAL_LIST_BOILERPLATE(all_janitorial_carts, /obj/structure/janitorialcart)
 	icon = 'icons/obj/vehicles.dmi'
 	icon_state = "keys"
 	w_class = ITEMSIZE_TINY
+=======
+>>>>>>> 66987cb756 ([MIRROR] New Janicart (#11016))

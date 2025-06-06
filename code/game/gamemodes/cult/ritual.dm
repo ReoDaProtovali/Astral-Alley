@@ -608,3 +608,9 @@ var/global/list/rnwords = list("ire","ego","nahlizet","certum","veri","jatkaa","
 				R.word3=cultwords["technology"]
 				R.loc = user.loc
 				R.check_icon()
+
+/obj/effect/rune/wash(clean_types)
+	. = ..()
+	if (. || (clean_types & CLEAN_TYPE_RUNES))
+		qdel(src)
+		return TRUE
