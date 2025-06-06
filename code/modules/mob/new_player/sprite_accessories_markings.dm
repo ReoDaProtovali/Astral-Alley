@@ -2654,3 +2654,70 @@ includes scars and tattoos
 	icon_state = "digigradient"
 	color_blend_mode = ICON_MULTIPLY
 	body_parts = list(BP_L_LEG,BP_L_FOOT,BP_R_LEG,BP_R_FOOT)
+<<<<<<< HEAD
+=======
+
+/datum/sprite_accessory/marking/digi/hooves
+	name = "Digitigrade Hooves (Only works with digitigrade legs)"
+	icon_state = "deerhoof"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_L_FOOT,BP_R_FOOT)
+
+/datum/sprite_accessory/marking/digi/fox
+	name = "Digitigrade fox legs (Only works with digitigrade legs)"
+	icon_state = "fox"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_L_LEG,BP_L_FOOT,BP_R_LEG,BP_R_FOOT)
+
+/datum/sprite_accessory/marking/digi/tiger
+	name = "Digitigrade tiger legs (Only works with digitigrade legs)"
+	icon_state = "tiger"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_L_LEG,BP_L_FOOT,BP_R_LEG,BP_R_FOOT)
+
+/datum/sprite_accessory/marking/digi/gloss
+	name = "Digitigrade leg and foot gloss (Only works with digitigrade legs)"
+	icon_state = "gloss"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_L_LEG,BP_L_FOOT,BP_R_LEG,BP_R_FOOT)
+
+//Big Leggies!
+/datum/sprite_accessory/marking/bigleggy
+	name = "Big Leggies - Legs"
+	icon_state = "bigleggy"
+	color_blend_mode = ICON_MULTIPLY
+	body_parts = list(BP_R_LEG, BP_L_LEG)
+	digitigrade_acceptance = MARKING_DIGITIGRADE_ONLY
+	hide_body_parts = list(BP_R_LEG, BP_L_LEG)
+	digitigrade_icon = 'icons/mob/human_races/markings.dmi'
+
+/datum/sprite_accessory/marking/bigleggy/stanced
+	name = "Big Leggies - Legs (Stanced)"
+	icon_state = "bigleggy_stanced"
+
+/datum/sprite_accessory/marking/bigleggy/feet
+	name = "Big Leggies - Feet"
+	icon_state = "bigleggy_markings"
+	body_parts = list(BP_R_FOOT, BP_L_FOOT)
+	hide_body_parts = list(BP_R_FOOT, BP_L_FOOT)
+
+/datum/sprite_accessory/marking/bigleggy/feet/stanced
+	name = "Big Leggies - Feet (Stanced)"
+	icon_state = "bigleggy_markings_stanced"
+
+/datum/sprite_accessory/marking/bigleggy/feet/bird
+	name = "Big Leggies - Feet (Bird)"
+	icon_state = "bigleggy_m_bird"
+
+/datum/sprite_accessory/marking/bigleggy/feet/bird/stanced
+	name = "Big Leggies - Feet (Bird, Stanced)"
+	icon_state = "bigleggy_m_bird_stanced"
+
+//Big leggy end!
+
+/datum/sprite_accessory/marking/moth_eyes
+	name = "Moth Eyes"
+	icon_state = "motheyes"
+	color_blend_mode = ICON_ADD
+	body_parts = list(BP_HEAD)
+>>>>>>> 74ff3c7d7d ([MIRROR] implements unused digi leggies (#11012))
