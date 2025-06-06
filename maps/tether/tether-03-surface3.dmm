@@ -7357,6 +7357,20 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/pool)
 "alC" = (
+<<<<<<< HEAD
+=======
+/obj/structure/grille,
+/obj/structure/window/reinforced/polarized/full{
+	id = "massage"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/crew_quarters/sauna)
+"alE" = (
+/obj/machinery/camera/network/civilian,
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
@@ -34290,6 +34304,14 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/tether/surfacebase/topairlock)
+<<<<<<< HEAD
+=======
+"bjh" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/item/towel/random,
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/recreation_area_restroom)
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 "bji" = (
 /obj/structure/table/bench/sifwooden/padded,
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
@@ -34447,6 +34469,41 @@
 /obj/item/denecrotizer/medical,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/storage)
+<<<<<<< HEAD
+=======
+"bjC" = (
+/obj/item/radio/intercom{
+	pixel_y = -24
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/gym)
+"bjD" = (
+/obj/machinery/door/airlock/multi_tile/metal{
+	dir = 1;
+	name = "Gym"
+	},
+/obj/machinery/door/firedoor,
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/recreation_area_restroom)
+"bjE" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/machinery/light{
+	dir = 4
+	},
+/obj/item/towel/random,
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/recreation_area_restroom)
+"bjF" = (
+/obj/machinery/alarm{
+	dir = 4;
+	pixel_x = -23
+	},
+/turf/simulated/floor/tiled,
+/area/crew_quarters/gym)
+"bjG" = (
+/turf/simulated/floor/tiled,
+/area/crew_quarters/gym)
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 "bjH" = (
 /obj/machinery/light{
 	dir = 1
@@ -34523,6 +34580,26 @@
 /obj/structure/medical_stand,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/surgery2)
+<<<<<<< HEAD
+=======
+"bka" = (
+/obj/structure/closet/secure_closet/personal,
+/obj/structure/sign/poster{
+	dir = 4
+	},
+/obj/item/towel/random,
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/recreation_area_restroom)
+"bkb" = (
+/obj/machinery/door/firedoor,
+/obj/structure/grille,
+/obj/structure/window/reinforced/full,
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/crew_quarters/gym)
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 "bkc" = (
 /obj/structure/disposalpipe/segment{
 	dir = 2;
@@ -35557,6 +35634,20 @@
 /obj/machinery/door/firedoor/multi_tile,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/storage)
+<<<<<<< HEAD
+=======
+"bmF" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 5
+	},
+/obj/machinery/button/windowtint{
+	pixel_x = -9;
+	pixel_y = -27;
+	id = "massage"
+	},
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/sauna)
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 "bmG" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 5
@@ -35668,6 +35759,44 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
+<<<<<<< HEAD
+=======
+"bmR" = (
+/obj/machinery/door/airlock{
+	id_tag = "massage_room";
+	name = "Massage Room"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/sauna)
+"bmS" = (
+/obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/supply{
+	dir = 4
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/sauna)
+"bmT" = (
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/closet/walllocker_double/generic_civ/east,
+/obj/item/towel/random,
+/obj/item/towel/random,
+/obj/item/towel/random,
+/obj/item/towel/random,
+/obj/item/towel/random,
+/obj/item/towel/random,
+/turf/simulated/floor/wood,
+/area/crew_quarters/sauna)
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 "bmU" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -35711,6 +35840,27 @@
 	},
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/triage)
+<<<<<<< HEAD
+=======
+"bmZ" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/sauna)
+"bna" = (
+/obj/structure/bed/roller/massage,
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/sauna)
+"bnb" = (
+/obj/machinery/button/remote/airlock{
+	dir = 8;
+	id = "session_room";
+	pixel_x = 26;
+	specialfunctions = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/sauna)
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 "bnc" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
@@ -35824,6 +35974,33 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/admin)
+<<<<<<< HEAD
+=======
+"bnv" = (
+/obj/structure/undies_wardrobe,
+/obj/machinery/light/small{
+	dir = 1
+	},
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/sauna)
+"bnw" = (
+/obj/structure/table/woodentable,
+/obj/item/clothing/under/bathrobe,
+/obj/item/towel,
+/obj/machinery/atmospherics/unary/vent_scrubber/on,
+/turf/simulated/floor/wood/alt/parquet,
+/area/crew_quarters/sauna)
+"bnx" = (
+/obj/effect/floor_decal/spline/plain/corner,
+/turf/simulated/floor/water/pool,
+/area/crew_quarters/pool)
+"bny" = (
+/obj/effect/floor_decal/spline/plain{
+	dir = 4
+	},
+/turf/simulated/floor/water/pool,
+/area/crew_quarters/recreation_area)
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 "bnz" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/smartfridge/chemistry,
@@ -40164,6 +40341,7 @@
 /turf/simulated/floor/tiled,
 /area/hallway/lower/third_south)
 "llQ" = (
+<<<<<<< HEAD
 /obj/structure/sink{
 	dir = 8;
 	pixel_x = -12;
@@ -40177,6 +40355,9 @@
 /obj/machinery/vending/wallmed1/public{
 	pixel_y = 28
 	},
+=======
+/obj/structure/closet/athletic_swimwear,
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 /turf/simulated/floor/tiled/white,
 /area/crew_quarters/recreation_area_restroom)
 "lmq" = (
@@ -49186,6 +49367,7 @@ aac
 aac
 aac
 aac
+<<<<<<< HEAD
 aac
 aac
 aac
@@ -49195,6 +49377,17 @@ aac
 aac
 aac
 aac
+=======
+bly
+alC
+alC
+alC
+bly
+bly
+blY
+bly
+bly
+>>>>>>> 2004ee908d ([MIRROR] Slight tether pool area update (#11013))
 aac
 aac
 aac
