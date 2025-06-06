@@ -174,8 +174,82 @@ export type prefData = {
   weight_messages: string[];
   eating_privacy_global: BooleanLike;
   allow_mimicry: BooleanLike;
+<<<<<<< HEAD
   vore_sprite_color: { stomach: string; 'taur belly': string };
   vore_sprite_multiply: { stomach: BooleanLike; 'taur belly': BooleanLike };
+=======
+  soulcatcher_allow_capture: BooleanLike;
+  soulcatcher_allow_transfer: BooleanLike;
+  soulcatcher_allow_deletion: BooleanLike;
+  soulcatcher_allow_takeover: BooleanLike;
+};
+
+export type scMessageData = {
+  sc_subtab: string;
+  possible_messages: string[];
+  max_length: number;
+  active_message: string;
+  set_action: string;
+  tooltip: string;
+};
+
+export type soulcatcherData = {
+  active: BooleanLike;
+  name: string;
+  caught_souls: DropdownEntry[];
+  selected_sfx: string | null;
+  selected_soul: string;
+  sc_message_data: scMessageData;
+  catch_self: BooleanLike;
+  taken_over: BooleanLike;
+  catch_prey: BooleanLike;
+  catch_drain: BooleanLike;
+  catch_ghost: BooleanLike;
+  ext_hearing: BooleanLike;
+  ext_vision: BooleanLike;
+  mind_backups: BooleanLike;
+  sr_projecting: BooleanLike;
+  show_vore_sfx: BooleanLike;
+  see_sr_projecting: BooleanLike;
+};
+
+export type DropdownEntry = {
+  displayText: string;
+  value: string;
+};
+
+export type checkBoxEntry = {
+  label: string;
+  selection: BooleanLike;
+  ref?: string;
+};
+
+export type generalPrefData = {
+  active_belly: string | null;
+  belly_rub_target: string | null;
+  aestethic_messages: aestMessageData;
+  vore_sprite_color: Record<string, string | undefined>;
+  vore_sprite_multiply: Record<string, BooleanLike>;
+  vore_icon_options: string[];
+};
+
+export type aestMessageData = {
+  possible_messages: string[];
+  aest_subtab: string;
+  max_length: number;
+  active_message:
+    | string
+    | string[]
+    | null
+    | Record<string | number, string | number>; // The record is an ancient data corruption, it's not valid!
+  set_action: string;
+  tooltip: string;
+  sub_action?: string;
+  button_action?: string;
+  button_data?: BooleanLike;
+  button_label?: string;
+  button_tooltip?: string;
+>>>>>>> 0fc7bb29d1 ([MIRROR] browse to browser part 1 (#11017))
 };
 
 export type localPrefs = {

@@ -25,4 +25,6 @@
 	for(var/entry in chemical_reaction_logs)
 		html += "[entry]<br>"
 
-	usr << browse("<html>[html]</html>", "window=chemlogs")
+	var/datum/browser/popup = new(usr, "chemlogs", "Chemlogs")
+	popup.set_content(html)
+	popup.open()
