@@ -22444,6 +22444,10 @@
 /obj/effect/floor_decal/techfloor/hole/right{
 	dir = 4
 	},
+/obj/structure/table/rack,
+/obj/random/maintenance/clean,
+/obj/random/maintenance/clean,
+/obj/random/maintenance/clean,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "aOM" = (
@@ -23157,10 +23161,6 @@
 /obj/effect/floor_decal/corner_techfloor_grid{
 	dir = 10
 	},
-/obj/structure/table/rack,
-/obj/random/maintenance/clean,
-/obj/random/maintenance/clean,
-/obj/random/maintenance/clean,
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
 "aQm" = (
@@ -23490,6 +23490,9 @@
 	name = "east bump";
 	pixel_x = 28
 	},
+/obj/effect/floor_decal/borderfloor/corner2{
+	dir = 5
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/east_stairs_two)
 "aQZ" = (
@@ -23772,15 +23775,6 @@
 /obj/structure/disposalpipe/segment,
 /obj/structure/cable{
 	icon_state = "1-2"
-	},
-/turf/simulated/floor/tiled/techmaint,
-/area/tether/surfacebase/east_stairs_two)
-"aRA" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 4
-	},
-/obj/machinery/atmospherics/unary/vent_pump/on{
-	dir = 8
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/east_stairs_two)
@@ -24167,20 +24161,14 @@
 /obj/structure/cable{
 	icon_state = "1-2"
 	},
+/obj/machinery/camera/network/tether{
+	dir = 4
+	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/east_stairs_two)
 "aSm" = (
-/obj/effect/floor_decal/borderfloor{
-	dir = 4
-	},
-/obj/machinery/camera/network/tether{
-	dir = 9
-	},
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
-	},
-/obj/effect/floor_decal/borderfloor/corner2{
-	dir = 5
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/tether/surfacebase/east_stairs_two)
@@ -24578,19 +24566,21 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
-/obj/machinery/door/firedoor/glass,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/catwalk,
-/obj/machinery/door/airlock/maintenance/common,
-/turf/simulated/floor/tiled/techfloor/grid,
-/area/tether/surfacebase/east_stairs_two)
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id = "janitor_garage";
+	layer = 3.3;
+	name = "Janitorial Shutters"
+	},
+/turf/simulated/floor/tiled,
+/area/janitor)
 "aTd" = (
-/obj/structure/catwalk,
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 4
 	},
@@ -24603,51 +24593,18 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/structure/extinguisher_cabinet{
-	pixel_y = 30
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/lower/south)
-"aTe" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/supply{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/alarm{
-	pixel_y = 22
-	},
-/turf/simulated/floor/plating,
-/area/maintenance/lower/south)
-"aTf" = (
-/obj/structure/catwalk,
-/obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
-	dir = 4
-	},
-/obj/machinery/atmospherics/pipe/simple/visible/supply{
-	dir = 4
-	},
-/obj/structure/disposalpipe/segment{
-	dir = 4
-	},
-/obj/structure/cable{
-	icon_state = "4-8"
-	},
-/obj/machinery/light/small{
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
+/obj/machinery/button/remote/blast_door{
+	id = "janitor_garage";
+	name = "Desk Shutters";
+	pixel_x = -4;
+	pixel_y = -26;
 	dir = 1
 	},
-/turf/simulated/floor/plating,
-/area/maintenance/lower/south)
-"aTg" = (
-/obj/structure/catwalk,
+/turf/simulated/floor/tiled/techmaint,
+/area/janitor)
+"aTe" = (
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 4
 	},
@@ -24660,11 +24617,56 @@
 /obj/structure/cable{
 	icon_state = "4-8"
 	},
-/obj/machinery/status_display{
-	pixel_y = 30
+/obj/effect/floor_decal/borderfloor,
+/obj/effect/floor_decal/corner/purple/border,
+/turf/simulated/floor/tiled/techmaint,
+/area/janitor)
+"aTf" = (
+/obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
+	dir = 4
 	},
-/turf/simulated/floor/plating,
-/area/maintenance/lower/south)
+/obj/machinery/atmospherics/pipe/simple/visible/supply{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 6
+	},
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 6
+	},
+/obj/machinery/light_switch{
+	dir = 1;
+	pixel_x = 2;
+	pixel_y = -28
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/janitor)
+"aTg" = (
+/obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/visible/supply{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/machinery/door/firedoor/glass,
+/obj/machinery/door/airlock/maintenance{
+	name = "Custodial Maintenance";
+	req_access = list(26)
+	},
+/turf/simulated/floor/tiled/techfloor,
+/area/janitor)
 "aTh" = (
 /obj/machinery/atmospherics/pipe/simple/visible/scrubbers{
 	dir = 4
@@ -24672,7 +24674,6 @@
 /obj/machinery/atmospherics/pipe/simple/visible/supply{
 	dir = 4
 	},
-/obj/machinery/door/firedoor/glass,
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
@@ -24680,7 +24681,6 @@
 	icon_state = "4-8"
 	},
 /obj/structure/catwalk,
-/obj/machinery/door/airlock/maintenance/common,
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/lower/south)
 "aTi" = (
@@ -25072,11 +25072,56 @@
 "aUc" = (
 /turf/simulated/wall,
 /area/janitor)
+<<<<<<< HEAD
+=======
+"aUd" = (
+/obj/effect/floor_decal/techfloor,
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/north)
+"aUe" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/mining)
+"aUf" = (
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor,
+/area/maintenance/lower/north)
+"aUg" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/tiled/techfloor,
+/area/maintenance/lower/north)
+"aUh" = (
+/obj/machinery/door/airlock{
+	name = "Custodial Closet";
+	req_access = list(26)
+	},
+/turf/simulated/floor/tiled,
+/area/janitor)
+"aUi" = (
+/obj/machinery/door/blast/shutters{
+	dir = 8;
+	id = "janitor_garage";
+	layer = 3.3;
+	name = "Janitorial Shutters"
+	},
+/turf/simulated/floor/tiled,
+/area/janitor)
+>>>>>>> 49893fb953 ([MIRROR] Janicart spawns (#11018))
 "aUj" = (
 /obj/machinery/door/airlock/maintenance/common,
 /obj/machinery/door/firedoor/glass,
 /turf/simulated/floor/plating,
 /area/maintenance/asmaint2)
+"aUk" = (
+/turf/simulated/floor/tiled/techmaint,
+/area/janitor)
+"aUl" = (
+/obj/vehicle/train/engine/janicart{
+	dir = 8
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/janitor)
 "aUm" = (
 /turf/simulated/wall,
 /area/rnd/breakroom/bathroom)
@@ -25096,12 +25141,37 @@
 /obj/structure/bookcase/manuals/research_and_development,
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
+"aUp" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 4
+	},
+/obj/item/key/janicart,
+/obj/structure/closet/walllocker_double/generic_civ/east{
+	name = "Janicart keys"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/janitor)
 "aUq" = (
 /obj/machinery/camera/network/research{
 	dir = 1
 	},
 /turf/simulated/floor/wood,
 /area/rnd/breakroom)
+"aUr" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/janitor)
 "aUs" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 10
@@ -25270,6 +25340,18 @@
 /obj/machinery/floodlight,
 /turf/simulated/floor/plating,
 /area/engineering/atmos/storage)
+"aUE" = (
+/obj/machinery/alarm{
+	pixel_y = 22
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/janitor)
 "aUF" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
 /obj/structure/dispenser,
@@ -25285,6 +25367,31 @@
 /obj/machinery/power/thermoregulator,
 /turf/simulated/floor/plating,
 /area/engineering/atmos/storage)
+"aUH" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 5
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/janitor)
+"aUI" = (
+/obj/machinery/door/airlock/maintenance/common,
+/obj/structure/catwalk,
+/obj/machinery/door/firedoor/glass,
+/turf/simulated/floor/plating,
+/area/maintenance/lower/south)
+"aUJ" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/structure/catwalk,
+/turf/simulated/floor/plating,
+/area/maintenance/lower/south)
 "aUK" = (
 /obj/effect/floor_decal/borderfloor{
 	dir = 8
@@ -25305,9 +25412,6 @@
 /turf/simulated/floor/tiled,
 /area/janitor)
 "aUM" = (
-/obj/machinery/newscaster{
-	pixel_y = 32
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 1
 	},
@@ -25367,6 +25471,9 @@
 /obj/effect/floor_decal/corner/purple/border{
 	dir = 5
 	},
+/obj/machinery/newscaster{
+	pixel_y = 32
+	},
 /turf/simulated/floor/tiled,
 /area/janitor)
 "aUR" = (
@@ -25378,6 +25485,13 @@
 	dir = 6
 	},
 /obj/structure/disposalpipe/segment,
+/turf/simulated/floor/plating,
+/area/maintenance/lower/south)
+"aUS" = (
+/obj/structure/extinguisher_cabinet{
+	pixel_y = 30
+	},
+/obj/structure/catwalk,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/south)
 "aUW" = (
@@ -26630,7 +26744,7 @@
 	dir = 10
 	},
 /obj/machinery/button/remote/blast_door{
-	id = "janitor_blast";
+	id = "janitor_garage";
 	name = "Desk Shutters";
 	pixel_x = -22
 	},
@@ -33130,6 +33244,9 @@
 	},
 /obj/effect/landmark{
 	name = "maint_pred"
+	},
+/obj/machinery/status_display{
+	pixel_y = 30
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/maintenance/lower/south)
@@ -47646,7 +47763,7 @@ aNV
 jcd
 aNV
 aQY
-aRA
+aZS
 aSm
 aTb
 aUb
@@ -47785,11 +47902,11 @@ aMG
 aNo
 aNo
 aNo
-aNo
-aNo
-aNo
-aNo
-aNo
+aLY
+aUI
+aUc
+aUi
+aUi
 aTc
 aUc
 aUc
@@ -47926,12 +48043,12 @@ aLR
 aMt
 avD
 adt
-adt
-adt
-adt
-adt
-adt
+asU
 aLY
+aOa
+aUc
+aUr
+aUk
 aTd
 aUc
 aUL
@@ -48069,13 +48186,13 @@ eKi
 avD
 asm
 asx
-adt
-adt
-adt
-adt
 aLY
-aTe
+aUJ
 aUc
+aUE
+aUl
+aTe
+aUh
 aUM
 aVy
 aWq
@@ -48211,11 +48328,11 @@ aMI
 avD
 asn
 asO
-asU
-adt
-adt
-adt
 aLY
+aUS
+aUc
+aUH
+aUp
 aTf
 aUc
 aUN
@@ -48354,10 +48471,10 @@ aJv
 aLY
 aLY
 aLY
-aLY
-aLY
-adt
-aLY
+aUI
+aUc
+aUc
+aUc
 aTg
 aUc
 aUO
