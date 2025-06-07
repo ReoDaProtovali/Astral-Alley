@@ -11,6 +11,7 @@ import {
   addHighlightSetting,
   loadSettings,
   removeHighlightSetting,
+  toggleTTSSetting,
   updateHighlightSetting,
   updateSettings,
   updateToggle,
@@ -96,7 +97,13 @@ export function settingsMiddleware(store) {
       type !== loadSettings.type &&
       type !== addHighlightSetting.type &&
       type !== removeHighlightSetting.type &&
+<<<<<<< HEAD
       type !== updateHighlightSetting.type
+=======
+      type !== updateHighlightSetting.type &&
+      type !== toggleTTSSetting.type &&
+      type !== importSettings.type
+>>>>>>> d18ac48bb8 ([MIRROR] Add microsoft TTS to chat as an accessibility option (#11019))
     ) {
       return next(action);
     }

@@ -5,11 +5,17 @@
  */
 
 import { createRoot } from 'react-dom/client';
+import { useSelector } from 'tgui/backend';
 import { createLogger } from 'tgui/logging';
 import { Tooltip } from 'tgui-core/components';
 import { EventEmitter } from 'tgui-core/events';
 import { classes } from 'tgui-core/react';
 
+<<<<<<< HEAD
+=======
+import { selectSettings } from '../settings/selectors';
+import { exportToDisk } from './chatExport';
+>>>>>>> d18ac48bb8 ([MIRROR] Add microsoft TTS to chat as an accessibility option (#11019))
 import {
   IMAGE_RETRY_DELAY,
   IMAGE_RETRY_LIMIT,
@@ -195,6 +201,14 @@ class ChatRenderer {
         blacklistregex: RegExp;
       }[]
     | null;
+<<<<<<< HEAD
+=======
+  databaseBackendEnabled: boolean;
+  lastScrollHeight: number;
+  ttsVoice: string;
+  ttsCategories: Record<string, boolean>;
+
+>>>>>>> d18ac48bb8 ([MIRROR] Add microsoft TTS to chat as an accessibility option (#11019))
   constructor() {
     /** @type {HTMLElement} */
     this.loaded = false;
@@ -454,6 +468,12 @@ class ChatRenderer {
     hideImportantInAdminTab: boolean,
     interleaveEnabled: boolean,
     interleaveColor: string,
+<<<<<<< HEAD
+=======
+    databaseBackendEnabled: boolean,
+    ttsVoice: string,
+    ttsCategories: Record<string, boolean>,
+>>>>>>> d18ac48bb8 ([MIRROR] Add microsoft TTS to chat as an accessibility option (#11019))
   ) {
     this.visibleMessageLimit = visibleMessageLimit;
     this.combineMessageLimit = combineMessageLimit;
@@ -466,6 +486,12 @@ class ChatRenderer {
     this.hideImportantInAdminTab = hideImportantInAdminTab;
     this.interleaveEnabled = interleaveEnabled;
     this.interleaveColor = interleaveColor;
+<<<<<<< HEAD
+=======
+    this.databaseBackendEnabled = databaseBackendEnabled;
+    this.ttsVoice = ttsVoice;
+    this.ttsCategories = ttsCategories;
+>>>>>>> d18ac48bb8 ([MIRROR] Add microsoft TTS to chat as an accessibility option (#11019))
   }
 
   changePage(page) {
@@ -531,6 +557,20 @@ class ChatRenderer {
     return null;
   }
 
+  tryTTS(message: message, node: HTMLElement) {
+    if (this.ttsCategories[message.type]) {
+      const utterance = new SpeechSynthesisUtterance(node.innerText);
+
+      const voice = window.speechSynthesis
+        .getVoices()
+        .find((val) => val.name === this.ttsVoice);
+      utterance.voice = voice || null;
+
+      window.speechSynthesis.speak(utterance);
+    }
+  }
+
+  // eslint-disable-next-line complexity
   processBatch(
     batch,
     options: {
@@ -539,6 +579,7 @@ class ChatRenderer {
       doArchive?: boolean;
     } = {},
   ) {
+    const settings = useSelector(selectSettings);
     const { prepend, notifyListeners = true, doArchive = false } = options;
     const now = Date.now();
     // Queue up messages until chat is ready
@@ -689,6 +730,13 @@ class ChatRenderer {
       countByType[message.type] += 1;
       // TODO: Detect duplicates
       this.messages.push(message);
+
+      // TTS
+      // Only TTS on new messages
+      if (doArchive) {
+        this.tryTTS(message, node);
+      }
+
       if (
         doArchive &&
         this.logEnable &&

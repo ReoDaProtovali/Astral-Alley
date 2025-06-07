@@ -26,3 +26,14 @@ export const removeHighlightSetting = createAction(
 export const updateHighlightSetting = createAction(
   'settings/updateHighlightSetting',
 );
+<<<<<<< HEAD
+=======
+export const toggleTTSSetting = createAction('settings/toggleTTSSetting');
+export const exportSettings = createAction('settings/export');
+export const importSettings = createAction(
+  'settings/import',
+  (settings, pages) => ({
+    payload: { newSettings: settings, newPages: pages },
+  }),
+);
+>>>>>>> d18ac48bb8 ([MIRROR] Add microsoft TTS to chat as an accessibility option (#11019))

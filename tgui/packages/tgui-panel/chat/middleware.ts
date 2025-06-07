@@ -170,6 +170,12 @@ export const chatMiddleware = (store) => {
       settings.hideImportantInAdminTab,
       settings.interleave,
       settings.interleaveColor,
+<<<<<<< HEAD
+=======
+      game.databaseBackendEnabled,
+      settings.ttsVoice,
+      settings.ttsCategories,
+>>>>>>> d18ac48bb8 ([MIRROR] Add microsoft TTS to chat as an accessibility option (#11019))
     );
     // Load the chat once settings are loaded
     if (!initialized && (settings.initialized || settings.firstLoad)) {

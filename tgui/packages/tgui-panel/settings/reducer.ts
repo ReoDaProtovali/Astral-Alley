@@ -12,6 +12,7 @@ import {
   openChatSettings,
   removeHighlightSetting,
   toggleSettings,
+  toggleTTSSetting,
   updateHighlightSetting,
   updateSettings,
   updateToggle,
@@ -65,6 +66,8 @@ const initialState = {
   statLinked: true,
   statFontSize: 12,
   statTabsStyle: 'default',
+  ttsCategories: {},
+  ttsVoice: '',
 } as const;
 
 export function settingsReducer(
@@ -176,6 +179,18 @@ export function settingsReducer(
           ...state.view,
           activeTab: tabId,
         },
+      };
+    }
+
+    case toggleTTSSetting.type: {
+      const { type } = payload;
+      const ttsCategories = { ...state.ttsCategories };
+
+      ttsCategories[type] = !ttsCategories[type];
+
+      return {
+        ...state,
+        ttsCategories,
       };
     }
 
