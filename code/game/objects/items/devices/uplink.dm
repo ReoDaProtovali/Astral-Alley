@@ -1,7 +1,7 @@
 // I placed this here because of how relevant it is.
 // You place this in your uplinkable item to check if an uplink is active or not.
 // If it is, it will display the uplink menu and return 1, else it'll return false.
-// If it returns true, I recommend closing the item's normal menu with "user << browse(null, "window=name")"
+// If it returns true, I recommend closing the item's normal menu
 /obj/item/proc/active_uplink_check(mob/user as mob)
 	// Activates the uplink if it's active
 	if(hidden_uplink)
@@ -38,6 +38,7 @@
 	return //Stub, used on children.
 
 // HIDDEN UPLINK - Can be stored in anything but the host item has to have a trigger for it.
+<<<<<<< HEAD
 /* How to create an uplink in 3 easy steps!
 
  1. All obj/item 's have a hidden_uplink var. By default it's null. Give the item one with "new(src)", it must be in it's contents. Feel free to add "uses".
@@ -48,6 +49,18 @@
  3. If you want the menu to stay until the users locks his uplink, add an active_uplink_check(mob/user as mob) in your interact/attack_hand proc.
  Then check if it's true, if true return. This will stop the normal menu appearing and will instead show the uplink menu.
 */
+=======
+/** How to create an uplink in 3 easy steps!
+ *
+ * 1. All obj/item 's have a hidden_uplink var. By default it's null. Give the item one with "new(src)", it must be in it's contents. Feel free to add "uses".
+ *
+ * 2. Code in the triggers. Use check_trigger for this, I recommend closing the item's menu if it returns true.
+ * The var/value is the value that will be compared with the var/target. If they are equal it will activate the menu.
+ *
+ * 3. If you want the menu to stay until the users locks his uplink, add an active_uplink_check(mob/user as mob) in your interact/attack_hand proc.
+ * Then check if it's true, if true return. This will stop the normal menu appearing and will instead show the uplink menu.
+ */
+>>>>>>> 0fc7bb29d1 ([MIRROR] browse to browser part 1 (#11017))
 
 /obj/item/uplink/hidden
 	name = "hidden uplink"

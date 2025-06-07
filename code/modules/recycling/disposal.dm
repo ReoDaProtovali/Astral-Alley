@@ -305,6 +305,7 @@
 
 	return TRUE
 
+<<<<<<< HEAD
 
 	// src.add_fingerprint(user)
 	// if(stat & BROKEN)
@@ -383,6 +384,8 @@
 // 		return
 // 	return
 
+=======
+>>>>>>> 0fc7bb29d1 ([MIRROR] browse to browser part 1 (#11017))
 // eject the contents of the disposal unit
 
 /obj/machinery/disposal/verb/force_eject()
