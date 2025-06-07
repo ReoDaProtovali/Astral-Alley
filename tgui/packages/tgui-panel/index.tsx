@@ -64,6 +64,14 @@ const setupApp = () => {
     return;
   }
 
+<<<<<<< HEAD
+=======
+  // Force speechSynthesis to check the server for voices as soon as the chat loads, so it's ready for us
+  window.speechSynthesis.getVoices();
+
+  setGlobalStore(store);
+
+>>>>>>> d18ac48bb8 ([MIRROR] Add microsoft TTS to chat as an accessibility option (#11019))
   setupGlobalEvents({
     ignoreWindowFocus: true,
   });
