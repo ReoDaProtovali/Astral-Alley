@@ -189,6 +189,82 @@
 					spark_system.start()
 	product.loc = get_turf(A)
 
+<<<<<<< HEAD:code/game/objects/items/weapons/RMS_vr.dm
+=======
+/obj/item/rms/proc/choose_overcharge(mob/living/user)
+	var/final_product
+	switch(mode_index)
+		if(RMS_STEEL)
+			final_product = new /obj/item/stack/material/plasteel
+		if(RMS_GLASS)
+			final_product = new /obj/item/stack/material/glass/phoronglass
+		if(RMS_CLOTH)
+			final_product = new /obj/item/stack/material/leather
+		if(RMS_PLASTIC)
+			final_product = new /obj/item/stack/material/cardboard
+		if(RMS_STONE)
+			final_product = new /obj/item/stack/material/marble
+		if(RMS_RAND)
+			final_product = randomize(user)
+	return final_product
+
+/obj/item/rms/proc/choose_normal(mob/living/user)
+	var/final_product
+	switch(mode_index)
+		if(RMS_STEEL)
+			final_product = new /obj/item/stack/material/steel
+		if(RMS_GLASS)
+			final_product = new /obj/item/stack/material/glass
+		if(RMS_CLOTH)
+			final_product = new /obj/item/stack/material/cloth
+		if(RMS_PLASTIC)
+			final_product = new /obj/item/stack/material/plastic
+		if(RMS_STONE)
+			final_product = new /obj/item/stack/material/sandstone
+		if(RMS_RAND)
+			final_product = randomize(user)
+	return final_product
+
+/obj/item/rms/proc/randomize(mob/living/user)
+	var/obj/item/stack/final_product
+	var/possible_object_paths = list()
+	possible_object_paths += subtypesof(/obj/item/stack/material)
+	possible_object_paths -= typesof(/obj/item/stack/material/cyborg)
+	//I looked through the code for any materials that should be banned...Most of the "DO NOT EVER GIVE THESE TO ANYONE EVER" materials are only in their /datum form and the ones that have sheets spawn in as normal sheets (ex: hull datums) so...This is here in case it's needed in the future.
+	var/list/banned_sheet_materials = list(
+		/obj/item/stack/material/supermatter,
+		/obj/item/stack/material/glamour,
+		/obj/item/stack/material/morphium
+		// Include if you enable in the .dme /obj/item/stack/material/debug
+		)
+	possible_object_paths -= banned_sheet_materials
+	var/obj/item/stack/new_metal = /obj/item/stack/material/supermatter
+	for(var/x=1;x<=10;x++) //You got 10 chances to hit a metal that is NOT banned.
+		var/obj/item/stack/material/picked_metal = pick(possible_object_paths) //We select
+		if(picked_metal in banned_sheet_materials)
+			continue
+		var/datum/material/M = get_material_by_name(initial(picked_metal.default_type))
+		if(M.flags & MATERIAL_NO_SYNTH)
+			continue
+		else
+			new_metal = picked_metal
+			break
+	if(prob(1) && prob(1) && prob(1)) //1 in a million...Feeling lucky?
+		if(prob(50))
+			new_metal = /obj/item/stack/material/morphium
+		else
+			new_metal = /obj/item/stack/material/supermatter
+		visible_message(span_giganteus(span_boldwarning("The [src] glows blazing hot for a moment before spitting out a glowing material!")))
+		if(overcharge) //uh oh...
+			to_chat(user, span_extramassive(span_boldwarning("The [src] heats up to the point that you are immediately vaporized!")))
+			user.dust()
+	final_product = new new_metal
+	if(overcharge && (charge_cost_random > 0)) //We use ALL our energy in one go while overcharged! Also has a charge_cost_random sanity check in case of badmins.
+		final_product.amount = max(1, 1+round(stored_charge/charge_cost_random))
+		consume_resources(stored_charge)
+	return final_product
+
+>>>>>>> 22c8ec20b7 ([MIRROR] no infinite materials (#11025)):code/game/objects/items/weapons/RMS.dm
 /obj/item/rms/proc/check_menu(mob/living/user)
 	if(!istype(user))
 		return FALSE
