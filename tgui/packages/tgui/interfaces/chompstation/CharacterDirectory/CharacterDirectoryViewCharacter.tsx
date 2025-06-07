@@ -1,7 +1,12 @@
 import { Box, Button, Section, Table } from 'tgui-core/components';
 
 import { getTagColor } from './constants';
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/CharacterDirectory/CharacterDirectoryViewCharacter.tsx
 import { mobEntry } from './types';
+=======
+import { validateLink } from './functions';
+import type { mobEntry } from './types';
+>>>>>>> 78ec2d97cc ([MIRROR] [WIP] Custom Links in Character Directory [Advice Requested] (#11022)):tgui/packages/tgui/interfaces/CharacterDirectory/CharacterDirectoryViewCharacter.tsx
 
 export const ViewCharacter = (props: {
   overlay: mobEntry;
@@ -106,6 +111,15 @@ export const ViewCharacter = (props: {
       <Section title="Flavor Text">
         <Box style={{ wordBreak: 'break-all' }} preserveWhitespace>
           {overlay.flavor_text || 'Unset.'}
+        </Box>
+      </Section>
+      <Section title="Custom Link">
+        <Box style={{ wordBreak: 'break-all' }} preserveWhitespace>
+          {validateLink(overlay.custom_link) ? (
+            <a href={overlay.custom_link}>{overlay.custom_link}</a>
+          ) : (
+            'Unset.'
+          )}
         </Box>
       </Section>
     </Section>
