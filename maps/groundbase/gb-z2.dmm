@@ -909,6 +909,19 @@
 	},
 /turf/simulated/floor/tiled/dark,
 /area/groundbase/civilian/chapel)
+<<<<<<< HEAD
+=======
+"bJ" = (
+/obj/structure/table/woodentable,
+/obj/machinery/librarywikicomp,
+/turf/simulated/floor/carpet,
+/area/groundbase/civilian/library)
+"bK" = (
+/obj/item/key/janicart,
+/obj/structure/table/steel,
+/turf/simulated/floor/tiled,
+/area/groundbase/civilian/janitor)
+>>>>>>> 49893fb953 ([MIRROR] Janicart spawns (#11018))
 "bL" = (
 /obj/structure/window/reinforced{
 	dir = 1
@@ -958,6 +971,13 @@
 /obj/structure/bookcase,
 /turf/simulated/floor/wood,
 /area/groundbase/civilian/library)
+"bR" = (
+/obj/machinery/light,
+/obj/vehicle/train/engine/janicart{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/groundbase/civilian/janitor)
 "bS" = (
 /obj/structure/cable/yellow{
 	icon_state = "1-2"
@@ -21250,7 +21270,7 @@ eE
 nd
 ey
 Vb
-Vb
+bK
 Do
 bY
 bY
@@ -21392,7 +21412,7 @@ Vb
 Vb
 qr
 Vb
-zb
+bR
 Do
 GY
 bY
