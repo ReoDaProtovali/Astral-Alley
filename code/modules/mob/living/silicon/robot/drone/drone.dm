@@ -48,7 +48,7 @@ var/list/mob_hat_cache = list()
 	mob_push_flags = SIMPLE_ANIMAL
 	mob_always_swap = 1
 
-	mob_size = MOB_LARGE // Small mobs can't open doors, it's a huge pain for drones.
+	mob_size = MOB_SMALL
 
 	//Used for self-mailing.
 	var/mail_destination = ""
@@ -102,8 +102,13 @@ var/list/mob_hat_cache = list()
 	can_pick_shell = FALSE
 	shell_accessories = list("eyes-miningdrone")
 
+<<<<<<< HEAD
 /mob/living/silicon/robot/drone/New()
 	..()
+=======
+/mob/living/silicon/robot/drone/Initialize(mapload, is_decoy)
+	. = ..(mapload, FALSE)
+>>>>>>> 428c1414e7 ([MIRROR] fix drones (#11021))
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
 	remove_language("Robot Talk")
@@ -301,14 +306,8 @@ var/list/mob_hat_cache = list()
 
 //DRONE LIFE/DEATH
 
-//For some goddamn reason robots have this hardcoded. Redefining it for our fragile friends here.
-/mob/living/silicon/robot/drone/updatehealth()
-	if(status_flags & GODMODE)
-		health = maxHealth
-		set_stat(CONSCIOUS)
-		return
-	health = maxHealth - (getBruteLoss() + getFireLoss())
-	return
+/mob/living/silicon/robot/drone/getMaxHealth()
+	return maxHealth
 
 //Easiest to check this here, then check again in the robot proc.
 //Standard robots use config for crit, which is somewhat excessive for these guys.
