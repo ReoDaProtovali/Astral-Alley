@@ -171,7 +171,7 @@ var/global/list/valid_bloodtypes = list("A+", "A-", "B+", "B-", "AB+", "AB-", "O
 	character.grad_style= pref.grad_style
 	character.f_style	= pref.f_style
 	character.grad_style= pref.grad_style
-	character.b_type	= pref.b_type
+	character.dna.b_type= pref.b_type
 	character.synth_color = pref.synth_color
 	character.synth_markings = pref.synth_markings
 	if(character.species.digi_allowed)
