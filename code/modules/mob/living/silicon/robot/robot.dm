@@ -140,7 +140,11 @@
 	vore_fullness_ex = list()
 	vore_icon_bellies = list()
 
+<<<<<<< HEAD
 /mob/living/silicon/robot/New(loc, var/unfinished = 0)
+=======
+/mob/living/silicon/robot/Initialize(mapload, is_decoy)
+>>>>>>> 428c1414e7 ([MIRROR] fix drones (#11021))
 	spark_system = new /datum/effect/effect/system/spark_spread()
 	spark_system.set_up(5, 0, src)
 	spark_system.attach(src)
@@ -171,7 +175,6 @@
 
 	init()
 	initialize_components()
-	//if(!unfinished)
 	// Create all the robot parts.
 	for(var/V in components) if(V != "power cell")
 		var/datum/robot_component/C = components[V]
