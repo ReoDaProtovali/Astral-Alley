@@ -172,6 +172,7 @@
 		//leave some drips behind
 		if(prob(50))
 			var/obj/effect/decal/cleanable/blood/drip/D = new(src.loc)
+<<<<<<< HEAD
 			D.blood_DNA = src.blood_DNA.Copy()
 			if(prob(50))
 				D = new(src.loc)
@@ -179,6 +180,15 @@
 				if(prob(50))
 					D = new(src.loc)
 					D.blood_DNA = src.blood_DNA.Copy()
+=======
+			D.init_forensic_data().merge_blooddna(forensic_data)
+			if(prob(50))
+				D = new(src.loc)
+				D.init_forensic_data().merge_blooddna(forensic_data)
+				if(prob(50))
+					D = new(src.loc)
+					D.init_forensic_data().merge_blooddna(forensic_data)
+>>>>>>> f788c7312c ([MIRROR] fixes vampire artifact forensics (#11023))
 	else
 		..()
 
