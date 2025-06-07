@@ -72,6 +72,7 @@ GLOBAL_DATUM(character_directory, /datum/character_directory)
 		var/eventtag = vantag_choices_list[VANTAG_NONE]
 		//CHOMPEdit End
 		var/flavor_text = null
+		var/custom_link = null
 		var/tag
 		var/erptag
 		var/character_ad
@@ -124,7 +125,12 @@ GLOBAL_DATUM(character_directory, /datum/character_directory)
 					ooc_notes += "\n\nDISLIKES\n\n[H.ooc_notes_dislikes]"
 			if(LAZYLEN(H.flavor_texts))
 				flavor_text = H.flavor_texts["general"]
+<<<<<<< HEAD
 			//CHOMPEdit End
+=======
+			if(H.custom_link)
+				custom_link = H.custom_link
+>>>>>>> 78ec2d97cc ([MIRROR] [WIP] Custom Links in Character Directory [Advice Requested] (#11022))
 
 		if(isAI(C.mob))
 			var/mob/living/silicon/ai/A = C.mob
@@ -253,6 +259,7 @@ GLOBAL_DATUM(character_directory, /datum/character_directory)
 			"erptag" = erptag,
 			"character_ad" = character_ad,
 			"flavor_text" = flavor_text,
+			"custom_link" = custom_link,
 		)))
 
 	data["directory"] = directory_mobs
