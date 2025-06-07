@@ -388,6 +388,12 @@
 	switch(type)
 		if("ping")
 			send_message("ping/reply", payload)
+<<<<<<< HEAD
+=======
+		if("visible")
+			visible = TRUE
+			SEND_SIGNAL(src, COMSIG_TGUI_WINDOW_VISIBLE, client)
+>>>>>>> 88b2440324 ([MIRROR] AI Multicam improved (#11026))
 		if("suspend")
 			close(can_be_suspended = TRUE)
 		if("close")
