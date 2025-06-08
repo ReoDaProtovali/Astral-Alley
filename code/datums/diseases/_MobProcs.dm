@@ -159,6 +159,26 @@
 	LAZYINITLIST(viruses)
 	return viruses
 
+<<<<<<< HEAD
+=======
+/mob/proc/GetSpreadableViruses()
+	LAZYINITLIST(viruses)
+	var/list/viruses_to_return = list()
+	for(var/datum/disease/D in viruses)
+		if(D.spread_flags & (DISEASE_SPREAD_SPECIAL | DISEASE_SPREAD_NON_CONTAGIOUS))
+			continue
+		viruses_to_return += D
+	return viruses_to_return
+
+/mob/proc/GetDormantDiseases()
+	LAZYINITLIST(viruses)
+	var/list/viruses_to_return = list()
+	for(var/datum/disease/D in viruses)
+		if(D.virus_modifiers & DORMANT)
+			viruses_to_return += D
+	return viruses_to_return
+
+>>>>>>> 5c0aeb5b05 ([MIRROR] Miscellaneous virology fixes/adjustments  (#11032))
 /mob/proc/GetResistances()
 	LAZYINITLIST(resistances)
 	return resistances
