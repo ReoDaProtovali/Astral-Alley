@@ -5,6 +5,32 @@
 			return TRUE
 	return FALSE
 
+<<<<<<< HEAD
+=======
+/mob/proc/addDisease(datum/disease/D)
+	LAZYADD(viruses, D)
+	return TRUE
+
+/mob/proc/RemoveDisease(datum/disease/D)
+	LAZYREMOVE(viruses, D)
+	return TRUE
+
+/mob/proc/HasResistance(resistance)
+	if(LAZYFIND(resistances, resistance))
+		return TRUE
+	return FALSE
+
+/mob/proc/IsInfected()
+	if(isemptylist(GetViruses()))
+		return FALSE
+	return TRUE
+
+/mob/proc/isInfective()
+	if(isemptylist(GetSpreadableViruses()))
+		return FALSE
+	return TRUE
+
+>>>>>>> fcdb002e0f ([MIRROR] Fixes dormant diseases showing up in Medical scanners (#11042))
 /mob/proc/CanContractDisease(datum/disease/D)
 	if(stat == DEAD && !D.allow_dead)
 		return FALSE

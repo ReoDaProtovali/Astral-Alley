@@ -189,7 +189,11 @@
 		occupantData["health"] = H.health
 		occupantData["maxHealth"] = H.getMaxHealth()
 
+<<<<<<< HEAD
 		occupantData["hasVirus"] = LAZYLEN(H.viruses)
+=======
+		occupantData["hasVirus"] = H.isInfective()
+>>>>>>> fcdb002e0f ([MIRROR] Fixes dormant diseases showing up in Medical scanners (#11042))
 
 		occupantData["bruteLoss"] = H.getBruteLoss()
 		occupantData["oxyLoss"] = H.getOxyLoss()
