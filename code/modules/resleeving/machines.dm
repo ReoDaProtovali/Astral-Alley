@@ -29,18 +29,10 @@
 	remove_biomass(CLONE_BIOMASS)
 
 	//Get the DNA and generate a new mob
-	var/datum/dna2/record/R = current_project.mydna
-	var/mob/living/carbon/human/H = new /mob/living/carbon/human(src, R.dna.species)
-	if(current_project.locked)
-		H.resleeve_lock = current_project.ckey //CHOMPAdd, keep the lock
-		/*CHOMPRemove Start
-		if(current_project.ckey)
-			H.resleeve_lock = current_project.ckey
-		else
-			// Ensure even body scans without an attached ckey respect locking
-			H.resleeve_lock = "@badckey"
-		*///CHOMPRemove End
+	var/mob/living/carbon/human/H = current_project.produce_human_mob(src,FALSE,FALSE,"clone ([rand(0,999)])")
+	SEND_SIGNAL(H, COMSIG_HUMAN_DNA_FINALIZED)
 
+<<<<<<< HEAD
 	//Fix the external organs
 	for(var/part in current_project.limb_data)
 
@@ -109,6 +101,8 @@
 	H.initialize_vessel()
 
 	// Traitgenes Moved breathing equipment to AFTER the genes set it
+=======
+>>>>>>> 75e167a92f ([MIRROR] Dna, Bodyrecord, Xenochi Revive Refactor (#11038))
 	//Give breathing equipment if needed
 	if(current_project.breath_type != null && current_project.breath_type != GAS_O2)
 		H.equip_to_slot_or_del(new /obj/item/clothing/mask/breath(H), slot_wear_mask)
@@ -124,6 +118,7 @@
 			if(istype(H.internal,/obj/item/tank) && H.internals)
 				H.internals.icon_state = "internal1"
 
+<<<<<<< HEAD
 	//Basically all the VORE stuff
 	H.ooc_notes = current_project.body_oocnotes
 	H.ooc_notes_likes = current_project.body_ooclikes
@@ -145,6 +140,13 @@
 
 	//Making double-sure this is not set
 	H.mind = null
+=======
+	//Apply damage
+	set_occupant(H)
+	H.adjustCloneLoss((H.getMaxHealth() - (H.getMaxHealth()))*-0.75)
+	H.Paralyse(4)
+	H.updatehealth()
+>>>>>>> 75e167a92f ([MIRROR] Dna, Bodyrecord, Xenochi Revive Refactor (#11038))
 
 	//Machine specific stuff at the end
 	update_icon()
@@ -152,6 +154,7 @@
 	return 1
 
 /obj/machinery/clonepod/transhuman/process()
+	var/mob/living/occupant = get_occupant()
 	if(stat & NOPOWER)
 		if(occupant)
 			locked = 0
@@ -192,7 +195,7 @@
 			return
 
 	else if((!occupant) || (occupant.loc != src))
-		occupant = null
+		set_occupant(null)
 		if(locked)
 			locked = 0
 		update_icon()
@@ -201,13 +204,14 @@
 	return
 
 /obj/machinery/clonepod/transhuman/get_completion()
+	var/mob/living/occupant = get_occupant()
 	if(occupant)
 		return 100 * ((occupant.health + abs(CONFIG_GET(number/health_threshold_dead))) / (occupant.maxHealth + abs(CONFIG_GET(number/health_threshold_dead))))
 	return 0
 
 /obj/machinery/clonepod/transhuman/examine(mob/user, infix, suffix)
 	. = ..()
-	if(occupant)
+	if(get_occupant())
 		var/completion = get_completion()
 		. += "Progress: [round(completion)]% [chat_progress_bar(round(completion), TRUE)]"
 
@@ -300,103 +304,16 @@
 		return
 
 	//Get the DNA and generate a new mob
-	var/datum/dna2/record/R = current_project.mydna
-	var/mob/living/carbon/human/H = new /mob/living/carbon/human(src, R.dna.species)
-	if(current_project.locked)
-		H.resleeve_lock = current_project.ckey //CHOMPAdd, keep the lock
-		/*CHOMPRemove Start
-		if(current_project.ckey)
-			H.resleeve_lock = current_project.ckey
-		else
-			// Ensure even body scans without an attached ckey respect locking
-			H.resleeve_lock = "@badckey"
-		*///CHOMPRemove End
-
-	//Fix the external organs
-	for(var/part in current_project.limb_data)
-
-		var/status = current_project.limb_data[part]
-		if(status == null) continue //Species doesn't have limb? Child of amputated limb?
-
-		var/obj/item/organ/external/O = H.organs_by_name[part]
-		if(!O) continue //Not an organ. Perhaps another amputation removed it already.
-
-		if(status == 1) //Normal limbs
-			continue
-		else if(status == 0) //Missing limbs
-			O.remove_rejuv()
-		else if(status) //Anything else is a manufacturer
-			O.robotize(status)
-
-	//Then the internal organs
-	for(var/part in current_project.organ_data)
-
-		var/status = current_project.organ_data[part]
-		if(status == null) continue //Species doesn't have organ? Child of missing part?
-
-		var/obj/item/organ/I = H.internal_organs_by_name[part]
-		if(!I) continue//Not an organ. Perhaps external conversion changed it already?
-
-		if(status == 0) //Normal organ
-			continue
-		else if(status == 1) //Assisted organ
-			I.mechassist()
-		else if(status == 2) //Mechanical organ
-			I.robotize()
-		else if(status == 3) //Digital organ
-			I.digitize()
-
-	//Set the name or generate one
-	if(!R.dna.real_name)
-		R.dna.real_name = "synth ([rand(0,999)])"
-	H.real_name = R.dna.real_name
-
-	//Apply DNA
-	qdel_swap(H.dna, R.dna.Clone())
-	H.original_player = current_project.ckey
-
-	//Apply legs
-	H.digitigrade = R.dna.digitigrade // ensure clone mob has digitigrade var set appropriately
-	if(H.dna.digitigrade <> R.dna.digitigrade)
-		H.dna.digitigrade = R.dna.digitigrade // ensure cloned DNA is set appropriately from record??? for some reason it doesn't get set right despite the override to datum/dna/Clone()
+	var/mob/living/carbon/human/H = current_project.produce_human_mob(src,TRUE,FALSE,"synth ([rand(0,999)])")
+	SEND_SIGNAL(H, COMSIG_HUMAN_DNA_FINALIZED)
 
 	//Apply damage
 	H.adjustBruteLoss(brute_value)
 	H.adjustFireLoss(burn_value)
 	H.updatehealth()
 
-	//Update appearance, remake icons
-	H.UpdateAppearance()
-	H.sync_dna_traits(FALSE) // Traitgenes Sync traits to genetics if needed
-	H.sync_organ_dna()
-	H.regenerate_icons()
-	H.initialize_vessel()
-
-	//Basically all the VORE stuff
-	H.ooc_notes = current_project.body_oocnotes
-	H.ooc_notes_likes = current_project.body_ooclikes
-	H.ooc_notes_dislikes = current_project.body_oocdislikes
-	//CHOMPEdit Start
-	H.ooc_notes_favs = current_project.body_oocfavs
-	H.ooc_notes_maybes = current_project.body_oocmaybes
-	H.ooc_notes_style = current_project.body_oocstyle
-	//CHOMPEdit End
-	H.flavor_texts = current_project.mydna.flavor.Copy()
-	H.resize(current_project.sizemult)
-	H.appearance_flags = current_project.aflags
-	H.weight = current_project.weight
-	if(current_project.speciesname)
-		H.custom_species = current_project.speciesname
-
-	//Suiciding var
-	H.suiciding = 0
-
-	//Making double-sure this is not set
-	H.mind = null
-
 	//Plonk them here.
-	H.regenerate_icons()
-	H.loc = get_turf(src)
+	H.forceMove(get_turf(src))
 
 	//Machine specific stuff at the end
 	stored_material[MAT_STEEL] -= body_cost
@@ -472,7 +389,7 @@
 	var/blur_amount
 	var/confuse_amount
 
-	var/mob/living/carbon/human/occupant = null
+	VAR_PRIVATE/datum/weakref/weakref_occupant = null
 	var/connected = null
 
 	var/sleevecards = 2
@@ -488,6 +405,18 @@
 	component_parts += new /obj/item/stack/cable_coil(src, 2)
 	RefreshParts()
 	update_icon()
+
+/obj/machinery/transhuman/resleever/proc/set_occupant(var/mob/living/carbon/human/H)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	if(!H)
+		weakref_occupant = null
+		return
+	weakref_occupant = WEAKREF(H)
+
+/obj/machinery/transhuman/resleever/proc/get_occupant()
+	RETURN_TYPE(/mob/living/carbon/human)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	return weakref_occupant?.resolve()
 
 /obj/machinery/transhuman/resleever/RefreshParts()
 	var/scan_rating = 0
@@ -515,6 +444,7 @@
 /obj/machinery/transhuman/resleever/tgui_data(mob/user)
 	var/list/data = list()
 
+<<<<<<< HEAD
 	data["occupied"] = !!occupant
 	if(occupant)
 		data["name"] = occupant.name
@@ -523,6 +453,17 @@
 		data["stat"] = occupant.stat
 		data["mindStatus"] = !!occupant.mind
 		data["mindName"] = occupant.mind?.name
+=======
+	var/mob/living/carbon/human/H = get_occupant()
+	data["occupied"] = !!H
+	if(H)
+		data["name"] = H.name
+		data["health"] = H.health
+		data["maxHealth"] = H.getMaxHealth()
+		data["stat"] = H.stat
+		data["mindStatus"] = !!H.mind
+		data["mindName"] = H.mind?.name
+>>>>>>> 75e167a92f ([MIRROR] Dna, Bodyrecord, Xenochi Revive Refactor (#11038))
 	return data
 
 /obj/machinery/transhuman/resleever/attackby(obj/item/W, mob/user)
@@ -585,6 +526,7 @@
 	add_fingerprint(user)
 
 /obj/machinery/transhuman/resleever/proc/putmind(var/datum/transhuman/mind_record/MR, mode = 1, var/mob/living/carbon/human/override = null, var/db_key)
+	var/mob/living/carbon/human/occupant = get_occupant()
 	if((!occupant || !istype(occupant) || occupant.stat >= DEAD) && mode == 1)
 		return 0
 
@@ -669,13 +611,14 @@
 	return 1
 
 /obj/machinery/transhuman/resleever/proc/go_out(var/mob/M)
-	if(!( src.occupant ))
+	var/mob/living/carbon/human/occupant = get_occupant()
+	if(!occupant)
 		return
-	if (src.occupant.client)
-		src.occupant.client.eye = src.occupant.client.mob
-		src.occupant.client.perspective = MOB_PERSPECTIVE
-	src.occupant.loc = src.loc
-	src.occupant = null
+	if (occupant.client)
+		occupant.client.eye = occupant.client.mob
+		occupant.client.perspective = MOB_PERSPECTIVE
+	occupant.forceMove(get_turf(src))
+	set_occupant(null)
 	icon_state = "implantchair"
 	return
 
@@ -683,7 +626,7 @@
 	if(!ishuman(M))
 		to_chat(usr, span_warning("\The [src] cannot hold this!"))
 		return
-	if(src.occupant)
+	if(get_occupant())
 		to_chat(usr, span_warning("\The [src] is already occupied!"))
 		return
 	if(M.client)
@@ -691,7 +634,7 @@
 		M.client.eye = src
 	M.stop_pulling()
 	M.loc = src
-	src.occupant = M
+	set_occupant(M)
 	src.add_fingerprint(usr)
 	icon_state = "implantchair_on"
 	return 1

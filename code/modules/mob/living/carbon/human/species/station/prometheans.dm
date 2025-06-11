@@ -115,6 +115,7 @@ var/datum/species/shapeshifter/promethean/prometheans
 	cold_discomfort_strings = list("You feel too cool.")
 
 	inherent_verbs = list(
+<<<<<<< HEAD
 		/mob/living/carbon/human/proc/shapeshifter_select_shape,
 		/mob/living/carbon/human/proc/shapeshifter_select_colour,
 		/mob/living/carbon/human/proc/shapeshifter_select_hair,
@@ -122,6 +123,14 @@ var/datum/species/shapeshifter/promethean/prometheans
 		/mob/living/carbon/human/proc/shapeshifter_select_hair_colors,
 		/mob/living/carbon/human/proc/shapeshifter_select_gender,
 		/mob/living/carbon/human/proc/regenerate
+=======
+		/mob/living/carbon/human/proc/innate_shapeshifting,
+		/mob/living/carbon/human/proc/regenerate,
+		/mob/living/carbon/human/proc/prommie_blobform,
+		/mob/living/proc/set_size,
+		/mob/living/carbon/human/proc/promethean_select_opaqueness,
+		/mob/living/carbon/human/proc/shapeshifter_reassemble //CHOMPEdit: reform verb
+>>>>>>> 75e167a92f ([MIRROR] Dna, Bodyrecord, Xenochi Revive Refactor (#11038))
 		)
 
 	valid_transform_species = list(SPECIES_HUMAN, SPECIES_HUMAN_VATBORN, SPECIES_UNATHI, SPECIES_TAJARAN, SPECIES_SKRELL, SPECIES_DIONA, SPECIES_TESHARI, SPECIES_MONKEY)
@@ -371,3 +380,37 @@ var/datum/species/shapeshifter/promethean/prometheans
 			return span_warning("[t_she] glowing brightly with high levels of electrical activity.")
 		if(35 to INFINITY)
 			return span_danger("[t_she] radiating massive levels of electrical activity!")
+<<<<<<< HEAD
+=======
+
+/mob/living/carbon/human/proc/prommie_blobform()
+	set name = "Toggle Blobform"
+	set desc = "Switch between amorphous and humanoid forms."
+	set category = "Abilities.Promethean"
+	set hidden = FALSE
+
+	var/atom/movable/to_locate = temporary_form || src
+	if(!isturf(to_locate.loc))
+		to_chat(to_locate,span_warning("You need more space to perform this action!"))
+		return
+	/*
+	//Blob form
+	if(temporary_form)
+		if(temporary_form.stat)
+			to_chat(temporary_form,span_warning("You can only do this while not stunned."))
+		else
+			prommie_outofblob(temporary_form)
+	*/
+	//Human form
+	else if(stat || paralysis || stunned || weakened || restrained())
+		to_chat(src,span_warning("You can only do this while not stunned."))
+		return
+	else
+		prommie_intoblob()
+
+/mob/living/carbon/human/proc/innate_shapeshifting()
+	set name = "Transform Appearance"
+	set category = "Abilities.Superpower"
+	var/datum/tgui_module/appearance_changer/innate/I = new(src, src)
+	I.tgui_interact(src)
+>>>>>>> 75e167a92f ([MIRROR] Dna, Bodyrecord, Xenochi Revive Refactor (#11038))
