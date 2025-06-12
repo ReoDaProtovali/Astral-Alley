@@ -26,7 +26,13 @@
 	max_contents = 3 // Arbitrary number, 3 grill 'racks'
 	container_type = /obj/item/reagent_containers/cooking_container/grill
 
+<<<<<<< HEAD
 /obj/machinery/appliance/cooker/grill/Initialize()
+=======
+	tgui_id = "CookingGrill"
+
+/obj/machinery/appliance/cooker/grill/Initialize(mapload)
+>>>>>>> c7b3df4d04 ([MIRROR] Cooking Update (#11058))
 	. = ..()
 	grill_loop = new(list(src), FALSE)
 
