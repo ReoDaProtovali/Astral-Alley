@@ -26,4 +26,9 @@ export type mobEntry = {
   erptag: string;
   character_ad: string;
   flavor_text: string;
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/CharacterDirectory/types.ts
+=======
+  custom_link: string;
+  photo: string | null;
+>>>>>>> d26a83b799 ([MIRROR] Add character portraits to the character directory (#11056)):tgui/packages/tgui/interfaces/CharacterDirectory/types.ts
 };
