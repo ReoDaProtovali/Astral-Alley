@@ -901,7 +901,21 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			host.noisy = !host.noisy
 			unsaved_changes = TRUE
 			return TRUE
+<<<<<<< HEAD
 		//CHOMPedit start: liquid belly code
+=======
+		if("set_max_voreoverlay_alpha")
+			var/new_alpha = CLAMP(params["val"], 0, 255)
+			host.max_voreoverlay_alpha = new_alpha
+			if(host.client.prefs_vr)
+				host.client.prefs_vr.max_voreoverlay_alpha = host.max_voreoverlay_alpha
+			if (isbelly(host.loc))
+				var/obj/belly/B = host.loc
+				B.vore_fx(host, TRUE)
+			unsaved_changes = TRUE
+			return TRUE
+		// liquid belly code
+>>>>>>> 7ee1ac6c7d ([MIRROR] Minor Tweaks & Changes (#11063))
 		if("liq_set_attribute")
 			return liq_set_attr(ui.user, params)
 		if("liq_set_messages")
