@@ -279,7 +279,12 @@ default behaviour is:
 /mob/living/Moved(var/atom/oldloc, direct, forced, movetime)
 	. = ..()
 	handle_footstep(loc)
+<<<<<<< HEAD
 	// Begin VOREstation edit
+=======
+	if(!forced && movetime /* && !is_incorporeal()*/) // CHOMPEdit
+		SSmotiontracker?.ping(src) // Incase of before init "turf enter gravity" this is ?, unfortunately.
+>>>>>>> 36709f0565 ([MIRROR] incorporeal shadekin don't make motion echos (#11039))
 	if(is_shifted)
 		is_shifted = FALSE
 		pixel_x = default_pixel_x
