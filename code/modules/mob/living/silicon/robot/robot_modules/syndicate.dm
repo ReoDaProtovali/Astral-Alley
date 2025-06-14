@@ -24,7 +24,11 @@
 /obj/item/robot_module/robot/syndicate/create_equipment(var/mob/living/silicon/robot/robot)
 	..()
 	src.modules += new /obj/item/pinpointer/shuttle/merc(src)
+<<<<<<< HEAD
 	src.modules += new /obj/item/melee/energy/sword(src)
+=======
+	src.modules += new /obj/item/melee/robotic/blade/syndicate(src)
+>>>>>>> 70ab2b8174 ([MIRROR] Dogborg sword colorization (#11069))
 
 	var/datum/matter_synth/cloth = new /datum/matter_synth/cloth(40000)
 	synths += cloth
