@@ -116,8 +116,13 @@ export const VoreUserPreferencesMechanical = (props: {
         </Stack.Item>
         <Stack.Item basis="34%">
           <VoreUserPreferenceItem
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesMechanical.tsx
             spec={preferences.allow_mimicry}
             tooltipPosition="right"
+=======
+            spec={preferences.toggle_consume_liquid_belly}
+            tooltipPosition="top"
+>>>>>>> 63e5d9d05d ([MIRROR] rem dupe pref (#11065)):tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesMechanical.tsx
           />
         </Stack.Item>
       </Stack>
