@@ -52,11 +52,11 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 	var/recipient = ""; //the department which will be receiving the message
 	var/priority = -1 ; //Priority of the message being sent
 	light_range = 0
-	var/datum/announcement/announcement = new
+	var/datum/announcement/announcement
 
 /obj/machinery/requests_console/Initialize()
 	. = ..()
-
+	announcement = new
 	announcement.title = "[department] announcement"
 	announcement.newscast = 1
 

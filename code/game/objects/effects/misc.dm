@@ -110,11 +110,16 @@
 	pixel_y = -16
 
 /obj/effect/abstract/directional_lighting
-	var/obj/effect/abstract/light_spot/light_spot = new
+	var/obj/effect/abstract/light_spot/light_spot
 	var/trans_angle
 	var/icon_dist
 
+<<<<<<< HEAD
 /obj/effect/abstract/directional_lighting/Initialize()
+=======
+/obj/effect/abstract/directional_lighting/Initialize(mapload)
+	light_spot = new
+>>>>>>> 2653dac7da ([MIRROR] Gets rid of = new in object defines (#11075))
 	. = ..()
 	vis_contents += light_spot
 
