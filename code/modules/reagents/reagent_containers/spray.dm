@@ -232,12 +232,26 @@
 
 	var/icon/hose_overlay
 
+<<<<<<< HEAD
 	var/obj/item/hose_connector/input/active/InputSocket
 
 /obj/item/reagent_containers/spray/chemsprayer/hosed/Initialize()
+=======
+/obj/item/reagent_containers/spray/chemsprayer/hosed/Initialize(mapload)
+>>>>>>> c39a5b0e88 ([MIRROR] Hose Connector Component (#11045))
+	. = ..()
+	AddComponent(/datum/component/recursive_move)
+	AddComponent(/datum/component/hose_connector/input)
+	RegisterSignal(src, COMSIG_OBSERVER_MOVED, /obj/item/reagent_containers/spray/chemsprayer/hosed/proc/update_hose)
+
+/obj/item/reagent_containers/spray/chemsprayer/hosed/Destroy()
+	UnregisterSignal(src, COMSIG_OBSERVER_MOVED)
 	. = ..()
 
-	InputSocket = new(src)
+/obj/item/reagent_containers/spray/chemsprayer/hosed/proc/update_hose(atom/source, atom/oldloc, direction, forced, list/old_locs, momentum_change)
+	SIGNAL_HANDLER
+	var/datum/component/hose_connector/HC = GetComponent(/datum/component/hose_connector)
+	HC.update_hose_beam()
 
 /obj/item/reagent_containers/spray/chemsprayer/hosed/update_icon()
 	..()
@@ -247,7 +261,8 @@
 	if(!hose_overlay)
 		hose_overlay = new/icon(icon, "[icon_state]+hose")
 
-	if(InputSocket.get_pairing())
+	var/datum/component/hose_connector/HC = GetComponent(/datum/component/hose_connector)
+	if(HC.get_pairing())
 		add_overlay(hose_overlay)
 
 /obj/item/reagent_containers/spray/chemsprayer/hosed/AltClick(mob/living/carbon/user)

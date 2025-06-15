@@ -11,9 +11,6 @@
 
 	var/has_sockets = TRUE
 
-	var/obj/item/hose_connector/input/active/InputSocket
-	var/obj/item/hose_connector/output/active/OutputSocket
-
 	var/amount_per_transfer_from_this = 10
 	var/possible_transfer_amounts = list(10,25,50,100)
 
@@ -22,6 +19,7 @@
 /obj/structure/reagent_dispensers/attackby(obj/item/W as obj, mob/user as mob)
 	return
 
+<<<<<<< HEAD
 /obj/structure/reagent_dispensers/Destroy()
 	QDEL_NULL(InputSocket)
 	QDEL_NULL(OutputSocket)
@@ -29,6 +27,9 @@
 	..()
 
 /obj/structure/reagent_dispensers/Initialize()
+=======
+/obj/structure/reagent_dispensers/Initialize(mapload)
+>>>>>>> c39a5b0e88 ([MIRROR] Hose Connector Component (#11045))
 	var/datum/reagents/R = new/datum/reagents(5000)
 	reagents = R
 	R.my_atom = src
@@ -36,10 +37,8 @@
 		src.verbs -= /obj/structure/reagent_dispensers/verb/set_APTFT
 
 	if(has_sockets)
-		InputSocket = new(src)
-		InputSocket.carrier = src
-		OutputSocket = new(src)
-		OutputSocket.carrier = src
+		AddComponent(/datum/component/hose_connector/input)
+		AddComponent(/datum/component/hose_connector/output)
 
 	. = ..()
 
@@ -159,12 +158,16 @@
 
 //Helium3
 /obj/structure/reagent_dispensers/he3
-	name = "/improper He3 tank"
+	name = "He3 tank"
 	desc = "A Helium3 tank."
 	icon_state = "he3"
 	amount_per_transfer_from_this = 10
 
+<<<<<<< HEAD
 /obj/structure/reagent_dispenser/he3/Initialize()
+=======
+/obj/structure/reagent_dispensers/he3/Initialize(mapload)
+>>>>>>> c39a5b0e88 ([MIRROR] Hose Connector Component (#11045))
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_HELIUM3,1000)
 
