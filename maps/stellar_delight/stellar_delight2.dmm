@@ -3778,6 +3778,10 @@
 /obj/structure/low_wall/bay/reinforced/steel,
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck2/portfore)
+"hP" = (
+/obj/machinery/space_heater,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck2/atmos)
 "hQ" = (
 /obj/structure/table/standard,
 /obj/item/storage/firstaid/surgery,
@@ -3982,6 +3986,16 @@
 /obj/structure/low_wall/bay/reinforced/white,
 /turf/simulated/floor,
 /area/medical/psych)
+"iq" = (
+/obj/structure/table/rack,
+/obj/random/maintenance/engineering,
+/obj/random/maintenance/engineering,
+/obj/random/bomb_supply,
+/obj/machinery/light/small{
+	dir = 8
+	},
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck2/atmos)
 "ir" = (
 /obj/structure/cable/green{
 	icon_state = "1-2"
@@ -4159,6 +4173,13 @@
 	},
 /turf/simulated/floor,
 /area/stellardelight/deck2/starboardescape)
+"iM" = (
+/obj/structure/cable/orange{
+	icon_state = "1-2"
+	},
+/obj/machinery/space_heater,
+/turf/simulated/floor,
+/area/maintenance/stellardelight/deck2/atmos)
 "iN" = (
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/angled_bay/standard/glass{
@@ -8133,6 +8154,7 @@
 /obj/machinery/alarm/angled{
 	dir = 4
 	},
+/obj/random/tank,
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck2/atmos)
 "rt" = (
@@ -8575,6 +8597,7 @@
 /obj/structure/cable/orange{
 	icon_state = "4-8"
 	},
+/obj/random/trash_pile,
 /turf/simulated/wall/bay/r_wall/steel,
 /area/maintenance/stellardelight/deck2/atmos)
 "sy" = (
@@ -19153,6 +19176,7 @@
 /obj/structure/cable/orange{
 	icon_state = "1-8"
 	},
+/obj/machinery/space_heater,
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck2/atmos)
 "Qh" = (
@@ -22575,6 +22599,7 @@
 	nightshift_setting = 2
 	},
 /obj/structure/cable/orange,
+/obj/machinery/space_heater,
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck2/atmos)
 "XX" = (
@@ -29583,10 +29608,10 @@ Jh
 Jh
 mI
 sx
-DB
+iq
 rs
-DB
-DB
+hP
+hP
 Hm
 Hm
 Hm
@@ -29867,7 +29892,7 @@ mI
 mI
 fQ
 th
-Wo
+iM
 XW
 Qg
 eq
