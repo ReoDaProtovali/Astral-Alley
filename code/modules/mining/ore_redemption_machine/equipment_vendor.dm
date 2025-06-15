@@ -18,6 +18,17 @@
 	var/list/prize_list // Initialized just below! (if you're wondering why - check CONTRIBUTING.md, look for: "hidden" init proc)
 	var/dirty_items = FALSE // Used to refresh the static/redundant data in case the machine gets VV'd
 
+/obj/machinery/mineral/equipment_vendor/Destroy()
+	if(inserted_id)
+		var/turf/T = get_turf(src)
+		if(T)
+			inserted_id.forceMove(T)
+			inserted_id = null
+		else
+			qdel_null(inserted_id)
+	QDEL_NULL_LIST(prize_list)
+	. = ..()
+
 /datum/data/mining_equipment
 	var/equipment_name = "generic"
 	var/equipment_path = null
@@ -38,11 +49,26 @@
 		EQUIPMENT("Defense Equipment - Plasteel Machete",		/obj/item/material/knife/machete,							500),
 		EQUIPMENT("Defense Equipment - Razor Drone Deployer",	/obj/item/grenade/spawnergrenade/manhacks/station/locked,	1000),
 		EQUIPMENT("Defense Equipment - Sentry Drone Deployer",	/obj/item/grenade/spawnergrenade/ward,						1500),
+<<<<<<< HEAD
 		EQUIPMENT("Defense Equipment - Smoke Bomb",				/obj/item/grenade/smokebomb,									100),
 		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Dagger",	/obj/item/kinetic_crusher/machete/dagger,					500),
 		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Machete",	/obj/item/kinetic_crusher/machete,							1000),
 		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Gauntlets",	/obj/item/kinetic_crusher/machete/gauntlets,					1000), //eh this is two-hasnded so whatever, same price for slight dmg increase!
 		EQUIPMENT("Durasteel Fishing Rod",						/obj/item/material/fishing_rod/modern/strong,				7500),
+=======
+		EQUIPMENT("Defense Equipment - Smoke Bomb",				/obj/item/grenade/smokebomb,								100),
+		EQUIPMENT("Defense Equipment - Phase Pistol",			/obj/item/gun/energy/locked/phasegun/pistol,				1500), //CHOMPEDIT
+		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Crusher",	/obj/item/kinetic_crusher,									1000),
+		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Dagger",	/obj/item/kinetic_crusher/machete/dagger,					500),
+		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Machete",	/obj/item/kinetic_crusher/machete,							1000),
+		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Gauntlets",	/obj/item/kinetic_crusher/machete/gauntlets,				1000), //eh this is two-handed so whatever, same price for slight dmg increase!
+		EQUIPMENT("Hybrid Equipment - Proto-Kinetic Glaive",	/obj/item/kinetic_crusher/glaive,							10000), //strong spear. Pay up.
+		EQUIPMENT("Machete Holster",							/obj/item/clothing/accessory/holster/machete,				350),
+		EQUIPMENT("Defense Equipment - PSG-B (Melee)",			/obj/item/personal_shield_generator/belt/melee/loaded, 		5000),
+		EQUIPMENT("Defense Equipment - PSG-M (General)",		/obj/item/personal_shield_generator/belt/mining/loaded,		1000),
+		EQUIPMENT("PSG-M Upgrade Disk",							/obj/item/borg/upgrade/shield_upgrade,						50),
+		EQUIPMENT("Durasteel Fishing Rod",						/obj/item/material/fishing_rod/modern/strong,				5000),
+>>>>>>> 7872b8bf3c ([MIRROR] More Mining Vendor & Kinetic Crusher adjustments (#11071))
 		EQUIPMENT("Titanium Fishing Rod",						/obj/item/material/fishing_rod/modern,						1000),
 		EQUIPMENT("Fishing Net",								/obj/item/material/fishing_net,								500),
 		EQUIPMENT("Fulton Beacon",								/obj/item/fulton_core,												500),
