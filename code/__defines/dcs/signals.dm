@@ -808,3 +808,46 @@
 #define COMSIG_OBSERVER_ITEM_UNEQUIPPED "observer_item_unequipped"
 #define COMSIG_OBSERVER_APC "observer_apc"
 #define COMSIG_OBSERVER_GLOBALMOVED "observer_global_move"
+<<<<<<< HEAD
+=======
+
+// Bellies
+///from /obj/belly/HandleBellyReagents() and /obj/belly/update_internal_overlay()
+#define COMSIG_BELLY_UPDATE_VORE_FX "update_vore_fx"
+///from /obj/belly/process()
+#define COMSIG_BELLY_UPDATE_PREY_LOOP "update_prey_loop"
+/// COMSIG used to get messages where they need to go
+#define COMSIG_VISIBLE_MESSAGE "visible_message"
+
+// Weaver Component
+///from /mob/living/proc/check_silk_amount()
+#define COMSIG_CHECK_SILK_AMOUNT "check_silk_amount"
+///from /mob/living/proc/weave_structure()
+#define COMSIG_WEAVE_STRUCTURE "weave_structure"
+///from /mob/living/proc/toggle_silk_production()
+#define COMSIG_TOGGLE_SILK_PRODUCTION "toggle_silk_production"
+///from /mob/living/proc/weave_item()
+#define COMSIG_WEAVE_ITEM "weave_item"
+///from /mob/living/proc/set_silk_color()
+#define COMSIG_SET_SILK_COLOR "set_silk_color"
+
+// Gargoyle Component
+///from /mob/living/carbon/human/proc/gargoyle_transformation()
+#define COMSIG_GARGOYLE_TRANSFORMATION "gargoyle_transformation"
+///from /mob/living/carbon/human/proc/gargoyle_pause()
+#define COMSIG_GARGOYLE_PAUSE "gargoyle_pause"
+///from /mob/living/carbon/human/proc/gargoyle_checkenergy()
+#define COMSIG_GARGOYLE_CHECK_ENERGY "gargoyle_check_energy"
+
+// Species Components
+///from /datum/species/xenochimera/handle_environment_special()
+#define COMSIG_XENOCHIMERA_COMPONENT "xenochimera_component"
+
+// Hose Connector Component
+#define COMSIG_HOSE_FORCEPUMP "hose_force_pump"
+
+//Unittest data update
+#ifdef UNIT_TEST
+#define COMSIG_UNITTEST_DATA "unittest_send_data"
+#endif
+>>>>>>> 4d08255ebd ([MIRROR] Mob Hose Inflation and Draining (#11070))
