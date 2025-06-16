@@ -253,9 +253,15 @@
 
 	var/part = amount / total_volume
 
+	var/target_is_belly = isbelly(target.my_atom) // Sending reagents into bellies turns them into belly reagents
+
 	for(var/datum/reagent/current in reagent_list)
 		var/amount_to_transfer = current.volume * part
+<<<<<<< HEAD
 		target.add_reagent(current.id, amount_to_transfer * multiplier, current.get_data(), safety = 1) // We don't react until everything is in place
+=======
+		target.add_reagent(current.id, amount_to_transfer * multiplier, current.get_data(), safety = 1, was_from_belly = (current.from_belly || target_is_belly)) // We don't react until everything is in place
+>>>>>>> 4d08255ebd ([MIRROR] Mob Hose Inflation and Draining (#11070))
 		if(!copy)
 			remove_reagent(current.id, amount_to_transfer, 1)
 
