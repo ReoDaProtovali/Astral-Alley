@@ -24,6 +24,8 @@ BONUS
 	level = 4
 	severity = 1
 
+	bodies = list("Bald", "Scalp")
+
 /datum/symptom/shedding/Activate(datum/disease/advance/A)
 	..()
 	if(!prob(SYMPTOM_ACTIVATION_PROB))

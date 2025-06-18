@@ -1,5 +1,6 @@
 /datum/disease/fake_gbs
 	name = "GBS"
+	medical_name = "Neutered Guillain-Barré Syndrome"
 	max_stages = 5
 	spread_text = "On contact"
 	spread_flags = CONTACT_GENERAL
@@ -7,8 +8,13 @@
 	cures = list(REAGENT_ID_ADRANOL, REAGENT_ID_SULFUR)
 	agent = "Gravitokinetic Bipotential SADS-"
 	viable_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/human/monkey)
+<<<<<<< HEAD
 	desc = "if left untreated death will occur."
 	severity = BIOHAZARD // Mimics real GBS
+=======
+	desc = "If left untreated death will occur."
+	danger = DISEASE_BIOHAZARD // Mimics real GBS
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 /datum/disease/fake_gbs/stage_act()
 	if(!..())

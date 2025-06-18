@@ -23,6 +23,40 @@ Bonus
 	transmittable = -3
 	level = 3
 	severity = 1
+<<<<<<< HEAD
+=======
+	symptom_delay_min = 1
+	symptom_delay_max = 1
+
+	var/clearacc = FALSE
+
+	threshold_descs = list(
+		"Resistance 8" = "This virus causes an even greater rate of nutriment loss, able to cause starvation, but it's energy gain greatly increases.",
+		"Stage 8" = "The virus causes extreme nervousness and paranoia, resulting in occasional hallucinations, and extreme restlessness, but great overall energy."
+	)
+
+	prefixes = list("Gray ", "Amped ", "Nervous ")
+	bodies = list("Hyper")
+
+/datum/symptom/stimulant/severityset(datum/disease/advance/A)
+	. = ..()
+	if(A.resistance >= 8)
+		severity -= 1
+	if(A.stage_rate >= 8)
+		severity -= 1
+		prefixes = list("Gray ", "Amped ", "Paranoid ")
+		suffixes = list(" Madness", " Insanity")
+
+/datum/symptom/stimulant/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	power = initial(power)
+	if(A.resistance >= 8)
+		power += 2
+	if(A.stage_rate >= 8)
+		power += 1
+		clearacc = TRUE
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 /datum/symptom/stimulant/Activate(datum/disease/advance/A)
 	..()

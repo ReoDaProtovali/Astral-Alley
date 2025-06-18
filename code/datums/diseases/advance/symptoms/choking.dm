@@ -16,6 +16,7 @@ Bonus
 */
 
 /datum/symptom/choking
+<<<<<<< HEAD
 	name = "Choking"
 	stealth = -3
 	resistance = -2
@@ -23,6 +24,41 @@ Bonus
 	transmittable = -4
 	level = 3
 	severity = 3
+=======
+	name = "Acute Respiratory Distress Syndrome"
+	desc = "The virus causes shrinking of the host's lungs, causing severe asphyxiation."
+	stealth = -2
+	resistance = 0
+	stage_speed = -1
+	transmission = -2
+	level = 9
+	severity = 5
+	naturally_occuring = FALSE
+	base_message_chance = 15
+	symptom_delay_min = 10 SECONDS
+	symptom_delay_max = 30 SECONDS
+
+	var/paralysis = FALSE
+
+	threshold_descs = list(
+		"Transmission 8" = "Doubles the damage caused by the symptom."
+	)
+
+	bodies = list("Lung")
+	suffixes = list(" Tuberculosis")
+
+/datum/symptom/choking/severityset(datum/disease/advance/A)
+	. = ..()
+	if(A.transmission >= 8)
+		severity += 1
+
+/datum/symptom/choking/Start(datum/disease/advance/A)
+	if(!..())
+		return
+
+	if(A.transmission >= 8)
+		power = 2
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 /datum/symptom/choking/Activate(datum/disease/advance/A)
 	..()

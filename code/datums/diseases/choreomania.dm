@@ -1,5 +1,6 @@
 /datum/disease/choreomania
 	name = "Choreomania"
+	medical_name = "Choreatic Hyperkinesia"
 	max_stages = 3
 	spread_text = "Airborne"
 	cure_text = REAGENT_ADRANOL

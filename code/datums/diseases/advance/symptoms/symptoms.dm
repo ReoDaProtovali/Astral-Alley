@@ -16,6 +16,10 @@ GLOBAL_LIST_INIT(list_symptoms, subtypesof(/datum/symptom))
 	// The hash tag for our diseases, we will add it up with our other symptoms to get a unique id! ID MUST BE UNIQUE!!!
 	var/id = ""
 
+	var/list/prefixes = list()
+	var/list/bodies = list()
+	var/list/suffixes = list()
+
 /datum/symptom/New()
 	var/list/S = GLOB.list_symptoms
 	for(var/i = 1; i <= length(S); i++)
@@ -26,7 +30,20 @@ GLOBAL_LIST_INIT(list_symptoms, subtypesof(/datum/symptom))
 
 // Called when processing of the advance disease, which holds this symptom, starts.
 /datum/symptom/proc/Start(datum/disease/advance/A)
+<<<<<<< HEAD
 	return
+=======
+	if(neutered)
+		return FALSE
+	next_activaction = world.time + rand(symptom_delay_min, symptom_delay_max)
+	return TRUE
+
+/datum/symptom/proc/severityset(datum/disease/advance/A)
+	severity = initial(severity)
+	prefixes = initial(prefixes)
+	bodies = initial(bodies)
+	suffixes = initial(suffixes)
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 // Called when the advance disease is going to be deleted or when the advance disease stops processing.
 /datum/symptom/proc/End(datum/disease/advance/A)

@@ -23,7 +23,29 @@ Bonus
 	stage_speed = 0
 	transmittable = 4
 	level = 1
+<<<<<<< HEAD
 	severity = 1
+=======
+	severity = 0
+
+	var/infective = FALSE
+
+	threshold_descs = list(
+		"Stealth 4" = "The symptom remains hidden until active.",
+		"Trasmission 12" = "The host may spread the disease through sneezing."
+	)
+
+	prefixes = list("Nasal ")
+	bodies = list("Cold")
+
+/datum/symptom/sneeze/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	if(A.stealth >= 4)
+		supress_warning = TRUE
+	if(A.transmission >= 12)
+		infective = TRUE
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 /datum/symptom/sneeze/Activate(datum/disease/advance/A)
 	..()
@@ -70,12 +92,25 @@ Bonus
 	level = 4
 	severity = 3
 
+<<<<<<< HEAD
 /datum/symptom/sneeze/bluespace/Activate(datum/disease/advance/A)
 	..()
 	if(prob(SYMPTOM_ACTIVATION_PROB))
 		var/mob/living/M = A.affected_mob
 		switch(A.stage)
 			if(1, 2, 3)
+=======
+	prefixes = list("Nasal ", "Displacing ")
+	bodies = list("Cold", "Bluespace")
+
+/datum/symptom/bsneeze/Activate(datum/disease/advance/A)
+	if(!..())
+		return
+	var/mob/living/M = A.affected_mob
+	switch(A.stage)
+		if(1, 2, 3)
+			if(!supress_warning)
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 				M.emote("sniff")
 			else
 				SneezeTeleport(A, M)

@@ -84,8 +84,11 @@ BONUS
 //////////////////////////////////////
 */
 
+	prefixes = list("Growing ", "Gigantic ")
+
 /datum/symptom/size/shrink
 	name = "Dwindling Malady"
+<<<<<<< HEAD
 
 /datum/symptom/size/Activate(datum/disease/advance/A)
 	..()
@@ -96,3 +99,9 @@ BONUS
 			if(4, 5)
 				M.emote("twitch")
 				Resize(M, rand(25, 100))
+=======
+	min_size = RESIZE_MINIMUM
+	max_size = RESIZE_NORMAL
+
+	prefixes = list("Shrinking ", "Micro-")
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))

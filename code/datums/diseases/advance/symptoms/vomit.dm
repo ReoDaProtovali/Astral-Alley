@@ -23,6 +23,35 @@ Bonus
 	transmittable = 2
 	level = 3
 	severity = 1
+<<<<<<< HEAD
+=======
+	base_message_chance = 100
+	symptom_delay_min = 20 SECONDS
+	symptom_delay_max = 60 SECONDS
+
+	var/vomit_blood = FALSE
+	var/proj_vomit = 1
+
+	threshold_descs = list(
+		"Stage Speed 5" = "Host will vomit blood.",
+		"Transmission 6" = "Host will projectile vomit, increasing vomit range.",
+		"Stealth 4" = "The symptom remans hidden until active."
+	)
+
+	prefixes = list("Digestive ")
+	bodies = list("Vomit")
+	suffixes = list(" Emission")
+
+/datum/symptom/vomit/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	if(A.stealth >= 4)
+		supress_warning = FALSE
+	if(A.stage_rate >= 5)
+		vomit_blood = TRUE
+	if(A.transmission >= 6)
+		proj_vomit = 5
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 /datum/symptom/vomit/Activate(datum/disease/advance/A)
 	if(!..())

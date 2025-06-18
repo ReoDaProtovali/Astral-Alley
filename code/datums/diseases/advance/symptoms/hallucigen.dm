@@ -17,12 +17,49 @@ Bonus
 
 /datum/symptom/hallucigen
 	name = "Hallucigen"
+<<<<<<< HEAD
 	stealth = -2
 	resistance = -3
 	stage_speed = -3
 	transmittable = -1
 	level = 5
 	severity = 3
+=======
+	desc = "The virus stimulates the brain, causing occasional hallucinations."
+	stealth = 1
+	resistance = -1
+	stage_speed = 1
+	transmission = 1
+	level = 3
+	severity = 1
+	base_message_chance = 25
+	symptom_delay_min = 10 SECONDS
+	symptom_delay_max = 70 SECONDS
+
+	var/fake_healthy = FALSE
+
+	prefixes = list("Narcotic ", "Narco", "Psycho-")
+	suffixes = list(" Psychosis")
+
+	threshold_descs = list(
+		"Stage Speed 7" = "Increases the amount of hallucinations.",
+		"Stealth 2" = "The virus mimics positive symptoms"
+	)
+
+/datum/symptom/hallucigen/severityset(datum/disease/advance/A)
+	. = ..()
+	if(A.stage_rate >= 7)
+		severity += 1
+
+/datum/symptom/hallucigen/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	if(A.stealth >= 2)
+		fake_healthy = TRUE
+		base_message_chance = 50
+	if(A.stage_rate >= 7)
+		power = 2
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 /datum/symptom/hallucigen/Activate(datum/disease/advance/A)
 	..()
