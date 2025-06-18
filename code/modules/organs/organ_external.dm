@@ -290,6 +290,13 @@
 	//Continued damage to vital organs can kill you, and robot organs don't count towards total damage so no need to cap them.
 	return (vital || (robotic >= ORGAN_ROBOT) || brute_dam + burn_dam + additional_damage < max_damage)
 
+/obj/item/organ/external/proc/is_fracturable()
+	if(robotic >= ORGAN_ROBOT)
+		return FALSE	//ORGAN_BROKEN doesn't have the same meaning for robot limbs
+	if((status & ORGAN_BROKEN) || cannot_break)
+		return FALSE
+	return TRUE
+
 /obj/item/organ/external/take_damage(brute, burn, sharp, edge, used_weapon = null, list/forbidden_limbs = list(), permutation = FALSE, projectile)
 	brute = round(brute * brute_mod, 0.1)
 	burn = round(burn * burn_mod, 0.1)
@@ -1149,6 +1156,7 @@ Note that amputating the affected organ does in fact remove the infection from t
 		return
 
 	if(owner)
+<<<<<<< HEAD
 		if(organ_can_feel_pain() && !isbelly(owner.loc) && !isliving(owner.loc))
 			//CHOMPEdit Begin
 			owner.custom_pain(pick(\
@@ -1158,6 +1166,28 @@ Note that amputating the affected organ does in fact remove the infection from t
 			//CHOMPEdit End
 			owner.emote("scream")
 		jostle_bone()	//VOREStation Edit End
+=======
+		var/show_message = TRUE
+		var/scream = TRUE
+		if(!organ_can_feel_pain() || owner.transforming)
+			show_message = FALSE
+			scream = FALSE
+		if(isbelly(owner.loc) || isliving(owner.loc))
+			scream = FALSE
+			if(!owner.digest_pain)
+				show_message = FALSE
+
+		if(show_message)
+			// CHOMPEdit Start
+			owner.custom_pain(pick(\
+				span_danger("You hear a loud cracking sound coming from \the [owner]."),\
+				span_danger("Something feels like it shattered in your [name]!"),\
+				span_danger("You hear a sickening crack.")), brokenpain)
+			// CHOMPEdit End
+			if(scream)
+				owner.emote("scream")
+		jostle_bone()
+>>>>>>> 46d63bba00 ([MIRROR] Add a new process option: Break Bone (#11080))
 
 	if(istype(owner.loc, /obj/belly)) //CHOMPedit, bone breaks in bellys should be whisper range to prevent bar wide blender prefbreak. This is a hacky passive hardcode, if a pref gets added, remove this if else
 		playsound(src, "fracture", 90, 1, -6.5)
