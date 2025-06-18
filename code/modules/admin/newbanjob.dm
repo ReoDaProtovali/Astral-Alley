@@ -231,8 +231,16 @@ var/savefile/Banlistjob
 		dat += text("<tr><td><A href='byond://?src=\ref[src];[HrefToken()];unjobbanf=[Banlistjob["key"]][Banlistjob["id"]][Banlistjob["rank"]]'>(U)</A> Key: <B>[Banlistjob["key"]] </B>Rank: <B>[Banlistjob["rank"]]</B></td><td> ([Banlistjob["temp"] ? "[GetBanExpjob(Banlistjob["minutes"]) ? GetBanExpjob(Banlistjob["minutes"]) : "Removal pending" ]" : "Permaban"])</td><td>(By: [Banlistjob["bannedby"]])</td><td>(Reason: [Banlistjob["reason"]])</td></tr>")
 
 	dat += "</table>"
+<<<<<<< HEAD
 	dat = "<HR><B>Bans:</B> <FONT COLOR=blue>(U) = Unban , </FONT> - <FONT COLOR=green>([count] Bans)</FONT><HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >[dat]"
 	usr << browse("<html>[dat]</html>", "window=unbanp;size=875x400")
+=======
+	dat = "<HR>" + span_bold("Bans:") + " " span_blue("(U) = Unban , ") + " - " + span_green("([count] Bans)") + "<HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >[dat]"
+
+	var/datum/browser/popup = new(owner, "unbanjob", "Unban Job", 875, 400)
+	popup.set_content(dat)
+	popup.open()
+>>>>>>> 590a653d5a ([MIRROR] browse to browser continued (#11088))
 
 /*/datum/admins/proc/permjobban(ckey, computerid, reason, bannedby, temp, minutes, rank)
 	if(AddBanjob(ckey, computerid, reason, usr.ckey, 0, 0, job))

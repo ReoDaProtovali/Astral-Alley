@@ -189,8 +189,16 @@ var/savefile/Banlist
 		dat += text("<tr><td><A href='byond://?src=[ref];[HrefToken()];unbanf=[key][id]'>(U)</A><A href='byond://?src=[ref];[HrefToken()];unbane=[key][id]'>(E)</A> Key: <B>[key]</B></td><td>ComputerID: <B>[id]</B></td><td>IP: <B>[ip]</B></td><td> [expiry]</td><td>(By: [by])</td><td>(Reason: [reason])</td></tr>")
 
 	dat += "</table>"
+<<<<<<< HEAD
 	dat = "<HR><B>Bans:</B> <FONT COLOR=blue>(U) = Unban , (E) = Edit Ban</FONT> - <FONT COLOR=green>([count] Bans)</FONT><HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >[dat]"
 	usr << browse("<html>[dat]</html>", "window=unbanp;size=875x400")
+=======
+	dat = "<HR>" + span_bold("Bans:") + " " + span_blue("(U) = Unban , (E) = Edit Ban") + " - " + span_green("([count] Bans)") + "<HR><table border=1 rules=all frame=void cellspacing=0 cellpadding=3 >[dat]"
+
+	var/datum/browser/popup = new(owner, "unbanp", "Unban", 875, 400)
+	popup.set_content(dat)
+	popup.open()
+>>>>>>> 590a653d5a ([MIRROR] browse to browser continued (#11088))
 
 //////////////////////////////////// DEBUG ////////////////////////////////////
 

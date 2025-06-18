@@ -77,8 +77,13 @@ GLOBAL_LIST_BOILERPLATE(all_debugging_effects, /obj/effect/debugging)
 	for(var/obj/machinery/camera/C in cameranet.cameras)
 		CL += C
 
+<<<<<<< HEAD
 	var/output = {"<B>CAMERA ANNOMALITIES REPORT</B><HR>
 <B>The following annomalities have been detected. The ones in red need immediate attention: Some of those in black may be intentional.</B><BR><ul>"}
+=======
+	var/output = span_bold("CAMERA ANNOMALITIES REPORT") + {"<HR>
+"} + span_bold("The following annomalities have been detected. The ones in red need immediate attention: Some of those in black may be intentional.") + {"<BR><ul>"}
+>>>>>>> 590a653d5a ([MIRROR] browse to browser continued (#11088))
 
 	for(var/obj/machinery/camera/C1 in CL)
 		for(var/obj/machinery/camera/C2 in CL)
@@ -101,7 +106,10 @@ GLOBAL_LIST_BOILERPLATE(all_debugging_effects, /obj/effect/debugging)
 					output += "<li><font color='red'>Camera not connected to wall at \[[C1.x], [C1.y], [C1.z]\] ([C1.loc.loc]) Network: [C1.network]</color></li>"
 
 	output += "</ul>"
-	usr << browse("<html>[output]</html>","window=airreport;size=1000x500")
+
+	var/datum/browser/popup = new(src, "airreport", "Airreport", 1000, 500)
+	popup.set_content(output)
+	popup.open()
 	feedback_add_details("admin_verb","mCRP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 /client/proc/intercom_view()

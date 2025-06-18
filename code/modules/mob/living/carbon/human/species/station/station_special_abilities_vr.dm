@@ -1587,8 +1587,13 @@
 		to_chat(src, span_notice("You will [trait_injection_verb] your targets."))
 		return
 	if(choice == "Chemical Refresher")
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/station_special_abilities_vr.dm
 		var/output = {"<B>Chemical Refresher!</B><HR>
 					<B>Options for venoms</B><BR>
+=======
+		var/output = {"<HR>
+					"} + span_bold("Options for venoms") + {"<BR>
+>>>>>>> 590a653d5a ([MIRROR] browse to browser continued (#11088)):code/modules/mob/living/carbon/human/species/station/station_special_abilities.dm
 					<BR>
 					<B>Size Chemicals</B><BR>
 					Microcillin: Will make someone shrink. <br>
@@ -1616,7 +1621,10 @@
 					You can also bite synthetics, but due to how synths work, they won't have anything injected into them.
 					<br>
 					"}
-		src << browse("<html>[output]</html>","window=chemicalrefresher")
+
+		var/datum/browser/popup = new(src, "chemicalrefresher", "Chemical Refresher")
+		popup.set_content(output)
+		popup.open()
 		return
 	else
 		var/list/targets = list() //IF IT IS NOT BROKEN. DO NOT FIX IT. AND KEEP COPYPASTING IT  (Pointing Rick Dalton: "That's my code!" ~CL)
