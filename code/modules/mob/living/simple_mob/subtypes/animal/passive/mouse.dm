@@ -95,6 +95,17 @@
 	if (body_color == "black")
 		holder_type = /obj/item/holder/mouse/black
 
+<<<<<<< HEAD
+=======
+	if(prob(40))
+		LAZYINITLIST(rat_diseases)
+		rat_diseases += new /datum/disease/advance/random(rand(1, 5), 9, 1, infected = src)
+
+/mob/living/simple_mob/animal/passive/mouse/extrapolator_act(mob/living/user, obj/item/extrapolator/extrapolator, dry_run = FALSE)
+	. = ..()
+	EXTRAPOLATOR_ACT_ADD_DISEASES(., rat_diseases)
+
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 /mob/living/simple_mob/animal/passive/mouse/Crossed(atom/movable/AM as mob|obj)
 	if(AM.is_incorporeal())
 		return
@@ -231,3 +242,23 @@
 	to_chat(src, span_notice("You are now a [new_mouse_colour] mouse!"))
 	remove_verb(src,/mob/living/simple_mob/animal/passive/mouse/verb/set_mouse_colour) //CHOMPEdit TGPanel
 // CHOMPAdd End
+<<<<<<< HEAD
+=======
+
+/mob/living/simple_mob/animal/passive/mouse/white/virology
+	name = "Fleming"
+	desc = "A small white rodent, often found in Virology. This one isn't quite the nuisance!"
+
+/mob/living/simple_mob/animal/passive/mouse/white/virology/Initialize(mapload)
+	..()
+	name = initial(name)
+	desc = initial(desc)
+	rat_diseases += new /datum/disease/advance/random(2, 2, 1, infected = src)
+
+/mob/living/simple_mob/animal/passive/mouse/white/virology/Crossed(atom/movable/AM)
+	. = ..()
+
+	if(isliving(AM) && !isnull(rat_diseases) && prob(20))
+		var/mob/living/L = AM
+		L.ContractDisease(pick(rat_diseases), BP_R_FOOT)
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))

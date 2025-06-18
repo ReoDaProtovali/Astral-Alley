@@ -28,6 +28,24 @@ BONUS
 	var/netspeed = 0
 	var/phagecounter = 10
 
+<<<<<<< HEAD
+=======
+	threshold_descs = list(
+		"Stage Speed" = "The higher the stage speed, the more frequently will burst from the host.",
+		"Resistance" = "The higher the resistance, the more health phages will have, and the more damage the will do.",
+		"Transmission 10" = "Phages can be larger, and more aggressive.",
+		"Transmission 12" = "Phages will carry all diseases within the host, instead of only containing their own."
+	)
+
+	prefixes = list("Ambulant ", "Macro")
+	bodies = list("Phage")
+
+/datum/symptom/macrophage/severityset(datum/disease/advance/A)
+	. = ..()
+	if(A.transmission >= 10)
+		severity += 2
+
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 /datum/symptom/macrophage/Start(datum/disease/advance/A)
 	netspeed = max(1, A.stage)
 	if(A.severity >= HARMFUL)

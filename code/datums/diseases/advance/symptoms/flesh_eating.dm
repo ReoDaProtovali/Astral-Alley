@@ -20,9 +20,38 @@ Bonus
 	stealth = -3
 	resistance = -4
 	stage_speed = 0
+<<<<<<< HEAD
 	transmittable = -4
 	level = 6
 	severity = 5
+=======
+	transmission = -1
+	level = 7
+	severity = 4
+	base_message_chance = 50
+	symptom_delay_min = 20 SECONDS
+	symptom_delay_max = 60 SECONDS
+
+	var/bleed = FALSE
+	var/damage = FALSE
+
+	threshold_descs = list(
+		"Resistance 10" = "The host takes brute damage as their flesh is burst open.",
+		"Transmission 8" = "The host will bleed far more violently, loosing even more blood, and spraying infected blood everywhere."
+	)
+
+	prefixes = list("Bloody ", "Hemo")
+	bodies = list("Hemophilia")
+
+/datum/symptom/flesh_eating/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	if(A.resistance >= 10)
+		damage = TRUE
+	if(A.transmission >= 8)
+		power = 2
+		bleed = TRUE
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 /datum/symptom/flesh_eating/Activate(datum/disease/advance/A)
 	..()

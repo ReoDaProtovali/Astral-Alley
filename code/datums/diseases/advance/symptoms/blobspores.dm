@@ -27,6 +27,17 @@ BONUS
 	var/strong_blob
 	var/node_blob
 
+<<<<<<< HEAD
+=======
+	prefixes = list("Xeno", "Sporing ")
+	bodies = list("Blob")
+
+/datum/symptom/blobspores/severityset(datum/disease/advance/A)
+	. = ..()
+	if(A.resistance >= 14)
+		severity += 1
+
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 /datum/symptom/blobspores/Start(datum/disease/advance/A)
 	if(!..())
 		return

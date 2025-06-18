@@ -22,7 +22,47 @@ BONUS
 	stage_speed = 1
 	transmittable = 2
 	level = 1
+<<<<<<< HEAD
 	severity = 1
+=======
+	severity = 0
+	base_message_chance = 15
+	symptom_delay_min = 15 SECONDS
+	symptom_delay_max = 45 SECONDS
+
+	var/infective = FALSE
+
+	threshold_descs = list(
+		"Resistance 3" = "Host will drop small items when coughing.",
+		"Resistance 10" = "Occasionally causes coughing fits that stun the host.",
+		"Stage Speed 6" = "Increases cough frequency",
+		"Stealth 4" = "The symptom remains hidden until active.",
+		"Transmission 11" = "The hosts coughing will occasionally spread the virus."
+	)
+
+	bodies = list("Cough")
+
+/datum/symptom/cough/severityset(datum/disease/advance/A)
+	. = ..()
+	if(A.resistance >= 3)
+		severity += 1
+		if(A.resistance >= 10)
+			severity += 1
+
+/datum/symptom/cough/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	if(A.stealth >= 4)
+		supress_warning = TRUE
+	if(A.resistance >= 3)
+		power = 1.5
+		if(A.resistance >= 10)
+			power = 2
+	if(A.stage_rate >= 6)
+		symptom_delay_max = 10
+	if(A.transmission >= 11)
+		infective = TRUE
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 /datum/symptom/cough/Activate(var/datum/disease/advance/A)
 	..()

@@ -20,9 +20,42 @@ Bonus
 	stealth = -1
 	resistance = -4
 	stage_speed = -4
+<<<<<<< HEAD
 	transmittable = -3
 	level = 5
 	severity = 4
+=======
+	transmission = -2
+	level = 3
+	severity = 2
+	base_message_chance = 50
+	symptom_delay_min = 30 SECONDS
+	symptom_delay_max = 80 SECONDS
+
+	var/remove_eyes = FALSE
+
+	threshold_descs = list(
+		"Resistance 12" = "Weakens extraocular muscles, eventually leading to complete detachment of the eyes.",
+		"Stealth 4" = "The symptom remains hidden until active."
+	)
+
+	prefixes = list("Eye ")
+	bodies = list("Blind")
+	suffixes = list(" Blindness")
+
+/datum/symptom/visionloss/severityset(datum/disease/advance/A)
+	. = ..()
+	if(A.resistance >= 12)
+		severity += 1
+
+/datum/symptom/visionloss/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	if(A.stealth >= 4)
+		supress_warning = TRUE
+	if(A.resistance >= 12)
+		remove_eyes = TRUE
+>>>>>>> f9734b9232 ([MIRROR] Viruses now spawn with random names (#11082))
 
 /datum/symptom/visionloss/Activate(datum/disease/advance/A)
 	..()
