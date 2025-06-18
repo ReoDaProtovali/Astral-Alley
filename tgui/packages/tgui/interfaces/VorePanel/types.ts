@@ -3,6 +3,7 @@ import { BooleanLike } from 'tgui-core/react';
 export type Data = {
   unsaved_changes: BooleanLike;
   show_pictures: BooleanLike;
+<<<<<<< HEAD
   inside: insideData;
   host_mobtype: hostMob;
   our_bellies: bellyData[];
@@ -16,6 +17,33 @@ export type Data = {
     resize_cost: number;
   };
   vore_words: Record<string, string[]>;
+=======
+  icon_overflow: BooleanLike;
+  active_tab: number;
+  persist_edit_mode: BooleanLike;
+  host_mobtype: hostMob | null;
+  our_bellies?: bellyData[] | null;
+  min_belly_name: number;
+  max_belly_name: number;
+  selected?: selectedData | null;
+  prefs?: prefData | null;
+  soulcatcher?: soulcatcherData | null;
+  abilities?: abilities | null;
+  active_vore_tab?: number;
+  general_pref_data?: generalPrefData | null;
+};
+
+export type abilities = {
+  nutrition: number;
+  size_change: abilitySizeChange;
+};
+
+export type abilitySizeChange = {
+  current_size: number;
+  minimum_size: number;
+  maximum_size: number;
+  resize_cost: number;
+>>>>>>> 87f031d72b ([MIRROR] tgui core 4.3.1 (#11083))
 };
 
 export type hostMob = {
@@ -140,8 +168,51 @@ export type interactData = {
 
 type autotransferData = {
   autotransferchance: number;
+<<<<<<< HEAD
   autotransferwait: number;
   autotransferlocation: string;
+=======
+  autotransferlocation: string | null;
+  autotransferextralocation: string[];
+  autotransfer_whitelist: checkBoxEntry[];
+  autotransfer_blacklist: checkBoxEntry[];
+  autotransfer_whitelist_items: checkBoxEntry[];
+  autotransfer_blacklist_items: checkBoxEntry[];
+};
+
+type bellyReagent = { name: string; volume: number };
+
+export type liqInteractData = {
+  liq_reagent_gen: BooleanLike;
+  liq_reagent_type: string;
+  liq_reagent_types: string[];
+  liq_reagent_name: string;
+  liq_custom_name_max: number;
+  liq_custom_name_min: number;
+  liq_reagent_transfer_verb: string;
+  liq_reagent_nutri_rate: number;
+  liq_reagent_capacity: number;
+  liq_sloshing: BooleanLike;
+  liq_reagent_addons: checkBoxEntry[];
+  custom_reagentcolor: string;
+  custom_reagentalpha: number | null;
+  liquid_overlay: BooleanLike;
+  max_liquid_level: number;
+  reagent_touches: BooleanLike;
+  mush_overlay: BooleanLike;
+  mush_color: string;
+  mush_alpha: number;
+  max_mush: number;
+  min_mush: number;
+  item_mush_val: number;
+  metabolism_overlay: BooleanLike;
+  metabolism_mush_ratio: number;
+  max_ingested: number;
+  custom_ingested_color: string;
+  custom_ingested_alpha: number;
+  total_volume: number;
+  current_reagents: bellyReagent[];
+>>>>>>> 87f031d72b ([MIRROR] tgui core 4.3.1 (#11083))
 };
 
 export type prefData = {
