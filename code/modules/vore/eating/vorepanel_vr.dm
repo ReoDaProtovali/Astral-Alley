@@ -1636,6 +1636,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 
 			if(ourtarget.digestable)
 				process_options += "Digest"
+				process_options += "Break Bone"
 
 			if(ourtarget.absorbable)
 				process_options += "Absorb"
@@ -1655,8 +1656,12 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 				to_chat(user, span_vwarning("You cannot instantly process [ourtarget]."))
 				return
 			var/obj/belly/b = ourtarget.loc
+			if(!istype(b) || b.owner != user)
+				to_chat(user, span_vwarning("[ourtarget] isn't in your belly."))
+				return FALSE
 			switch(ourchoice)
 				if("Digest")
+<<<<<<< HEAD
 					if(ourtarget.absorbed)
 						to_chat(user, span_vwarning("\The [ourtarget] is absorbed, and cannot presently be digested."))
 						return
@@ -1707,6 +1712,15 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 						return
 					ourtarget.AdjustSleeping(500000)
 					to_chat(ourtarget, span_vwarning("\The [user] has put you to sleep, you will remain unconscious until ejected from the belly."))
+=======
+					return b.instant_digest(user, ourtarget)
+				if("Break Bone")
+					return b.instant_break_bone(user, ourtarget)
+				if("Absorb")
+					return b.instant_absorb(user, ourtarget)
+				if("Knockout")
+					return b.instant_knockout(user, ourtarget)
+>>>>>>> 46d63bba00 ([MIRROR] Add a new process option: Break Bone (#11080))
 				if("Cancel")
 					return
 		if("Health Check")
