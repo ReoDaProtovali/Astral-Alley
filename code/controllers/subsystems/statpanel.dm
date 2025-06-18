@@ -170,7 +170,15 @@ SUBSYSTEM_DEF(statpanels)
 	if(description_holders["antag"])
 		examine_update += "<font color='#8A0808'>" + span_bold("[description_holders["antag"]]") + "</font><br />" //Red, malicious antag-related text
 
+<<<<<<< HEAD
 	target.stat_panel.send_message("update_examine", examine_update)
+=======
+	var/update_panel = FALSE
+	if(target.prefs?.read_preference(/datum/preference/choiced/examine_mode) == EXAMINE_MODE_SWITCH_TO_PANEL)
+		update_panel = TRUE
+
+	target.stat_panel.send_message("update_examine", list("EX" = examine_update, "UPD" = update_panel))
+>>>>>>> d1e9a9fbf0 ([MIRROR] Embedded Examine Info (#11086))
 
 /datum/controller/subsystem/statpanels/proc/set_tickets_tab(client/target)
 	/* CHOMPRemove Start, our tickets are handled differently
