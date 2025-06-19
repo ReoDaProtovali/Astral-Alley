@@ -183,43 +183,114 @@
 	display_name = "AR glasses"
 	path = /obj/item/clothing/glasses/omnihud
 
+<<<<<<< HEAD
 /datum/gear/eyes/arglasses/visor
+=======
+/datum/gear/eyes/arglasses/New()
+	..()
+	var/list/selector_uniforms = list(
+		"standard AR glasses"=/obj/item/clothing/glasses/omnihud,
+		"prescription AR glasses"=/obj/item/clothing/glasses/omnihud/prescription,
+	)
+	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(selector_uniforms))
+
+/datum/gear/eyes/arglasses_visor
+>>>>>>> 8b77d06e2b ([MIRROR] Fixes an inheritence issues with arglasses (#11090))
 	display_name = "AR visor"
 	path = /obj/item/clothing/glasses/omnihud/visor
 
-/datum/gear/eyes/arglasses/visor/New()
+/datum/gear/eyes/arglasses_visor/New()
 	..()
 	gear_tweaks = list(gear_tweak_free_color_choice)
 /datum/gear/eyes/arglassespres
 	display_name = "AR glasses, prescription"
 	path = /obj/item/clothing/glasses/omnihud/prescription
 
-/datum/gear/eyes/arglasses/sec
+/datum/gear/eyes/arglasses_sec
 	display_name = "AR-Security glasses"
 	path = /obj/item/clothing/glasses/omnihud/sec
 	allowed_roles = list(JOB_SECURITY_OFFICER,JOB_HEAD_OF_SECURITY,JOB_WARDEN,JOB_DETECTIVE)
 
+<<<<<<< HEAD
 /datum/gear/eyes/arglasses/sci
+=======
+/datum/gear/eyes/arglasses_sec/New()
+	..()
+	var/list/selector_uniforms = list(
+		"standard AR-Security glasses"=/obj/item/clothing/glasses/omnihud/sec,
+		"prescription AR-Security glasses"=/obj/item/clothing/glasses/omnihud/sec/prescription
+	)
+	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(selector_uniforms))
+
+/datum/gear/eyes/arglasses_sci
+>>>>>>> 8b77d06e2b ([MIRROR] Fixes an inheritence issues with arglasses (#11090))
 	display_name = "AR-Research glasses"
 	path = /obj/item/clothing/glasses/omnihud/rnd
 	allowed_roles = list(JOB_RESEARCH_DIRECTOR,JOB_SCIENTIST,JOB_XENOBIOLOGIST,JOB_XENOBOTANIST,JOB_ROBOTICIST)
 
+<<<<<<< HEAD
 /datum/gear/eyes/arglasses/eng
+=======
+/datum/gear/eyes/arglasses_sci/New()
+	..()
+	var/list/selector_uniforms = list(
+		"standard AR-Research glasses"=/obj/item/clothing/glasses/omnihud/rnd,
+		"prescription AR-Research glasses"=/obj/item/clothing/glasses/omnihud/rnd/prescription
+	)
+	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(selector_uniforms))
+
+/datum/gear/eyes/arglasses_eng
+>>>>>>> 8b77d06e2b ([MIRROR] Fixes an inheritence issues with arglasses (#11090))
 	display_name = "AR-Engineering glasses"
 	path = /obj/item/clothing/glasses/omnihud/eng
 	allowed_roles = list(JOB_ENGINEER,JOB_CHIEF_ENGINEER,JOB_ATMOSPHERIC_TECHNICIAN)
 
+<<<<<<< HEAD
 /datum/gear/eyes/arglasses/med
+=======
+/datum/gear/eyes/arglasses_eng/New()
+	..()
+	var/list/selector_uniforms = list(
+		"standard AR-Engineering glasses"=/obj/item/clothing/glasses/omnihud/eng,
+		"prescription AR-Engineering glasses"=/obj/item/clothing/glasses/omnihud/eng/prescription
+	)
+	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(selector_uniforms))
+
+/datum/gear/eyes/arglasses_med
+>>>>>>> 8b77d06e2b ([MIRROR] Fixes an inheritence issues with arglasses (#11090))
 	display_name = "AR-Medical glasses"
 	path = /obj/item/clothing/glasses/omnihud/med
 	allowed_roles = list(JOB_MEDICAL_DOCTOR,JOB_CHIEF_MEDICAL_OFFICER,JOB_CHEMIST,JOB_PARAMEDIC,JOB_GENETICIST, JOB_PSYCHIATRIST,JOB_FIELD_MEDIC) //CHOMP keep explo
 
+<<<<<<< HEAD
 /datum/gear/eyes/arglasses/all
+=======
+/datum/gear/eyes/arglasses_med/New()
+	..()
+	var/list/selector_uniforms = list(
+		"standard AR-Medical glasses"=/obj/item/clothing/glasses/omnihud/med,
+		"prescription AR-Medical glasses"=/obj/item/clothing/glasses/omnihud/med/prescription
+	)
+	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(selector_uniforms))
+
+/datum/gear/eyes/arglasses_all
+>>>>>>> 8b77d06e2b ([MIRROR] Fixes an inheritence issues with arglasses (#11090))
 	display_name = "AR-Command glasses"
 	path = /obj/item/clothing/glasses/omnihud/all
 	cost = 2
 	allowed_roles = list(JOB_SITE_MANAGER,JOB_HEAD_OF_PERSONNEL)
 
+<<<<<<< HEAD
+=======
+/datum/gear/eyes/arglasses_all/New()
+	..()
+	var/list/selector_uniforms = list(
+		"standard AR-Command glasses"=/obj/item/clothing/glasses/omnihud/all,
+		"prescription AR-Command glasses"=/obj/item/clothing/glasses/omnihud/all/prescription
+	)
+	gear_tweaks += new/datum/gear_tweak/path(sortAssoc(selector_uniforms))
+
+>>>>>>> 8b77d06e2b ([MIRROR] Fixes an inheritence issues with arglasses (#11090))
 /datum/gear/eyes/spiffygogs
 	display_name = "slick orange goggles"
 	path = /obj/item/clothing/glasses/fluff/spiffygogs
