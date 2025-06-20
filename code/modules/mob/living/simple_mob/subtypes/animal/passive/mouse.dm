@@ -60,12 +60,22 @@
 	active_ghost_pods |= src
 
 /mob/living/simple_mob/animal/passive/mouse/Destroy()
-	active_ghost_pods -= src
+	GLOB.active_ghost_pods -= src
 	return ..()
 //CHOMPEdit End
 
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/passive/mouse/New()
 	..()
+=======
+/mob/living/simple_mob/animal/passive/mouse/Initialize(mapload, keep_parent_data)
+	. = ..()
+	//CHOMPAdd Start
+	ghostjoin = 1
+	ghostjoin_icon()
+	GLOB.active_ghost_pods += src
+	//CHOMPAdd End
+>>>>>>> f7e20d021e ([MIRROR] Better borg modules (#11095))
 
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
