@@ -1,5 +1,5 @@
 /obj/structure/ghost_pod/proc/reset_ghostpod()	//Makes the ghost pod usable again and re-adds it to the active ghost pod list if it is not on it.
-	active_ghost_pods |= src
+	GLOB.active_ghost_pods |= src
 	used = FALSE
 	busy = FALSE
 
@@ -189,8 +189,7 @@
 
 /obj/structure/ghost_pod/ghost_activated/maintpred/redgate/Initialize()
 	. = ..()
-	if(!(src in active_ghost_pods))
-		active_ghost_pods += src
+	GLOB.active_ghost_pods += src
 
 /obj/structure/ghost_pod/ghost_activated/maint_lurker
 	name = "strange maintenance hole"
@@ -268,5 +267,38 @@
 
 /obj/structure/ghost_pod/ghost_activated/maint_lurker/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	if(!(src in active_ghost_pods))
 		active_ghost_pods += src
+=======
+	GLOB.active_ghost_pods += src
+
+/// redspace variant
+
+/obj/structure/ghost_pod/ghost_activated/maint_lurker/redgate
+	name = "Redspace inhabitant hole"
+	desc = "A starting location for characters who exist inside of the redgate!"
+	redgate_restricted = TRUE
+
+/obj/structure/ghost_pod/ghost_activated/maint_lurker/redgate/attack_ghost(var/mob/observer/dead/user)
+	if(jobban_isbanned(user, JOB_GHOSTROLES))
+		to_chat(user, span_warning("You cannot use this spawnpoint because you are banned from playing ghost roles."))
+		return
+
+	//No whitelist
+	if(!is_alien_whitelisted(user.client, GLOB.all_species[user.client.prefs.species]))
+		to_chat(user, span_warning("You cannot use this spawnpoint to spawn as a species you are not whitelisted for!"))
+		return
+
+	//No OOC notes/FT
+	if(not_has_ooc_text(user))
+		//to_chat(user, span_warning("You must have proper out-of-character notes and flavor text configured for your current character slot to use this spawnpoint."))
+		return
+
+	var/choice = tgui_alert(user, "Using this spawner will spawn you as your currently loaded character slot in a special role. It should be a character who has a suitable reason for existing within this redspace location. You will not be able to leave through the redgate until another character grants you permission by clicking on the redgate with you nearby. Are you absolutely sure you wish to continue?", "Redspace Inhabitant Spawner", list("Yes", "No"))
+
+	if(choice != "Yes")
+		return
+
+	create_occupant(user)
+>>>>>>> f7e20d021e ([MIRROR] Better borg modules (#11095))

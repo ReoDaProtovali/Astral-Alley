@@ -998,6 +998,7 @@
 		to_chat(src, span_notice("You are not holding anything."))
 		return
 
+<<<<<<< HEAD
 	if(is_type_in_list(I,item_vore_blacklist) && !adminbus_trash) //If someone has adminbus, they can eat whatever they want.
 		to_chat(src, span_warning("You are not allowed to eat this."))
 		return
@@ -1011,6 +1012,10 @@
 		var/mob/living/silicon/pai/pocketpal = palcard.pai
 		if(pocketpal && (!pocketpal.devourable))
 			to_chat(src, span_warning("\The [pocketpal] doesn't allow you to eat it."))
+=======
+	if(is_type_in_list(I, GLOB.edible_trash) || adminbus_trash || is_type_in_list(I,edible_tech) && isSynthetic()) // adds edible tech for synth
+		if(!I.on_trash_eaten(src)) // shows object's rejection message itself
+>>>>>>> f7e20d021e ([MIRROR] Better borg modules (#11095))
 			return
 
 	if(istype(I, /obj/item/book))

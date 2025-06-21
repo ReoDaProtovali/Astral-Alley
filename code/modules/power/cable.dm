@@ -519,6 +519,7 @@ var/list/possible_cable_coil_colours = list(
 	tool_qualities = list(TOOL_CABLE_COIL)
 	singular_name = "cable"
 
+<<<<<<< HEAD
 /obj/item/stack/cable_coil/cyborg
 	name = "cable coil synthesizer"
 	desc = "A device that makes cable."
@@ -528,6 +529,9 @@ var/list/possible_cable_coil_colours = list(
 	charge_costs = list(1)
 
 /obj/item/stack/cable_coil/Initialize(ml, length = MAXCOIL, var/param_color = null)
+=======
+/obj/item/stack/cable_coil/Initialize(mapload, length = MAXCOIL, var/param_color = null)
+>>>>>>> f7e20d021e ([MIRROR] Better borg modules (#11095))
 	. = ..()
 	amount = length
 	if (param_color) // It should be red by default, so only recolor it if parameter was specified.
@@ -626,6 +630,7 @@ var/list/possible_cable_coil_colours = list(
 	else
 		to_chat(M, span_notice("You cannot do that."))
 
+<<<<<<< HEAD
 /obj/item/stack/cable_coil/cyborg/verb/set_colour()
 	set name = "Change Colour"
 	set category = "Object"
@@ -633,6 +638,8 @@ var/list/possible_cable_coil_colours = list(
 	var/selected_type = tgui_input_list(usr, "Pick new colour.", "Cable Colour", possible_cable_coil_colours)
 	set_cable_color(selected_type, usr)
 
+=======
+>>>>>>> f7e20d021e ([MIRROR] Better borg modules (#11095))
 // Items usable on a cable coil :
 //   - Wirecutters : cut them duh !
 //   - Cable coil : merge cables
