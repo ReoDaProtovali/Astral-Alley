@@ -25,7 +25,11 @@
 	wires = new(src)
 	connected_parts = list()
 	update_active_power_usage(initial(active_power_usage) * (strength + 1))
+<<<<<<< HEAD
 	..()
+=======
+	AddElement(/datum/element/climbable)
+>>>>>>> eaca591b85 ([MIRROR] Climbable Element (#11096))
 
 /obj/machinery/particle_accelerator/control_box/Destroy()
 	if(active)

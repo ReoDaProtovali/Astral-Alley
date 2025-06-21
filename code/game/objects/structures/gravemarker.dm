@@ -6,7 +6,6 @@
 	density = TRUE
 	anchored = TRUE
 	throwpass = 1
-	climbable = TRUE
 
 	layer = ABOVE_JUNK_LAYER
 
@@ -28,6 +27,7 @@
 		qdel(src)
 		return
 	color = material.icon_colour
+	AddElement(/datum/element/climbable)
 
 /obj/structure/gravemarker/examine(mob/user)
 	. = ..()

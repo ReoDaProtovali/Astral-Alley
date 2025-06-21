@@ -29,6 +29,7 @@
 	if(cell_type)
 		cell = new cell_type(src)
 	update_icon()
+	AddElement(/datum/element/climbable)
 
 /obj/machinery/space_heater/update_icon()
 	cut_overlays()

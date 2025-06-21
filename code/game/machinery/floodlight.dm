@@ -15,7 +15,11 @@
 
 /obj/machinery/floodlight/Initialize() //ChompEDIT New --> Initialize
 	cell = new(src)
+<<<<<<< HEAD
 	..()
+=======
+	AddElement(/datum/element/climbable)
+>>>>>>> eaca591b85 ([MIRROR] Climbable Element (#11096))
 
 /obj/machinery/floodlight/update_icon()
 	cut_overlays()
