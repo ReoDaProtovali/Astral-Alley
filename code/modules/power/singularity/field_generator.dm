@@ -72,7 +72,11 @@ field_generator power level display
 	..()
 	fields = list()
 	connected_gens = list()
+<<<<<<< HEAD
 	return
+=======
+	AddElement(/datum/element/climbable)
+>>>>>>> eaca591b85 ([MIRROR] Climbable Element (#11096))
 
 /obj/machinery/field_generator/process()
 	if(Varedit_start == 1)

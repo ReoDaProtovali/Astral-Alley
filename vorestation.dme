@@ -188,6 +188,7 @@
 #include "code\__defines\dcs\signals_ch\signals_mob\signals_mob_main_ch.dm"
 #include "code\__defines\traits\_traits.dm"
 #include "code\__defines\traits\declarations.dm"
+#include "code\__defines\traits\macros.dm"
 #include "code\__defines\traits\sources.dm"
 #include "code\__defines\verdigris\_verdigris.dm"
 #include "code\__defines\verdigris\random_map.dm"
@@ -570,6 +571,11 @@
 #include "code\datums\diseases\advance\symptoms\weakness.dm"
 #include "code\datums\diseases\advance\symptoms\weigh.dm"
 #include "code\datums\elements\_element.dm"
+<<<<<<< HEAD
+=======
+#include "code\datums\elements\cleaning.dm"
+#include "code\datums\elements\climbable.dm"
+>>>>>>> eaca591b85 ([MIRROR] Climbable Element (#11096))
 #include "code\datums\elements\conflict_checking.dm"
 #include "code\datums\elements\footstep.dm"
 #include "code\datums\elements\footstep_override.dm"

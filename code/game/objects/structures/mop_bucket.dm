@@ -4,7 +4,6 @@
 	icon = 'icons/obj/janitor.dmi'
 	icon_state = "mopbucket"
 	density = TRUE
-	climbable = TRUE
 	w_class = ITEMSIZE_NORMAL
 	pressure_resistance = 5
 	flags = OPENCONTAINER
@@ -14,7 +13,12 @@ GLOBAL_LIST_BOILERPLATE(all_mopbuckets, /obj/structure/mopbucket)
 
 /obj/structure/mopbucket/New()
 	create_reagents(300)
+<<<<<<< HEAD
 	..()
+=======
+	. = ..()
+	AddElement(/datum/element/climbable)
+>>>>>>> eaca591b85 ([MIRROR] Climbable Element (#11096))
 
 /obj/structure/mopbucket/examine(mob/user)
 	. = ..()

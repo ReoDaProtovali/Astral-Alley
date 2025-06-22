@@ -299,6 +299,8 @@
 
 	update_icon()
 
+	AddElement(/datum/element/climbable)
+
 /obj/structure/frame/attackby(obj/item/P as obj, mob/user as mob)
 	if(P.has_tool_quality(TOOL_WRENCH))
 		if(state == FRAME_PLACED && !anchored)
