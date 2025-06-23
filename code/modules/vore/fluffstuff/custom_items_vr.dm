@@ -1588,3 +1588,45 @@ End CHOMP Removal*/
 	icon = 'icons/vore/custom_items_vr.dmi'
 	icon_state = "evelynn"
 	pointer_icon_state = "purple_laser"
+<<<<<<< HEAD
+=======
+
+//sixberry: Thistle
+/obj/item/clothing/glasses/fluff/kintacts_aquamarine
+	name = "Aquamarine KINtacts"
+	desc = "A blueish-green pair of borosilicate glass contact lenses, designed solely for Shadekin. They seem to have some degree of iridescence to them."
+	icon = 'icons/vore/custom_clothes_vr.dmi'
+	icon_override = 'icons/vore/custom_clothes_vr.dmi'
+	icon_state = "kintacts"
+	item_state = "kintacts_mob"
+
+//Bricker98: Talenya Lapushkina
+/obj/item/remote_scene_tool/tally_necklace  //A reskinned sticker for the collar, using a modified golden collar sprite
+	name = "link bell collar"
+	desc = "A collar with a seemingly simple golden bell that contains advanced bluespace tech inside, allowing it to link to, and even recall, a matching doll."
+	icon = 'icons/vore/custom_remote_scene_tools.dmi'
+	icon_override = 'icons/vore/custom_remote_scene_tools.dmi'
+	icon_state = "collar_inactive"
+	icon_root = "collar"
+	item_state = "on_mob_collar"
+	slot_flags = SLOT_MASK | SLOT_OCLOTHING
+	replacementType = /obj/item/remote_scene_tool/tally_doll
+
+/obj/item/remote_scene_tool/tally_necklace/mob_can_equip(var/mob/living/carbon/human/H, slot, disable_warning = 0)
+	if(..())
+		if(H.ckey != "bricker98")
+			if(!disable_warning)
+				to_chat(H, span_warning("The collar doesn't fit you!"))
+			return FALSE
+		return TRUE
+
+/obj/item/remote_scene_tool/tally_doll  //A reskinned sticker for the doll, using a custom sprite
+	name = "Talenya's voodoo doll"
+	desc = "A cute custom plushie made to look like Talenya! With her bell and glassy beads for eyes, all the clothing articles are removable, it is incredibly detailed!"
+	icon = 'icons/vore/custom_remote_scene_tools.dmi'
+	icon_state = "doll_inactive"
+	icon_root = "doll"
+	slot_flags = NONE
+	can_summon = FALSE
+	can_replace = FALSE
+>>>>>>> 09091b0506 ([MIRROR] Adds fluff item: Tally's voodoo doll  (#11105))
