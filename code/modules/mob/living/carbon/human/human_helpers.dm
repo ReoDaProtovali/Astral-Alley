@@ -203,8 +203,12 @@
 		compiled_vis |= VIS_CH_VANTAG
 	//VOREStation Add End
 
+<<<<<<< HEAD
 	//Vore Stomach addition start. This goes here.
 	if(stomach_vision)
+=======
+	if(client?.prefs?.read_preference(/datum/preference/toggle/tummy_sprites))
+>>>>>>> e1b719d926 ([MIRROR] bunch of issues (#11109))
 		compiled_vis += VIS_CH_STOMACH
 	//Vore Stomach addition end
 
