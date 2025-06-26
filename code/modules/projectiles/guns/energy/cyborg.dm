@@ -248,6 +248,9 @@
 			var/mob/living/carbon/human/H = target
 			H.forcesay(hit_appends)
 
+/obj/item/melee/robotic/proc/refresh_light(clear)
+	return
+
 /obj/item/melee/robotic/blade //For downstreams that use blade
 	name = "Robotic Blade"
 	desc = "A glowing blade. It appears to be extremely sharp."
@@ -263,7 +266,66 @@
 	attack_verb = list("slashed", "stabbed", "jabbed", "mauled", "sliced")
 	w_class = ITEMSIZE_NORMAL
 
+<<<<<<< HEAD
 /obj/item/melee/robotic/dagger //For downstreams that use dagger
+=======
+/obj/item/melee/robotic/blade/attack_self(mob/user)
+	if(active) //turning off
+		playsound(src, 'sound/weapons/saberoff.ogg', 50, 1)
+		force = 0
+	else //turning on
+		playsound(src, 'sound/weapons/saberon.ogg', 50, 1)
+		force = active_force
+	active = !active
+	to_chat(user, span_notice("[src] is now [active ? "on" : "off"]."))
+	update_icon()
+
+/obj/item/melee/robotic/blade/update_icon()
+	cut_overlays()		//So that it doesn't keep stacking overlays non-stop on top of each other
+	if(active)
+		var/mutable_appearance/blade_overlay = mutable_appearance(icon, "[icon_state]_blade")
+		blade_overlay.color = lcolor
+		add_overlay(blade_overlay)
+	refresh_light()
+
+/obj/item/melee/robotic/blade/refresh_light(clear)
+	if(active)
+		if(clear)
+			set_light(0)
+		set_light(2, 2, lcolor)
+	else
+		set_light(0)
+
+/obj/item/melee/robotic/blade/AltClick(mob/living/user)
+	if(!in_range(src, user))	//Basic checks to prevent abuse
+		return
+	if(user.incapacitated() || !istype(user))
+		to_chat(user, span_warning("You can't do that right now!"))
+		return
+
+	if(tgui_alert(user, "Are you sure you want to recolor your blade?", "Confirm Recolor", list("Yes", "No")) == "Yes")
+		var/energy_color_input = tgui_color_picker(user,"","Choose Energy Color",lcolor)
+		if(energy_color_input)
+			lcolor = sanitize_hexcolor(energy_color_input)
+		update_icon()
+
+/obj/item/melee/robotic/blade/examine(mob/user)
+	. = ..()
+	. += span_notice("Alt-click to recolor it.")
+
+///Syndicate version. Just had a red glow.
+/obj/item/melee/robotic/blade/syndicate
+	lcolor = "#ff0000"
+
+///Ninja version. Has more damage and 100% armor pen, along with parry chance.
+/obj/item/melee/robotic/blade/ninja
+	lcolor = "#38e541"
+	active_force = 40
+	armor_penetration = 100
+	projectile_parry_chance = 60
+
+/obj/item/melee/robotic/blade/dagger //For downstreams that use dagger
+>>>>>>> e1b719d926 ([MIRROR] bunch of issues (#11109))
 	name = "Robotic Dagger"
 	desc = "A glowing dagger. It appears to be extremely sharp."
 	borg_flags = COUNTS_AS_ROBOTIC_MELEE | COUNTS_AS_ROBOT_DAGGER
@@ -277,3 +339,148 @@
 	hitsound = 'sound/weapons/blade1.ogg'
 	attack_verb = list("slashed", "stabbed", "jabbed", "mauled", "sliced")
 	w_class = ITEMSIZE_NORMAL
+<<<<<<< HEAD
+=======
+	drop_sound = 'sound/items/drop/metalweapon.ogg'
+	pickup_sound = 'sound/items/pickup/metalweapon.ogg'
+	origin_tech = list(TECH_COMBAT = 2)
+	attack_verb = list("beaten")
+	var/stunforce = 0
+	var/agonyforce = 60
+	var/hitcost = 500
+	var/status = 0 //Off by default.
+	var/lightcolor = "#FF6A00"
+	borg_flags = COUNTS_AS_ROBOTIC_MELEE
+
+/obj/item/melee/robotic/baton/update_icon()
+	if(status)
+		icon_state = "[initial(name)]_active"
+	else
+		icon_state = "[initial(name)]"
+	refresh_light()
+
+/obj/item/melee/robotic/baton/refresh_light(clear)
+	if(icon_state == "[initial(name)]_active")
+		if(clear)
+			set_light(0)
+		set_light(2, 1, lightcolor)
+	else
+		set_light(0)
+
+/obj/item/melee/robotic/baton/attack_hand(mob/user as mob)
+	return
+
+/obj/item/melee/robotic/baton/attack_self(mob/user)
+	status = !status
+	to_chat(user, span_notice("[src] is now [status ? "on" : "off"]."))
+	playsound(src, "sparks", 75, 1, -1)
+	update_icon()
+
+/obj/item/melee/robotic/baton/attackby(obj/item/W, mob/user)
+	return
+
+/obj/item/melee/robotic/baton/proc/deductcharge()
+	var/mob/living/silicon/robot/R = loc
+	var/obj/item/cell/bcell
+	if(istype(R))
+		bcell = R.cell
+	if(!bcell)
+		return FALSE
+	if(bcell.checked_use(hitcost))
+		return TRUE
+	return null
+
+/obj/item/melee/robotic/baton/attack(mob/M, mob/user)
+	if(status)
+		deductcharge(hitcost)
+	return ..()
+
+/obj/item/melee/robotic/baton/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+	if(isrobot(target))
+		return ..()
+
+	var/agony = agonyforce
+	var/stun = stunforce
+	var/obj/item/organ/external/affecting = null
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		affecting = H.get_organ(hit_zone)
+
+	if(user.a_intent == I_HURT)
+		. = ..()
+		//whacking someone causes a much poorer electrical contact than deliberately prodding them.
+		agony *= 0.5
+		stun *= 0.5
+
+	//We are off!
+	if(!status)
+		if(affecting)
+			target.visible_message(span_warning("[target] has been prodded in the [affecting.name] with [src] by [user]. Luckily it was off."))
+		else
+			target.visible_message(span_warning("[target] has been prodded with [src] by [user]. Luckily it was off."))
+		return
+
+	//We are on!
+	if(affecting)
+		target.visible_message(span_danger("[target] has been prodded in the [affecting.name] with [src] by [user]!"))
+	else
+		target.visible_message(span_danger("[target] has been prodded with [src] by [user]!"))
+	playsound(src, 'sound/weapons/egloves.ogg', 50, 1, -1)
+	target.stun_effect_act(stun, agony, hit_zone, src)
+	msg_admin_attack("[key_name(user)] stunned [key_name(target)] with the [src].")
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		H.forcesay(GLOB.hit_appends)
+
+/obj/item/melee/robotic/baton/arm
+	name = "electrified arm"
+	icon = 'icons/obj/decals.dmi'
+	icon_state = "shock"
+
+	hitcost = 750
+	agonyforce = 70
+
+/obj/item/melee/robotic/baton/shocker
+	name = "shocker"
+	desc = "A device that appears to arc electricity into a target to incapacitate or otherwise hurt them, similar to a stun baton.  It looks inefficent."
+	description_info = "Hitting a lesser lifeform with this while it is on will compel them to attack you above other nearby targets.  Otherwise \
+	it works like a regular stun baton, just less effectively."
+	icon_state = "shocker_active"
+	force = 10
+	agonyforce = 25 // Less efficent than a regular baton.
+	attack_verb = list("poked")
+
+/obj/item/melee/robotic/baton/shocker/apply_hit_effect(mob/living/target, mob/living/user, var/hit_zone)
+	..(target, user, hit_zone)
+	if(target.has_AI())
+		target.taunt(user)
+
+/obj/item/melee/robotic/baton/slime
+	name = "slimebaton"
+	desc = "A modified stun baton designed to stun slimes and other lesser slimy xeno lifeforms for handling."
+	icon_state = "slimebaton_active"
+	item_state = "slimebaton"
+	force = 10 //we like round numbers here
+	lightcolor = "#33CCFF"
+	agonyforce = 10	//It's not supposed to be great at stunning human beings.
+	hitcost = 48	//Less zap for less cost
+
+
+/obj/item/melee/robotic/baton/slime/attack(mob/living/L, mob/user, hit_zone)
+	if(!istype(L))
+		return ..()
+
+	if(L.mob_class & MOB_CLASS_SLIME) // Are they some kind of slime? (Prommies might pass this check someday).
+		if(isslime(L))
+			var/mob/living/simple_mob/slime/S = L
+			S.slimebatoned(user, 5) // Feral and xenobio slimes will react differently to this.
+		else
+			L.Weaken(5)
+
+	// Now for prommies.
+	if(ishuman(L))
+		var/mob/living/carbon/human/H = L
+		if(H.species && H.species.name == SPECIES_PROMETHEAN)
+			H.apply_damage(35, HALLOSS)
+	..()
+>>>>>>> e1b719d926 ([MIRROR] bunch of issues (#11109))
