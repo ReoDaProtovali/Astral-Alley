@@ -148,6 +148,8 @@
 
 	var/obj/item/ammo_casing/my_case = null
 
+	var/crawl_destroy = FALSE //chompADD: Making bullet hell lite mobs, need something to add to their projectiles to destroy laying folks
+
 
 /obj/item/projectile/New()
 	if(istype(loc, /obj/item/ammo_casing))
@@ -554,6 +556,15 @@
 	else
 		var/mob/living/L = target
 		if(!direct_target)
+<<<<<<< HEAD
+=======
+			// Swarms are special scuffed critters. They must have density FALSE to swarm, but then they don't get hit.
+			// So we'll check before, just in case. Lying might gives a chance to dodge, however.
+			if(L.GetComponent(/datum/component/swarming) && L.stat != DEAD && !L.lying)
+				return TRUE
+			if(crawl_destroy == TRUE) //chompADD
+				return TRUE
+>>>>>>> e5c574285d (Tyr Update 9000 (#11107))
 			if(!L.density)
 				return FALSE
 	return TRUE
