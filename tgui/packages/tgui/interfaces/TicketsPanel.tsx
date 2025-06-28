@@ -16,17 +16,25 @@ import {
 } from 'tgui-core/components';
 import { KEY } from 'tgui-core/keys';
 import { round, toFixed } from 'tgui-core/math';
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketsPanel.tsx
 import { BooleanLike } from 'tgui-core/react';
+=======
+import type { BooleanLike } from 'tgui-core/react';
+>>>>>>> 8197dee77b ([MIRROR] Ports ticket system overhaul from downstream (#11122)):tgui/packages/tgui/interfaces/TicketsPanel.tsx
 
-const Level = {
-  0: 'Admin',
-  1: 'Mentor',
+const AdminLevel = {
+  0: 'Mentor',
+  1: 'Admin',
   2: 'All Levels',
 };
 
+const MentorLevel = {
+  0: 'Mentor',
+};
+
 const LevelColor = {
-  0: 'red',
-  1: 'green',
+  0: 'green',
+  1: 'red',
   2: 'pink',
 };
 
@@ -53,6 +61,7 @@ type Data = {
   tickets: Ticket[];
 
   selected_ticket: Ticket;
+  is_admin: BooleanLike;
 };
 
 type Ticket = {
@@ -94,7 +103,7 @@ const getFilteredTickets = (
 
 export const TicketsPanel = (props) => {
   const { act, data } = useBackend<Data>();
-  const { tickets, selected_ticket } = data;
+  const { tickets, selected_ticket, is_admin } = data;
 
   const [stateFilter, setStateFilter] = useState('open');
   const [levelFilter, setLevelFilter] = useState(2);
@@ -122,7 +131,17 @@ export const TicketsPanel = (props) => {
     }
   });
 
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketsPanel.tsx
   let filtered_tickets = getFilteredTickets(tickets, stateFilter, levelFilter);
+=======
+  const availableLevel = is_admin ? AdminLevel : MentorLevel;
+
+  const filtered_tickets = getFilteredTickets(
+    tickets,
+    stateFilter,
+    levelFilter,
+  );
+>>>>>>> 8197dee77b ([MIRROR] Ports ticket system overhaul from downstream (#11122)):tgui/packages/tgui/interfaces/TicketsPanel.tsx
   return (
     <Window width={1000} height={600}>
       <Window.Content>
@@ -144,10 +163,10 @@ export const TicketsPanel = (props) => {
               <Dropdown
                 width="100%"
                 maxHeight="160px"
-                options={Object.values(Level)}
-                selected={Level[levelFilter]}
+                options={Object.values(availableLevel)}
+                selected={availableLevel[levelFilter]}
                 onSelected={(val) =>
-                  setLevelFilter(Object.values(Level).indexOf(val))
+                  setLevelFilter(Object.values(availableLevel).indexOf(val))
                 }
               />
             </Section>
@@ -173,7 +192,7 @@ export const TicketsPanel = (props) => {
                     <Box inline>
                       <Box>
                         <Button color={LevelColor[ticket.level]}>
-                          {Level[ticket.level]}
+                          {availableLevel[ticket.level]}
                         </Button>
                         {ticket.name}
                       </Box>
@@ -209,7 +228,11 @@ export const TicketsPanel = (props) => {
                         </Button>
                         <Button onClick={() => act('legacy')}>Legacy UI</Button>
                         <Button color={LevelColor[selected_ticket.level]}>
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketsPanel.tsx
                           {Level[selected_ticket.level]}
+=======
+                          {availableLevel[selected_ticket.level]}
+>>>>>>> 8197dee77b ([MIRROR] Ports ticket system overhaul from downstream (#11122)):tgui/packages/tgui/interfaces/TicketsPanel.tsx
                         </Button>
                       </Box>
                     }
@@ -224,7 +247,7 @@ export const TicketsPanel = (props) => {
                         />
                       </LabeledList.Item>
                       <LabeledList.Item label="Type">
-                        {Level[selected_ticket.level]}
+                        {availableLevel[selected_ticket.level]}
                       </LabeledList.Item>
                       <LabeledList.Item label="State">
                         {State[selected_ticket.state]}

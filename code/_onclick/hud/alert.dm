@@ -2,6 +2,7 @@
 
 //PUBLIC -  call these wherever you want
 
+<<<<<<< HEAD
 
 /mob/proc/throw_alert(category, type, severity, obj/new_master)
 
@@ -13,6 +14,17 @@
  new_master is optional and sets the alert's icon state to "template" in the ui_style icons with the master as an overlay.
  Clicks are forwarded to master */
 
+=======
+/** Proc to create or update an alert. Returns the alert if the alert is new or updated, 0 if it was thrown already
+ * category is a text string. Each mob may only have one alert per category; the previous one will be replaced
+ * path is a type path of the actual alert type to throw
+ * severity is an optional number that will be placed at the end of the icon_state for this alert
+ * For example, high pressure's icon_state is "highpressure" and can be serverity 1 or 2 to get "highpressure1" or "highpressure2"
+ * new_master is optional and sets the alert's icon state to "template" in the ui_style icons with the master as an overlay.
+ * Clicks are forwarded to master
+ */
+/mob/proc/throw_alert(category, type, severity, obj/new_master)
+>>>>>>> 8197dee77b ([MIRROR] Ports ticket system overhaul from downstream (#11122))
 	if(!category)
 		return
 
@@ -427,6 +439,23 @@ so as to remain in compliance with the most up-to-date laws."
 	if(isliving(usr))
 		var/mob/living/L = usr
 		return L.resist()
+
+// TICKETS
+/obj/screen/alert/open_ticket
+	icon = 'icons/logo.dmi'
+	name = "Admin Chat Request"
+	desc = "A Administrator would like to chat with you. \
+	Click here to begin."
+	icon_state = "32x32"
+
+/obj/screen/alert/open_ticket/Click()
+	if(!usr || !usr.client) return
+
+	// Open a new chat with the user
+	var/datum/ticket_chat/TC = new()
+	TC.T = usr.client.current_ticket
+	TC.tgui_interact(usr.client.mob)
+
 // PRIVATE = only edit, use, or override these if you're editing the system as a whole
 
 // Re-render all alerts - also called in /datum/hud/show_hud() because it's needed there

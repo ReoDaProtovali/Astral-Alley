@@ -1051,8 +1051,18 @@ Byond.subscribeTo('add_admin_tabs', function (ht) {
 	addPermanentTab("Tickets");
 });
 
+<<<<<<< HEAD
 Byond.subscribeTo('update_examine', function (S) {
 	examine = S;
+=======
+Byond.subscribeTo('add_tickets_tabs', function (ht) {
+	href_token = ht;
+	addPermanentTab("Tickets");
+});
+
+Byond.subscribeTo('update_examine', function (payload) {
+	examine = payload.EX;
+>>>>>>> 8197dee77b ([MIRROR] Ports ticket system overhaul from downstream (#11122))
 	if (examine.length > 0 && !verb_tabs.includes("Examine")) {
 		verb_tabs.push("Examine");
 		addPermanentTab("Examine")
