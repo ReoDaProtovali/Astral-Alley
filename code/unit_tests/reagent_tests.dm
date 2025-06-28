@@ -24,9 +24,21 @@
 			log_unit_test("[Rpath]: Reagents - reagent ID blank.")
 			failed = TRUE
 
+<<<<<<< HEAD
 		if(collection_name[R.name])
 			log_unit_test("[Rpath]: Reagents - WARNING - reagent name \"[R.name]\" is not unique, used first in [collection_name[R.name]]. Is this intentional?")
 		collection_name[R.name] = R.type
+=======
+		if(R.id != lowertext(R.id))
+			log_unit_test("[Rpath]: Reagents - Reagent ID must be all lowercase.")
+			failed = TRUE
+
+		if(!(R.wiki_flag & WIKI_SPOILER)) // If wiki hidden then don't conflict test it against name, used for intentionally copied names like beer2's
+			if(collection_name[R.name])
+				log_unit_test("[Rpath]: Reagents - reagent name \"[R.name]\" is not unique, used first in [collection_name[R.name]].")
+				failed = TRUE
+			collection_name[R.name] = R.type
+>>>>>>> cf730f7def ([MIRROR] Handle duped reagent names more strictly (#11118))
 
 		if(collection_id[R.id])
 			log_unit_test("[Rpath]: Reagents - reagent ID \"[R.id]\" is not unique, used first in [collection_id[R.id]].")
