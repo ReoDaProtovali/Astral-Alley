@@ -587,3 +587,30 @@ JUKEBOX_TRACK_FILES config/jukebox.json
 # Admins may manually give them the verb even if disabled
 # Uncomment to enable
 #ALLOW_SIMPLE_MOB_RECOLOR
+<<<<<<< HEAD
+=======
+
+# Chatlogs are now saved by calling the chatlogging library instead of letting the clients handle it
+# REQUIRES an database
+# Uncomment to enable
+#CHATLOG_DATABASE_BACKEND
+
+# The endpoint for the chat to fetch the chatlogs from (for example, the last 2500 messages on init for the history)
+# REQUIRES chatlog_database_backend to be enabled
+#CHATLOG_DATABASE_API_ENDPOINT https://example.com
+
+## Uncomment to block granting profiling privileges to users with R_DEBUG, for performance purposes
+#FORBID_ADMIN_PROFILING
+
+## Uncomment to limit resize caps depending on sprite icon height
+#PIXEL_SIZE_LIMIT
+
+# This is the tgs4 channel tag, for discord chatbots used in TGS
+#AHELP_CHANNEL_TAG admin
+
+# Turn this off if you don't want the TGS bot sending you messages whenever an ahelp ticket is created.
+#DISCORD_AHELPS_DISABLED
+
+#Turn this on if you want all admin-PMs to go to be sent to discord, and not only the first message of a ticket.
+#DISCORD_AHELPS_ALL
+>>>>>>> 8197dee77b ([MIRROR] Ports ticket system overhaul from downstream (#11122))

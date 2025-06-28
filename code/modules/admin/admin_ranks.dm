@@ -18,6 +18,7 @@ var/list/admin_ranks = list()								//list of all ranks with associated rights
 		if(!length(line))				continue
 		if(copytext(line,1,2) == "#")	continue
 
+<<<<<<< HEAD
 		var/list/List = splittext(line,"+")
 		if(!List.len)					continue
 
@@ -49,6 +50,71 @@ var/list/admin_ranks = list()								//list of all ranks with associated rights
 
 		admin_ranks[rank] = rights
 		previous_rights = rights
+=======
+// Adds/removes rights to this admin_rank
+/datum/admin_rank/proc/process_keyword(group, group_count, datum/admin_rank/previous_rank)
+	if(IsAdminAdvancedProcCall())
+		alert_to_permissions_elevation_attempt(usr)
+		return
+	var/list/keywords = splittext(group, " ")
+	var/flag = 0
+	for(var/k in keywords)
+		switch(k)
+			if("BUILD")
+				flag = R_BUILDMODE
+			if("ADMIN")
+				flag = R_ADMIN
+			if("BAN")
+				flag = R_BAN
+			if("FUN")
+				flag = R_FUN
+			if("SERVER")
+				flag = R_SERVER
+			if("DEBUG")
+				flag = R_DEBUG
+			if("PERMISSIONS")
+				flag = R_PERMISSIONS
+			if("POSSESS")
+				flag = R_POSSESS
+			if("STEALTH")
+				flag = R_STEALTH
+			if("REJUVINATE")
+				flag = R_REJUVINATE
+			if("VAREDIT")
+				flag = R_VAREDIT
+			if("EVERYTHING")
+				flag = R_EVERYTHING
+			if("SOUND")
+				flag = R_SOUNDS
+			if("SPAWN")
+				flag = R_SPAWN
+			if("MOD")
+				flag = R_MOD
+			if("EVENT")
+				flag = R_EVENT
+			if("MENTOR")
+				flag = R_MENTOR
+			if("@")
+				if(previous_rank)
+					switch(group_count)
+						if(1)
+							flag = previous_rank.include_rights
+						if(2)
+							flag = previous_rank.exclude_rights
+						if(3)
+							flag = previous_rank.can_edit_rights
+				else
+					continue
+		switch(group_count)
+			if(1)
+				rights |= flag
+				include_rights |= flag
+			if(2)
+				rights &= ~flag
+				exclude_rights |= flag
+			if(3)
+				can_edit_rights |= flag
+>>>>>>> 8197dee77b ([MIRROR] Ports ticket system overhaul from downstream (#11122))
 
 	#ifdef TESTING
 	var/msg = "Permission Sets Built:\n"

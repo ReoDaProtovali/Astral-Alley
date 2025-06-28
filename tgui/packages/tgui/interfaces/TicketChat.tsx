@@ -14,14 +14,14 @@ import {
 import { KEY } from 'tgui-core/keys';
 
 const Level = {
-  0: 'Adminhelp',
-  1: 'Mentorhelp',
+  0: 'Mentorhelp',
+  1: 'Adminhelp',
   2: 'GM Request',
 };
 
 const LevelColor = {
-  0: 'red',
-  1: 'green',
+  0: 'green',
+  1: 'red',
   2: 'pink',
 };
 

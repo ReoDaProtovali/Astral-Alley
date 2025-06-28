@@ -1,14 +1,6 @@
-/*
-
-CHOMPedit - This file has been excluded from the compilation.
-Reason: Replaced with "Tickets System". Main logic has been moved to: modular_chomp/modules/tickets/tickets.dm
-
-*/
-
 /client/var/datum/ticket/current_ticket	//the current ticket the (usually) not-admin client is dealing with
 /client/var/datum/ticket/selected_ticket //the current ticket being viewed in the Tickets Panel (usually) admin/mentor client
 
-// CHOMPEdit Begin
 /proc/get_ahelp_channel()
 	var/datum/tgs_api/v5/api = TGS_READ_GLOBAL(tgs)
 	if(istype(api) && CONFIG_GET(string/ahelp_channel_tag))
@@ -27,9 +19,7 @@ Reason: Replaced with "Tickets System". Main logic has been moved to: modular_ch
 		world.TgsChatBroadcast(message,ahelp_channel)
 	else
 		world.TgsTargetedChatBroadcast(message,TRUE)
-// CHOMPEdit End
 
-//
 //TICKET MANAGER
 //
 
@@ -105,26 +95,64 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	SHOULD_CALL_PARENT(TRUE)
 	SHOULD_NOT_SLEEP(TRUE)
 	var/list/L = list()
-	var/num_disconnected = 0
-	L[++L.len] = list("== Admin Tickets ==", "", null, null)
-	L[++L.len] = list("Active Tickets:", "[astatclick.update("[active_tickets.len]")]", null, REF(astatclick))
-	for(var/datum/ticket/T as anything in active_tickets)
-		if(T.initiator)
-			var/type = "N/A"
-			switch(T.level)
-				if(0)
-					type = "ADM"
-				if(1)
-					type = "MEN"
+	var/num_adm_tickets_disconnected = 0
+	var/num_men_tickets_disconnected = 0
 
-			if((target && target.holder) || T.level > 0)
-				L[++L.len] = list("\[[type]\] #[T.id]. [T.initiator_key_name]:", T.name, null, REF(T.statclick))
+	var/list/admin_tickets = list()
+	var/list/mentor_tickets = list()
+
+	for(var/datum/ticket/T as anything in active_tickets)
+		switch (T.level)
+			if(1)
+				admin_tickets += T
+			if(0)
+				mentor_tickets += T
+
+	var/closed_admin_tickets = 0
+	var/closed_mentor_tickets = 0
+
+	for(var/datum/ticket/T as anything in closed_tickets)
+		switch (T.level)
+			if(1)
+				closed_admin_tickets++
+			if(0)
+				closed_mentor_tickets++
+
+	var/resolved_admin_tickets = 0
+	var/resolved_mentor_tickets = 0
+
+	for(var/datum/ticket/T as anything in resolved_tickets)
+		switch (T.level)
+			if(1)
+				resolved_admin_tickets++
+			if(0)
+				resolved_mentor_tickets++
+
+	if(check_rights_for(target, R_ADMIN|R_SERVER|R_MOD))
+		L[++L.len] = list("== Admin Tickets ==", "", null, null)
+		L[++L.len] = list("Active Tickets:", "[astatclick.update("[admin_tickets.len]")]", null, REF(astatclick))
+		for(var/datum/ticket/T as anything in admin_tickets)
+			if(T.initiator)
+				L[++L.len] = list("ADM #[T.id]. [T.initiator_key_name]:", T.name, null, REF(T.statclick))
+			else
+				num_adm_tickets_disconnected++
+		if(num_adm_tickets_disconnected)
+			L[++L.len] = list("Disconnected:", "[astatclick.update("[num_adm_tickets_disconnected]")]", null, REF(astatclick))
+		L[++L.len] = list("Closed Tickets:", "[cstatclick.update("[closed_admin_tickets]")]", null, REF(cstatclick))
+		L[++L.len] = list("Resolved Tickets:", "[rstatclick.update("[resolved_admin_tickets]")]", null, REF(rstatclick))
+
+	L[++L.len] = list("== Mentor Tickets ==", "", null, null)
+	L[++L.len] = list("Active Tickets:", "[astatclick.update("[mentor_tickets.len]")]", null, REF(astatclick))
+	for(var/datum/ticket/T as anything in mentor_tickets)
+		if(T.initiator)
+			L[++L.len] = list("MEN #[T.id]. [T.initiator_key_name]:", T.name, null, REF(T.statclick))
 		else
-			++num_disconnected
-	if(num_disconnected)
-		L[++L.len] = list("Disconnected:", "[astatclick.update("[num_disconnected]")]", null, REF(astatclick))
-	L[++L.len] = list("Closed Tickets:", "[cstatclick.update("[closed_tickets.len]")]", null, REF(cstatclick))
-	L[++L.len] = list("Resolved Tickets:", "[rstatclick.update("[resolved_tickets.len]")]", null, REF(rstatclick))
+			num_men_tickets_disconnected++
+	if(num_men_tickets_disconnected)
+		L[++L.len] = list("Disconnected:", "[astatclick.update("[num_men_tickets_disconnected]")]", null, REF(astatclick))
+	L[++L.len] = list("Closed Tickets:", "[cstatclick.update("[closed_mentor_tickets]")]", null, REF(cstatclick))
+	L[++L.len] = list("Resolved Tickets:", "[rstatclick.update("[resolved_mentor_tickets]")]", null, REF(rstatclick))
+
 	return L
 
 //Reassociate still open ticket if one exists
@@ -152,7 +180,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 
 //Get a ticket by ticket id
 /datum/tickets/proc/ID2Ticket(id)
-	if(!usr?.client.holder || !has_mentor_powers(usr?.client))
+	if(!check_rights((R_ADMIN|R_SERVER|R_MOD|R_MENTOR), TRUE))
 		message_admins("[usr] has attempted to look up a ticket with ID [id] without sufficent privileges.")
 		return
 
@@ -189,7 +217,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 /datum/ticket
 	var/id
 	var/name
-	var/level = 0 // 0 = Admin, 1 = Mentor
+	var/level = 0 // 0 = Mentor, 1 = Admin
 	var/list/tags
 	var/state = AHELP_ACTIVE
 
@@ -224,7 +252,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	MessageNoRecipient(msg)
 	//show it to the person adminhelping too
 	to_chat(C, span_mentor(span_italics("Mentor-PM to-" + span_bold("Mentors") + ": [name]"))
-	GLOB.mhelp_tickets.active_tickets += src */
+	GLOB.ahelp_tickets.active_tickets += src */
 
 /**
  * public
@@ -270,25 +298,28 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 		message_admins(span_blue("Ticket [TicketHref("#[id]")] created"))
 	else
 		MessageNoRecipient(parsed_message)
-		send2adminchat() //VOREStation Add
 		//show it to the person adminhelping too
-		to_chat(C, span_adminnotice("PM to-" + span_bold("Admins") + ": [name]"))
+		switch(level)
+			if(0)
+				to_chat(C, span_mentor_notice("PM to-" + span_bold("Mentors") + ": [name]"))
+
+			if(1)
+				to_chat(C, span_adminnotice("PM to-" + span_bold("Admins") + ": [name]"))
 
 		//send it to irc if nobody is on and tell us how many were on
 		var/admin_number_present = send2irc_adminless_only(initiator_ckey, name)
 		log_admin("Ticket #[id]: [key_name(initiator)]: [name] - heard by [admin_number_present] non-AFK admins who have +BAN.")
 		if(admin_number_present <= 0)
-			to_chat(C, span_notice("No active admins are online, your adminhelp was sent to the admin discord."))		//VOREStation Edit
-	send2adminchat() //VOREStation Add
-	//YW EDIT START
+			to_chat(C, span_notice("No active admins are online, your adminhelp was sent to the admin discord."))
+	send2adminchat()
+
 	var/list/adm = get_admin_counts()
 	var/list/activemins = adm["present"]
 	var activeMins = activemins.len
 	if(is_bwoink)
-		ahelp_discord_message("ADMINHELP: FROM: [key_name_admin(usr)] TO [initiator_ckey]/[initiator_key_name] - MSG: **[msg]** - Heard by [activeMins] NON-AFK staff members.") //CHOMPEdit
+		ahelp_discord_message("ADMINHELP: FROM: [key_name_admin(usr)] TO [initiator_ckey]/[initiator_key_name] - MSG: **[msg]** - Heard by [activeMins] NON-AFK staff members.")
 	else
-		ahelp_discord_message("ADMINHELP: FROM: [initiator_ckey]/[initiator_key_name] - MSG: **[msg]** - Heard by [activeMins] NON-AFK staff members.") //CHOMPEdit
-	//YW EDIT END
+		ahelp_discord_message("ADMINHELP: FROM: [initiator_ckey]/[initiator_key_name] - MSG: **[msg]** - Heard by [activeMins] NON-AFK staff members.")
 
 		// Also send it to discord since that's the hip cool thing now.
 		SSwebhooks.send(
@@ -317,19 +348,20 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 
 /datum/ticket/proc/AddInteraction(formatted_message)
 	var/curinteraction = "[gameTimestamp()]: [formatted_message]"
-	if(CONFIG_GET(flag/discord_ahelps_all))	//CHOMPEdit
-		ahelp_discord_message("ADMINHELP: TICKETID:[id] [strip_html_properly(curinteraction)]") //CHOMPEdit
+	if(CONFIG_GET(flag/discord_ahelps_all))
+		ahelp_discord_message("ADMINHELP: TICKETID:[id] [strip_html_properly(curinteraction)]")
 	_interactions += curinteraction
 
 /datum/ticket/proc/TicketPanel()
 	tgui_interact(usr.client.mob)
 
 //private
-/datum/ticket/proc/FullMonty(ref_src)
+/datum/ticket/proc/FullMonty(ref_src, admin = FALSE)
 	if(!ref_src)
 		ref_src = "\ref[src]"
 	if(initiator && initiator.mob)
-		. = ADMIN_FULLMONTY_NONAME(initiator.mob)
+		if(admin)
+			. = ADMIN_FULLMONTY_NONAME(initiator.mob)
 	else
 		. = "Initiator disconnected."
 	if(state == AHELP_ACTIVE)
@@ -340,7 +372,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	if(!ref_src)
 		ref_src = "\ref[src]"
 
-	if(level == 0)
+	if(level == 1)
 		. = " (<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken(TRUE)];ticket_action=reject'>REJT</A>)"
 		. += " (<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken(TRUE)];ticket_action=icissue'>IC</A>)"
 		. += " (<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken(TRUE)];ticket_action=close'>CLOSE</A>)"
@@ -348,21 +380,22 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 		. += " (<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken(TRUE)];ticket_action=handleissue'>HANDLE</A>)"
 	else
 		. = " (<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken(TRUE)];ticket_action=resolve'>RSLVE</A>)"
+		. += " (<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken(TRUE)];ticket_action=escalate'>ESCALATE</A>)"
 
 //private
 /datum/ticket/proc/LinkedReplyName(ref_src)
 	if(!ref_src)
 		ref_src = "\ref[src]"
-	return "<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken()];ticket_action=reply'>[initiator_key_name]</A>"
+	return "<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken(TRUE)];ticket_action=reply'>[initiator_key_name]</A>"
 
 //private
 /datum/ticket/proc/TicketHref(msg, ref_src, action = "ticket")
 	if(!ref_src)
 		ref_src = "\ref[src]"
-	return "<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken()];ticket_action=[action]'>[msg]</A>"
+	return "<A href='byond://?_src_=holder;ticket=[ref_src];[HrefToken(TRUE)];ticket_action=[action]'>[msg]</A>"
 
 /*
-	var/chat_msg = span_notice("(<A href='byond://?_src_=mentorholder;mhelp=[ref_src];[HrefToken()];mhelp_action=escalate'>ESCALATE</A>) Ticket [TicketHref("#[id]", ref_src)]" + span_bold(": [LinkedReplyName(ref_src)]:") + " [msg]")
+	var/chat_msg = span_notice("(<A href='byond://?_src_=holder;ahelp=[ref_src];[HrefToken()];ahelp_action=escalate'>ESCALATE</A>) Ticket [TicketHref("#[id]", ref_src)]" + span_bold(": [LinkedReplyName(ref_src)]:") + " [msg]")
 	 */
 
 //message from the initiator without a target, all admins will see this
@@ -374,15 +407,12 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	AddInteraction(span_red("[LinkedReplyName(ref_src)]: [msg]"))
 	//send this msg to all admins
 
-	if(level == 1)
-		for (var/client/C in GLOB.mentors)
-			if (C.prefs?.read_preference(/datum/preference/toggle/play_mentorhelp_ping))
-				C << 'sound/effects/mentorhelp.mp3'
+	if(level == 0)
 		for (var/client/C in GLOB.admins)
 			if (C.prefs?.read_preference(/datum/preference/toggle/play_mentorhelp_ping))
 				C << 'sound/effects/mentorhelp.mp3'
 		message_mentors(chat_msg)
-	else if(level == 0)
+	else if(level == 1)
 		for(var/client/X in GLOB.admins)
 			if(X.prefs?.read_preference(/datum/preference/toggle/holder/play_adminhelp_ping))
 				X << 'sound/effects/adminhelp.ogg'
@@ -394,7 +424,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 /datum/mentor_help/proc/Reopen()
 	switch(state)
 		if(AHELP_RESOLVED)
-			feedback_dec("mhelp_resolve")
+			feedback_dec("ahelp_resolve")
 	AddInteraction(span_purple("Reopened by [usr.ckey]"))
 	if(initiator)
 		to_chat(initiator, span_filter_adminlog(span_purple("Ticket [TicketHref("#[id]")] was reopened by [usr.ckey].")))
@@ -574,7 +604,12 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 		to_chat(span_red("You are already handling this ticket."))
 		return
 
-	var/msg = span_red("Your AdminHelp is being handled by [key_name(usr,FALSE,FALSE)] please be patient.")
+	var/msg
+	switch(level)
+		if(0)
+			msg = span_green("Your MentorHelp is being handled by [key_name(usr,FALSE,FALSE)] please be patient.")
+		if(1)
+			msg = span_red("Your AdminHelp is being handled by [key_name(usr,FALSE,FALSE)] please be patient.")
 
 	if(initiator)
 		to_chat(initiator, msg)
@@ -608,26 +643,31 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	if(tgui_alert(usr, "Really escalate this ticket to admins? No mentors will ever be able to interact with it again if you do.","Escalate",list("Yes","No")) != "Yes")
 		return
 	if (src.initiator == null) // You can't escalate a mentorhelp of someone who's logged out because it won't create the adminhelp properly
-		to_chat(usr, span_mentor_pm_warning("Error: client not found, unable to escalate."))
+		to_chat(usr, span_mentor_warning("Error: client not found, unable to escalate."))
 		return
 
-	level = level - 1
+	level = level + 1
 
 	message_mentors("[usr.ckey] escalated Ticket [TicketHref("#[id]")]")
 	log_admin("[key_name(usr)] escalated ticket [src.name]")
 	to_chat(src.initiator, span_mentor("[usr.ckey] escalated your ticket to admins."))
 
-/datum/ticket/proc/Context(ref_src)
-	if(!ref_src)
-		ref_src = "\ref[src]"
-	if(state == AHELP_ACTIVE)
-		. += ClosureLinks(ref_src)
-	if(state != AHELP_RESOLVED)
-		. += " (<A href='byond://?_src_=mentorholder;mhelp=[ref_src];mhelp_action=escalate'>ESCALATE</A>)"
-
 //Forwarded action from admin/Topic
 /datum/ticket/proc/Action(action)
-	testing("Ahelp action: [action]")
+	//testing("Ticket action: [action]")
+
+	// Actions everyone can do
+	switch(level)
+		if(0)
+			if(!check_rights_for(usr.client, (R_ADMIN|R_SERVER|R_MOD|R_MENTOR)))
+				return
+		if(1)
+			if(!check_rights_for(usr.client, (R_ADMIN|R_SERVER|R_MOD)))
+				return
+
+	perform_action(action)
+
+/datum/ticket/proc/perform_action(action)
 	switch(action)
 		if("ticket")
 			TicketPanel()
@@ -636,7 +676,11 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 		if("reject")
 			Reject()
 		if("reply")
-			usr.client.cmd_ahelp_reply(initiator)
+			switch(level)
+				if(0)
+					usr.client.cmd_mhelp_reply(initiator)
+				if(1)
+					usr.client.cmd_ahelp_reply(initiator)
 		if("icissue")
 			ICIssue()
 		if("close")
