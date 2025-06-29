@@ -55,12 +55,14 @@ var/list/admin_verbs_admin = list(
 	/client/proc/cmd_admin_check_player_logs,	//checks a player's attack logs,
 	/client/proc/cmd_admin_check_dialogue_logs,	//checks a player's dialogue logs,
 	/datum/admins/proc/access_news_network,	//allows access of newscasters,
+<<<<<<< HEAD
 	/client/proc/giveruntimelog,		//allows us to give access to runtime logs to somebody,
 	/client/proc/getserverlog,			//allows us to fetch server logs (diary) for other days,
+=======
+>>>>>>> a3028dcb9e ([MIRROR] More admin verb conversion & Secrets panel overhaul (#11124))
 	/client/proc/jumptocoord,			//we ghost and jump to a coordinate,
 	/client/proc/Getmob,				//teleports a mob to our location,
 	/client/proc/Getkey,				//teleports a mob with a certain ckey to our location,
-//	/client/proc/sendmob,				//sends a mob somewhere, -Removed due to it needing two sorting procs to work, which were executed every time an admin right-clicked. ~Errorage,
 	/client/proc/Jump,
 	/client/proc/jumptokey,				//allows us to jump to the location of a mob with a certain ckey,
 	/client/proc/jumptomob,				//allows us to jump to a specific mob,
@@ -69,7 +71,6 @@ var/list/admin_verbs_admin = list(
 	/client/proc/admin_cancel_shuttle,	//allows us to cancel the emergency shuttle, sending it back to CentCom,
 	/client/proc/cmd_admin_direct_narrate,	//send text directly to a player with no padding. Useful for narratives and fluff-text,
 	/client/proc/cmd_admin_world_narrate,	//sends text to all players with no padding,
-	/client/proc/cmd_admin_z_narrate, //VOREStation Add,
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/check_words,			//displays cult-words,
 	/client/proc/check_ai_laws,			//shows AI and borg laws,
@@ -79,9 +80,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/check_antagonists,
 	/client/proc/admin_memo,			//admin memo system. show/delete/write. +SERVER needed to delete admin memos of others,
 	/client/proc/dsay,					//talk in deadchat using our ckey/fakekey,
-//	/client/proc/toggle_hear_deadcast,	//toggles whether we hear deadchat,
 	/client/proc/investigate_show,		//various admintools for investigation. Such as a singulo grief-log,
-	/client/proc/secrets,
 	/datum/admins/proc/toggleooc,		//toggles ooc on/off for everyone,
 	/datum/admins/proc/togglelooc,		//toggles looc on/off for everyone,
 	/datum/admins/proc/toggleoocdead,	//toggles ooc on/off for everyone who is dead,
@@ -116,8 +115,6 @@ var/list/admin_verbs_admin = list(
 	/client/proc/view_chemical_reaction_logs,
 	/client/proc/makepAI,
 	/datum/admins/proc/paralyze_mob,
-	/client/proc/fixatmos,
-	/datum/admins/proc/quick_nif, //VOREStation Add,
 	/datum/admins/proc/quick_authentic_nif, //CHOMPStation add
 	/datum/admins/proc/set_uplink, //VOREStation Add,
 	/datum/admins/proc/sendFax,
@@ -166,14 +163,9 @@ var/list/admin_verbs_fun = list(
 //	/client/proc/smite,  //Replaced by player_effects
 	/client/proc/player_effects,
 	/client/proc/admin_lightning_strike,
-	/client/proc/resize, //VOREStation Add,
 	/client/proc/tgui_admin_lists, //CHOMPStation Add
 	/client/proc/cmd_admin_droppod_deploy,
 	/client/proc/adminorbit, //VOREStation Add
-	/client/proc/add_mob_for_narration,	//VOREStation Add
-	/client/proc/remove_mob_for_narration,	//VOREStation Add
-	/client/proc/narrate_mob,	//VOREStation Add
-	/client/proc/narrate_mob_args, //VOREStation Add
 	/client/proc/getPlayerStatus, //VORESTation Add
 	/client/proc/manage_event_triggers,
 	/client/proc/fake_pdaconvos
@@ -188,7 +180,6 @@ var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/spawn_atom,		//allows us to spawn instances,
 	/datum/admins/proc/spawn_mail,	// CHOMPStation Add
 	/client/proc/cmd_admin_droppod_spawn,
-	/client/proc/respawn_character,
 	/client/proc/spawn_character_mob,  //VOREStation Add,
 	/client/proc/spawn_chemdisp_cartridge,
 	/client/proc/map_template_load,
@@ -243,8 +234,6 @@ var/list/admin_verbs_debug = list(
 	/client/proc/ZASSettings,
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/kill_airgroup,
-	/client/proc/debug_controller,
-	/client/proc/debug_antagonist_template,
 	/client/proc/cmd_debug_mob_lists,
 	/client/proc/cmd_debug_using_map,
 	/client/proc/cmd_admin_delete,
@@ -256,7 +245,6 @@ var/list/admin_verbs_debug = list(
 	/client/proc/air_report,
 	/client/proc/reload_admins,
 	/client/proc/reload_eventMs,
-	/client/proc/restart_controller,
 	/datum/admins/proc/restart,
 	/client/proc/print_random_map,
 	/client/proc/create_random_map,
@@ -267,7 +255,6 @@ var/list/admin_verbs_debug = list(
 	/client/proc/enable_debug_verbs,
 	/client/proc/callproc,
 	/client/proc/callproc_datum,
-	/client/proc/SDQL2_query,
 	/client/proc/Jump,
 	/client/proc/jumptomob,
 	/client/proc/jumptocoord,
@@ -294,7 +281,6 @@ var/list/admin_verbs_debug = list(
 	/datum/admins/proc/view_feedback,
 	/client/proc/stop_sounds,
 	/client/proc/spawn_reagent,
-	/datum/admins/proc/quick_nif, //CHOMPStation Add,
 	/datum/admins/proc/quick_authentic_nif, //CHOMPStation add
 	/client/proc/reload_jobwhitelist, //ChompADD
 	/client/proc/reload_alienwhitelist //ChompADD
@@ -303,6 +289,7 @@ var/list/admin_verbs_debug = list(
 var/list/admin_verbs_paranoid_debug = list(
 	/client/proc/callproc,
 	/client/proc/callproc_datum,
+<<<<<<< HEAD
 	/client/proc/debug_controller
 	)
 
@@ -315,6 +302,8 @@ var/list/admin_verbs_permissions = list(
 	)
 var/list/admin_verbs_rejuv = list(
 	/client/proc/respawn_character
+=======
+>>>>>>> a3028dcb9e ([MIRROR] More admin verb conversion & Secrets panel overhaul (#11124))
 	)
 
 //verbs which can be hidden - needs work
@@ -338,7 +327,6 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/admin_cancel_shuttle,
 	/client/proc/cmd_admin_direct_narrate,
 	/client/proc/cmd_admin_world_narrate,
-	/client/proc/cmd_admin_z_narrate, //VOREStation Add,
 	/client/proc/check_words,
 	/client/proc/play_local_sound,
 	/client/proc/play_sound,
@@ -370,7 +358,6 @@ var/list/admin_verbs_hideable = list(
 	/datum/admins/proc/adrev,
 	/datum/admins/proc/adspawn,
 	/datum/admins/proc/adjump,
-	/client/proc/restart_controller,
 	/client/proc/cmd_admin_list_open_jobs,
 	/client/proc/callproc,
 	/client/proc/callproc_datum,
@@ -379,7 +366,6 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/kill_air,
 	/client/proc/cmd_debug_make_powernets,
 	/client/proc/kill_airgroup,
-	/client/proc/debug_controller,
 	/client/proc/startSinglo,
 	/client/proc/simple_DPS,
 	/client/proc/cmd_debug_mob_lists,
@@ -390,8 +376,6 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/air_report,
 	/client/proc/enable_debug_verbs,
 	/client/proc/roll_dices,
-	/proc/possess,
-	/proc/release,
 	/datum/admins/proc/set_uplink, //VOREStation Add,
 	/datum/admins/proc/set_tcrystals,
 	/client/proc/stop_sounds
@@ -423,15 +407,16 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_admin_subtle_message, 	//send an message to somebody as a 'voice in their head',
 	/datum/admins/proc/paralyze_mob,
 	/client/proc/cmd_admin_direct_narrate,
-	/client/proc/cmd_admin_z_narrate, //VOREStation Add,
 	/client/proc/allow_character_respawn,   // Allows a ghost to respawn ,
 	/datum/admins/proc/sendFax,
+<<<<<<< HEAD
 	/client/proc/getserverlog,			//allows us to fetch server logs (diary) for other days,
+=======
+>>>>>>> a3028dcb9e ([MIRROR] More admin verb conversion & Secrets panel overhaul (#11124))
 	/datum/admins/proc/view_persistent_data,
 	/datum/admins/proc/view_txt_log,	//shows the server log (diary) for today,
 	/datum/admins/proc/view_atk_log,		//shows the server combat-log, doesn't do anything presently,
 	/client/proc/start_vote,
-	/datum/admins/proc/quick_nif, //CHOMPStation Add,
 	/client/proc/reload_jobwhitelist, //ChompADD
 	/client/proc/reload_alienwhitelist //ChompADD
 )
@@ -458,12 +443,8 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/aooc,
 	/datum/admins/proc/paralyze_mob,
 	/client/proc/cmd_admin_direct_narrate,
-	/client/proc/cmd_admin_z_narrate, //VOREStation Add,
 	/client/proc/allow_character_respawn,
 	/datum/admins/proc/sendFax,
-	/client/proc/respawn_character,
-	/proc/possess,
-	/proc/release,
 	/datum/admins/proc/change_weather,
 	/datum/admins/proc/change_time,
 	/client/proc/cmd_regenerate_asset_cache,
@@ -492,8 +473,6 @@ var/list/admin_verbs_event_manager = list(
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/callproc,
 	/client/proc/callproc_datum,
-	/client/proc/debug_controller,
-	// /client/proc/show_gm_status,  // VOREStation Edit - We don't use SSgame_master yet.
 	/datum/admins/proc/change_weather,
 	/datum/admins/proc/change_time,
 	/client/proc/cmd_regenerate_asset_cache,
@@ -533,7 +512,6 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/admin_cancel_shuttle,      //allows us to cancel the emergency shuttle, sending it back to CentCom,
 	/client/proc/cmd_admin_direct_narrate,  //send text directly to a player with no padding. Useful for narratives and fluff-text,
 	/client/proc/cmd_admin_world_narrate,   //sends text to all players with no padding,
-	/client/proc/cmd_admin_z_narrate, //VOREStation Add,
 	/client/proc/cmd_admin_create_centcom_report,
 	/client/proc/check_words,                       //displays cult-words,
 	/client/proc/check_ai_laws,                     //shows AI and borg laws,
@@ -543,10 +521,13 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/check_antagonists,
 	/client/proc/admin_memo,                        //admin memo system. show/delete/write. +SERVER needed to delete admin memos of others,
 	/client/proc/dsay,                                      //talk in deadchat using our ckey/fakekey,
+<<<<<<< HEAD
 	/client/proc/secrets,
 	/client/proc/game_panel,                        //game panel, allows to change game-mode etc,
 	/client/proc/cmd_mod_say,
 	/client/proc/cmd_event_say,
+=======
+>>>>>>> a3028dcb9e ([MIRROR] More admin verb conversion & Secrets panel overhaul (#11124))
 	/datum/admins/proc/show_player_info,
 	/client/proc/free_slot,                 //frees slot for chosen job,
 	/client/proc/cmd_admin_change_custom_event,
@@ -564,7 +545,6 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/change_security_level,
 	/client/proc/makepAI,
 	/datum/admins/proc/paralyze_mob,
-	/client/proc/fixatmos,
 	/datum/admins/proc/sendFax,
 	/client/proc/despawn_player,
 	/datum/admins/proc/view_feedback,
@@ -586,7 +566,13 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/ReleaseVirus,
 	/client/proc/add_hidden_area,
 	/client/proc/remove_hidden_area,
+<<<<<<< HEAD
 	/datum/admins/proc/quick_nif, //CHOMPStation Add,
+=======
+	/client/proc/hide_motion_tracker_feedback,
+	/client/proc/modify_event_collector,
+	/client/proc/induce_malfunction,
+>>>>>>> a3028dcb9e ([MIRROR] More admin verb conversion & Secrets panel overhaul (#11124))
 	/datum/admins/proc/quick_authentic_nif, //CHOMPStation add
 	/client/proc/reload_jobwhitelist, //ChompADD
 	/client/proc/reload_alienwhitelist //ChompADD
