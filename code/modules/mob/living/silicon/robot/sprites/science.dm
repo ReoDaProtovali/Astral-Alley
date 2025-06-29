@@ -102,10 +102,10 @@
 	sprite_icon = 'icons/mob/robot/science_wide.dmi'
 
 /datum/robot_sprite/dogborg/science/do_equipment_glamour(var/obj/item/robot_module/module)
+	..()
+
 	if(!has_custom_equipment_sprites)
 		return
-
-	..()
 
 	var/obj/item/shockpaddles/robot/jumper/J = locate() in module.modules
 	if(J)
@@ -152,9 +152,10 @@
 	sprite_icon = 'icons/mob/robot/science_large.dmi'
 
 /datum/robot_sprite/dogborg/tall/science/do_equipment_glamour(var/obj/item/robot_module/module)
+	..()
+
 	if(!has_custom_equipment_sprites)
 		return
-	..()
 
 	var/obj/item/shockpaddles/robot/jumper/J = locate() in module.modules
 	if(J)

@@ -467,6 +467,31 @@
 	to_chat(src, span_filter_notice("You harmlessly spark."))
 	spark_system.start()
 
+<<<<<<< HEAD
+=======
+///Essentially, a Activate Held Object mode for borgs that acts just like pressing Z in hotkey mode but also works well with multibelts.
+/mob/living/silicon/robot/verb/alt_mode()
+	set name = "Robot Activate Held Object"
+	set category = "Object"
+	set src = usr
+
+	if(!checkClickCooldown())
+		return
+
+	setClickCooldown(1)
+
+	var/obj/item/W = module_active
+	if(module_active)
+		W.attack_self(src)
+	return
+
+/mob/living/silicon/robot/verb/toggle_grabbability() // Grisp the preyborgs with consent (and allows for your borg to still be pet).
+	set category = "Abilities.Silicon"
+	set name = "Toggle Pickup"
+	grabbable = !grabbable
+	to_chat(src, span_filter_notice("You feel [grabbable ? "more" : "less"] grabbable."))
+
+>>>>>>> 9d57e72903 ([MIRROR] Multibelt fixes and QoL (#11125))
 // this function displays jetpack pressure in the stat panel
 //ChompEDIT START - TGPanel
 /mob/living/silicon/robot/proc/show_jetpack_pressure()
