@@ -231,3 +231,23 @@
 	to_chat(src, span_notice("You are now a [new_mouse_colour] mouse!"))
 	remove_verb(src,/mob/living/simple_mob/animal/passive/mouse/verb/set_mouse_colour) //CHOMPEdit TGPanel
 // CHOMPAdd End
+<<<<<<< HEAD
+=======
+
+/mob/living/simple_mob/animal/passive/mouse/white/virology
+	name = "Fleming"
+	desc = "A small white rodent, often found in Virology. This one isn't quite the nuisance!"
+
+/mob/living/simple_mob/animal/passive/mouse/white/virology/Initialize(mapload)
+	. = ..()
+	name = initial(name)
+	desc = initial(desc)
+	rat_diseases += new /datum/disease/advance/random(2, 2, 1, infected = src)
+
+/mob/living/simple_mob/animal/passive/mouse/white/virology/Crossed(atom/movable/AM)
+	. = ..()
+
+	if(isliving(AM) && !isnull(rat_diseases) && prob(20))
+		var/mob/living/L = AM
+		L.ContractDisease(pick(rat_diseases), BP_R_FOOT)
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))

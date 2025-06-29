@@ -10,6 +10,15 @@ const logger = createLogger('AudioPlayer');
 
 type CustomAudioElement = HTMLAudioElement & { stop: Function };
 
+function isProtectedError(error: ErrorEvent): boolean {
+  return (
+    typeof error === 'object' &&
+    error !== null &&
+    'isTrusted' in error &&
+    error.isTrusted
+  );
+}
+
 export class AudioPlayer {
   node: CustomAudioElement;
   playing: boolean;
@@ -29,6 +38,7 @@ export class AudioPlayer {
     this.options = {};
     this.onPlaySubscribers = [];
     this.onStopSubscribers = [];
+<<<<<<< HEAD
     // Listen for playback start events
     this.node.addEventListener('canplaythrough', () => {
       logger.log('canplaythrough');
@@ -52,6 +62,43 @@ export class AudioPlayer {
         logger.log('playback error', e.error);
         this.stop();
       }
+=======
+  }
+
+  destroy() {
+    this.element = null;
+  }
+
+  play(url: string, options: AudioOptions = {}) {
+    if (this.element) {
+      this.stop();
+    }
+    this.options = options;
+
+    const audio = new Audio(url);
+    if (!audio) {
+      logger.log('failed to create audio element');
+      return;
+    }
+    this.element = audio;
+
+    audio.volume = this.volume;
+    audio.playbackRate = this.options.pitch || 1;
+
+    logger.log('playing', url, options);
+
+    audio.addEventListener('ended', () => {
+      logger.log('ended');
+      this.stop();
+    });
+
+    audio.addEventListener('error', (error) => {
+      if (isProtectedError(error)) {
+        Byond.sendMessage('audio/protected');
+      }
+      logger.log('playback error:', JSON.stringify(error));
+      this.stop();
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
     });
     // Check every second to stop the playback at the right time
     this.playbackInterval = setInterval(() => {
@@ -77,6 +124,7 @@ export class AudioPlayer {
     clearInterval(this.playbackInterval);
   }
 
+<<<<<<< HEAD
   play(url, options = {}) {
     if (!this.node) {
       return;
@@ -84,6 +132,14 @@ export class AudioPlayer {
     logger.log('playing', url, options);
     this.options = options;
     this.node.src = url;
+=======
+    audio.play()?.catch(() => {
+      // no error is passed here, it's sent to the event listener
+      logger.log('playback failed');
+    });
+
+    this.onPlaySubscribers.forEach((subscriber) => subscriber());
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
   }
 
   stop() {
@@ -96,8 +152,16 @@ export class AudioPlayer {
       }
     }
     logger.log('stopping');
+<<<<<<< HEAD
     this.playing = false;
     this.node.src = '';
+=======
+
+    this.element.pause();
+    this.destroy();
+
+    this.onStopSubscribers.forEach((subscriber) => subscriber());
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
   }
 
   setVolume(volume) {

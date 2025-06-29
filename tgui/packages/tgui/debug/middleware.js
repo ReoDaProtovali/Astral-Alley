@@ -45,8 +45,13 @@ export const debugMiddleware = (store) => {
   return (next) => (action) => next(action);
 };
 
+<<<<<<< HEAD:tgui/packages/tgui/debug/middleware.js
 export const relayMiddleware = (store) => {
   const devServer = require('tgui-dev-server/link/client.cjs');
+=======
+export function relayMiddleware(store) {
+  const devServer = require('tgui-dev-server/link/client.ts');
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129)):tgui/packages/tgui/debug/middleware.ts
   const externalBrowser = location.search === '?external';
   if (externalBrowser) {
     devServer.subscribe((msg) => {

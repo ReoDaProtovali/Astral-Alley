@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## NPM
 /**/node_modules
 
@@ -15,6 +16,11 @@
 **/*.json
 **/*.yml
 **/*.md
+=======
+.pnp.*
+.yarn
+node_modules
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
 
 ## Build artifacts
 /public/.tmp/**/*

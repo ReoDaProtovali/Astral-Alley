@@ -22,7 +22,11 @@ import './styles/themes/abstract.scss';
 import { perf } from 'common/perf';
 import { setupGlobalEvents } from 'tgui-core/events';
 import { setupHotKeys } from 'tgui-core/hotkeys';
+<<<<<<< HEAD
 import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
+=======
+import { setupHotReloading } from 'tgui-dev-server/link/client';
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
 
 import { setGlobalStore } from './backend';
 import { loadIconRefMap } from './icons';

@@ -11,10 +11,13 @@ env:
   browser: true
   node: true
 plugins:
-  - sonarjs
   - react
   - unused-imports
   - simple-import-sort
+<<<<<<< HEAD
+=======
+  - '@typescript-eslint'
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
 settings:
   react:
     version: '18.2'
@@ -768,3 +771,10 @@ rules:
   ## https://github.com/lydell/eslint-plugin-simple-import-sort/
   simple-import-sort/imports: error
   simple-import-sort/exports: error
+<<<<<<< HEAD
+=======
+
+  ## Typescript
+  '@typescript-eslint/consistent-type-imports':
+    [error, { fixStyle: inline-type-imports }]
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
