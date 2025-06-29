@@ -25,7 +25,6 @@ const createStats = (verbose) => ({
 
 module.exports = (env = {}, argv) => {
   const mode = argv.mode || 'production';
-  const bench = env.TGUI_BENCH;
   const config = {
     mode: mode === 'production' ? 'production' : 'development',
     context: path.resolve(__dirname),
@@ -62,23 +61,12 @@ module.exports = (env = {}, argv) => {
         {
           test: /\.(s)?css$/,
           use: [
-            {
-              loader: ExtractCssPlugin.loader,
-              options: {
-                esModule: false,
-              },
-            },
-            {
-              loader: require.resolve('css-loader'),
-              options: {
-                esModule: false,
-              },
-            },
-            {
-              loader: require.resolve('sass-loader'),
-            },
+            ExtractCssPlugin.loader,
+            require.resolve('css-loader'),
+            require.resolve('sass-loader'),
           ],
         },
+
         {
           test: /\.(png|jpg|svg)$/,
           use: [
@@ -109,9 +97,7 @@ module.exports = (env = {}, argv) => {
     stats: createStats(true),
     plugins: [
       new webpack.EnvironmentPlugin({
-        NODE_ENV: env.NODE_ENV || mode,
-        WEBPACK_HMR_ENABLED: env.WEBPACK_HMR_ENABLED || argv.hot || false,
-        DEV_SERVER_IP: env.DEV_SERVER_IP || null,
+        NODE_ENV: mode,
       }),
       new ExtractCssPlugin({
         filename: '[name].bundle.css',
@@ -120,6 +106,7 @@ module.exports = (env = {}, argv) => {
     ],
   };
 
+<<<<<<< HEAD
   if (bench) {
     config.entry = {
       'tgui-bench': [
@@ -136,13 +123,27 @@ module.exports = (env = {}, argv) => {
 
   // Development server specific options
   if (argv.devServer) {
+=======
+  // Production build specific options
+  if (mode === 'production') {
+    const { EsbuildPlugin } = require('esbuild-loader');
+    config.optimization.minimizer = [
+      new EsbuildPlugin({
+        css: true,
+        legalComments: 'none',
+      }),
+    ];
+  } else {
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
     config.devServer = {
+      clientLogLevel: 'silent',
+      hot: true,
+      noInfo: false,
       progress: false,
       quiet: false,
-      noInfo: false,
-      clientLogLevel: 'silent',
       stats: createStats(false),
     };
+    config.devtool = 'cheap-module-source-map';
   }
 
   return config;

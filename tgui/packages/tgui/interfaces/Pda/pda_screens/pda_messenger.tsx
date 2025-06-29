@@ -79,6 +79,7 @@ const copyToClipboard = (messages: message[]) => {
       string += `Them: ${message.message}\n`;
     }
   }
+<<<<<<< HEAD
 
   if (Byond.TRIDENT) {
     let ie_window = window as IeWindow;
@@ -86,6 +87,9 @@ const copyToClipboard = (messages: message[]) => {
   } else {
     navigator.clipboard.writeText(string);
   }
+=======
+  navigator.clipboard.writeText(string);
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
 };
 
 export const pda_messenger = (props) => {

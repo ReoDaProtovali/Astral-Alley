@@ -4,7 +4,11 @@
  * @license MIT
  */
 
+<<<<<<< HEAD
 import { sendLogEntry } from 'tgui-dev-server/link/client.cjs';
+=======
+import { sendLogEntry } from 'tgui-dev-server/link/client';
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
 
 const LEVEL_DEBUG = 0;
 const LEVEL_LOG = 1;

@@ -17,7 +17,11 @@ import { captureExternalLinks } from 'tgui/links';
 import { createRenderer } from 'tgui/renderer';
 import { configureStore } from 'tgui/store';
 import { setupGlobalEvents } from 'tgui-core/events';
+<<<<<<< HEAD
 import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
+=======
+import { setupHotReloading } from 'tgui-dev-server/link/client';
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129))
 
 import { audioMiddleware, audioReducer } from './audio';
 import { chatMiddleware, chatReducer } from './chat';

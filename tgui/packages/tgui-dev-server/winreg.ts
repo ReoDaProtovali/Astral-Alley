@@ -9,11 +9,19 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
-import { createLogger } from './logging.js';
+import { createLogger } from './logging';
 
 const logger = createLogger('winreg');
 
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/winreg.js
 export const regQuery = async (path, key) => {
+=======
+/** Query a registry key. */
+export async function regQuery(
+  path: string,
+  key: string,
+): Promise<string | undefined> {
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129)):tgui/packages/tgui-dev-server/winreg.ts
   if (process.platform !== 'win32') {
     return null;
   }

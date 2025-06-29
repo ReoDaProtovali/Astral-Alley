@@ -4,11 +4,25 @@
  * @license MIT
  */
 
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/dreamseeker.js
 import { exec } from 'child_process';
 import { promisify } from 'util';
 
 import { createLogger } from './logging.js';
 import { require } from './require.js';
+=======
+import { exec } from 'node:child_process';
+import { promisify } from 'node:util';
+
+import axios, { type AxiosInstance, type AxiosResponse } from 'axios';
+
+import { createLogger } from './logging';
+
+type Entry = {
+  addr: string;
+  pid: number;
+};
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129)):tgui/packages/tgui-dev-server/dreamseeker.ts
 
 const axios = require('axios');
 const logger = createLogger('dreamseeker');
@@ -16,7 +30,15 @@ const logger = createLogger('dreamseeker');
 const instanceByPid = new Map();
 
 export class DreamSeeker {
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/dreamseeker.js
   constructor(pid, addr) {
+=======
+  public pid: number;
+  public addr: string;
+  public client: AxiosInstance;
+
+  constructor(pid: number, addr: string) {
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129)):tgui/packages/tgui-dev-server/dreamseeker.ts
     this.pid = pid;
     this.addr = addr;
     this.client = axios.create({
@@ -24,8 +46,12 @@ export class DreamSeeker {
     });
   }
 
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/dreamseeker.js
   topic(params = {}) {
     // prettier-ignore
+=======
+  topic(params: Record<string, any> = {}): Promise<AxiosResponse> {
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129)):tgui/packages/tgui-dev-server/dreamseeker.ts
     const query = Object.keys(params)
       .map(key => encodeURIComponent(key)
         + '=' + encodeURIComponent(params[key]))
@@ -37,6 +63,7 @@ export class DreamSeeker {
   }
 }
 
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/dreamseeker.js
 /**
  * @param {number[]} pids
  * @returns {DreamSeeker[]}
@@ -53,6 +80,19 @@ DreamSeeker.getInstancesByPids = async (pids) => {
       instances.push(instance);
     } else {
       pidsToResolve.push(pid);
+=======
+  static async getInstancesByPids(pids: number[]): Promise<DreamSeeker[]> {
+    const instances: DreamSeeker[] = [];
+    const pidsToResolve: number[] = [];
+
+    for (const pid of pids) {
+      const instance = instanceByPid.get(pid);
+      if (instance) {
+        instances.push(instance);
+      } else {
+        pidsToResolve.push(pid);
+      }
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129)):tgui/packages/tgui-dev-server/dreamseeker.ts
     }
   }
   if (pidsToResolve.length > 0) {
@@ -64,14 +104,14 @@ DreamSeeker.getInstancesByPids = async (pids) => {
       });
       // Line format:
       // proto addr mask mode pid
-      const entries = [];
+      const entries: Entry[] = [];
       const lines = stdout.split('\r\n');
       for (let line of lines) {
         const words = line.match(/\S+/g);
         if (!words || words.length === 0) {
           continue;
         }
-        const entry = {
+        const entry: Entry = {
           addr: words[1],
           pid: parseInt(words[4], 10),
         };
@@ -99,4 +139,10 @@ DreamSeeker.getInstancesByPids = async (pids) => {
   return instances;
 };
 
+<<<<<<< HEAD:tgui/packages/tgui-dev-server/dreamseeker.js
 const plural = (word, n) => (n !== 1 ? word + 's' : word);
+=======
+function plural(word: string, n: number): string {
+  return n !== 1 ? word + 's' : word;
+}
+>>>>>>> 8a4f06eed4 ([MIRROR] removes tgui sonar, dev server oversights (#11129)):tgui/packages/tgui-dev-server/dreamseeker.ts
