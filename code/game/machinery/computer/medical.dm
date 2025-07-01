@@ -172,10 +172,14 @@
 					medical["empty"] = 1
 			if(MED_DATA_V_DATA)
 				data["virus"] = list()
+<<<<<<< HEAD
 				for(var/datum/disease/D in active_diseases)
 					if(!D.discovered)
 						continue
 					var/datum/data/record/v = active_diseases[D]
+=======
+				for(var/datum/data/record/v in GLOB.virusDB)
+>>>>>>> 6232f82a63 ([MIRROR] Virus Database fix (#11134))
 					data["virus"] += list(list("name" = v.fields["name"], "D" = "\ref[v]"))
 			if(MED_DATA_MEDBOT)
 				data["medbots"] = list()
