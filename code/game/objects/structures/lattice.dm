@@ -11,7 +11,11 @@
 /obj/structure/lattice/Initialize()
 	. = ..()
 
+<<<<<<< HEAD
 	if(!(istype(src.loc, /turf/space) || istype(src.loc, /turf/simulated/open) || istype(src.loc, /turf/simulated/mineral) || istype(src.loc, /turf/simulated/shuttle/plating/airless/carry)))
+=======
+	if(!(isopenturf(src.loc) || ismineralturf(src.loc) || istype(src.loc, /turf/simulated/shuttle/plating/airless/carry)))
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 		return INITIALIZE_HINT_QDEL
 
 	for(var/obj/structure/lattice/LAT in src.loc)

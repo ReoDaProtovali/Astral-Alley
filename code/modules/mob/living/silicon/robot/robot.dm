@@ -977,11 +977,51 @@
 				if(eyes_overlay)
 					add_overlay(eyes_overlay)
 
+<<<<<<< HEAD
 		if(robotdecal_on && sprite_datum.has_robotdecal_sprites)
 			if(!shell || deployed) // Shell borgs that are not deployed will have no eyes.
 				var/robotdecal_overlay = sprite_datum.get_robotdecal_overlay(src)
 				if(robotdecal_overlay)
 					add_overlay(robotdecal_overlay)
+=======
+		for(var/belly_class in vore_fullness_ex)
+			reset_belly_lights(belly_class)
+			var/vs_fullness = vore_fullness_ex[belly_class]
+			if(belly_class == "sleeper" && vore_selected)
+				if(sleeper_state == 0 && vore_selected.silicon_belly_overlay_preference == "Sleeper") continue
+				if(sleeper_state != 0 && !(vs_fullness + 1 > vore_capacity_ex[belly_class]))
+					if(vore_selected.silicon_belly_overlay_preference == "Sleeper")
+						vs_fullness = vore_capacity_ex[belly_class]
+					else if(vore_selected.silicon_belly_overlay_preference == "Both")
+						vs_fullness += 1
+			if(!vs_fullness > 0) continue
+			if(resting)
+				if(!sprite_datum.has_vore_belly_resting_sprites)
+					continue
+				//If we have glowy stomach sprites.
+				if(glowy_enabled)
+					var/mutable_appearance/MA = mutable_appearance(sprite_datum.sprite_icon, sprite_datum.get_belly_resting_overlay(src, vs_fullness, belly_class))
+					MA.appearance_flags = KEEP_APART
+					add_overlay(MA)
+					add_overlay(emissive_appearance(sprite_datum.sprite_icon, sprite_datum.get_belly_resting_overlay(src, vs_fullness, belly_class)))
+				else
+					add_overlay(sprite_datum.get_belly_resting_overlay(src, vs_fullness, belly_class))
+			else
+				update_belly_lights(belly_class)
+				//If we have glowy stomach sprites.
+				if(glowy_enabled)
+					var/mutable_appearance/MA = mutable_appearance(sprite_datum.sprite_icon, sprite_datum.get_belly_overlay(src, vs_fullness, belly_class))
+					MA.appearance_flags = KEEP_APART
+					add_overlay(MA)
+					add_overlay(emissive_appearance(sprite_datum.sprite_icon, sprite_datum.get_belly_overlay(src, vs_fullness, belly_class)))
+				else
+					add_overlay(sprite_datum.get_belly_overlay(src, vs_fullness, belly_class))
+
+		sprite_datum.handle_extra_icon_updates(src)			// Various equipment-based sprites go here.
+
+		if(resting && sprite_datum.has_rest_sprites)
+			icon_state = sprite_datum.get_rest_sprite(src)
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 
 		if(lights_on && sprite_datum.has_eye_light_sprites)
 			if(!shell || deployed) // Shell borgs that are not deployed will have no eyes.

@@ -84,7 +84,11 @@ var/datum/uplink/uplink = new()
 	return desc
 
 // get_goods does not necessarily return physical objects, it is simply a way to acquire the uplink item without paying
+<<<<<<< HEAD
 /datum/uplink_item/proc/get_goods(var/obj/item/uplink/U, var/loc, mob/user)
+=======
+/datum/uplink_item/proc/get_goods(var/obj/item/uplink/U, var/location, var/mob/user)
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 	return FALSE
 
 /datum/uplink_item/proc/log_icon()
@@ -117,8 +121,13 @@ var/datum/uplink/uplink = new()
 		A.put_in_any_hand_if_possible(I)
 	return I
 
+<<<<<<< HEAD
 /datum/uplink_item/item/get_goods(var/obj/item/uplink/U, var/loc, var/mob/user)
 	var/obj/item/I = new path(loc)
+=======
+/datum/uplink_item/item/get_goods(obj/item/uplink/U, location, mob/user)
+	var/obj/item/I = new path(location)
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 	return I
 
 /datum/uplink_item/item/description()
@@ -154,8 +163,13 @@ var/datum/uplink/uplink = new()
 	var/crate_path = /obj/structure/largecrate
 	var/list/paths = list()	// List of paths to be spawned into the crate.
 
+<<<<<<< HEAD
 /datum/uplink_item/crated/get_goods(var/obj/item/uplink/U, var/loc)
 	var/obj/L = new crate_path(get_turf(loc))
+=======
+/datum/uplink_item/crated/get_goods(obj/item/uplink/U, location, mob/user)
+	var/obj/L = new crate_path(get_turf(location))
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 
 	L.adjust_scale(rand(9, 12) / 10, rand(9, 12) / 10)	// Some variation in the crate / locker size.
 
@@ -179,7 +193,7 @@ var/datum/uplink/uplink = new()
 /****************
 * Support procs *
 ****************/
-/proc/get_random_uplink_items(var/obj/item/uplink/U, var/remaining_TC, var/loc)
+/proc/get_random_uplink_items(var/obj/item/uplink/U, var/remaining_TC, var/location)
 	var/list/bought_items = list()
 	while(remaining_TC)
 		var/datum/uplink_item/I = default_uplink_selection.get_random_item(remaining_TC, U, bought_items)
@@ -190,7 +204,7 @@ var/datum/uplink/uplink = new()
 
 	return bought_items
 
-/proc/get_surplus_items(var/obj/item/uplink/U, var/remaining_TC, var/loc)
+/proc/get_surplus_items(var/obj/item/uplink/U, var/remaining_TC, var/location)
 	var/list/bought_items = list()
 	var/override = TRUE
 	while(remaining_TC)

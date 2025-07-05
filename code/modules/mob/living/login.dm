@@ -44,6 +44,13 @@
 			var/prefsound = client.prefs.voice_sound
 			voice_sounds_list = get_talk_sound(prefsound)
 		else
+<<<<<<< HEAD
 			voice_sounds_list = talk_sound
 	//VOREStation Add End
+=======
+			voice_sounds_list = DEFAULT_TALK_SOUNDS
+	resize(size_multiplier, animate = FALSE, uncapped = has_large_resize_bounds(), ignore_prefs = TRUE, aura_animation = FALSE)
+	init_vore()
+
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 	return .

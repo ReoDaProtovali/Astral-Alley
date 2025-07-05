@@ -5,8 +5,13 @@
 	category = /datum/uplink_category/telecrystals
 	blacklisted = 1
 
+<<<<<<< HEAD
 /datum/uplink_item/item/telecrystal/get_goods(var/obj/item/uplink/U, var/loc, var/mob/M)
 	return new /obj/item/stack/telecrystal(loc, cost(U, M.mind.tcrystals))
+=======
+/datum/uplink_item/item/telecrystal/get_goods(obj/item/uplink/U, location, mob/M)
+	return new /obj/item/stack/telecrystal(location, cost(U, M.mind.tcrystals))
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 
 /datum/uplink_item/item/telecrystal/one
 	name = "Telecrystal - 01"
