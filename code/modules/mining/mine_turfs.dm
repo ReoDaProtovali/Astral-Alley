@@ -269,6 +269,7 @@ var/list/mining_overlay_cache = list()
 			add_overlay(overlay_detail_icon_path,overlay_detail)
 
 		if(update_neighbors)
+<<<<<<< HEAD
 			for(var/direction in alldirs)
 				if(istype(get_step(src, direction), /turf/simulated/mineral))
 					var/turf/simulated/mineral/M = get_step(src, direction)
@@ -276,6 +277,19 @@ var/list/mining_overlay_cache = list()
 				if(istype(get_step(src, direction), /turf/simulated/wall/solidrock))
 					var/turf/simulated/wall/solidrock/M = get_step(src, direction)
 					M.update_icon()
+=======
+			for(var/direction in GLOB.alldirs)
+				var/turf/T = get_step(src, direction)
+				// don't double update during cave generation
+				if(LAZYACCESS(ignore_list, T))
+					continue
+
+				if(ismineralturf(T))
+					T.update_icon()
+
+				if(istype(T, /turf/simulated/wall/solidrock))
+					T.update_icon()
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
 
 /turf/simulated/mineral/ex_act(severity)
 

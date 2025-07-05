@@ -141,7 +141,17 @@ var/global/list/valid_ringtones = list(
 	//. += "Spawn With Shoes:<a href='byond://?src=\ref[src];toggle_shoes=1'><b>[(pref.shoe_hater) ? "No" : "Yes"]</b></a><br>" //RS Addition //CHOMPRemove, remove RS No shoes
 	. += "Spawn With Jacket:<a href='byond://?src=\ref[src];toggle_jacket=1'><b>[(pref.no_jacket) ? "No" : "Yes"]</b></a><br>"
 
+<<<<<<< HEAD:code/modules/client/preference_setup/general/04_equipment.dm
 	return jointext(.,null)
+=======
+	data["headset_type"] = GLOB.headsetlist[pref.headset]
+	data["backpack_type"] = backbaglist[pref.backbag]
+	data["pda_type"] = pdachoicelist[pref.pdachoice]
+	data["communicator_visibility"] = pref.communicator_visibility // boolean
+	data["ringtone"] = pref.ringtone
+	// data["shoes"] = !pref.shoe_hater // CHOMPRemove
+	data["jacket"] = !pref.no_jacket
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145)):code/modules/client/preference_setup/loadout/01_equipment.dm
 
 /datum/category_item/player_setup_item/general/equipment/proc/get_metadata(var/underwear_category, var/datum/gear_tweak/gt)
 	var/metadata = pref.all_underwear_metadata[underwear_category]

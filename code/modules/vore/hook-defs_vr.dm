@@ -1,23 +1,6 @@
-//The base hooks themselves
-
-//New() hooks
-/hook/client_new
-
-/hook/mob_new
-
-/hook/living_new
-
-/hook/carbon_new
-
-/hook/human_new
-
-/hook/simple_mob_new
-
-//Hooks for interactions
-/hook/living_attackby
-
 // Hook for when a mob de-spawns!
 /hook/despawn
+<<<<<<< HEAD
 
 //
 //Hook helpers to expand hooks to others
@@ -38,3 +21,5 @@
 
 	//Return 1 to superhook
 	return result
+=======
+>>>>>>> 46c940fbdf ([MIRROR] Fix a bunch of issues and runtimes (#11145))
