@@ -202,11 +202,21 @@
 
 /datum/trait/positive/weaver/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/positive.dm
 	add_verb(H, /mob/living/carbon/human/proc/check_silk_amount)
 	add_verb(H, /mob/living/carbon/human/proc/toggle_silk_production)
 	add_verb(H, /mob/living/carbon/human/proc/weave_structure)
 	add_verb(H, /mob/living/carbon/human/proc/weave_item)
 	add_verb(H, /mob/living/carbon/human/proc/set_silk_color)
+=======
+	var/datum/component/weaver/W = H.GetComponent(added_component_path)
+	if(S.get_bodytype() == SPECIES_VASILISSAN)
+		W.silk_reserve = 500
+		W.silk_max_reserve = 1000
+	if(trait_prefs)
+		W.silk_production = trait_prefs["silk_production"]
+		W.silk_color = lowertext(trait_prefs["silk_color"])
+>>>>>>> f34807d34e ([MIRROR] More gripper fixes v2.0 (#11143)):code/modules/mob/living/carbon/human/species/station/traits/positive.dm
 
 /datum/trait/positive/aquatic
 	name = "Aquatic"
@@ -343,7 +353,7 @@
 
 /datum/trait/positive/table_passer/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/list/trait_prefs)
 	..()
-	if (trait_prefs?["pass_table"] || !trait_prefs)
+	if(trait_prefs?["pass_table"] || !trait_prefs)
 		H.pass_flags |= PASSTABLE
 	add_verb(H,/mob/living/proc/toggle_pass_table)
 

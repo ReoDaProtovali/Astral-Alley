@@ -1368,8 +1368,13 @@
 
 /datum/trait/neutral/gargoyle/apply(var/datum/species/S,var/mob/living/carbon/human/H, var/list/trait_prefs)
 	..()
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/neutral.dm
 	var/datum/component/gargoyle/G = H.LoadComponent(/datum/component/gargoyle)
 	if (trait_prefs)
+=======
+	var/datum/component/gargoyle/G = H.GetComponent(added_component_path)
+	if(trait_prefs)
+>>>>>>> f34807d34e ([MIRROR] More gripper fixes v2.0 (#11143)):code/modules/mob/living/carbon/human/species/station/traits/neutral.dm
 		G.tint = trait_prefs["tint"]
 		G.material = lowertext(trait_prefs["material"])
 		G.identifier = lowertext(trait_prefs["identifier"])
