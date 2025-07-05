@@ -1898,14 +1898,19 @@
 					adjust_nutrition(10)
 
 /mob/living/carbon/human/proc/handle_changeling()
-	if(mind && mind.changeling)
-		mind.changeling.regenerate()
+	var/datum/component/antag/changeling/comp = is_changeling(src)
+	if(!comp)
+		if(mind && hud_used)
+			ling_chem_display.invisibility = INVISIBILITY_ABSTRACT
+		return
+	else
+		comp.regenerate()
 		if(hud_used)
 			ling_chem_display.invisibility = 0
 //			ling_chem_display.maptext = "<div align='center' valign='middle' style='position:relative; top:0px; left:6px'><font color='#dd66dd'>[round(mind.changeling.chem_charges)]</font></div>"
-			switch(mind.changeling.chem_storage)
+			switch(comp.chem_storage)
 				if(1 to 50)
-					switch(mind.changeling.chem_charges)
+					switch(comp.chem_charges)
 						if(0 to 9)
 							ling_chem_display.icon_state = "ling_chems0"
 						if(10 to 19)
@@ -1919,7 +1924,7 @@
 						if(50)
 							ling_chem_display.icon_state = "ling_chems50"
 				if(51 to 80) //This is a crappy way of checking for engorged sacs...
-					switch(mind.changeling.chem_charges)
+					switch(comp.chem_charges)
 						if(0 to 9)
 							ling_chem_display.icon_state = "ling_chems0e"
 						if(10 to 19)
@@ -1938,9 +1943,12 @@
 							ling_chem_display.icon_state = "ling_chems70e"
 						if(80)
 							ling_chem_display.icon_state = "ling_chems80e"
+<<<<<<< HEAD
 	else
 		if(mind && hud_used)
 			ling_chem_display.invisibility = 101
+=======
+>>>>>>> a0c273ce1f ([MIRROR] Changing changeling (Refactor) (#11142))
 
 /mob/living/carbon/human/handle_shock()
 	..()
