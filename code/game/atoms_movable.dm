@@ -86,11 +86,6 @@
 		stop_orbit()
 	QDEL_NULL(riding_datum) //VOREStation Add
 
-/atom/movable/vv_edit_var(var_name, var_value)
-	if(var_name in GLOB.VVpixelmovement)			//Pixel movement is not yet implemented, changing this will break everything irreversibly.
-		return FALSE
-	return ..()
-
 ////////////////////////////////////////
 /atom/movable/Move(atom/newloc, direct = 0, movetime)
 	// Didn't pass enough info
@@ -657,3 +652,109 @@
 	cut_overlay(source)
 	if(em_block == source)
 		em_block = null
+<<<<<<< HEAD
+=======
+
+/atom/movable/proc/abstract_move(atom/new_loc)
+	var/atom/old_loc = loc
+	var/direction = get_dir(old_loc, new_loc)
+	loc = new_loc
+	Moved(old_loc, direction, TRUE)
+
+// Helper procs called on entering/exiting a belly. Does nothing by default, override on children for special behavior.
+/atom/movable/proc/enter_belly(obj/belly/B)
+	return
+
+/atom/movable/proc/exit_belly(obj/belly/B)
+	return
+
+/atom/movable/proc/set_listening(var/set_to)
+	if (listening_recursive && !set_to)
+		LAZYREMOVE(recursive_listeners, src)
+		if (!LAZYLEN(recursive_listeners))
+			for (var/atom/movable/location as anything in get_nested_locs(src))
+				LAZYREMOVE(location.recursive_listeners, src)
+	if (!listening_recursive && set_to)
+		LAZYOR(recursive_listeners, src)
+		for (var/atom/movable/location as anything in get_nested_locs(src))
+			LAZYOR(location.recursive_listeners, src)
+	listening_recursive = set_to
+
+///Returns a list of all locations (except the area) the movable is within.
+/proc/get_nested_locs(atom/movable/atom_on_location, include_turf = FALSE)
+	. = list()
+	var/atom/location = atom_on_location.loc
+	var/turf/our_turf = get_turf(atom_on_location)
+	while(location && location != our_turf)
+		. += location
+		location = location.loc
+	if(our_turf && include_turf) //At this point, only the turf is left, provided it exists.
+		. += our_turf
+
+/atom/movable/Exited(atom/movable/gone, atom/new_loc)
+	. = ..()
+
+	if (!LAZYLEN(gone.recursive_listeners))
+		return
+	for (var/atom/movable/location as anything in get_nested_locs(src)|src)
+		LAZYREMOVE(location.recursive_listeners, gone.recursive_listeners)
+
+/atom/movable/Entered(atom/movable/arrived, atom/old_loc)
+	. = ..()
+
+	if (!LAZYLEN(arrived.recursive_listeners))
+		return
+	for (var/atom/movable/location as anything in get_nested_locs(src)|src)
+		LAZYOR(location.recursive_listeners, arrived.recursive_listeners)
+
+/atom/movable/proc/show_message(msg, type, alt, alt_type)//Message, type of message (1 or 2), alternative message, alt message type (1 or 2)
+	return
+
+/atom/movable/proc/Bump_vr(var/atom/A, yes)
+	return
+
+/atom/movable/vv_get_dropdown()
+	. = ..()
+	VV_DROPDOWN_OPTION("", "---------")
+	//VV_DROPDOWN_OPTION(VV_HK_OBSERVE_FOLLOW, "Observe Follow")
+	VV_DROPDOWN_OPTION(VV_HK_GET_MOVABLE, "Get Movable")
+	VV_DROPDOWN_OPTION(VV_HK_EDIT_PARTICLES, "Edit Particles")
+	//VV_DROPDOWN_OPTION(VV_HK_DEADCHAT_PLAYS, "Start/Stop Deadchat Plays")
+	//VV_DROPDOWN_OPTION(VV_HK_ADD_FANTASY_AFFIX, "Add Fantasy Affix")
+
+/atom/movable/vv_do_topic(list/href_list)
+	. = ..()
+
+	if(!.)
+		return
+
+	//if(href_list[VV_HK_OBSERVE_FOLLOW])
+	//	if(!check_rights(R_ADMIN))
+	//		return
+	//	usr.client?.admin_follow(src)
+
+	if(href_list[VV_HK_GET_MOVABLE])
+		if(!check_rights(R_ADMIN))
+			return
+		if(QDELETED(src))
+			return
+		forceMove(get_turf(usr))
+
+	if(href_list[VV_HK_EDIT_PARTICLES] && check_rights(R_VAREDIT))
+		var/client/C = usr.client
+		C?.open_particle_editor(src)
+
+	//if(href_list[VV_HK_DEADCHAT_PLAYS] && check_rights(R_FUN))
+	//	if(tgui_alert(usr, "Allow deadchat to control [src] via chat commands?", "Deadchat Plays [src]", list("Allow", "Cancel")) != "Allow")
+	//		return
+	//	// Alert is async, so quick sanity check to make sure we should still be doing this.
+	//	if(QDELETED(src))
+	//		return
+	//	// This should never happen, but if it does it should not be silent.
+	//	if(deadchat_plays() == COMPONENT_INCOMPATIBLE)
+	//		to_chat(usr, span_warning("Deadchat control not compatible with [src]."))
+	//		CRASH("deadchat_control component incompatible with object of type: [type]")
+	//	to_chat(usr, span_notice("Deadchat now control [src]."))
+	//	log_admin("[key_name(usr)] has added deadchat control to [src]")
+	//	message_admins(span_notice("[key_name(usr)] has added deadchat control to [src]"))
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))

@@ -49,6 +49,7 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 
 	created_for = ckey
 
+<<<<<<< HEAD
 	new_player_panel()
 	client.init_verbs()
 	spawn(40)
@@ -56,6 +57,24 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 			handle_privacy_poll()
 			client.playtitlemusic()
 			version_warnings()
+=======
+	addtimer(CALLBACK(src, PROC_REF(do_after_login)), 4 SECONDS, TIMER_DELETE_ME)
+	initialize_lobby_screen()
+
+/mob/new_player/proc/do_after_login()
+	PRIVATE_PROC(TRUE)
+	if(client)
+		var/motd = global.config.motd
+		if(motd)
+			to_chat(src, examine_block("<div class=\"motd\">[motd]</div>"))
+
+		if(has_respawned)
+			to_chat(src, CONFIG_GET(string/respawn_message))
+		has_respawned = FALSE
+		handle_privacy_poll()
+		client.playtitlemusic()
+		version_warnings()
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 
 /mob/new_player/proc/version_warnings()
 	var/problems // string to store message to present to player as a problem
