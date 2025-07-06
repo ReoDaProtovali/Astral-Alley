@@ -237,9 +237,9 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
  * required is_bwoink boolean TRUE if this ticket was started by an admin PM
  * required level integer The level of the ticket. 0 = Admin, 1 = Mentor
  */
-/datum/ticket/New(msg, client/C, is_bwoink, ticket_level)
+/datum/ticket/New(raw_msg, client/C, is_bwoink, ticket_level)
 	//clean the input msg
-	msg = sanitize(copytext(msg,1,MAX_MESSAGE_LEN))
+	var/msg = sanitize(copytext(raw_msg,1,MAX_MESSAGE_LEN))
 	if(!msg || !C || !C.mob)
 		qdel(src)
 		return
@@ -285,16 +285,22 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	var/list/activemins = adm["present"]
 	var activeMins = activemins.len
 	if(is_bwoink)
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets.dm
 		ahelp_discord_message("ADMINHELP: FROM: [key_name_admin(usr)] TO [initiator_ckey]/[initiator_key_name] - MSG: **[msg]** - Heard by [activeMins] NON-AFK staff members.") //CHOMPEdit
 	else
 		ahelp_discord_message("ADMINHELP: FROM: [initiator_ckey]/[initiator_key_name] - MSG: **[msg]** - Heard by [activeMins] NON-AFK staff members.") //CHOMPEdit
 	//YW EDIT END
+=======
+		ahelp_discord_message("[level == 0 ? "MENTORHELP" : "ADMINHELP"]: FROM: [key_name_admin(usr)] TO [initiator_ckey]/[initiator_key_name] - MSG: \n ```[raw_msg]``` \n Heard by [activeMins] NON-AFK staff members.")
+	else
+		ahelp_discord_message("[level == 0 ? "MENTORHELP" : "ADMINHELP"]: FROM: [initiator_ckey]/[initiator_key_name] - MSG: \n ```[raw_msg]``` \n Heard by [activeMins] NON-AFK staff members.")
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149)):code/modules/tickets/tickets.dm
 
 		// Also send it to discord since that's the hip cool thing now.
 		SSwebhooks.send(
 			WEBHOOK_AHELP_SENT,
 			list(
-				"name" = "Ticket ([id]) (Game ID: [game_id]) ticket opened.",
+				"name" = "Ticket ([id]) (Round ID: [GLOB.round_id ? GLOB.round_id : "No database"]) ticket opened.",
 				"body" = "[key_name(initiator)] has opened a ticket. \n[msg]",
 				"color" = COLOR_WEBHOOK_POOR
 			)
@@ -439,7 +445,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	SSwebhooks.send(
 		WEBHOOK_AHELP_SENT,
 		list(
-			"name" = "Ticket ([id]) (Game ID: [game_id]) reopened.",
+			"name" = "Ticket ([id]) (Round ID: [GLOB.round_id ? GLOB.round_id : "No database"]) reopened.",
 			"body" = "Reopened by [key_name(usr)]."
 		)
 	)
@@ -472,7 +478,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 		SSwebhooks.send(
 			WEBHOOK_AHELP_SENT,
 			list(
-				"name" = "Ticket ([id]) (Game ID: [game_id]) closed.",
+				"name" = "Ticket ([id]) (Round ID: [GLOB.round_id ? GLOB.round_id : "No database"]) closed.",
 				"body" = "Closed by [key_name(usr)].",
 				"color" = COLOR_WEBHOOK_BAD
 			)
@@ -503,7 +509,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 			SSwebhooks.send(
 				WEBHOOK_AHELP_SENT,
 				list(
-					"name" = "Ticket ([id]) (Game ID: [game_id]) resolved.",
+					"name" = "Ticket ([id]) (Round ID: [GLOB.round_id ? GLOB.round_id : "No database"]) resolved.",
 					"body" = "Marked as Resolved by [key_name(usr)].",
 					"color" = COLOR_WEBHOOK_GOOD
 				)
@@ -532,7 +538,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	SSwebhooks.send(
 		WEBHOOK_AHELP_SENT,
 		list(
-			"name" = "Ticket ([id]) (Game ID: [game_id]) rejected.",
+			"name" = "Ticket ([id]) (Round ID: [GLOB.round_id ? GLOB.round_id : "No database"]) rejected.",
 			"body" = "Rejected by [key_name(usr)].",
 			"color" = COLOR_WEBHOOK_BAD
 		)
@@ -559,7 +565,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	SSwebhooks.send(
 		WEBHOOK_AHELP_SENT,
 		list(
-			"name" = "Ticket ([id]) (Game ID: [game_id]) marked as IC issue.",
+			"name" = "Ticket ([id]) (Round ID: [GLOB.round_id ? GLOB.round_id : "No database"]) marked as IC issue.",
 			"body" = "Marked as IC Issue by [key_name(usr)].",
 			"color" = COLOR_WEBHOOK_BAD
 		)
@@ -588,7 +594,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	SSwebhooks.send(
 		WEBHOOK_AHELP_SENT,
 		list(
-			"name" = "Ticket ([id]) (Game ID: [game_id]) being handled.",
+			"name" = "Ticket ([id]) (Round ID: [GLOB.round_id ? GLOB.round_id : "No database"]) being handled.",
 			"body" = "[key_name(usr)] is now handling the ticket."
 		)
 	)

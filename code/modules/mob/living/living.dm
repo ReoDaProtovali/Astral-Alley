@@ -1348,7 +1348,9 @@
 
 /mob/living/vv_get_header()
 	. = ..()
+	var/refid = REF(src)
 	. += {"
+<<<<<<< HEAD
 		<a href='byond://?_src_=vars;[HrefToken()];rename=\ref[src]'><b>[src]</b></a><font size='1'>
 		<br><a href='byond://?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=ckey'>[ckey ? ckey : "No ckey"]</a> / <a href='byond://?_src_=vars;[HrefToken()];datumedit=\ref[src];varnameedit=real_name'>[real_name ? real_name : "No real name"]</a>
 		<br>
@@ -1360,6 +1362,17 @@
 		BRAIN:<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=\ref[src];adjustDamage=brain'>[getBrainLoss()]</a>
 		</font>
 		"}
+=======
+		<br>"} + span_small("[VV_HREF_TARGETREF(refid, VV_HK_GIVE_DIRECT_CONTROL, "[ckey || "no ckey"]")] / [VV_HREF_TARGETREF_1V(refid, VV_HK_BASIC_EDIT, "[real_name || "no real name"]", NAMEOF(src, real_name))]") + {"
+		<br>"} + span_small({"
+			BRUTE:"} + span_small("<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=brute' id='brute'>[getBruteLoss()]</a>") + {"
+			FIRE:"} + span_small("<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=fire' id='fire'>[getFireLoss()]</a>") + {"
+			TOXIN:"} + span_small("<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=toxin' id='toxin'>[getToxLoss()]</a>") + {"
+			OXY:"} + span_small("<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=oxygen' id='oxygen'>[getOxyLoss()]</a>") + {"
+			BRAIN:"} + span_small("<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=brain' id='brain'>[getBrainLoss()]</a>") + {"
+			CLONE:"} + span_small("<a href='byond://?_src_=vars;[HrefToken()];mobToDamage=[refid];adjustDamage=clone' id='clone'>[getCloneLoss()]</a>") + {"
+		"})
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 
 /mob/living/update_gravity(has_gravity)
 	if(!ticker)

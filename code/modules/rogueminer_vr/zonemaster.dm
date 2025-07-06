@@ -176,7 +176,16 @@
 
 	if(!M.mineral && prob(rm_controller.diffstep_chances[rm_controller.diffstep])) //Difficulty translates directly into ore chance
 		rm_controller.dbg("ZM(par): Adding mineral to [M.x],[M.y].")
+<<<<<<< HEAD
 		M.make_ore(rm_controller.diffstep >= 3 ? 1 : 0)
+=======
+		if(rm_controller.diffstep >= 3)
+			M.turf_resource_types |= TURF_HAS_RARE_ORE
+			M.make_ore(TRUE)
+		else
+			M.turf_resource_types |= TURF_HAS_ORE
+			M.make_ore()
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 		mineral_rocks += M
 		//If above difficulty threshold make rare ore instead (M.make_ore(1))
 	//Increase with difficulty etc

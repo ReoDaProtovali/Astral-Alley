@@ -33,9 +33,6 @@
 	///vis overlays managed by SSvis_overlays to automaticaly turn them like other overlays
 	var/list/managed_vis_overlays
 
-	///Our local copy of filter data so we can add/remove it
-	var/list/filter_data
-
 	//Detective Work, used for the duplicate data points kept in the scanners
 	var/list/original_atom
 	// Track if we are already had initialize() called to prevent double-initialization.
@@ -604,6 +601,7 @@
 /atom/proc/get_nametag_desc(mob/user)
 	return "" //Desc itself is often too long to use
 
+<<<<<<< HEAD
 /atom/vv_get_dropdown()
 	. = ..()
 	VV_DROPDOWN_OPTION(VV_HK_ATOM_EXPLODE, "Explosion")
@@ -674,6 +672,8 @@
 
 	. = ..()
 
+=======
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 /atom/proc/atom_say(message)
 	if(!message)
 		return

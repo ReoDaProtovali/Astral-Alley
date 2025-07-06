@@ -16,10 +16,32 @@ var/list/admin_datums = list()
 	var/datum/feed_channel/admincaster_feed_channel = new /datum/feed_channel
 	var/admincaster_signature	//What you'll sign the newsfeeds as
 
+	/// Code security critcal token used for authorizing href topic calls
 	var/href_token
 
 
+<<<<<<< HEAD
 /datum/admins/New(initial_rank = "Temporary Admin", initial_rights = 0, ckey)
+=======
+	var/deadmined
+
+	var/datum/filter_editor/filteriffic
+	var/datum/particle_editor/particle_test
+
+	/// A lazylist of tagged datums, for quick reference with the View Tags verb
+	var/list/tagged_datums
+
+	var/given_profiling = FALSE
+
+
+/datum/admins/New(list/datum/admin_rank/ranks, ckey, force_active = FALSE, protected)
+	if(IsAdminAdvancedProcCall())
+		alert_to_permissions_elevation_attempt(usr)
+		if (!target) //only del if this is a true creation (and not just a New() proc call), other wise trialmins/coders could abuse this to deadmin other admins
+			QDEL_IN(src, 0)
+			CRASH("Admin proc call creation of admin datum")
+		return
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 	if(!ckey)
 		error("Admin datum created without a ckey argument. Datum has been deleted")
 		qdel(src)
@@ -109,6 +131,7 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 		to_chat(usr, span_filter_adminlog(span_warning("Error: Cannot proceed. They have more or equal rights to us.")))
 	return 0
 
+<<<<<<< HEAD
 /client/proc/mark_datum(datum/D)
 	if(!holder)
 		return
@@ -136,6 +159,8 @@ NOTE: It checks usr by default. Supply the "user" argument if you wish to check 
 		return 1
 	return 0
 
+=======
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 /proc/GenerateToken()
 	. = ""
 	for(var/I in 1 to 32)

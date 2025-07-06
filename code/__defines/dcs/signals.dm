@@ -31,6 +31,7 @@
 
 //////////////////////////////////////////////////////////////////
 
+<<<<<<< HEAD
 // /datum signals
 /// when a component is added to a datum: (/datum/component)
 #define COMSIG_COMPONENT_ADDED "component_added"
@@ -52,6 +53,10 @@
 #define COMSIG_ELEMENT_ATTACH "element_attach"
 /// fires on the target datum when an element is attached to it  (/datum/element)
 #define COMSIG_ELEMENT_DETACH "element_detach"
+=======
+/// Signal that gets sent when a ghost query is completed
+#define COMSIG_GHOST_QUERY_COMPLETE "ghost_query_complete"
+>>>>>>> 76310c6448 ([MIRROR] View Variables Update (2) (#11149))
 
 // /atom signals
 ///from base of atom/proc/Initialize(): sent any time a new atom is created
