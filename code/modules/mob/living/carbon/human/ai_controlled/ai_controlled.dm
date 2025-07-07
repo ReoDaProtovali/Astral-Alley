@@ -34,7 +34,11 @@
 	var/to_wear_l_hand = null
 	var/to_wear_r_hand = /obj/item/melee/baton
 
+<<<<<<< HEAD
 /mob/living/carbon/human/ai_controlled/Initialize()
+=======
+/mob/living/carbon/human/ai_controlled/Initialize(mapload, new_species)
+>>>>>>> 9120a4ad89 (Disables voidsuit breaching (#11139))
 	if(generate_gender)
 		gender = pick(list(MALE, FEMALE, PLURAL, NEUTER))
 

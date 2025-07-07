@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /mob/living/carbon/human/ai_controlled/greytide/Initialize()
+=======
+/mob/living/carbon/human/ai_controlled/greytide/Initialize(mapload, new_species)
+>>>>>>> 9120a4ad89 (Disables voidsuit breaching (#11139))
 	to_wear_r_hand = pick(
 		prob(20); /obj/item/storage/toolbox/electrical,
 		prob(20); /obj/item/storage/toolbox/mechanical,
