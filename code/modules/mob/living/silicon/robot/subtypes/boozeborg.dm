@@ -46,22 +46,23 @@ What Borgs are available is sadly handled in the above file in the proc
 				"Vampire's Aid" = "boozeborg(red)",
 				"Vodka Komrade" = "boozeborg(vodka)"
 				)
-/obj/item/robot_module/robot/booze/New(var/mob/living/silicon/robot/R)
+/obj/item/robot_module/robot/booze/create_equipment(mob/living/silicon/robot/robot)
+	..()
 	src.modules += new /obj/item/gripper/service(src)
-	//src.modules += new /obj/item/reagent_containers/glass/bucket(src)
+	//src.modules += new /obj/item/reagent_containers/glass/bucket/cyborg(src)
 	//src.modules += new /obj/item/material/minihoe(src)
 	//src.modules += new /obj/item/analyzer/plant_analyzer(src)
 	//src.modules += new /obj/item/storage/bag/plants(src)
 	//src.modules += new /obj/item/robot_harvester(src)
 	src.modules += new /obj/item/material/knife(src)
 	src.modules += new /obj/item/material/kitchen/rollingpin(src)
-	src.modules += new /obj/item/multitool(src) //to freeze trays
+	src.modules += new /obj/item/multitool/cyborg(src) //to freeze trays
 	src.modules += new /obj/item/dogborg/jaws/small(src)
 	src.modules += new /obj/item/dogborg/boop_module(src)
 	src.modules += new /obj/item/dogborg/sleeper/compactor/brewer(src)
 	src.modules += new /obj/item/reagent_containers/glass/beaker(src)//For holding the ALCOHOL
 	src.emag 	 = new /obj/item/dogborg/pounce(src)
-	add_verb(R,/mob/living/silicon/robot/proc/reskin_booze)  //CHOMPEdit
+	add_verb(R,/mob/living/silicon/robot/proc/reskin_booze)
 
 	var/obj/item/rsf/M = new /obj/item/rsf(src)
 	M.stored_matter = 30
@@ -110,8 +111,7 @@ What Borgs are available is sadly handled in the above file in the proc
 	R.vore_capacity = 1
 	R.vore_capacity_ex = list("stomach" = 1)
 	R.wideborg = TRUE
-	add_verb(R,/mob/living/silicon/robot/proc/ex_reserve_refill) //CHOMPEdit TGPanel
-	..()
+	add_verb(R,/mob/living/silicon/robot/proc/ex_reserve_refill) //TGPanel
 
 /obj/item/robot_module/robot/booze/respawn_consumable(var/mob/living/silicon/robot/R, var/amount)
 	var/obj/item/reagent_containers/food/condiment/enzyme/E = locate() in src.modules
@@ -135,7 +135,7 @@ What Borgs are available is sadly handled in the above file in the proc
 
 /mob/living/silicon/robot/proc/reskin_booze()
 	set name = "Change Drink Color"
-	set category = "Abilities.Silicon" //ChompEDIT - TGPanel
+	set category = "Abilities.Settings"
 	set desc = "Choose the color of drink displayed inside you."
 
 	var/mob/M = usr
@@ -148,7 +148,7 @@ What Borgs are available is sadly handled in the above file in the proc
 	options["Grape Soda"] = "The Grapist"
 	options["Demon's Blood"] = "Vampire's Aid"
 	options["Slav Vodka"] = "Vodka Komrade"
-	var/choice = input(M,"Choose your drink!") in options
+	var/choice = tgui_input_list(M,"Choose your drink!", "Choose Drink", options)
 	if(src && choice && !M.stat && in_range(M,src))
 		icontype = options[choice]
 		var/active_sound = 'sound/effects/bubbles.ogg'
