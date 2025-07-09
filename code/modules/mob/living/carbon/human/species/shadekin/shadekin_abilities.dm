@@ -1,9 +1,9 @@
-/datum/power/shadekin
-
 /mob/living/carbon/human/is_incorporeal()
-	if(ability_flags & AB_PHASE_SHIFTED) //Shadekin
+	var/datum/component/shadekin/SK = get_shadekin_component()
+	if(SK && SK.in_phase) //Shadekin
 		return TRUE
 	return ..()
+<<<<<<< HEAD
 
 //CHOMPEdit Start - General ability check
 /mob/living/carbon/human/proc/shadekin_ability_check()
@@ -808,3 +808,5 @@
 
 	for(var/obj/effect/abstract/dark_maw/dm in SK.active_dark_maws)
 		dm.dispel()
+=======
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))

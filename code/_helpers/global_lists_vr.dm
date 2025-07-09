@@ -2,6 +2,7 @@
  * VOREStation global lists
 */
 
+<<<<<<< HEAD
 var/global/list/hair_accesories_list= list()// Stores /datum/sprite_accessory/hair_accessory indexed by type
 var/global/list/negative_traits = list()	// Negative custom species traits, indexed by path
 var/global/list/neutral_traits = list()		// Neutral custom species traits, indexed by path
@@ -12,7 +13,24 @@ var/global/list/everyone_traits_negative = list()	// Neutral traits available to
 var/global/list/traits_costs = list()		// Just path = cost list, saves time in char setup
 var/global/list/all_traits = list()			// All of 'em at once (same instances)
 var/global/list/active_ghost_pods = list()
+=======
+GLOBAL_LIST_EMPTY(hair_accesories_list) // Stores /datum/sprite_accessory/hair_accessory indexed by type
+GLOBAL_LIST_EMPTY(negative_traits)	// Negative custom species traits, indexed by path
+GLOBAL_LIST_EMPTY(neutral_traits)		// Neutral custom species traits, indexed by path
+GLOBAL_LIST_EMPTY(positive_traits)	// Positive custom species traits, indexed by path
+GLOBAL_LIST_EMPTY(everyone_traits_positive)	// Neutral traits available to all species, indexed by path
+GLOBAL_LIST_EMPTY(everyone_traits_neutral)	// Neutral traits available to all species, indexed by path
+GLOBAL_LIST_EMPTY(everyone_traits_negative)	// Neutral traits available to all species, indexed by path
+GLOBAL_LIST_EMPTY(traits_costs)		// Just path = cost list, saves time in char setup
+GLOBAL_LIST_EMPTY(all_traits)			// All of 'em at once (same instances)
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 
+GLOBAL_LIST_EMPTY(active_ghost_pods) //NYI - Used downstream
+GLOBAL_LIST_EMPTY(latejoin_gatewaystation) //NYI - Used downstream
+GLOBAL_LIST_EMPTY(latejoin_plainspath) //NYI - Used downstream
+GLOBAL_LIST_EMPTY(latejoin_fueldepot) //NYI - Used downstream
+GLOBAL_LIST_EMPTY(latejoin_tyrvillage) //NYI - Used downstream
+GLOBAL_LIST_EMPTY(latejoin_thedark) //NYI - Used downstream
 //Global vars for making the overmap_renamer subsystem.
 //Collects all instances by reference of visitable overmap objects of /obj/effect/overmap/visitable like the debris field.
 var/global/list/visitable_overmap_object_instances = list()

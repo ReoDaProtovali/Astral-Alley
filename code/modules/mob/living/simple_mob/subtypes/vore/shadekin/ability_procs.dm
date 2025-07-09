@@ -1,10 +1,11 @@
 // Phase shifting procs (and related procs)
-/mob/living/simple_mob/shadekin/proc/phase_shift()
+/mob/living/simple_mob/shadekin/phase_shift()
 	var/turf/T = get_turf(src)
-	var/area/A = T.loc	//RS Port #658
+	var/area/A = T.loc
 	if(!T.CanPass(src,T) || loc != T)
 		to_chat(src,span_warning("You can't use that here!"))
 		return FALSE
+<<<<<<< HEAD
 	//CHOMPAdd Start
 	if((get_area(src).flags & PHASE_SHIELDED))
 		to_chat(src,span_warning("This area is preventing you from phasing!"))
@@ -12,17 +13,20 @@
 	//CHOMPAdd End
 	//RS Port #658 Start
 	if(!client?.holder && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
+=======
+	if(!check_rights_for(client, R_HOLDER) && A.flag_check(AREA_BLOCK_PHASE_SHIFT))
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 		to_chat(src,span_warning("You can't use that here!"))
 		return FALSE
-	//RS Port #658 End
 
 	//Shifting in
-	if(ability_flags & AB_PHASE_SHIFTED)
+	if(comp.in_phase)
 		phase_in(T)
 	//Shifting out
 	else
 		phase_out(T)
 
+<<<<<<< HEAD
 /mob/living/simple_mob/shadekin/proc/phase_in(var/turf/T)
 	if(ability_flags & AB_PHASE_SHIFTED)
 
@@ -131,20 +135,22 @@
 		density = FALSE
 		force_max_speed = TRUE
 
+=======
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 /mob/living/simple_mob/shadekin/UnarmedAttack()
-	if(ability_flags & AB_PHASE_SHIFTED)
+	if(comp.in_phase)
 		return FALSE //Nope.
 
 	. = ..()
 
 /mob/living/simple_mob/shadekin/can_fall()
-	if(ability_flags & AB_PHASE_SHIFTED)
+	if(comp.in_phase)
 		return FALSE //Nope!
 
 	return ..()
 
 /mob/living/simple_mob/shadekin/zMove(direction)
-	if(ability_flags & AB_PHASE_SHIFTED)
+	if(comp.in_phase)
 		var/turf/destination = (direction == UP) ? GetAbove(src) : GetBelow(src)
 		if(destination)
 			forceMove(destination)
