@@ -61,7 +61,15 @@
 	return 1
 
 /obj/structure/table/MouseDrop_T(obj/O, mob/user, src_location, over_location, src_control, over_control, params)
+<<<<<<< HEAD
 	if(ismob(O.loc)) //If placing an item
+=======
+	if(user.stat)
+		return
+	if(can_reinforce && isliving(user) && istype(O, /obj/item/stack/material) && user.get_active_hand() == O && Adjacent(user))
+		reinforce_table(O, user)
+	else if(ismob(O.loc)) //If placing an item
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 		if(!isitem(O) || user.get_active_hand() != O)
 			return ..()
 		if(isrobot(user))

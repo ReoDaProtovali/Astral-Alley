@@ -415,7 +415,11 @@ var/global/list/light_type_cache = list()
 	else
 		base_state = "flamp"
 		..()
+<<<<<<< HEAD
 //VOREStation Edit Start
+=======
+
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 /obj/machinery/light/proc/set_alert_atmos()
 	if(!shows_alerts)
 		return
@@ -746,8 +750,9 @@ var/global/list/light_type_cache = list()
 	set_light(brightness_range * bulb_emergency_brightness_mul, max(bulb_emergency_pow_min, bulb_emergency_pow_mul * (cell.charge / cell.maxcharge)), bulb_emergency_colour)
 	return TRUE
 
-/obj/machinery/light/proc/flicker(var/amount = rand(10, 20))
+/obj/machinery/light/proc/flicker(var/amount = rand(10, 20), var/flicker_color)
 	if(flickering) return
+<<<<<<< HEAD
 	flickering = 1
 	spawn(0)
 		if(on && status == LIGHT_OK)
@@ -761,6 +766,37 @@ var/global/list/light_type_cache = list()
 			on = (status == LIGHT_OK)
 			update(0)
 		flickering = 0
+=======
+	if(on && status == LIGHT_OK)
+		flickering = 1
+		do_flicker(amount, flicker_color, brightness_color, brightness_color_ns)
+
+/obj/machinery/light/proc/do_flicker(remaining_flicks, flicker_color, original_color, original_color_ns)
+	SHOULD_NOT_OVERRIDE(TRUE)
+	PRIVATE_PROC(TRUE)
+	if(status != LIGHT_OK)
+		flickering = 0
+		return
+	on = !on
+	if(flicker_color && brightness_color != flicker_color)
+		brightness_color = flicker_color
+		brightness_color_ns = flicker_color
+		update(0) //Yes. This is done here and then immediately followed up with another update(0). Why does it need that? I have no clue. But a single update(0) does not work.
+	update(0)
+	if(!on) // Only play when the light turns off.
+		playsound(src, 'sound/effects/light_flicker.ogg', 50, 1)
+	if(remaining_flicks > 0)
+		remaining_flicks--
+		addtimer(CALLBACK(src, PROC_REF(do_flicker), remaining_flicks, flicker_color, original_color, original_color_ns), rand(5, 15), TIMER_DELETE_ME)
+		return
+	//All this happens after our final flicker.
+	on = (status == LIGHT_OK)
+	brightness_color = original_color
+	brightness_color_ns = original_color_ns
+	update(0)
+	update(0)
+	flickering = 0
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 
 // ai attack - turn on/off emergency lighting for a specific fixture
 /obj/machinery/light/attack_ai(mob/user)

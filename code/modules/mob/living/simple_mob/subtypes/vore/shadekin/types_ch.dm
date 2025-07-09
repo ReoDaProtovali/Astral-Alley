@@ -56,13 +56,34 @@
 	The hot goop you float in makes it hard to breathe; all consuming of space and light.  \
 	Your body feels hot, growing weaker, more tired. Draining. Darkness coming. \
 	You struggle to stay awake while floating helplessly in the goo."
+<<<<<<< HEAD
 	player_msg = "You are Rakshasa. You are not to directly harm crew, only consume. You never speak a language."
 	energy_adminbuse = TRUE
+=======
+	player_msg = "You are Rakshasa. You are not to directly harm crew, only consume. You never speak a language. You have special emotes: 'evillaugh', 'evilno', 'evilbreath', 'evilbreath2', and 'goodripsound'"
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 	maxHealth = 1000000000000
 	health = 1000000000000
 	eye_state = "BLUE EYES"
 	eye_icon_state = "e_rakshasa"
+	comp = /datum/component/shadekin/full/rakshasa
 
+<<<<<<< HEAD
+=======
+/mob/living/simple_mob/shadekin/red/rakshasa/Initialize(mapload)
+	. = ..()
+	if(comp)
+		comp.dark_energy_infinite = TRUE
+
+/mob/living/simple_mob/shadekin/red/rakshasa/get_available_emotes()
+	. = global._simple_mob_default_emotes.Copy()
+	. += /decl/emote/audible/evil_laugh
+	. += /decl/emote/audible/evil_no
+	. += /decl/emote/audible/evil_breathing
+	. += /decl/emote/audible/evil_breathing_2
+	. += /decl/emote/audible/goodripsound
+
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 /mob/living/simple_mob/shadekin/blue/luna
 	name = "Luna"
 	desc = "She appears to be a fuzzy critter of some sort. Her eyes shimmer a dark blue, glancing around curiously."

@@ -336,6 +336,60 @@
 	var/gun_accuracy_dispersion_mod = 0	// More is worse
 
 	var/sort_hint = SPECIES_SORT_NORMAL
+<<<<<<< HEAD
+=======
+	//This is so that if a race is using the chimera revive they can't use it more than once.
+	//Shouldn't really be seen in play too often, but it's case an admin event happens and they give a non chimera the chimera revive. Only one person can use the chimera revive at a time per race.
+	//var/reviving = 0 //commented out 'cause moved to mob
+
+	var/organic_food_coeff = 1
+	var/synthetic_food_coeff = 0
+	var/robo_ethanol_proc = 0 //can we get fuel from booze, as a synth?
+	var/robo_ethanol_drunk = 0 //can we get *drunk* from booze, as a synth?
+	var/digestion_efficiency = 1 //VORE specific digestion var
+	//var/vore_numbing = 0
+	var/metabolism = 0.0015
+	var/lightweight = FALSE //Oof! Nonhelpful bump stumbles.
+	var/trashcan = FALSE //It's always sunny in the wrestling ring.
+	var/eat_minerals = FALSE //HEAVY METAL DIET
+	var/base_species = null // Unused outside of a few species
+	var/selects_bodytype = SELECTS_BODYTYPE_FALSE // Allows the species to choose from body types like custom species can, affecting suit fitting and etcetera as you would expect.
+
+	var/bloodsucker = FALSE // Allows safely getting nutrition from blood.
+	var/bloodsucker_controlmode = "always loud" //Allows selecting between bloodsucker control modes. Always Loud corresponds to original implementation.
+
+	var/list/traits = list()
+	//Vars that need to be copied when producing a copy of species.
+	var/list/copy_vars = list("base_species", "icobase", "deform", "tail", "tail_animation", "icobase_tail", "color_mult", "primitive_form", "appearance_flags", "flesh_color", "base_color", "blood_mask", "damage_mask", "damage_overlays", "move_trail", "has_floating_eyes")
+	var/trait_points = 0
+
+	var/ideal_air_type = null	// Set to something else if you breathe something else from default composition. Used for inbelly air.
+
+	var/micro_size_mod = 0		// How different is our size for interactions that involve us being small?
+	var/macro_size_mod = 0		// How different is our size for interactions that involve us being big?
+	var/digestion_nutrition_modifier = 1
+	var/center_offset = 0.5
+	var/can_climb = FALSE
+	var/climbing_delay = 1.5	// We climb with a quarter delay
+
+	var/list/food_preference = list() //RS edit
+	var/food_preference_bonus = 0
+
+	var/datum/component/species_component = null // The component that this species uses. Example: Xenochimera use /datum/component/xenochimera
+	var/component_requires_late_recalc = FALSE // If TRUE, the component will do special recalculation stuff at the end of update_icons_body()
+
+	// For Lleill and Hanner
+	var/lleill_energy = 200
+	var/lleill_energy_max = 200
+
+	var/bite_mod = 1 //NYI - Used Downstream
+	var/grab_resist_divisor_victims = 1 //NYI - Used Downstream
+	var/grab_resist_divisor_self = 1 //NYI - Used Downstream
+	var/grab_power_victims = 0 //NYI - Used Downstream
+	var/grab_power_self = 0 //NYI - Used Downstream
+	var/waking_speed = 1 //NYI - Used Downstream
+	var/lightweight_light = 0 //NYI - Used Downstream
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 
 /datum/species/proc/update_attack_types()
 	unarmed_attacks = list()
@@ -534,6 +588,25 @@
 /datum/species/proc/handle_environment_special(var/mob/living/carbon/human/H)
 	return
 
+<<<<<<< HEAD
+=======
+/datum/species/proc/handle_species_components(var/mob/living/carbon/human/H)
+	SHOULD_NOT_OVERRIDE(TRUE)
+
+	//Xenochimera Species Component
+	var/datum/component/xenochimera/xc = H.get_xenochimera_component()
+	if(xc)
+		if(!H.stat || !(xc.revive_ready == REVIVING_NOW || xc.revive_ready == REVIVING_DONE))
+			SEND_SIGNAL(H, COMSIG_XENOCHIMERA_COMPONENT)
+
+	//Shadekin Species Component.
+	//For when shadekin actually have their component control everything.
+	var/datum/component/shadekin/sk = H.get_shadekin_component()
+	if(sk)
+		if(!H.stat)
+			SEND_SIGNAL(H, COMSIG_SHADEKIN_COMPONENT)
+
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 // Used to update alien icons for aliens.
 /datum/species/proc/handle_login_special(var/mob/living/carbon/human/H)
 	return

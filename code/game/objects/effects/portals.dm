@@ -24,12 +24,22 @@ GLOBAL_LIST_BOILERPLATE(all_portals, /obj/effect/portal)
 /obj/effect/portal/Crossed(atom/movable/AM as mob|obj)
 	// CHOMPEdit Start - Dephase kins on crossed
 	if(AM.is_incorporeal())
+<<<<<<< HEAD
 		if(event)
 			if(iscarbon(AM))
 				var/mob/living/carbon/human/H = AM
 				H.attack_dephase()
 		else return
 	// CHOMPEdit End
+=======
+		if(!event)
+			return
+		if(isliving(AM))
+			var/mob/living/L = AM
+			var/datum/component/shadekin/SK = L.get_shadekin_component()
+			if(SK)
+				SK.attack_dephase(null, src)
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
 	if(ismob(AM) && !(isliving(AM)))
 		return	//do not send ghosts, zshadows, ai eyes, etc
 	spawn(0)

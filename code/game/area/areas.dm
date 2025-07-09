@@ -556,6 +556,7 @@ GLOBAL_DATUM(spoiler_obfuscation_image, /image)
         return (flags & flag) == flag
     return flags & flag
 
+<<<<<<< HEAD
 // RS Port #658 Start
 /area/proc/check_phase_shift(var/mob/ourmob)
 	if(!flag_check(AREA_BLOCK_PHASE_SHIFT) || !ourmob.incorporeal_move)
@@ -573,3 +574,29 @@ GLOBAL_DATUM(spoiler_obfuscation_image, /image)
 		if(SK.ability_flags & AB_PHASE_SHIFTED)
 			SK.phase_in(SK.loc)
 // RS Port #658 End
+=======
+/area/proc/check_phase_shift(var/mob/living/ourmob)
+	if(!flag_check(AREA_BLOCK_PHASE_SHIFT) || !ourmob.is_incorporeal())
+		return
+	if(!isliving(ourmob))
+		return
+	if(check_rights_for(ourmob.client, R_HOLDER)) //If we're an admin, we don't get affected by phase blockers.
+		return
+	var/datum/component/shadekin/SK = ourmob.get_shadekin_component()
+	if(SK && SK.in_phase)
+		SK.attack_dephase(ourmob.loc, src)
+
+/area/proc/isAlwaysIndoors()
+	return FALSE
+
+/area/shuttle/isAlwaysIndoors()
+	return TRUE
+
+/area/turbolift/isAlwaysIndoors()
+	return TRUE
+
+/// Gets a hex color value for blending with a player's client.color. Allows for primitive color grading per area.
+/area/proc/get_color_tint()
+	SHOULD_CALL_PARENT(TRUE)
+	return color_grading
+>>>>>>> 3e095bf5db ([MIRROR] Completes the /datum/component/shadekin work (#11148))
