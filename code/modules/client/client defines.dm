@@ -179,3 +179,15 @@
 
 	/// If this client has been fully initialized or not
 	var/fully_created = FALSE
+<<<<<<< HEAD
+=======
+
+	/// Token used for the external chatlog api. Only valid for the current round.
+	var/chatlog_token
+
+	/// The DPI scale of the client. 1 is equivalent to 100% window scaling, 2 will be 200% window scaling
+	var/window_scaling
+
+	/// Loot panel for the client
+	var/datum/lootpanel/loot_panel
+>>>>>>> 23fee17c6d ([MIRROR] Replace the alt click menu with the RPG Lootpanel (#11170))
