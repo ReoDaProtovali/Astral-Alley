@@ -15,6 +15,7 @@ import {
   removeHighlightSetting,
   updateHighlightSetting,
   updateSettings,
+  updateToggle,
 } from '../settings/actions';
 import { selectSettings } from '../settings/selectors';
 import {
@@ -139,6 +140,7 @@ const loadChatFromStorage = async (store: Store<number, Action<string>>) => {
 export const chatMiddleware = (store) => {
   let initialized = false;
   let loaded = false;
+  let needsUpdate = true;
   const sequences: number[] = [];
   const sequences_requested: number[] = [];
   chatRenderer.events.on('batchProcessed', (countByType) => {
@@ -175,7 +177,10 @@ export const chatMiddleware = (store) => {
     if (!initialized && (settings.initialized || settings.firstLoad)) {
       initialized = true;
       setInterval(() => {
-        saveChatToStorage(store);
+        if (!game.databaseBackendEnabled || needsUpdate) {
+          saveChatToStorage(store);
+          needsUpdate = false;
+        }
       }, settings.saveInterval * 1000);
       loadChatFromStorage(store);
     }
@@ -253,6 +258,7 @@ export const chatMiddleware = (store) => {
 
     if (
       type === updateSettings.type ||
+      type === updateToggle.type ||
       type === loadSettings.type ||
       type === addHighlightSetting.type ||
       type === removeHighlightSetting.type ||
@@ -263,6 +269,7 @@ export const chatMiddleware = (store) => {
         settings.highlightSettings,
         settings.highlightSettingById,
       );
+      needsUpdate = true;
 
       return;
     }
