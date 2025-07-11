@@ -21,11 +21,19 @@ import './styles/themes/abstract.scss';
 
 import { perf } from 'common/perf';
 import { setupGlobalEvents } from 'tgui-core/events';
+<<<<<<< HEAD
 import { setupHotKeys } from 'tgui-core/hotkeys';
 import { setupHotReloading } from 'tgui-dev-server/link/client.cjs';
+=======
+import { setupHotReloading } from 'tgui-dev-server/link/client';
+>>>>>>> 23fee17c6d ([MIRROR] Replace the alt click menu with the RPG Lootpanel (#11170))
 
 import { setGlobalStore } from './backend';
+<<<<<<< HEAD
 import { loadIconRefMap } from './icons';
+=======
+import { setupHotKeys } from './hotkeys';
+>>>>>>> 23fee17c6d ([MIRROR] Replace the alt click menu with the RPG Lootpanel (#11170))
 import { captureExternalLinks } from './links';
 import { createRenderer } from './renderer';
 import { configureStore } from './store';

@@ -9,7 +9,6 @@ SUBSYSTEM_DEF(statpanels)
 	var/list/currentrun = list()
 	var/list/global_data
 	var/list/mc_data
-	var/list/cached_images = list()
 
 	///how many subsystem fires between most tab updates
 	var/default_wait = 10
@@ -100,12 +99,6 @@ SUBSYSTEM_DEF(statpanels)
 			if((num_fires % misc_wait == 0))
 				update_misc_tabs(target,target_mob)
 
-		var/datum/object_window_info/obj_window = target.obj_window
-		if(obj_window)
-			if(obj_window.flags & TURFLIST_UPDATE_QUEUED)
-				immediate_send_stat_data(target)
-			obj_window.flags = 0
-
 		if(MC_TICK_CHECK)
 			return
 
@@ -151,6 +144,7 @@ SUBSYSTEM_DEF(statpanels)
 	var/description_holders = target.description_holders
 	var/list/examine_update = list()
 
+<<<<<<< HEAD
 	if(!target.obj_window)
 		target.obj_window = new(target)
 	if(!target.examine_icon && !target.obj_window.examine_target && target.stat_tab == "Examine")
@@ -159,6 +153,19 @@ SUBSYSTEM_DEF(statpanels)
 		START_PROCESSING(SSobj_tab_items, target.obj_window)
 		refresh_client_obj_view(target)
 	examine_update += "[target.examine_icon]&emsp;<font size='5'>[description_holders["name"]]</font>" //The name, written in big letters.
+=======
+	var/atom/atom_icon = description_holders["icon"]
+	var/shown_icon = target.examine_icon
+	if(!shown_icon)
+		if(ismob(atom_icon) || length(atom_icon.overlays) > 0)
+			var/force_south = FALSE
+			if(isliving(atom_icon))
+				force_south = TRUE
+			shown_icon = costly_icon2html(atom_icon, target, sourceonly=TRUE, force_south = force_south)
+		else
+			shown_icon = icon2html(atom_icon, target, sourceonly=TRUE)
+	examine_update += "<img src=\"[shown_icon]\" />&emsp;" + span_giant("[description_holders["name"]]") //The name, written in big letters.
+>>>>>>> 23fee17c6d ([MIRROR] Replace the alt click menu with the RPG Lootpanel (#11170))
 	examine_update += "[description_holders["desc"]]" //the default examine text.
 	if(description_holders["info"])
 		examine_update += "<font color='#084B8A'>" + span_bold("[replacetext(description_holders["info"], "\n", "<BR>")]") + "</font><br />" //Blue, informative text.
@@ -200,81 +207,6 @@ SUBSYSTEM_DEF(statpanels)
 	//	target.spell_tabs |= action_data[1]
 
 	//target.stat_panel.send_message("update_spells", list(spell_tabs = target.spell_tabs, actions = actions))
-
-/datum/controller/subsystem/statpanels/proc/set_turf_examine_tab(client/target, mob/target_mob)
-	if(!target)//statbrowser hasnt fired yet and we were called from immediate_send_stat_data()
-		return
-	var/list/overrides = list()
-	for(var/image/target_image as anything in target.images)
-		if(!target_image.loc || target_image.loc.loc != target.tracked_turf || !target_image.override)
-			continue
-		overrides += target_image.loc
-
-	var/list/atoms_to_display = list(target.tracked_turf)
-	for(var/atom/movable/turf_content as anything in target.tracked_turf)
-		if(turf_content.mouse_opacity == MOUSE_OPACITY_TRANSPARENT)
-			continue
-		if(turf_content.invisibility > target_mob.see_invisible)
-			continue
-		if(turf_content in overrides)
-			continue
-		//if(turf_content.IsObscured())
-			//continue
-		atoms_to_display += turf_content
-
-	/// Set the atoms we're meant to display
-	var/datum/object_window_info/obj_window = target.obj_window
-	if(!obj_window)
-		return // previous one no longer exists
-	obj_window.atoms_to_show = atoms_to_display
-	START_PROCESSING(SSobj_tab_items, obj_window)
-	refresh_client_obj_view(target)
-
-/datum/controller/subsystem/statpanels/proc/refresh_client_obj_view(client/refresh)
-	var/list/turf_items = return_object_images(refresh)
-	if(!length(turf_items)/* || !refresh.mob?.listed_turf*/)
-		return
-	refresh.stat_panel.send_message("update_listedturf", turf_items)
-
-#define OBJ_IMAGE_LOADING "statpanels obj loading temporary"
-/// Returns all our ready object tab images
-/// Returns a list in the form list(list(object_name, object_ref, loaded_image), ...)
-/datum/controller/subsystem/statpanels/proc/return_object_images(client/load_from)
-	// You might be inclined to think that this is a waste of cpu time, since we
-	// A: Double iterate over atoms in the build case, or
-	// B: Generate these lists over and over in the refresh case
-	// It's really not very hot. The hot portion of this code is genuinely mostly in the image generation
-	// So it's ok to pay a performance cost for cleanliness here
-
-	// No turf? go away
-	/*if(!load_from.mob?.listed_turf)
-		return list()*/
-	var/datum/object_window_info/obj_window = load_from.obj_window
-	var/list/already_seen = obj_window.atoms_to_images
-	var/list/to_make = obj_window.atoms_to_imagify
-	var/list/turf_items = list()
-	for(var/atom/turf_item as anything in obj_window.atoms_to_show)
-		// First, we fill up the list of refs to display
-		// If we already have one, just use that
-		var/existing_image = already_seen[turf_item]
-		if(existing_image == OBJ_IMAGE_LOADING)
-			continue
-		// We already have it. Success!
-		if(existing_image)
-			if(turf_item == obj_window.examine_target) //not actually a turf item get trolled
-				load_from.examine_icon = "<img src=\"[existing_image]\" />"
-				obj_window.examine_target = null
-				set_examine_tab(load_from)
-				continue
-			turf_items[++turf_items.len] = list("[turf_item.name]", REF(turf_item), existing_image)
-			continue
-		// Now, we're gonna queue image generation out of those refs
-		to_make += turf_item
-		already_seen[turf_item] = OBJ_IMAGE_LOADING
-		obj_window.RegisterSignal(turf_item, COMSIG_PARENT_QDELETING, TYPE_PROC_REF(/datum/object_window_info,viewing_atom_deleted)) // we reset cache if anything in it gets deleted
-	return turf_items
-
-#undef OBJ_IMAGE_LOADING
 
 /datum/controller/subsystem/statpanels/proc/generate_mc_data()
 	mc_data = list(
@@ -320,16 +252,6 @@ SUBSYSTEM_DEF(statpanels)
 		set_action_tabs(target, target_mob)
 		return TRUE
 
-	// Handle turfs
-
-	if(target.tracked_turf)
-		if(!target_mob.TurfAdjacent(target.tracked_turf))
-			target_mob.set_listed_turf(null)
-
-		else if(target.stat_tab == target.tracked_turf.name || !(target.tracked_turf.name in target.panel_tabs))
-			set_turf_examine_tab(target, target_mob)
-			return TRUE
-
 	if(!target.holder)
 		return FALSE
 
@@ -347,12 +269,9 @@ SUBSYSTEM_DEF(statpanels)
 	else if(length(GLOB.sdql2_queries) && target.stat_tab == "SDQL2")
 		set_SDQL2_tab(target)
 
-/atom/proc/remove_from_cache()
-	SIGNAL_HANDLER
-	SSstatpanels.cached_images -= REF(src)
-
 /// Stat panel window declaration
 /client/var/datum/tgui_window/stat_panel
+<<<<<<< HEAD
 /// Turf examine turf
 /client/var/turf/tracked_turf
 
@@ -480,3 +399,5 @@ SUBSYSTEM_DEF(statpanels)
 		client.obj_window.stop_turf_tracking() //Needs to go before listed_turf is set to null so signals can be removed
 		return
 	client.obj_window.start_turf_tracking(new_turf)
+=======
+>>>>>>> 23fee17c6d ([MIRROR] Replace the alt click menu with the RPG Lootpanel (#11170))
