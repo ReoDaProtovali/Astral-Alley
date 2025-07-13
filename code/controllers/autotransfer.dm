@@ -29,3 +29,18 @@ var/datum/controller/transfer_controller/transfer_controller
 		SSvote.start_vote(new /datum/vote/crew_transfer)
 	//VOREStation Edit END
 		timerbuffer = timerbuffer + CONFIG_GET(number/vote_autotransfer_interval)
+<<<<<<< HEAD
+=======
+
+/datum/controller/transfer_controller/proc/modify_hard_end(client/user)
+	var/new_shift_end = tgui_input_number(user, "Modify the shift end timer (Input in Minutes)", "Shift End", shift_hard_end / 600)
+
+	if(!new_shift_end)
+		return
+
+	var/calculated_end = new_shift_end * 600
+
+	shift_hard_end = calculated_end
+	shift_last_vote = calculated_end
+	timerbuffer = calculated_end
+>>>>>>> 668bc1e4e9 ([MIRROR] missing VV options (#11180))
