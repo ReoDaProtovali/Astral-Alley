@@ -5,7 +5,6 @@ import { Window } from 'tgui/layouts';
 import {
   Box,
   Button,
-  Divider,
   Input,
   LabeledList,
   Section,
@@ -77,20 +76,27 @@ export const TicketChat = (props) => {
             <Section
               title={'Ticket #' + id}
               buttons={
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketChat.tsx
                 <Box nowrap>
                   <Button color={LevelColor[level]}>{Level[level]}</Button>
+=======
+                <Box
+                  className="TicketPanel__Label"
+                  backgroundColor={LevelColor[level]}
+                >
+                  {Level[level]}
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173)):tgui/packages/tgui/interfaces/TicketChat.tsx
                 </Box>
               }
             >
               <LabeledList>
                 <LabeledList.Item label="Assignee">{handler}</LabeledList.Item>
-                <LabeledList.Item label="Log" />
               </LabeledList>
             </Section>
-            <Divider />
+            <Stack.Divider />
           </Stack.Item>
           <Stack.Item grow>
-            <Section fill ref={messagesEndRef} scrollable>
+            <Section fill ref={messagesEndRef} scrollable title="Log">
               <Stack fill direction="column">
                 <Stack.Item grow>
                   {Object.keys(log)
@@ -104,6 +110,8 @@ export const TicketChat = (props) => {
                 </Stack.Item>
               </Stack>
             </Section>
+          </Stack.Item>
+          <Stack.Item>
             <Section fill>
               <Stack fill>
                 <Stack.Item grow>

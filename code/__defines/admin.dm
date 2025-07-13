@@ -40,7 +40,14 @@
 #define R_EVENT	        0x4000
 #define R_HOST          0x8000 //higher than this will overflow
 
+<<<<<<< HEAD
 #define R_MAXPERMISSION 0x8000 // This holds the maximum value for a permission. It is used in iteration, so keep it updated.
+=======
+#define R_DEFAULT R_NONE
+
+#define R_EVERYTHING (1<<17)-1 //the sum of all other rank permissions, used for +EVERYTHING
+#define R_HOLDER ((R_EVERYTHING) & (~(R_MENTOR | R_STEALTH)))
+>>>>>>> 0160eb3e68 ([MIRROR] up ports a bunch of TGS commands (#11173))
 
 #define SMITE_BREAKLEGS				"Break Legs"
 #define SMITE_BLUESPACEARTILLERY	"Bluespace Artillery"
