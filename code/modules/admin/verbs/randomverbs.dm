@@ -4,7 +4,12 @@
 	if(!holder)
 		return
 
+<<<<<<< HEAD
 	var/confirm = tgui_alert(src, "Make [M] drop everything?", "Message", list("Yes", "No"))
+=======
+ADMIN_VERB_AND_CONTEXT_MENU(drop_everything, R_ADMIN, "Drop Everything", ADMIN_VERB_NO_DESCRIPTION, ADMIN_CATEGORY_HIDDEN, mob/living/dropee in mob_list)
+	var/confirm = tgui_alert(src, "Make [dropee] drop everything?", "Message", list("Yes", "No"))
+>>>>>>> ec90bd33a4 ([MIRROR] some fixes (#11182))
 	if(confirm != "Yes")
 		return
 
