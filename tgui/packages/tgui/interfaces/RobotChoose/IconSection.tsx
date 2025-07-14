@@ -71,7 +71,7 @@ export const IconSection = (props: {
             <Stack>
               <Stack.Item grow />
               <Stack.Item>
-                <Box className={classes([size, sprite + 'N'])} />
+                <Box className={classes([size, `${sprite}N`])} />
               </Stack.Item>
               <Stack.Item grow />
             </Stack>
@@ -80,7 +80,7 @@ export const IconSection = (props: {
             <Stack>
               <Stack.Item grow />
               <Stack.Item>
-                <Box className={classes([size, sprite + 'S'])} />
+                <Box className={classes([size, `${sprite}S`])} />
               </Stack.Item>
               <Stack.Item grow />
             </Stack>
@@ -89,7 +89,7 @@ export const IconSection = (props: {
             <Stack>
               <Stack.Item grow />
               <Stack.Item>
-                <Box className={classes([size, sprite + 'W'])} />
+                <Box className={classes([size, `${sprite}W`])} />
               </Stack.Item>
               <Stack.Item grow />
             </Stack>
@@ -98,7 +98,7 @@ export const IconSection = (props: {
             <Stack>
               <Stack.Item grow />
               <Stack.Item>
-                <Box className={classes([size, sprite + 'E'])} />
+                <Box className={classes([size, `${sprite}E`])} />
               </Stack.Item>
               <Stack.Item grow />
             </Stack>

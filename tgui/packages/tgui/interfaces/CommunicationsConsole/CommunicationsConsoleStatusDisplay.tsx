@@ -8,7 +8,11 @@ export const CommunicationsConsoleStatusDisplay = (props) => {
 
   const { stat_display, authenticated } = data;
 
+<<<<<<< HEAD
   let presetButtons = stat_display['presets'].map((pb) => {
+=======
+  const presetButtons = stat_display.presets.map((pb) => {
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
     return (
       <Button
         key={pb.name}

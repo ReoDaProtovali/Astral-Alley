@@ -11,6 +11,7 @@ export const ChemDispenserSettings = (props) => {
     <Section title="Settings" fill>
       <LabeledList>
         <LabeledList.Item label="Dispense" verticalAlign="middle">
+<<<<<<< HEAD
           {dispenseAmounts.map((a, i) => (
             <Button
               key={i}
@@ -26,6 +27,26 @@ export const ChemDispenserSettings = (props) => {
               {a + 'u'}
             </Button>
           ))}
+=======
+          <Stack g={0.1}>
+            {dispenseAmounts.map((a, i) => (
+              <Stack.Item key={i}>
+                <Button
+                  textAlign="center"
+                  selected={amount === a}
+                  m="0"
+                  onClick={() =>
+                    act('amount', {
+                      amount: a,
+                    })
+                  }
+                >
+                  {`${a}u`}
+                </Button>
+              </Stack.Item>
+            ))}
+          </Stack>
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
         </LabeledList.Item>
         <LabeledList.Item label="Custom Amount">
           <Slider

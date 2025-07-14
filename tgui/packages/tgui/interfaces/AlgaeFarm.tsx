@@ -63,6 +63,7 @@ export const AlgaeFarm = (props) => {
               selected={usePower === 2}
               onClick={() => act('toggle')}
             >
+<<<<<<< HEAD
               Processing
             </Button>
           }
@@ -137,6 +138,80 @@ export const AlgaeFarm = (props) => {
             </Table.Row>
           </Table>
         </Section>
+=======
+              <LabeledList>
+                <LabeledList.Item label="Flow Rate">
+                  {last_flow_rate} L/s
+                </LabeledList.Item>
+                <LabeledList.Item label="Power Draw">
+                  {last_power_draw} W
+                </LabeledList.Item>
+                <LabeledList.Divider size={1} />
+                {materials.map((material) => (
+                  <LabeledList.Item
+                    key={material.name}
+                    label={capitalize(material.display)}
+                  >
+                    <ProgressBar
+                      width="80%"
+                      value={material.qty}
+                      maxValue={material.max}
+                    >
+                      {material.qty}/{material.max}
+                    </ProgressBar>
+                    <Button
+                      ml={1}
+                      onClick={() =>
+                        act('ejectMaterial', {
+                          mat: material.name,
+                        })
+                      }
+                    >
+                      Eject
+                    </Button>
+                  </LabeledList.Item>
+                ))}
+              </LabeledList>
+              <Table mt={1}>
+                <Table.Row>
+                  <Table.Cell>
+                    <Section title={`Gas Input (${inputDir})`}>
+                      {input ? (
+                        <LabeledList>
+                          <LabeledList.Item label="Total Pressure">
+                            {input.pressure} kPa
+                          </LabeledList.Item>
+                          <LabeledList.Item label={input.name}>
+                            {input.percent}% ({input.moles} moles)
+                          </LabeledList.Item>
+                        </LabeledList>
+                      ) : (
+                        <Box color="bad">No connection detected.</Box>
+                      )}
+                    </Section>
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Section title={`Gas Output (${outputDir})`}>
+                      {output ? (
+                        <LabeledList>
+                          <LabeledList.Item label="Total Pressure">
+                            {output.pressure} kPa
+                          </LabeledList.Item>
+                          <LabeledList.Item label={output.name}>
+                            {output.percent}% ({output.moles} moles)
+                          </LabeledList.Item>
+                        </LabeledList>
+                      ) : (
+                        <Box color="bad">No connection detected.</Box>
+                      )}
+                    </Section>
+                  </Table.Cell>
+                </Table.Row>
+              </Table>
+            </Section>
+          </Stack.Item>
+        </Stack>
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
       </Window.Content>
     </Window>
   );

@@ -80,7 +80,7 @@ export const retrace = (stack) => {
         return `  at ${methodName}`;
       }
       const compactPath = file
-        .replace(/^webpack:\/\/\/?/, './')
+        .replace(/^rspack:\/\/\/?/, './')
         .replace(/.*node_modules\//, '');
       return `  at ${methodName} (${compactPath}:${lineNumber})`;
     })

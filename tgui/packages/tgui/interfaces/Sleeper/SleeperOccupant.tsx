@@ -18,6 +18,7 @@ export const SleeperOccupant = (props) => {
     <Section
       title="Occupant"
       buttons={
+<<<<<<< HEAD
         <>
           <Box color="label" inline>
             Auto-eject if dead:&nbsp;
@@ -36,6 +37,34 @@ export const SleeperOccupant = (props) => {
           </Button>
           <Button onClick={() => act('changestasis')}>{stasis}</Button>
         </>
+=======
+        <Stack>
+          <Stack.Item>
+            <Box color="label" inline>
+              Auto-eject if dead:&nbsp;
+            </Box>
+          </Stack.Item>
+          <Stack.Item>
+            <Button
+              icon={auto_eject_dead ? 'toggle-on' : 'toggle-off'}
+              selected={auto_eject_dead}
+              onClick={() =>
+                act(`auto_eject_dead_${auto_eject_dead ? 'off' : 'on'}`)
+              }
+            >
+              {auto_eject_dead ? 'On' : 'Off'}
+            </Button>
+          </Stack.Item>
+          <Stack.Item>
+            <Button icon="user-slash" onClick={() => act('ejectify')}>
+              Eject
+            </Button>
+          </Stack.Item>
+          <Stack.Item>
+            <Button onClick={() => act('changestasis')}>{stasis}</Button>
+          </Stack.Item>
+        </Stack>
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
       }
     >
       <LabeledList>

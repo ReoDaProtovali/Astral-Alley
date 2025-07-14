@@ -154,8 +154,8 @@ export class CircuitComponent extends Component<CircuitProps, CircuitState> {
     return (
       <Box
         position="absolute"
-        left={x_pos + 'px'}
-        top={y_pos + 'px'}
+        left={`${x_pos}px`}
+        top={`${y_pos}px`}
         onMouseDown={this.handleStartDrag}
         onMouseUp={this.handleStopDrag}
         {...rest}

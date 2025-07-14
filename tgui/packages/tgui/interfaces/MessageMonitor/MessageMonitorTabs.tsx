@@ -22,6 +22,7 @@ export const MessageMonitorMain = (props) => {
     <Section
       title="Main Menu"
       buttons={
+<<<<<<< HEAD
         <>
           <Button icon="link" onClick={() => act('find')}>
             Server Link
@@ -34,6 +35,24 @@ export const MessageMonitorMain = (props) => {
             {'Server ' + (linkedServer.active ? 'Enabled' : 'Disabled')}
           </Button>
         </>
+=======
+        <Stack>
+          <Stack.Item>
+            <Button icon="link" onClick={() => act('find')}>
+              Server Link
+            </Button>
+          </Stack.Item>
+          <Stack.Item>
+            <Button
+              icon="power-off"
+              selected={linkedServer.active}
+              onClick={() => act('active')}
+            >
+              {`Server ${linkedServer.active ? 'Enabled' : 'Disabled'}`}
+            </Button>
+          </Stack.Item>
+        </Stack>
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
       }
     >
       <LabeledList>
@@ -97,7 +116,7 @@ export const MessageMonitorLogs = (props: {
         {logs.map((log, i) => (
           <Stack.Item m="2px" key={log.ref} basis="49%" grow={i % 2}>
             <Section
-              title={log.sender + ' -> ' + log.recipient}
+              title={`${log.sender} -> ${log.recipient}`}
               buttons={
                 <Button.Confirm
                   confirmContent="Delete Log?"
