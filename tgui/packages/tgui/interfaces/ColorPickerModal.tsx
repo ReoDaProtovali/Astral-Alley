@@ -46,7 +46,7 @@ interface ColorPickerData {
   presets: string;
 }
 
-interface ColorPickerModalProps {}
+type ColorPickerModalProps = {};
 
 export const ColorPickerModal: React.FC<ColorPickerModalProps> = () => {
   const { act, data } = useBackend<ColorPickerData>();
@@ -194,7 +194,7 @@ const ColorPresets: React.FC<ColorPresetsProps> = React.memo(
                         }}
                       >
                         <Box
-                          backgroundColor={'#' + entry}
+                          backgroundColor={`#${entry}`}
                           width="21px"
                           height="14px"
                         />
@@ -224,7 +224,7 @@ const ColorPresets: React.FC<ColorPresetsProps> = React.memo(
                         }}
                       >
                         <Box
-                          backgroundColor={'#' + entry}
+                          backgroundColor={`#${entry}`}
                           width="21px"
                           height="14px"
                         />

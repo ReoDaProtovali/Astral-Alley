@@ -56,6 +56,7 @@ const Toner = (props) => {
   const bad_toner: number = max_toner * 0.33;
 
   return (
+<<<<<<< HEAD
     <Section title="Toner">
       <ProgressBar
         ranges={{
@@ -68,6 +69,11 @@ const Toner = (props) => {
         maxValue={max_toner}
       />
     </Section>
+=======
+    <Box color={color}>
+      <AnimatedNumber value={current_toner} format={(f) => `${f}%`} />
+    </Box>
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
   );
 };
 

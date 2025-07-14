@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ## NPM
 /**/node_modules
 
@@ -19,3 +20,10 @@
 ## Build artifacts
 /public/.tmp/**/*
 /public/*.map
+=======
+node_modules
+public
+
+# Running it on tgui.html is fine, however.
+!/public/tgui.html
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))

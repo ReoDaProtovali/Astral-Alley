@@ -8,10 +8,16 @@ import { ComponentProps, PropsWithChildren, ReactNode, useEffect } from 'react';
 import { backendSuspendStart, globalStore, useBackend } from 'tgui/backend';
 import { UI_DISABLED, UI_INTERACTIVE, UI_UPDATE } from 'tgui/constants';
 import { useDebug } from 'tgui/debug';
+<<<<<<< HEAD
 import { toggleKitchenSink } from 'tgui/debug/actions';
 import { Box, Icon } from 'tgui-core/components';
 import { classes } from 'tgui-core/react';
 import { decodeHtmlEntities, toTitleCase } from 'tgui-core/string';
+=======
+import type { Box } from 'tgui-core/components';
+import { type BooleanLike, classes } from 'tgui-core/react';
+import { decodeHtmlEntities } from 'tgui-core/string';
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
 
 import {
   dragStartHandler,

@@ -104,7 +104,7 @@ export const CloningConsoleMain = (props) => {
                   }}
                   mt="0.5rem"
                 >
-                  <Box textAlign="center">{toFixed(pod.progress) + '%'}</Box>
+                  <Box textAlign="center">{`${toFixed(pod.progress)}%`}</Box>
                 </ProgressBar>
               );
             } else if (pod.status === 'mess') {
@@ -134,7 +134,7 @@ export const CloningConsoleMain = (props) => {
               <Box key={i} width="64px" textAlign="center" inline mr="0.5rem">
                 <Image
                   fixBlur
-                  src={resolveAsset('pod_' + pod.status + '.gif')}
+                  src={resolveAsset(`pod_${pod.status}.gif`)}
                   style={{
                     width: '100%',
                   }}

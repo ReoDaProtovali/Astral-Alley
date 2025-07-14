@@ -4,7 +4,18 @@
  * @license MIT
  */
 
+<<<<<<< HEAD:tgui/packages/tgui/stories/Tooltip.stories.jsx
 import { Box, Button, Section, Tooltip } from 'tgui-core/components';
+=======
+import type { ComponentProps } from 'react';
+import {
+  Box,
+  Button,
+  type Floating,
+  Section,
+  Tooltip,
+} from 'tgui-core/components';
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187)):tgui/packages/tgui/stories/Tooltip.stories.tsx
 
 export const meta = {
   title: 'Tooltip',

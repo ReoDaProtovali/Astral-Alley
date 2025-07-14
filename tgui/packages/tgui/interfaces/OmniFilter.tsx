@@ -55,7 +55,7 @@ export const OmniFilter = (props) => {
           <LabeledList>
             {ports ? (
               ports.map((port) => (
-                <LabeledList.Item key={port.dir} label={port.dir + ' Port'}>
+                <LabeledList.Item key={port.dir} label={`${port.dir} Port`}>
                   {config ? (
                     <>
                       <Button
@@ -113,10 +113,10 @@ export const OmniFilter = (props) => {
             <LabeledList.Item label="Flow Rate Limit">
               {config ? (
                 <Button icon="wrench" onClick={() => act('set_flow_rate')}>
-                  {set_flow_rate + ' L/s'}
+                  {`${set_flow_rate} L/s`}
                 </Button>
               ) : (
-                set_flow_rate + ' L/s'
+                `${set_flow_rate} L/s`
               )}
             </LabeledList.Item>
           </LabeledList>

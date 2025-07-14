@@ -3,6 +3,10 @@ import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import { Autofocus, Box, Button, Section, Stack } from 'tgui-core/components';
 import { isEscape, KEY } from 'tgui-core/keys';
+<<<<<<< HEAD
+=======
+import type { BooleanLike } from 'tgui-core/react';
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
 
 import { Loader } from './common/Loader';
 
@@ -29,6 +33,20 @@ export const AlertModal = (props) => {
     timeout,
     title,
   } = data;
+<<<<<<< HEAD
+=======
+
+  // Stolen wholesale from fontcode
+  function textWidth(text: string, font: string, fontsize: number) {
+    // default font height is 12 in tgui
+    font = `${fontsize}x ${font}`;
+    const c = document.createElement('canvas');
+    const ctx = c.getContext('2d') as CanvasRenderingContext2D;
+    ctx.font = font;
+    return ctx.measureText(text).width;
+  }
+
+>>>>>>> 7819f84cf3 ([MIRROR] some linter fixes (#11187))
   const [selected, setSelected] = useState(0);
   // Dynamically sets window dimensions
   const windowHeight =

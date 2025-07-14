@@ -90,10 +90,10 @@ export const OmniMixer = (props) => {
             <LabeledList.Item label="Flow Rate Limit">
               {config ? (
                 <Button icon="wrench" onClick={() => act('set_flow_rate')}>
-                  {set_flow_rate + ' L/s'}
+                  {`${set_flow_rate} L/s`}
                 </Button>
               ) : (
-                set_flow_rate + ' L/s'
+                `${set_flow_rate} L/s`
               )}
             </LabeledList.Item>
           </LabeledList>
@@ -109,7 +109,7 @@ const PortRow = (props) => {
 
   return (
     <Table.Row>
-      <Table.Cell textAlign="center">{port.dir + ' Port'}</Table.Cell>
+      <Table.Cell textAlign="center">{`${port.dir} Port`}</Table.Cell>
       <Table.Cell textAlign="center">
         {config ? (
           <Button
@@ -144,7 +144,7 @@ const PortRow = (props) => {
             OUT
           </Button>
         ) : (
-          port.concentration * 100 + '%'
+          `${port.concentration * 100}%`
         )}
       </Table.Cell>
       {config ? (
@@ -160,7 +160,7 @@ const PortRow = (props) => {
                 })
               }
             >
-              {!port.input ? '-' : port.concentration * 100 + ' %'}
+              {!port.input ? '-' : `${port.concentration * 100} %`}
             </Button>
           </Table.Cell>
           <Table.Cell textAlign="center">

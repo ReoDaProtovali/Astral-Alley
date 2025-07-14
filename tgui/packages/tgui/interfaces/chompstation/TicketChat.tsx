@@ -75,7 +75,7 @@ export const TicketChat = (props) => {
         <Stack fill vertical>
           <Stack.Item>
             <Section
-              title={'Ticket #' + id}
+              title={`Ticket #${id}`}
               buttons={
                 <Box nowrap>
                   <Button color={LevelColor[level]}>{Level[level]}</Button>

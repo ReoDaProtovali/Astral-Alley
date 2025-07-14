@@ -102,7 +102,7 @@ export const Ticket = (props) => {
         <Stack fill vertical>
           <Stack.Item>
             <Section
-              title={'Ticket #' + id}
+              title={`Ticket #${id}`}
               buttons={
                 <Box nowrap>
                   <Button icon="pen" onClick={() => act('retitle')}>

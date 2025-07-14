@@ -70,7 +70,7 @@ const SelectedArticle = (props) => {
 
   return (
     <Section
-      title={'Viewing: ' + title}
+      title={`Viewing: ${title}`}
       buttons={
         <>
           <Button icon="save" onClick={() => act('PRG_savearticle')}>
