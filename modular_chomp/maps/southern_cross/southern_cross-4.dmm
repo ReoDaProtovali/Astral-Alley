@@ -98,11 +98,44 @@
 /obj/effect/landmark/event_spawn/morphspawn,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsaft)
+"aaq" = (
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
+"aar" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
+"aas" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
+"aat" = (
+/obj/machinery/light/small{
+	dir = 1
+	},
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/aftport)
+"aau" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/dormsstarboard)
 "aav" = (
 /obj/effect/floor_decal/industrial/warning/corner,
 /obj/machinery/atmospherics/unary/vent_pump/on,
 /turf/simulated/floor/tiled/techfloor,
 /area/ai)
+"aaw" = (
+/obj/structure/catwalk,
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
+"aax" = (
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/thirddeck/forestarboard)
 "aaM" = (
 /obj/effect/floor_decal/borderfloor/corner{
 	dir = 4
@@ -2122,6 +2155,7 @@
 	dir = 8
 	},
 /obj/machinery/light/small,
+/obj/effect/recycler_beacon,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/foreport)
 "bRW" = (
@@ -12666,6 +12700,7 @@
 /area/maintenance/thirddeck/aftport)
 "kCd" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/effect/recycler_beacon,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/aftstarboard)
 "kDx" = (
@@ -24348,6 +24383,7 @@
 /area/maintenance/thirddeck/dormsstarboard)
 "umq" = (
 /obj/effect/floor_decal/industrial/warning,
+/obj/effect/recycler_beacon,
 /turf/simulated/floor/plating,
 /area/maintenance/thirddeck/dormsport)
 "unk" = (
@@ -50104,7 +50140,7 @@ ieB
 ieB
 ieB
 ieB
-rdY
+aar
 rdY
 xes
 tcw
@@ -52934,7 +52970,7 @@ jVt
 vVx
 lIL
 ieB
-iOs
+aat
 rdY
 ieB
 ieB
@@ -72561,7 +72597,7 @@ iAZ
 lGz
 rjk
 bCC
-bCC
+aaq
 qaU
 apc
 apc
@@ -73567,7 +73603,7 @@ dgt
 dgt
 dgt
 qaU
-fED
+aau
 aoF
 aoF
 aoF
@@ -74871,7 +74907,7 @@ bCC
 rQK
 lJN
 lJN
-bCC
+aas
 sJM
 qbV
 sJM
@@ -77964,7 +78000,7 @@ qbV
 apR
 apR
 sJM
-bCC
+aaq
 opn
 bCC
 pzp
@@ -79489,7 +79525,7 @@ rpO
 jWX
 rTF
 wvJ
-bqJ
+aax
 bUI
 cHn
 xWc
@@ -82845,7 +82881,7 @@ cfp
 czb
 aIV
 ggZ
-xyc
+aaw
 xyc
 lfv
 bqJ

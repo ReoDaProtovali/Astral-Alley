@@ -995,6 +995,10 @@
 /obj/random/trash,
 /turf/simulated/floor,
 /area/maintenance/engineering)
+"abI" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/bar)
 "abJ" = (
 /obj/machinery/door/firedoor/border_only,
 /obj/effect/wingrille_spawn/reinforced,
@@ -1022,6 +1026,17 @@
 /obj/effect/floor_decal/industrial/outline/yellow,
 /turf/simulated/floor/tiled/dark,
 /area/ai_monitored/storage/eva)
+"abN" = (
+/obj/machinery/door/blast/regular{
+	density = 0;
+	icon_state = "pdoor0";
+	id = "medbayquar";
+	name = "Medbay Emergency Lockdown Shutters";
+	opacity = 0
+	},
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/medbay)
 "abO" = (
 /obj/machinery/atmospherics/pipe/manifold/visible/red,
 /turf/simulated/floor/tiled,
@@ -1074,6 +1089,13 @@
 	},
 /turf/simulated/floor/tiled,
 /area/maintenance/security_port)
+"abT" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/cargo)
 "abU" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -1132,6 +1154,18 @@
 /obj/item/stack/rods,
 /turf/space,
 /area/space)
+"abY" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/research_medical)
+"abZ" = (
+/obj/effect/recycler_vendor_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/research_medical)
+"aca" = (
+/obj/effect/recycler_beacon,
+/turf/simulated/floor/plating,
+/area/maintenance/engineering)
 "ack" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 10
@@ -38130,6 +38164,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
+/obj/effect/recycler_vendor_beacon,
 /turf/simulated/floor/plating,
 /area/maintenance/research)
 "cuQ" = (
@@ -59710,6 +59745,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 4
 	},
+/obj/effect/recycler_vendor_beacon,
 /turf/simulated/floor,
 /area/maintenance/cargo)
 "myK" = (
@@ -68902,6 +68938,7 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/effect/recycler_beacon,
 /turf/simulated/floor/plating,
 /area/maintenance/apmaint)
 "sbj" = (
@@ -103307,7 +103344,7 @@ bOQ
 bOQ
 bOQ
 bQz
-bLr
+abT
 bMU
 qYN
 tCR
@@ -106422,7 +106459,7 @@ fbc
 nGq
 nYb
 vGJ
-nGq
+abI
 cbx
 mOG
 mOG
@@ -106884,7 +106921,7 @@ aBC
 aBC
 aBC
 vxj
-vxj
+aca
 aKf
 aHb
 aIA
@@ -119564,7 +119601,7 @@ bKn
 bTz
 bNJ
 bPx
-bKk
+abN
 bTz
 aaa
 aaa
@@ -129854,7 +129891,7 @@ cXZ
 cXZ
 ptH
 hxN
-rJB
+abZ
 uqg
 xhM
 uqg
@@ -131665,7 +131702,7 @@ hxN
 xhM
 xhM
 rJB
-rJB
+abY
 rJB
 xhM
 xhM
