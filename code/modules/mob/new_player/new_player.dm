@@ -151,10 +151,17 @@
 		totalPlayers = 0
 		totalPlayersReady = 0
 		var/datum/job/refJob = null
+<<<<<<< HEAD
 		for(var/mob/new_player/player in player_list)
 			refJob = player.client.prefs.get_highest_job()
 			var/obfuscate_key = player.client.prefs.read_preference(/datum/preference/toggle/obfuscate_key)
 			var/obfuscate_job = player.client.prefs.read_preference(/datum/preference/toggle/obfuscate_job)
+=======
+		for(var/mob/new_player/player in GLOB.player_list)
+			refJob = player.client?.prefs.get_highest_job()
+			var/obfuscate_key = player.read_preference(/datum/preference/toggle/obfuscate_key)
+			var/obfuscate_job = player.read_preference(/datum/preference/toggle/obfuscate_job)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 			if(obfuscate_key && obfuscate_job)
 				. += "Anonymous User [player.ready ? "Ready!" : null]"
 			else if(obfuscate_key)

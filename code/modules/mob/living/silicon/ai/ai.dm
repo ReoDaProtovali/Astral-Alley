@@ -33,7 +33,7 @@ var/list/ai_verbs_default = list(
 /proc/AutoUpdateAI(obj/subject)
 	var/is_in_use = 0
 	if (subject!=null)
-		for(var/mob/living/silicon/ai/M as anything in ai_list)
+		for(var/mob/living/silicon/ai/M as anything in GLOB.ai_list)
 			if ((M.client && M.machine == subject))
 				is_in_use = 1
 				subject.attack_ai(M)
@@ -117,7 +117,7 @@ var/list/ai_verbs_default = list(
 	var/pickedName = null
 	while(!pickedName)
 		pickedName = pick(ai_names)
-		for (var/mob/living/silicon/ai/A in mob_list)
+		for (var/mob/living/silicon/ai/A in GLOB.mob_list)
 			if (A.real_name == pickedName && possibleNames.len > 1) //fixing the theoretically possible infinite loop
 				possibleNames -= pickedName
 				pickedName = null
@@ -186,9 +186,23 @@ var/list/ai_verbs_default = list(
 	spawn(5)
 		new /obj/machinery/ai_powersupply(src)
 
+<<<<<<< HEAD
 	ai_list += src
 	..()
 	return
+=======
+	GLOB.ai_list += src
+	. = ..()
+
+	new /obj/machinery/ai_powersupply(src)
+
+	if(CONFIG_GET(flag/allow_ai_shells))
+		add_verb(src, /mob/living/silicon/ai/proc/deploy_to_shell_act)
+
+	create_eyeobj()
+	if(eyeobj)
+		eyeobj.loc = src.loc
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 /mob/living/silicon/ai/proc/on_mob_init()
 	var/init_text = list(span_bold("You are playing the station's AI. The AI cannot move, but can interact with many objects while viewing them (through cameras)."),
@@ -228,7 +242,7 @@ var/list/ai_verbs_default = list(
 	setup_icon()
 
 /mob/living/silicon/ai/Destroy()
-	ai_list -= src
+	GLOB.ai_list -= src
 
 	QDEL_NULL(announcement)
 	QDEL_NULL(eyeobj)
@@ -477,7 +491,7 @@ var/list/ai_verbs_default = list(
 				to_chat(src, span_notice("Unable to locate the holopad."))
 
 	if (href_list["track"])
-		var/mob/target = locate(href_list["track"]) in mob_list
+		var/mob/target = locate(href_list["track"]) in GLOB.mob_list
 
 		if(target && (!ishuman(target) || html_decode(href_list["trackname"]) == target:get_face_name()))
 			ai_actual_track(target)
@@ -486,7 +500,7 @@ var/list/ai_verbs_default = list(
 		return
 
 	if(href_list["trackbot"])
-		var/mob/living/bot/target = locate(href_list["trackbot"]) in mob_list
+		var/mob/living/bot/target = locate(href_list["trackbot"]) in GLOB.mob_list
 		if(target)
 			ai_actual_track(target)
 		else
@@ -494,7 +508,7 @@ var/list/ai_verbs_default = list(
 		return
 
 	if(href_list["open"])
-		var/mob/target = locate(href_list["open"]) in mob_list
+		var/mob/target = locate(href_list["open"]) in GLOB.mob_list
 		if(target)
 			open_nearest_door(target)
 
@@ -953,7 +967,7 @@ var/list/ai_verbs_default = list(
 			var/mob/living/carbon/human/I = impersonated[speaker_name]
 
 			if(!I)
-				for(var/mob/living/carbon/human/M in mob_list)
+				for(var/mob/living/carbon/human/M in GLOB.mob_list)
 					if(M.real_name == speaker_name)
 						I = M
 						impersonated[speaker_name] = I
@@ -1020,19 +1034,19 @@ var/list/ai_verbs_default = list(
 
 /mob/living/silicon/ai/announcer/Initialize()
 	. = ..()
-	mob_list -= src
-	living_mob_list -= src
-	dead_mob_list -= src
-	ai_list -= src
-	silicon_mob_list -= src
+	GLOB.mob_list -= src
+	GLOB.living_mob_list -= src
+	GLOB.dead_mob_list -= src
+	GLOB.ai_list -= src
+	GLOB.silicon_mob_list -= src
 	QDEL_NULL(eyeobj)
 
 /mob/living/silicon/ai/announcer/Life()
-	mob_list -= src
-	living_mob_list -= src
-	dead_mob_list -= src
-	ai_list -= src
-	silicon_mob_list -= src
+	GLOB.mob_list -= src
+	GLOB.living_mob_list -= src
+	GLOB.dead_mob_list -= src
+	GLOB.ai_list -= src
+	GLOB.silicon_mob_list -= src
 	QDEL_NULL(eyeobj)
 
 #undef AI_CHECK_WIRELESS

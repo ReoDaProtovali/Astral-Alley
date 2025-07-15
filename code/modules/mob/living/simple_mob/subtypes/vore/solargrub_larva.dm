@@ -89,7 +89,7 @@ var/global/list/grub_machine_overlays = list()
 
 	if(istype(loc, /obj/machinery))
 		if(machine_effect && SSair.current_cycle%30)
-			for(var/mob/M in player_list)
+			for(var/mob/M in GLOB.player_list)
 				M << machine_effect
 		if(prob(10))
 			sparks.start()
@@ -125,8 +125,13 @@ var/global/list/grub_machine_overlays = list()
 	visible_message(span_warning("\The [src] finds an opening and crawls inside \the [M]."))
 	if(!(M.type in grub_machine_overlays))
 		generate_machine_effect(M)
+<<<<<<< HEAD
 	machine_effect = image(grub_machine_overlays[M.type], M) //Can't do this the reasonable way with an overlay,
 	for(var/mob/L in player_list)				//because nearly every machine updates its icon by removing all overlays first
+=======
+	machine_effect = image(GLOB.grub_machine_overlays[M.type], M) //Can't do this the reasonable way with an overlay,
+	for(var/mob/L in GLOB.player_list)				//because nearly every machine updates its icon by removing all overlays first
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 		L << machine_effect
 
 /mob/living/simple_mob/animal/solargrub_larva/proc/generate_machine_effect(var/obj/machinery/M)

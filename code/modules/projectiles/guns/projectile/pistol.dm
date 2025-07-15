@@ -341,6 +341,7 @@
 	load_method = SINGLE_CASING
 	max_shells = 1 //literally just a barrel
 
+<<<<<<< HEAD
 	var/list/ammo_types = list(    //CHOMPEdit why is this global?
 		/obj/item/ammo_casing/a357              = ".357",
 		/obj/item/ammo_casing/a9mm		        = "9mm",
@@ -361,6 +362,11 @@
 /obj/item/gun/projectile/pirate/New()
 	ammo_type = pick(ammo_types)
 	desc += " Uses [ammo_types[ammo_type]] rounds."
+=======
+/obj/item/gun/projectile/pirate/Initialize(mapload)
+	ammo_type = pick(GLOB.global_ammo_types)
+	desc += " Uses [GLOB.global_ammo_types[ammo_type]] rounds."
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 	var/obj/item/ammo_casing/ammo = ammo_type
 	caliber = initial(ammo.caliber)

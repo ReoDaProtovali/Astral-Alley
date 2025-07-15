@@ -237,14 +237,25 @@
 		// Get the desired spawn location to put the body
 		var/S = null
 		var/list/vr_landmarks = list()
-		for(var/obj/effect/landmark/virtual_reality/sloc in landmarks_list)
+		for(var/obj/effect/landmark/virtual_reality/sloc in GLOB.landmarks_list)
 			vr_landmarks += sloc.name
 
 		S = tgui_input_list(occupant, "Please select a location to spawn your avatar at:", "Spawn location", vr_landmarks)
 		if(!S)
 			return 0
 
+<<<<<<< HEAD
 		for(var/obj/effect/landmark/virtual_reality/i in landmarks_list)
+=======
+		var/tf = null
+		if(tgui_alert(occupant, "Would you like to play as a different creature?", "Join as a mob?", list("Yes", "No")) == "Yes")
+			var/k = tgui_input_list(occupant, "Please select a creature:", "Mob list", GLOB.vr_mob_tf_options)
+			if(!k || !occupant) //Our occupant can walk out.
+				return 0
+			tf = GLOB.vr_mob_tf_options[k]
+
+		for(var/obj/effect/landmark/virtual_reality/i in GLOB.landmarks_list)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 			if(i.name == S)
 				S = i
 				break

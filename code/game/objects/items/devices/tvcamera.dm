@@ -14,12 +14,18 @@
 	pickup_sound = 'sound/items/pickup/device.ogg'
 	drop_sound = 'sound/items/drop/device.ogg'
 
+<<<<<<< HEAD
 /obj/item/tvcamera/New()
 	..()
 	listening_objects += src
+=======
+/obj/item/tvcamera/Initialize(mapload)
+	. = ..()
+	GLOB.listening_objects += src
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 /obj/item/tvcamera/Destroy()
-	listening_objects -= src
+	GLOB.listening_objects -= src
 	qdel(camera)
 	qdel(radio)
 	camera = null
@@ -178,12 +184,18 @@
 	var/datum/weakref/showing
 	var/showing_name
 
+<<<<<<< HEAD
 /obj/item/clothing/accessory/bodycam/New()
 	..()
 	listening_objects += src
+=======
+/obj/item/clothing/accessory/bodycam/Initialize(mapload)
+	. = ..()
+	GLOB.listening_objects += src
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 /obj/item/clothing/accessory/bodycam/Destroy()
-	listening_objects -= src
+	GLOB.listening_objects -= src
 	qdel(bcamera)
 	qdel(bradio)
 	bcamera = null

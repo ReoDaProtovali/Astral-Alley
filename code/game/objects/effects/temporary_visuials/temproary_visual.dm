@@ -11,7 +11,11 @@
 /obj/effect/temp_visual/Initialize()
 	. = ..()
 	if(randomdir)
+<<<<<<< HEAD
 		set_dir(pick(global.cardinal))
+=======
+		set_dir(pick(GLOB.cardinal))
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 	spawn(duration)
 		qdel(src)

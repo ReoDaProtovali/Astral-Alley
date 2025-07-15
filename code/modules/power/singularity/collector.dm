@@ -1,6 +1,4 @@
 //This file was auto-corrected by findeclaration.exe on 25.5.2012 20:42:33
-var/global/list/rad_collectors = list()
-
 /obj/machinery/power/rad_collector
 	name = "Radiation Collector Array"
 	desc = "A device which uses Hawking Radiation and phoron to produce power."
@@ -17,12 +15,19 @@ var/global/list/rad_collectors = list()
 	var/locked = 0
 	var/drainratio = 1
 
+<<<<<<< HEAD
 /obj/machinery/power/rad_collector/New()
 	..()
 	rad_collectors += src
+=======
+/obj/machinery/power/rad_collector/Initialize(mapload)
+	. = ..()
+	GLOB.rad_collectors += src
+	AddElement(/datum/element/climbable)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 /obj/machinery/power/rad_collector/Destroy()
-	rad_collectors -= src
+	GLOB.rad_collectors -= src
 	return ..()
 
 /obj/machinery/power/rad_collector/process()

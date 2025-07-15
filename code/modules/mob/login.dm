@@ -5,7 +5,7 @@
 	computer_id	= client.computer_id
 	log_access_in(client)
 	if(CONFIG_GET(flag/log_access))
-		for(var/mob/M in player_list)
+		for(var/mob/M in GLOB.player_list)
 			if(M == src)	continue
 			if( M.key && (M.key != key) )
 				var/matches
@@ -32,7 +32,7 @@
 
 /mob/Login()
 
-	player_list |= src
+	GLOB.player_list |= src
 	update_Login_details()
 	world.update_status()
 

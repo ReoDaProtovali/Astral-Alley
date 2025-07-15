@@ -12,7 +12,7 @@
 
 /obj/item/radio/emergency/Initialize()
 	. = ..()
-	internal_channels = default_medbay_channels.Copy()
+	internal_channels = GLOB.default_medbay_channels.Copy()
 
 
 

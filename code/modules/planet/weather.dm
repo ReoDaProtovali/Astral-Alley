@@ -154,7 +154,7 @@
 	message_all_outdoor_players(span_warning(message))
 
 /datum/weather_holder/proc/message_all_outdoor_players(message)
-	for(var/mob/M in player_list) // Don't need to care about clientless mobs.
+	for(var/mob/M in GLOB.player_list) // Don't need to care about clientless mobs.
 		if(M.z in our_planet.expected_z_levels)
 			var/turf/T = get_turf(M)
 			if(!T.is_outdoors())
@@ -215,6 +215,32 @@
 		if(world.time >= last_message + message_delay)
 			last_message = world.time	// Reset the timer
 			show_message = TRUE			// Tell the rest of the process that we need to make a message
+<<<<<<< HEAD
+=======
+	if(effect_flags & HAS_PLANET_EFFECT)
+		if(effect_flags & EFFECT_ALL_MOBS)
+			for(var/mob/M as anything in GLOB.mob_list)
+				if(M.is_incorporeal() && !(effect_flags & EFFECT_ALWAYS_HITS))
+					continue
+				planet_effect(M)
+		if(effect_flags & EFFECT_ONLY_LIVING)
+			for(var/mob/living/L as anything in GLOB.living_mob_list)
+				if(L.is_incorporeal() && !(effect_flags & EFFECT_ALWAYS_HITS))
+					continue
+				planet_effect(L)
+		if(effect_flags & EFFECT_ONLY_HUMANS)
+			for(var/mob/living/carbon/H as anything in GLOB.human_mob_list)
+				if(H.is_incorporeal() && !(effect_flags & EFFECT_ALWAYS_HITS))
+					continue
+				planet_effect(H)
+		if(effect_flags & EFFECT_ONLY_ROBOTS)
+			for(var/mob/living/silicon/R as anything in GLOB.silicon_mob_list)
+				if(R.is_incorporeal() && !(effect_flags & EFFECT_ALWAYS_HITS))
+					continue
+				planet_effect(R)
+
+/datum/weather/proc/planet_effect(mob/living/L)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 	return
 
 /datum/weather/proc/process_sounds()

@@ -78,7 +78,11 @@
 	//we face the last thing we zapped, so this lets us favor that direction a bit
 	var/move_bias = dir
 	for(var/i in 0 to move_amount)
+<<<<<<< HEAD
 		var/move_dir = pick(global.alldirs + move_bias) //ensures large-ball teslas don't just sit around
+=======
+		var/move_dir = pick(GLOB.alldirs + move_bias) //ensures large-ball teslas don't just sit around
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 		if(target && prob(10))
 			move_dir = get_dir(src,target)
 		var/turf/T = get_step(src, move_dir)

@@ -29,9 +29,15 @@
 	// Name shown to other players.  Admins whom are not also antags have their rank displayed.
 	var/player_display = (is_admin && !is_antag) ? "[display_name]([usr.client.holder.rank])" : display_name
 
+<<<<<<< HEAD
 	for(var/mob/M in mob_list)
 		if(check_rights(R_ADMIN|R_MOD|R_EVENT, 0, M)) // Staff can see AOOC unconditionally, and with more details.
 			to_chat(M, span_ooc(span_aooc("[create_text_tag("aooc", "Antag-OOC:", M.client)] <EM>[get_options_bar(src, 0, 1, 1)]([admin_jump_link(usr, M.client.holder)]):</EM> " + span_message("[msg]"))))
+=======
+	for(var/mob/M in GLOB.mob_list)
+		if(check_rights_for(M.client, R_ADMIN|R_MOD|R_EVENT)) // Staff can see AOOC unconditionally, and with more details.
+			to_chat(M, span_ooc(span_aooc("[create_text_tag("aooc", "Antag-OOC:", M.client)] <EM>[get_options_bar(src, 0, 1, 1)]([admin_jump_link(usr, check_rights_for(M.client, R_HOLDER))]):</EM> " + span_message("[msg]"))))
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 		else if(M.client) // Players can only see AOOC if observing, or if they are an antag type allowed to use AOOC.
 			var/datum/antagonist/A = null
 			if(M.mind) // Observers don't have minds, but they should still see AOOC.

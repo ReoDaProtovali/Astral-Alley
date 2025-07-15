@@ -25,9 +25,23 @@ var/global/floorIsLava = 0
 						confidential = TRUE)
 
 /proc/admin_notice(var/message, var/rights)
+<<<<<<< HEAD
 	for(var/mob/M in mob_list)
 		if(check_rights(rights, 0, M))
 			to_chat(M,message)
+=======
+	for(var/mob/M in GLOB.mob_list)
+		var/C = M.client
+
+		if(!C)
+			return
+
+		if(!(istype(C, /client)))
+			return
+
+		if(check_rights_for(C, rights))
+			to_chat(C, message)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 ///////////////////////////////////////////////////////////////////////////////////////////////Panels
 
@@ -1020,7 +1034,7 @@ var/datum/announcement/minor/admin_min_announcer = new
 
 	world.Reboot()
 
-/datum/admins/proc/unprison(var/mob/M in mob_list)
+/datum/admins/proc/unprison(var/mob/M in GLOB.mob_list)
 	set category = "Admin.Moderation"
 	set name = "Unprison"
 	if (M.z == 2)
@@ -1162,7 +1176,7 @@ var/datum/announcement/minor/admin_min_announcer = new
 	feedback_add_details("admin_verb","SA") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
-/datum/admins/proc/show_traitor_panel(var/mob/M in mob_list)
+/datum/admins/proc/show_traitor_panel(var/mob/M in GLOB.mob_list)
 	set category = "Admin.Events"
 	set desc = "Edit mobs's memory and role"
 	set name = "Show Traitor Panel"

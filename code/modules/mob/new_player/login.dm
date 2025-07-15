@@ -45,7 +45,13 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 	//client.screen += lobby_image CHOMPEdit Removal
 	my_client = client
 	sight |= SEE_TURFS
+<<<<<<< HEAD
 	player_list |= src
+=======
+
+	GLOB.player_list |= src
+	GLOB.new_player_list += src
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 	created_for = ckey
 

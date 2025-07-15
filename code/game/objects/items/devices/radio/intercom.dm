@@ -90,7 +90,7 @@
 
 /obj/item/radio/intercom/department/medbay/Initialize()
 	. = ..()
-	internal_channels = default_medbay_channels.Copy()
+	internal_channels = GLOB.default_medbay_channels.Copy()
 
 /obj/item/radio/intercom/department/security/Initialize()
 	. = ..()
