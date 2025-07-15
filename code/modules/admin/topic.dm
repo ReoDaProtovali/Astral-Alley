@@ -108,7 +108,7 @@
 
 		var/mob/playermob
 
-		for(var/mob/M in player_list)
+		for(var/mob/M in GLOB.player_list)
 			if(M.ckey == banckey)
 				playermob = M
 				break
@@ -277,7 +277,7 @@
 		href_list["secretsadmin"] = "check_antagonist"
 
 	else if(href_list["delay_round_end"])
-		if(!check_rights(R_SERVER))	return //VOREStation Edit
+		if(!check_rights(R_SERVER))	return
 
 		ticker.delay_end = !ticker.delay_end
 		log_admin("[key_name(usr)] [ticker.delay_end ? "delayed the round end" : "has made the round end normally"].")
@@ -539,7 +539,6 @@
 
 		jobs += "</tr></table>"
 
-	//VOREStation Edit Start
 	//Exploration (Purple)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
@@ -584,7 +583,6 @@
 
 		jobs += "</tr></table>"
 
-	//VOREstation Edit End
 	//Civilian (Grey)
 		counter = 0
 		jobs += "<table cellpadding='1' cellspacing='0' width='100%'>"
@@ -739,7 +737,6 @@
 					var/datum/job/temp = job_master.GetJob(jobPos)
 					if(!temp) continue
 					joblist += temp.title
-			//VOREStation Edit Start
 			if("explorationdept")
 				for(var/jobPos in SSjob.get_job_titles_in_department(DEPARTMENT_PLANET))
 					if(!jobPos)	continue
@@ -753,7 +750,6 @@
 						var/datum/job/temp = job_master.GetJob(jobPos)
 						if(!temp) continue
 						joblist += temp.title
-			//VOREStation Edit End
 			if("civiliandept")
 				for(var/jobPos in SSjob.get_job_titles_in_department(DEPARTMENT_CIVILIAN))
 					if(!jobPos)	continue
@@ -884,7 +880,7 @@
 			log_admin("[key_name(usr)] booted [key_name(M)] for reason: '[reason]'.")
 			message_admins(span_blue("[key_name_admin(usr)] booted [key_name_admin(M)] for reason '[reason]'."), 1)
 			//M.client = null
-			admin_action_message(usr.key, M.key, "kicked", reason, 0) //VOREStation Add
+			admin_action_message(usr.key, M.key, "kicked", reason, 0)
 			qdel(M.client)
 
 	else if(href_list["removejobban"])
@@ -1334,7 +1330,7 @@
 		show_player_panel(M)
 
 	else if(href_list["adminplayerobservejump"])
-		if(!check_rights(R_MOD|R_ADMIN|R_SERVER))	return //VOREStation Edit
+		if(!check_rights(R_MOD|R_ADMIN|R_SERVER))	return
 
 		var/mob/M = locate(href_list["adminplayerobservejump"])
 
@@ -1344,7 +1340,7 @@
 		C.do_jumptomob(M)
 
 	else if(href_list["adminplayerobservefollow"])
-		if(!check_rights(R_MOD|R_ADMIN|R_SERVER)) //VOREStation Edit
+		if(!check_rights(R_MOD|R_ADMIN|R_SERVER))
 			return
 
 		var/mob/M = locate(href_list["adminplayerobservefollow"])
@@ -1367,7 +1363,6 @@
 				if((R_ADMIN|R_MOD|R_SERVER) & X.holder.rights) //VOREStation Edit
 					to_chat(X, take_msg)
 			to_chat(M, span_filter_pm(span_boldnotice("Your adminhelp is being attended to by [usr.client]. Thanks for your patience!")))
-			// VoreStation Edit Start
 			if (CONFIG_GET(string/chat_webhook_url))
 				spawn(0)
 					var/query_string = "type=admintake"
@@ -1375,12 +1370,11 @@
 					query_string += "&admin=[url_encode(key_name(usr.client))]"
 					query_string += "&user=[url_encode(key_name(M))]"
 					world.Export("[CONFIG_GET(string/chat_webhook_url)]?[query_string]")
-			// VoreStation Edit End
 		else
 			to_chat(usr, span_warning("Unable to locate mob."))
 
 	else if(href_list["adminplayerobservecoodjump"])
-		if(!check_rights(R_ADMIN|R_SERVER|R_MOD))	return //VOREStation Edit
+		if(!check_rights(R_ADMIN|R_SERVER|R_MOD))	return
 
 		var/x = text2num(href_list["X"])
 		var/y = text2num(href_list["Y"])
@@ -2025,7 +2019,7 @@
 				vsc.SetDefault(usr)
 
 	else if(href_list["toglang"])
-		if(check_rights(R_SPAWN)) //VOREStation Edit
+		if(check_rights(R_SPAWN))
 			var/mob/M = locate(href_list["toglang"])
 			if(!istype(M))
 				to_chat(usr, span_filter_adminlog("[M] is illegal type, must be /mob!"))
@@ -2045,7 +2039,7 @@
 	else if(href_list["cryoplayer"])
 		if(!check_rights(R_ADMIN|R_EVENT))	return
 
-		var/mob/living/carbon/M = locate(href_list["cryoplayer"]) //VOREStation edit from just an all mob check to mob/living/carbon
+		var/mob/living/carbon/M = locate(href_list["cryoplayer"])
 		if(!istype(M))
 			to_chat(usr, span_warning("Mob doesn't exist!"))
 			return

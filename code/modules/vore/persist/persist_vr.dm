@@ -15,7 +15,11 @@
 
 // Handle people leaving due to round ending.
 /hook/roundend/proc/persist_locations()
+<<<<<<< HEAD
 	for(var/mob/Player in human_mob_list)
+=======
+	for(var/mob/living/carbon/human/Player in GLOB.human_mob_list)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 		if(!Player.mind || isnewplayer(Player))
 			continue // No mind we can do nothing, new players we care not for
 		else if(Player.stat == DEAD)

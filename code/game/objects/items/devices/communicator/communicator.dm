@@ -2,8 +2,11 @@
 //
 // Allows ghosts to roleplay with crewmembers without having to commit to joining the round, and also allows communications between two communicators.
 
+<<<<<<< HEAD
 var/global/list/obj/item/communicator/all_communicators = list()
 
+=======
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 // List of core tabs the communicator can switch to
 #define HOMETAB 1
 #define PHONTAB 2
@@ -100,7 +103,7 @@ var/global/list/obj/item/communicator/all_communicators = list()
 /obj/item/communicator/Initialize()
 	. = ..()
 	all_communicators += src
-	all_communicators = sortAtom(all_communicators)
+	all_communicators = sort_names(all_communicators)
 	node = get_exonet_node()
 	START_PROCESSING(SSobj, src)
 	camera = new(src)
@@ -276,7 +279,7 @@ var/global/list/obj/item/communicator/all_communicators = list()
 		if(!comm || !comm.exonet || !comm.exonet.address || comm.exonet.address == src.exonet.address) //Don't add addressless devices, and don't add ourselves.
 			continue
 		src.known_devices |= comm
-	for(var/mob/observer/dead/O in dead_mob_list)
+	for(var/mob/observer/dead/O in GLOB.dead_mob_list)
 		if(!O.client || O.client.prefs.communicator_visibility == 0)
 			continue
 		src.known_devices |= O
@@ -416,7 +419,7 @@ var/global/list/obj/item/communicator/all_communicators = list()
 	//Clean up references that might point at us
 	all_communicators -= src
 	STOP_PROCESSING(SSobj, src)
-	listening_objects.Remove(src)
+	GLOB.listening_objects.Remove(src)
 	QDEL_NULL(camera)
 	QDEL_NULL(exonet)
 

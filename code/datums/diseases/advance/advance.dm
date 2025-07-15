@@ -379,7 +379,11 @@ GLOBAL_LIST_INIT(advance_cures, list(
 		for(var/datum/disease/advance/AD in active_diseases)
 			AD.Refresh()
 
+<<<<<<< HEAD
 		H = tgui_input_list(usr, "Choose infectee", "Infectees", human_mob_list)
+=======
+		H = tgui_input_list(src, "Choose infectee", "Infectees", GLOB.human_mob_list)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 		if(isnull(H))
 			return FALSE

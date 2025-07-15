@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Access check is of the type requires one. These have been carefully selected to avoid allowing the janitor to see channels he shouldn't
 //VOREStation Edit Start - Updating this for Virgo
 var/global/list/default_internal_channels = list(
@@ -25,6 +26,9 @@ var/global/list/default_medbay_channels = list(
 	num2text(MED_I_FREQ) = list()
 )
 //VOREStation Edit End
+=======
+#define CANBROADCAST_INNERBOX 0.7071067811865476	//This is sqrt(2)/2
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 /obj/item/radio
 	icon = 'icons/obj/radio_vr.dmi'
@@ -121,14 +125,58 @@ var/global/list/default_medbay_channels = list(
 				testing("A radio [src] at [x],[y],[z] specified bluespace prelink IDs, but the machines with corresponding IDs ([bs_tx_preload_id], [bs_rx_preload_id]) couldn't be found.")
 
 	wires = new(src)
+<<<<<<< HEAD
 	internal_channels = default_internal_channels.Copy()
 	listening_objects += src
 	return INITIALIZE_HINT_LATELOAD
+=======
+	internal_channels = GLOB.default_internal_channels.Copy()
+	GLOB.listening_objects += src
+
+	if(bluespace_radio && (bs_tx_preload_id || bs_rx_preload_id))
+		return INITIALIZE_HINT_LATELOAD
+
+/obj/item/radio/LateInitialize()
+	if(bs_tx_preload_id)
+		//Try to find a receiver
+		for(var/obj/machinery/telecomms/receiver/RX in telecomms_list)
+			if(RX.id == bs_tx_preload_id) //Again, bs_tx is the thing to TRANSMIT TO, so a receiver.
+				bs_tx_weakref = WEAKREF(RX)
+				RX.link_radio(src)
+				break
+		//Hmm, howabout an AIO machine
+		if(!bs_tx_weakref)
+			for(var/obj/machinery/telecomms/allinone/AIO in telecomms_list)
+				if(AIO.id == bs_tx_preload_id)
+					bs_tx_weakref = WEAKREF(AIO)
+					AIO.link_radio(src)
+					break
+		if(!bs_tx_weakref)
+			testing("A radio [src] at [x],[y],[z] specified bluespace prelink IDs, but the machines with corresponding IDs ([bs_tx_preload_id], [bs_rx_preload_id]) couldn't be found.")
+
+	if(bs_rx_preload_id)
+		var/found = 0
+		//Try to find a transmitter
+		for(var/obj/machinery/telecomms/broadcaster/TX in telecomms_list)
+			if(TX.id == bs_rx_preload_id) //Again, bs_rx is the thing to RECEIVE FROM, so a transmitter.
+				TX.link_radio(src)
+				found = 1
+				break
+		//Hmm, howabout an AIO machine
+		if(!found)
+			for(var/obj/machinery/telecomms/allinone/AIO in telecomms_list)
+				if(AIO.id == bs_rx_preload_id)
+					AIO.link_radio(src)
+					found = 1
+					break
+		if(!found)
+			testing("A radio [src] at [x],[y],[z] specified bluespace prelink IDs, but the machines with corresponding IDs ([bs_tx_preload_id], [bs_rx_preload_id]) couldn't be found.")
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 /obj/item/radio/Destroy()
 	qdel(wires)
 	wires = null
-	listening_objects -= src
+	GLOB.listening_objects -= src
 	if(radio_controller)
 		radio_controller.remove_object(src, frequency)
 		for (var/ch_name in channels)
@@ -768,4 +816,83 @@ GLOBAL_DATUM(autospeaker, /mob/living/silicon/ai/announcer)
 
 /obj/item/radio/phone/medbay/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	internal_channels = default_medbay_channels.Copy()
+=======
+	internal_channels = GLOB.default_medbay_channels.Copy()
+
+/obj/item/radio/proc/can_broadcast_to()
+	var/list/output = list()
+	var/turf/T = get_turf(src)
+	var/dnumber = canhear_range*CANBROADCAST_INNERBOX
+	for(var/cand_x = max(0, T.x - canhear_range), cand_x <= T.x + canhear_range, cand_x++)
+		for(var/cand_y = max(0, T.y - canhear_range), cand_y <= T.y + canhear_range, cand_y++)
+			var/turf/cand_turf = locate(cand_x,cand_y,T.z)
+			if(!cand_turf)
+				continue
+			if((abs(T.x - cand_x) < dnumber) || (abs(T.y - cand_y) < dnumber))
+				output += cand_turf
+				continue
+			if(sqrt((T.x - cand_x)**2 + (T.y - cand_y)**2) <= canhear_range)
+				output += cand_turf
+				continue
+	return output
+/obj/item/radio/intercom
+	var/list/broadcast_tiles
+
+/obj/item/radio/intercom/proc/update_broadcast_tiles()
+	var/list/output = list()
+	var/turf/T = get_turf(src)
+	if(!T)
+		return
+	var/dnumber = canhear_range*CANBROADCAST_INNERBOX
+	for(var/cand_x = max(0, T.x - canhear_range), cand_x <= T.x + canhear_range, cand_x++)
+		for(var/cand_y = max(0, T.y - canhear_range), cand_y <= T.y + canhear_range, cand_y++)
+			var/turf/cand_turf = locate(cand_x,cand_y,T.z)
+			if(!cand_turf)
+				continue
+			if((abs(T.x - cand_x) < dnumber) || (abs(T.y - cand_y) < dnumber))
+				output += cand_turf
+				continue
+			if(sqrt((T.x - cand_x)**2 + (T.y - cand_y)**2) <= canhear_range)
+				output += cand_turf
+				continue
+	broadcast_tiles = output
+
+/obj/item/radio/intercom/forceMove(atom/destination)
+	. = ..()
+	update_broadcast_tiles()
+
+/obj/item/radio/intercom/Initialize(mapload)
+	. = ..()
+	update_broadcast_tiles()
+
+/obj/item/radio/intercom/can_broadcast_to()
+	if(!broadcast_tiles)
+		update_broadcast_tiles()
+	return broadcast_tiles
+
+//*Subspace Radio*//
+/obj/item/radio/subspace
+	adhoc_fallback = 1
+	canhear_range = 8
+	desc = "A heavy duty radio that can pick up all manor of shortwave and subspace frequencies. It's a bit bulkier than a normal radio thanks to the extra hardware."
+	description_info = "This radio can broadcast over any headset frequency that the user has access to. It has a shortwave fallback to directly broadcast to all radio equipment on the same Z-Level/Map in the event of a telecommunications failure. This device requires a functioning Telecommunications Network/Relay to send and receive signals meant for headsets. Additionally, the volume knob seems to be stuck on the max setting. You could hear this thing clear across a room... Not good for discretely listening in on secure channels or being stealthy!"
+	icon_state = "radio"
+	name = "subspace radio"
+	subspace_transmission = 1
+	throwforce = 5
+	throw_range = 7
+	throw_speed = 1
+
+//* Bluespace Radio *//
+/obj/item/bluespaceradio/southerncross_prelinked
+	name = "bluespace radio (southerncross)"
+	handset = /obj/item/radio/bluespacehandset/linked/southerncross_prelinked
+
+/obj/item/radio/bluespacehandset/linked/southerncross_prelinked
+	bs_tx_preload_id = "Receiver A" //Transmit to a receiver
+	bs_rx_preload_id = "Broadcaster A" //Recveive from a transmitter
+
+#undef CANBROADCAST_INNERBOX
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))

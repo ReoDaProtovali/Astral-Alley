@@ -33,34 +33,6 @@
 	//save_data["shoe_hater"] 				= pref.shoe_hater //CHOMPRemove, remove RS No shoes
 	save_data["no_jacket"]					= pref.no_jacket
 
-var/global/list/valid_ringtones = list(
-		"beep",
-		"boom",
-		"slip",
-		"honk",
-		"SKREE",
-		"xeno",
-		"dust", // CHOMPEdit - Keeps dust as ringtone
-		"spark",
-		"rad",
-		"servo",
-		// "buh-boop", // CHOMPEdit - No.
-		"trombone",
-		"whistle",
-		"chirp",
-		"slurp",
-		"pwing",
-		"clack",
-		"bzzt",
-		"chimes",
-		"prbt",
-		"bark",
-		"bork",
-		"roark",
-		"chitter",
-		"squish"
-		)
-
 // Moved from /datum/preferences/proc/copy_to()
 /datum/category_item/player_setup_item/general/equipment/copy_to_mob(var/mob/living/carbon/human/character)
 	character.all_underwear.Cut()
@@ -81,7 +53,7 @@ var/global/list/valid_ringtones = list(
 		pref.headset = 1 //Same as above
 	character.headset = pref.headset
 
-	if(pref.backbag > backbaglist.len || pref.backbag < 1)
+	if(pref.backbag > GLOB.backbaglist.len || pref.backbag < 1)
 		pref.backbag = 2 //Same as above
 	character.backbag = pref.backbag
 
@@ -117,8 +89,8 @@ var/global/list/valid_ringtones = list(
 		if(!(underwear_metadata in pref.all_underwear))
 			pref.all_underwear_metadata -= underwear_metadata
 	pref.headset	= sanitize_integer(pref.headset, 1, GLOB.headsetlist.len, initial(pref.headset))
-	pref.backbag	= sanitize_integer(pref.backbag, 1, backbaglist.len, initial(pref.backbag))
-	pref.pdachoice	= sanitize_integer(pref.pdachoice, 1, pdachoicelist.len, initial(pref.pdachoice))
+	pref.backbag	= sanitize_integer(pref.backbag, 1, GLOB.backbaglist.len, initial(pref.backbag))
+	pref.pdachoice	= sanitize_integer(pref.pdachoice, 1, GLOB.pdachoicelist.len, initial(pref.pdachoice))
 	pref.ringtone	= sanitize(pref.ringtone, 20)
 
 /datum/category_item/player_setup_item/general/equipment/content()
@@ -141,9 +113,36 @@ var/global/list/valid_ringtones = list(
 	//. += "Spawn With Shoes:<a href='byond://?src=\ref[src];toggle_shoes=1'><b>[(pref.shoe_hater) ? "No" : "Yes"]</b></a><br>" //RS Addition //CHOMPRemove, remove RS No shoes
 	. += "Spawn With Jacket:<a href='byond://?src=\ref[src];toggle_jacket=1'><b>[(pref.no_jacket) ? "No" : "Yes"]</b></a><br>"
 
+<<<<<<< HEAD:code/modules/client/preference_setup/general/04_equipment.dm
 	return jointext(.,null)
 
 /datum/category_item/player_setup_item/general/equipment/proc/get_metadata(var/underwear_category, var/datum/gear_tweak/gt)
+=======
+	data["headset_type"] = GLOB.headsetlist[pref.headset]
+	data["backpack_type"] = GLOB.backbaglist[pref.backbag]
+	data["pda_type"] = GLOB.pdachoicelist[pref.pdachoice]
+	data["communicator_visibility"] = pref.communicator_visibility // boolean
+	data["ringtone"] = pref.ringtone
+	// data["shoes"] = !pref.shoe_hater // CHOMPRemove
+	data["jacket"] = !pref.no_jacket
+
+	return data
+
+/datum/category_item/player_setup_item/loadout/equipment/tgui_static_data(mob/user, datum/tgui/ui, datum/tgui_state/state)
+	var/list/data = ..()
+	return data
+
+/datum/category_item/player_setup_item/loadout/equipment/tgui_constant_data()
+	var/list/data = ..()
+
+	data["headsetlist"] = GLOB.headsetlist
+	data["backbaglist"] = GLOB.backbaglist
+	data["pdachoicelist"] = GLOB.pdachoicelist
+
+	return data
+
+/datum/category_item/player_setup_item/loadout/equipment/proc/get_metadata(var/underwear_category, var/datum/gear_tweak/gt)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193)):code/modules/client/preference_setup/loadout/01_equipment.dm
 	var/metadata = pref.all_underwear_metadata[underwear_category]
 	if(!metadata)
 		metadata = list()
@@ -160,11 +159,45 @@ var/global/list/valid_ringtones = list(
 	metadata["[gt]"] = new_metadata
 
 
+<<<<<<< HEAD:code/modules/client/preference_setup/general/04_equipment.dm
 /datum/category_item/player_setup_item/general/equipment/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(href_list["change_headset"])
 		var/new_headset = tgui_input_list(user, "Choose your character's style of headset:", "Character Preference", GLOB.headsetlist, GLOB.headsetlist[pref.headset])
 		if(!isnull(new_headset) && CanUseTopic(user))
 			pref.headset = GLOB.headsetlist.Find(new_headset)
+=======
+	var/mob/user = ui.user
+
+	switch(action)
+		if("change_headset")
+			// Takes the JS index
+			var/new_headset = text2num(params["headset"]) + 1
+			if(LAZYACCESS(GLOB.headsetlist, new_headset))
+				pref.headset = new_headset
+				return TOPIC_REFRESH_UPDATE_PREVIEW
+
+		if("change_backpack")
+			// Takes the JS index
+			var/new_backbag = text2num(params["backbag"]) + 1
+			if(LAZYACCESS(GLOB.backbaglist, new_backbag))
+				pref.backbag = new_backbag
+				return TOPIC_REFRESH_UPDATE_PREVIEW
+
+		if("change_pda")
+			// Takes the JS index
+			var/new_pdachoice = text2num(params["pda"]) + 1
+			if(LAZYACCESS(GLOB.backbaglist, new_pdachoice))
+				pref.pdachoice = new_pdachoice
+				return TOPIC_REFRESH_UPDATE_PREVIEW
+
+		if("change_underwear")
+			var/datum/category_group/underwear/UWC = LAZYACCESS(global_underwear.categories_by_name, params["underwear"])
+			if(!UWC)
+				return
+			var/datum/category_item/underwear/selected_underwear = tgui_input_list(user, "Choose underwear:", "Character Preference", UWC.items, pref.all_underwear[UWC.name])
+			if(selected_underwear)
+				pref.all_underwear[UWC.name] = selected_underwear.name
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193)):code/modules/client/preference_setup/loadout/01_equipment.dm
 			return TOPIC_REFRESH_UPDATE_PREVIEW
 
 	if(href_list["change_backpack"])
@@ -203,6 +236,7 @@ var/global/list/valid_ringtones = list(
 		if(CanUseTopic(user))
 			pref.communicator_visibility = !pref.communicator_visibility
 			return TOPIC_REFRESH
+<<<<<<< HEAD:code/modules/client/preference_setup/general/04_equipment.dm
 	else if(href_list["set_ringtone"])
 		var/choice = tgui_input_list(user, "Please select a ringtone. All of these choices come with an associated preset sound. Alternately, select \"Other\" to specify manually.", "Character Preference", valid_ringtones + "Other", pref.ringtone)
 		if(!choice || !CanUseTopic(user))
@@ -218,6 +252,19 @@ var/global/list/valid_ringtones = list(
 	else if(href_list["toggle_shoes"])	//RS ADD START
 		if(CanUseTopic(user))
 			pref.shoe_hater = !pref.shoe_hater
+=======
+
+		if("set_ringtone")
+			var/choice = tgui_input_list(user, "Please select a ringtone. All of these choices come with an associated preset sound. Alternately, select \"Other\" to specify manually.", "Character Preference", GLOB.valid_ringtones + "Other", pref.ringtone)
+			if(!choice)
+				return TOPIC_NOACTION
+			if(choice == "Other")
+				var/raw_choice = sanitize(tgui_input_text(user, "Please enter a custom ringtone. If this doesn't match any of the other listed choices, your PDA will use the default (\"beep\") sound.", "Character Preference", null, 20), 20)
+				if(raw_choice)
+					pref.ringtone = raw_choice
+			else
+				pref.ringtone = choice
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193)):code/modules/client/preference_setup/loadout/01_equipment.dm
 			return TOPIC_REFRESH
 			//RS ADD END
 	*///CHOMPRemove End, remove RS No shoes

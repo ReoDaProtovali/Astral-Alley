@@ -55,8 +55,13 @@ GLOBAL_LIST_EMPTY(limb_icon_cache)
 	var/image/res = image('icons/mob/human_face.dmi',"bald_s")
 	//Facial hair
 	if(owner.f_style)
+<<<<<<< HEAD
 		var/datum/sprite_accessory/facial_hair_style = facial_hair_styles_list[owner.f_style]
 		if(facial_hair_style && facial_hair_style.species_allowed && (species.get_bodytype(owner) in facial_hair_style.species_allowed))
+=======
+		var/datum/sprite_accessory/facial_hair_style = GLOB.facial_hair_styles_list[owner.f_style]
+		if(facial_hair_style && facial_hair_style.species_allowed && (data.get_species_bodytype(owner) in facial_hair_style.species_allowed))
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 			var/icon/facial_s = new/icon("icon" = facial_hair_style.icon, "icon_state" = "[facial_hair_style.icon_state]_s")
 			if(facial_hair_style.do_colouration)
 				facial_s.Blend(rgb(owner.r_facial, owner.g_facial, owner.b_facial), facial_hair_style.color_blend_mode)
@@ -65,11 +70,16 @@ GLOBAL_LIST_EMPTY(limb_icon_cache)
 	//Head hair
 	if(owner.h_style)
 		var/style = owner.h_style
-		var/datum/sprite_accessory/hair/hair_style = hair_styles_list[style]
+		var/datum/sprite_accessory/hair/hair_style = GLOB.hair_styles_list[style]
 		if(owner.head && (owner.head.flags_inv & BLOCKHEADHAIR))
 			if(!(hair_style.flags & HAIR_VERY_SHORT))
+<<<<<<< HEAD
 				hair_style = hair_styles_list["Short Hair"]
 		if(hair_style && (species.get_bodytype(owner) in hair_style.species_allowed))
+=======
+				hair_style = GLOB.hair_styles_list["Short Hair"]
+		if(hair_style && (data.get_species_bodytype(owner) in hair_style.species_allowed))
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 			var/icon/hair_s = new/icon("icon" = hair_style.icon, "icon_state" = "[hair_style.icon_state]_s")
 			var/icon/hair_s_add = new/icon("icon" = hair_style.icon_add, "icon_state" = "[hair_style.icon_state]_s")
 			if(hair_style.do_colouration && islist(h_col) && h_col.len >= 3)

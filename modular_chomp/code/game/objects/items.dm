@@ -16,8 +16,6 @@
 		item_tf_spawnpoints -= src
 
 /obj/item/Destroy(force, ...)
-	if(item_tf_spawn_allowed)
-		item_tf_spawnpoints -= src
 	user_vars_remembered = null
 	return ..()
 

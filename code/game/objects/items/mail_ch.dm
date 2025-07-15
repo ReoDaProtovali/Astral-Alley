@@ -103,7 +103,12 @@
 
 /obj/item/mail/proc/setRecipient(mob/user)
 	var/list/recipients = list()
+<<<<<<< HEAD:code/game/objects/items/mail_ch.dm
 	for(var/mob/living/player in player_list)
+=======
+	var/mob/living/recipient_mob
+	for(var/mob/living/player in GLOB.player_list)
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193)):code/game/objects/mail.dm
 		if(!player_is_antag(player.mind) && player.mind.show_in_directory)
 			recipients += player
 
@@ -276,7 +281,7 @@
 		if(!chosen)
 			return
 
-	for(var/mob/living/player in player_list)
+	for(var/mob/living/player in GLOB.player_list)
 		recipients += player
 
 	recipients = tgui_input_list(usr, "Choose recipient", "Recipients", recipients, recipients)
@@ -311,7 +316,7 @@
 /obj/structure/closet/crate/mail/full/Initialize()
 	. = ..()
 	var/list/mail_recipients = list()
-	for(var/mob/living/carbon/human/alive in player_list)
+	for(var/mob/living/carbon/human/alive in GLOB.player_list)
 		if(alive.stat != DEAD && alive.client && alive.client.inactivity <= 10 MINUTES)
 			mail_recipients += alive
 	for(var/iterator in 1 to storage_capacity)

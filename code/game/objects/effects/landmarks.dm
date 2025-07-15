@@ -96,6 +96,7 @@
 			delete_me = 1
 			return
 		if("endgame_exit")
+<<<<<<< HEAD
 			endgame_safespawns += loc
 			delete_me = 1
 			return
@@ -103,6 +104,13 @@
 			endgame_exits += loc
 			delete_me = 1
 			return
+=======
+			GLOB.endgame_safespawns += loc
+			delete_me = TRUE
+		if("bluespacerift")
+			GLOB.endgame_exits += loc
+			delete_me = TRUE
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 		//VOREStation Add Start
 		if("vinestart")
 			vinestart += loc
@@ -120,10 +128,19 @@
 	. = ..()
 	if(delete_me)
 		return INITIALIZE_HINT_QDEL
+<<<<<<< HEAD
 
 /obj/effect/landmark/Destroy(var/force = FALSE)
 	if(delete_me || force)
 		landmarks_list -= src
+=======
+	else
+		GLOB.landmarks_list += src
+
+/obj/effect/landmark/Destroy(var/force = FALSE)
+	if(force)
+		GLOB.landmarks_list -= src
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 		return ..()
 	return QDEL_HINT_LETMELIVE
 

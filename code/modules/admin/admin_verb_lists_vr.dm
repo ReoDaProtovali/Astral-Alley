@@ -36,6 +36,7 @@ var/list/admin_verbs_admin = list(
 	/datum/admins/proc/intercom,		//send a fake intercom message, like an arrivals announcement,
 	/datum/admins/proc/intercom_convo,	//send a fake intercom conversation, like an ATC exchange,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
+<<<<<<< HEAD
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags, //VOREStation Add,
 	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels, //VOREStation Add,
 	/client/proc/player_panel,			//VOREStation Add,
@@ -44,6 +45,14 @@ var/list/admin_verbs_admin = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify, //VOREStation Add,
 	/client/proc/mark_datum_mapview,	//VOREStation Add,
 	/client/proc/cmd_check_new_players,	//allows us to see every new player, //VOREStation Add,
+=======
+	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
+	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
+	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
+	/client/proc/cmd_check_new_players,	//allows us to see every new player,
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 	/client/proc/toggle_view_range,		//changes how far we can see,
 	/datum/admins/proc/view_txt_log,	//shows the server log (diary) for today,
 	/datum/admins/proc/view_atk_log,	//shows the server combat-log, doesn't do anything presently,
@@ -119,7 +128,7 @@ var/list/admin_verbs_admin = list(
 	/client/proc/fixatmos,
 	/datum/admins/proc/quick_nif, //VOREStation Add,
 	/datum/admins/proc/quick_authentic_nif, //CHOMPStation add
-	/datum/admins/proc/set_uplink, //VOREStation Add,
+	/datum/admins/proc/set_uplink,
 	/datum/admins/proc/sendFax,
 	/client/proc/despawn_player,
 	/datum/admins/proc/view_feedback,
@@ -163,18 +172,22 @@ var/list/admin_verbs_fun = list(
 	/client/proc/roll_dices,
 	/datum/admins/proc/call_supply_drop,
 	/datum/admins/proc/call_drop_pod,
-//	/client/proc/smite,  //Replaced by player_effects
 	/client/proc/player_effects,
 	/client/proc/admin_lightning_strike,
 	/client/proc/resize, //VOREStation Add,
 	/client/proc/tgui_admin_lists, //CHOMPStation Add
 	/client/proc/cmd_admin_droppod_deploy,
+<<<<<<< HEAD
 	/client/proc/adminorbit, //VOREStation Add
 	/client/proc/add_mob_for_narration,	//VOREStation Add
 	/client/proc/remove_mob_for_narration,	//VOREStation Add
 	/client/proc/narrate_mob,	//VOREStation Add
 	/client/proc/narrate_mob_args, //VOREStation Add
 	/client/proc/getPlayerStatus, //VORESTation Add
+=======
+	/client/proc/adminorbit,
+	/client/proc/getPlayerStatus,
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 	/client/proc/manage_event_triggers,
 	/client/proc/fake_pdaconvos
 
@@ -188,15 +201,19 @@ var/list/admin_verbs_spawn = list(
 	/datum/admins/proc/spawn_atom,		//allows us to spawn instances,
 	/datum/admins/proc/spawn_mail,	// CHOMPStation Add
 	/client/proc/cmd_admin_droppod_spawn,
+<<<<<<< HEAD
 	/client/proc/respawn_character,
 	/client/proc/spawn_character_mob,  //VOREStation Add,
+=======
+	/client/proc/spawn_character_mob,
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 	/client/proc/spawn_chemdisp_cartridge,
 	/client/proc/map_template_load,
 	/client/proc/map_template_upload,
 	/client/proc/map_template_load_on_new_z,
 	/client/proc/eventkit_open_mob_spawner,
-	/client/proc/generic_structure, //VOREStation Add
-	/client/proc/generic_item, //VOREStation Add
+	/client/proc/generic_structure,
+	/client/proc/generic_item,
 	/client/proc/create_gm_message,
 	/client/proc/remove_gm_message,
 	/client/proc/AdminCreateVirus,
@@ -273,6 +290,7 @@ var/list/admin_verbs_debug = list(
 	/client/proc/jumptocoord,
 	/client/proc/dsay,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
+<<<<<<< HEAD
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags, //VOREStation Add,
 	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels, //VOREStation Add,
 	/client/proc/player_panel,			//VOREStation Add,
@@ -281,9 +299,17 @@ var/list/admin_verbs_debug = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify, //VOREStation Add,
 	/client/proc/mark_datum_mapview,	//VOREStation Add,
 	/client/proc/cmd_check_new_players,	//allows us to see every new player, //VOREStation Add,
+=======
+	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
+	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
+	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
+	/client/proc/cmd_check_new_players,	//allows us to see every new player,
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 	/datum/admins/proc/view_runtimes,
-	// /client/proc/show_gm_status, // VOREStation Edit - We don't use SSgame_master yet.
-	/datum/admins/proc/set_uplink, //VOREStation Add,
+	// /client/proc/show_gm_status, //We don't use SSgame_master yet.
+	/datum/admins/proc/set_uplink,
 	/datum/admins/proc/change_weather,
 	/datum/admins/proc/change_time,
 	/client/proc/cmd_regenerate_asset_cache,
@@ -390,9 +416,13 @@ var/list/admin_verbs_hideable = list(
 	/client/proc/air_report,
 	/client/proc/enable_debug_verbs,
 	/client/proc/roll_dices,
+<<<<<<< HEAD
 	/proc/possess,
 	/proc/release,
 	/datum/admins/proc/set_uplink, //VOREStation Add,
+=======
+	/datum/admins/proc/set_uplink,
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 	/datum/admins/proc/set_tcrystals,
 	/client/proc/stop_sounds
 	)
@@ -402,6 +432,7 @@ var/list/admin_verbs_mod = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game.,
 	/datum/admins/proc/PlayerNotes,
 	/client/proc/admin_ghost,			//allows us to ghost/reenter body at will,
+<<<<<<< HEAD
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags, //VOREStation Add,
 	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels, //VOREStation Add,
 	/client/proc/player_panel,			//VOREStation Add,
@@ -412,6 +443,14 @@ var/list/admin_verbs_mod = list(
 	/client/proc/cmd_check_new_players,	//allows us to see every new player, //VOREStation Add,
 	/client/proc/cmd_mod_say,
 	/client/proc/cmd_event_say,
+=======
+	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
+	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
+	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
+	/client/proc/cmd_check_new_players,	//allows us to see every new player,
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 	/datum/admins/proc/show_player_info,
 	/datum/admins/proc/show_traitor_panel,
 	/client/proc/player_panel_new,
@@ -442,6 +481,7 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/cmd_admin_pm_context,
 	/client/proc/cmd_admin_pm_panel,
 	/client/proc/admin_ghost,
+<<<<<<< HEAD
 	/datum/admins/proc/show_player_panel,	//shows an interface for individual players, with various links (links require additional flags, //VOREStation Add,
 	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels, //VOREStation Add,
 	/client/proc/player_panel,			//VOREStation Add,
@@ -450,6 +490,14 @@ var/list/admin_verbs_event_manager = list(
 	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify, //VOREStation Add,
 	/client/proc/mark_datum_mapview,	//VOREStation Add,
 	/client/proc/cmd_check_new_players,	//allows us to see every new player, //VOREStation Add,
+=======
+	/client/proc/player_panel_new, //shows an interface for all players, with links to various panels,
+	/client/proc/player_panel,
+	/client/proc/hide_verbs,			//hides all our adminverbs,
+	/client/proc/hide_most_verbs,		//hides all our hideable adminverbs,
+	/client/proc/debug_variables,		//allows us to -see- the variables of any instance in the game. +VAREDIT needed to modify,
+	/client/proc/cmd_check_new_players,	//allows us to see every new player,
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 	/datum/admins/proc/show_player_info,
 	/client/proc/dsay,
 	/client/proc/cmd_admin_subtle_message,

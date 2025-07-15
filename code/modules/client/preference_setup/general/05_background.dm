@@ -66,6 +66,7 @@
 		. += "<a href='byond://?src=\ref[src];set_security_records=1'>[TextPreview(pref.sec_record,40)]</a><br>"
 		. += "(<a href='byond://?src=\ref[src];reset_secrecord=1'>Reset</A>)"
 
+<<<<<<< HEAD
 /datum/category_item/player_setup_item/general/background/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(href_list["econ_status"])
 		var/new_class = tgui_input_list(user, "Choose your economic status. This will affect the amount of money you will start with.", "Character Preference", ECONOMIC_CLASS, pref.economic_status)
@@ -120,6 +121,86 @@
 		else
 			pref.faction = choice
 		return TOPIC_REFRESH
+=======
+		data["med_record"] = TextPreview(pref.med_record,40)
+		data["gen_record"] = TextPreview(pref.gen_record,40)
+		data["sec_record"] = TextPreview(pref.sec_record,40)
+
+	return data
+
+/datum/category_item/player_setup_item/general/background/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	var/mob/user = ui.user
+	switch(action)
+		if("econ_status")
+			var/new_class = tgui_input_list(user, "Choose your economic status. This will affect the amount of money you will start with.", "Character Preference", ECONOMIC_CLASS, pref.economic_status)
+			if(new_class)
+				pref.economic_status = new_class
+				return TOPIC_REFRESH
+
+		if("home_system")
+			var/choice = tgui_input_list(user, "Please choose your home planet and/or system. This should be your current primary residence. Select \"Other\" to specify manually.", "Character Preference", GLOB.home_system_choices + list("Unset","Other"), pref.home_system)
+			if(!choice || !CanUseTopic(user))
+				return TOPIC_NOACTION
+			if(choice == "Other")
+				var/raw_choice = strip_html_simple(tgui_input_text(user, "Please enter a home system.", "Character Preference", null, MAX_NAME_LEN), MAX_NAME_LEN)
+				if(raw_choice)
+					pref.home_system = raw_choice
+			else
+				pref.home_system = choice
+			return TOPIC_REFRESH
+
+		if("birthplace")
+			var/choice = tgui_input_list(user, "Please choose the planet and/or system or other appropriate location that you were born/created. Select \"Other\" to specify manually.", "Character Preference", GLOB.home_system_choices + list("Unset","Other"), pref.birthplace)
+			if(!choice || !CanUseTopic(user))
+				return TOPIC_NOACTION
+			if(choice == "Other")
+				var/raw_choice = strip_html_simple(tgui_input_text(user, "Please enter a birthplace.", "Character Preference", null, MAX_NAME_LEN), MAX_NAME_LEN)
+				if(raw_choice)
+					pref.birthplace = raw_choice
+			else
+				pref.birthplace = choice
+			return TOPIC_REFRESH
+
+		if("citizenship")
+			var/choice = tgui_input_list(user, "Please select the faction or political entity with which you currently hold citizenship. Select \"Other\" to specify manually.", "Character Preference", GLOB.citizenship_choices + list("None","Other"), pref.citizenship)
+			if(!choice || !CanUseTopic(user))
+				return TOPIC_NOACTION
+			if(choice == "Other")
+				var/raw_choice = strip_html_simple(tgui_input_text(user, "Please enter your current citizenship.", "Character Preference", null, MAX_NAME_LEN), MAX_NAME_LEN)
+				if(raw_choice)
+					pref.citizenship = raw_choice
+			else
+				pref.citizenship = choice
+			return TOPIC_REFRESH
+
+		if("faction")
+			var/choice = tgui_input_list(user, "Please choose the faction you primarily work for, if you are not under the direct employ of NanoTrasen. Select \"Other\" to specify manually.", "Character Preference", GLOB.faction_choices + list("None","Other"), pref.faction)
+			if(!choice || !CanUseTopic(user))
+				return TOPIC_NOACTION
+			if(choice == "Other")
+				var/raw_choice = strip_html_simple(tgui_input_text(user, "Please enter a faction.", "Character Preference", null, MAX_NAME_LEN), MAX_NAME_LEN)
+				if(raw_choice)
+					pref.faction = raw_choice
+			else
+				pref.faction = choice
+			return TOPIC_REFRESH
+
+		if("religion")
+			var/choice = tgui_input_list(user, "Please choose a religion. Select \"Other\" to specify manually.", "Character Preference", GLOB.religion_choices + list("None","Other"), pref.religion)
+			if(!choice || !CanUseTopic(user))
+				return TOPIC_NOACTION
+			if(choice == "Other")
+				var/raw_choice = strip_html_simple(tgui_input_text(user, "Please enter a religon.", "Character Preference", null, MAX_NAME_LEN), MAX_NAME_LEN)
+				if(raw_choice)
+					pref.religion = sanitize(raw_choice)
+			else
+				pref.religion = choice
+			return TOPIC_REFRESH
+>>>>>>> 2c9453b5c3 ([MIRROR] var/global/list -> GLOB. conversion (#11193))
 
 	else if(href_list["religion"])
 		var/choice = tgui_input_list(user, "Please choose a religion. Select \"Other\" to specify manually.", "Character Preference", religion_choices + list("None","Other"), pref.religion)
