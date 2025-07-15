@@ -185,6 +185,17 @@
 		update_icon() //VOREStation Edit - Health display for consoles with light and such.
 		var/mob/living/carbon/human/H = occupant
 		occupantData["name"] = H.name
+<<<<<<< HEAD
+=======
+		occupantData["species"] = H.species.name
+		if(H.custom_species)
+			if( H.species.name == SPECIES_CUSTOM || H.species.name == SPECIES_HANNER )
+				// Fully custom species
+				occupantData["species"] = "[H.custom_species]"
+			else
+				// Using another species as base, doctors should know this to avoid some meds
+				occupantData["species"] = "[H.custom_species] \[Similar biology to [H.species.name]\]"
+>>>>>>> 1906ebf2b0 ([MIRROR] Transformation fixes (#11195))
 		occupantData["stat"] = H.stat
 		occupantData["health"] = H.health
 		occupantData["maxHealth"] = H.getMaxHealth()
