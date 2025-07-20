@@ -22,6 +22,7 @@
     "tgui:eslint-fix": "eslint --fix packages --ext .js,.cjs,.ts,.jsx,.tsx"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@swc/core": "^1.9.1",
     "@swc/jest": "^0.2.37",
     "@types/jest": "^29.5.14",
@@ -31,6 +32,13 @@
     "@types/webpack-env": "^1.18.5",
     "@typescript-eslint/parser": "^8.13.0",
     "@typescript-eslint/utils": "^8.13.0",
+=======
+    "@rspack/cli": "^1.4.8",
+    "@rspack/core": "^1.4.8",
+    "@typescript-eslint/eslint-plugin": "^8.37.0",
+    "@typescript-eslint/parser": "^8.37.0",
+    "@typescript-eslint/utils": "^8.37.0",
+>>>>>>> 66b765887f ([MIRROR] another update and es-toolkit (#11212))
     "css-loader": "^7.1.2",
     "esbuild-loader": "^4.2.2",
     "eslint": "^8.57.0",
