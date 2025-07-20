@@ -94,8 +94,12 @@
 	if (tgui_alert(usr, "Are you sure you want to empty that?", "Empty Bottle:", list("Yes", "No")) != "Yes")
 		return
 	if(isturf(usr.loc))
+<<<<<<< HEAD
 		// to_chat(usr, span_notice("You empty \the [src] onto the floor."))
 		balloon_alert(usr, "Empted \the [src] onto the floor.") // CHOMPEdit - Changed to balloon alert
+=======
+		balloon_alert(usr, "emptied \the [src] onto the floor.")
+>>>>>>> e864bbefd8 ([MIRROR] tgui default background color port (#11210))
 		reagents.splash(usr.loc, reagents.total_volume)
 
 //space cleaner
