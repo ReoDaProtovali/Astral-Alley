@@ -9,7 +9,13 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tgui": "workspace:*",
+<<<<<<< HEAD
     "tgui-core": "^1.8.0",
     "tgui-polyfill": "workspace:*"
   }
+=======
+    "tgui-core": "^4.3.4"
+  },
+  "private": true
+>>>>>>> 66b765887f ([MIRROR] another update and es-toolkit (#11212))
 }

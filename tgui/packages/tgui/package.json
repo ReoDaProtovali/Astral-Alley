@@ -3,6 +3,7 @@
   "name": "tgui",
   "version": "5.0.3",
   "dependencies": {
+<<<<<<< HEAD
     "@popperjs/core": "^2.11.8",
     "@types/marked": "4.3.2",
     "@types/react": "^18.3.12",
@@ -22,4 +23,21 @@
     "tgui-dev-server": "workspace:*",
     "tgui-polyfill": "workspace:*"
   }
+=======
+    "common": "workspace:*",
+    "dateformat": "^5.0.3",
+    "dompurify": "^3.2.5",
+    "es-toolkit": "^1.39.3",
+    "highlight.js": "^11.11.1",
+    "js-yaml": "^4.1.0",
+    "marked": "^15.0.11",
+    "marked-base-url": "^1.1.6",
+    "marked-smartypants": "^1.1.9",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tgui-core": "^4.3.4",
+    "tgui-dev-server": "workspace:*"
+  },
+  "private": true
+>>>>>>> 66b765887f ([MIRROR] another update and es-toolkit (#11212))
 }

@@ -6,6 +6,7 @@
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "common": "workspace:*",
+<<<<<<< HEAD
     "dompurify": "^3.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -14,4 +15,15 @@
     "tgui-dev-server": "workspace:*",
     "tgui-polyfill": "workspace:*"
   }
+=======
+    "dompurify": "^3.2.5",
+    "es-toolkit": "^1.39.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tgui": "workspace:*",
+    "tgui-core": "^4.3.4",
+    "tgui-dev-server": "workspace:*"
+  },
+  "private": true
+>>>>>>> 66b765887f ([MIRROR] another update and es-toolkit (#11212))
 }
