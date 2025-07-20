@@ -187,9 +187,13 @@
 /area/ship/adminships/room2)
 "dq" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "adminshuttle_docker";
 	pixel_x = -30;
+<<<<<<< HEAD:maps/yw/submaps/admin_ships/adminship.dmm
+=======
+
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209)):archive/maps/old_yw/yw/submaps/admin_ships/adminship.dmm
 	},
 /turf/simulated/shuttle/floor/voidcraft/light,
 /area/shuttle/adminshuttle)
@@ -1299,7 +1303,7 @@
 	pixel_x = 30
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "admin_shuttle_rear";
 	pixel_y = 30
 	},
@@ -2737,9 +2741,13 @@
 /area/ship/adminships/engine_bay)
 "Xt" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "adminshuttle_bay";
 	pixel_x = 30;
+<<<<<<< HEAD:maps/yw/submaps/admin_ships/adminship.dmm
+=======
+
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209)):archive/maps/old_yw/yw/submaps/admin_ships/adminship.dmm
 	},
 /turf/simulated/floor/tiled/techfloor,
 /area/ship/adminships/engine_bay)

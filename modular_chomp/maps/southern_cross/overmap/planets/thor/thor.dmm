@@ -4404,9 +4404,15 @@
 	req_one_access = null
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
+<<<<<<< HEAD
 	frequency = 1380;
 	id_tag = "junker";
 	pixel_y = -25
+=======
+	pixel_y = -25;
+	frequency = 1381;
+	id_tag = "junker"
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	},
 /obj/effect/map_helper/airlock/door/simple,
 /turf/simulated/floor/plating,
@@ -4918,10 +4924,17 @@
 /area/surface/outside/thor/jungle)
 "ZG" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
+<<<<<<< HEAD
 	frequency = 1380;
 	id_tag = "spacebus_jungle";
 	name = "shuttle bay controller";
 	pixel_y = 26
+=======
+	name = "shuttle bay controller";
+	pixel_y = 26;
+	frequency = 1381;
+	id_tag = "spacebus_jungle"
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	},
 /turf/simulated/floor/outdoors/grass/forest/thor{
 	tree_chance = 0;

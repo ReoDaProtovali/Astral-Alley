@@ -221,7 +221,7 @@
 /area/hallway/Port_1Deck_Atrium)
 "abh" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "arrivals_dock_north_airlock";
 	master_tag = "arrivals_dock";
 	pixel_y = 27;
@@ -792,6 +792,426 @@
 /turf/simulated/floor/water/deep/indoors,
 /area/hallway/Star_1Deck_Atrium)
 "adZ" = (
+<<<<<<< HEAD
+=======
+/obj/machinery/atmospherics/pipe/manifold/hidden{
+	dir = 8
+	},
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1381;
+	id_tag = "sc-D1_L1A1_airlock";
+	pixel_x = -24;
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	dir = 1;
+	color = "#989898"
+	},
+/obj/structure/cable/white{
+	icon_state = "2-8"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock1)
+"aea" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/hallway/Star_1Deck_Central_Corridor_1)
+"aeb" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 10
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/hallway/Star_1Deck_Central_Corridor_1)
+"aec" = (
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/hallway/Star_1Deck_Atrium)
+"aed" = (
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1381;
+	id_tag = "sc-D1_L2A1_airlock";
+	pixel_x = -24;
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals_central2{
+	color = "#989898"
+	},
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock2)
+"aee" = (
+/turf/simulated/wall,
+/area/maintenance/Deck1_Star_Corridor)
+"aef" = (
+/obj/machinery/door/firedoor/glass,
+/obj/effect/floor_decal/industrial/hatch/blue,
+/obj/structure/grille,
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/sign/directions/bar{
+	pixel_y = 9;
+	layer = 3.5;
+	dir = 1
+	},
+/obj/structure/sign/directions/stairs_up{
+	dir = 1;
+	layer = 3.5
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_Star_Corridor)
+"aeg" = (
+/obj/effect/floor_decal/industrial/arrows/blue,
+/obj/effect/floor_decal/industrial/arrows/blue{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/maintenance/Deck1_Star_Corridor)
+"aeh" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/arrows/yellow,
+/obj/effect/floor_decal/industrial/arrows/yellow{
+	dir = 1
+	},
+/obj/structure/cable/green{
+	icon_state = "1-2"
+	},
+/obj/structure/disposalpipe/segment,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/door/airlock/maintenance/int,
+/turf/simulated/floor/tiled/techmaint,
+/area/maintenance/Deck1_Star_Corridor)
+"aei" = (
+/obj/machinery/light{
+	dir = 1
+	},
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_Star_Corridor)
+"aej" = (
+/obj/item/radio/intercom{
+	dir = 1;
+	pixel_y = 22
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/white/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/maintenance/Deck1_Star_Corridor)
+"aek" = (
+/obj/machinery/alarm{
+	pixel_y = 22
+	},
+/obj/effect/floor_decal/borderfloor{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/lightgrey/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/maintenance/Deck1_Star_Corridor)
+"ael" = (
+/obj/structure/table/standard,
+/obj/item/storage/box/beakers,
+/obj/machinery/reagentgrinder,
+/turf/simulated/floor/tiled/white,
+/area/maintenance/ab_Surgery)
+"aem" = (
+/obj/machinery/computer/cryopod/gateway{
+	pixel_x = -32
+	},
+/obj/effect/floor_decal/techfloor{
+	dir = 1
+	},
+/turf/simulated/floor/tiled,
+/area/crew_quarters/Public_Gateway)
+"aen" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6,
+/turf/simulated/floor/glass,
+/area/hallway/Port_1Deck_Atrium)
+"aeo" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6,
+/turf/simulated/floor/glass,
+/area/hallway/Star_1Deck_Atrium)
+"aep" = (
+/obj/machinery/door/firedoor/border_only,
+/obj/effect/floor_decal/industrial/arrows/yellow,
+/obj/effect/floor_decal/industrial/arrows/yellow{
+	dir = 1
+	},
+/obj/machinery/door/airlock/maintenance/int,
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/tiled/techmaint,
+/area/maintenance/Market_Stall_2)
+"aeq" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/turf/simulated/floor/glass,
+/area/hallway/Port_1Deck_Atrium)
+"aer" = (
+/obj/effect/floor_decal/road/center{
+	dir = 4
+	},
+/turf/simulated/floor/grass2/turfpack/station,
+/area/maintenance/ab_SportsField)
+"aes" = (
+/obj/structure/bed/chair/bay/shuttle,
+/obj/structure/closet/walllocker/emerglocker/north,
+/turf/simulated/shuttle/floor/white,
+/area/shuttle/large_escape_pod1/station)
+"aet" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/turf/simulated/floor/tiled,
+/area/rnd/Observation_Hall)
+"aeu" = (
+/obj/structure/cable{
+	icon_state = "4-8"
+	},
+/obj/effect/catwalk_plated/techmaint,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_Port_Corridor)
+"aev" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_ForPort_Corridor3)
+"aew" = (
+/turf/simulated/wall,
+/area/security/Quantum_Pad_Checkpoint)
+"aex" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply,
+/turf/simulated/floor/plating,
+/area/maintenance/Distro_Harbor)
+"aey" = (
+/obj/structure/reagent_dispensers/watertank,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_Cargo_Corridor2)
+"aez" = (
+/obj/structure/closet/l3closet/janitor,
+/obj/effect/floor_decal/borderfloorblack{
+	dir = 5
+	},
+/obj/effect/floor_decal/corner/mauve/border{
+	dir = 5
+	},
+/obj/random/soap,
+/turf/simulated/floor/tiled/dark,
+/area/crew_quarters/Custodial_Office)
+"aeA" = (
+/obj/machinery/door/firedoor/glass/hidden/steel,
+/turf/simulated/floor/tiled/techmaint,
+/area/harbor/Dock4)
+"aeB" = (
+/obj/structure/table/rack,
+/obj/random/maintenance/cargo,
+/obj/random/maintenance/cargo,
+/obj/random/maintenance/cargo,
+/obj/random/maintenance/cargo,
+/obj/random/maintenance/clean,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_Cargo_Corridor2)
+"aeC" = (
+/obj/structure/loot_pile/maint/boxfort,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_ForStar_Chamber1)
+"aeD" = (
+/obj/effect/catwalk_plated/techmaint,
+/obj/structure/cable{
+	icon_state = "2-4"
+	},
+/obj/structure/cable{
+	icon_state = "1-2"
+	},
+/obj/random/trash,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_ForPort_Corridor1)
+"aeE" = (
+/obj/structure/loot_pile/maint/boxfort,
+/obj/random/trash,
+/obj/random/junk,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_ForPort_Corridor2)
+"aeF" = (
+/obj/effect/catwalk_plated/white,
+/obj/machinery/shield_diffuser,
+/obj/structure/cable/white{
+	icon_state = "1-2"
+	},
+/turf/simulated/floor/plating/turfpack/airless,
+/area/space)
+"aeG" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/turf/simulated/floor/glass/reinforced,
+/area/security/Quantum_Pad_Checkpoint)
+"aeH" = (
+/obj/random/maintenance/security,
+/obj/structure/table/rack/shelf,
+/obj/random/maintenance/clean,
+/obj/random/maintenance/clean,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_ForPort_Corridor2)
+"aeI" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/security/Quantum_Pad_Checkpoint)
+"aeJ" = (
+/obj/random/maintenance/security,
+/obj/structure/table/rack/holorack,
+/obj/random/maintenance/security,
+/obj/random/maintenance/clean,
+/obj/random/maintenance/misc,
+/turf/simulated/floor/plating,
+/area/maintenance/Deck1_ForPort_Corridor2)
+"aeK" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/turf/simulated/floor/tiled/dark,
+/area/security/Quantum_Pad_Checkpoint)
+"aeL" = (
+/obj/effect/floor_decal/industrial/warning,
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
+/turf/simulated/floor/glass,
+/area/hallway/Deck1_Transit_Hall)
+"aeM" = (
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 8
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 5
+	},
+/turf/simulated/floor/tiled,
+/area/security/Quantum_Pad_Storage)
+"aeN" = (
+/obj/machinery/meter,
+/obj/machinery/atmospherics/pipe/manifold/visible{
+	dir = 8
+	},
+/obj/effect/floor_decal/borderfloorwhite{
+	dir = 1
+	},
+/obj/effect/floor_decal/corner/purple/border{
+	dir = 1
+	},
+/turf/simulated/floor/tiled/white,
+/area/rnd/Xenobotany_Isolation_Chamber)
+"aeO" = (
+/obj/effect/floor_decal/steeldecal/steel_decals6{
+	dir = 9
+	},
+/turf/simulated/floor/glass,
+/area/hallway/Deck1_Transit_Hall)
+"aeP" = (
+/obj/structure/cable/white{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/effect/floor_decal/shuttle/blue{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techmaint,
+/area/harbor/Dock5)
+"aeQ" = (
+/obj/effect/floor_decal/borderfloor{
+	dir = 4
+	},
+/obj/effect/floor_decal/arrivals/right,
+/turf/simulated/floor/tiled,
+/area/harbor/Dock5)
+"aeR" = (
+/obj/machinery/atmospherics/pipe/simple/hidden/supply{
+	dir = 4
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 4
+	},
+/obj/effect/floor_decal/steeldecal/steel_decals4{
+	dir = 9
+	},
+/obj/effect/floor_decal/arrivals/right,
+/turf/simulated/floor/tiled,
+/area/harbor/Dock5)
+"aeS" = (
+/obj/effect/floor_decal/shuttle/blue{
+	pixel_x = -1;
+	pixel_y = 1
+	},
+/obj/machinery/hologram/holopad,
+/turf/simulated/floor/tiled/techmaint,
+/area/hallway/Aft_1_Deck_Stairwell)
+"aeT" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock1)
+"aeU" = (
+/obj/machinery/light,
+/turf/simulated/floor/tiled/dark,
+/area/harbor/Dock4)
+"aeV" = (
+/obj/structure/cable/white{
+	icon_state = "1-2"
+	},
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/machinery/light{
+	dir = 8
+	},
+/turf/simulated/floor/tiled,
+/area/harbor/Dock1)
+"aeW" = (
+/obj/machinery/atmospherics/pipe/simple/hidden,
+/obj/structure/cable/white{
+	icon_state = "1-2"
+	},
+/obj/machinery/light{
+	dir = 4
+	},
+/turf/simulated/floor/tiled,
+/area/harbor/Dock4)
+"aeX" = (
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 /obj/machinery/hologram/holopad,
 /obj/effect/floor_decal/shuttle/blue{
 	pixel_x = -1;
@@ -976,7 +1396,7 @@
 /area/harbor/Dock2)
 "afw" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
-	frequency = 1380;
+	frequency = 1381;
 	pixel_y = 27;
 	req_one_access = list(13);
 	id_tag = "SC-docklane31"
@@ -1100,7 +1520,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_3";
 	pixel_y = -24;
 	tag_door = "escape_pod_3_hatch";
@@ -2251,7 +2671,7 @@
 /area/quartermaster/Supply_Ship_Bay)
 "amc" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "spacebus";
 	pixel_y = -25
 	},
@@ -2427,7 +2847,7 @@
 	name = "Escape Pod 5";
 	id_tag = "escape_pod_5_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Ship_Bay4)
@@ -2882,7 +3302,7 @@
 	name = "Escape Pod 1";
 	id_tag = "escape_pod_1_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /obj/machinery/atmospheric_field_generator/perma/underdoors{
 	color = "Yellow"
@@ -4139,7 +4559,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_pump"
 	},
 /turf/simulated/floor,
@@ -4759,7 +5179,7 @@
 	},
 /obj/effect/map_helper/airlock/sensor/chamber_sensor,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L1A4_airlock";
 	pixel_y = 24
 	},
@@ -4783,7 +5203,7 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/brown/border,
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "cargo_bay";
 	name = "cargo bay hatch controller";
 	req_one_access = list(13,31);
@@ -5681,7 +6101,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L1A6_airlock";
 	pixel_x = 24;
 	dir = 8
@@ -8208,7 +8628,7 @@
 /area/maintenance/Distro_Central)
 "blL" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_14_berth";
 	tag_door = "escape_pod_14_berth_hatch";
 	pixel_y = 24
@@ -9208,7 +9628,7 @@
 	},
 /obj/effect/map_helper/airlock/sensor/chamber_sensor,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L4A4_airlock";
 	pixel_y = 24
 	},
@@ -9246,7 +9666,7 @@
 "bCH" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	pixel_y = -27;
 	req_one_access = list(13);
 	id_tag = "SC-docklane22"
@@ -12734,7 +13154,7 @@
 /area/rnd/Xenobotany_Isolation_Chamber)
 "cOQ" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_dock_snorth_airlock";
 	master_tag = "escape_dock";
 	pixel_y = 27;
@@ -13504,11 +13924,11 @@
 /area/harbor/Fueling_Post)
 "dbc" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna";
 	pixel_y = 26;
 	tag_airpump = "echidna_pump";
@@ -13809,7 +14229,7 @@
 	name = "Escape Pod 13";
 	id_tag = "escape_pod_13_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/Exploration_Ship_Bay)
@@ -13863,7 +14283,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_H3";
 	name = "shuttle bay controller";
 	tag_door = "sc-D1_H3";
@@ -14077,7 +14497,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Large Escape Pod 2";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "large_escape_pod_2_hatch"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -14194,7 +14614,7 @@
 	},
 /obj/effect/map_helper/airlock/sensor/chamber_sensor,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L4A3_airlock";
 	pixel_y = 24
 	},
@@ -15008,7 +15428,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "large_escape_pod_1_berth";
 	pixel_x = 24;
 	tag_door = "large_escape_pod_1_berth_hatch";
@@ -15237,7 +15657,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 1;
 	name = "Escape Pod 13";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_13_hatch"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -16453,7 +16873,7 @@
 	},
 /obj/effect/map_helper/airlock/sensor/chamber_sensor,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L1A3_airlock";
 	pixel_y = 24
 	},
@@ -16475,7 +16895,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Escape Pod 5";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_5_hatch"
 	},
 /obj/effect/map_helper/airlock/door/simple,
@@ -17478,7 +17898,7 @@
 "dZy" = (
 /obj/machinery/vending/nifsoft_shop,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "cryostorage_shuttle_berth";
 	name = "cryostorage shuttle berth controller";
 	pixel_x = 24;
@@ -18594,7 +19014,7 @@
 	},
 /obj/effect/map_helper/airlock/sensor/chamber_sensor,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L1A5_airlock";
 	pixel_y = 24
 	},
@@ -18723,7 +19143,7 @@
 /area/harbor/Dock3)
 "erI" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_13_berth";
 	tag_door = "escape_pod_13_berth_hatch";
 	pixel_y = 24
@@ -19413,7 +19833,7 @@
 /area/crew_quarters/Custodial_Office)
 "eEX" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
-	frequency = 1380;
+	frequency = 1381;
 	pixel_y = 27;
 	req_one_access = list(13);
 	id_tag = "SC-docklane21"
@@ -21542,7 +21962,7 @@
 "fqr" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden,
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "SC-docklane44";
 	pixel_y = -24;
 	dir = 1
@@ -21609,7 +22029,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Large Escape Pod 1";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "large_escape_pod_1_hatch"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -23045,7 +23465,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_4";
 	pixel_y = -24;
 	tag_door = "escape_pod_4_hatch";
@@ -23772,7 +24192,7 @@
 /area/harbor/Dock1)
 "gfe" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "hangar_2";
 	name = "shuttle bay controller";
 	pixel_x = -24;
@@ -24161,7 +24581,7 @@
 /area/hallway/Port_1Deck_Central_Corridor_1)
 "glO" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "SC_baby_mammoth_dock";
 	name = "shuttle bay controller";
 	pixel_x = 24;
@@ -24468,7 +24888,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L4A6_airlock";
 	pixel_x = -24;
 	dir = 4
@@ -24716,7 +25136,7 @@
 	name = "Escape Pod 7";
 	id_tag = "escape_pod_7_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Ship_Bay4)
@@ -24974,14 +25394,14 @@
 /area/hallway/Aft_Transit_Lobby)
 "gCc" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_outer";
 	locked = 1;
 	name = "External Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "needle";
 	name = "exterior access button";
 	pixel_y = 26
@@ -29421,7 +29841,7 @@
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_pump"
 	},
 /turf/simulated/floor,
@@ -29878,7 +30298,7 @@
 "iro" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_dock_ssouth_airlock";
 	master_tag = "escape_dock";
 	pixel_y = -27;
@@ -30324,7 +30744,7 @@
 "izC" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_6_berth";
 	pixel_x = 24;
 	tag_door = "escape_pod_6_berth_hatch";
@@ -31659,7 +32079,7 @@
 	name = "Escape Pod 14";
 	id_tag = "escape_pod_14_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/security/Exploration_Ship_Bay)
@@ -33901,7 +34321,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Escape Pod 8";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_8_hatch"
 	},
 /obj/effect/map_helper/airlock/door/simple,
@@ -34396,7 +34816,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/meter,
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_sensor";
 	pixel_y = 28
 	},
@@ -34825,7 +35245,7 @@
 	name = "Escape Pod 3";
 	id_tag = "escape_pod_3_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Ship_Bay3)
@@ -34974,7 +35394,7 @@
 "ksQ" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	pixel_y = -27;
 	req_one_access = list(13);
 	id_tag = "SC-docklane32"
@@ -35439,7 +35859,7 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_dock";
 	name = "shuttle bay controller";
 	pixel_x = -24;
@@ -35548,7 +35968,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_8";
 	pixel_y = 24;
 	tag_door = "escape_pod_8_hatch"
@@ -35754,7 +36174,7 @@
 /area/harbor/Star_Docking_Foyer)
 "kJg" = (
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "exp_sling_station_door";
 	locked = 1;
@@ -37123,7 +37543,7 @@
 /area/engineering/Telecomms_Control_Room)
 "liV" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "exp_sling_station";
 	name = "shuttle bay controller";
 	pixel_y = 24;
@@ -37342,7 +37762,7 @@
 	dir = 4
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "large_escape_pod_1";
 	pixel_y = -24;
 	tag_door = "large_escape_pod_1_hatch";
@@ -38685,7 +39105,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 1;
 	name = "Escape Pod 14";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_14_hatch"
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -39587,7 +40007,7 @@
 	icon_state = "1-2"
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_H4";
 	name = "shuttle bay controller";
 	tag_door = "sc-D1_H4";
@@ -39835,7 +40255,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_7";
 	pixel_y = 24;
 	tag_door = "escape_pod_7_hatch"
@@ -39872,7 +40292,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Escape Pod 7";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_7_hatch"
 	},
 /obj/effect/map_helper/airlock/door/simple,
@@ -40217,7 +40637,7 @@
 "mmB" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "arrivals_dock_south_airlock";
 	master_tag = "arrivals_dock";
 	pixel_y = -27;
@@ -40829,13 +41249,13 @@
 "mvK" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "ursula";
 	name = "exterior access button";
 	pixel_y = 26
 	},
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_outer";
 	locked = 1;
 	name = "External Access"
@@ -41728,7 +42148,7 @@
 	name = "Escape Pod 4";
 	id_tag = "escape_pod_4_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Ship_Bay3)
@@ -43165,8 +43585,16 @@
 	pixel_x = -1;
 	pixel_y = 1
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/hidden{
 	dir = 10
+=======
+/obj/machinery/embedded_controller/radio/airlock/docking_port{
+	frequency = 1381;
+	id_tag = "sc-D1_L4A1_airlock";
+	pixel_x = 24;
+	dir = 8
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	},
 /obj/machinery/airlock_sensor{
 	dir = 8;
@@ -44504,7 +44932,7 @@
 /area/shuttle/large_escape_pod2/station)
 "nMG" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L4A2_airlock";
 	pixel_y = 24
 	},
@@ -44550,11 +44978,11 @@
 /area/hallway/Aft_1_Deck_Stairwell)
 "nOq" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle";
 	pixel_y = 26;
 	tag_airpump = "needle_pump";
@@ -44737,7 +45165,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Escape Pod 3";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_3_hatch"
 	},
 /obj/effect/map_helper/airlock/door/simple,
@@ -44778,7 +45206,7 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/airlock/airlock_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "SC-docklane46";
 	pixel_y = 24
 	},
@@ -45084,7 +45512,7 @@
 "nWF" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_4_berth";
 	pixel_x = -24;
 	tag_door = "escape_pod_4_berth_hatch";
@@ -45431,7 +45859,7 @@
 /area/rnd/Xenobiology_Lab)
 "obY" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L3A1_airlock";
 	pixel_x = 24;
 	dir = 8
@@ -45856,7 +46284,7 @@
 "okp" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "cryostorage_shuttle";
 	name = "cryostorage controller";
 	pixel_y = -24;
@@ -46014,7 +46442,7 @@
 /area/quartermaster/Depot2)
 "omn" = (
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "exp_sling_hatch";
 	locked = 1;
@@ -46037,7 +46465,7 @@
 "omT" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_3_berth";
 	pixel_x = -24;
 	tag_door = "escape_pod_3_berth_hatch";
@@ -46126,7 +46554,7 @@
 	},
 /obj/effect/map_helper/airlock/sensor/chamber_sensor,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L4A5_airlock";
 	pixel_y = 24
 	},
@@ -46699,14 +47127,14 @@
 "oxT" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "echidna";
 	name = "exterior access button";
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_outer";
 	name = "External Access"
 	},
@@ -48194,7 +48622,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden/supply,
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "large_escape_pod_2_berth";
 	pixel_x = -24;
 	tag_door = "large_escape_pod_2_berth_hatch";
@@ -48655,14 +49083,14 @@
 "pfd" = (
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "echidna";
 	name = "interior access button";
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_inner";
 	name = "External Access"
 	},
@@ -48889,7 +49317,7 @@
 "pil" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_5_berth";
 	pixel_x = 24;
 	tag_door = "escape_pod_5_berth_hatch";
@@ -49075,7 +49503,7 @@
 	name = "Escape Pod 2";
 	id_tag = "escape_pod_2_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Ship_Bay3)
@@ -49159,7 +49587,7 @@
 	name = "Large Escape Pod 2";
 	id_tag = "large_escape_pod_2_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/hallway/Star_1Deck_Atrium)
@@ -50806,7 +51234,7 @@
 	dir = 9
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula";
 	pixel_y = 26;
 	tag_airpump = "ursula_pump";
@@ -51036,7 +51464,7 @@
 /area/hallway/Deck1_Transit_Hall)
 "pSs" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "sc-D1_L1A2_airlock";
 	pixel_y = 24
 	},
@@ -51587,7 +52015,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_pump"
 	},
 /turf/simulated/floor,
@@ -51857,7 +52285,7 @@
 	name = "Large Escape Pod 1";
 	id_tag = "large_escape_pod_1_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/hallway/Port_1Deck_Atrium)
@@ -54956,7 +55384,7 @@
 	name = "Escape Pod 6";
 	id_tag = "escape_pod_6_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Ship_Bay4)
@@ -55987,7 +56415,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_1";
 	pixel_y = -24;
 	tag_door = "escape_pod_1_hatch";
@@ -56062,7 +56490,7 @@
 "rEN" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -56070,7 +56498,7 @@
 	},
 /obj/structure/closet/walllocker_double/hydrant/south,
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_sensor";
 	pixel_x = -25;
 	pixel_y = -1
@@ -56091,7 +56519,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_6";
 	pixel_y = 24;
 	tag_door = "escape_pod_6_hatch"
@@ -57157,7 +57585,7 @@
 /obj/effect/floor_decal/industrial/warning/cee,
 /obj/machinery/light,
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_sensor";
 	pixel_x = -28;
 	pixel_y = -1
@@ -57403,7 +57831,7 @@
 "scR" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_2_berth";
 	pixel_x = -24;
 	tag_door = "escape_pod_2_berth_hatch";
@@ -57539,7 +57967,7 @@
 	pixel_x = 32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_13";
 	pixel_x = -24;
 	tag_door = "escape_pod_13_hatch";
@@ -57880,7 +58308,7 @@
 "slb" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_8_berth";
 	pixel_x = 24;
 	tag_door = "escape_pod_8_berth_hatch";
@@ -58255,7 +58683,7 @@
 /area/maintenance/Deck1_Cargo_Chamber1)
 "suH" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
-	frequency = 1380;
+	frequency = 1381;
 	pixel_y = 27;
 	req_one_access = list(13);
 	id_tag = "SC-docklane11"
@@ -59746,7 +60174,7 @@
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_pump"
 	},
 /turf/simulated/floor,
@@ -60219,7 +60647,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_inner";
 	name = "External Access"
 	},
@@ -60854,7 +61282,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_outer";
 	name = "External Access"
 	},
@@ -60946,7 +61374,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Escape Pod 6";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_6_hatch"
 	},
 /obj/effect/map_helper/airlock/door/simple,
@@ -61399,7 +61827,7 @@
 	pixel_y = 32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_2";
 	pixel_y = -24;
 	tag_door = "escape_pod_2_hatch";
@@ -61537,7 +61965,7 @@
 /obj/machinery/door/airlock/angled_tgmc/wide/medical{
 	name = "Cryostorage EscapePod";
 	id_tag = "cryostorage_shuttle_hatch";
-	frequency = 1380
+	frequency = 1381
 	},
 /obj/effect/map_helper/airlock/door/simple,
 /turf/simulated/floor/tiled/techmaint,
@@ -62239,7 +62667,7 @@
 	pixel_y = -32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_5";
 	pixel_y = 24;
 	tag_door = "escape_pod_5_hatch"
@@ -62605,7 +63033,7 @@
 	name = "Escape Pod 8";
 	id_tag = "escape_pod_8_berth_hatch";
 	req_access = null;
-	frequency = 1380
+	frequency = 1381
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/harbor/Ship_Bay4)
@@ -63169,7 +63597,7 @@
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	name = "shuttle bay controller";
 	id_tag = "needle_dock";
 	pixel_y = -24;
@@ -64518,7 +64946,7 @@
 "uIA" = (
 /obj/machinery/embedded_controller/radio/airlock/docking_port_multi{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	pixel_y = -27;
 	req_one_access = list(13);
 	id_tag = "SC-docklane12"
@@ -66005,7 +66433,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Escape Pod 1";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_1_hatch"
 	},
 /obj/effect/map_helper/airlock/door/simple,
@@ -66998,7 +67426,7 @@
 	},
 /obj/machinery/light,
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "exp_sling";
 	name = "shuttle bay controller";
 	pixel_y = -26;
@@ -67758,14 +68186,14 @@
 /area/space)
 "vLQ" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_inner";
 	locked = 1;
 	name = "Internal Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "ursula";
 	name = "interior access button";
 	pixel_y = 26
@@ -69233,7 +69661,7 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_dock";
 	name = "shuttle bay controller";
 	pixel_y = 24
@@ -69356,7 +69784,7 @@
 	dir = 8;
 	name = "Cryostorage EscapePod";
 	id_tag = "cryostorage_shuttle_berth";
-	frequency = 1380
+	frequency = 1381
 	},
 /obj/machinery/atmospheric_field_generator/perma/underdoors{
 	color = "Yellow"
@@ -70150,7 +70578,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Escape Pod 4";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_4_hatch"
 	},
 /obj/effect/map_helper/airlock/door/simple,
@@ -70483,7 +70911,7 @@
 	dir = 8
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "large_escape_pod_2";
 	pixel_y = 24;
 	tag_door = "large_escape_pod_2_hatch"
@@ -71640,7 +72068,7 @@
 /obj/machinery/door/airlock/angled_tgmc/pod{
 	dir = 8;
 	name = "Escape Pod 2";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_2_hatch"
 	},
 /obj/effect/map_helper/airlock/door/simple,
@@ -72255,7 +72683,7 @@
 "xqf" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_7_berth";
 	pixel_x = 24;
 	tag_door = "escape_pod_7_berth_hatch";
@@ -72487,7 +72915,7 @@
 "xtP" = (
 /obj/effect/catwalk_plated/white,
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod_berth{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_1_berth";
 	pixel_x = -24;
 	tag_door = "escape_pod_1_berth_hatch";
@@ -72862,7 +73290,7 @@
 	pixel_x = 32
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller/escape_pod{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_pod_14";
 	pixel_x = -24;
 	tag_door = "escape_pod_14_hatch";
@@ -73486,14 +73914,14 @@
 /area/harbor/Dock2)
 "xSx" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_inner";
 	locked = 1;
 	name = "Internal Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "needle";
 	name = "interior access button";
 	pixel_y = 26

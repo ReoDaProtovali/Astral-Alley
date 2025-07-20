@@ -459,12 +459,12 @@
 "bn" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = null
 	},
 /obj/effect/map_helper/airlock/atmos/pump_out_internal,
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ccboat";
 	pixel_y = 29
 	},
@@ -517,14 +517,14 @@
 "by" = (
 /obj/machinery/airlock_sensor{
 	dir = 8;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = null;
 	pixel_x = 24
 	},
 /obj/effect/map_helper/airlock/sensor/chamber_sensor,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = null
 	},
 /obj/effect/map_helper/airlock/atmos/pump_out_internal,
@@ -549,7 +549,7 @@
 /area/centcom/control)
 "bB" = (
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "supply_shuttle_hatch";
 	locked = 1;
@@ -559,7 +559,7 @@
 /area/shuttle/supply)
 "bC" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = null
 	},
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
@@ -569,7 +569,7 @@
 /area/shuttle/ccboat)
 "bD" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = null
 	},
 /obj/effect/map_helper/airlock/atmos/chamber_pump,
@@ -1164,7 +1164,7 @@
 "dm" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
 	dir = 8;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "cc_landing_pad";
 	name = "docking port controller";
 	pixel_x = 24;
@@ -1455,7 +1455,7 @@
 /area/centcom/main_hall)
 "et" = (
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "supply_shuttle_hatch";
 	locked = 1;
@@ -1735,7 +1735,7 @@
 /area/centcom/specops)
 "fE" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = null
 	},
 /obj/effect/map_helper/airlock/atmos/pump_out_external,
@@ -5323,7 +5323,7 @@
 	fancy_shuttle_tag = "tram"
 	},
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "escape_shuttle_hatch_offsite";
 	locked = 1;
@@ -6316,7 +6316,7 @@
 "zN" = (
 /obj/machinery/door/airlock/angled_bay/external/glass{
 	dir = 4;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = null;
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -6600,7 +6600,7 @@
 /area/centcom/security)
 "BJ" = (
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "supply_shuttle_hatch";
 	locked = 1;
@@ -11101,7 +11101,7 @@
 "Oc" = (
 /obj/machinery/door/airlock/angled_bay/external/glass{
 	dir = 4;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = null;
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -11363,7 +11363,7 @@
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/angled_bay/external/glass{
 	door_color = "#822a1e";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_shuttle_hatch";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -13479,7 +13479,7 @@
 	fancy_shuttle_tag = "tram"
 	},
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "escape_shuttle_hatch_station";
 	locked = 1;
@@ -15130,7 +15130,7 @@
 /obj/machinery/door/airlock/angled_bay/external/glass{
 	dir = 4;
 	door_color = "#822a1e";
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "escape_shuttle_hatch";
 	locked = 1;
 	name = "Docking Port Airlock"
@@ -15769,7 +15769,7 @@
 /area/centcom/command)
 "ZY" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "supply_shuttle";
 	pixel_x = -25;
 	req_one_access = list(13,31);

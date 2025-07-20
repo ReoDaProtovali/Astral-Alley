@@ -1179,7 +1179,17 @@
 /turf/simulated/mineral/virgo2,
 /area/offmap/aerostat/surface/unexplored)
 "HU" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/manifold/hidden/aux{
+=======
+/obj/machinery/embedded_controller/radio/airlock/airlock_controller{
+	cycle_to_external_air = 1;
+	frequency = 1381;
+	id_tag = "v2outpost_airlock";
+	pixel_y = 25
+	},
+/obj/machinery/atmospherics/pipe/manifold/hidden/cyan{
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	dir = 4
 	},
 /turf/simulated/floor/tiled/eris/dark/danger,
@@ -1282,7 +1292,7 @@
 /obj/machinery/access_button{
 	command = "cycle_exterior";
 	dir = 4;
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "v2outpost_airlock";
 	name = "exterior access button";
 	pixel_x = -24
@@ -1509,7 +1519,7 @@
 /obj/machinery/access_button{
 	command = "cycle_interior";
 	dir = 8;
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "v2outpost_airlock";
 	name = "interior access button";
 	pixel_x = 24
