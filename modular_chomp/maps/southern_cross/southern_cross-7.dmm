@@ -105,11 +105,11 @@
 /area/expoutpost/secarmory)
 "afh" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle";
 	pixel_y = 26;
 	tag_airpump = "needle_pump";
@@ -2792,13 +2792,13 @@
 "cts" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "ursula";
 	name = "exterior access button";
 	pixel_y = 26
 	},
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_outer";
 	locked = 1;
 	name = "External Access"
@@ -3392,7 +3392,7 @@
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_pump"
 	},
 /turf/simulated/floor,
@@ -4108,7 +4108,7 @@
 	pixel_y = 5
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_pump"
 	},
 /turf/simulated/floor,
@@ -4308,7 +4308,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_pump"
 	},
 /obj/structure/closet/emcloset,
@@ -6541,14 +6541,14 @@
 /area/expoutpost/gateway)
 "fzd" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "baby_mammoth_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 5
 	},
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "baby_mammoth_sensor";
 	pixel_y = 28
 	},
@@ -7274,7 +7274,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "baby_mammoth_pump"
 	},
 /obj/structure/closet/emcloset,
@@ -7324,13 +7324,13 @@
 /area/expoutpost/reactorcr)
 "giI" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_inner";
 	name = "Internal Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "shuttle3_shuttle";
 	name = "interior access button";
 	pixel_y = -26;
@@ -8007,13 +8007,13 @@
 /area/expoutpost/explobriefroom)
 "gPg" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "stargazer_outer";
 	name = "External Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "stargazer";
 	name = "exterior access button";
 	pixel_y = 26
@@ -8548,14 +8548,14 @@
 "hmp" = (
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "echidna";
 	name = "interior access button";
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_inner";
 	name = "External Access"
 	},
@@ -9376,7 +9376,7 @@
 	},
 /obj/machinery/atmospherics/unary/outlet_injector{
 	dir = 1;
-	frequency = 1438;
+	frequency = 1433;
 	id = "aegrust_cooling_in";
 	name = "Coolant Injector";
 	pixel_y = 1;
@@ -10068,7 +10068,7 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_dock";
 	name = "shuttle bay controller";
 	pixel_x = -29
@@ -11848,7 +11848,7 @@
 /obj/structure/closet/emcloset,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "stargazer_pump"
 	},
 /turf/simulated/floor,
@@ -12083,7 +12083,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_pump"
 	},
 /turf/simulated/floor,
@@ -13324,7 +13324,7 @@
 	dir = 9
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_shuttle";
 	pixel_y = 26;
 	tag_airpump = "shuttle3_pump";
@@ -13333,7 +13333,7 @@
 	tag_interior_door = "shuttle3_inner"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_pump"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -13345,7 +13345,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_pump"
 	},
 /turf/simulated/shuttle/floor/black,
@@ -13692,7 +13692,7 @@
 	dir = 9
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "stargazer";
 	pixel_y = 26;
 	tag_airpump = "stargazer_pump";
@@ -13701,7 +13701,7 @@
 	tag_interior_door = "stargazer_inner"
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "stargazer_pump"
 	},
 /turf/simulated/floor,
@@ -14005,7 +14005,7 @@
 /obj/effect/floor_decal/industrial/warning/cee,
 /obj/machinery/light,
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_sensor";
 	pixel_x = -28;
 	pixel_y = -1
@@ -14103,14 +14103,14 @@
 /area/expoutpost/cic)
 "lRz" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "baby_mammoth_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
 	dir = 9
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "baby_mammoth";
 	pixel_y = 26;
 	tag_airpump = "baby_mammoth_pump";
@@ -14924,7 +14924,7 @@
 	dir = 4
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "exphangar_1";
 	name = "shuttle bay controller";
 	pixel_x = 24;
@@ -15391,14 +15391,14 @@
 /area/expoutpost/slingcarrierdock)
 "mPc" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_inner";
 	locked = 1;
 	name = "Internal Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "ursula";
 	name = "interior access button";
 	pixel_y = 26
@@ -16189,7 +16189,7 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "stargazer_dock";
 	name = "shuttle bay controller";
 	pixel_x = -29
@@ -16292,7 +16292,7 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_inner";
 	name = "External Access"
 	},
@@ -16326,14 +16326,14 @@
 /area/expoutpost/miningfoyer)
 "nwH" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "baby_mammoth_outer";
 	locked = 1;
 	name = "External Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "baby_mammoth";
 	name = "exterior access button";
 	pixel_y = 26
@@ -16375,14 +16375,14 @@
 "nxV" = (
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "echidna";
 	name = "exterior access button";
 	pixel_y = 26
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_outer";
 	name = "External Access"
 	},
@@ -16860,7 +16860,7 @@
 /area/expoutpost/reactorroom)
 "nLN" = (
 /obj/machinery/door/airlock/glass_external{
-	frequency = 1380;
+	frequency = 1381;
 	icon_state = "door_locked";
 	id_tag = "exp_sling_outpost_door";
 	locked = 1;
@@ -17172,7 +17172,7 @@
 	dir = 4
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_dock";
 	name = "shuttle bay controller";
 	pixel_x = 29
@@ -18831,11 +18831,11 @@
 	dir = 5
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_pump"
 	},
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_sensor";
 	pixel_y = 28
 	},
@@ -19905,14 +19905,14 @@
 /area/expoutpost/hangarfive)
 "qrZ" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_inner";
 	locked = 1;
 	name = "Internal Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "needle";
 	name = "interior access button";
 	pixel_y = 26
@@ -19950,13 +19950,13 @@
 /area/expoutpost/hangarfour)
 "qtA" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "shuttle3_outer";
 	name = "External Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "shuttle3_shuttle";
 	name = "exterior access button";
 	pixel_y = 26;
@@ -20425,7 +20425,7 @@
 	dir = 9
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula";
 	pixel_y = 26;
 	tag_airpump = "ursula_pump";
@@ -20453,7 +20453,7 @@
 /obj/machinery/light,
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_pump"
 	},
 /turf/simulated/floor,
@@ -20801,7 +20801,7 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_outer";
 	name = "External Access"
 	},
@@ -22156,7 +22156,7 @@
 /obj/machinery/atmospherics/pipe/simple/hidden,
 /obj/machinery/meter,
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "ursula_sensor";
 	pixel_y = 28
 	},
@@ -22858,7 +22858,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "stargazer_pump"
 	},
 /turf/simulated/floor,
@@ -23886,7 +23886,7 @@
 	dir = 4;
 	external_pressure_bound = 100;
 	external_pressure_bound_default = 0;
-	frequency = 1438;
+	frequency = 1433;
 	icon_state = "map_vent_in";
 	id_tag = "aegrust_cooling_out";
 	initialize_directions = 1;
@@ -24021,7 +24021,7 @@
 /area/expoutpost/reactorcr)
 "tHw" = (
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "exp_sling_outpost";
 	name = "shuttle bay controller";
 	pixel_x = 30;
@@ -24323,7 +24323,7 @@
 "tSg" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_pump"
 	},
 /obj/effect/floor_decal/industrial/warning{
@@ -24331,7 +24331,7 @@
 	},
 /obj/structure/closet/walllocker_double/hydrant/south,
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_sensor";
 	pixel_x = -25;
 	pixel_y = -1
@@ -24925,14 +24925,14 @@
 /area/expoutpost/staruppermaint)
 "upT" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "needle_outer";
 	locked = 1;
 	name = "External Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_exterior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "needle";
 	name = "exterior access button";
 	pixel_y = 26
@@ -25619,7 +25619,7 @@
 	icon_state = "2-8"
 	},
 /obj/machinery/air_sensor{
-	frequency = 1438;
+	frequency = 1433;
 	id_tag = "aegrustengine_sensor";
 	output = 63
 	},
@@ -25811,12 +25811,12 @@
 	dir = 5
 	},
 /obj/machinery/airlock_sensor{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "stargazer_sensor";
 	pixel_y = 28
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "stargazer_pump"
 	},
 /turf/simulated/floor,
@@ -25862,7 +25862,7 @@
 	dir = 1
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "baby_mammoth_dock";
 	name = "shuttle bay controller";
 	pixel_x = -29
@@ -26317,7 +26317,7 @@
 	dir = 4
 	},
 /obj/machinery/embedded_controller/radio/simple_docking_controller{
-	frequency = 1380;
+	frequency = 1381;
 	name = "shuttle bay controller";
 	pixel_x = 29;
 	id_tag = "needle_dock"
@@ -26451,11 +26451,11 @@
 /area/expoutpost/uppersternhallway)
 "vxc" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna_pump"
 	},
 /obj/machinery/embedded_controller/radio/airlock/docking_port{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "echidna";
 	pixel_y = 26;
 	tag_airpump = "echidna_pump";
@@ -26826,13 +26826,13 @@
 /area/expoutpost/bar)
 "vMu" = (
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "stargazer_inner";
 	name = "Internal Access"
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "stargazer";
 	name = "interior access button";
 	pixel_y = -26
@@ -27339,7 +27339,7 @@
 	},
 /obj/machinery/atmospherics/unary/vent_pump/high_volume{
 	dir = 1;
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "baby_mammoth_pump"
 	},
 /obj/machinery/light,
@@ -27371,13 +27371,13 @@
 	},
 /obj/machinery/access_button{
 	command = "cycle_interior";
-	frequency = 1380;
+	frequency = 1381;
 	master_tag = "baby_mammoth";
 	name = "interior access button";
 	pixel_y = 26
 	},
 /obj/machinery/door/airlock/voidcraft/vertical{
-	frequency = 1380;
+	frequency = 1381;
 	id_tag = "baby_mammoth_inner";
 	locked = 1;
 	name = "Internal Access"

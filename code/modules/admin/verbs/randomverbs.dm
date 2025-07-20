@@ -4,7 +4,12 @@
 	if(!holder)
 		return
 
+<<<<<<< HEAD
 	var/confirm = tgui_alert(src, "Make [M] drop everything?", "Message", list("Yes", "No"))
+=======
+ADMIN_VERB(drop_everything, R_ADMIN, "Drop Everything", ADMIN_VERB_NO_DESCRIPTION, ADMIN_CATEGORY_HIDDEN, mob/living/dropee in GLOB.mob_list)
+	var/confirm = tgui_alert(src, "Make [dropee] drop everything?", "Message", list("Yes", "No"))
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 	if(confirm != "Yes")
 		return
 

@@ -1,7 +1,7 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
 "aa" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/aux{
-	frequency = 1200;
+	frequency = 1201;
 	id_tag = "westpump"
 	},
 /turf/simulated/floor,
@@ -189,7 +189,7 @@
 /area/mercbase/airlock)
 "au" = (
 /obj/machinery/airlock_sensor/airlock_exterior{
-	frequency = 1200;
+	frequency = 1201;
 	id_tag = "westairlock";
 	master_tag = "westexteriorsensor";
 	pixel_w = 26
@@ -198,11 +198,11 @@
 /area/mercbase/roid)
 "av" = (
 /obj/machinery/atmospherics/unary/vent_pump/high_volume/aux{
-	frequency = 1200;
+	frequency = 1201;
 	id_tag = "westpump"
 	},
 /obj/machinery/airlock_sensor/airlock_interior{
-	frequency = 1200;
+	frequency = 1201;
 	id_tag = "westairlock";
 	master_tag = "westchambersensor";
 	pixel_z = 23
@@ -211,7 +211,7 @@
 /area/mercbase/airlock)
 "aw" = (
 /obj/machinery/airlock_sensor/airlock_interior{
-	frequency = 1200;
+	frequency = 1201;
 	id_tag = "westairlock";
 	master_tag = "westinteriorsensor";
 	pixel_z = 23
@@ -3672,6 +3672,17 @@
 /obj/machinery/door/firedoor,
 /turf/simulated/floor/tiled/dark,
 /area/mercbase/hall)
+<<<<<<< HEAD
+=======
+"wF" = (
+/obj/machinery/airlock_sensor/airlock_interior{
+	frequency = 1201;
+	id_tag = "westairlock";
+	master_tag = "westinteriorsensor"
+	},
+/turf/simulated/wall/r_wall,
+/area/mercbase/hall)
+>>>>>>> 5b25af34da ([MIRROR] frequencies must be odd (#11209))
 
 (1,1,1) = {"
 mc

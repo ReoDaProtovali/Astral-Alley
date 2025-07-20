@@ -225,8 +225,7 @@
 	name = "Communications APC"
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	icon_state = "0-2"
 	},
 /obj/machinery/light_switch{
 	pixel_x = 28
@@ -246,8 +245,7 @@
 	name = "Bridge APC"
 	},
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	icon_state = "0-2"
 	},
 /obj/machinery/atmospherics/pipe/simple{
 	dir = 2;
@@ -354,7 +352,7 @@
 /area/ship/scrap/comms)
 "aF" = (
 /obj/structure/cable{
-	 icon_state = "2-8"
+	icon_state = "2-8"
 	},
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -391,7 +389,7 @@
 	level = 1
 	},
 /obj/structure/cable{
-	 icon_state = "6-8"
+	icon_state = "6-8"
 	},
 /turf/simulated/floor{
 	 icon_state = "cult";
@@ -486,7 +484,7 @@
 /area/ship/scrap/command/captain)
 "aO" = (
 /obj/structure/cable{
-	 icon_state = "4-9"
+	icon_state = "4-9"
 	},
 /turf/simulated/floor{
 	 icon_state = "cult";
@@ -1331,8 +1329,7 @@
 	name = "Crew Areas APC"
 	},
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	icon_state = "0-4"
 	},
 /turf/simulated/floor{
 	 icon_state = "floorgrime";
@@ -1949,8 +1946,7 @@
 	},
 /obj/structure/cable{
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /turf/simulated/floor,
 /area/ship/scrap/crew)
@@ -2072,8 +2068,7 @@
 "dB" = (
 /obj/structure/cable{
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/power/apc{
 	dir = 4;
@@ -2721,8 +2716,7 @@
 	name = "Washroom APC"
 	},
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	icon_state = "0-4"
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -2792,7 +2786,6 @@
 	dir = 2;
 	level = 2
 	},
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor{
 	 icon_state = "wall_thermite";
@@ -3720,8 +3713,7 @@
 	name = "Maintenance APC"
 	},
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	icon_state = "0-4"
 	},
 /obj/structure/disposalpipe/segment,
 /obj/machinery/computer/engines,
@@ -3749,7 +3741,6 @@
 	},
 /area/ship/scrap/maintenance)
 "gF" = (
-/obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/item/radio/intercom{
 	pixel_y = 32
@@ -3819,8 +3810,7 @@
 /obj/machinery/power/port_gen/pacman/super,
 /obj/structure/cable{
 	icon_state = "0-2";
-	pixel_y = 1;
-	d2 = 2
+	pixel_y = 1
 	},
 /obj/machinery/power/apc{
 	dir = 1;
@@ -3843,8 +3833,7 @@
 "gM" = (
 /obj/structure/closet/crate,
 /obj/structure/cable{
-	icon_state = "0-4";
-	d2 = 4
+	icon_state = "0-4"
 	},
 /obj/item/stack/sheet/mineral/uranium{
 	amount = 50
@@ -3968,7 +3957,7 @@
 /area/ship/scrap/maintenance)
 "gV" = (
 /obj/structure/cable{
-	 icon_state = "1-10"
+	icon_state = "1-10"
 	},
 /obj/structure/cable{
 	icon_state = "1-4"
@@ -4050,7 +4039,7 @@
 /area/ship/scrap/maintenance/power)
 "hb" = (
 /obj/structure/cable{
-	 icon_state = "2-8"
+	icon_state = "2-8"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/power)
@@ -4109,7 +4098,7 @@
 /area/ship/scrap/maintenance)
 "hh" = (
 /obj/structure/cable{
-	 icon_state = "4-10"
+	icon_state = "4-10"
 	},
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -4122,7 +4111,7 @@
 /area/ship/scrap/maintenance)
 "hi" = (
 /obj/structure/cable{
-	 icon_state = "5-8"
+	icon_state = "5-8"
 	},
 /obj/effect/decal/cleanable/dirt,
 /obj/structure/disposalpipe/segment{
@@ -4198,8 +4187,7 @@
 "hp" = (
 /obj/machinery/power/smes,
 /obj/structure/cable{
-	icon_state = "0-2";
-	d2 = 2
+	icon_state = "0-2"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/power)
@@ -4209,7 +4197,7 @@
 /area/ship/scrap/maintenance/atmos)
 "hr" = (
 /obj/structure/cable{
-	 icon_state = "5-6"
+	icon_state = "5-6"
 	},
 /obj/machinery/door/airlock/maintenance_hatch{
 	name = "Hatch";
@@ -4233,7 +4221,7 @@
 /area/ship/scrap/maintenance/engine)
 "hu" = (
 /obj/structure/cable{
-	 icon_state = "4-9"
+	icon_state = "4-9"
 	},
 /turf/simulated/floor/plating,
 /area/ship/scrap/maintenance/engine)
