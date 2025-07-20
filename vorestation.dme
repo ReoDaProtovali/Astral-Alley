@@ -466,6 +466,8 @@
 #include "code\datums\EPv2.dm"
 #include "code\datums\ghost_query.dm"
 #include "code\datums\ghost_query_vr.dm"
+#include "code\datums\ghost_spawn.dm"
+#include "code\datums\ghost_spawn_options.dm"
 #include "code\datums\hierarchy.dm"
 #include "code\datums\json_savefile.dm"
 #include "code\datums\mind.dm"
@@ -2054,6 +2056,7 @@
 #include "code\modules\admin\verbs\resize.dm"
 #include "code\modules\admin\verbs\smite.dm"
 #include "code\modules\admin\verbs\striketeam.dm"
+#include "code\modules\admin\verbs\tgui_verbs.dm"
 #include "code\modules\admin\verbs\tripAI.dm"
 #include "code\modules\admin\verbs\SDQL2\SDQL_2.dm"
 #include "code\modules\admin\verbs\SDQL2\SDQL_2_parser.dm"
@@ -4606,6 +4609,13 @@
 #include "code\modules\vore\eating\silicon_vr.dm"
 #include "code\modules\vore\eating\simple_animal_vr.dm"
 #include "code\modules\vore\eating\slipvore_vr.dm"
+<<<<<<< HEAD
+=======
+#include "code\modules\vore\eating\soulcatcher.dm"
+#include "code\modules\vore\eating\soulcatcher_import.dm"
+#include "code\modules\vore\eating\soulcatcher_mob.dm"
+#include "code\modules\vore\eating\special_bellies.dm"
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))
 #include "code\modules\vore\eating\stumblevore_vr.dm"
 #include "code\modules\vore\eating\transforming_vr.dm"
 #include "code\modules\vore\eating\vertical_nom_vr.dm"
@@ -4857,8 +4867,11 @@
 #include "modular_chomp\code\game\turfs\simulated\outdoors\valley.dm"
 #include "modular_chomp\code\modules\admin\functions\modify_traits.dm"
 #include "modular_chomp\code\modules\admin\verbs\debug.dm"
+<<<<<<< HEAD
 #include "modular_chomp\code\modules\admin\verbs\randomverbs.dm"
 #include "modular_chomp\code\modules\admin\verbs\tgui_verbs.dm"
+=======
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))
 #include "modular_chomp\code\modules\artifice\deadringer.dm"
 #include "modular_chomp\code\modules\asset_cache\belly_assets.dm"
 #include "modular_chomp\code\modules\awaymissions\tank.dm"

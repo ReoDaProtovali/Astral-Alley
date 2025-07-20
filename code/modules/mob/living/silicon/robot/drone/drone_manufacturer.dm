@@ -34,8 +34,19 @@
 	fabricator_tag = "Upper Level Mining"
 	drone_type = /mob/living/silicon/robot/drone/mining
 
+<<<<<<< HEAD
 /obj/machinery/drone_fabricator/New()
 	..()
+=======
+/obj/machinery/drone_fabricator/Initialize(mapload)
+	. = ..()
+	GLOB.all_drone_fabricators += src
+
+
+/obj/machinery/drone_fabricator/Destroy()
+	GLOB.all_drone_fabricators -= src
+	. = ..()
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))
 
 /obj/machinery/drone_fabricator/power_change()
 	..()
@@ -91,6 +102,7 @@
 		new_drone.transfer_personality(player)
 
 	return new_drone
+<<<<<<< HEAD
 
 /mob/observer/dead/verb/join_as_drone()
 
@@ -158,3 +170,5 @@
 	if(choice)
 		var/obj/machinery/drone_fabricator/chosen_fabricator = all_fabricators[choice]
 		chosen_fabricator.create_drone(src.client)
+=======
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))

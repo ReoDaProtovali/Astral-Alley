@@ -28,8 +28,6 @@ export const SpriteSection = (props: {
     <Section
       title={title}
       fill
-      scrollable
-      width="30%"
       buttons={
         <>
           <Button.Checkbox
@@ -53,6 +51,7 @@ export const SpriteSection = (props: {
         </>
       }
     >
+<<<<<<< HEAD
       <Stack.Item mb={'10px'}>
         <Input
           fluid
@@ -75,6 +74,35 @@ export const SpriteSection = (props: {
             ))}
         </Stack>
       </Stack.Item>
+=======
+      <Stack vertical fill>
+        <Stack.Item>
+          <Input
+            fluid
+            value={searchText}
+            placeholder="Search for sprites..."
+            onChange={(value: string) => setSearchText(value)}
+          />
+        </Stack.Item>
+        <Stack.Divider />
+        <Stack.Item grow>
+          <Section fill scrollable>
+            <Stack vertical fill>
+              {!!filtered &&
+                filtered.map((filter) => (
+                  <SelectorElement
+                    key={filter.sprite}
+                    option={filter.sprite}
+                    action="pick_icon"
+                    selected={selected}
+                    belly={filter.belly}
+                  />
+                ))}
+            </Stack>
+          </Section>
+        </Stack.Item>
+      </Stack>
+>>>>>>> 47c7add324 ([MIRROR] simple ghost pod find (#11205))
     </Section>
   );
 };
