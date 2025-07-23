@@ -7,9 +7,15 @@
 var/global/list/emotes_by_key
 
 /proc/get_emote_by_key(var/key)
+<<<<<<< HEAD
 	if(!global.emotes_by_key)
 		decls_repository.get_decls_of_type(/decl/emote) // emotes_by_key will be updated in emote Initialize()
 	return global.emotes_by_key[key]
+=======
+	if(!LAZYLEN(GLOB.emotes_by_key))
+		decls_repository.get_decls_of_type(/decl/emote) // GLOB.emotes_by_key will be updated in emote Initialize()
+	return GLOB.emotes_by_key[key]
+>>>>>>> e0d56115c4 ([MIRROR] Fixes emotes not initializing on start (#11220))
 
 /decl/emote
 	var/key                                             // Command to use emote ie. '*[key]'
