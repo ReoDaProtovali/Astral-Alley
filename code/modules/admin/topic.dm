@@ -48,6 +48,7 @@
 
 	// mentor_commands(href, href_list, src) // CHOMPedit - Skip this because client is already admin & contents already handled of code above
 
+<<<<<<< HEAD
 	if(href_list["dbsearchckey"] || href_list["dbsearchadmin"])
 
 		var/adminckey = href_list["dbsearchadmin"]
@@ -128,6 +129,22 @@
 		DB_ban_record(bantype, playermob, banduration, banreason, banjob, null, banckey, banip, bancid )
 		if((bantype == BANTYPE_PERMA || bantype == BANTYPE_TEMP) && playermob.client)
 			qdel(playermob.client)
+=======
+	else if(href_list["editrightsbrowser"])
+		edit_admin_permissions(0)
+
+	else if(href_list["editrightsbrowserlog"])
+		edit_admin_permissions(1, href_list["editrightstarget"], href_list["editrightsoperation"], href_list["editrightspage"])
+
+	if(href_list["editrightsbrowsermanage"])
+		if(href_list["editrightschange"])
+			change_admin_rank(ckey(href_list["editrightschange"]), href_list["editrightschange"], TRUE)
+		else if(href_list["editrightsremove"])
+			remove_admin(ckey(href_list["editrightsremove"]), href_list["editrightsremove"], TRUE)
+		else if(href_list["editrightsremoverank"])
+			remove_rank(href_list["editrightsremoverank"])
+		edit_admin_permissions(2)
+>>>>>>> 2e85d4421a ([MIRROR] ban panel as tgui (#11222))
 
 	else if(href_list["editrights"])
 		if(!check_rights(R_PERMISSIONS))
@@ -846,7 +863,7 @@
 		if(joblist.len) //at least 1 banned job exists in joblist so we have stuff to unban.
 			if(!CONFIG_GET(flag/ban_legacy_system))
 				to_chat(usr, span_filter_adminlog("Unfortunately, database based unbanning cannot be done through this panel"))
-				DB_ban_panel(M.ckey)
+				DB_ban_panel(usr.client, M.ckey)
 				return
 			var/msg
 			for(var/job in joblist)

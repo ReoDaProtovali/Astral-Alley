@@ -1979,6 +1979,7 @@
 #include "code\modules\admin\topic.dm"
 #include "code\modules\admin\ToRban.dm"
 #include "code\modules\admin\callproc\callproc.dm"
+#include "code\modules\admin\DB ban\ban_panle_ui.dm"
 #include "code\modules\admin\DB ban\functions.dm"
 #include "code\modules\admin\permissionverbs\permissionedit.dm"
 #include "code\modules\admin\secrets\admin_secrets\admin_logs.dm"
