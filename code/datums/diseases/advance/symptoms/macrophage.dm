@@ -23,6 +23,11 @@ BONUS
 	transmittable = 2
 	level = 6
 	severity = 2
+<<<<<<< HEAD
+=======
+	symptom_delay_min = 40 SECONDS
+	symptom_delay_max = 60 SECONDS
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 
 	var/gigagerms = FALSE
 	var/netspeed = 0
@@ -53,11 +58,29 @@ BONUS
 
 /datum/symptom/macrophage/proc/Burst(datum/disease/advance/A, var/mob/living/M, var/gigagerms = FALSE)
 	var/mob/living/simple_mob/vore/aggressive/macrophage/phage
+<<<<<<< HEAD
 	phage = new(M.loc)
 	M.apply_damage(rand(1, 7))
 	phage.viruses = A.Copy()
 	phage.health += A.totalResistance()
 	phage.maxHealth += A.totalResistance()
+=======
+
+	if(gigagerms)
+		phage = new /mob/living/simple_mob/vore/aggressive/macrophage/giant(get_turf((M.loc)))
+		phage.melee_damage_lower = rand(5, 10)
+		phage.melee_damage_upper = rand(10, 15)
+		M.apply_damage(rand(10, 20))
+		M.emote("scream")
+	else
+		phage = new(get_turf((M.loc)))
+		M.apply_damage(rand(1, 5))
+
+	playsound(M, 'sound/effects/splat.ogg', 50, 1)
+
+	phage.health += A.resistance
+	phage.maxHealth += A.resistance
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 	phage.infections += A
 	phage.base_disease = A
 

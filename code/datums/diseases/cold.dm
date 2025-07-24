@@ -4,8 +4,13 @@
 	spread_text = "Airborne"
 	spread_flags = AIRBORNE
 	cure_text = "Rest & " + REAGENT_SPACEACILLIN
+<<<<<<< HEAD
 	cures = list(REAGENT_ID_SPACEACILLIN, REAGENT_ID_CHICKENSOUP)
 	needs_all_cures = FALSE
+=======
+	cures = list(REAGENT_ID_SPACEACILLIN, REAGENT_ID_CHICKENSOUP, REAGENT_ID_CHICKENNOODLESOUP)
+	virus_modifiers = NONE //Does NOT have needs_all_cures
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 	agent = "XY-rhinovirus"
 	viable_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/human/monkey)
 	permeability_mod = 0.5
