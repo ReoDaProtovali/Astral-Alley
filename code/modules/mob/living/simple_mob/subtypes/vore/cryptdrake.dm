@@ -68,9 +68,13 @@
 	add_verb(src, /mob/living/proc/toggle_rider_reins)
 	movement_cooldown = -1
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/cryptdrake/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/cryptdrake/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

@@ -50,9 +50,13 @@
 	wander = TRUE
 	base_wander_delay = 4
 
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/passive/fox/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/animal/passive/fox/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "Stomach"
@@ -198,9 +202,13 @@
 	ai_holder_type = /datum/ai_holder/simple_mob/passive
 	makes_dirt = FALSE	// No more dirt
 
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/passive/fox/renault/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/animal/passive/fox/renault/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "Stomach"

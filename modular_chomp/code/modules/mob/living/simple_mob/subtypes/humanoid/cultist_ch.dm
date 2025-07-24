@@ -126,10 +126,15 @@
 /mob/living/simple_mob/humanoid/cultist/human/bloodjaunt/fireball/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/cultist/human/bloodjaunt/fireball/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/cultist/human/bloodjaunt/fireball/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = " Through fire and smoke, you have been grappled and shoved head first into a gapping maw. Rippling powerful red flesh dragging deep into the mage's gullet, your frame causing their stomach is swell out against crimson robes. As you're forced to curl up in the stomach, the walls would ripple, flickers of orange dancing as they press and knead against your flesh. Laughter, and gutteral stomach noises would fill your ears as the cultist firmly kneads their hanging gutt, sloshing it  further about."
@@ -166,10 +171,15 @@
 /mob/living/simple_mob/humanoid/cultist/noodle/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/cultist/noodle/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/cultist/noodle/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = " Through fire and smoke, you have been grappled and shoved head first into a gapping maw. Rippling powerful red flesh dragging deep into the mage's gullet, your frame causing their stomach is swell out against crimson robes. As you're forced to curl up in the stomach, the walls would ripple, and knead against your flesh. Laughter, and gutteral stomach noises would fill your ears as the cultist firmly kneads their hanging gut, sloshing it  further about before shoving you deeper into their system, descending deep within the serpent."
@@ -207,10 +217,15 @@
 /mob/living/simple_mob/humanoid/cultist/tesh/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/cultist/tesh/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/cultist/tesh/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "Taking advantage of your weakened state, the %pred makes their pounce! The world going dark as the ravenous Teshari forces your battered frame down their throat. It all coming to a stop as you're packed neatly into their steaming guts. Low and content chuckling barely audible over the rising cacophony of the stomach's activity."
@@ -247,10 +262,15 @@
 /mob/living/simple_mob/humanoid/cultist/castertesh/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/cultist/castertesh/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/cultist/castertesh/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "Not too long after you hit the ground the caster makes their way to your fallen self.  The ground below you glows a deep red and you sink through the surface, only to find yourself folded tightly in a cramped, slick, and caustic chamber! The mage's chanting barely audible over the sounds of the stomach walls making their claim."

@@ -70,9 +70,13 @@
 	vore_standing_too = TRUE
 	unacidable = TRUE
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/vore_hostile/abyss_lurker/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/vore_hostile/abyss_lurker/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "interior"
@@ -190,9 +194,13 @@
 	var/leap_warmup = 1 SECOND // How long the leap telegraphing is.
 	var/leap_sound = 'sound/weapons/spiderlunge.ogg'
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/vore_hostile/leaper/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/vore_hostile/leaper/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
@@ -308,9 +316,13 @@
 	vore_standing_too = TRUE
 	unacidable = TRUE
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/vore_hostile/gelatinous_cube/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/vore_hostile/gelatinous_cube/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "interior"

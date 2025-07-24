@@ -216,7 +216,6 @@
 #include "code\_helpers\files.dm"
 #include "code\_helpers\game.dm"
 #include "code\_helpers\global_lists.dm"
-#include "code\_helpers\global_lists_ch.dm"
 #include "code\_helpers\global_lists_vr.dm"
 #include "code\_helpers\icons.dm"
 #include "code\_helpers\icons_procs.dm"

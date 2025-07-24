@@ -68,9 +68,13 @@
 	base_wander_delay = 8
 	belly_attack = FALSE
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/wolftaur/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/wolftaur/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

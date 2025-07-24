@@ -242,9 +242,13 @@
 	vore_absorb_chance = 0
 
 // Override stuff for holodeck carp to make them not digest when set to safe!
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/space/carp/holographic/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/animal/space/carp/holographic/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/safe = (faction == FACTION_NEUTRAL)
 	for(var/obj/belly/B as anything in vore_organs)

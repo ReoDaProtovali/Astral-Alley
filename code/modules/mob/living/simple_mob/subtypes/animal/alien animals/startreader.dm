@@ -93,9 +93,13 @@
 	emote_hear = list("thrumms","clicks","rattles","groans","burbles")
 
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/alienanimals/startreader/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/alienanimals/startreader/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "gastric sac"

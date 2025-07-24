@@ -67,9 +67,13 @@
 	vore_default_mode = DM_HOLD
 	vore_icons = SA_ICON_LIVING
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/fennec/init_vore() // CHOMPEdit - Allow for customizing bellies on vorecritters
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/fennec/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 
 	var/obj/belly/B = vore_selected
@@ -147,9 +151,13 @@
 	. = ..()
 	add_overlay(bigshadow)
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/fennec/huge/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/fennec/huge/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "Stomach"

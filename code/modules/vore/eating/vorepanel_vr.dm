@@ -32,7 +32,7 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 		return
 
 	if(!isliving(src))
-		init_vore()
+		init_vore(TRUE)
 
 	if(!vorePanel)
 		if(!isnewplayer(src))

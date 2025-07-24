@@ -29,10 +29,14 @@
 				. += "It appears to be in stand-by mode." //afk
 		if(UNCONSCIOUS)		. += span_warning("It doesn't seem to be responding.")
 		if(DEAD)			. += span_deadsay("It looks completely unsalvageable.")
+<<<<<<< HEAD
 	. += attempt_vr(src,"examine_reagent_bellies",args) //CHOMP reagent bellies
+=======
+	. += examine_reagent_bellies() // reagent bellies
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 
 	// VOREStation Edit: Start
-	. += attempt_vr(src,"examine_bellies_borg",args) //VOREStation Edit
+	. += examine_bellies_borg()//VOREStation Edit
 	// VOREStation Edit: End
 
 	. += ""

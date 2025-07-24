@@ -94,9 +94,13 @@
 	vore_default_item_mode = IM_DIGEST
 
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/woof/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/woof/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

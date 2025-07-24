@@ -61,10 +61,15 @@ GLOBAL_VAR_INIT(queen_amount, 0) //We only gonna want 1 queen in the world.
 	vore_pounce_chance = 25
 	vore_icons = SA_ICON_LIVING
 
+<<<<<<< HEAD:code/modules/mob/living/simple_mob/subtypes/metroid/metTypes.dm
 /mob/living/simple_mob/metroid/mine/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/metroid/mine/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236)):modular_chomp/code/modules/mob/living/simple_mob/subtypes/metroid/metTypes.dm
 	var/obj/belly/B = vore_selected
 	B.digest_burn = 0.5
 	B.digest_brute = 0

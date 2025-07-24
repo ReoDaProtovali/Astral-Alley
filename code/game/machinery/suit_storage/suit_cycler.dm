@@ -536,8 +536,13 @@ GLOBAL_LIST_EMPTY(suit_cycler_typecache)
 	if(target_department.can_refit_suit(suit))
 		target_department.do_refit_suit(suit)
 	// Attached voidsuit helmet to new paint
+<<<<<<< HEAD
 	if(target_department.can_refit_helmet(suit?.helmet))
 		target_department.do_refit_helmet(suit.helmet)
+=======
+	if(target_department.can_refit_helmet(suit?.hood))
+		target_department.do_refit_helmet(suit?.hood)
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 
 	// Species fitting for all 3 potential changes
 	if(target_species.can_refit_to(helmet, suit, suit?.helmet))

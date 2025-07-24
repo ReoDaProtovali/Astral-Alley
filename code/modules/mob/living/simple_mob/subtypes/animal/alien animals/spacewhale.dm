@@ -52,9 +52,13 @@
 /datum/say_list/spacewhale
 	emote_see = list("ripples and flows", "flashes rhythmically","glows faintly","investigates something")
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/overmap/spacewhale/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/overmap/spacewhale/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

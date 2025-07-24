@@ -81,9 +81,13 @@
 	. = ..()
 	src.adjust_nutrition(src.max_nutrition)
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/leopardmander/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/leopardmander/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
@@ -150,9 +154,13 @@
 	..()
 	add_verb(src, /mob/living/simple_mob/vore/leopardmander/exotic/proc/toggle_glow)
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/leopardmander/exotic/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/leopardmander/exotic/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

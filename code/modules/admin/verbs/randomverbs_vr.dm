@@ -65,6 +65,13 @@
 		new_mob.copy_from_prefs_vr()
 		if(LAZYLEN(new_mob.vore_organs))
 			new_mob.vore_selected = new_mob.vore_organs[1]
+<<<<<<< HEAD
+=======
+			if(isanimal(new_mob))
+				var/mob/living/simple_mob/Sm = new_mob
+				if(!Sm.voremob_loaded || !Sm.vore_active)
+					Sm.init_vore(TRUE)
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 
 	log_admin("[key_name_admin(src)] has spawned [new_mob.key] as mob [new_mob.type].")
 	message_admins("[key_name_admin(src)] has spawned [new_mob.key] as mob [new_mob.type].", 1)
