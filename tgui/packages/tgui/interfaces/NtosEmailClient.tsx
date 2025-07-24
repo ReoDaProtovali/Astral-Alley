@@ -1,4 +1,3 @@
-/* eslint react/no-danger: "off" */
 import { useBackend } from 'tgui/backend';
 import { NtosWindow } from 'tgui/layouts';
 import {
@@ -310,9 +309,8 @@ export const NtosEmailClientViewMessage = (props: {
           ''}
         <LabeledList.Item label="Message" verticalAlign="top">
           <Section>
-            {/* This dangerouslySetInnerHTML is only ever passed data that has passed through pencode2html
-             * It should be safe enough to support pencode in this way.
-             */}
+            {/** biome-ignore lint/security/noDangerouslySetInnerHtml: is only ever passed data that has passed through pencode2html
+             * It should be safe enough to support pencode in this way. */}
             <div dangerouslySetInnerHTML={{ __html: cur_body! }} />
           </Section>
         </LabeledList.Item>
@@ -432,6 +430,8 @@ const NtosEmailClientNewMessage = (props) => {
           <Stack>
             <Stack.Item grow>
               <Section width="99%" inline>
+                {/** biome-ignore lint/security/noDangerouslySetInnerHtml: is only ever passed data that has passed through pencode2html
+                 * It should be safe enough to support pencode in this way. */}
                 <div dangerouslySetInnerHTML={{ __html: msg_body! }} />
               </Section>
             </Stack.Item>

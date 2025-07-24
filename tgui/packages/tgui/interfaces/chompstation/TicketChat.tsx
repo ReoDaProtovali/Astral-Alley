@@ -1,5 +1,9 @@
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/TicketChat.tsx
 /* eslint react/no-danger: "off" */
 import { RefObject, useEffect, useRef, useState } from 'react';
+=======
+import { type RefObject, useEffect, useRef, useState } from 'react';
+>>>>>>> 457fff752f ([MIRROR] dangerously set html change (#11231)):tgui/packages/tgui/interfaces/TicketChat.tsx
 import { useBackend } from 'tgui/backend';
 import { Window } from 'tgui/layouts';
 import {
@@ -98,6 +102,7 @@ export const TicketChat = (props) => {
                     .map((L, i) => (
                       <div
                         key={i}
+                        // biome-ignore lint/security/noDangerouslySetInnerHtml: Ticket Chat
                         dangerouslySetInnerHTML={{ __html: log[L] }}
                       />
                     ))}
