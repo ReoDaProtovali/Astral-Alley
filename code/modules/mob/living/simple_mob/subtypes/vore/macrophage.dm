@@ -43,6 +43,7 @@
 
 	vore_active = TRUE
 	vore_capacity = 1
+	vore_pounce_chance = 45
 
 	can_be_drop_prey = FALSE
 	allow_mind_transfer = TRUE
@@ -79,6 +80,7 @@
 	else
 		death()
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/aggressive/macrophage/green
 	icon_state = "macrophage-2"
 
@@ -96,16 +98,61 @@
 			ai_holder.lose_target()
 		victim.ContractDisease(base_disease)
 
+=======
+/mob/living/simple_mob/vore/aggressive/macrophage/apply_melee_effects(atom/A)
+	if(ishuman(A) && prob(25))
+		var/mob/living/carbon/human/H = A
+		H.ContractDisease(base_disease)
+/*
+/mob/living/simple_mob/vore/aggressive/macrophage/do_special_attack(var/atom/A)
+	. = TRUE
+	set_AI_busy(TRUE)
+	do_windup_animation(A, 20)
+	addtimer(CALLBACK(src, PROC_REF(charge), A), 20, TIMER_STOPPABLE)
+
+/mob/living/simple_mob/vore/aggressive/macrophage/proc/charge(var/atom/A)
+	if(QDELETED(A) || !isturf(get_turf(A)))
+		set_AI_busy(FALSE)
+		return
+	status_flags |= LEAPING
+	flying = TRUE
+	hovering = TRUE
+	visible_message(span_warning("The [src] lunges at \the [A]!"))
+	throw_at(A, 7, 2)
+	if(status_flags & LEAPING)
+		status_flags &= ~LEAPING
+	flying = FALSE
+	hovering = FALSE
+
+	var/mob/living/target = null
+	if(Adjacent(A))
+		target = A
+
+	if(ishuman(target))
+		var/mob/living/carbon/human/H = target
+		H.ContractDisease(base_disease)
+	set_AI_busy(FALSE)
+*/
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 /mob/living/simple_mob/vore/aggressive/macrophage/death()
 	..()
-	visible_message(span_warning("\The [src] shrivels up and dies, unable to survive!"))
 	if(isbelly(loc))
 		var/obj/belly/belly = loc
 		if(belly)
 			var/mob/living/pred = belly.owner
 			pred.ForceContractDisease(base_disease)
 	else
+<<<<<<< HEAD
 		var/obj/effect/decal/cleanable/mucus/sick = new(loc)
+=======
+		visible_message(span_warning("\The [src] shrivels up and dies, unable to survive!"))
+		var/obj/effect/decal/cleanable/blood/sick = new(loc)
+		sick.name = "plasma"
+		sick.basecolor = "#47cbcf"
+		sick.update_icon()
+		sick.pixel_x = rand(-24, 24)
+		sick.pixel_y = rand(-24, 24)
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 		sick.viruses += base_disease
 	qdel(src)
 

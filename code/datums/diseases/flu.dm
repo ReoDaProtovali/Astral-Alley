@@ -3,8 +3,13 @@
 	max_stages = 3
 	spread_text = "Airborne"
 	cure_text = REAGENT_SPACEACILLIN
+<<<<<<< HEAD
 	cures = list(REAGENT_ID_SPACEACILLIN, REAGENT_ID_CHICKENSOUP)
 	needs_all_cures = FALSE
+=======
+	cures = list(REAGENT_ID_SPACEACILLIN, REAGENT_ID_CHICKENSOUP, REAGENT_ID_CHICKENNOODLESOUP)
+	virus_modifiers = NONE //Does NOT have needs_all_cures
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 	cure_chance = 10
 	agent = "H13N1 flu virion"
 	viable_mobtypes = list(/mob/living/carbon/human, /mob/living/carbon/human/monkey)

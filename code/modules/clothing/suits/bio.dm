@@ -39,7 +39,10 @@
 /obj/item/clothing/suit/bio_suit/general
 	icon_state = "bio_general"
 	item_state_slots = list(slot_r_hand_str = "bio", slot_l_hand_str = "bio")
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+=======
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER
 
 //Virology biosuit, green stripe
@@ -48,7 +51,10 @@
 
 /obj/item/clothing/suit/bio_suit/virology
 	icon_state = "bio_virology"
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+=======
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER
 
 //Security biosuit, grey with red stripe across the chest
@@ -57,7 +63,10 @@
 
 /obj/item/clothing/suit/bio_suit/security
 	icon_state = "bio_security"
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+=======
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER
 
 //Janitor's biosuit, grey with purple arms
@@ -66,7 +75,10 @@
 
 /obj/item/clothing/suit/bio_suit/janitor
 	icon_state = "bio_janitor"
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+=======
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER
 
 //Scientist's biosuit, white with a pink-ish hue
@@ -75,13 +87,19 @@
 
 /obj/item/clothing/suit/bio_suit/scientist
 	icon_state = "bio_scientist"
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+=======
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER
 
 //CMO's biosuit, blue stripe
 /obj/item/clothing/suit/bio_suit/cmo
 	icon_state = "bio_cmo"
+<<<<<<< HEAD
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|ARMS
+=======
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
 	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER
 
 /obj/item/clothing/head/bio_hood/cmo

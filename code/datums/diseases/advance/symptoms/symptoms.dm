@@ -39,3 +39,22 @@ GLOBAL_LIST_INIT(list_symptoms, subtypesof(/datum/symptom))
 // Called when the host dies
 /datum/symptom/proc/OnDeath(datum/disease/advance/A)
 	return
+<<<<<<< HEAD
+=======
+
+/datum/symptom/proc/OnRemove(datum/disease/advance/A)
+	return
+
+/datum/symptom/proc/get_symptom_data()
+	var/list/data = list()
+	data["name"] = name
+	data["desc"] = desc
+	data["stealth"] = stealth
+	data["resistance"] = resistance
+	data["stage_speed"] = stage_speed
+	data["transmission"] = transmission
+	data["neutered"] = neutered
+	data["level"] = level
+	data["threshold_desc"] = threshold_descs
+	return data
+>>>>>>> 2916489860 ([MIRROR] Miscellaneous Virology Update (#11230))
