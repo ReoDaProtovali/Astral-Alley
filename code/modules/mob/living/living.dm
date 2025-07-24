@@ -943,6 +943,7 @@
 	if(!check_has_mouth())
 		return
 
+<<<<<<< HEAD
 	if(!lastpuke)
 		lastpuke = 1
 		if(isSynthetic())
@@ -952,6 +953,42 @@
 			if (nutrition <= 100)
 				to_chat(src, span_danger("You gag as you want to throw up, but there's nothing in your stomach!"))
 				src.Weaken(10)
+=======
+	if(ishuman(src))
+		var/mob/living/carbon/human/H = src
+		if(CE_ANTACID in H.chem_effects)
+			if(prob(min(90, H.chem_effects[CE_ANTACID] * 15)))
+				VARSET_IN(src, lastpuke, FALSE, rand(30 SECONDS, 2 MINUTES))
+			return FALSE
+
+	if(nutrition < 100 && !blood)
+		if(message)
+			visible_message(span_warning("[src] dry heaves!"), span_userdanger("You try to throw up, but there's nothing in your stomach!"))
+
+		if(stun)
+			Stun(stun)
+		return TRUE
+
+	var/obj/vomit_goal = get_active_hand()
+
+	if(!istype(vomit_goal, /obj/item/reagent_containers/glass/bucket))
+		vomit_goal = check_vomit_goal()
+
+	if(iscarbon(src) && is_mouth_covered())
+		if(message)
+			visible_message(span_danger("[src] throws up all over themself!"), span_userdanger("You throw up all over yourself!"))
+		distance = 0
+	else if(vomit_goal)
+		if(message)
+			visible_message(span_danger("[src] throws up into the [vomit_goal]!"), span_userdanger("You throw up into the [vomit_goal]!"))
+		if(istype(vomit_goal, /obj/item/reagent_containers/glass/bucket))
+			var/obj/item/organ/internal/stomach/S = organs_by_name[O_STOMACH]
+			var/obj/item/reagent_containers/glass/bucket/puke_bucket = vomit_goal
+			if(S && S.acidtype)
+				puke_bucket.reagents.add_reagent(S.acidtype, rand(3, 6))
+			else if(blood)
+				puke_bucket.reagents.add_reagent(REAGENT_BLOOD, rand(3, 6))
+>>>>>>> ce76e5db58 ([MIRROR] Makes Calcium Carbonate work again (#11233))
 			else
 				to_chat(src, span_warning("You feel nauseous..."))
 
