@@ -51,6 +51,11 @@ export type internalOrgan = {
   robotic: BooleanLike;
   dead: BooleanLike;
   inflamed: BooleanLike;
+<<<<<<< HEAD
+=======
+  missing: BooleanLike;
+  medical_issues_I: string[];
+>>>>>>> 1a1824e48a ([MIRROR] GM Tool - Create Medical Issue (#11237))
 };
 
 export type externalOrgan = {
@@ -75,4 +80,5 @@ export type externalOrgan = {
   };
   lungRuptured: BooleanLike;
   internalBleeding: BooleanLike;
+  medical_issues_E: string[];
 };
