@@ -47,10 +47,23 @@
 /obj/machinery/containment_field/ex_act(severity)
 	return 0
 
+<<<<<<< HEAD
 /obj/machinery/containment_field/Crossed(mob/living/L)
 	if(!istype(L) || L.incorporeal_move)
+=======
+/obj/machinery/containment_field/Crossed(atom/A)
+	if(!istype(A) || A.is_incorporeal())
+>>>>>>> 83447c8811 ([MIRROR] Containment field exploit fix (#11228))
 		return
-	shock(L)
+	if(isliving(A))
+		var/mob/living/L = A
+		shock(L)
+		return
+	if(A.density)
+		if(istype(A,/obj/machinery/containment_field) || istype(A,/obj/effect) || istype(A,/obj/singularity))
+			return
+		else
+			Destroy()
 
 // CHOMPEdit Start
 /obj/machinery/containment_field/HasProximity(turf/T, datum/weakref/WF, old_loc)
