@@ -46,6 +46,7 @@ var/list/organ_cache = list()
 
 	var/butcherable = TRUE
 	var/meat_type	// What does butchering, if possible, make?
+	var/list/medical_issues = list()
 
 /obj/item/organ/Destroy()
 
@@ -193,6 +194,9 @@ var/list/organ_cache = list()
 		handle_antibiotics()
 		handle_rejection()
 		handle_germ_effects()
+
+	for(var/datum/medical_issue/I in medical_issues)
+		I.handle_effects()
 
 /obj/item/organ/examine(mob/user)
 	. = ..()
