@@ -18,10 +18,15 @@
 /mob/living/simple_mob/humanoid/starhunter/hunter/druid/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/starhunter/hunter/druid/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/starhunter/hunter/druid/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "The fearsome preadtor gets a firm grip upon you, before dunking you into it's maw, then with a powerful swift gulp you're sent tumbling into it's stomach.."
@@ -56,10 +61,15 @@
 /mob/living/simple_mob/humanoid/starhunter/hunter/champion/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/starhunter/hunter/champion/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/starhunter/hunter/champion/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "The fearsome preadtor gets a firm grip upon you, before dunking you into it's maw, then with a powerful swift gulp you're sent tumbling into it's stomach.."
@@ -95,10 +105,15 @@
 /mob/living/simple_mob/humanoid/starhunter/hunter/avatar/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/starhunter/hunter/avatar/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/starhunter/hunter/avatar/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "The fearsome preadtor gets a firm grip upon you, before dunking you into it's maw, then with a powerful swift gulp you're sent tumbling into it's stomach.."

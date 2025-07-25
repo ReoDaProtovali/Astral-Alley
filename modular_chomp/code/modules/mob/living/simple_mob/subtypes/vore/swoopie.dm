@@ -84,11 +84,7 @@
 		return
 	. = ..() //if not vaccable, just do what it normally does
 
-/mob/living/simple_mob/vore/aggressive/corrupthound/swoopie/init_vore()
-	if(!voremob_loaded)
-		return
-	if(LAZYLEN(vore_organs))
-		return TRUE
+/mob/living/simple_mob/vore/aggressive/corrupthound/swoopie/load_default_bellies()
 	add_verb(src,/mob/living/proc/eat_trash) //CHOMPEdit TGPanel
 	add_verb(src,/mob/living/proc/toggle_trash_catching) //CHOMPEdit TGPanel
 	add_verb(src,/mob/living/proc/restrict_trasheater) //CHOMPEdit TGPanel
@@ -164,9 +160,12 @@
 	B.vore_sound = "Stomach Move"
 	B.sound_volume = 20
 
+<<<<<<< HEAD
 	if(!soulgem)
 		soulgem = new(src)
 
+=======
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 /obj/belly/longneck
 	affects_vore_sprites = TRUE
 	belly_sprite_to_affect = "neck1"

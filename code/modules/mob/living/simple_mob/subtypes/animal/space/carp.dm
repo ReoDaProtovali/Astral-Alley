@@ -146,9 +146,13 @@
 	knockdown_chance = 50
 	ai_holder_type = /datum/ai_holder/simple_mob/vore
 
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/space/carp/large/huge/vorny/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/animal/space/carp/large/huge/vorny/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

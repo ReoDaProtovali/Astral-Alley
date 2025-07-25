@@ -108,10 +108,14 @@
 	if(src == M) //Don't eat YOURSELF dork
 		//ai_log("vr/won't eat [M] because it's me!", 3) //VORESTATION AI TEMPORARY REMOVAL
 		return 0
+<<<<<<< HEAD
 	//CHOMPSTATION add
 	if(!M.devourable)	//Why was there never a check for edibility to begin with
 		return 0
 	if(M.is_incorporeal()) // CHOMPADD - No eating the phased ones
+=======
+	if(M.is_incorporeal()) // No eating the phased ones
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 		return 0
 	//CHOMPSTATION add end
 	if(vore_ignores_undigestable && !M.digestable) //Don't eat people with nogurgle prefs
@@ -213,7 +217,10 @@
 	. = ..()
 
 // Make sure you don't call ..() on this one, otherwise you duplicate work.
-/mob/living/simple_mob/init_vore()
+/mob/living/simple_mob/init_vore(force)
+	if(force)
+		vore_active = TRUE
+		voremob_loaded = TRUE
 	if(!vore_active || no_vore || !voremob_loaded)
 		return
 
@@ -237,7 +244,20 @@
 	add_verb(src, /mob/living/simple_mob/proc/toggle_digestion)
 	add_verb(src, /mob/living/simple_mob/proc/toggle_fancygurgle)
 	add_verb(src, /mob/living/proc/vertical_nom)
+	add_verb(src, /mob/living/simple_mob/proc/animal_nom)
+	add_verb(src, /mob/living/proc/shred_limb)
+	add_verb(src, /mob/living/simple_mob/proc/nutrition_heal)
 
+<<<<<<< HEAD
+=======
+	if(LAZYLEN(vore_organs))
+		return
+
+	can_be_drop_pred = TRUE // Mobs will eat anyone that decides to drop/slip into them by default.
+	load_default_bellies()
+
+/mob/living/simple_mob/proc/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	//A much more detailed version of the default /living implementation
 	var/obj/belly/B = new /obj/belly(src)
 	vore_selected = B

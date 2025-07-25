@@ -76,10 +76,15 @@ GLOBAL_LIST_INIT(pitcher_plant_lure_messages, list(
 	vore_ignores_undigestable = 0
 	vore_default_mode = DM_DIGEST
 
+<<<<<<< HEAD:code/modules/mob/living/simple_mob/subtypes/vore/plants_ch/pitcher.dm
 /mob/living/simple_mob/vore/pitcher_plant/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/vore/pitcher_plant/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236)):modular_chomp/code/modules/mob/living/simple_mob/subtypes/vore/plants/pitcher.dm
 	var/obj/belly/B = vore_selected
 	B.desc	= "You leaned a little too close to the pitcher plant, stumbling over the lip and splashing into a puddle of liquid filling the bottom of the cramped pitcher. You squirm madly, righting yourself and scrabbling at the walls in vain as the slick surface offers no purchase. The dim light grows dark as the pitcher's cap lowers, silently sealing the exit. With a sinking feeling you realize you won't be able to push the exit open even if you could somehow climb that high, leaving you helplessly trapped in the slick, tingling fluid. ((You can't escape this mob without help but you may use OOC Escape if you wish.))"
 	B.digest_burn = 0.5

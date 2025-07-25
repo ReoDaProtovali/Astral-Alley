@@ -34,12 +34,16 @@
 	catalogue_data = list(/datum/category_item/catalogue/fauna/wolf)
 
 	allow_mind_transfer = TRUE
+	vore_active = TRUE
+	vore_capacity = 1
+	vore_icons = SA_ICON_LIVING
 
 	// CHOMPAdd Start :c
 	can_be_drop_prey = FALSE
 	species_sounds = "Canine"
 	pain_emote_1p = list("yelp", "whine", "bark", "growl")
 	pain_emote_3p = list("yelps", "whines", "barks", "growls")
+<<<<<<< HEAD
 	// CHOMPAdd End
 
 // Activate Noms!
@@ -50,6 +54,10 @@
 /mob/living/simple_mob/animal/wolf/init_vore() // CHOMPEdit - Allow for customizing bellies on vorecritters
 	if(!voremob_loaded)
 		return
+=======
+
+/mob/living/simple_mob/animal/vore/wolf/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 
 	var/obj/belly/B = vore_selected

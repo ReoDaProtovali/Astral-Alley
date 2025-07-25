@@ -43,9 +43,13 @@
 	vore_pounce_maxhealth = 1000
 	vore_bump_emote = "pounces on"
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/sonadile/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/sonadile/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

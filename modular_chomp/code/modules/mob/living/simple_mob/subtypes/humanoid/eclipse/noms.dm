@@ -19,10 +19,15 @@
 /mob/living/simple_mob/humanoid/eclipse/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/eclipse/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/eclipse/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "The fearsome preadtor gets a firm grip upon you, before dunking you into it's maw, then with a powerful swift gulp you're sent tumbling into it's stomach.."
@@ -56,10 +61,15 @@
 /mob/living/simple_mob/humanoid/eclipse/head/scientist/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/eclipse/head/scientist/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/eclipse/head/scientist/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "The fearsome preadtor gets a firm grip upon you, before dunking you into it's maw, then with a powerful swift gulp you're sent tumbling into it's stomach.."
@@ -96,10 +106,15 @@
 /mob/living/simple_mob/humanoid/eclipse/head/security/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/eclipse/head/security/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/eclipse/head/security/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "The fearsome preadtor gets a firm grip upon you, before dunking you into it's maw, then with a powerful swift gulp you're sent tumbling into it's stomach.."
@@ -137,10 +152,15 @@
 /mob/living/simple_mob/humanoid/eclipse/head/captain/MouseDrop_T(mob/living/M, mob/living/user)
 	return
 
+<<<<<<< HEAD
 /mob/living/simple_mob/humanoid/eclipse/head/captain/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/humanoid/eclipse/head/captain/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
 	B.desc = "The fearsome preadtor gets a firm grip upon you, before dunking you into it's maw, then with a powerful swift gulp you're sent tumbling into it's stomach.."

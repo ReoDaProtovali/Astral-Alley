@@ -64,9 +64,13 @@
 	vore_default_contamination_color = "grey"
 	vore_default_item_mode = IM_DIGEST
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/alienanimals/dustjumper/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/alienanimals/dustjumper/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

@@ -87,9 +87,13 @@ TODO: Make them light up and heat the air when exposed to oxygen.
 	vore_stomach_flavor	= "You are squeezed into the tight embrace of the alien creature's warm and cozy insides."
 	vore_icons = SA_ICON_LIVING
 
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/passive/gaslamp/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/animal/passive/gaslamp/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "internal chamber"

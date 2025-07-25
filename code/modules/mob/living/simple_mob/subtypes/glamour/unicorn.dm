@@ -35,9 +35,13 @@
 	projectile_dispersion = 7
 	projectile_accuracy = -20
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/horse/unicorn/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/horse/unicorn/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

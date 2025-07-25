@@ -148,9 +148,13 @@
 	if(ai_holder)
 		ai_holder.remove_target()
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/pakkun/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/pakkun/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	if(isbelly(B)) //ChompEDIT - fix a runtime
@@ -275,9 +279,13 @@
 		petters -= pick(petters)
 	..()
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/pakkun/snapdragon/snappy/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/pakkun/snapdragon/snappy/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	if(isbelly(B)) //ChompEDIT - fix a runtime

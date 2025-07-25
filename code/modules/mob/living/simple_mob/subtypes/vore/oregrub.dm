@@ -164,10 +164,14 @@
 		to_chat(L, span_warning("You feel fire running through your veins!"))
 		L.reagents.add_reagent(poison_type, poison_per_bite)
 
+<<<<<<< HEAD
 // CHOMPEdit - Un-disabled.
 /mob/living/simple_mob/vore/oregrub/init_vore()
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/oregrub/load_default_bellies()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	. = ..()
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"
@@ -195,9 +199,13 @@
 		"The grub chitters in irritation at your continued solidity, followed by a string of crushingly tight stomach clenches that grind its caustic stomach ooze into your body!",
 		"The deceptively severe heat trapped within the grub works in tandem with its inner muscles and your tingling, prickling stomach juice bath to weaken you!")
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/oregrub/lava/init_vore() // Should inherit everything from parent, and then change our belly fullscreen color.
 	if(!voremob_loaded)
 		return
+=======
+/mob/living/simple_mob/vore/oregrub/lava/load_default_bellies() // Should inherit everything from parent, and then change our belly fullscreen color.
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 	.=..()
 	var/obj/belly/B = vore_selected
 	B.belly_fullscreen_color = "#cf741e" 		// CHOMPedit - Belly Fullscreen

@@ -94,10 +94,15 @@
 			PounceTarget(user, pounce_chance)
 
 // CHOMPEdit start: More voremob bellies!
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/rabbit/init_vore()
 	if(!voremob_loaded)
 		return
 	.=..()
+=======
+/mob/living/simple_mob/vore/rabbit/load_default_bellies()
+	. = ..()
+>>>>>>> 9765827ac1 ([MIRROR] fix simple mob bellies on admin spawn (#11236))
 
 	var/obj/belly/B = vore_selected
 	B.name = "stomach"

@@ -126,12 +126,7 @@
 	if (eat_attempts < 11 || alone)
 		eat_attempts += 1
 
-/mob/living/simple_mob/vore/gryphon/init_vore()
-	if(!voremob_loaded)
-		return
-	if(LAZYLEN(vore_organs))
-		return TRUE
-
+/mob/living/simple_mob/vore/gryphon/load_default_bellies()
 	var/obj/belly/B = new /obj/belly/gryphon/beak(src)
 	vore_selected = B
 	B.affects_vore_sprites = FALSE
