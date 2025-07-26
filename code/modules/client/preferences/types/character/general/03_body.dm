@@ -164,3 +164,41 @@
 	target.r_ears3 = hex2num(copytext(value, 2, 4))
 	target.g_ears3 = hex2num(copytext(value, 4, 6))
 	target.b_ears3 = hex2num(copytext(value, 6, 8))
+<<<<<<< HEAD
+=======
+
+/datum/preference/numeric/human/ears_alpha
+	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "ears_alpha"
+	can_randomize = FALSE
+	minimum = 0
+	maximum = 255
+
+/datum/preference/numeric/human/ears_alpha/secondary
+	savefile_key = "secondary_ears_alpha"
+
+/datum/preference/numeric/human/ears_alpha/secondary/apply_to_human(mob/living/carbon/human/target, value)
+	target.a_ears2 = value;
+
+/datum/preference/numeric/human/ears_alpha/apply_to_human(mob/living/carbon/human/target, value)
+	target.a_ears = value
+
+/datum/preference/numeric/human/ears_alpha/create_default_value()
+	return 255 //no randomization here.
+
+///Tail style.
+/datum/preference/numeric/human/tail_layering
+	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "tail_layering"
+	can_randomize = FALSE
+	minimum = TAIL_UPPER_LAYER
+	maximum = TAIL_UPPER_LAYER_HIGH
+
+/datum/preference/numeric/human/tail_layering/create_default_value()
+	return TAIL_UPPER_LAYER
+
+/datum/preference/numeric/human/tail_layering/apply_to_human(mob/living/carbon/human/target, value)
+	target.tail_layering = value
+>>>>>>> f51b2c3f7d ([MIRROR] more TG prefs (#11241))
