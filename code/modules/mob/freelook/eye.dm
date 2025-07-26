@@ -15,7 +15,6 @@
 	var/owner_follows_eye = 0
 
 	see_in_dark = 7
-	status_flags = GODMODE
 	plane = PLANE_AI_EYE
 
 	var/mob/owner = null
@@ -25,6 +24,10 @@
 	var/datum/visualnet/visualnet
 	var/use_static = TRUE
 	var/static_visibility_range = 16
+
+/mob/observer/eye/Initialize(mapload)
+	. = ..()
+	AddElement(/datum/element/godmode)
 
 /mob/observer/eye/Destroy()
 	if(owner)
