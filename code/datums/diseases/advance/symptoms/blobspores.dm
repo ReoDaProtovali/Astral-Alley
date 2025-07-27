@@ -70,6 +70,11 @@ BONUS
 					H.drip(bleeding_rng)
 
 /datum/symptom/blobspores/OnDeath(datum/disease/advance/A)
+<<<<<<< HEAD
+=======
+	if(!..())
+		return
+>>>>>>> 66424e44b2 ([MIRROR] Virology Fixes (#11254))
 	var/mob/living/M = A.affected_mob
 	M.visible_message(span_danger("[M] starts swelling grotesquely!"))
 	addtimer(CALLBACK(src, PROC_REF(pop), A, M), 10 SECONDS)
