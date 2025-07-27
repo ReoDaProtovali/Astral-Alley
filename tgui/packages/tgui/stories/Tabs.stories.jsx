@@ -93,23 +93,31 @@ const Story = (props) => {
         </Button.Checkbox>
       </Section>
       <Section fitted>
-        <TabsPrefab />
+        <TabsPrefab tabProps={tabProps} />
       </Section>
       <Section title="Normal section">
-        <TabsPrefab />
+        <TabsPrefab tabProps={tabProps} />
         Some text
       </Section>
       <Section>
         Section-less tabs appear the same as tabs in a fitted section:
       </Section>
-      <TabsPrefab />
+      <TabsPrefab tabProps={tabProps} />
     </>
   );
 };
 
+<<<<<<< HEAD:tgui/packages/tgui/stories/Tabs.stories.jsx
 const TabsPrefab = (props) => {
   const [tabIndex, setTabIndex] = useState(0);
   const [tabProps] = useState({});
+=======
+function TabsPrefab(props) {
+  const [tabIndex, setTabIndex] = useState(0);
+
+  const { tabProps } = props;
+
+>>>>>>> 053f149ebc ([MIRROR] fix stories (#11250)):tgui/packages/tgui/stories/Tabs.stories.tsx
   return (
     <Tabs
       vertical={tabProps.vertical}

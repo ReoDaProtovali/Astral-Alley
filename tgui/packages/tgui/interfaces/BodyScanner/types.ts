@@ -51,6 +51,11 @@ export type internalOrgan = {
   robotic: BooleanLike;
   dead: BooleanLike;
   inflamed: BooleanLike;
+<<<<<<< HEAD
+=======
+  missing: BooleanLike;
+  medical_issues_I?: string[];
+>>>>>>> 053f149ebc ([MIRROR] fix stories (#11250))
 };
 
 export type externalOrgan = {
