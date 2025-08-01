@@ -369,6 +369,7 @@
 /obj/effect/alien/weeds,
 /turf/simulated/floor,
 /area/submap/XenoHive)
+<<<<<<< HEAD
 "Hx" = (
 /obj/item/portable_destructive_analyzer,
 /obj/effect/alien/weeds,
@@ -376,6 +377,8 @@
 	outdoors = 0
 	},
 /area/submap/XenoHive)
+=======
+>>>>>>> eb3409d304 (Techwebs (#11249))
 "Hz" = (
 /obj/effect/alien/weeds,
 /obj/structure/simple_door/resin,
@@ -661,7 +664,7 @@ sy
 xB
 xB
 Tv
-Hx
+rL
 dm
 Is
 xB

@@ -16101,12 +16101,6 @@
 	},
 /turf/simulated/floor/atoll,
 /area/survivalpod)
-"eKg" = (
-/obj/machinery/r_n_d/server/centcom,
-/turf/simulated/fitness{
-	icon_state = "vault"
-	},
-/area/survivalpod)
 "eKh" = (
 /obj/item/integrated_circuit,
 /turf/simulated/fitness{
@@ -22524,7 +22518,7 @@
 /turf/simulated/floor/atoll,
 /area/survivalpod)
 "gFj" = (
-/obj/machinery/r_n_d/server/robotics,
+/obj/machinery/rnd/server,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -27297,7 +27291,7 @@
 	},
 /area/survivalpod)
 "hYk" = (
-/obj/machinery/r_n_d/circuit_imprinter,
+/obj/machinery/rnd/production/circuit_imprinter,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -39044,7 +39038,7 @@
 	},
 /area/survivalpod)
 "ltJ" = (
-/obj/machinery/mecha_part_fabricator,
+/obj/machinery/mecha_part_fabricator_tg,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -44215,7 +44209,7 @@
 	},
 /area/survivalpod)
 "mUP" = (
-/obj/machinery/r_n_d/server/core,
+/obj/machinery/rnd/server/master,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -78810,7 +78804,7 @@
 	},
 /area/survivalpod)
 "xcQ" = (
-/obj/machinery/mecha_part_fabricator/pros,
+/obj/machinery/mecha_part_fabricator_tg/prosthetics,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -84365,9 +84359,15 @@ vOT
 gHu
 vOT
 irv
+<<<<<<< HEAD
 vOT
 eKg
 vOT
+=======
+bSW
+bSW
+bSW
+>>>>>>> eb3409d304 (Techwebs (#11249))
 bdh
 vOT
 vOT

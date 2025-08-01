@@ -42,7 +42,12 @@
 	var/obj/effect/overlay/closet_door/door_obj
 	var/vore_sound = 'sound/effects/metalscrape2.ogg'
 
+<<<<<<< HEAD
 /obj/structure/closet/Initialize()
+=======
+/obj/structure/closet/Initialize(mapload)
+	ADD_TRAIT(src, TRAIT_ALT_CLICK_BLOCKER, ROUNDSTART_TRAIT)
+>>>>>>> eb3409d304 (Techwebs (#11249))
 	..()
 	return INITIALIZE_HINT_LATELOAD
 

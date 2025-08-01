@@ -11409,6 +11409,7 @@
 "asH" = (
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/red/border,
+/obj/machinery/rnd/production/protolathe/department/security,
 /turf/simulated/floor/tiled/dark,
 /area/tether/surfacebase/security/warden)
 "asI" = (
@@ -11810,6 +11811,7 @@
 /obj/machinery/light/small{
 	dir = 1
 	},
+/obj/machinery/rnd/production/protolathe/department/engineering,
 /turf/simulated/floor/plating,
 /area/engineering/atmos/storage)
 "atu" = (
@@ -20306,7 +20308,7 @@
 	},
 /area/server)
 "aKM" = (
-/obj/machinery/r_n_d/server/robotics,
+/obj/machinery/rnd/server/master,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -21005,7 +21007,7 @@
 	},
 /area/server)
 "aMh" = (
-/obj/machinery/r_n_d/server/core,
+/obj/machinery/rnd/server,
 /obj/structure/window/reinforced{
 	dir = 4
 	},
@@ -29112,15 +29114,7 @@
 /turf/simulated/floor/reinforced,
 /area/rnd/outpost/xenobiology/outpost_slimepens)
 "beO" = (
-/obj/machinery/mecha_part_fabricator/pros{
-	component_coeff = 0.9;
-	desc = "A machine used for construction of legit prosthetics. You weren't sure if cardboard was considered an engineering material until now.";
-	dir = 4;
-	name = "Legitimate Prosthetics Fabricator";
-	req_access = list();
-	res_max_amount = 150000;
-	time_coeff = 0.2
-	},
+/obj/machinery/mecha_part_fabricator_tg/prosthetics,
 /turf/simulated/floor/plating,
 /area/maintenance/lower/atmos)
 "beP" = (

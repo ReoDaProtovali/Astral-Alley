@@ -10144,6 +10144,7 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/old_tile/beige,
+<<<<<<< HEAD
 /area/surface/tyr/eclipse_stronghold)
 "So" = (
 /obj/structure/table/standard,
@@ -10154,6 +10155,9 @@
 /obj/machinery/vending/boozeomat,
 /turf/simulated/floor/wood,
 /area/surface/tyr/eclipse_stronghold/cafe)
+=======
+/area/surface/tyr/eclipse_stronghold/cargo)
+>>>>>>> eb3409d304 (Techwebs (#11249))
 "Sq" = (
 /turf/simulated/wall/r_concrete,
 /area/surface/tyr/eclipse_stronghold/stash)
@@ -11398,12 +11402,16 @@
 	dir = 1
 	},
 /turf/simulated/floor/tiled/old_tile/gray,
+<<<<<<< HEAD
 /area/surface/tyr/eclipse_stronghold)
 "YI" = (
 /obj/structure/table/standard,
 /obj/item/portable_destructive_analyzer,
 /turf/simulated/floor/tiled/old_tile/beige,
 /area/surface/tyr/eclipse_stronghold)
+=======
+/area/surface/tyr/eclipse_stronghold/cargo)
+>>>>>>> eb3409d304 (Techwebs (#11249))
 "YL" = (
 /obj/effect/floor_decal/corner/white/diagonal,
 /obj/machinery/light/small{
@@ -66898,7 +66906,7 @@ ht
 AC
 zC
 AC
-So
+zR
 nj
 zC
 ea
@@ -67157,7 +67165,7 @@ jS
 bH
 zC
 sX
-YI
+zR
 AC
 PS
 ht

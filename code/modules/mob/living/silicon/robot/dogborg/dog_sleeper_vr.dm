@@ -27,7 +27,6 @@
 	var/list/deliveryslot_1 = list()
 	var/list/deliveryslot_2 = list()
 	var/list/deliveryslot_3 = list()
-	var/datum/research/techonly/files //Analyzerbelly var.
 	var/synced = FALSE
 	var/startdrain = 500
 	var/max_item_count = 1
@@ -48,10 +47,15 @@
 	var/max_ore_storage = 500 //CHOMPAdd
 	var/current_capacity = 0 //CHOMPAdd
 
+<<<<<<< HEAD:code/modules/mob/living/silicon/robot/dogborg/dog_sleeper_vr.dm
 /obj/item/dogborg/sleeper/New()
 	..()
 	flags |= NOBLUDGEON //No more attack messages
 	files = new /datum/research/techonly(src)
+=======
+/obj/item/dogborg/sleeper/Initialize(mapload)
+	. = ..()
+>>>>>>> eb3409d304 (Techwebs (#11249)):code/modules/mob/living/silicon/robot/dogborg/dog_sleeper.dm
 	med_analyzer = new /obj/item/healthanalyzer
 
 /obj/item/dogborg/sleeper/Destroy()
@@ -96,12 +100,6 @@
 				target.forceMove(src)
 				user.visible_message(span_warning("[hound.name]'s [src.name] groans lightly as [target.name] slips inside."), span_notice("Your [src.name] groans lightly as [target] slips inside."))
 				playsound(src, gulpsound, vol = 60, vary = 1, falloff = 0.1, preference = /datum/preference/toggle/eating_noises)
-				if(analyzer && istype(target,/obj/item))
-					var/obj/item/tech_item = target
-					var/list/tech_levels = list()
-					for(var/T in tech_item.origin_tech)
-						tech_levels += "\The [tech_item] has level [tech_item.origin_tech[T]] in [CallTechName(T)]."
-					to_chat(user, span_notice("[jointext(tech_levels, "<br>")]"))
 				if(delivery)
 					if(islist(deliverylists[delivery_tag]))
 						deliverylists[delivery_tag] |= target
@@ -302,9 +300,6 @@
 		dat += "<font color='red'>Cargo compartment slot: Fuel.</font><BR>"
 		dat += "<font color='red'>([jointext(contents - (deliveryslot_1 + deliveryslot_2 + deliveryslot_3),", ")])</font><BR><BR>"
 
-	if(analyzer && !synced)
-		dat += "<A href='byond://?src=\ref[src];sync=1'>Sync Files</A><BR>"
-
 	//Cleaning and there are still un-preserved items
 	if(cleaning && length(contents - items_preserved))
 		dat += "<font color='red'><B>Self-cleaning mode.</B> [length(contents - items_preserved)] object(s) remaining.</font><BR>"
@@ -436,6 +431,7 @@
 			deliverylists[delivery_tag].Cut()
 		sleeperUI(usr)
 		return
+<<<<<<< HEAD:code/modules/mob/living/silicon/robot/dogborg/dog_sleeper_vr.dm
 	if(href_list["sync"])
 		synced = TRUE
 		var/success = 0
@@ -455,6 +451,8 @@
 		sleeperUI(usr)
 		return
 
+=======
+>>>>>>> eb3409d304 (Techwebs (#11249)):code/modules/mob/living/silicon/robot/dogborg/dog_sleeper.dm
 	if(patient && !(patient.stat & DEAD)) //What is bitwise NOT? ... Thought it was tilde.
 		if(href_list["inject"] == REAGENT_ID_INAPROVALINE || patient.health > min_health)
 			inject_chem(usr, href_list["inject"])
@@ -675,11 +673,6 @@
 				if(!digested)
 					items_preserved |= T
 				else
-					if(analyzer && digested)
-						var/obj/item/tech_item = T
-						for(var/tech in tech_item.origin_tech)
-							files.UpdateTech(tech, tech_item.origin_tech[tech])
-							synced = FALSE
 					//CHOMPAdd Start
 					if(volume && water)
 						water.add_charge(volume)

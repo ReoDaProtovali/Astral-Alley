@@ -7357,6 +7357,28 @@
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/pool)
 "alC" = (
+<<<<<<< HEAD
+=======
+/obj/structure/grille,
+/obj/structure/window/reinforced/polarized/full{
+	id = "massage"
+	},
+/obj/structure/window/reinforced{
+	dir = 8
+	},
+/turf/simulated/floor/plating,
+/area/crew_quarters/sauna)
+"alD" = (
+/obj/structure/cable/green{
+	icon_state = "4-8"
+	},
+/obj/effect/floor_decal/corner/grey/diagonal,
+/obj/machinery/rnd/production/protolathe/department/service,
+/turf/simulated/floor/tiled/white,
+/area/crew_quarters/kitchen)
+"alE" = (
+/obj/machinery/camera/network/civilian,
+>>>>>>> eb3409d304 (Techwebs (#11249))
 /obj/effect/floor_decal/spline/plain{
 	dir = 1
 	},
@@ -9180,6 +9202,7 @@
 /turf/simulated/floor/tiled,
 /area/tether/surfacebase/surface_three_hall/west)
 "apq" = (
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 4
 	},
@@ -9188,6 +9211,11 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/crew_quarters/pool)
+=======
+/obj/machinery/rnd/production/protolathe/department/medical,
+/turf/simulated/floor/tiled/white,
+/area/tether/surfacebase/medical/storage)
+>>>>>>> eb3409d304 (Techwebs (#11249))
 "apr" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden/supply,
 /obj/machinery/atmospherics/pipe/manifold/hidden/scrubbers,
@@ -9843,6 +9871,9 @@
 	},
 /obj/machinery/requests_console/preset/research{
 	pixel_y = 30
+	},
+/obj/machinery/rnd/production/circuit_imprinter{
+	dir = 1
 	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/research)
@@ -11884,6 +11915,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 1
 	},
+/obj/structure/closet,
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/research)
 "aut" = (
@@ -11916,6 +11948,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 1
 	},
+/obj/machinery/rnd/production/protolathe/department/science,
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/research)
 "auw" = (
@@ -11932,6 +11965,7 @@
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 1
 	},
+/obj/machinery/computer/rdconsole_tg,
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/research)
 "aux" = (
@@ -12467,14 +12501,6 @@
 	dir = 4
 	},
 /turf/simulated/floor/tiled/steel_grid,
-/area/rnd/research)
-"avv" = (
-/obj/machinery/r_n_d/destructive_analyzer,
-/turf/simulated/floor/tiled/dark,
-/area/rnd/research)
-"avw" = (
-/obj/machinery/computer/rdconsole/core,
-/turf/simulated/floor/tiled/dark,
 /area/rnd/research)
 "avx" = (
 /obj/effect/floor_decal/industrial/warning{
@@ -13398,17 +13424,10 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/research)
 "awY" = (
-/obj/machinery/r_n_d/circuit_imprinter{
-	dir = 1
-	},
-/obj/item/reagent_containers/glass/beaker/sulphuric,
 /turf/simulated/floor/tiled/dark,
 /area/rnd/research)
 "awZ" = (
 /obj/machinery/hologram/holopad,
-/obj/machinery/r_n_d/protolathe{
-	dir = 1
-	},
 /turf/simulated/floor/tiled/dark,
 /area/rnd/research)
 "axa" = (
@@ -19235,21 +19254,21 @@
 /turf/simulated/floor/tiled,
 /area/rnd/research/researchdivision)
 "aGS" = (
-/obj/machinery/r_n_d/circuit_imprinter{
+/obj/machinery/rnd/production/circuit_imprinter{
 	dir = 8
 	},
-/obj/item/reagent_containers/glass/beaker/sulphuric,
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/robotics)
 "aGT" = (
-/obj/machinery/mecha_part_fabricator/pros{
-	dir = 1
-	},
 /obj/structure/reagent_dispensers/acid{
 	pixel_y = -30
 	},
 /obj/effect/floor_decal/borderfloor,
 /obj/effect/floor_decal/corner/mauve/border,
+/obj/machinery/mecha_part_fabricator_tg/prosthetics{
+	dir = 1;
+	drop_direction = 1
+	},
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/robotics)
 "aGU" = (
@@ -20240,15 +20259,13 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/robotics)
 "aIv" = (
-/obj/machinery/computer/rdconsole/robotics{
-	dir = 8
-	},
 /obj/effect/floor_decal/borderfloor{
 	dir = 4
 	},
 /obj/effect/floor_decal/corner/mauve/border{
 	dir = 4
 	},
+/obj/structure/table/glass,
 /turf/simulated/floor/tiled/steel_grid,
 /area/rnd/robotics)
 "aIw" = (
@@ -20718,8 +20735,9 @@
 /turf/simulated/floor/tiled/white,
 /area/tether/surfacebase/medical/chemistry)
 "aJm" = (
-/obj/machinery/mecha_part_fabricator{
-	dir = 8
+/obj/machinery/mecha_part_fabricator_tg{
+	dir = 8;
+	drop_direction = 8
 	},
 /obj/structure/extinguisher_cabinet{
 	dir = 8;
@@ -54322,7 +54340,7 @@ aux
 aud
 atT
 aqy
-avv
+awY
 avU
 awY
 axl
@@ -54464,7 +54482,7 @@ aux
 aud
 atT
 auv
-avw
+awY
 avV
 awZ
 axz
@@ -60240,7 +60258,7 @@ pcs
 aWJ
 aSq
 aSL
-aUv
+apq
 aUv
 abh
 iLq
@@ -60849,7 +60867,7 @@ aES
 aIN
 aCf
 anj
-bgx
+alD
 nXZ
 baq
 anj

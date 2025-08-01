@@ -2870,6 +2870,10 @@
 	},
 /turf/simulated/floor/tiled/techmaint,
 /area/engineering/storage)
+"aeY" = (
+/obj/machinery/ore_silo,
+/turf/simulated/floor/tiled,
+/area/quartermaster/storage)
 "aeZ" = (
 /obj/machinery/atmospherics/pipe/simple/hidden/supply{
 	dir = 9
@@ -2902,6 +2906,10 @@
 	},
 /turf/simulated/floor/tiled,
 /area/shuttle/medivac/general)
+"afb" = (
+/obj/machinery/rnd/production/protolathe/department/engineering,
+/turf/simulated/floor/tiled/monotile,
+/area/engineering/workshop)
 "afe" = (
 /obj/machinery/atmospherics/pipe/manifold/hidden,
 /turf/simulated/floor/tiled,
@@ -5386,17 +5394,9 @@
 /area/engineering/engineering_monitoring)
 "alZ" = (
 /obj/structure/table/rack/steel,
-/obj/item/circuitboard/rdserver{
+/obj/item/circuitboard/machine/rdserver{
 	pixel_x = -3;
 	pixel_y = 3
-	},
-/obj/item/circuitboard/protolathe{
-	pixel_x = -2;
-	pixel_y = 2
-	},
-/obj/item/circuitboard/destructive_analyzer{
-	pixel_x = -1;
-	pixel_y = 1
 	},
 /obj/item/circuitboard/rdconsole,
 /obj/item/circuitboard/autolathe{
@@ -28441,7 +28441,7 @@
 /obj/effect/floor_decal/corner/brown/bordercorner2{
 	dir = 8
 	},
-/obj/structure/table/standard,
+/obj/machinery/rnd/production/protolathe/department/cargo,
 /turf/simulated/floor/tiled,
 /area/quartermaster/office)
 "qWN" = (
@@ -40769,7 +40769,7 @@ aqq
 arE
 atk
 avm
-asU
+afb
 atN
 axU
 axW
@@ -45358,7 +45358,7 @@ uqB
 xyX
 wkd
 oyD
-aDz
+aeY
 kJz
 xyO
 iEl
