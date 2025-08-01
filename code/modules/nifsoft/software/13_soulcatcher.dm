@@ -415,6 +415,10 @@
 ///////////////////
 //A projected AR soul thing
 /mob/observer/eye/ar_soul
+<<<<<<< HEAD
+=======
+	invisibility = INVISIBILITY_NONE
+>>>>>>> 20bed9bda9 ([MIRROR] gets rid of duplicate snake (#11278))
 	plane = PLANE_AUGMENTED
 	icon = 'icons/obj/machines/ar_elements.dmi'
 	icon_state = "beacon"
