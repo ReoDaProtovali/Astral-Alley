@@ -70,6 +70,11 @@ export const Canister = (props) => {
             <LabeledControls.Item label="Regulator">
               <Box position="relative" left="-8px">
                 <Knob
+<<<<<<< HEAD
+=======
+                  tickWhileDragging
+                  format={(value) => toFixed(value, 2)}
+>>>>>>> a489997298 ([MIRROR] tgui-core 5.0.0 (#11287))
                   size={1.25}
                   color={!!valveOpen && 'yellow'}
                   value={releasePressure}
@@ -77,7 +82,7 @@ export const Canister = (props) => {
                   minValue={minReleasePressure}
                   maxValue={maxReleasePressure}
                   stepPixelSize={1}
-                  onDrag={(e, value: number) =>
+                  onChange={(e, value: number) =>
                     act('pressure', {
                       pressure: value,
                     })
