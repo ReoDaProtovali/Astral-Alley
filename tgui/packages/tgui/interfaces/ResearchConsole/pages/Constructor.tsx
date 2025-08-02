@@ -324,6 +324,7 @@ const MatStorageTab = (props: {
             key={mat}
             label={capitalizeAll(mat)}
             buttons={
+<<<<<<< HEAD
               <>
                 <NumberInput
                   value={matEjectStates[mat] || 0}
@@ -368,6 +369,59 @@ const MatStorageTab = (props: {
                   All
                 </Button>
               </>
+=======
+              <Stack>
+                <Stack.Item>
+                  <NumberInput
+                    tickWhileDragging
+                    value={matEjectStates[mat] || 0}
+                    minValue={0}
+                    maxValue={Math.floor(amount / data.sheet_material_amount)}
+                    step={1}
+                    width="100px"
+                    onChange={(val) => {
+                      setMatEjectStates({
+                        ...matEjectStates,
+                        [mat]: val,
+                      });
+                    }}
+                  />
+                </Stack.Item>
+                <Stack.Item>
+                  <Button
+                    icon="eject"
+                    disabled={amount < data.sheet_material_amount}
+                    onClick={() => {
+                      setMatEjectStates({
+                        ...matEjectStates,
+                        [mat]: 0,
+                      });
+                      act(ejectAction, {
+                        [ejectAction]: mat,
+                        amount: matEjectStates[mat] || 0,
+                      });
+                    }}
+                  >
+                    Num
+                  </Button>
+                </Stack.Item>
+                <Stack.Item>
+                  <Button
+                    icon="eject"
+                    disabled={amount < data.sheet_material_amount}
+                    onClick={() => {
+                      setMatEjectStates({
+                        ...matEjectStates,
+                        [mat]: 0,
+                      });
+                      act(ejectAction, { [ejectAction]: mat, amount: 50 });
+                    }}
+                  >
+                    All
+                  </Button>
+                </Stack.Item>
+              </Stack>
+>>>>>>> a489997298 ([MIRROR] tgui-core 5.0.0 (#11287))
             }
           >
             {amount} cm&sup3;

@@ -69,6 +69,11 @@ export const GyrotronControlContent = (props) => {
             </Table.Cell>
             <Table.Cell>
               <Knob
+<<<<<<< HEAD
+=======
+                tickWhileDragging
+                format={(value) => toFixed(value)}
+>>>>>>> a489997298 ([MIRROR] tgui-core 5.0.0 (#11287))
                 size={1.25}
                 color={!!gyro.active && 'yellow'}
                 value={gyro.fire_delay}
@@ -76,7 +81,7 @@ export const GyrotronControlContent = (props) => {
                 minValue={1}
                 maxValue={60}
                 stepPixelSize={1}
-                onDrag={(e, value) =>
+                onChange={(e, value) =>
                   act('set_rate', {
                     gyro: gyro.ref,
                     rate: value,
@@ -86,6 +91,11 @@ export const GyrotronControlContent = (props) => {
             </Table.Cell>
             <Table.Cell>
               <Knob
+<<<<<<< HEAD
+=======
+                tickWhileDragging
+                format={(value) => toFixed(value)}
+>>>>>>> a489997298 ([MIRROR] tgui-core 5.0.0 (#11287))
                 size={1.25}
                 color={!!gyro.active && 'yellow'}
                 value={gyro.strength}
@@ -93,7 +103,7 @@ export const GyrotronControlContent = (props) => {
                 minValue={1}
                 maxValue={50}
                 stepPixelSize={1}
-                onDrag={(e, value) =>
+                onChange={(e, value) =>
                   act('set_str', {
                     gyro: gyro.ref,
                     str: value,
