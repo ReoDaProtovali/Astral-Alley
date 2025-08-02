@@ -12,6 +12,27 @@ export const digestModeToColor = {
   'Size Steal': 'teal',
   Heal: 'green',
   'Encase In Egg': 'blue',
+<<<<<<< HEAD
+=======
+  'Digest (Food Only)': 'red',
+  'Digest (Dispersed Damage)': 'red',
+};
+
+export const reagentToColor = {
+  Water: undefined,
+  Milk: undefined,
+  Cream: undefined,
+  Honey: 'teal',
+  'Cherry Jelly': 'teal',
+  'Digestive acid': 'red',
+  'Diluted digestive acid': 'red',
+  'Space cleaner': undefined,
+  'Space Lube': undefined,
+  Biomass: 'teal',
+  'Concentrated Radium': 'orange',
+  Tricordrazine: 'green',
+  Ethanol: undefined,
+>>>>>>> 4b4edabce6 ([MIRROR] Transfer Liquids with Prey and Ethanol Bellies (#11285))
 };
 
 export const digestModeToPreyMode = {
