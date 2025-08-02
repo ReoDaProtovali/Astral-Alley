@@ -135,7 +135,13 @@
 	stat_modules +=	new/stat_rig_module/select(src)
 	stat_modules +=	new/stat_rig_module/charge(src)
 
+<<<<<<< HEAD
 /obj/item/rig_module/Destroy(force, ...)
+=======
+/obj/item/rig_module/Destroy()
+	holder?.installed_modules -= src
+	holder = null
+>>>>>>> eb3409d304 (Techwebs (#11249))
 	QDEL_NULL_LIST(stat_modules)
 	. = ..()
 

@@ -14646,9 +14646,6 @@
 	dir = 8
 	},
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/mecha_part_fabricator{
-	req_access = null
-	},
 /turf/simulated/floor/tiled/techmaint,
 /area/vr/powered/space/sciship)
 "lSq" = (
@@ -15153,7 +15150,7 @@
 /obj/structure/sign/department/robo{
 	pixel_y = 32
 	},
-/obj/machinery/mecha_part_fabricator/pros{
+/obj/machinery/mecha_part_fabricator_tg/prosthetics{
 	req_access = null
 	},
 /turf/simulated/floor/tiled/techmaint,
@@ -22242,7 +22239,7 @@
 	name = "Kalipso Blast Shielding";
 	opacity = 0
 	},
-/obj/machinery/computer/rdconsole/core{
+/obj/machinery/computer/rdconsole_tg{
 	dir = 4;
 	req_access = null
 	},

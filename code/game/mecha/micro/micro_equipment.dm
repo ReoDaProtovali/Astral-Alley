@@ -51,8 +51,13 @@
 	icon_state = "micromech_shotgun"
 	equip_cooldown = 15
 	var/mode = 0 //0 - buckshot, 1 - beanbag, 2 - slug.
+<<<<<<< HEAD
 	projectile = /obj/item/projectile/bullet/pellet/shotgun
 	fire_sound = 'sound/weapons/Gunshot_shotgun.ogg'
+=======
+	projectile = /obj/item/projectile/scatter/shotgun
+	fire_sound = 'sound/weapons/gunshot_shotgun.ogg'
+>>>>>>> eb3409d304 (Techwebs (#11249))
 	fire_volume = 80
 	projectiles = 6
 	projectiles_per_shot = 1
@@ -68,7 +73,7 @@
 		switch(mode)
 			if(0)
 				occupant_message("Now firing buckshot.")
-				projectile = /obj/item/projectile/bullet/pellet/shotgun
+				projectile = /obj/item/projectile/scatter/shotgun
 			if(1)
 				occupant_message("Now firing beanbags.")
 				projectile = /obj/item/projectile/bullet/shotgun/beanbag

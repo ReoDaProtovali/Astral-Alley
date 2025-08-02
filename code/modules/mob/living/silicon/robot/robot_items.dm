@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //A portable analyzer, for research borgs.  This is better then giving them a gripper which can hold anything and letting them use the normal analyzer.
 /obj/item/portable_destructive_analyzer
 	name = "Portable Destructive Analyzer"
@@ -123,6 +124,8 @@
 			else
 				to_chat(user, span_notice("\The [I] cannot be scanned by \the [src]."))
 
+=======
+>>>>>>> eb3409d304 (Techwebs (#11249))
 //This is used to unlock other borg covers.
 /obj/item/card/robot //This is not a child of id cards, as to avoid dumb typechecks on computers.
 	name = "access code transmission device"

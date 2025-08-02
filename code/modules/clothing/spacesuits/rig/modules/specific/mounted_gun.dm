@@ -120,7 +120,7 @@
 
 	name = "mop projector"
 	desc = "A powerful mop projector."
-	icon_state = "mop"
+	icon_state = "generic"
 
 	activate_string = "Project Mop"
 	deactivate_string = "Cancel Mop"
