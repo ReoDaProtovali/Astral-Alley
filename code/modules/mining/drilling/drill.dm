@@ -16,10 +16,12 @@
 	var/supported = 0
 	var/active = 0
 	var/list/resource_field = list()
+	var/list/gas_field = list()
 	var/obj/item/radio/intercom/faultreporter
 	var/drill_range = 5
 	var/offset = 2
 	var/current_capacity = 0
+	var/drill_moles_per_tick = 0
 
 	var/list/stored_ore = list(
 		ORE_SAND = 0,
@@ -54,9 +56,9 @@
 		ORE_MHYDROGEN = /obj/item/ore/hydrogen,
 		ORE_SAND = /obj/item/ore/glass,
 		ORE_CARBON = /obj/item/ore/coal,
-	//	ORE_COPPER = /obj/item/ore/copper,
-	//	ORE_TIN = /obj/item/ore/tin,
-	//	ORE_BAUXITE = /obj/item/ore/bauxite,
+		ORE_COPPER = /obj/item/ore/copper,
+		ORE_TIN = /obj/item/ore/tin,
+		ORE_BAUXITE = /obj/item/ore/bauxite,
 		ORE_RUTILE = /obj/item/ore/rutile
 		)
 
@@ -70,14 +72,14 @@
 	// Found with an advanced laser. exotic_drilling >= 1
 	var/list/ore_types_uncommon = list(
 		ORE_MARBLE = /obj/item/ore/marble,
-		//ORE_PAINITE = /obj/item/ore/painite,
-		//ORE_QUARTZ = /obj/item/ore/quartz,
+		ORE_PAINITE = /obj/item/ore/painite,
+		ORE_QUARTZ = /obj/item/ore/quartz,
 		ORE_LEAD = /obj/item/ore/lead
 		)
 
 	// Found with an ultra laser. exotic_drilling >= 2
 	var/list/ore_types_rare = list(
-		//ORE_VOPAL = /obj/item/ore/void_opal,
+		ORE_VOPAL = /obj/item/ore/void_opal,
 		ORE_VERDANTIUM = /obj/item/ore/verdantium
 		)
 
@@ -154,7 +156,16 @@
 	if(istype(get_turf(src), /turf/simulated/mineral))
 		var/turf/simulated/mineral/M = get_turf(src)
 		M.GetDrilled()
-
+	// Extract gasses!
+	else if(istype(get_turf(src), /turf/simulated/floor/gas_crack))
+		if(gas_field.len)
+			//Create gas mixture to hold data for passing
+			var/datum/gas_mixture/GM = new
+			for(var/gas in gas_field)
+				GM.adjust_multi(gas, drill_moles_per_tick)
+			GM.temperature = 423  // ~150C
+			var/atom/location = src.loc
+			location.assume_air(GM)
 	else if(istype(get_turf(src), /turf/simulated))
 		var/turf/simulated/T = get_turf(src)
 		T.ex_act(2.0)
@@ -212,7 +223,8 @@
 			harvesting.has_resources = 0
 			harvesting.resources = null
 			resource_field -= harvesting
-	else
+
+	else if(!gas_field.len) // Won't stop digging if gas pressure is detected
 		active = 0
 		need_player_check = 1
 		update_icon()
@@ -369,7 +381,9 @@
 /obj/machinery/mining/drill/proc/get_resource_field()
 
 	resource_field = list()
+	gas_field = list()
 	need_update_field = 0
+	drill_moles_per_tick = 0
 
 	var/turf/T = get_turf(src)
 	if(!istype(T)) return
@@ -383,8 +397,15 @@
 			if(!istype(mine_turf, /turf/space/))
 				if(mine_turf && mine_turf.has_resources)
 					resource_field += mine_turf
-
-	if(!resource_field.len)
+				// gas mining
+				if(istype(mine_turf,/turf/simulated/floor/gas_crack))
+					// Get gasses the cracks around us could give!
+					var/turf/simulated/floor/gas_crack/G = mine_turf
+					if(!G.gas_type)
+						continue
+					drill_moles_per_tick += 2
+					gas_field.Add(G.gas_type)
+	if(!resource_field.len && !gas_field.len)
 		system_error("Resources depleted.")
 
 /obj/machinery/mining/drill/proc/use_cell_power()
@@ -412,8 +433,12 @@
 		// to_chat(usr, span_notice("You unload the drill's storage cache into the ore box."))
 		balloon_alert(usr, "You onload the drill's storage cache into the ore box.") // CHOMPEdit - Changed to balloon alert
 	else
+<<<<<<< HEAD
 		// to_chat(usr, span_notice("You must move an ore box up to the drill before you can unload it."))
 		balloon_alert(usr, "Move an ore box to the droll before unloading it.") // CHOMPEdit - Changed to balloon alert
+=======
+		balloon_alert(usr, "move an ore box to the drill before unloading it.")
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 
 /obj/machinery/mining/brace

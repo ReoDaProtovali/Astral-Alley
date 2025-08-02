@@ -7,7 +7,13 @@
 	taste_description = "powdered wax"
 	reagent_state = LIQUID
 	color = "#888888"
+<<<<<<< HEAD
 	overdose = 5
+=======
+	overdose = 10
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_COSMETIC
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/crayon_dust/red
 	name = REAGENT_CRAYONDUSTRED
@@ -56,7 +62,13 @@
 	taste_description = "extremely bitter"
 	reagent_state = LIQUID
 	color = "#888888"
+<<<<<<< HEAD
 	overdose = 5
+=======
+	overdose = 10
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_COSMETIC
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/marker_ink/black
 	name = REAGENT_MARKERINKBLACK
@@ -112,6 +124,8 @@
 	color = "#808080"
 	overdose = REAGENTS_OVERDOSE * 0.5
 	color_weight = 20
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_COSMETIC
 
 /datum/reagent/paint/touch_turf(var/turf/T)
 	..()
@@ -177,6 +191,9 @@
 	glass_name = "liquid gold"
 	glass_desc = "It's magic. We don't have to explain it."
 
+	supply_conversion_value = REFINERYEXPORT_VALUE_HIGHREFINED
+	industrial_use = "how did you get this?"
+
 /datum/reagent/adminordrazine/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
 	affect_blood(M, alien, removed)
 
@@ -238,6 +255,8 @@
 	taste_description = "metal"
 	reagent_state = SOLID
 	color = "#F7C430"
+	supply_conversion_value = 2 SHEET_TO_REAGENT_EQUIVILENT // has sheet value
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/silver
 	name = REAGENT_SILVER
@@ -246,6 +265,8 @@
 	taste_description = "metal"
 	reagent_state = SOLID
 	color = "#D0D0D0"
+	supply_conversion_value = 1 SHEET_TO_REAGENT_EQUIVILENT // has sheet value
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/platinum
 	name = REAGENT_PLATINUM
@@ -254,6 +275,8 @@
 	taste_description = "metal"
 	reagent_state = SOLID
 	color = "#777777"
+	supply_conversion_value = 5 SHEET_TO_REAGENT_EQUIVILENT // has sheet value
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/uranium
 	name = REAGENT_URANIUM
@@ -262,6 +285,8 @@
 	taste_description = "metal"
 	reagent_state = SOLID
 	color = "#B8B8C0"
+	supply_conversion_value = 2 SHEET_TO_REAGENT_EQUIVILENT // has sheet value
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/uranium/affect_touch(var/mob/living/carbon/M, var/alien, var/removed)
 	affect_ingest(M, alien, removed)
@@ -282,16 +307,22 @@
 	name = REAGENT_DEUTERIUM
 	id = REAGENT_ID_DEUTERIUM
 	description = "A isotope of hydrogen. It has one extra neutron, and shares all chemical characteristics with hydrogen."
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/hydrogen/tritium
 	name = REAGENT_TRITIUM
 	id = REAGENT_ID_TRITIUM
 	description = "A radioactive isotope of hydrogen. It has two extra neutrons, and shares all other chemical characteristics with hydrogen."
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/lithium/lithium6
 	name = REAGENT_LITHIUM6
 	id = REAGENT_ID_LITHIUM6
 	description = "An isotope of lithium. It has 3 neutrons, but shares all chemical characteristics with regular lithium."
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/helium/helium3
 	name = REAGENT_HELIUM3
@@ -300,12 +331,16 @@
 	taste_mult = 0
 	reagent_state = GAS
 	color = "#808080"
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/boron/boron11
 	name = REAGENT_BORON11
 	id = REAGENT_ID_BORON11
 	description = "An isotope of boron. It has 6 neutrons."
 	taste_description = "metallic" // Apparently noone on the internet knows what boron tastes like. Or at least they won't share
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/supermatter
 	name = REAGENT_SUPERMATTER
@@ -316,6 +351,12 @@
 	affects_robots = TRUE
 	description = "The immense power of a supermatter crystal, in liquid form. You're not entirely sure how that's possible, but it's probably best handled with care."
 	taste_description = "taffy" // 0. The supermatter is tasty, tasty taffy.
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_SPOILER
+	supply_conversion_value = REFINERYEXPORT_VALUE_MASSINDUSTRY
+	industrial_use = REFINERYEXPORT_REASON_MATSCI
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 // Same as if you boop it wrong. It touches you, you die
 /datum/reagent/supermatter/affect_touch(mob/living/carbon/M, alien, removed)
@@ -339,6 +380,8 @@
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	mrate_static = TRUE
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_MEDSCI
 
 /datum/reagent/adrenaline/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -357,6 +400,9 @@
 
 	glass_name = "holy water"
 	glass_desc = "An ashen-obsidian-water mix, this solution will alter certain sections of the brain's rationality."
+
+	supply_conversion_value = REFINERYEXPORT_VALUE_NO
+	industrial_use = REFINERYEXPORT_REASON_RAW
 
 /datum/reagent/water/holywater/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -378,6 +424,8 @@
 	taste_mult = 2
 	reagent_state = GAS
 	color = "#404030"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
 
 /datum/reagent/diethylamine
 	name = REAGENT_DIETHYLAMINE
@@ -386,7 +434,22 @@
 	taste_description = REAGENT_ID_IRON
 	reagent_state = LIQUID
 	color = "#604030"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
+<<<<<<< HEAD
+=======
+/datum/reagent/lye
+	name = REAGENT_LYE
+	id = REAGENT_ID_LYE
+	description = "Also known as sodium hydroxide. As a profession making this is somewhat underwhelming."
+	taste_description = "acid"
+	reagent_state = LIQUID
+	color = "#FFFFD6" // very very light yellow"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 /datum/reagent/fluorosurfactant // Foam precursor
 	name = REAGENT_FLUOROSURFACTANT
 	id = REAGENT_ID_FLUOROSURFACTANT
@@ -394,6 +457,8 @@
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#9E6B38"
+	supply_conversion_value = REFINERYEXPORT_VALUE_HIGHREFINED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/foaming_agent // Metal foaming agent. This is lithium hydride. Add other recipes (e.g. LiH + H2O -> LiOH + H2) eventually.
 	name = REAGENT_FOAMINGAGENT
@@ -402,6 +467,8 @@
 	taste_description = "metal"
 	reagent_state = SOLID
 	color = "#664B63"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/thermite
 	name = REAGENT_THERMITE
@@ -411,6 +478,8 @@
 	reagent_state = SOLID
 	color = "#673910"
 	touch_met = 50
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/thermite/touch_turf(var/turf/T)
 	..()
@@ -438,6 +507,8 @@
 	reagent_state = LIQUID
 	color = "#A5F0EE"
 	touch_met = 50
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_CLEAN
 
 /datum/reagent/space_cleaner/touch_mob(var/mob/M)
 	..()
@@ -527,6 +598,8 @@
 	taste_description = "slime"
 	reagent_state = LIQUID
 	color = "#009CA8"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_LUBE
 
 /datum/reagent/lube/touch_turf(var/turf/simulated/T)
 	..()
@@ -542,6 +615,8 @@
 	taste_description = "plastic"
 	reagent_state = LIQUID
 	color = "#C7FFFF"
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/silicate/touch_obj(var/obj/O)
 	..()
@@ -558,6 +633,8 @@
 	taste_description = "sweetness"
 	reagent_state = LIQUID
 	color = "#808080"
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/nitroglycerin
 	name = REAGENT_NITROGLYCERIN
@@ -566,6 +643,8 @@
 	taste_description = "oil"
 	reagent_state = LIQUID
 	color = "#808080"
+	supply_conversion_value = REFINERYEXPORT_VALUE_HIGHREFINED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/coolant
 	name = REAGENT_COOLANT
@@ -577,6 +656,8 @@
 	color = "#C8A5DC"
 
 	affects_robots = TRUE
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_INDUSTRY
 
 /datum/reagent/coolant/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(M.isSynthetic() && ishuman(M))
@@ -600,6 +681,8 @@
 	description = "An extremely powerful bonding agent."
 	taste_description = "a special education class"
 	color = "#FFFFCC"
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/woodpulp
 	name = REAGENT_WOODPULP
@@ -608,6 +691,8 @@
 	taste_description = "wood"
 	reagent_state = LIQUID
 	color = "#B97A57"
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/luminol
 	name = REAGENT_LUMINOL
@@ -616,6 +701,8 @@
 	taste_description = "metal"
 	reagent_state = LIQUID
 	color = "#F2F3F4"
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/luminol/touch_obj(var/obj/O)
 	..()
@@ -632,6 +719,8 @@
 	taste_description = "salty meat"
 	reagent_state = LIQUID
 	color = "#DF9FBF"
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_CLONEDRUG
 
 /datum/reagent/mineralfluid
 	name = REAGENT_MINERALIZEDFLUID
@@ -640,6 +729,8 @@
 	taste_description = "salt"
 	reagent_state = LIQUID
 	color = "#ff205255"
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_MATSCI
 
 // The opposite to healing nanites, exists to make unidentified hypos implied to have nanites not be 100% safe.
 /datum/reagent/defective_nanites
@@ -651,6 +742,12 @@
 	color = "#333333"
 	metabolism = REM * 3 // Broken nanomachines go a bit slower.
 	scannable = 1
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_SPOILER
+	supply_conversion_value = REFINERYEXPORT_VALUE_NO
+	industrial_use = REFINERYEXPORT_REASON_BIOHAZARD
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/defective_nanites/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.take_organ_damage(2 * removed, 2 * removed)
@@ -666,6 +763,8 @@
 	reagent_state = LIQUID
 	color = "#62764E"
 	nutriment_factor = 15
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
 
 //YW Edit Start
 /datum/reagent/nutriment/paper //Paper is made from cellulose. You can eat it. It doesn't fill you up very much at all.
@@ -685,6 +784,12 @@
 	reagent_state = LIQUID
 	color = "#b51d05"
 	taste_description = "carpet"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+
+/datum/reagent/carpet
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
 
 /datum/reagent/carpet/black
 	name = REAGENT_LIQUIDCARPETB
@@ -749,3 +854,5 @@
 	taste_description = "a mixture of thick, sweet, salty, salty and spicy flavours that all blend together to not be very nice at all"
 	reagent_state = LIQUID
 	color = "#e8e2b0"
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR

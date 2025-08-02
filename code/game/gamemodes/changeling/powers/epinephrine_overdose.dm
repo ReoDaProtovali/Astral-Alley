@@ -51,7 +51,13 @@
 	reagent_state = LIQUID
 	color = "#C8A5DC"
 	metabolism = REM * 2
+<<<<<<< HEAD:code/game/gamemodes/changeling/powers/epinephrine_overdose.dm
 	overdose = 5 //This is intentionally low, as we want the ling to take some tox damage, to discourage spamming the ability.
+=======
+	wiki_flag = WIKI_SPOILER
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_MATSCI
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282)):code/datums/components/antags/changeling/powers/epinephrine_overdose.dm
 
 /datum/reagent/epinephrine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)

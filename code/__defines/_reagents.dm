@@ -81,11 +81,20 @@
 #define REAGENT_ID_TUNGSTEN "tungsten"
 #define REAGENT_NUTRIMENT "Nutriment"
 #define REAGENT_ID_NUTRIMENT "nutriment"
+<<<<<<< HEAD
 #define REAGENT_STEEL "Liquid Steel"
 #define REAGENT_ID_STEEL "steel"
 #define REAGENT_PLASTEEL "Liquid Plasteel"
 #define REAGENT_ID_PLASTEEL "plasteel"
 
+=======
+#define REAGENT_TITANIUM "Titanium"
+#define REAGENT_ID_TITANIUM "titanium"
+#define REAGENT_TITANIUMDIOX "Titanium dioxide"
+#define REAGENT_ID_TITANIUMDIOX "titanium_diox"
+#define REAGENT_TIN	"Tin"
+#define REAGENT_ID_TIN "tin"
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 // Xeno chem react
 #define XENO_CHEM_NUTRI "nutr"
