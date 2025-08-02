@@ -35,7 +35,7 @@
 		"million" = 704
 		)
 	xarch_source_mineral = REAGENT_ID_POTASSIUM
-	reagent = REAGENT_ID_URANIUM
+	reagent = REAGENT_ID_RADIUM // Otherwise it emp pulses constantly with iron
 
 /ore/hematite
 	name = ORE_HEMATITE
@@ -155,6 +155,7 @@
 		"billion" = 13,
 		"billion_lower" = 10
 		)
+	reagent = REAGENT_ID_PHOSPHORUS
 
 /ore/marble
 	name = ORE_MARBLE
@@ -175,7 +176,7 @@
 	ore = /obj/item/ore/lead
 	scan_icon = "mineral_rare"
 	reagent = REAGENT_ID_LEAD
-/*
+
 /ore/copper
 	name = ORE_COPPER
 	display_name = ORE_COPPER
@@ -196,6 +197,7 @@
 	spread_chance = 10
 	ore = /obj/item/ore/tin
 	scan_icon = "mineral_common"
+	reagent = REAGENT_ID_TIN
 
 /ore/quartz
 	name = ORE_QUARTZ
@@ -205,6 +207,7 @@
 	spread_chance = 5
 	ore = /obj/item/ore/quartz
 	scan_icon = "mineral_common"
+	reagent = REAGENT_ID_SILICON
 
 /ore/bauxite
 	name = ORE_BAUXITE
@@ -215,7 +218,7 @@
 	ore = /obj/item/ore/bauxite
 	scan_icon = "mineral_common"
 	reagent = REAGENT_ID_ALUMINIUM
-*/
+
 /ore/rutile
 	name = ORE_RUTILE
 	display_name = ORE_RUTILE
@@ -225,7 +228,8 @@
 	alloy = 1
 	ore = /obj/item/ore/rutile
 	scan_icon = "mineral_uncommon"
-/*
+	reagent = REAGENT_ID_TITANIUMDIOX
+
 /ore/painite
 	name = ORE_PAINITE
 	display_name = "rough painite"
@@ -234,6 +238,7 @@
 	spread_chance = 3
 	ore = /obj/item/ore/painite
 	scan_icon = "mineral_rare"
+	reagent = REAGENT_ID_CALCIUM
 
 /ore/void_opal
 	name = ORE_VOPAL
@@ -243,4 +248,4 @@
 	spread_chance = 1
 	ore = /obj/item/ore/void_opal
 	scan_icon = "mineral_rare"
-*/
+	reagent = REAGENT_ID_SULFUR

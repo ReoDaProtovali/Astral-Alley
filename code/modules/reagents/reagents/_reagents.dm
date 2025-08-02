@@ -44,6 +44,14 @@
 	var/glass_desc = "It's a glass of... what, exactly?"
 	var/list/glass_special = null // null equivalent to list()
 
+<<<<<<< HEAD
+=======
+	var/from_belly = FALSE
+	var/wiki_flag = 0 // Bitflags for secret/food/drink reagent sorting
+	var/supply_conversion_value = null
+	var/industrial_use = null // unique description for export off station
+
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 /datum/reagent/proc/remove_self(var/amount) // Shortcut
 	if(holder)
 		holder.remove_reagent(id, amount)

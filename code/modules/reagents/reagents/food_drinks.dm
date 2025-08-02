@@ -13,6 +13,9 @@
 	color = "#664330"
 	affects_robots = 1	//VOREStation Edit
 
+	supply_conversion_value = REFINERYEXPORT_VALUE_UNWANTED
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+
 /datum/reagent/nutriment/mix_data(var/list/newdata, var/newamount)
 
 	if(!islist(newdata) || !newdata.len)
@@ -655,6 +658,8 @@
 	reagent_state = LIQUID
 	color = "#BBEDA4"
 	overdose = REAGENTS_OVERDOSE
+	supply_conversion_value = REFINERYEXPORT_VALUE_HIGHREFINED
+	industrial_use = REFINERYEXPORT_REASON_DIET
 
 /datum/reagent/lipozine/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	M.adjust_nutrition(-10 * removed)
@@ -671,6 +676,8 @@
 	overdose = REAGENTS_OVERDOSE
 	ingest_met = REM
 	cup_prefix = "salty"
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
 
 /datum/reagent/sodiumchloride/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -691,6 +698,12 @@
 	ingest_met = REM
 	color = "#000000"
 	cup_prefix = "peppery"
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_FOOD
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/enzyme
 	name = REAGENT_ENZYME
@@ -701,6 +714,12 @@
 	reagent_state = LIQUID
 	color = "#365E30"
 	overdose = REAGENTS_OVERDOSE
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_FOOD
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/spacespice
 	name = REAGENT_SPACESPICE
@@ -709,6 +728,12 @@
 	reagent_state = SOLID
 	color = "#e08702"
 	cup_prefix = "spicy"
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_FOOD
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/browniemix
 	name = REAGENT_BROWNIEMIX
@@ -717,6 +742,12 @@
 	reagent_state = SOLID
 	color = "#441a03"
 	allergen_type = ALLERGEN_CHOCOLATE
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_FOOD
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/cakebatter
 	name = REAGENT_CAKEBATTER
@@ -724,6 +755,12 @@
 	description = "A batter for making delicious cakes."
 	reagent_state = LIQUID
 	color = "#F0EDDA"
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_FOOD
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/frostoil
 	name = REAGENT_FROSTOIL
@@ -734,6 +771,12 @@
 	reagent_state = LIQUID
 	ingest_met = REM
 	color = "#B31008"
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_FOOD
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/frostoil/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -772,6 +815,8 @@
 	reagent_state = LIQUID
 	color = "#B31008"
 	metabolism = REM * 0.5
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_MATSCI
 
 /datum/reagent/capsaicin
 	name = REAGENT_CAPSAICIN
@@ -783,6 +828,12 @@
 	ingest_met = REM
 	color = "#B31008"
 	cup_prefix = "hot"
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_FOOD
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_WEAPONS
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/capsaicin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -823,6 +874,8 @@
 	ingest_met = REM
 	color = "#B31008"
 	cup_prefix = "dangerously hot"
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_WEAPONS
 
 /datum/reagent/condensedcapsaicin/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(alien == IS_DIONA)
@@ -960,7 +1013,7 @@
 /* Drinks */
 
 /datum/reagent/drink
-	name = REAGENT_DRINK
+	name = REAGENT_DEVELOPER_WARNING // Unit test ignore
 	id = REAGENT_ID_DRINK
 	description = "Uh, some kind of drink."
 	ingest_met = REM
@@ -973,6 +1026,12 @@
 	var/adj_temp = 0
 	var/nutriment_factor = 0 //CHOMPStation addition
 	var/water_based = TRUE
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_DRINK
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
 
 /datum/reagent/drink/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	var/strength_mod = 1
@@ -1178,6 +1237,8 @@
 	glass_name = "poison berry juice"
 	glass_desc = "A glass of deadly juice."
 	cup_prefix = "poison"
+	supply_conversion_value = REFINERYEXPORT_VALUE_UNWANTED
+	industrial_use = REFINERYEXPORT_REASON_BIOHAZARD
 
 /datum/reagent/drink/juice/potato
 	name = REAGENT_POTATOJUICE
@@ -5029,3 +5090,32 @@
 	nutriment_factor = 2
 	glass_name = REAGENT_ID_KVASS
 	glass_desc = "A hearty glass of Slavic brew."
+<<<<<<< HEAD
+=======
+
+/datum/reagent/cinnamonpowder
+	name = REAGENT_CINNAMONPOWDER
+	id = REAGENT_ID_CINNAMONPOWDER
+	description = "Cinnamon, a spice made from tree bark, ground into a fine powder. Probably not a good idea to eat on its own!"
+	taste_description= "sweet spice with a hint of wood"
+	color = "#a96622"
+
+	glass_name = REAGENT_ID_CINNAMONPOWDER
+	glass_desc = "A glass of ground cinnamon. Dare you take the challenge?"
+
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+
+/datum/reagent/gelatin
+	name = REAGENT_GELATIN
+	id = REAGENT_ID_GELATIN
+	description = "It doesnt taste like anything."
+	taste_description = REAGENT_ID_NOTHING
+	color = "#aaabcf"
+
+	glass_name = REAGENT_GELATIN
+	glass_desc = "It's like flavourless slime."
+
+	supply_conversion_value = REFINERYEXPORT_VALUE_UNWANTED
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+>>>>>>> 747ed116c6 ([MIRROR] Reagent Refinery (#11282))
