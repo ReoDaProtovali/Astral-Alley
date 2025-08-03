@@ -1863,7 +1863,7 @@
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck3/portcent)
 "gB" = (
-/obj/machinery/power/pointdefense{
+/obj/machinery/pointdefense{
 	id_tag = "sd_pd"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -2504,7 +2504,7 @@
 /turf/simulated/floor/tiled,
 /area/stellardelight/deck3/aft)
 "iY" = (
-/obj/machinery/power/pointdefense{
+/obj/machinery/pointdefense{
 	id_tag = "sd_pd"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -4520,7 +4520,7 @@
 	},
 /area/tcommsat/chamber)
 "qb" = (
-/obj/machinery/power/pointdefense{
+/obj/machinery/pointdefense{
 	id_tag = "sd_pd"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -6107,7 +6107,7 @@
 /turf/simulated/floor/bluegrid,
 /area/ai_cyborg_station)
 "we" = (
-/obj/machinery/power/pointdefense{
+/obj/machinery/pointdefense{
 	id_tag = "sd_pd"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -8827,7 +8827,7 @@
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck3/portaft)
 "FH" = (
-/obj/machinery/power/pointdefense{
+/obj/machinery/pointdefense{
 	id_tag = "sd_pd"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -11319,7 +11319,7 @@
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck3/foreportrooma)
 "Op" = (
-/obj/machinery/power/pointdefense{
+/obj/machinery/pointdefense{
 	id_tag = "sd_pd"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -12809,7 +12809,7 @@
 /turf/simulated/floor/tiled,
 /area/stellardelight/deck3/aft)
 "TE" = (
-/obj/machinery/power/pointdefense{
+/obj/machinery/pointdefense{
 	id_tag = "sd_pd"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -13341,7 +13341,7 @@
 /turf/simulated/floor/tiled/techfloor/grid,
 /area/maintenance/stellardelight/deck3/forestarroomb)
 "Vz" = (
-/obj/machinery/power/pointdefense{
+/obj/machinery/pointdefense{
 	id_tag = "sd_pd"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
@@ -13413,7 +13413,7 @@
 /turf/simulated/floor,
 /area/maintenance/stellardelight/deck3/portcent)
 "VM" = (
-/obj/machinery/power/pointdefense{
+/obj/machinery/pointdefense{
 	id_tag = "sd_pd"
 	},
 /obj/effect/floor_decal/industrial/warning/full,
