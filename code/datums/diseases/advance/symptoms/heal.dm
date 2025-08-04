@@ -89,6 +89,7 @@ Bonus
 /*
 //////////////////////////////////////
 
+<<<<<<< HEAD
 Longevity
 
 	Medium hidden boost.
@@ -102,6 +103,27 @@ Bonus
 
 //////////////////////////////////////
 */
+=======
+/datum/symptom/heal/water/CanHeal(datum/disease/advance/A, actual_power)
+
+	var/mob/living/carbon/human/H = A.affected_mob
+
+	if(H.fire_stacks < 0)
+		H.adjust_fire_stacks(min(absorption_coeff, -H.fire_stacks))
+		. += power
+	if(H.ingested.has_reagent(REAGENT_ID_HOLYWATER))
+		H.ingested.remove_reagent(REAGENT_ID_HOLYWATER, 0.5 * absorption_coeff)
+		. += power * 0.75
+	else if(H.ingested.has_reagent(REAGENT_ID_WATER))
+		H.ingested.remove_reagent(REAGENT_ID_WATER, 0.5 * absorption_coeff)
+		. += power * 0.5
+
+/datum/symptom/heal/water/Heal(mob/living/carbon/human/H, datum/disease/advance/A, actual_power)
+	if(!istype(H))
+		return
+
+	var/heal_amt = 2 * actual_power
+>>>>>>> 485e9e4933 ([MIRROR] Fixes Tissue Hydration not working (#11304))
 
 /datum/symptom/heal/longevity
 	name = "Longevity"
@@ -118,8 +140,22 @@ Bonus
 	if(!longevity)
 		A.cure()
 
+<<<<<<< HEAD
 /datum/symptom/heal/longevity/Start(datum/disease/advance/A)
 	longevity = rand(initial(longevity) - 5, initial(longevity) + 5)
+=======
+	if(prob(5))
+		to_chat(H, span_notice("You feel yourself absorbing the water around you to soothe your damaged skin."))
+
+	var/obj/item/organ/external/pickedpart
+
+	for(var/bodypart in zone_list)
+		pickedpart = H.get_organ(bodypart)
+		if(pickedpart.burn_dam > 0 && !(pickedpart.robotic >= ORGAN_ROBOT))
+			pickedpart.heal_damage(0, (heal_amt/zone_list.len))
+
+	return TRUE
+>>>>>>> 485e9e4933 ([MIRROR] Fixes Tissue Hydration not working (#11304))
 
 /*
 //////////////////////////////////////
