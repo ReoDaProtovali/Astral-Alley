@@ -482,7 +482,13 @@
 
 #define VIS_SOULCATCHER		35 // CHOMPAdd
 
+<<<<<<< HEAD
 #define VIS_COUNT			35 //Must be highest number from above. // CHOMPEdit
+=======
+#define VIS_EVENT_INVIS		36
+
+#define VIS_COUNT			36 //Must be highest number from above.
+>>>>>>> 399e4948e8 ([MIRROR] Invisibility GM tool and Glamour Mob (#11296))
 
 //Some mob icon layering defines
 #define BODY_LAYER		-100
