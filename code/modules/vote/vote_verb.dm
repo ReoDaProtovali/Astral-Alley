@@ -36,13 +36,21 @@
 		SSvote.start_vote(new votetype(usr.ckey))
 		return
 
+<<<<<<< HEAD
 	var/question = tgui_input_text(usr, "What is the vote for?", "Create Vote", encode = FALSE)
+=======
+	var/question = tgui_input_text(src, "What is the vote for?", "Create Vote", "", MAX_MESSAGE_LEN)
+>>>>>>> 4e2361f8df ([MIRROR] Encode changes (#11301))
 	if(isnull(question))
 		return
 
 	var/list/choices = list()
 	for(var/i in 1 to 10)
+<<<<<<< HEAD
 		var/option = tgui_input_text(usr, "Please enter an option or hit cancel to finish", "Create Vote", encode = FALSE)
+=======
+		var/option = tgui_input_text(src, "Please enter an option or hit cancel to finish", "Create Vote", "", MAX_MESSAGE_LEN)
+>>>>>>> 4e2361f8df ([MIRROR] Encode changes (#11301))
 		if(isnull(option) || !usr.client)
 			break
 		choices |= option

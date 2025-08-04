@@ -264,8 +264,13 @@
 
 //CHOMPedit end
 		// Prompt for username after they've enterred the body.
+<<<<<<< HEAD
 		var/newname = sanitize(tgui_input_text(avatar, "You are entering virtual reality. Your username is currently [src.name]. Would you like to change it to something else?", "Name change", null, MAX_NAME_LEN), MAX_NAME_LEN)
 		if (newname)
+=======
+		var/newname = tgui_input_text(avatar, "You are entering virtual reality. Your username is currently [src.name]. Would you like to change it to something else?", "Name change", null, MAX_NAME_LEN)
+		if(newname)
+>>>>>>> 4e2361f8df ([MIRROR] Encode changes (#11301))
 			avatar.real_name = newname
 
 	else

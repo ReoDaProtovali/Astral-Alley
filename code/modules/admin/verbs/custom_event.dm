@@ -7,7 +7,11 @@
 		to_chat(src, "Only administrators may use this command.")
 		return
 
+<<<<<<< HEAD
 	var/input = sanitize(tgui_input_text(usr, "Enter the description of the custom event. Be descriptive. To cancel the event, make this blank or hit cancel.", "Custom Event", custom_event_msg, MAX_PAPER_MESSAGE_LEN, TRUE, prevent_enter = TRUE), MAX_PAPER_MESSAGE_LEN, extra = 0)
+=======
+	var/input = tgui_input_text(usr, "Enter the description of the custom event. Be descriptive. To cancel the event, make this blank or hit cancel.", "Custom Event", GLOB.custom_event_msg, MAX_PAPER_MESSAGE_LEN, TRUE, prevent_enter = TRUE)
+>>>>>>> 4e2361f8df ([MIRROR] Encode changes (#11301))
 	if(!input || input == "")
 		custom_event_msg = null
 		log_admin("[usr.key] has cleared the custom event text.")
