@@ -4,8 +4,14 @@
 	plane_masters[VIS_CH_HEALTH_VR] 	= new /obj/screen/plane_master{plane = PLANE_CH_HEALTH_VR}			//Health bar but transparent at 100
 	plane_masters[VIS_CH_BACKUP] 		= new /obj/screen/plane_master{plane = PLANE_CH_BACKUP}				//Backup implant status
 	plane_masters[VIS_CH_VANTAG] 		= new /obj/screen/plane_master{plane = PLANE_CH_VANTAG}				//Vore Antags
+<<<<<<< HEAD
 	plane_masters[VIS_CH_STOMACH] 		= new /obj/screen/plane_master{plane = PLANE_CH_STOMACH}				//Stomach
 	plane_masters[VIS_SOULCATCHER] 		= new /obj/screen/plane_master{plane = PLANE_SOULCATCHER}				//CHOMPAdd Soulcatcher
+=======
+	plane_masters[VIS_CH_STOMACH] 		= new /obj/screen/plane_master{plane = PLANE_CH_STOMACH}			//Stomach
+	plane_masters[VIS_SOULCATCHER] 		= new /obj/screen/plane_master{plane = PLANE_SOULCATCHER}			// Soulcatcher
+	plane_masters[VIS_EVENT_INVIS] 		= new /obj/screen/plane_master{plane = PLANE_INVIS_EVENT}			//Things only specific players can see at any time.
+>>>>>>> 399e4948e8 ([MIRROR] Invisibility GM tool and Glamour Mob (#11296))
 
 	plane_masters[VIS_AUGMENTED]		= new /obj/screen/plane_master/augmented(M = my_mob)				//Augmented reality
 	..()
