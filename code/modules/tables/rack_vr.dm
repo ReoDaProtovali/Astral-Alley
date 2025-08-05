@@ -45,4 +45,22 @@
 
 /obj/structure/table/rack/shelf/wood/New()
 	material = get_material_by_name(MAT_WOOD)
+<<<<<<< HEAD
 	..()
+=======
+	. = ..()
+
+/obj/structure/table/rack/glamour
+	color = "#fffbe6"
+
+/obj/structure/table/rack/glamour/Initialize(mapload)
+	material = get_material_by_name(MAT_GLAMOUR)
+	. = ..()
+
+/obj/structure/table/rack/shelf/glamour
+	color = "#fffbe6"
+
+/obj/structure/table/rack/shelf/glamour/Initialize(mapload)
+	material = get_material_by_name(MAT_GLAMOUR)
+	. = ..()
+>>>>>>> af855f38c0 ([MIRROR] A few mapping glamour objects (#11303))
