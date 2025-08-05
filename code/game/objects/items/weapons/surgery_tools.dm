@@ -106,6 +106,7 @@
 	matter = list(MAT_STEEL = 10000, MAT_GLASS = 5000)
 	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
 	drop_sound = 'sound/items/drop/knife.ogg'
+	var/clamp_chance = 0 // chance that the scalpel will perform cautery on its own
 
 /*
  * Researchable Scalpels
@@ -115,6 +116,11 @@
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field.  This one looks basic and could be improved."
 	icon_state = "scalpel_laser1"
 	damtype = "fire"
+<<<<<<< HEAD
+=======
+	hitsound = 'sound/weapons/blade1.ogg'
+	clamp_chance = 75
+>>>>>>> 53887e109d ([MIRROR] Scalpels use a var instead of a typecheck for clamping (#11317))
 
 /obj/item/surgical/scalpel/laser2
 	name = "laser scalpel"
@@ -122,6 +128,7 @@
 	icon_state = "scalpel_laser2"
 	damtype = "fire"
 	force = 12.0
+	clamp_chance = 85
 
 /obj/item/surgical/scalpel/laser3
 	name = "laser scalpel"
@@ -129,12 +136,14 @@
 	icon_state = "scalpel_laser3"
 	damtype = "fire"
 	force = 15.0
+	clamp_chance = 95
 
 /obj/item/surgical/scalpel/manager
 	name = "incision management system"
 	desc = "A true extension of the surgeon's body, this marvel instantly and completely prepares an incision allowing for the immediate commencement of therapeutic steps."
 	icon_state = "scalpel_manager"
 	force = 7.5
+	clamp_chance = 100
 
 /obj/item/surgical/scalpel/ripper
 	name = "jagged scalpel"
