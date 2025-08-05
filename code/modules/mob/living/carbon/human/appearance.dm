@@ -204,6 +204,9 @@
 	for(var/hairstyle in hair_styles_list)
 		var/datum/sprite_accessory/S = hair_styles_list[hairstyle]
 
+		if(S.name == DEVELOPER_WARNING_NAME)
+			continue
+
 		if(check_gender && gender != NEUTER)
 			if(gender == MALE && S.gender == FEMALE)
 				continue
@@ -229,6 +232,9 @@
 	var/list/valid_facial_hairstyles = new()
 	for(var/facialhairstyle in facial_hair_styles_list)
 		var/datum/sprite_accessory/S = facial_hair_styles_list[facialhairstyle]
+
+		if(S.name == DEVELOPER_WARNING_NAME)
+			continue
 
 		if(gender != NEUTER)
 			if(gender == MALE && S.gender == FEMALE)
