@@ -279,8 +279,12 @@
 	var/list/vorestrings = list()
 	vorestrings += examine_weight()
 	vorestrings += examine_nutrition()
+<<<<<<< HEAD
 	vorestrings += examine_reagent_bellies() //CHOMP reagent bellies
 	vorestrings += examine_bellies()
+=======
+	vorestrings += formatted_vore_examine()
+>>>>>>> 8cec277367 ([MIRROR] dropdown vore examines (#11297))
 	vorestrings += examine_pickup_size()
 	vorestrings += examine_step_size()
 	vorestrings += examine_nif()
