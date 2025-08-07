@@ -9868,11 +9868,17 @@
 /turf/simulated/floor/tiled,
 /area/rnd/outpost/xenobiology/outpost_north_airlock)
 "aqB" = (
+<<<<<<< HEAD
 /obj/effect/floor_decal/spline/plain{
 	dir = 5
 	},
 /turf/simulated/floor/water/pool,
 /area/crew_quarters/pool)
+=======
+/mob/living/simple_mob/animal/passive/mothroach/bar,
+/turf/simulated/floor/lino,
+/area/crew_quarters/bar)
+>>>>>>> 2657a75a7d ([MIRROR] Mothroaches <3 (#11343))
 "aqC" = (
 /obj/item/radio/intercom{
 	dir = 1;
@@ -61142,7 +61148,7 @@ anj
 aKl
 aGx
 bgz
-bgz
+aqB
 ato
 bcp
 atN
