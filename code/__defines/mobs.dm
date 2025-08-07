@@ -329,6 +329,11 @@
 #define SPECIES_LLEILL			"Lleill"
 #define SPECIES_HANNER			"Hanner"
 
+// FBG types
+#define FBP_ASSISTED		"assisted"
+#define FBP_MECHANICAL		"mechanical"
+#define FBP_DIGITAL			"digital"
+
 // Monkey and alien monkeys.
 #define SPECIES_MONKEY				"Monkey"
 #define SPECIES_MONKEY_TAJ			"Farwa"
