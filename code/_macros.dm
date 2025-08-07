@@ -46,3 +46,10 @@
 #define PIXEL_MULTIPLIER WORLD_ICON_SIZE/32 //Needed for the R-UST port
 
 #define JOINTEXT(X) jointext(X, null)
+<<<<<<< HEAD
+=======
+
+#define isbelly(A)				istype(A, /obj/belly)
+#define isgripperpocket(A)		istype(A, /obj/item/storage/internal/gripper)
+#define iscapturecrystal(A)		istype(A, /obj/item/capture_crystal)
+>>>>>>> 4239f5ab7c ([MIRROR] Gripper update (#11330))
