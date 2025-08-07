@@ -282,11 +282,23 @@
 	name = REAGENT_DEUTERIUM
 	id = REAGENT_ID_DEUTERIUM
 	description = "A isotope of hydrogen. It has one extra neutron, and shares all chemical characteristics with hydrogen."
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+	coolant_modifier = 1 // It's ALMOST water
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/hydrogen/tritium
 	name = REAGENT_TRITIUM
 	id = REAGENT_ID_TRITIUM
 	description = "A radioactive isotope of hydrogen. It has two extra neutrons, and shares all other chemical characteristics with hydrogen."
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+	coolant_modifier = 1 // It's ALMOST water
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/lithium/lithium6
 	name = REAGENT_LITHIUM6
@@ -300,6 +312,12 @@
 	taste_mult = 0
 	reagent_state = GAS
 	color = "#808080"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_RARE
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+	coolant_modifier = 2
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/boron/boron11
 	name = REAGENT_BORON11
@@ -357,6 +375,14 @@
 
 	glass_name = "holy water"
 	glass_desc = "An ashen-obsidian-water mix, this solution will alter certain sections of the brain's rationality."
+<<<<<<< HEAD
+=======
+	wiki_flag = WIKI_SPOILER
+
+	supply_conversion_value = REFINERYEXPORT_VALUE_NO
+	industrial_use = REFINERYEXPORT_REASON_RAW
+	coolant_modifier = 1 // It's water
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/water/holywater/affect_ingest(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
@@ -378,6 +404,12 @@
 	taste_mult = 2
 	reagent_state = GAS
 	color = "#404030"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_RAW
+	coolant_modifier = 1.25
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/diethylamine
 	name = REAGENT_DIETHYLAMINE
@@ -558,6 +590,12 @@
 	taste_description = "sweetness"
 	reagent_state = LIQUID
 	color = "#808080"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_PRECURSOR
+	coolant_modifier = 0.95
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/nitroglycerin
 	name = REAGENT_NITROGLYCERIN
@@ -577,6 +615,12 @@
 	color = "#C8A5DC"
 
 	affects_robots = TRUE
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_INDUSTRY
+	coolant_modifier = 2 // In the name
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/coolant/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	if(M.isSynthetic() && ishuman(M))
@@ -632,6 +676,12 @@
 	taste_description = "salty meat"
 	reagent_state = LIQUID
 	color = "#DF9FBF"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_CLONEDRUG
+	coolant_modifier = -2 //Ew
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 /datum/reagent/mineralfluid
 	name = REAGENT_MINERALIZEDFLUID
@@ -640,6 +690,12 @@
 	taste_description = "salt"
 	reagent_state = LIQUID
 	color = "#ff205255"
+<<<<<<< HEAD
+=======
+	supply_conversion_value = REFINERYEXPORT_VALUE_PROCESSED
+	industrial_use = REFINERYEXPORT_REASON_MATSCI
+	coolant_modifier = -2.5
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 
 // The opposite to healing nanites, exists to make unidentified hypos implied to have nanites not be 100% safe.
 /datum/reagent/defective_nanites
