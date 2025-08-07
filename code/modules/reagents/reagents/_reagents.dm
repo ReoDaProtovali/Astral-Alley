@@ -44,6 +44,16 @@
 	var/glass_desc = "It's a glass of... what, exactly?"
 	var/list/glass_special = null // null equivalent to list()
 
+<<<<<<< HEAD
+=======
+	var/from_belly = FALSE
+	var/wiki_flag = 0 // Bitflags for secret/food/drink reagent sorting
+	var/supply_conversion_value = null
+	var/industrial_use = null // unique description for export off station
+
+	var/coolant_modifier = -0.5 // this is multiplied by the volume of the reagent. Most things are not good coolant. EX: Water is 1, coolant is 2. -1 would be a bad reagent for cooling.
+
+>>>>>>> 306edc0a37 ([MIRROR] Reagent cooled atmo machines (#11335))
 /datum/reagent/proc/remove_self(var/amount) // Shortcut
 	if(holder)
 		holder.remove_reagent(id, amount)
