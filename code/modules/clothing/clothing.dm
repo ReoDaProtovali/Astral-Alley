@@ -1077,9 +1077,15 @@
 		to_chat(usr, span_notice("You roll down your [src]'s sleeves."))
 	update_clothing_icon()
 
+<<<<<<< HEAD
 /obj/item/clothing/under/rank/New()
 	sensor_mode = pick(0,1,2,3)
 	..()
+=======
+/obj/item/clothing/under/rank/Initialize(mapload)
+	sensor_mode = pick(0,1,2,3)
+	. = ..()
+>>>>>>> 69a3578366 ([MIRROR] Makes sensors respect prefs (#11339))
 
 //Vorestation edit - eject mobs from clothing before deletion
 /obj/item/clothing/Destroy()
