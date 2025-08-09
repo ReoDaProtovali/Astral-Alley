@@ -402,6 +402,7 @@
 	bitesize = 3
 	reagents.add_reagent(REAGENT_ID_CAPSAICIN, 4)
 	reagents.add_reagent(REAGENT_ID_PROTEIN, 4)
+	reagents.add_reagent(REAGENT_ID_SODIUMCHLORIDE, 1)
 
 /obj/item/reagent_containers/food/snacks/sharkmeatcubes
 	name = "shark cubes"
@@ -563,6 +564,7 @@
 /obj/item/reagent_containers/food/snacks/nachos/Initialize()
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_NUTRIMENT, 1)
+	reagents.add_reagent(REAGENT_ID_SODIUMCHLORIDE, 1)
 	bitesize = 1
 
 /obj/item/reagent_containers/food/snacks/cheesenachos
@@ -576,6 +578,7 @@
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_NUTRIMENT, 5)
 	reagents.add_reagent(REAGENT_ID_PROTEIN, 2)
+	reagents.add_reagent(REAGENT_ID_SODIUMCHLORIDE, 1)
 	bitesize = 2
 
 /obj/item/reagent_containers/food/snacks/milosoup
