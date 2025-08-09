@@ -1,59 +1,6 @@
-
-/*
-/datum/map/southern_cross
-
-	post_round_safe_areas = list (
-		/area/centcom,
-		/area/shuttle/escape/centcom,
-		/area/shuttle/escape_pod1/centcom,
-		/area/shuttle/escape_pod2/centcom,
-		/area/shuttle/escape_pod3/centcom,
-		/area/shuttle/escape_pod5/centcom,
-		/area/shuttle/transport1/centcom,
-		/area/shuttle/administration/centcom,
-		/area/shuttle/response_ship,
-	)
-*/
-
-//Turbolift
-
-/area/turbolift
-	name = "\improper Turbolift"
-	icon_state = "shuttle"
-	requires_power = 0
-	dynamic_lighting = 1
-
-/area/turbolift/start
-	name = "\improper Turbolift Start"
-
-/area/turbolift/firstdeck
-	name = "\improper first deck"
-	base_turf = /turf/simulated/floor/plating
-
-/area/turbolift/seconddeck
-	name = "\improper second deck"
-	base_turf = /turf/simulated/open
-
-/area/turbolift/thirddeck
-	name = "\improper third deck"
-	base_turf = /turf/simulated/open
-
-// Elevator areas.
-// CHOMPEdit - Maintenance Deck
-/*
-/area/turbolift/port_deck_maints
-	name = "lift (maints deck)"
-	lift_floor_label = "Deck 0"
-	lift_floor_name = "Maintenance Deck"
-	lift_announce_str = "Arriving at Maintenance Deck: Engineering. Power Back Up. Gravity Generator."
-	base_turf = /turf/simulated/floor
-*/
 /area/turbolift/port_deck_one
-	name = "lift (first deck)"
-	lift_floor_label = "Deck 1"
-	lift_floor_name = "Hangar Deck"
-	lift_announce_str = "Arriving at Hangar Deck: Main Hangars.Cargo Delivery. Telecommunications. Auxiliary Shuttle Docks. Escape Pods."
 	base_turf = /turf/simulated/floor
+<<<<<<< HEAD
 
 /area/turbolift/port_deck_two
 	name = "lift (second deck)"
@@ -3185,3 +3132,5 @@
     icon_state = "engineering"
     ambience = AMBIENCE_SUBSTATION
     lightswitch = 1
+=======
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))

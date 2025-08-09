@@ -3,14 +3,18 @@
 /obj/item/clothing/mask/gas/New()
 	if(type == /obj/item/clothing/mask/gas)
 		flags_inv &= ~HIDEFACE
+<<<<<<< HEAD
 	..()
+=======
+*/// CHOMPRemove End
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 
 // Since we changed the gas mask sprite, if we want the old one for some reason use this.
 /obj/item/clothing/mask/gas/wwii
 	icon = 'icons/inventory/face/item.dmi'
 	icon_override = 'icons/inventory/face/mob.dmi'
 	flags_inv = HIDEEARS|HIDEEYES|HIDEFACE
-*/
+
 /obj/item/clothing/mask/gas/imperial
 	name = "imperial soldier facemask"
 	desc = "A close-fitting tactical mask that can be connected to an air supply."

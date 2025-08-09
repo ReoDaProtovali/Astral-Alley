@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /obj/effect/step_trigger/teleporter/to_mining
 	icon = 'icons/obj/structures/stairs_64x64.dmi'
 	icon_state = ""
@@ -16,6 +17,13 @@
 	invisibility = 0
 	plane = TURF_PLANE
 	layer = ABOVE_TURF_LAYER
+=======
+/obj/effect/step_trigger/teleporter/to_mining/Initialize(mapload)
+	. = ..()
+	teleport_x = x
+	teleport_y = y ++
+	teleport_z = GLOB.map_templates_loaded[Z_NAME_GB_MINING]
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 
 /obj/effect/step_trigger/teleporter/from_mining/Initialize()
 	. = ..()
@@ -23,6 +31,7 @@
 	teleport_y = y --
 	teleport_z = Z_LEVEL_GB_BOTTOM
 
+<<<<<<< HEAD
 /turf/unsimulated/mineral/virgo3b
 	blocks_air = TRUE
 
@@ -81,27 +90,17 @@ VIRGO3B_TURF_CREATE(/turf/simulated/floor/outdoors/rocks)
 	var/area/shock_area = /area/centcom/terminal/tramfluff
 
 /turf/simulated/floor/maglev/Initialize()
+=======
+/turf/simulated/floor/maglev/Initialize(mapload)
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 	. = ..()
-	shock_area = locate(shock_area)
-
-// Walking on maglev tracks will shock you! Horray!
-/turf/simulated/floor/maglev/Entered(var/atom/movable/AM, var/atom/old_loc)
-	if(isliving(AM) && !(AM.is_incorporeal()) && prob(50))
-		track_zap(AM)
-/turf/simulated/floor/maglev/attack_hand(var/mob/user)
-	if(prob(75))
-		track_zap(user)
-/turf/simulated/floor/maglev/proc/track_zap(var/mob/living/user)
-	if (!istype(user)) return
-	if (electrocute_mob(user, shock_area, src))
-		var/datum/effect/effect/system/spark_spread/s = new /datum/effect/effect/system/spark_spread
-		s.set_up(5, 1, src)
-		s.start()
+	shock_area = /area/centcom/terminal/tramfluff
 
 // Shelter Capsule extra restrictions
 /datum/map_template/shelter/New()
 	..()
 	banned_areas += list(/area/groundbase/level3/escapepad)
+<<<<<<< HEAD
 
 // Landmarks for wildlife events
 
@@ -112,3 +111,5 @@ VIRGO3B_TURF_CREATE(/turf/simulated/floor/outdoors/rocks)
 /obj/effect/landmark/wildlife/forest
 	name = "roaming wildlife"
 	wildlife_type = 2
+=======
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))

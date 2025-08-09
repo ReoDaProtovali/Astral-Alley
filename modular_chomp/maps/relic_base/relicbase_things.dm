@@ -1,14 +1,18 @@
 // Relicbase-specific object subtypes.
+<<<<<<< HEAD
 // Garage Doors:
 /obj/machinery/door/blast/shutters/garage
 	name = "Garage Door"
 	open_sound = 'modular_chomp/sound/machines/door/garagedooropen.ogg'
 	close_sound = 'modular_chomp/sound/machines/door/garagedoorclose.ogg'
 
+=======
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 /obj/machinery/door/blast/gate/thin
 	open_sound = 'modular_chomp/sound/machines/door/gateopen.ogg'
 	close_sound = 'modular_chomp/sound/machines/door/gateclose.ogg'
 
+<<<<<<< HEAD
 /obj/machinery/camera/network/exterior
 	network = list(NETWORK_EXTERIOR)
 
@@ -34,13 +38,12 @@
 	else
 		return 0
 
+=======
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 // The tram's electrified maglev tracks
 /turf/simulated/floor/maglev // These WILL shock you.
-	name = "maglev track"
-	desc = "Magnetic levitation tram tracks. Caution! Electrified!"
-	icon = 'icons/turf/flooring/maglevs.dmi'
-	icon_state = "maglevup"
 
+<<<<<<< HEAD
 	var/area/shock_area = /area/hallway/primary // We use this, given our current tram /areas/ are set to this. Clean this up later if we give tram halls their own dedicated /area/
 
 /turf/simulated/floor/maglev/Initialize()
@@ -69,6 +72,9 @@
 
 /turf/simulated/floor/maglev/unpowered/Entered(var/atom/movable/AM, var/atom/old_loc)
 	return // No zappy.
+=======
+	shock_area = /area/hallway/primary // We use this, given our current tram /areas/ are set to this. Clean this up later if we give tram halls their own dedicated /area/
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 
 // Override for relicbase.
 // Base Mineral turf override, for testing.
@@ -84,15 +90,6 @@
 	icon = 'modular_chomp/icons/turf/thor.dmi'
 	icon_state = "deeprock"
 
-/turf/simulated/mineral/thor/ignore_oregen
-	ignore_oregen = TRUE
-
-/turf/simulated/mineral/thor/ignore_cavegen
-	ignore_cavegen = TRUE
-
-/turf/simulated/mineral/thor/ignore_mapgen
-	ignore_mapgen = TRUE
-
 /turf/simulated/mineral/thor/floor
 	name = "basalt"
 	floor_name = "basalt"
@@ -104,38 +101,3 @@
 	opacity = 0
 	blocks_air = 0
 	can_build_into_floor = TRUE
-
-/turf/simulated/mineral/thor/floor/ignore_oregen
-	ignore_oregen = TRUE
-
-/turf/simulated/mineral/thor/floor/ignore_cavegen
-	ignore_cavegen = TRUE
-
-/turf/simulated/mineral/thor/floor/ignore_mapgen
-	ignore_mapgen = TRUE
-
-/turf/simulated/mineral/thor/floor/cave
-	name = "basalt"
-	desc = "Loose, rocky basalt. It crumbles to sand under the slightest bit of force."
-	icon_state = "basalt0"
-	icon = 'modular_chomp/icons/turf/thor.dmi'
-
-/turf/simulated/mineral/thor/mines
-	name = "dark rock"
-	desc = "Dark black basalt. Rich in exotic minerals."
-	icon_state = "deeprock"
-	icon = 'modular_chomp/icons/turf/thor.dmi'
-	temperature = 393.15
-
-/turf/unsimulated/mineral/thor/mines
-	name = "impassable dark rock"
-	desc = "Dark black basalt. Packed impossibly tightly, no way to get past this."
-	icon_state = "deeprock-solid"
-	icon = 'modular_chomp/icons/turf/thor.dmi'
-	temperature = 393.15
-
-/turf/simulated/mineral/thor/floor/ignore_mapgen/cave
-	name = "basalt"
-
-/turf/simulated/mineral/thor/ignore_mapgen/cave
-	name = "dark rock"

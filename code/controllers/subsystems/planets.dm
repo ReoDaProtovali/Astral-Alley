@@ -24,8 +24,17 @@ SUBSYSTEM_DEF(planets)
 	for(var/P in planet_datums)
 		var/datum/planet/NP = new P()
 		planets.Add(NP)
+<<<<<<< HEAD
 		for(var/Z in NP.expected_z_levels)
 			if(Z > z_to_planet.len)
+=======
+		for(var/index in 1 to length(NP.expected_z_levels))
+			var/Z = NP.expected_z_levels[index]
+			if(!isnum(Z))
+				Z = GLOB.map_templates_loaded[Z]
+				NP.expected_z_levels[index] = Z
+			if(Z > length(z_to_planet))
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 				z_to_planet.len = Z
 			if(z_to_planet[Z])
 				admin_notice(span_danger("Z[Z] is shared by more than one planet!"), R_DEBUG)

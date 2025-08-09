@@ -29865,8 +29865,15 @@
 /obj/structure/cable/cyan{
 	icon_state = "1-2"
 	},
+<<<<<<< HEAD
 /obj/machinery/atmospherics/pipe/simple/hidden/yellow,
 /obj/machinery/power/sensor,
+=======
+/obj/machinery/power/sensor{
+	name = "Powernet Sensor - Carrier Reactor Power";
+	name_tag = "Carrier Reactor Power"
+	},
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 /obj/machinery/door/firedoor/glass,
 /obj/machinery/door/airlock/engineering{
 	name = "R-UST Access"

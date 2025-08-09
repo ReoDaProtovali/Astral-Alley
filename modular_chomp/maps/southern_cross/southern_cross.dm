@@ -2,61 +2,21 @@
 
 #if !defined(USING_MAP_DATUM)
 
-	// CHOMPStation Edits Start: Disabling specific includes as vorestation.dme has them already loading via #includes there. UPDATE THIS if that changes.
-	#include "southern_cross_areas_planet.dm"
-	#include "southern_cross_areas.dm"
 	#include "southern_cross_defines.dm"
-	#include "southern_cross_sif_defines.dm"
-	#include "southern_cross_elevator.dm"
-	#include "southern_cross_events.dm"
-	#include "southern_cross_overrides.dm"
-	#include "southern_cross_presets.dm"
-	#include "southern_cross_shuttles.dm"
-	#include "southern_cross_shuttles_ch.dm"
-	#include "shuttles/crew_shuttles.dm"
-	#include "shuttles/crew_shuttles_ch.dm"
-	#include "shuttles/heist.dm"
-	#include "shuttles/merc.dm"
-	#include "shuttles/ninja.dm"
-	#include "shuttles/ert.dm"
 
-	#include "loadout/loadout_accessories.dm"
-	// #include "loadout/loadout_suit.dm"
-	// #include "loadout/loadout_uniform.dm"
-
-	#include "datums/supplypacks/munitions.dm"
-
-	// #include "items/encryptionkey_sc.dm"
-	// #include "items/headset_sc.dm"
-	// #include "items/clothing/sc_suit.dm"
-	// #include "items/clothing/sc_under.dm"
-	// #include "items/clothing/sc_accessory.dm"
-	#include "job/outfits.dm"
-	// #include "structures/closets/engineering.dm"
-	// #include "structures/closets/medical.dm"
-	// #include "structures/closets/misc.dm"
-	// #include "structures/closets/research.dm"
-	// #include "structures/closets/security.dm"
 	#include "turfs/outdoors.dm"
-	#include "events/wildlife_encounter.dm"
 
-	// CHOMPStation Edits End - Un-disable these includes if vorestation.dme ever removes them from their #includes.
+	// Map specific
+	#include "southern_cross_overrides.dm"
+	#include "southern_cross_shuttles.dm"
 
 	#ifndef AWAY_MISSION_TEST //Don't include these for just testing away missions if the flag is set to true in /code/_away_mission_tests.dm
 		#include "southern_cross-1.dmm" //	Deck 0 z1
 		#include "southern_cross-2.dmm" //	Deck 1 z2
 		#include "southern_cross-3.dmm" //	Deck 2 z3
 		#include "southern_cross-4.dmm" //	Deck 3 z4
-//		#include "southern_cross-4-unused.dmm" //Empty space CHOMPedit: Disabling empty space map because the overmap now generates empty space on its own for space transit.
-		#include "southern_cross-5.dmm" //	Sif outpost z5
-		#include "southern_cross-6.dmm" //	Sif mine z6
-		#include "southern_cross-7.dmm" //	Carrier z7
-		#include "southern_cross-8.dmm" //	Centcom z8
-		#include "southern_cross-9.dmm" //	Transit z9
-		#include "southern_cross-10.dmm" //	Sif wilds z10
-//		#include "southern_cross-12-unused.dmm" //Skylands z10 //Remove due to lack of use
-		// #include "southern_cross-13.dmm" //Valley z11 seemingly. For stranger critters and POIs.
 	#endif
+<<<<<<< HEAD
 //	#include "southern_cross-casino.dmm" //CHOMPedit: Disabled to save resources and loaded in during events - Jack
 
 	#include "submaps/_southern_cross_submaps.dm" //This contains VR world and gateway stuff
@@ -83,6 +43,8 @@
 
 
 
+=======
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 
 	#define USING_MAP_DATUM /datum/map/southern_cross
 
