@@ -1,11 +1,4 @@
 //Simulated
-VIRGO3B_TURF_CREATE(/turf/simulated/floor/reinforced)
-VIRGO3B_TURF_CREATE(/turf/simulated/floor/tiled/steel_dirty)
-VIRGO3B_TURF_CREATE(/turf/simulated/floor/wood/sif)
-VIRGO3B_TURF_CREATE(/turf/simulated/floor/outdoors/rocks)
-VIRGO3B_TURF_CREATE(/turf/simulated/floor/water/indoors)
-
-VIRGO3B_TURF_CREATE(/turf/simulated/open)
 /turf/simulated/open/virgo3b
 	edge_blending_priority = 0.5 //Turfs which also have e_b_p and higher than this will plop decorative edges onto this turf
 /*	Handled by parent now
@@ -14,25 +7,6 @@ VIRGO3B_TURF_CREATE(/turf/simulated/open)
 	if(is_outdoors())
 		SSplanets.addTurf(src)
 */
-
-VIRGO3B_TURF_CREATE(/turf/simulated/floor)
-
-/turf/simulated/floor/virgo3b_indoors
-	VIRGO3B_SET_ATMOS
-/turf/simulated/floor/virgo3b_indoors/update_graphic(list/graphic_add = null, list/graphic_remove = null)
-	return 0
-
-VIRGO3B_TURF_CREATE(/turf/simulated/floor/outdoors/dirt)
-/turf/simulated/floor/outdoors/dirt/virgo3b
-	icon = 'icons/turf/flooring/asteroid.dmi'
-	icon_state = "asteroid"
-
-VIRGO3B_TURF_CREATE(/turf/simulated/floor/outdoors/grass/sif)
-/turf/simulated/floor/outdoors/grass/sif
-	turf_layers = list(
-		/turf/simulated/floor/outdoors/rocks/virgo3b,
-		/turf/simulated/floor/outdoors/dirt/virgo3b
-		)
 
 // Overriding these for the sake of submaps that use them on other planets.
 // This means that mining on tether base and space is oxygen-generating, but solars and mining should use the virgo3b subtype
@@ -58,8 +32,6 @@ VIRGO3B_TURF_CREATE(/turf/simulated/floor/outdoors/grass/sif)
 	nitrogen = 0
 	temperature	= TCMB
 
-VIRGO3B_TURF_CREATE(/turf/simulated/mineral)
-VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 	//This proc is responsible for ore generation on surface turfs
 /turf/simulated/mineral/virgo3b/make_ore(var/rare_ore)
 	if(mineral || ignore_mapgen)
@@ -127,6 +99,7 @@ VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 		UpdateMineral()
 	update_icon()
 
+<<<<<<< HEAD
 //Unsimulated
 /turf/unsimulated/mineral/virgo3b
 	blocks_air = TRUE
@@ -287,3 +260,20 @@ VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 /turf/simulated/floor/tiled/techfloor/grid/transit
 	icon = 'icons/turf/transit_vr.dmi'
 	initial_flooring = null
+=======
+/turf/space/v3b_midpoint/CanZPass(atom, direction)
+	return 0			// We're not Space
+
+// Virgo 3b trufs
+/turf/space/transit/south/virgo3b/planet_fall/find_planet()
+	return planet_virgo3b
+
+/turf/space/transit/east/virgo3b/planet_fall/find_planet()
+	return planet_virgo3b
+
+/turf/simulated/sky/virgo3b/south/planet_fall/find_planet()
+	return planet_virgo3b
+
+/turf/space/v3b_midpoint/find_planet()
+	return planet_virgo3b
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))

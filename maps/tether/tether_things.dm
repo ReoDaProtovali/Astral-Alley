@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //Special map objects
 /obj/effect/landmark/map_data/virgo3b
     height = 5
@@ -28,28 +29,31 @@
 
 
 /obj/effect/step_trigger/teleporter/to_mining/Initialize()
+=======
+/obj/effect/step_trigger/teleporter/to_mining/Initialize(mapload)
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 	. = ..()
 	teleport_x = src.x
 	teleport_y = 2
-	teleport_z = Z_LEVEL_SURFACE_MINE
+	teleport_z = Z_LEVEL_TETHER_SURFACE_MINE
 
 /obj/effect/step_trigger/teleporter/from_mining/Initialize()
 	. = ..()
 	teleport_x = src.x
 	teleport_y = world.maxy - 1
-	teleport_z = Z_LEVEL_SURFACE_LOW
+	teleport_z = Z_LEVEL_TETHER_SURFACE_LOW
 
 /obj/effect/step_trigger/teleporter/to_solars/Initialize()
 	. = ..()
 	teleport_x = world.maxx - 1
 	teleport_y = src.y
-	teleport_z = Z_LEVEL_SOLARS
+	teleport_z = Z_LEVEL_TETHER_SOLARS
 
 /obj/effect/step_trigger/teleporter/from_solars/Initialize()
 	. = ..()
 	teleport_x = 2
 	teleport_y = src.y
-	teleport_z = Z_LEVEL_SURFACE_LOW
+	teleport_z = Z_LEVEL_TETHER_SURFACE_LOW
 
 /obj/effect/step_trigger/teleporter/wild/Initialize()
 	. = ..()
@@ -69,11 +73,15 @@
 	else
 		teleport_y = src.y
 
+<<<<<<< HEAD
 /obj/effect/step_trigger/teleporter/to_underdark
 	icon = 'icons/obj/structures/stairs_64x64.dmi'
 	icon_state = ""
 	invisibility = 0
 /obj/effect/step_trigger/teleporter/to_underdark/Initialize()
+=======
+/obj/effect/step_trigger/teleporter/to_underdark/Initialize(mapload)
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 	. = ..()
 	teleport_x = x
 	teleport_y = y
@@ -82,11 +90,15 @@
 		if(Z.name == "Underdark")
 			teleport_z = Z.z
 
+<<<<<<< HEAD
 /obj/effect/step_trigger/teleporter/from_underdark
 	icon = 'icons/obj/structures/stairs_64x64.dmi'
 	icon_state = ""
 	invisibility = 0
 /obj/effect/step_trigger/teleporter/from_underdark/Initialize()
+=======
+/obj/effect/step_trigger/teleporter/from_underdark/Initialize(mapload)
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 	. = ..()
 	teleport_x = x
 	teleport_y = y
@@ -99,17 +111,18 @@
 	. = ..()
 	teleport_x = src.x
 	teleport_y = world.maxy - 1
-	teleport_z = Z_LEVEL_PLAINS
+	teleport_z = GLOB.map_templates_loaded[Z_NAME_TETHER_PLAINS]
 
 /obj/effect/step_trigger/teleporter/from_plains/Initialize()
 	. = ..()
 	teleport_x = src.x
 	teleport_y = 2
-	teleport_z = Z_LEVEL_SURFACE_LOW
+	teleport_z = Z_LEVEL_TETHER_SURFACE_LOW
 
 /obj/effect/step_trigger/teleporter/planetary_fall/virgo3b/find_planet()
 	planet = planet_virgo3b
 
+<<<<<<< HEAD
 /obj/effect/step_trigger/lost_in_space
 	var/deathmessage = "You drift off into space, floating alone in the void until your life support runs out."
 
@@ -257,94 +270,13 @@
 	name = "dorm seven holodeck control"
 	projection_area = /area/crew_quarters/sleep/Dorm_7/holo
 
+=======
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
 // Our map is small, if the supermatter is ejected lets not have it just blow up somewhere else
 /obj/machinery/power/supermatter/touch_map_edge()
 	qdel(src)
-
-//"Red" Armory Door
-/obj/machinery/door/airlock/security/armory
-	name = "Red Armory"
-	//color = ""
-
-/obj/machinery/door/airlock/security/armory/allowed(mob/user)
-	if(get_security_level() in list("green","blue"))
-		return FALSE
-
-	return ..(user)
-
-//Tether-unique network cameras
-/obj/machinery/camera/network/tether
-	network = list(NETWORK_TETHER)
-
-/obj/machinery/camera/network/outside
-	network = list(NETWORK_OUTSIDE)
 
 // Shelter Capsule extra restrictions
 /datum/map_template/shelter/New()
 	..()
 	banned_areas += list(/area/tether/surfacebase/fish_farm, /area/tether/surfacebase/public_garden, /area/tether/surfacebase/tram)
-
-//
-// ### Wall Machines On Full Windows ###
-// To make sure wall-mounted machines placed on full-tile windows are clickable they must be above the window
-//
-/obj/item/radio/intercom
-	layer = ABOVE_WINDOW_LAYER
-/obj/item/storage/secure/safe
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/airlock_sensor
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/alarm
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/button
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/access_button
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/computer/guestpass
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/computer/security/telescreen
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/door_timer
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/embedded_controller
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/firealarm
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/flasher
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/keycard_auth
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/light_switch
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/mineral/processing_unit_console
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/mineral/stacking_unit_console
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/newscaster
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/power/apc
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/requests_console
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/status_display
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/vending/wallmed1
-	layer = ABOVE_WINDOW_LAYER
-/obj/machinery/vending/wallmed2
-	layer = ABOVE_WINDOW_LAYER
-/obj/structure/fireaxecabinet
-	layer = ABOVE_WINDOW_LAYER
-/obj/structure/extinguisher_cabinet
-	layer = ABOVE_WINDOW_LAYER
-/obj/structure/mirror
-	layer = ABOVE_WINDOW_LAYER
-/obj/structure/noticeboard
-	layer = ABOVE_WINDOW_LAYER
-
-/obj/tether_away_spawner/tether_outside
-	name = "Tether Outside Spawner"
-	prob_spawn = 75
-	prob_fall = 50
-	mobs_to_pick_from = list(
-		/mob/living/simple_mob/animal/passive/gaslamp = 300
-		)

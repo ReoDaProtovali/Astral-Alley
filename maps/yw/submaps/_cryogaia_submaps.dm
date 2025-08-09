@@ -65,9 +65,6 @@
 	name = "Away Mission - Desert Cave"
 	z = Z_LEVEL_BEACH_CAVE
 
-/obj/effect/step_trigger/zlevel_fall/beach
-	var/static/target_z
-
 #include "alienship/_alienship.dm"
 /datum/map_template/cryogaia_lateload/away_alienship
 	name = "Alien Ship - Z1 Ship"
@@ -186,6 +183,7 @@
 		z = mapZ
 	return ..(map)
 
+<<<<<<< HEAD:maps/yw/submaps/_cryogaia_submaps.dm
 /turf/unsimulated/wall/seperator //to block vision between transit zones
 	name = ""
 	icon = 'icons/effects/effects.dmi'
@@ -229,6 +227,8 @@
 		var/mob/living/L = A
 		L.fall_impact(T, 42, 90, FALSE, TRUE)	//You will not be defibbed from this.
 
+=======
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295)):archive/maps/old_yw/yw/submaps/_cryogaia_submaps.dm
 /////////////////////////////
 /obj/cryogaia_away_spawner
 	name = "RENAME ME, JERK"

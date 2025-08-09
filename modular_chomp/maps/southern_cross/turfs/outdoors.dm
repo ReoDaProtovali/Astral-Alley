@@ -169,6 +169,7 @@
 	oxygen = 0
 	nitrogen = 0
 	temperature = TCMB
+<<<<<<< HEAD
 
 // Step trigger to fall down to planet Sif
 /obj/effect/step_trigger/teleporter/planetary_fall/sif/find_planet()
@@ -220,3 +221,5 @@
 		user.put_in_hands(S)
 		visible_message("[user] scoops up a pile of snow.", "You scoop up a pile of snow.")
 	return
+=======
+>>>>>>> 651c8bc1af ([MIRROR] Simultaneous map definitions (#10295))
