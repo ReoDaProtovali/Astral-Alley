@@ -627,14 +627,22 @@ class ChatRenderer {
 
           const reactRoot = createRoot(childNode);
 
-          /* eslint-disable react/no-danger */
           reactRoot.render(
+<<<<<<< HEAD
             <Element {...outputProps}>
               <span dangerouslySetInnerHTML={oldHtml} />
             </Element>,
             childNode,
+=======
+            <>
+              <Element {...outputProps}>
+                {/** biome-ignore lint/security/noDangerouslySetInnerHtml: Chat rendere */}
+                <span dangerouslySetInnerHTML={oldHtml} />
+              </Element>
+              {childNode}
+            </>,
+>>>>>>> 418c4ee47c ([MIRROR] tgui dependency up (#11365))
           );
-          /* eslint-enable react/no-danger */
         }
 
         // Highlight text
