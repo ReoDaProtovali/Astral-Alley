@@ -302,6 +302,13 @@
 	taste_description = "tofu"
 	allergen_type = ALLERGEN_BEANS //Made from soy beans
 
+/datum/reagent/nutriment/protein/fungi
+	name = REAGENT_FUNGI
+	id = REAGENT_ID_FUNGI
+	taste_description = "some sort of mushroom"
+	color = "#979797"
+	allergen_type = ALLERGEN_FUNGI
+
 /datum/reagent/nutriment/protein/seafood
 	name = REAGENT_SEAFOOD
 	id = REAGENT_ID_SEAFOOD
@@ -503,7 +510,7 @@
 	reagent_state = LIQUID
 	nutriment_factor = 2
 	color = "#792300"
-	allergen_type = ALLERGEN_BEANS //Soy (beans)
+	allergen_type = ALLERGEN_BEANS | ALLERGEN_SALT //Soy (beans)
 	cup_prefix = "umami"
 
 /datum/reagent/nutriment/vinegar
@@ -670,6 +677,7 @@
 	color = "#FFFFFF"
 	overdose = REAGENTS_OVERDOSE
 	ingest_met = REM
+	allergen_type = ALLERGEN_SALT
 	cup_prefix = "salty"
 
 /datum/reagent/sodiumchloride/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
@@ -3974,7 +3982,7 @@
 	glass_name = REAGENT_ID_MARGARITA
 	glass_desc = "On the rocks with salt on the rim. Arriba~!"
 
-	allergen_type = ALLERGEN_FRUIT //Made from lime juice(fruit)
+	allergen_type = ALLERGEN_FRUIT | ALLERGEN_SALT //Made from lime juice(fruit)
 
 /datum/reagent/ethanol/mead
 	name = REAGENT_MEAD
@@ -4044,6 +4052,8 @@
 
 	glass_name = "red mead"
 	glass_desc = "A true Viking's beverage, though its color is strange."
+
+	allergen_type = ALLERGEN_SALT
 
 /datum/reagent/ethanol/sbiten
 	name = REAGENT_SBITEN

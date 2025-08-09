@@ -1,7 +1,5 @@
-#define SPECIES_WHITELIST_SELECTABLE      0x20    // Can select and customize, but not join as
-
-#define LANGUAGE_DRUDAKAR "D'Rudak'Ar"
 #define LANGUAGE_SLAVIC "Pan-Slavic" //CHOMP reAdd
+<<<<<<< HEAD
 #define LANGUAGE_BIRDSONG "Birdsong"
 #define LANGUAGE_SAGARU "Sagaru"
 #define LANGUAGE_CANILUNZT "Canilunzt"
@@ -26,3 +24,6 @@
 #define LANGUAGE_XENOLINGUA "Xenolingua"
 #define LANGUAGE_HIVEMIND "Hivemind"
 // CHOMPedit End.
+=======
+#define LANGUAGE_MARISH "Marish" //CHOMP Add
+>>>>>>> f94efe06a4 ([MIRROR] Allergic Reaction Element (And direct_say proc) (#11359))

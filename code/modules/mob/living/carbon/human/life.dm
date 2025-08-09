@@ -66,7 +66,7 @@
 
 		handle_pain()
 
-		handle_allergens()
+		SEND_SIGNAL(src,COMSIG_HANDLE_ALLERGENS, chem_effects[CE_ALLERGEN])
 
 		handle_medical_side_effects()
 
@@ -881,6 +881,7 @@
 
 	playsound_local(get_turf(src), suit_exhale_sound, 100, pressure_affected = FALSE, volume_channel = VOLUME_CHANNEL_AMBIENCE)
 
+<<<<<<< HEAD
 /mob/living/carbon/human/proc/handle_allergens()
 	if(chem_effects[CE_ALLERGEN])
 		//first, multiply the basic species-level value by our allergen effect rating, so consuming multiple seperate allergen typess simultaneously hurts more
@@ -909,6 +910,10 @@
 			drowsyness = max(drowsyness, disable_severity)
 		if(species.allergen_reaction & AG_CONFUSE)
 			Confuse(disable_severity/4)
+=======
+/mob/living/carbon/human/proc/handle_species_components()
+	species.handle_species_components(src)
+>>>>>>> f94efe06a4 ([MIRROR] Allergic Reaction Element (And direct_say proc) (#11359))
 
 /mob/living/carbon/human/handle_environment(datum/gas_mixture/environment)
 	if(!environment)

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Species flags.
 #define NO_MINOR_CUT      	0x1	// Can step on broken glass with no ill-effects. Either thick skin (diona), cut resistant (slimes) or incorporeal (shadows)
 #define IS_PLANT          	0x2	// Is a treeperson.
@@ -70,6 +71,8 @@
 #define HAS_HAIR_COLOR    0x20   // Hair colour selectable in chargen. (RGB)
 #define RADIATION_GLOWS   0x40   // Radiation causes this character to glow.
 
+=======
+>>>>>>> f94efe06a4 ([MIRROR] Allergic Reaction Element (And direct_say proc) (#11359))
 // Languages.
 #define LANGUAGE_GALCOM "Galactic Common"
 #define LANGUAGE_EAL "Encoded Audio Language"
@@ -79,9 +82,7 @@
 #define LANGUAGE_SIIK "Siik"
 #define LANGUAGE_SKRELLIAN "Common Skrellian"
 #define LANGUAGE_TRADEBAND "Tradeband"
-//VOREStation edit 08/23/20
 #define LANGUAGE_GUTTER "Gutterband"
-//VS edit end
 #define LANGUAGE_SIGN "Sign Language"
 #define LANGUAGE_SCHECHI "Schechi"
 #define LANGUAGE_ROOTLOCAL "Local Rootspeak"
@@ -97,6 +98,35 @@
 #define LANGUAGE_ZADDAT "Vedahq"
 #define LANGUAGE_PROMETHEAN "Promethean Biolinguistics"
 #define LANGUAGE_GIBBERISH "Babel"
+<<<<<<< HEAD
+=======
+#define LANGUAGE_ROBOT_TALK "Robot Talk"
+#define LANGUAGE_DRONE_TALK "Drone Talk"
+#define LANGUAGE_DRUDAKAR "D'Rudak'Ar"
+#define LANGUAGE_BIRDSONG "Birdsong"
+#define LANGUAGE_SAGARU "Sagaru"
+#define LANGUAGE_CANILUNZT "Canilunzt"
+#define LANGUAGE_ECUREUILIAN "Ecureuilian"
+#define LANGUAGE_DAEMON "Daemon"
+#define LANGUAGE_ENOCHIAN "Enochian"
+#define LANGUAGE_VESPINAE "Vespinae"
+#define LANGUAGE_SPACER "Spacer"
+#define LANGUAGE_TAVAN "Tavan"
+#define LANGUAGE_ECHOSONG "Echo Song"
+
+#define LANGUAGE_ANIMAL "Animal"
+#define LANGUAGE_TEPPI "Teppi"
+#define LANGUAGE_MOUSE "Mouse"
+#define LANNGUAGE_DRAKE "Drake"
+
+#define LANGUAGE_SHADEKIN "Shadekin Empathy"
+#define LANGUAGE_LLEILL "Glamour Speak"
+
+#define LANGUAGE_SPARKLE "Sparkle"
+
+#define LANGUAGE_XENOLINGUA "Xenomorph"
+#define LANGUAGE_HIVEMIND "Hivemind"
+>>>>>>> f94efe06a4 ([MIRROR] Allergic Reaction Element (And direct_say proc) (#11359))
 
 // Language flags.
 #define WHITELISTED  1   // Language is available if the speaker is whitelisted.
