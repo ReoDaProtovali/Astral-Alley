@@ -164,3 +164,42 @@
 	target.r_ears3 = hex2num(copytext(value, 2, 4))
 	target.g_ears3 = hex2num(copytext(value, 4, 6))
 	target.b_ears3 = hex2num(copytext(value, 6, 8))
+<<<<<<< HEAD
+=======
+
+/datum/preference/numeric/human/ears_alpha
+	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "ears_alpha"
+	can_randomize = FALSE
+	minimum = 0
+	maximum = 255
+
+/datum/preference/numeric/human/ears_alpha/secondary
+	savefile_key = "secondary_ears_alpha"
+
+/datum/preference/numeric/human/ears_alpha/secondary/apply_to_human(mob/living/carbon/human/target, value)
+	target.a_ears2 = value;
+
+/datum/preference/numeric/human/ears_alpha/apply_to_human(mob/living/carbon/human/target, value)
+	target.a_ears = value
+
+/datum/preference/numeric/human/ears_alpha/create_default_value()
+	return 255 //no randomization here.
+
+///Tail style.
+/datum/preference/choiced/human/tail_layering
+	category = PREFERENCE_CATEGORY_MANUALLY_RENDERED
+	savefile_identifier = PREFERENCE_CHARACTER
+	savefile_key = "tail_layering"
+	can_randomize = FALSE
+
+/datum/preference/choiced/human/tail_layering/init_possible_values()
+	return assoc_to_keys(GLOB.tail_layer_options)
+
+/datum/preference/choiced/human/tail_layering/create_default_value()
+	return GLOB.tail_layer_options[2]
+
+/datum/preference/choiced/human/tail_layering/apply_to_human(mob/living/carbon/human/target, value)
+	target.tail_layering = GLOB.tail_layer_options[value]
+>>>>>>> ae778b99ee ([MIRROR] Fix multiple pref issues (#11373))
