@@ -317,7 +317,34 @@
 /obj/machinery/light/small,
 /obj/effect/floor_decal/corner/orange/border,
 /turf/simulated/floor/wmarble,
+<<<<<<< HEAD:modular_chomp/maps/southern_cross/overmap/planets/tyr/tyr.dmm
 /area/surface/tyr/eclipse_stronghold)
+=======
+/area/surface/tyr/eclipse_stronghold/cargo)
+"bO" = (
+/obj/structure/grille,
+/obj/structure/window/plastitanium,
+/obj/structure/window/plastitanium{
+	dir = 1
+	},
+/turf/simulated/floor,
+/area/surface/tyr/startshuttle)
+"bP" = (
+/obj/structure/closet,
+/obj/item/borg/upgrade/modkit/aoe/mobs,
+/obj/item/pickaxe/advdrill,
+/turf/simulated/shuttle/floor/voidcraft/tyr,
+/area/surface/tyr/wrecked_shipA)
+"bQ" = (
+/obj/structure/closet,
+/obj/item/gun/energy/kinetic_accelerator,
+/turf/simulated/shuttle/floor/voidcraft/tyr,
+/area/surface/tyr/wrecked_shipA)
+"bR" = (
+/mob/living/simple_mob/mechanical/mecha/eclipse/hivebot/tyr,
+/turf/simulated/shuttle/floor/alien,
+/area/surface/tyr/precursorruins/finale)
+>>>>>>> d093fcc74f (Various Map Things (#11375)):modular_chomp/maps/common_submaps/overmap/planets/tyr/tyr.dmm
 "bS" = (
 /obj/effect/floor_decal/corner/lime/border{
 	dir = 5

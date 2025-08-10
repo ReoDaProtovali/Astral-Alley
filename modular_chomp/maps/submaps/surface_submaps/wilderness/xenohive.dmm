@@ -27,6 +27,7 @@
 	outdoors = 0
 	},
 /area/submap/XenoHive)
+<<<<<<< HEAD
 "co" = (
 /obj/effect/alien/weeds,
 /obj/effect/decal/cleanable/dirt,
@@ -41,6 +42,8 @@
 /obj/effect/landmark/loot_spawn/low,
 /turf/simulated/floor/outdoors/dirt,
 /area/submap/XenoHive)
+=======
+>>>>>>> d093fcc74f (Various Map Things (#11375))
 "dm" = (
 /obj/effect/alien/weeds,
 /obj/machinery/portable_atmospherics/powered/reagent_distillery/industrial,
@@ -117,12 +120,15 @@
 	},
 /turf/simulated/floor,
 /area/submap/XenoHive)
+<<<<<<< HEAD
 "iX" = (
 /obj/effect/alien/weeds,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/map_helper/no_phaseshift/area,
 /turf/simulated/floor/tiled/steel_dirty,
 /area/submap/XenoHive)
+=======
+>>>>>>> d093fcc74f (Various Map Things (#11375))
 "jY" = (
 /obj/effect/alien/weeds,
 /mob/living/simple_mob/animal/space/alien/queen/empress{
@@ -730,7 +736,7 @@ zm
 Gw
 tA
 Vg
-iX
+Tb
 LB
 zU
 LB
@@ -833,7 +839,7 @@ Et
 Et
 Et
 AB
-co
+HJ
 Or
 va
 AB

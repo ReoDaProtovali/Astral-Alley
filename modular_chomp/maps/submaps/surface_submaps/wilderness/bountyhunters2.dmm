@@ -1,14 +1,23 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+<<<<<<< HEAD
+=======
+"aa" = (
+/obj/effect/floor_decal/corner/grey/diagonal,
+/turf/simulated/floor/concrete/turfpack/sif,
+/area/submap/BountyHunters)
+"ab" = (
+/obj/structure/cable/green{
+	icon_state = "0-8"
+	},
+/obj/effect/floor_decal/corner/grey/diagonal,
+/turf/simulated/floor/concrete/turfpack/sif,
+/area/submap/BountyHunters)
+>>>>>>> d093fcc74f (Various Map Things (#11375))
 "aB" = (
 /obj/structure/table/steel,
 /obj/machinery/recharger,
 /obj/effect/floor_decal/corner/grey/diagonal,
 /obj/random/material/precious,
-/turf/simulated/floor/concrete,
-/area/submap/BountyHunters)
-"aF" = (
-/obj/effect/floor_decal/corner/grey/diagonal,
-/obj/effect/map_helper/no_phaseshift/area,
 /turf/simulated/floor/concrete,
 /area/submap/BountyHunters)
 "be" = (
@@ -701,7 +710,7 @@ VQ
 rC
 WC
 mf
-zu
+ab
 WF
 rC
 xt
@@ -833,7 +842,7 @@ rC
 rC
 rC
 be
-aF
+rC
 rC
 rC
 eY
