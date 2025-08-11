@@ -87,3 +87,10 @@
 		client.images += cloaked_selfimage
 	client.init_verbs()
 	SEND_SIGNAL(src, COMSIG_MOB_CLIENT_LOGIN, client)
+<<<<<<< HEAD
+=======
+	SEND_SIGNAL(client, COMSIG_CLIENT_MOB_LOGIN, src)
+
+	set_listening(LISTENING_PLAYER)
+	GLOB.tickets.ClientLogin(client, TRUE)
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390))
