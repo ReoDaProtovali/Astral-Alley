@@ -98,7 +98,11 @@ export const VoreUserPreferencesMechanical = (props: {
         </Stack.Item>
         <Stack.Item basis="32%">
           <VoreUserPreferenceItem
+<<<<<<< HEAD:tgui/packages/tgui/interfaces/chompstation/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesMechanical.tsx
             spec={preferences.vore_fx}
+=======
+            spec={preferences.vore_death_privacy}
+>>>>>>> 8f16d351a2 ([MIRROR] Vore death privacy pref (#11392)):tgui/packages/tgui/interfaces/VorePanel/VoreUserPreferencesTabs/VoreUserPreferencesMechanical.tsx
             tooltipPosition="right"
           />
         </Stack.Item>
@@ -114,7 +118,13 @@ export const VoreUserPreferencesMechanical = (props: {
             tooltipPosition="left"
           />
         </Stack.Item>
-        <Stack.Item basis="34%">
+        <Stack.Item basis="32%">
+          <VoreUserPreferenceItem
+            spec={preferences.allow_mimicry}
+            tooltipPosition="right"
+          />
+        </Stack.Item>
+        <Stack.Item basis="32%">
           <VoreUserPreferenceItem
             spec={preferences.allow_mimicry}
             tooltipPosition="right"
