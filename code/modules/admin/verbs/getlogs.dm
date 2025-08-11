@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
 	HOW DO I LOG RUNTIMES?
 	Firstly, start dreamdeamon if it isn't already running. Then select "world>Log Session" (or press the F3 key)
@@ -6,6 +7,13 @@
 
 	OPTIONAL: 	you can select the little checkbox down the bottom to make dreamdeamon save the log everytime you
 				start a world. Just remember to repeat these steps with a new name when you update to a new revision!
+=======
+ADMIN_VERB(get_server_logs, (R_ADMIN | R_SERVER), "Get Server Logs", "View or retrieve logfiles.", ADMIN_CATEGORY_LOGS)
+	user.browseserverlogs()
+
+ADMIN_VERB(get_current_logs, (R_ADMIN | R_SERVER), "Get Current Logs", "View or retrieve logfiles for the current round.", ADMIN_CATEGORY_LOGS)
+	user.browseserverlogs(current=TRUE)
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390))
 
 	Save it with the name of the revision your server uses (e.g. r3459.txt).
 	Game Masters will now be able to grant access any runtime logs you have archived this way!

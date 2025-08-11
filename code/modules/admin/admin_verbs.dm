@@ -335,9 +335,19 @@
 	log_admin("[key_name(usr)] used 'kill air'.")
 	message_admins(span_blue("[key_name_admin(usr)] used 'kill air'."), 1)
 
+<<<<<<< HEAD
 /client/proc/readmin_self()
 	set name = "Re-Admin self"
 	set category = "Admin.Misc"
+=======
+ADMIN_VERB(deadmin, R_NONE, "DeAdmin", "Shed your admin powers.", ADMIN_CATEGORY_MISC)
+	user.holder.deactivate()
+	to_chat(user, span_interface("You are now a normal player."))
+	log_admin("[key_name(user)] deadminned themselves.")
+	message_admins("[key_name_admin(user)] deadminned themselves.")
+	//BLACKBOX_LOG_ADMIN_VERB("Deadmin")
+	feedback_add_details("admin_verb","DAS") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
+>>>>>>> 354766375a ([MIRROR] sort cyborg modules (#11390))
 
 	if(deadmin_holder)
 		deadmin_holder.reassociate()
