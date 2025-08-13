@@ -1,4 +1,82 @@
 //MAP CONVERTED BY dmm2tgm.py THIS HEADER COMMENT PREVENTS RECONVERSION, DO NOT REMOVE
+<<<<<<< HEAD:modular_chomp/maps/southern_cross/overmap/planets/thor/thor.dmm
+=======
+"aa" = (
+/mob/living/simple_mob/animal/passive/fish/measelshark,
+/turf/simulated/floor/water/deep/ocean{
+	temperature = 313;
+	oxygen = 34.1451;
+	nitrogen = 63.4124
+	},
+/area/surface/outside/thor/ocean)
+"ab" = (
+/obj/structure/simple_door/wood,
+/turf/simulated/floor/wood{
+	temperature = 313;
+	oxygen = 34.1451;
+	nitrogen = 63.4124;
+	outdoors = 0
+	},
+/area/surface/outside/thor/beach)
+"ac" = (
+/obj/structure/window/basic,
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/grille,
+/turf/simulated/floor/wood{
+	temperature = 313;
+	oxygen = 34.1451;
+	nitrogen = 63.4124;
+	outdoors = 0
+	},
+/area/surface/outside/thor/beach)
+"ad" = (
+/obj/structure/window/basic{
+	dir = 4
+	},
+/obj/structure/window/basic{
+	dir = 1
+	},
+/obj/structure/window/basic{
+	dir = 8
+	},
+/obj/structure/grille,
+/turf/simulated/floor/wood{
+	temperature = 313;
+	oxygen = 34.1451;
+	nitrogen = 63.4124;
+	outdoors = 0
+	},
+/area/surface/outside/thor/beach)
+"af" = (
+/turf/simulated/mineral/floor/cave/thor,
+/area/surface/outside/thor/jungle)
+"ag" = (
+/obj/effect/decal/remains/deer,
+/turf/simulated/mineral/floor/cave/thor,
+/area/surface/outside/thor/jungle)
+"ah" = (
+/obj/effect/floor_decal/stairs,
+/turf/simulated/floor/beach/sand/desert/outdoors/thor,
+/area/surface/outside/thor/beach)
+"ai" = (
+/obj/effect/floor_decal/stairs,
+/turf/simulated/floor/outdoors/desert_planet/gravel/thor,
+/area/surface/outside/thor/beach)
+"aj" = (
+/obj/structure/railing,
+/turf/simulated/floor/outdoors/desert_planet/gravel/thor,
+/area/surface/outside/thor/outpost)
+"al" = (
+/obj/item/picnic_blankets_carried,
+/obj/item/melee/umbrella/random,
+/turf/simulated/floor/outdoors/desert_planet/gravel/thor,
+/area/surface/outside/thor/outpost)
+>>>>>>> 47746c14de (Southern Cross update (#11404)):modular_chomp/maps/common_submaps/overmap/planets/thor/thor.dmm
 "ao" = (
 /obj/structure/bonfire,
 /turf/simulated/floor/outdoors/grass/forest/thor{
@@ -13,6 +91,7 @@
 	},
 /turf/simulated/wall/iron,
 /area/shuttle/junker)
+<<<<<<< HEAD:modular_chomp/maps/southern_cross/overmap/planets/thor/thor.dmm
 "au" = (
 /obj/structure/flora/ausbushes/palebush,
 /turf/simulated/floor/outdoors/grass/forest/thor{
@@ -20,6 +99,57 @@
 	grass_chance = 2
 	},
 /area/surface/outside/thor/outpost)
+=======
+"aq" = (
+/obj/effect/decal/remains/ribcage,
+/turf/simulated/mineral/floor/cave/thor,
+/area/surface/outside/thor/jungle)
+"as" = (
+/obj/structure/table/woodentable,
+/obj/item/reagent_containers/food/snacks/waffles{
+	pixel_y = 5
+	},
+/turf/simulated/floor/wood,
+/area/surface/thor/bar)
+"at" = (
+/obj/structure/signpostwood{
+	desc = "DANGER! Hungry wildlife beyond this point! Please turn around!"
+	},
+/turf/simulated/floor/beach/sand/desert/outdoors/thor,
+/area/surface/outside/thor/beach)
+"av" = (
+/mob/living/simple_mob/vore/wolf/direwolf/andrews{
+	faction = "hostile";
+	vore_bump_chance = 75;
+	vore_bump_emote = "greedily snaps at";
+	faction_bump_vore = 1
+	},
+/turf/simulated/mineral/floor/cave/thor,
+/area/surface/outside/thor/jungle)
+"aw" = (
+/obj/machinery/light/small{
+	dir = 8;
+	brightness_range = 5;
+	brightness_power = 1;
+	brightness_color = "#DA0205";
+	nightshift_enabled = 1
+	},
+/turf/simulated/floor/tiled/asteroid_steel/outdoors/thor{
+	outdoors = 0
+	},
+/area/surface/outside/thor/pool)
+"ay" = (
+/obj/structure/curtain/black{
+	name = "privacy curtain";
+	icon_state = "open";
+	opacity = 0;
+	layer = 2
+	},
+/turf/simulated/floor/tiled/asteroid_steel/outdoors/thor{
+	outdoors = 0
+	},
+/area/surface/outside/thor/pool)
+>>>>>>> 47746c14de (Southern Cross update (#11404)):modular_chomp/maps/common_submaps/overmap/planets/thor/thor.dmm
 "az" = (
 /obj/structure/cable{
 	icon_state = "4-8"
@@ -28,6 +158,75 @@
 	outdoors = 0
 	},
 /area/surface/thor/commstower)
+<<<<<<< HEAD:modular_chomp/maps/southern_cross/overmap/planets/thor/thor.dmm
+=======
+"aA" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/door/blast/shutters{
+	name = "Kitchen Shutters";
+	dir = 2;
+	layer = 3.3;
+	id = "junglekitchen"
+	},
+/obj/item/reagent_containers/food/snacks/sliceable/grilled_carp,
+/turf/simulated/floor/tiled/white,
+/area/surface/thor/kitchen)
+"aB" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/door/blast/shutters{
+	name = "Kitchen Shutters";
+	dir = 2;
+	layer = 3.3;
+	id = "junglekitchen"
+	},
+/obj/item/reagent_containers/food/snacks/sliceable/tofubread,
+/turf/simulated/floor/tiled/white,
+/area/surface/thor/kitchen)
+"aC" = (
+/obj/structure/table/steel_reinforced,
+/obj/machinery/door/blast/shutters{
+	name = "Kitchen Shutters";
+	dir = 2;
+	layer = 3.3;
+	id = "junglekitchen"
+	},
+/obj/item/reagent_containers/food/snacks/sharkmeatcooked,
+/turf/simulated/floor/tiled/white,
+/area/surface/thor/kitchen)
+"aF" = (
+/obj/item/stool/padded{
+	dir = 8
+	},
+/turf/simulated/floor/wood{
+	temperature = 313;
+	oxygen = 34.1451;
+	nitrogen = 63.4124;
+	outdoors = 1
+	},
+/area/surface/thor/kitchen)
+"aG" = (
+/obj/structure/flora/ausbushes/ppflowers,
+/obj/item/bluespace_harpoon/wand,
+/turf/simulated/floor/outdoors/grass/heavy/thor,
+/area/surface/outside/thor/jungle)
+"aH" = (
+/mob/living/simple_mob/vore/horse/kelpie,
+/obj/structure/flora/ausbushes/ppflowers,
+/turf/simulated/floor/outdoors/grass/heavy/thor,
+/area/surface/outside/thor/jungle)
+"aI" = (
+/turf/simulated/wall/wood,
+/area/surface/outside/thor/pool)
+"aJ" = (
+/obj/structure/simple_door/wood,
+/turf/simulated/floor/wood{
+	temperature = 313;
+	oxygen = 34.1451;
+	nitrogen = 63.4124;
+	outdoors = 1
+	},
+/area/surface/outside/thor/pool)
+>>>>>>> 47746c14de (Southern Cross update (#11404)):modular_chomp/maps/common_submaps/overmap/planets/thor/thor.dmm
 "aK" = (
 /obj/structure/cable{
 	icon_state = "2-8"
@@ -1738,6 +1937,7 @@
 	oxygen = 34.1451
 	},
 /area/surface/outside/thor/jungle/deep)
+<<<<<<< HEAD:modular_chomp/maps/southern_cross/overmap/planets/thor/thor.dmm
 "rq" = (
 /obj/item/stool/padded{
 	dir = 8
@@ -1749,6 +1949,8 @@
 	outdoors = 1
 	},
 /area/surface/thor/kitchen)
+=======
+>>>>>>> 47746c14de (Southern Cross update (#11404)):modular_chomp/maps/common_submaps/overmap/planets/thor/thor.dmm
 "rs" = (
 /obj/structure/cable{
 	icon_state = "1-2"
@@ -31692,7 +31894,7 @@ dL
 oL
 TQ
 oy
-rq
+aF
 oy
 rf
 rf
