@@ -108,6 +108,7 @@
 		EQUIPMENT("Survey Tools - Binoculars",		/obj/item/binoculars,40),
 	)
 	prize_list["Miscellaneous"] = list(
+<<<<<<< HEAD
 		EQUIPMENT(REAGENT_ABSINTHE,					/obj/item/reagent_containers/food/drinks/bottle/absinthe,	10),
 		EQUIPMENT(REAGENT_WHISKEY,					/obj/item/reagent_containers/food/drinks/bottle/whiskey,		10),
 		EQUIPMENT("Cigar",						/obj/item/clothing/mask/smokable/cigarette/cigar/havana,			15),
@@ -128,6 +129,28 @@
 	    EQUIPMENT("Security-Grade PSG",			/obj/item/personal_shield_generator/belt/security/loaded,	200),
 	    EQUIPMENT("PSG Variant-P",			    /obj/item/personal_shield_generator/belt/parry,	            250),
 	//CHOMPedit End
+=======
+		EQUIPMENT(REAGENT_ABSINTHE,									/obj/item/reagent_containers/food/drinks/bottle/absinthe,					10),
+		EQUIPMENT(REAGENT_WHISKEY,									/obj/item/reagent_containers/food/drinks/bottle/whiskey,					10),
+		EQUIPMENT("Cigar",											/obj/item/clothing/mask/smokable/cigarette/cigar/havana,					15),
+		EQUIPMENT("Digital Tablet - Standard",						/obj/item/modular_computer/tablet/preset/custom_loadout/standard,			50),
+		EQUIPMENT("Digital Tablet - Advanced",						/obj/item/modular_computer/tablet/preset/custom_loadout/advanced,			100),
+		EQUIPMENT("Industrial Equipment - Phoron Bore",				/obj/item/gun/magnetic/matfed/phoronbore/loaded,							300),
+		EQUIPMENT("Industrial Equipment - Inducer",					/obj/item/inducer,															750),
+		EQUIPMENT("Laser Pointer",									/obj/item/laser_pointer,													90),
+		EQUIPMENT("Luxury Shelter Capsule",							/obj/item/survivalcapsule/luxury,											310),
+		EQUIPMENT("Bar Shelter Capsule",							/obj/item/survivalcapsule/luxurybar,										1000),
+		EQUIPMENT("Deluxe Cabin Shelter Capsule",					/obj/item/survivalcapsule/luxurycabin,										1000),
+		EQUIPMENT("Plush Toy",										/obj/random/plushie,														30),
+		EQUIPMENT("Soap",											/obj/item/soap/nanotrasen,													20),
+		EQUIPMENT("Thalers - 100",									/obj/item/spacecash/c100,													100),
+		EQUIPMENT("Thalers - 1000",									/obj/item/spacecash/c1000,													1000),
+		EQUIPMENT("Umbrella",										/obj/item/melee/umbrella/random,											20),
+		EQUIPMENT("UAV - Recon Skimmer",							/obj/item/uav,																40),
+		EQUIPMENT("Mining-Grade PSG",								/obj/item/personal_shield_generator/belt/mining/loaded,						100), //CHOMPADD
+		EQUIPMENT("Security-Grade PSG",								/obj/item/personal_shield_generator/belt/security/loaded,					200), //CHOMPADD
+		EQUIPMENT("PSG Variant-P",			   						/obj/item/personal_shield_generator/belt/parry,	            				250), //CHOMPADD
+>>>>>>> a1e7dadf96 ([MIRROR] Adds a deluxe cabin shelter capsule (#11412))
 	)
 	//VOREStation Edit End
 

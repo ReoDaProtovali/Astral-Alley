@@ -111,6 +111,7 @@
 		EQUIPMENT("Hardsuit - Proto-Kinetic Gauntlets",		/obj/item/rig_module/gauntlets,					2000),
 	)
 	prize_list["Miscellaneous"] = list(
+<<<<<<< HEAD
 		EQUIPMENT(REAGENT_ABSINTHE,					/obj/item/reagent_containers/food/drinks/bottle/absinthe,	125),
 		EQUIPMENT("Cigar",						/obj/item/clothing/mask/smokable/cigarette/cigar/havana,			150),
 		EQUIPMENT("Digital Tablet - Standard",	/obj/item/modular_computer/tablet/preset/custom_loadout/standard,	500),
@@ -128,6 +129,22 @@
 	//CHOMPedit Start
 		EQUIPMENT("Mining PSG", 				/obj/item/personal_shield_generator/belt/mining/loaded,      2000),
 	//CHOMPedit End
+=======
+		EQUIPMENT(REAGENT_ABSINTHE,				/obj/item/reagent_containers/food/drinks/bottle/absinthe,					125),
+		EQUIPMENT("Cigar",						/obj/item/clothing/mask/smokable/cigarette/cigar/havana,					150),
+		EQUIPMENT("Digital Tablet - Standard",	/obj/item/modular_computer/tablet/preset/custom_loadout/standard,			500),
+		EQUIPMENT("Digital Tablet - Advanced",	/obj/item/modular_computer/tablet/preset/custom_loadout/advanced,			1000),
+		EQUIPMENT("Laser Pointer",				/obj/item/laser_pointer,													900),
+		EQUIPMENT("Luxury Shelter Capsule",		/obj/item/survivalcapsule/luxury,											3100),
+		EQUIPMENT("Bar Shelter Capsule",		/obj/item/survivalcapsule/luxurybar,										10000),
+		EQUIPMENT("Deluxe Cabin Shelter Capsule",/obj/item/survivalcapsule/luxurycabin,										10000),
+		EQUIPMENT("Plush Toy",					/obj/random/plushie,														300),
+		EQUIPMENT("Soap",						/obj/item/soap/nanotrasen,													200),
+		EQUIPMENT("Thalers - 100",				/obj/item/spacecash/c100,													1000),
+		EQUIPMENT("Thalers - 1000",				/obj/item/spacecash/c1000,													10000),
+		EQUIPMENT("Umbrella",					/obj/item/melee/umbrella/random,											200),
+		EQUIPMENT(REAGENT_WHISKEY,				/obj/item/reagent_containers/food/drinks/bottle/whiskey,					125),
+>>>>>>> a1e7dadf96 ([MIRROR] Adds a deluxe cabin shelter capsule (#11412))
 	)
 	prize_list["Extra"] = list() // Used in child vendors
 	//VOREStation Edit End
