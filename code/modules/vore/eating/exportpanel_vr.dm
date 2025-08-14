@@ -309,7 +309,12 @@
 			belly_data["item_digest_logs"] = B.item_digest_logs
 			belly_data["eating_privacy_local"] = B.eating_privacy_local
 			belly_data["private_struggle"] = B.private_struggle
+<<<<<<< HEAD
 			// CHOMPEnable End
+=======
+			belly_data["absorbedrename_enabled"] = B.absorbedrename_enabled
+			belly_data["absorbedrename_name"] = B.absorbedrename_name
+>>>>>>> b0f1c1a115 ([MIRROR] Absorb Prey Names (#11411))
 
 			// Sounds
 			belly_data["is_wet"] = B.is_wet
