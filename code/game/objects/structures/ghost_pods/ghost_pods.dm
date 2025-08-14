@@ -34,7 +34,16 @@
 			qdel(src)
 		return TRUE
 	else
+<<<<<<< HEAD
 		return FALSE
+=======
+		if(delay_to_try_again)
+			addtimer(CALLBACK(src, PROC_REF(trigger)), delay_to_try_again)
+	UnregisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE)
+	QDEL_NULL(Q) //get rid of the query
+	if(deletion_candidate)
+		qdel(src)
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 
 // Override this to create whatever mob you need. Be sure to call ..() if you don't want it to make infinite mobs.
 /obj/structure/ghost_pod/proc/create_occupant(var/mob/M)

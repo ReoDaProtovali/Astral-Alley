@@ -313,7 +313,7 @@ var/list/dispenser_presets = list()
 		add_overlay(special_frame)
 
 /obj/machinery/gear_dispenser/suit_fancy/Destroy()
-	qdel_null(door)
+	QDEL_NULL(door)
 	held_gear_disp = null
 	return ..()
 

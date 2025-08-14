@@ -124,7 +124,7 @@
 	brainmob = new(src)
 	brainmob.name = H.real_name
 	brainmob.real_name = H.real_name
-	qdel_swap(brainmob.dna, H.dna.Clone())
+	QDEL_SWAP(brainmob.dna, H.dna.Clone())
 	brainmob.container = src
 
 	// Copy modifiers.
@@ -227,7 +227,7 @@
 	..()
 
 /obj/item/mmi/digital/transfer_identity(var/mob/living/carbon/H)
-	qdel_swap(brainmob.dna, H.dna.Clone())
+	QDEL_SWAP(brainmob.dna, H.dna.Clone())
 	brainmob.timeofhostdeath = H.timeofdeath
 	brainmob.set_stat(CONSCIOUS)
 	if(H.mind)
@@ -252,6 +252,11 @@
 		transfer_personality(D)
 	else
 		reset_search()
+<<<<<<< HEAD
+=======
+	UnregisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE)
+	QDEL_NULL(Q) //get rid of the query
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 
 /obj/item/mmi/digital/proc/reset_search() //We give the players sixty seconds to decide, then reset the timer.
 	if(src.brainmob && src.brainmob.key)

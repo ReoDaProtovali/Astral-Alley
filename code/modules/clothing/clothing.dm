@@ -333,6 +333,19 @@
 		ACCESSORY_SLOT_RING\
 		|ACCESSORY_SLOT_WRIST)
 
+<<<<<<< HEAD
+=======
+/obj/item/clothing/gloves/Destroy()
+	for(var/mob/living/M in contents)
+		M.forceMove(get_turf(src))
+	if(ring)
+		QDEL_NULL(ring)
+	if(gloves)
+		QDEL_NULL(gloves)
+	wearer = null
+	return ..()
+
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 /obj/item/clothing/proc/set_clothing_index()
 	return
 
@@ -632,6 +645,16 @@
 
 	update_icon_define_digi = "icons/inventory/feet/mob_digi.dmi"
 
+<<<<<<< HEAD
+=======
+/obj/item/clothing/shoes/Destroy()
+	if(shoes)
+		QDEL_NULL(shoes)
+	if(holding)
+		QDEL_NULL(holding)
+	return ..()
+
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 /obj/item/clothing/shoes/proc/draw_knife(mob/living/user)
 	set name = "Draw Boot Knife"
 	set desc = "Pull out your boot knife."
@@ -1083,6 +1106,14 @@
 
 //Vorestation edit - eject mobs from clothing before deletion
 /obj/item/clothing/Destroy()
+<<<<<<< HEAD
+=======
+	STOP_PROCESSING(SSobj, src)
+	if(IC)
+		IC.clothing = null
+		action_circuit = null // Will get deleted by qdel-ing the IC assembly.
+		QDEL_NULL(IC)
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 	for(var/mob/living/M in contents)
 		M.forceMove(get_turf(src))
 	return ..()
