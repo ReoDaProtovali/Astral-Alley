@@ -239,8 +239,12 @@
 
 	var/list/output = list("[icon2html(src,user.client)] That's [f_name] [suffix]", get_examine_desc())
 
+<<<<<<< HEAD:code/game/atoms.dm
 	if(user.client?.prefs.examine_text_mode == EXAMINE_MODE_INCLUDE_USAGE)
 		output += description_info
+=======
+	var/list/output = list("[icon2html(src,user.client)] That's [f_name] [suffix] [borg]", get_examine_desc())
+>>>>>>> 7aba7be802 ([MIRROR] move the spoiler (#11417)):code/game/atom/_atom.dm
 
 	if(user.client?.prefs.examine_text_mode == EXAMINE_MODE_SWITCH_TO_PANEL)
 		user.client.statpanel = "Examine" // Switch to stat panel
