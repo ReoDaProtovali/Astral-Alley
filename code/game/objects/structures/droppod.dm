@@ -18,7 +18,11 @@
 	if(A)
 		A.forceMove(src) // helo
 		podfall(auto_open)
-		air = new(1000)
+		air = new
+
+/obj/structure/drop_pod/Destroy()
+	. = ..()
+	QDEL_NULL(air)
 
 /obj/structure/drop_pod/proc/podfall(auto_open)
 	set waitfor = FALSE // sleeping in new otherwise
@@ -93,7 +97,7 @@
 	for(var/atom/movable/AM in src)
 		AM.forceMove(loc)
 		AM.set_dir(SOUTH) // cus
-	qdel_null(air)
+	QDEL_NULL(air)
 	finished = TRUE
 
 /obj/structure/drop_pod/attack_hand(mob/living/user)

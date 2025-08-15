@@ -1399,7 +1399,7 @@
 	if(screen_icon)
 		owner?.client?.screen -= screen_icon
 		UnregisterSignal(screen_icon, COMSIG_CLICK)
-		qdel_null(screen_icon)
+		QDEL_NULL(screen_icon)
 
 /datum/component/character_setup/proc/create_mob_button(mob/user)
 	var/datum/hud/HUD = user.hud_used

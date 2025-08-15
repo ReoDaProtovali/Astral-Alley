@@ -35,6 +35,11 @@
 		spawn_antag(D.client, get_turf(src))
 	else
 		reset_search()
+<<<<<<< HEAD
+=======
+	UnregisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE)
+	QDEL_NULL(Q) //get rid of the query
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 	return
 
 /obj/item/antag_spawner/proc/reset_search()

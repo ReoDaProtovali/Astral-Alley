@@ -187,6 +187,11 @@
 	if(winner.len)
 		var/mob/observer/dead/D = winner[1]
 		transfer_personality(D)
+<<<<<<< HEAD
+=======
+	UnregisterSignal(Q, COMSIG_GHOST_QUERY_COMPLETE)
+	QDEL_NULL(Q) //get rid of the query
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 
 /mob/living/simple_mob/animal/borer/proc/transfer_personality(mob/candidate)
 	if(!candidate || !candidate.mind)

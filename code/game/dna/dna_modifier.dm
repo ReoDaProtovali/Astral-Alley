@@ -39,6 +39,7 @@
 
 /datum/dna2/record/proc/copy()
 	var/datum/dna2/record/newrecord = new /datum/dna2/record
+<<<<<<< HEAD
 	qdel_swap(newrecord.dna, dna.Clone())
 	newrecord.types = types
 	newrecord.name = name
@@ -51,6 +52,23 @@
 	if(body_descriptors)
 		newrecord.body_descriptors = body_descriptors.Copy()
 	newrecord.genetic_modifiers = genetic_modifiers.Copy()
+=======
+	for(var/A in vars)
+		switch(A)
+			if(BLACKLISTED_COPY_VARS)
+				continue
+			if("id")
+				newrecord.id = copytext(md5(dna.real_name), 2, 6) // update this specially
+				continue
+			if("dna")
+				QDEL_SWAP(newrecord.dna, dna.Clone())
+				continue
+		if(islist(vars[A]))
+			var/list/L = vars[A]
+			newrecord.vars[A] = L.Copy()
+			continue
+		newrecord.vars[A] = vars[A]
+>>>>>>> f46d700e64 ([MIRROR] some more grep checks (#11414))
 	return newrecord
 
 
