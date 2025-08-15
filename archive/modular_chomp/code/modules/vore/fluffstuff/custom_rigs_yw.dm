@@ -10,6 +10,7 @@
     to_suit = /obj/item/rig/hazmat/fluff/sheri
 
 /obj/item/rig/hazmat/fluff/sheri
+<<<<<<< HEAD:code/modules/vore/fluffstuff/custom_rigs_yw.dm
     name = "AHS-VPR Control Module"
     desc = "This is the control module for a prototype hazardous environment suit, designed to protect the wearer from radiation, pressure, and hostile aliens alike. This particular suit was designed to fit a naga, and is labeled as the model 'Viper'. A small tag on it marks it as belonging to a 'Sheri Calen'"
     icon = 'icons/vore/rig_yw/rigs_module.dmi'
@@ -28,6 +29,28 @@
     body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
     flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER|HIDESHOES
     species_restricted = null //Species restricted since all it cares about is a taur half
+=======
+	name = "AHS-VPR Control Module"
+	desc = "This is the control module for a prototype hazardous environment suit, designed to protect the wearer from radiation, pressure, and hostile aliens alike. This particular suit was designed to fit a naga, and is labeled as the model 'Viper'. A small tag on it marks it as belonging to a 'Sheri Calen'"
+	icon = 'icons/vore/rig_yw/rigs_module.dmi' //Moved to archive\icons\vore\rig_yw
+	icon_state = "sheririg"
+	icon_override = 'icons/vore/rig_yw/rigs_module_onmob.dmi' //Moved to archive\icons\vore\rig_yw
+	preserve_item = 0
+
+	chest_type = /obj/item/clothing/suit/space/rig/fluff/sheri
+	helm_type =  /obj/item/clothing/head/helmet/space/rig/hazmat/fluff/sheri
+	boot_type =  /obj/item/clothing/shoes/magboots/rig/fluff/sheri
+	glove_type = /obj/item/clothing/gloves/gauntlets/rig/fluff/sheri
+/*
+/obj/item/clothing/suit/space/rig/fluff/sheri
+	icon = 'icons/vore/rigs_taur_yw.dmi'  //Moved to archive\icons\vore
+	icon_override = 'icons/vore/rigs_taur_yw.dmi' //Moved to archive\icons\vore
+	icon_state = "sheririg"
+	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+	flags_inv = HIDEGLOVES|HIDEJUMPSUIT|HIDETAIL|HIDETIE|HIDEHOLSTER|HIDESHOES
+	species_restricted = null //Species restricted since all it cares about is a taur half
+*/
+>>>>>>> 8c88b437bf (Cleanup of unused / unobtainable items [IDB IGNORE] [MDB IGNORE] (#11369)):archive/modular_chomp/code/modules/vore/fluffstuff/custom_rigs_yw.dm
 
 /obj/item/clothing/suit/space/rig/fluff/sheri/mob_can_equip(var/mob/living/carbon/human/H, slot, disable_warning = 0)
 	item_state = icon_state

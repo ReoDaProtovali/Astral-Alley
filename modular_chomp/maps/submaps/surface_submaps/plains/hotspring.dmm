@@ -60,12 +60,15 @@
 /obj/effect/effect/steam,
 /turf/simulated/floor/water/hotspring,
 /area/submap/hotspring)
+<<<<<<< HEAD
 "n" = (
 /obj/item/clothing/accessory/medal/fluff/rindeimos,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/wood/sif,
 /area/submap/hotspring)
+=======
+>>>>>>> 8c88b437bf (Cleanup of unused / unobtainable items [IDB IGNORE] [MDB IGNORE] (#11369))
 "o" = (
 /obj/structure/table/woodentable,
 /obj/item/pizzavoucher,
@@ -178,7 +181,6 @@
 "U" = (
 /obj/structure/table/rack,
 /obj/item/clothing/under/swimsuit/striped,
-/obj/item/clothing/under/swimsuit/fluff/zara_uniform,
 /obj/item/clothing/under/swimsuit/stripper/stripper_pink,
 /turf/simulated/floor/wood/sif,
 /area/submap/hotspring)
@@ -252,7 +254,7 @@ a
 (4,1,1) = {"
 Y
 w
-n
+T
 Y
 X
 E
