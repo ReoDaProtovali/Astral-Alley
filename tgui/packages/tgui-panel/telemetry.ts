@@ -78,6 +78,21 @@ export const telemetryMiddleware = (store) => {
             telemetry.connections.pop();
           }
         }
+<<<<<<< HEAD
+=======
+        if (firstMutate || telemetryMutated) {
+          firstMutate = false;
+          store.dispatch(
+            getChatData({ ckey: client.ckey, token: client.chatlog_token }),
+          );
+          store.dispatch(
+            updateExportData({
+              ckey: client.ckey,
+              token: client.chatlog_token,
+            }),
+          );
+        }
+>>>>>>> 25a8a1f773 ([MIRROR] Cleans up some tgui styling (#11416))
         // Save telemetry
         if (telemetryMutated) {
           logger.debug('saving telemetry to storage', telemetry);

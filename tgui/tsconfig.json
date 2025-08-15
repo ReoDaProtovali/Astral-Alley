@@ -22,8 +22,12 @@
     "strictNullChecks": true,
     "target": "ES5"
   },
+<<<<<<< HEAD
   "include": [
     "./*.d.ts",
     "./packages"
   ]
+=======
+  "include": ["./*.d.ts", "./packages"]
+>>>>>>> 25a8a1f773 ([MIRROR] Cleans up some tgui styling (#11416))
 }
