@@ -343,7 +343,11 @@
 						m.drop_from_inventory(S.OurRig)
 					if(wearer && devour) //We're being worn. Engulf em', if prefs align.. otherwise just drop off.
 						if(P.can_be_drop_pred && wearer.devourable && wearer.can_be_drop_prey && P.vore_selected)
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/protean_vr/protean_powers.dm
 							perform_the_nom(P,wearer,P,P.vore_selected,1)
+=======
+							begin_instant_nom(P,wearer,P,P.vore_selected)
+>>>>>>> f3dcccbc64 ([MIRROR] Refactors vore code to allow for instant-vore that does not sleep (#11434)):code/modules/mob/living/carbon/human/species/station/protean/protean_powers.dm
 						else
 							to_chat(P, span_vwarning("You can't assimilate your current host."))
 					P.forceMove(get_turf(S.OurRig))

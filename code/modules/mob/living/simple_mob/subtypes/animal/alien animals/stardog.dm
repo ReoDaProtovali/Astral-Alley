@@ -152,7 +152,15 @@
 	return															//If it can do normal vore mechanics, it can carry players to the OM,
 																	//and release them there. I think that's probably a bad idea.
 
+<<<<<<< HEAD
 /mob/living/simple_mob/vore/overmap/stardog/Initialize()
+=======
+/mob/living/simple_mob/vore/overmap/stardog/begin_instant_nom(mob/living/user, mob/living/prey, mob/living/pred, obj/belly/belly)
+	to_chat(src, span_warning("You can't do that."))
+	return
+
+/mob/living/simple_mob/vore/overmap/stardog/Initialize(mapload)
+>>>>>>> f3dcccbc64 ([MIRROR] Refactors vore code to allow for instant-vore that does not sleep (#11434))
 	. = ..()
 	child_om_marker.set_light(5, 1, "#ff8df5")
 
