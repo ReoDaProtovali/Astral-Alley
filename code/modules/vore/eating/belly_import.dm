@@ -809,12 +809,18 @@
 			if(new_disable_hud == 1)
 				new_belly.disable_hud = TRUE
 
+<<<<<<< HEAD
 		var/possible_fullscreens = icon_states('modular_chomp/icons/mob/screen_full_vore_ch.dmi') // CHOMPEdit
 		if(!new_belly.colorization_enabled)
 			possible_fullscreens = icon_states('icons/mob/screen_full_vore.dmi')
 			possible_fullscreens -= "a_synth_flesh_mono"
 			possible_fullscreens -= "a_synth_flesh_mono_hole"
 			possible_fullscreens -= "a_anim_belly"
+=======
+		var/possible_fullscreens = cached_icon_states('icons/mob/screen_full_vore_list.dmi')
+		if(!new_belly.colorization_enabled)
+			possible_fullscreens = cached_icon_states('icons/mob/screen_full_vore.dmi')
+>>>>>>> 14fed02701 ([MIRROR] Increased cached_icon_states usage and tweaks to unit testing (#11445))
 		if(!(new_belly.belly_fullscreen in possible_fullscreens))
 			new_belly.belly_fullscreen = ""
 
