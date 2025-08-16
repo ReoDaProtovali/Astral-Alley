@@ -258,7 +258,14 @@
 	json_data["config"] = list(
 		"title" = title,
 		"status" = status,
+<<<<<<< HEAD
 		"interface" = interface,
+=======
+		"interface" = list(
+			"name" = interface,
+			"layout" = user.read_preference(/datum/preference/choiced/tgui_layout),
+		),
+>>>>>>> e16c9ce7ba ([MIRROR] Overhaul vending machine UI from Bubber (#11435))
 		//"refreshing" = refreshing,
 		"refreshing" = FALSE,
 		"map" = (using_map && using_map.path) ? using_map.path : "Unknown",
