@@ -759,6 +759,7 @@
 	return perform_the_nom(user, prey, pred, belly)
 
 //
+<<<<<<< HEAD
 // Master vore proc that actually does vore procedures
 //
 /mob/living/proc/perform_the_nom(mob/living/user, mob/living/prey, mob/living/pred, obj/belly/belly, delay)
@@ -869,6 +870,8 @@
 	return TRUE
 
 //
+=======
+>>>>>>> f3dcccbc64 ([MIRROR] Refactors vore code to allow for instant-vore that does not sleep (#11434))
 // Magical pred-air breathing for inside preds
 // overrides a proc defined on atom called by breathe.dm
 //
@@ -951,7 +954,11 @@
 		return FALSE
 	// CHOMPAdd End
 	var/belly = user.vore_selected
+<<<<<<< HEAD
 	return perform_the_nom(user, prey, user, belly, delay = 1) //1/10th of a second is probably fine.
+=======
+	return begin_instant_nom(user, prey, user, belly)
+>>>>>>> f3dcccbc64 ([MIRROR] Refactors vore code to allow for instant-vore that does not sleep (#11434))
 
 /mob/living/proc/glow_toggle()
 	set name = "Glow (Toggle)"

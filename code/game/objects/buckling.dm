@@ -132,7 +132,11 @@
 					M.visible_message(span_warning("[M.name] sits down on [L.name]!"))
 				else
 					M.visible_message(span_warning("[M.name] is forced to sit down on [L.name] by [user.name]!"))
+<<<<<<< HEAD
 				M.perform_the_nom(user, L, M, M.vore_selected, 1)
+=======
+				M.begin_instant_nom(user, L, M, M.vore_selected)
+>>>>>>> f3dcccbc64 ([MIRROR] Refactors vore code to allow for instant-vore that does not sleep (#11434))
 
 	add_fingerprint(user)
 //	unbuckle_mob()

@@ -585,4 +585,9 @@
 	playsound(src, vore_sound, 25)
 
 	var/mob/living/M = usr
+<<<<<<< HEAD
 	M.perform_the_nom(usr,target,usr,usr.vore_selected,1)
+=======
+	if(isliving(M))
+		M.begin_instant_nom(M,target,M,M.vore_selected)
+>>>>>>> f3dcccbc64 ([MIRROR] Refactors vore code to allow for instant-vore that does not sleep (#11434))

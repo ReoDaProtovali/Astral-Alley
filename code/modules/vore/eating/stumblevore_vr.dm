@@ -41,11 +41,25 @@
 	M.stop_flying()
 	if(CanStumbleVore(M))
 		visible_message(span_vwarning("[M] flops carelessly into [src]!"))
+<<<<<<< HEAD
 		perform_the_nom(src,M,src,src.vore_selected,1)
 	else if(M.CanStumbleVore(src))
 		visible_message(span_vwarning("[M] flops carelessly into [src]!"))
 		perform_the_nom(M,src,M,M.vore_selected,1)
 	else if(istype(S) && S.species.lightweight == 1)
+=======
+		M.forceMove(get_turf(src))
+		begin_instant_nom(src,M,src,src.vore_selected)
+		return
+
+	if(M.CanStumbleVore(src)) //This is if the person stumbling into us is able to be eaten by us! BROKEN!
+		visible_message(span_vwarning("[M] flops carelessly into [src]!"))
+		M.forceMove(get_turf(src))
+		begin_instant_nom(M,src,M,M.vore_selected)
+		return
+
+	if(istype(S) && S.species.lightweight == 1)
+>>>>>>> f3dcccbc64 ([MIRROR] Refactors vore code to allow for instant-vore that does not sleep (#11434))
 		visible_message(span_vwarning("[M] carelessly bowls [src] over!"))
 		M.forceMove(get_turf(src))
 		M.apply_damage(0.5, BRUTE)

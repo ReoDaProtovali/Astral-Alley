@@ -48,12 +48,20 @@
 	var/mob/living/target = AM
 	if(istype(target) && !target.incorporeal_move && !src.incorporeal_move)	//The slip vore begins
 		if(can_slip_vore(target) && !src.slip_vore_in_progress && !target.slip_vore_in_progress)	//If we can vore them go for it
+<<<<<<< HEAD
 			perform_the_nom(src,target,src,src.vore_selected,1)
+=======
+			begin_instant_nom(src,target,src,src.vore_selected)
+>>>>>>> f3dcccbc64 ([MIRROR] Refactors vore code to allow for instant-vore that does not sleep (#11434))
 			target.slip_vore_in_progress = FALSE
 			target.is_slipping = FALSE
 			return
 		else if(can_be_slip_vored_by(target) && !src.slip_vore_in_progress && !target.slip_vore_in_progress) //Otherwise, if they can vore us, make it happen.
+<<<<<<< HEAD
 			perform_the_nom(target,src,target,target.vore_selected,1)
+=======
+			begin_instant_nom(target,src,target,target.vore_selected)
+>>>>>>> f3dcccbc64 ([MIRROR] Refactors vore code to allow for instant-vore that does not sleep (#11434))
 			slip_vore_in_progress = FALSE
 			is_slipping = FALSE
 			return
