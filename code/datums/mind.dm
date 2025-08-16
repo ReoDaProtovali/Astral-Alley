@@ -350,8 +350,13 @@
 				to_chat(H, span_notice("<font size =3><B>Your loyalty implant has been deactivated.</B></font>"))
 				log_admin("[key_name_admin(usr)] has de-loyalty implanted [current].")
 			if("add")
+<<<<<<< HEAD
 				to_chat(H, span_danger("<font size =3>You somehow have become the recepient of a loyalty transplant, and it just activated!</font>"))
 				H.implant_loyalty(override = TRUE)
+=======
+				to_chat(H, span_danger(span_large("You somehow have become the recepient of a loyalty transplant, and it just activated!")))
+				H.implant_loyalty(TRUE)
+>>>>>>> 20d29d3a90 (fix bad loyalty implant calls (#11440))
 				log_admin("[key_name_admin(usr)] has loyalty implanted [current].")
 			else
 	else if (href_list["silicon"])
