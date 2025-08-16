@@ -27,6 +27,11 @@ type ByondProps = {
   minimumHeight: number;
   minimumWidth: number;
   lightMode: BooleanLike;
+<<<<<<< HEAD
+=======
+  scale: BooleanLike;
+  spellcheck: BooleanLike;
+>>>>>>> 15cbe5bee3 ([MIRROR] tgui cleanup again (#11432))
 };
 
 const ROWS: Record<keyof typeof WindowSize, number> = {
@@ -43,6 +48,13 @@ export function TguiSay() {
   const channelIterator = useRef(new ChannelIterator());
   const chatHistory = useRef(new ChatHistory());
   const messages = useRef(byondMessages);
+<<<<<<< HEAD
+=======
+  const scale = useRef(true);
+  const minimumHeight = useRef(WindowSize.Small);
+  const minimumWidth = useRef(WindowSize.Width);
+  const spellcheck = useRef(true);
+>>>>>>> 15cbe5bee3 ([MIRROR] tgui cleanup again (#11432))
 
   // I initially wanted to make these an object or a reducer, but it's not really worth it.
   // You lose the granulatity and add a lot of boilerplate.
@@ -310,8 +322,15 @@ export function TguiSay() {
       WindowSize.Width,
       WindowSize.MaxWidth,
     );
+<<<<<<< HEAD
     setMinimumWidth(minWidth);
     setLightMode(!!data.lightMode);
+=======
+    minimumHeight.current = data.minimumHeight;
+    minimumWidth.current = minWidth;
+    spellcheck.current = !!data.spellcheck;
+    scale.current = !!data.scale;
+>>>>>>> 15cbe5bee3 ([MIRROR] tgui cleanup again (#11432))
   }
 
   function unloadChat(): void {
@@ -370,6 +389,10 @@ export function TguiSay() {
           {buttonContent}
         </button>
         <textarea
+<<<<<<< HEAD
+=======
+          spellCheck={spellcheck.current}
+>>>>>>> 15cbe5bee3 ([MIRROR] tgui cleanup again (#11432))
           autoCorrect="off"
           className={`textarea textarea-${theme}`}
           maxLength={maxLength}

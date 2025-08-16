@@ -9,7 +9,13 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tgui": "workspace:*",
+<<<<<<< HEAD
     "tgui-core": "^1.8.0",
     "tgui-polyfill": "workspace:*"
   }
+=======
+    "tgui-core": "^5.1.0"
+  },
+  "private": true
+>>>>>>> 15cbe5bee3 ([MIRROR] tgui cleanup again (#11432))
 }

@@ -69,10 +69,19 @@
 	winset(client, "tgui_say", "pos=410,400;size=360,30;is-visible=0;")
 
 	window.send_message("props", list(
+<<<<<<< HEAD
 		lightMode = client?.prefs?.read_preference(/datum/preference/toggle/tgui_say_light),
 		minimumHeight = minimum_height,
 		minimumWidth = minimu_width,
 		maxLength = max_length,
+=======
+		"lightMode" = client?.prefs?.read_preference(/datum/preference/toggle/tgui_say_light),
+		"scale" = client?.prefs?.read_preference(/datum/preference/toggle/ui_scale),
+		"minimumWidth" = minimum_width,
+		"minimumHeight" = minimum_height,
+		"maxLength" = max_length,
+		"spellcheck" = client?.prefs?.read_preference(/datum/preference/toggle/tgui_use_spellcheck)
+>>>>>>> 15cbe5bee3 ([MIRROR] tgui cleanup again (#11432))
 	))
 
 	stop_thinking()
