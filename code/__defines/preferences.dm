@@ -59,3 +59,21 @@
 
 /// These preferences will not be rendered on the preferences page, and are practically invisible unless specifically rendered. Used for quirks, currently.
 #define PREFERENCE_CATEGORY_MANUALLY_RENDERED "manually_rendered_features"
+<<<<<<< HEAD
+=======
+
+/// Emote switch preferences
+#define EMOTE_SOUND_NO_FREQ "Default"
+#define EMOTE_SOUND_VOICE_FREQ "Voice Frequency"
+#define EMOTE_SOUND_VOICE_LIST "Voice Sound"
+
+// Choose grid or list TGUI layouts for UI's, when possible.
+/// Force grid layout, even if default is a list.
+#define TGUI_LAYOUT_GRID "grid"
+/// Force list layout, even if default is a grid.
+#define TGUI_LAYOUT_LIST "list"
+
+#define WRITE_PREF_NORMAL 1
+#define WRITE_PREF_INSTANT 2
+#define WRITE_PREF_MANUAL 3
+>>>>>>> e16c9ce7ba ([MIRROR] Overhaul vending machine UI from Bubber (#11435))
