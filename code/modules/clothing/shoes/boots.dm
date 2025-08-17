@@ -257,6 +257,17 @@
 	icon_state = "ysing"
 
 /obj/item/clothing/shoes/boots/half_moon
+<<<<<<< HEAD
     name = "half moon boots"
     desc = "Flexible and tight, these boots ensure the wearer will be leaving a solid impression without sacrificing mobility."
     icon_state = "half_moon"
+=======
+	name = "half moon boots"
+	desc = "Flexible and tight, these boots ensure the wearer will be leaving a solid impression without sacrificing mobility."
+	icon_state = "half_moon"
+
+/obj/item/clothing/shoes/boots/hoof
+	name = "hoofboots"
+	desc = "A pair of high-heeled boots with hooves on the front of the soles, for use with a hobby horse or to disguise your footprints."
+	icon_state = "hoofboots"
+>>>>>>> 51a3f5f496 ([MIRROR] clothing _vr dmi cleanup: boots (#11446))
