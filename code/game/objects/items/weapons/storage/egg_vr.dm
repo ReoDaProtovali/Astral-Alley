@@ -3,9 +3,8 @@
 /obj/item/storage/vore_egg
 	name = "egg"
 	desc = "It's an egg; it's smooth to the touch." //This is the default egg.
-	icon = 'icons/obj/egg_new_vr.dmi'
+	icon = 'icons/obj/egg.dmi'
 	icon_state = "egg"
-	var/open_egg_icon = 'icons/obj/egg_open_vr.dmi'
 	item_icons = list(
 		slot_l_hand_str = 'icons/mob/items/lefthand_storage.dmi',
 		slot_r_hand_str = 'icons/mob/items/righthand_storage.dmi',
@@ -24,7 +23,7 @@
 /obj/item/storage/vore_egg/open(mob/user as mob)
 	if(isobserver(user))
 		return
-	icon = open_egg_icon
+	icon_state = "[initial(icon_state)]_open"
 	..()
 
 /obj/item/storage/vore_egg/proc/hatch(mob/living/user as mob)
@@ -35,9 +34,14 @@
 			playsound(src, src.use_sound, 50, 0, -5)
 		animate_shake()
 		drop_contents()
+<<<<<<< HEAD
 		icon = open_egg_icon
 		if(user.transforming)
 			user.transforming = FALSE
+=======
+		if(user.transforming) //this is actually godawful and transforming should never be used as it skips life ticks
+			user.transforming = FALSE //but if something does still use transforming (Bad, please do not.), we want it to be removed from them.
+>>>>>>> bb70ca1093 ([MIRROR] Icon Fixup [IDB IGNORE] (#11451))
 
 /obj/item/storage/vore_egg/unathi
 	name = "unathi egg"

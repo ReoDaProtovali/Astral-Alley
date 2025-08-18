@@ -17,10 +17,14 @@
 	id = "[rand(1000, 9999)]"
 	..()
 	underlays.Cut()
+<<<<<<< HEAD
 	underlays += image('icons/obj/stationobjs_vr.dmi', icon_state = "telecomp-wires")	//VOREStation Edit: different direction for wires to account for dirs
 
 /obj/machinery/computer/teleporter/Initialize()
 	. = ..()
+=======
+	underlays += image('icons/obj/stationobjs.dmi', icon_state = "telecomp-wires")
+>>>>>>> bb70ca1093 ([MIRROR] Icon Fixup [IDB IGNORE] (#11451))
 	teleport_control = new(src)
 	var/obj/machinery/teleport/station/station = null
 	var/obj/machinery/teleport/hub/hub = null
