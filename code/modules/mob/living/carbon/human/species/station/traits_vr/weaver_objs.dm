@@ -59,11 +59,18 @@
 	icon_state = pick(possible_icon_states)
 
 /obj/effect/weaversilk/wall/CanPass(atom/movable/mover, turf/target)
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/weaver_objs.dm
 	if(ishuman(mover))
 		var/mob/living/carbon/human/H = mover
 		if(H.species.is_weaver)
 			return TRUE
 	..()
+=======
+	var/datum/component/weaver/comp = mover.GetComponent(/datum/component/weaver) //only spooders can move on by
+	if(comp)
+		return TRUE
+	return FALSE
+>>>>>>> dc5ee550fb ([MIRROR] Fixes weaver wall movement (#11454)):code/modules/mob/living/carbon/human/species/station/traits/weaver_objs.dm
 
 /obj/structure/bed/double/weaversilk_nest
 	name = "weaversilk nest"
