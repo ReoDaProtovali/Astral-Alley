@@ -15,6 +15,7 @@
 	var/content = ""
 	var/title_buttons = ""
 
+<<<<<<< HEAD
 /datum/browser/New(nuser, nwindow_id, ntitle = 0, nwidth = 0, nheight = 0, var/atom/nref = null)
 	user = nuser
 	window_id = nwindow_id
@@ -30,6 +31,23 @@
 	if(!user?.client?.prefs?.read_preference(/datum/preference/toggle/browser_style))
 		return
 	add_stylesheet("common", 'html/browser/common.css') // this CSS sheet is common to all UIs
+=======
+/datum/browser/New(mob/user, window_id, title = "", width = 0, height = 0, atom/source = null)
+	if(IS_CLIENT_OR_MOCK(user))
+		var/client/client_user = user
+		user = client_user.mob
+	src.user = user
+	RegisterSignal(user, COMSIG_PARENT_QDELETING, PROC_REF(user_deleted))
+	src.window_id = window_id
+	if (title)
+		src.title = strip_improper(title)
+	if (width)
+		src.width = width
+	if (height)
+		src.height = height
+	if (source)
+		src.source_ref = WEAKREF(source)
+>>>>>>> 495c373e69 ([MIRROR] ticker followup (#11474))
 
 //VOREStation Edit - Allow browser datums to be garbage collected
 /datum/browser/Destroy()
