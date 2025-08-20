@@ -1,11 +1,12 @@
 /client/proc/kaboom()
 	var/power = tgui_input_number(src, "power?", "power?")
 	var/turf/T = get_turf(src.mob)
-	explosion_rec(T, power)
+	explosion(T, power)
 
 /obj
 	var/explosion_resistance
 
+<<<<<<< HEAD
 /proc/explosion_rec(turf/epicenter, power)
 	var/list/explosion_turfs = list()
 	var/explosion_in_progress = 0
@@ -58,6 +59,8 @@
 
 	explosion_in_progress = 0
 
+=======
+>>>>>>> d59121f216 ([MIRROR] Explosion subsystem (#11430))
 /turf
 	var/explosion_resistance
 
@@ -87,6 +90,7 @@
 
 /turf/simulated/wall
 	explosion_resistance = 10
+<<<<<<< HEAD
 
 //Code-wise, a safe value for power is something up to ~25 or ~30.. This does quite a bit of damage to the station.
 //direction is the direction that the spread took to come to this tile. So it is pointing in the main blast direction - meaning where this tile should spread most of it's force.
@@ -112,3 +116,5 @@
 
 /turf/unsimulated/explosion_spread(power)
 	return //So it doesn't get to the parent proc, which simulates explosions
+=======
+>>>>>>> d59121f216 ([MIRROR] Explosion subsystem (#11430))
