@@ -53,12 +53,12 @@
 /obj/item/clothing/suit/space/void/mining/alt2
 	desc = "A surplus Solgov mining voidsuit! Slightly more comfortable and easier to move in than your average voidsuit."
 
-	icon = 'icons/inventory/suit/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/suit/mob_vr.dmi'
+	icon = 'icons/inventory/suit/item.dmi'
+	default_worn_icon = 'icons/inventory/suit/mob.dmi'
 	icon_state = "void_mining_bay"
 	item_state = null
-	sprite_sheets = ALL_VR_SPRITE_SHEETS_SUIT_MOB
-	sprite_sheets_obj = ALL_VR_SPRITE_SHEETS_SUIT_ITEM
+	sprite_sheets = ALL_SPRITE_SHEETS_SUIT_MOB
+	sprite_sheets_obj = SPECIES_SPRITE_SHEETS_SUIT_ITEM
 	slowdown = 0
 
 /obj/item/clothing/head/helmet/space/void/mining/alt2
@@ -75,12 +75,12 @@
 /obj/item/clothing/suit/space/anomaly/alt
 	desc = "A surplus Solgov anomaly suit! Slightly more comfortable and easier to move in than your average anomaly suit."
 
-	icon = 'icons/inventory/suit/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/suit/mob_vr.dmi'
+	icon = 'icons/inventory/suit/item.dmi'
+	default_worn_icon = 'icons/inventory/suit/mob.dmi'
 	icon_state = "void_excavation_bay"
 	item_state = null
-	sprite_sheets = ALL_VR_SPRITE_SHEETS_SUIT_MOB
-	sprite_sheets_obj = ALL_VR_SPRITE_SHEETS_SUIT_ITEM
+	sprite_sheets = ALL_SPRITE_SHEETS_SUIT_MOB
+	sprite_sheets_obj = SPECIES_SPRITE_SHEETS_SUIT_ITEM
 	slowdown = 0.5
 
 /obj/item/clothing/head/helmet/space/anomaly/alt
@@ -98,12 +98,12 @@
 /obj/item/clothing/suit/space/void/security/riot/alt
 	desc = "A surplus Solgov riot control voidsuit! Slightly more comfortable and easier to move in than your average voidsuit."
 
-	icon = 'icons/inventory/suit/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/suit/mob_vr.dmi'
+	icon = 'icons/inventory/suit/item.dmi'
+	default_worn_icon = 'icons/inventory/suit/mob.dmi'
 	icon_state = "void_secalt_bay"
 	item_state = null
-	sprite_sheets = ALL_VR_SPRITE_SHEETS_SUIT_MOB
-	sprite_sheets_obj = ALL_VR_SPRITE_SHEETS_SUIT_ITEM
+	sprite_sheets = ALL_SPRITE_SHEETS_SUIT_MOB
+	sprite_sheets_obj = SPECIES_SPRITE_SHEETS_SUIT_ITEM
 	slowdown = 0.5
 
 /obj/item/clothing/head/helmet/space/void/security/riot/alt
@@ -120,12 +120,12 @@
 /obj/item/clothing/suit/space/void/pilot/alt2
 	desc = "A surplus Solgov pilot voidsuit! Slightly more comfortable and easier to move in than your average voidsuit."
 
-	icon = 'icons/inventory/suit/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/suit/mob_vr.dmi'
+	icon = 'icons/inventory/suit/item.dmi'
+	default_worn_icon = 'icons/inventory/suit/mob.dmi'
 	icon_state = "void_pilot_bay"
 	item_state = null
-	sprite_sheets = ALL_VR_SPRITE_SHEETS_SUIT_MOB
-	sprite_sheets_obj = ALL_VR_SPRITE_SHEETS_SUIT_ITEM
+	sprite_sheets = ALL_SPRITE_SHEETS_SUIT_MOB
+	sprite_sheets_obj = SPECIES_SPRITE_SHEETS_SUIT_ITEM
 	slowdown = 0
 
 /obj/item/clothing/head/helmet/space/void/pilot/alt2
@@ -142,12 +142,12 @@
 /obj/item/clothing/suit/space/void/medical/alt2
 	desc = "A surplus Solgov medical voidsuit! Slightly more comfortable and easier to move in than your average voidsuit."
 
-	icon = 'icons/inventory/suit/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/suit/mob_vr.dmi'
+	icon = 'icons/inventory/suit/item.dmi'
+	default_worn_icon = 'icons/inventory/suit/mob.dmi'
 	icon_state = "void_medicalalt_bay"
 	item_state = null
-	sprite_sheets = ALL_VR_SPRITE_SHEETS_SUIT_MOB
-	sprite_sheets_obj = ALL_VR_SPRITE_SHEETS_SUIT_ITEM
+	sprite_sheets = ALL_SPRITE_SHEETS_SUIT_MOB
+	sprite_sheets_obj = SPECIES_SPRITE_SHEETS_SUIT_ITEM
 	slowdown = 0
 
 /obj/item/clothing/head/helmet/space/void/medical/alt2
@@ -164,12 +164,12 @@
 /obj/item/clothing/suit/space/void/exploration/alt2
 	desc = "A surplus Solgov exploration voidsuit! Slightly more comfortable and easier to move in than your average voidsuit."
 
-	icon = 'icons/inventory/suit/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/suit/mob_vr.dmi'
+	icon = 'icons/inventory/suit/item.dmi'
+	default_worn_icon = 'icons/inventory/suit/mob.dmi'
 	icon_state = "void_explorer_bay"
 	item_state = null
-	sprite_sheets = ALL_VR_SPRITE_SHEETS_SUIT_MOB
-	sprite_sheets_obj = ALL_VR_SPRITE_SHEETS_SUIT_ITEM
+	sprite_sheets = ALL_SPRITE_SHEETS_SUIT_MOB
+	sprite_sheets_obj = SPECIES_SPRITE_SHEETS_SUIT_ITEM
 	slowdown = 0
 
 /obj/item/clothing/head/helmet/space/void/exploration/alt2
@@ -186,12 +186,12 @@
 /obj/item/clothing/suit/space/void/engineering/alt2
 	desc = "A surplus Solgov engineering voidsuit! Slightly more comfortable and easier to move in than your average voidsuit."
 
-	icon = 'icons/inventory/suit/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/suit/mob_vr.dmi'
+	icon = 'icons/inventory/suit/item.dmi'
+	default_worn_icon = 'icons/inventory/suit/mob.dmi'
 	icon_state = "void_engineeringalt_bay"
 	item_state = null
-	sprite_sheets = ALL_VR_SPRITE_SHEETS_SUIT_MOB
-	sprite_sheets_obj = ALL_VR_SPRITE_SHEETS_SUIT_ITEM
+	sprite_sheets = ALL_SPRITE_SHEETS_SUIT_MOB
+	sprite_sheets_obj = SPECIES_SPRITE_SHEETS_SUIT_ITEM
 	slowdown = 0.5
 
 /obj/item/clothing/head/helmet/space/void/engineering/alt2
@@ -208,12 +208,12 @@
 /obj/item/clothing/suit/space/void/atmos/alt2
 	desc = "A surplus Solgov atmospherics voidsuit! Slightly more comfortable and easier to move in than your average voidsuit."
 
-	icon = 'icons/inventory/suit/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/suit/mob_vr.dmi'
+	icon = 'icons/inventory/suit/item.dmi'
+	default_worn_icon = 'icons/inventory/suit/mob.dmi'
 	icon_state = "void_atmosalt_bay"
 	item_state = null
-	sprite_sheets = ALL_VR_SPRITE_SHEETS_SUIT_MOB
-	sprite_sheets_obj = ALL_VR_SPRITE_SHEETS_SUIT_ITEM
+	sprite_sheets = ALL_SPRITE_SHEETS_SUIT_MOB
+	sprite_sheets_obj = SPECIES_SPRITE_SHEETS_SUIT_ITEM
 	slowdown = 0.5
 
 /obj/item/clothing/head/helmet/space/void/atmos/alt2
@@ -230,12 +230,12 @@
 /obj/item/clothing/suit/space/void/captain/alt
 	desc = "A surplus Solgov Navy captain voidsuit! Slightly more comfortable and easier to move in than your average voidsuit."
 
-	icon = 'icons/inventory/suit/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/suit/mob_vr.dmi'
+	icon = 'icons/inventory/suit/item.dmi'
+	default_worn_icon = 'icons/inventory/suit/mob.dmi'
 	icon_state = "void_command_bay"
 	item_state = null
-	sprite_sheets = ALL_VR_SPRITE_SHEETS_SUIT_MOB
-	sprite_sheets_obj = ALL_VR_SPRITE_SHEETS_SUIT_ITEM
+	sprite_sheets = ALL_SPRITE_SHEETS_SUIT_MOB
+	sprite_sheets_obj = SPECIES_SPRITE_SHEETS_SUIT_ITEM
 	slowdown = 1.0
 
 /obj/item/clothing/head/helmet/space/void/captain/alt
