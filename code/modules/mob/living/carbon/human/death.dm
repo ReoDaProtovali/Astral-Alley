@@ -92,10 +92,18 @@
 	if(mind)
 		var/area/A = get_area(src)
 		if(!(A?.flag_check(AREA_BLOCK_SUIT_SENSORS)) && isbelly(loc))
+<<<<<<< HEAD
 			// SSgame_master.adjust_danger(gibbed ? 40 : 20)  // VOREStation Edit - We don't use SSgame_master yet.
 			for(var/mob/observer/dead/O in mob_list)
 				if(O.client?.prefs?.read_preference(/datum/preference/toggle/show_dsay))
 					to_chat(O, span_deadsay(span_bold("[src]") + " has died in " + span_bold("[get_area(src)]")  + ". [ghost_follow_link(src, O)] "))
+=======
+			// SSgame_master.adjust_danger(gibbed ? 40 : 20)  // We don't use SSgame_master yet.
+			if(!isbelly(loc) || !vore_death_privacy)
+				for(var/mob/observer/dead/O in GLOB.mob_list)
+					if(O.client?.prefs?.read_preference(/datum/preference/toggle/show_dsay))
+						to_chat(O, span_deadsay(span_bold("[src]") + " has died in " + span_bold(strip_improper("[A]")) + ". [ghost_follow_link(src, O)] "))
+>>>>>>> 495c373e69 ([MIRROR] ticker followup (#11474))
 
 	/* // CHOMPEdit Start: Replacing this with our own death sounds. :3
 	if(!gibbed && species.death_sound)
