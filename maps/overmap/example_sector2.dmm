@@ -805,7 +805,7 @@
 "co" = (
 /obj/machinery/door/airlock/glass{
 	name = "Glass Airlock";
-	req_access_txt = "0"
+	req_access = null
 	},
 /turf/simulated/floor/airless{
 	dir = 5;
@@ -876,7 +876,7 @@
 "cy" = (
 /obj/machinery/door/airlock/external{
 	name = "External Airlock";
-	req_access_txt = "0"
+	req_access = null
 	},
 /turf/simulated/floor/airless{
 	dir = 5;
