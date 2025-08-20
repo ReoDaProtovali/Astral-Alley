@@ -811,6 +811,7 @@ GLOBAL_LIST_EMPTY(icon_dimensions)
         "y" = icon_height > world.icon_size /*&& pixel_y != 0*/ ? (icon_height - world.icon_size) * 0.5 : 0, // we don't have pixel_y in use
 	)
 
+<<<<<<< HEAD:code/game/atoms.dm
 /// Returns a list containing the width and height of an icon file
 /proc/get_icon_dimensions(icon_path)
 	// Icons can be a real file(), a rsc backed file(), a dynamic rsc (dyn.rsc) reference (known as a cache reference in byond docs), or an /icon which is pointing to one of those.
@@ -823,3 +824,62 @@ GLOBAL_LIST_EMPTY(icon_dimensions)
 		var/icon/my_icon = icon(icon_path)
 		GLOB.icon_dimensions[icon_path] = list("width" = my_icon.Width(), "height" = my_icon.Height())
 	return GLOB.icon_dimensions[icon_path]
+=======
+/// Returns the src and all recursive contents as a list.
+/atom/proc/get_all_contents(ignore_flag_1)
+	. = list(src)
+	var/i = 0
+	while(i < length(.))
+		var/atom/checked_atom = .[++i]
+		if(checked_atom.flags & ignore_flag_1)
+			continue
+		. += checked_atom.contents
+
+/// Identical to get_all_contents but returns a list of atoms of the type passed in the argument.
+/atom/proc/get_all_contents_type(type)
+	var/list/processing_list = list(src)
+	. = list()
+	while(length(processing_list))
+		var/atom/checked_atom = processing_list[1]
+		processing_list.Cut(1, 2)
+		processing_list += checked_atom.contents
+		if(istype(checked_atom, type))
+			. += checked_atom
+
+/**
+*	Respond to our atom being checked by a virus extrapolator.
+*
+*	Default behaviour is to send COMSIG_ATOM_EXTRAPOLATOR_ACT and return an empty list (which may be populated by the signal)
+*
+*	Returns a list of viruses in the atom.
+*	Include EXTRAPOLATOR_SPECIAL_HANDLED in the list if the extrapolation act has been handled by this proc or a signal, and should not be handled by the extrapolator itself.
+*/
+/atom/proc/extrapolator_act(mob/living/user, obj/item/extrapolator/extrapolator, dry_run = FALSE)
+	. = list(EXTRAPOLATOR_RESULT_DISEASES = list())
+	SEND_SIGNAL(src, COMSIG_ATOM_EXTRAPOLATOR_ACT, user, extrapolator, dry_run, .)
+
+/**
+*	Wash this atom
+*
+*	This will clean it off any temporary stuff like blood. Override this in your item to add custom cleaning behavior.
+*	Returns true if any washing was necessary and thus performed
+*	Arguments:
+*	clean_types: any of the CLEAN_ constants
+*/
+/atom/proc/wash(clean_types)
+	SHOULD_CALL_PARENT(TRUE)
+
+	. = FALSE
+	if(SEND_SIGNAL(src, COMSIG_COMPONENT_CLEAN_ACT, clean_types))
+		. = TRUE
+
+	// Basically "if has washable coloration"
+	if(length(atom_colours) >= WASHABLE_COLOUR_PRIORITY && atom_colours[WASHABLE_COLOUR_PRIORITY])
+		remove_atom_colour(WASHABLE_COLOUR_PRIORITY)
+		return TRUE
+
+	forensic_data?.wash(clean_types)
+	blood_color = null
+	germ_level = 0
+	fluorescent = 0
+>>>>>>> 4f205c9197 ([MIRROR] Clothing fallback (#11470)):code/game/atom/_atom.dm
