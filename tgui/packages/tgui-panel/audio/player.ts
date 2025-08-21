@@ -77,6 +77,7 @@ export class AudioPlayer {
     clearInterval(this.playbackInterval);
   }
 
+<<<<<<< HEAD
   play(url, options = {}) {
     if (!this.node) {
       return;
@@ -84,6 +85,16 @@ export class AudioPlayer {
     logger.log('playing', url, options);
     this.options = options;
     this.node.src = url;
+=======
+    audio.play()?.catch(() => {
+      // no error is passed here, it's sent to the event listener
+      logger.log('playback failed');
+    });
+
+    this.onPlaySubscribers.forEach((subscriber) => {
+      subscriber();
+    });
+>>>>>>> cce52199f3 ([MIRROR] allow to clear chat highlight settings (#11483))
   }
 
   stop() {
@@ -96,8 +107,18 @@ export class AudioPlayer {
       }
     }
     logger.log('stopping');
+<<<<<<< HEAD
     this.playing = false;
     this.node.src = '';
+=======
+
+    this.element.pause();
+    this.destroy();
+
+    this.onStopSubscribers.forEach((subscriber) => {
+      subscriber();
+    });
+>>>>>>> cce52199f3 ([MIRROR] allow to clear chat highlight settings (#11483))
   }
 
   setVolume(volume) {
