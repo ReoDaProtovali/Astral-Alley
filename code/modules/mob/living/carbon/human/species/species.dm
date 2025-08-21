@@ -491,16 +491,64 @@
 	//VOREStation Edit Start - Headpats and Handshakes.
 	if(H.zone_sel.selecting == "head")
 		H.visible_message( \
+<<<<<<< HEAD
 			span_notice("[H] pats [target] on the head."), \
 			span_notice("You pat [target] on the head."), )
 	else if(H.zone_sel.selecting == "r_hand" || H.zone_sel.selecting == "l_hand")
+=======
+			span_notice("[target] moves to avoid being touched by [H]!"), \
+			span_notice("[target] moves to avoid being touched by you!"), )
+		return
+
+	var/covered_mouth = FALSE
+	if((target.touch_reaction_flags & SPECIES_TRAIT_PATTING_DEFENCE) && ishuman(target)) // No need to test this for now if they don't have the trait
+		var/mob/living/carbon/human/M = target
+		if(M.head)
+			if((M.head.body_parts_covered & FACE) || (M.head.flags_inv & HIDEFACE)) // Need to check both because a lot of items set one or the other, rather than both as you'd expect
+				covered_mouth = TRUE
+		if(M.wear_mask)
+			if((M.wear_mask.body_parts_covered & FACE) || (M.wear_mask.flags_inv & HIDEFACE))
+				covered_mouth = TRUE
+	if(target.is_muzzled())
+		covered_mouth = TRUE
+
+	if(H.zone_sel.selecting == BP_HEAD)
+		if((target.touch_reaction_flags & SPECIES_TRAIT_PATTING_DEFENCE) && !covered_mouth)
+			H.visible_message( \
+				span_warning("[target] reflexively bites the hand of [H] to prevent head patting!"), \
+				span_warning("[target] reflexively bites your hand!"), )
+			if(H.hand)
+				H.apply_damage(1, BRUTE, BP_L_HAND)
+			else
+				H.apply_damage(1, BRUTE, BP_R_HAND)
+		else
+			H.visible_message( \
+				span_notice("[H] pats [target] on the head."), \
+				span_notice("You pat [target] on the head."), )
+	else if(H.zone_sel.selecting == BP_R_HAND || H.zone_sel.selecting == BP_L_HAND)
+>>>>>>> c289e8e4e1 ([MIRROR] Reflexive biting can't bite through helmets (#11478))
 		H.visible_message( \
 			span_notice("[H] shakes [target]'s hand."), \
 			span_notice("You shake [target]'s hand."), )
 	else if(H.zone_sel.selecting == "mouth")
+<<<<<<< HEAD
 		H.visible_message( \
 			span_notice("[H] boops [target]'s nose."), \
 			span_notice("You boop [target] on the nose."), )
+=======
+		if((target.touch_reaction_flags & SPECIES_TRAIT_PATTING_DEFENCE) && !covered_mouth)
+			H.visible_message( \
+				span_warning("[target] reflexively bites the hand of [H] to prevent nose booping!"), \
+				span_warning("[target] reflexively bites your hand!"), )
+			if(H.hand)
+				H.apply_damage(1, BRUTE, BP_L_HAND)
+			else
+				H.apply_damage(1, BRUTE, BP_R_HAND)
+		else
+			H.visible_message( \
+				span_notice("[H] boops [target]'s nose."), \
+				span_notice("You boop [target] on the nose."), )
+>>>>>>> c289e8e4e1 ([MIRROR] Reflexive biting can't bite through helmets (#11478))
 	else if(H.zone_sel.selecting == BP_GROIN) //CHOMPEdit
 		H.vore_bellyrub(target)
 	//VOREStation Edit End
