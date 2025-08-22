@@ -6,7 +6,6 @@ import {
   ProgressBar,
   Section,
 } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 
 import { stats, tempColors } from './constants';
 import type { Data } from './types';
@@ -51,7 +50,7 @@ export const SleeperOccupant = (props) => {
               bad: [-Infinity, 0],
             }}
           >
-            {toFixed(occupant.health)}
+            {occupant.health.toFixed()}
           </ProgressBar>
         </LabeledList.Item>
         <LabeledList.Item label="Status" color={stats[occupant.stat][0]}>
@@ -64,8 +63,8 @@ export const SleeperOccupant = (props) => {
             value={occupant.bodyTemperature / occupant.maxTemp}
             color={tempColors[occupant.temperatureSuitability + 3]}
           >
-            {toFixed(occupant.btCelsius)}&deg;C,
-            {toFixed(occupant.btFaren)}&deg;F
+            {occupant.btCelsius.toFixed()}&deg;C,
+            {occupant.btFaren.toFixed()}&deg;F
           </ProgressBar>
         </LabeledList.Item>
         {!!occupant.hasBlood && (

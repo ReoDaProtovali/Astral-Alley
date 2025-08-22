@@ -1,6 +1,5 @@
 import { useDispatch, useSelector } from 'tgui/backend';
 import { Box, LabeledList, NumberInput, Section } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 
 import { updateSettings } from '../actions';
 import { selectSettings } from '../selectors';
@@ -25,8 +24,13 @@ export const MessageLimits = (props) => {
             minValue={500}
             maxValue={10000}
             value={visibleMessageLimit}
+<<<<<<< HEAD
             format={(value) => toFixed(value)}
             onDrag={(value) =>
+=======
+            format={(value) => value.toFixed()}
+            onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               dispatch(
                 updateSettings({
                   visibleMessageLimit: value,
@@ -51,8 +55,13 @@ export const MessageLimits = (props) => {
             minValue={0}
             maxValue={10000}
             value={persistentMessageLimit}
+<<<<<<< HEAD
             format={(value) => toFixed(value)}
             onDrag={(value) =>
+=======
+            format={(value) => value.toFixed()}
+            onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               dispatch(
                 updateSettings({
                   persistentMessageLimit: value,
@@ -77,8 +86,13 @@ export const MessageLimits = (props) => {
             minValue={0}
             maxValue={10}
             value={combineMessageLimit}
+<<<<<<< HEAD
             format={(value) => toFixed(value)}
             onDrag={(value) =>
+=======
+            format={(value) => value.toFixed()}
+            onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               dispatch(
                 updateSettings({
                   combineMessageLimit: value,
@@ -96,8 +110,13 @@ export const MessageLimits = (props) => {
             maxValue={10}
             value={combineIntervalLimit}
             unit="s"
+<<<<<<< HEAD
             format={(value) => toFixed(value)}
             onDrag={(value) =>
+=======
+            format={(value) => value.toFixed()}
+            onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               dispatch(
                 updateSettings({
                   combineIntervalLimit: value,
@@ -106,6 +125,7 @@ export const MessageLimits = (props) => {
             }
           />
         </LabeledList.Item>
+<<<<<<< HEAD
         <LabeledList.Item label="Message store interval 1-10 (Default: 10 Seconds) [Requires restart]">
           <NumberInput
             width="5em"
@@ -133,6 +153,36 @@ export const MessageLimits = (props) => {
             ''
           )}
         </LabeledList.Item>
+=======
+        {!game.databaseBackendEnabled && (
+          <LabeledList.Item label="Message store interval 1-10 (Default: 10 Seconds) [Requires restart]">
+            <NumberInput
+              tickWhileDragging
+              width="5em"
+              step={1}
+              stepPixelSize={5}
+              minValue={1}
+              maxValue={10}
+              value={saveInterval}
+              unit="s"
+              format={(value) => value.toFixed()}
+              onChange={(value) =>
+                dispatch(
+                  updateSettings({
+                    saveInterval: value,
+                  }),
+                )
+              }
+            />
+            &nbsp;
+            {saveInterval <= 3 && (
+              <Box inline fontSize="0.9em" color="red">
+                Warning, experimental! Might crash!
+              </Box>
+            )}
+          </LabeledList.Item>
+        )}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
       </LabeledList>
     </Section>
   );

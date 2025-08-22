@@ -714,6 +714,7 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 	var/list/adm = get_admin_counts()
 	var/list/activemins = adm["present"]
 	. = activemins.len
+	/*
 	if(. <= 0)
 		var/final = ""
 		var/list/afkmins = adm["afk"]
@@ -724,7 +725,11 @@ GLOBAL_DATUM_INIT(tickets, /datum/tickets, new)
 			final = "[msg] - No admins online"
 		else
 			final = "[msg] - All admins stealthed\[[english_list(stealthmins)]\], AFK\[[english_list(afkmins)]\], or lacks +BAN\[[english_list(powerlessmins)]\]! Total: [allmins.len] "
+<<<<<<< HEAD:modular_chomp/code/modules/tickets/tickets.dm
 		send2irc(source,final)
+=======
+		send2irc(source,final)*/
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490)):code/modules/tickets/tickets.dm
 
 /proc/ircadminwho()
 	var/list/message = list("Admins: ")

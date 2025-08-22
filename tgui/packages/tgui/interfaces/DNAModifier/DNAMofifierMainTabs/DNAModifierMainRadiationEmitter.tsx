@@ -27,6 +27,10 @@ export const DNAModifierMainRadiationEmitter = (props) => {
               </Stack.Item>
               <Stack.Item>
                 <Knob
+<<<<<<< HEAD
+=======
+                  format={(value) => value.toFixed()}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                   minValue={1}
                   maxValue={10}
                   stepPixelSize={20}
@@ -47,6 +51,10 @@ export const DNAModifierMainRadiationEmitter = (props) => {
               </Stack.Item>
               <Stack.Item>
                 <Knob
+<<<<<<< HEAD
+=======
+                  format={(value) => value.toFixed()}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                   minValue={1}
                   maxValue={20}
                   stepPixelSize={10}
