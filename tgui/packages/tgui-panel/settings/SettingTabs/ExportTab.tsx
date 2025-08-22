@@ -10,7 +10,6 @@ import {
   Section,
   Stack,
 } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 
 import { purgeChatMessageArchive, saveChatToDisk } from '../../chat/actions';
 import { MESSAGE_TYPES } from '../../chat/constants';
@@ -99,8 +98,13 @@ export const ExportTab = (props) => {
                 minValue={1}
                 maxValue={8}
                 value={logRetainRounds}
+<<<<<<< HEAD
                 format={(value) => toFixed(value)}
                 onDrag={(value) =>
+=======
+                format={(value) => value.toFixed()}
+                onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                   dispatch(
                     updateSettings({
                       logRetainRounds: value,
@@ -125,8 +129,13 @@ export const ExportTab = (props) => {
                 minValue={0}
                 maxValue={50000}
                 value={logLimit}
+<<<<<<< HEAD
                 format={(value) => toFixed(value)}
                 onDrag={(value) =>
+=======
+                format={(value) => value.toFixed()}
+                onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
                   dispatch(
                     updateSettings({
                       logLimit: value,
@@ -175,6 +184,7 @@ export const ExportTab = (props) => {
       )}
       <LabeledList>
         <LabeledList.Item label="Export round start (0 = curr.) / end (0 = dis.)">
+<<<<<<< HEAD
           <NumberInput
             width="5em"
             step={1}
@@ -212,6 +222,93 @@ export const ExportTab = (props) => {
             Stored Rounds:&nbsp;
           </Box>
           <Box inline>{storedRounds}</Box>
+=======
+          <Stack align="center">
+            {game.databaseBackendEnabled ? (
+              <>
+                <Stack.Item>
+                  <Dropdown
+                    onSelected={(value) =>
+                      dispatch(
+                        updateSettings({
+                          exportStart: value,
+                        }),
+                      )
+                    }
+                    options={game.databaseStoredRounds}
+                    selected={exportStart}
+                  />
+                </Stack.Item>
+                <Stack.Item>
+                  <Dropdown
+                    onSelected={(value) =>
+                      dispatch(
+                        updateSettings({
+                          exportEnd: value,
+                        }),
+                      )
+                    }
+                    options={game.databaseStoredRounds}
+                    selected={exportEnd}
+                  />
+                </Stack.Item>
+              </>
+            ) : (
+              <>
+                <Stack.Item>
+                  <NumberInput
+                    tickWhileDragging
+                    width="5em"
+                    step={1}
+                    stepPixelSize={10}
+                    minValue={0}
+                    maxValue={exportEnd === 0 ? 0 : exportEnd - 1}
+                    value={exportStart}
+                    format={(value) => value.toFixed()}
+                    onChange={(value) =>
+                      dispatch(
+                        updateSettings({
+                          exportStart: value,
+                        }),
+                      )
+                    }
+                  />
+                </Stack.Item>
+                <Stack.Item>
+                  <NumberInput
+                    tickWhileDragging
+                    width="5em"
+                    step={1}
+                    stepPixelSize={10}
+                    minValue={exportStart === 0 ? 0 : exportStart + 1}
+                    maxValue={storedRounds}
+                    value={exportEnd}
+                    format={(value) => value.toFixed()}
+                    onChange={(value) =>
+                      dispatch(
+                        updateSettings({
+                          exportEnd: value,
+                        }),
+                      )
+                    }
+                  />
+                </Stack.Item>
+              </>
+            )}
+            <Stack.Item>
+              <Box fontSize="0.9em" color="label">
+                &nbsp;Stored Rounds:&nbsp;
+              </Box>
+            </Stack.Item>
+            <Stack.Item>
+              <Box>
+                {game.databaseBackendEnabled
+                  ? game.databaseStoredRounds.length - 1
+                  : storedRounds}
+              </Box>
+            </Stack.Item>
+          </Stack>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
         </LabeledList.Item>
         <LabeledList.Item label="Amount of lines to export (0 = inf.)">
           <NumberInput
@@ -221,8 +318,13 @@ export const ExportTab = (props) => {
             minValue={0}
             maxValue={50000}
             value={logLineCount}
+<<<<<<< HEAD
             format={(value) => toFixed(value)}
             onDrag={(value) =>
+=======
+            format={(value) => value.toFixed()}
+            onChange={(value) =>
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               dispatch(
                 updateSettings({
                   logLineCount: value,

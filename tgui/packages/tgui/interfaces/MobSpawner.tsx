@@ -208,6 +208,10 @@ const GeneralMobSettings = (props: {
           </LabeledList.Item>
           <LabeledList.Item label={'Size (' + props.sizeMultiplier + '%)'}>
             <Knob
+<<<<<<< HEAD
+=======
+              format={(value) => value.toFixed()}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
               value={props.sizeMultiplier}
               minValue={50}
               maxValue={200}

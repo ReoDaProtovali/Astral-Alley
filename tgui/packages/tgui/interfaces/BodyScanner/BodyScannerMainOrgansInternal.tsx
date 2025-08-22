@@ -1,5 +1,4 @@
 import { Box, ProgressBar, Section, Table } from 'tgui-core/components';
-import { toFixed } from 'tgui-core/math';
 
 import { damageRange } from './constants';
 import { germStatus, reduceOrganStatus } from './functions';
@@ -30,6 +29,7 @@ export const BodyScannerMainOrgansInternal = (props: {
           <Table.Row key={i} style={{ textTransform: 'capitalize' }}>
             <Table.Cell width="33%">{o.name}</Table.Cell>
             <Table.Cell textAlign="center">
+<<<<<<< HEAD
               <ProgressBar
                 minValue={0}
                 maxValue={o.maxHealth / 100}
@@ -39,6 +39,19 @@ export const BodyScannerMainOrgansInternal = (props: {
               >
                 {toFixed(o.damage)}
               </ProgressBar>
+=======
+              {!o.missing && (
+                <ProgressBar
+                  minValue={0}
+                  maxValue={o.maxHealth ? o.maxHealth / 100 : 0}
+                  value={o.damage ? o.damage / 100 : 0}
+                  mt={i > 0 && '0.5rem'}
+                  ranges={damageRange}
+                >
+                  {!!o.damage && o.damage.toFixed()}
+                </ProgressBar>
+              )}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
             </Table.Cell>
             <Table.Cell textAlign="right" width="33%">
               <Box color="average" inline>

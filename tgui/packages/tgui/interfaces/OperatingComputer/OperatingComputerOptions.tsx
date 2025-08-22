@@ -34,7 +34,11 @@ export const OperatingComputerOptions = (props) => {
           value={healthAlarm}
           stepPixelSize={5}
           ml="0"
+<<<<<<< HEAD
           format={(val) => val + '%'}
+=======
+          format={(val) => `${val.toFixed()}%`}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
           onChange={(e, val: number) =>
             act('health_adj', {
               new: val,
@@ -59,7 +63,11 @@ export const OperatingComputerOptions = (props) => {
           value={oxyAlarm}
           stepPixelSize={5}
           ml="0"
+<<<<<<< HEAD
           format={(val) => val + '%'}
+=======
+          format={(val) => `${val.toFixed()}%`}
+>>>>>>> c2b1e154db ([MIRROR] move to native toFixed (#11490))
           onChange={(e, val: number) =>
             act('oxy_adj', {
               new: val,
