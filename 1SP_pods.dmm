@@ -3001,12 +3001,7 @@
 /turf/simulated/shuttle/plating,
 /area/survivalpod/superpose/TradingShip)
 "cpj" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /turf/simulated/mineral/floor/ignore_mapgen/cave,
 /area/survivalpod/superpose/HydroCave)
 "cpn" = (
@@ -5471,12 +5466,7 @@
 /turf/simulated/shuttle/floor/alienplating,
 /area/survivalpod/superpose/CrashedInfestedShip)
 "eam" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /obj/effect/decal/cleanable/blood/splatter{
 	color = "red"
 	},
@@ -5752,13 +5742,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
-/obj/machinery/power/smes/buildable{
-	icon = 'icons/obj/alien_smes.dmi';
-	icon_state = "unit";
-	input_level = 950000;
-	name = "Alien Royal Capacitor";
-	output_level = 950000
-	},
+/obj/machinery/power/smes/buildable/alien_royal,
 /turf/simulated/floor/cult,
 /area/survivalpod/superpose/CultShip)
 "eir" = (
@@ -7322,13 +7306,7 @@
 /turf/simulated/floor/plating,
 /area/survivalpod/superpose/HydroCave)
 "fkW" = (
-/obj/machinery/power/smes/buildable{
-	icon = 'icons/obj/alien_smes.dmi';
-	icon_state = "unit";
-	input_level = 950000;
-	name = "Alien Royal Capacitor";
-	output_level = 950000
-	},
+/obj/machinery/power/smes/buildable/alien_royal,
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
@@ -8211,12 +8189,7 @@
 /turf/simulated/floor/tiled/techfloor,
 /area/survivalpod/superpose/HydroCave)
 "fOX" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /obj/item/gps/medical/on{
 	pixel_x = 7;
 	pixel_y = 6
@@ -8704,12 +8677,8 @@
 /obj/effect/decal/cleanable/blood/splatter{
 	color = "red"
 	},
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	dir = 4;
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
+/obj/effect/decal/cleanable/blood/tracks/suspicious{
+	dir = 4
 	},
 /turf/simulated/mineral/floor/ignore_mapgen/cave,
 /area/survivalpod/superpose/HydroCave)
@@ -9553,12 +9522,7 @@
 /obj/effect/decal/cleanable/blood/splatter{
 	color = "red"
 	},
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /turf/simulated/mineral/floor/ignore_mapgen/cave,
 /area/survivalpod/superpose/HydroCave)
 "gJt" = (
@@ -11399,12 +11363,7 @@
 /turf/simulated/shuttle/floor/voidcraft/light,
 /area/survivalpod)
 "ibf" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /turf/simulated/floor/outdoors/rocks,
 /area/survivalpod/superpose/DragonCave)
 "ibi" = (
@@ -12269,12 +12228,8 @@
 /turf/simulated/shuttle/floor/white,
 /area/template_noop)
 "iMp" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	dir = 4;
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
+/obj/effect/decal/cleanable/blood/tracks/suspicious{
+	dir = 4
 	},
 /turf/simulated/floor/outdoors/dirt,
 /area/survivalpod/superpose/DragonCave)
@@ -12754,13 +12709,7 @@
 /turf/simulated/floor/wood,
 /area/template_noop)
 "jfv" = (
-/obj/machinery/power/smes/buildable{
-	icon = 'icons/obj/alien_smes.dmi';
-	icon_state = "unit";
-	input_level = 950000;
-	name = "Alien Royal Capacitor";
-	output_level = 950000
-	},
+/obj/machinery/power/smes/buildable/alien_royal,
 /obj/effect/floor_decal/techfloor{
 	dir = 5
 	},
@@ -13252,13 +13201,7 @@
 /area/survivalpod/superpose/Dinner)
 "jyy" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/power/smes/buildable{
-	icon = 'icons/obj/alien_smes.dmi';
-	icon_state = "unit";
-	input_level = 950000;
-	name = "Alien Royal Capacitor";
-	output_level = 950000
-	},
+/obj/machinery/power/smes/buildable/alien_royal,
 /obj/structure/cable/cyan{
 	icon_state = "0-2"
 	},
@@ -14603,13 +14546,7 @@
 /area/survivalpod/superpose/LoneHome)
 "krb" = (
 /obj/effect/floor_decal/industrial/outline/yellow,
-/obj/machinery/power/smes/buildable{
-	icon = 'icons/obj/alien_smes.dmi';
-	icon_state = "unit";
-	input_level = 950000;
-	name = "Alien Royal Capacitor";
-	output_level = 950000
-	},
+/obj/machinery/power/smes/buildable/alien_royal,
 /obj/machinery/light/poi,
 /turf/simulated/floor,
 /area/survivalpod/superpose/CrashedInfestedShip)
@@ -15845,12 +15782,7 @@
 /turf/simulated/floor/tiled/steel_grid,
 /area/survivalpod/superpose/HydroCave)
 "lma" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /turf/template_noop,
 /area/template_noop)
 "lmg" = (
@@ -18603,12 +18535,7 @@
 /turf/simulated/floor/tiled/steel_dirty,
 /area/survivalpod/superpose/FieldLab)
 "nbF" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /turf/simulated/mineral/floor/ignore_mapgen/cave,
 /area/template_noop)
 "nbR" = (
@@ -20165,7 +20092,6 @@
 	anchored = 1;
 	canhear_range = 1;
 	frequency = 1487;
-	icon = 'icons/obj/items.dmi';
 	icon_state = "red_phone";
 	name = "Reception Emergency Phone"
 	},
@@ -21577,13 +21503,7 @@
 /obj/effect/floor_decal/techfloor{
 	dir = 6
 	},
-/obj/machinery/power/smes/buildable{
-	icon = 'icons/obj/alien_smes.dmi';
-	icon_state = "unit";
-	input_level = 950000;
-	name = "Alien Royal Capacitor";
-	output_level = 950000
-	},
+/obj/machinery/power/smes/buildable/alien_royal,
 /turf/simulated/floor/cult,
 /area/template_noop)
 "paG" = (
@@ -21672,12 +21592,7 @@
 /area/template_noop)
 "pdg" = (
 /obj/structure/barricade,
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /turf/simulated/mineral/floor/ignore_mapgen/cave,
 /area/template_noop)
 "pdo" = (
@@ -27658,12 +27573,8 @@
 /area/survivalpod/superpose/CrashedInfestedShip)
 "sxA" = (
 /obj/structure/barricade,
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	dir = 4;
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
+/obj/effect/decal/cleanable/blood/tracks/suspicious{
+	dir = 4
 	},
 /turf/simulated/mineral/floor/ignore_mapgen/cave,
 /area/survivalpod/superpose/HydroCave)
@@ -27835,12 +27746,7 @@
 /turf/simulated/floor/wood,
 /area/template_noop)
 "sFi" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /obj/effect/decal/cleanable/blood/splatter{
 	color = "red"
 	},
@@ -28587,12 +28493,8 @@
 /turf/simulated/shuttle/plating/skipjack,
 /area/template_noop)
 "tiZ" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	dir = 4;
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
+/obj/effect/decal/cleanable/blood/tracks/suspicious{
+	dir = 4
 	},
 /turf/simulated/floor/outdoors/rocks,
 /area/survivalpod/superpose/DragonCave)
@@ -28950,12 +28852,7 @@
 /area/survivalpod/superpose/TradingShip)
 "tqh" = (
 /obj/effect/decal/cleanable/filth,
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /turf/simulated/floor/outdoors/dirt,
 /area/survivalpod/superpose/DragonCave)
 "tql" = (
@@ -29967,12 +29864,7 @@
 /turf/simulated/shuttle/floor/black,
 /area/survivalpod/superpose/TradingShip)
 "uid" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /turf/simulated/floor/outdoors/dirt,
 /area/survivalpod/superpose/DragonCave)
 "uig" = (
@@ -30554,12 +30446,7 @@
 	deployed = 1;
 	icon_state = "beartrap1"
 	},
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /turf/simulated/mineral/floor/ignore_mapgen/cave,
 /area/survivalpod/superpose/HydroCave)
 "uEN" = (
@@ -31555,12 +31442,8 @@
 /turf/simulated/floor/tiled/techmaint,
 /area/template_noop)
 "vvE" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	dir = 4;
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
+/obj/effect/decal/cleanable/blood/tracks/suspicious{
+	dir = 4
 	},
 /turf/simulated/mineral/floor/ignore_mapgen/cave,
 /area/template_noop)
@@ -32974,12 +32857,7 @@
 /turf/simulated/shuttle/floor/voidcraft,
 /area/template_noop)
 "wzV" = (
-/obj/effect/decal/cleanable/blood/tracks{
-	color = "red";
-	desc = "Your instincts say you shouldn't be following these.";
-	icon = 'icons/effects/blood.dmi';
-	icon_state = "tracks"
-	},
+/obj/effect/decal/cleanable/blood/tracks/suspicious,
 /obj/effect/decal/cleanable/dirt,
 /turf/simulated/floor/outdoors/dirt,
 /area/survivalpod/superpose/DragonCave)

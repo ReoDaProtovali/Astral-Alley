@@ -483,9 +483,7 @@
 	},
 /area/centcom/specops)
 "avR" = (
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/Dooruranium.dmi'
-	},
+/obj/machinery/door/airlock/uranium_appearance,
 /turf/unsimulated/floor{
 	dir = 8;
 	icon_state = "wood"
@@ -1205,13 +1203,6 @@
 	icon_state = "steel"
 	},
 /area/centcom/main_hall)
-"boo" = (
-/obj/structure/shuttle/falsewall_no_join{
-	icon = 'icons/turf/wall_masks_tgmc.dmi';
-	icon_state = "white2"
-	},
-/turf/simulated/floor/plating,
-/area/shuttle/escape/centcom)
 "bos" = (
 /obj/effect/floor_decal/techfloor{
 	dir = 10
@@ -1452,9 +1443,7 @@
 	},
 /area/centcom/terminal)
 "bCf" = (
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/Dooruranium.dmi'
-	},
+/obj/machinery/door/airlock/uranium_appearance,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -8487,9 +8476,7 @@
 /turf/simulated/shuttle/floor/red,
 /area/shuttle/administration/centcom)
 "jGM" = (
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/Dooruranium.dmi'
-	},
+/obj/machinery/door/airlock/uranium_appearance,
 /turf/unsimulated/floor{
 	icon_state = "plating";
 	name = "plating"
@@ -9185,11 +9172,7 @@
 /turf/simulated/shuttle/plating,
 /area/skipjack_station/start)
 "krB" = (
-/turf/unsimulated/wall{
-	icon = 'icons/obj/doors/Dooruranium.dmi';
-	icon_state = "door_closed";
-	name = "Sealed Door"
-	},
+/turf/unsimulated/wall/fake_uranium,
 /area/ninja_dojo/dojo)
 "ksg" = (
 /obj/machinery/power/emitter{
@@ -10265,8 +10248,7 @@
 	},
 /area/centcom/specops)
 "lxd" = (
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/Dooruranium.dmi';
+/obj/machinery/door/airlock/uranium_appearance{
 	name = "Object Deletion"
 	},
 /turf/unsimulated/floor{
@@ -12993,8 +12975,7 @@
 /turf/simulated/shuttle/floor/red,
 /area/shuttle/response_ship/start)
 "oHh" = (
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/Dooruranium.dmi';
+/obj/machinery/door/airlock/uranium_appearance{
 	name = "Spawn"
 	},
 /turf/unsimulated/floor{
@@ -17768,9 +17749,7 @@
 /turf/simulated/shuttle/floor/white,
 /area/centcom/evac)
 "tDF" = (
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/Dooruranium.dmi'
-	},
+/obj/machinery/door/airlock/uranium_appearance,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
@@ -18304,9 +18283,7 @@
 /turf/simulated/shuttle/floor,
 /area/shuttle/transport1/centcom)
 "udk" = (
-/obj/machinery/door/airlock{
-	icon = 'icons/obj/doors/Dooruranium.dmi'
-	},
+/obj/machinery/door/airlock/uranium_appearance,
 /turf/unsimulated/floor{
 	icon_state = "white"
 	},

@@ -6945,6 +6945,7 @@
 	},
 /turf/simulated/floor/tiled/freezer,
 /area/surface/outpost/main/restroom)
+<<<<<<< HEAD
 "pm" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
@@ -6953,6 +6954,8 @@
 	outdoors = 1
 	},
 /area/surface/outpost/main/dorms)
+=======
+>>>>>>> 8fa48e2a3e ([MIRROR] Fixes map issues found in #18285 [MDB IGNORE] [IDB IGNORE] (#11485))
 "pn" = (
 /obj/machinery/door/airlock/mining{
 	autoclose = 0;
@@ -7581,11 +7584,7 @@
 	dir = 1;
 	icon_state = "spline_plain_full"
 	},
-/obj/structure/showcase{
-	desc = "It looks almost lifelike.";
-	icon = 'icons/obj/statue.dmi';
-	icon_state = "hos";
-	name = "Statue";
+/obj/structure/showcase/hos{
 	pixel_y = 2
 	},
 /obj/item/gps/internal/base,
@@ -13047,12 +13046,15 @@
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/steel/sif/planetuse,
 /area/surface/outpost/research/xenoresearch/xenobiology)
+<<<<<<< HEAD
 "Cl" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/decal/cleanable/dirt,
 /obj/effect/overlay/snow/floor,
 /turf/simulated/floor/tiled/steel/sif/planetuse,
 /area/surface/outside/plains/outpost)
+=======
+>>>>>>> 8fa48e2a3e ([MIRROR] Fixes map issues found in #18285 [MDB IGNORE] [IDB IGNORE] (#11485))
 "Cm" = (
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/effect/floor_decal/industrial/warning{
@@ -13586,11 +13588,7 @@
 /turf/simulated/shuttle/wall/voidcraft/hard_corner,
 /area/surface/outpost/wall)
 "DS" = (
-/turf/simulated/wall/dungeon{
-	icon = 'icons/obj/doors/shuttledoors.dmi';
-	icon_state = "door_locked";
-	name = "Wall Gate"
-	},
+/turf/simulated/wall/dungeon/gate,
 /area/surface/outpost/wall)
 "DT" = (
 /obj/structure/sign/warning/caution{
@@ -37719,7 +37717,7 @@ al
 aI
 al
 ov
-pm
+ov
 pX
 al
 aI
@@ -51643,7 +51641,7 @@ zz
 BA
 xe
 Ck
-Cl
+ff
 bm
 CQ
 al
@@ -51899,8 +51897,8 @@ xo
 xo
 xo
 xo
-Cl
-Cl
+ff
+ff
 bm
 CQ
 al
@@ -52156,7 +52154,7 @@ AO
 Bi
 Ds
 xo
-Cl
+ff
 ue
 ue
 CQ
