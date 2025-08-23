@@ -68,8 +68,14 @@
 	icon_living = "guard"
 	icon_dead = "guard_dead"
 	has_eye_glow = TRUE
+<<<<<<< HEAD
 	minbodytemp = 175 //yw edit, Makes mobs survive cryogaia temps
 	faction = FACTION_AWAYMISSION //yw edit, Makes away mobs be on the same fuckin' side.
+=======
+	density = FALSE
+	minbodytemp = 175
+	faction = FACTION_SPIDERS
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 	maxHealth = 200
 	health = 200
 	pass_flags = PASSTABLE

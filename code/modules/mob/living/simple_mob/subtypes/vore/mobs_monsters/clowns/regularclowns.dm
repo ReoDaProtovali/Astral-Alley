@@ -4,8 +4,13 @@
 	response_harm = "hits"
 
 	say_list_type = /datum/say_list/clown
+<<<<<<< HEAD
 	
 	can_be_drop_prey = FALSE //CHOMP Add
+=======
+
+	can_be_drop_prey = FALSE
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 /datum/say_list/clown
 	speak = list("HONK", "Honk!", "Henk!")

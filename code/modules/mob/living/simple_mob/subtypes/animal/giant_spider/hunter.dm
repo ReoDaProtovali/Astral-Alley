@@ -178,5 +178,10 @@
 		if(move_to)
 			give_destination(move_to, min_distance = 2, combat = TRUE) // This will switch our stance.
 */
+<<<<<<< HEAD
 /mob/living/simple_mob/animal/giant_spider/hunter/event // YW CHANGE
 	ai_holder_type = /datum/ai_holder/simple_mob/event
+=======
+/mob/living/simple_mob/animal/giant_spider/hunter/event
+	ai_holder_type = /datum/ai_holder/simple_mob/event
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))

@@ -32,8 +32,13 @@
 
 	meat_type = /obj/item/reagent_containers/food/snacks/xenomeat
 	meat_amount = 5
+<<<<<<< HEAD
 	
 	can_be_drop_prey = FALSE //CHOMP Add
+=======
+
+	can_be_drop_prey = FALSE
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 /mob/living/simple_mob/animal/space/alien/drone
 	name = "alien drone"

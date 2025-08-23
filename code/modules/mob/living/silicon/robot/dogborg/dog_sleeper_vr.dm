@@ -37,16 +37,23 @@
 	var/datum/matter_synth/glass = null
 	var/datum/matter_synth/wood = null
 	var/datum/matter_synth/plastic = null
-	var/datum/matter_synth/water = null //CHOMPAdd readd water
+	var/datum/matter_synth/water = null
 	var/digest_brute = 2
 	var/digest_burn = 3
 	var/digest_multiplier = 1
 	var/recycles = FALSE
 	var/medsensor = TRUE //Does belly sprite come with patient ok/dead light?
 	var/obj/item/healthanalyzer/med_analyzer = null
+<<<<<<< HEAD:code/modules/mob/living/silicon/robot/dogborg/dog_sleeper_vr.dm
 	var/ore_storage = FALSE //CHOMPAdd
 	var/max_ore_storage = 500 //CHOMPAdd
 	var/current_capacity = 0 //CHOMPAdd
+=======
+	var/ore_storage = FALSE
+	var/max_ore_storage = 500
+	var/current_capacity = 0
+	flags = NOBLUDGEON
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492)):code/modules/mob/living/silicon/robot/dogborg/dog_sleeper.dm
 
 /obj/item/dogborg/sleeper/New()
 	..()
@@ -285,7 +292,7 @@
 		dat += "<font color='red'><B>Current load:</B> [length(contents)] / [max_item_count] objects.</font><BR>"
 		dat += "<font color='gray'>([contents.Join(", ")])</font><BR><BR>"
 
-	if(ore_storage) //CHOMPAdd
+	if(ore_storage)
 		dat += "<font color='red'><B>Current ore capacity:</B> [current_capacity] / [max_ore_storage].</font><BR>"
 
 	if(delivery && length(contents))
@@ -589,7 +596,7 @@
 	if(SSair.current_cycle%3==1 && length(touchable_items))
 
 		//Burn all the mobs or add them to the exclusion list
-		var/volume = 0 //CHOMPAdd
+		var/volume = 0
 		for(var/mob/living/T in (touchable_items))
 			touchable_items -= T //Exclude mobs from loose item picking.
 			if((T.status_flags & GODMODE) || !T.digestable)
@@ -602,11 +609,14 @@
 				var/actual_brute = T.getBruteLoss() - old_brute
 				var/actual_burn = T.getFireLoss() - old_burn
 				var/damage_gain = actual_brute + actual_burn
+<<<<<<< HEAD:code/modules/mob/living/silicon/robot/dogborg/dog_sleeper_vr.dm
 				hound.nutrition += 2.5 * damage_gain //drain(-25 * damage_gain) //25*total loss as with voreorgan stats.//CHOMPEdit
 				//CHOMPAdd Start
+=======
+				hound.adjust_nutrition(2.5 * damage_gain) //drain(-25 * damage_gain) //25*total loss as with voreorgan stats.
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492)):code/modules/mob/living/silicon/robot/dogborg/dog_sleeper.dm
 				if(water)
 					water.add_charge(damage_gain)
-				//CHOMPAdd End
 				if(T.stat == DEAD)
 					if(ishuman(T))
 						log_admin("[key_name(hound)] has digested [key_name(T)] with a cyborg belly. ([hound ? "<a href='byond://?_src_=holder;[HrefToken()];adminplayerobservecoodjump=1;X=[hound.x];Y=[hound.y];Z=[hound.z]'>JMP</a>" : "null"])")
@@ -640,7 +650,6 @@
 								items_preserved |= brain
 						else
 							T.drop_from_inventory(I, src)
-					//CHOMPAdd Start
 					if(ishuman(T))
 						var/mob/living/carbon/human/Prey = T
 						volume = (Prey.bloodstr.total_volume + Prey.ingested.total_volume + Prey.touching.total_volume + Prey.weight) * Prey.size_multiplier
@@ -650,7 +659,6 @@
 						volume = T.reagents.total_volume
 						if(water)
 							water.add_charge(volume)
-					//CHOMPAdd End
 					if(T.ckey)
 						GLOB.prey_digested_roundstat++
 					if(patient == T)
@@ -666,7 +674,6 @@
 			//Handle the target being anything but a /mob/living
 			var/obj/item/T = target
 			if(istype(T))
-				//CHOMPAdd Start
 				if(T.reagents)
 					volume = T.reagents.total_volume
 				var/is_trash = istype(T, /obj/item/trash)
@@ -675,15 +682,17 @@
 				if(!digested)
 					items_preserved |= T
 				else
+<<<<<<< HEAD:code/modules/mob/living/silicon/robot/dogborg/dog_sleeper_vr.dm
 					if(analyzer && digested)
 						var/obj/item/tech_item = T
 						for(var/tech in tech_item.origin_tech)
 							files.UpdateTech(tech, tech_item.origin_tech[tech])
 							synced = FALSE
 					//CHOMPAdd Start
+=======
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492)):code/modules/mob/living/silicon/robot/dogborg/dog_sleeper.dm
 					if(volume && water)
 						water.add_charge(volume)
-					//CHOMPAdd End
 					if(recycles && T.matter)
 						for(var/material in T.matter)
 							var/total_material = T.matter[material]

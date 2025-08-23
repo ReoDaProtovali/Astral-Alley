@@ -246,7 +246,11 @@
 
 /obj/item/projectile/beam/mouselaser/ddraig/spawn_mob(var/mob/living/target)
 	var/list/tf_list = list(/mob/living/simple_mob/animal/passive/mouse,
+<<<<<<< HEAD
 		/mob/living/simple_mob/animal/passive/mouse/rat,
+=======
+		/mob/living/simple_mob/animal/passive/mouse/rat/strong,
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 		/mob/living/simple_mob/vore/alienanimals/dustjumper,
 		/mob/living/simple_mob/vore/woof,
 		/mob/living/simple_mob/animal/passive/dog/corgi,

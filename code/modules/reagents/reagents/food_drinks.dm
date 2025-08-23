@@ -5029,3 +5029,43 @@
 	nutriment_factor = 2
 	glass_name = REAGENT_ID_KVASS
 	glass_desc = "A hearty glass of Slavic brew."
+<<<<<<< HEAD
+=======
+
+/datum/reagent/cinnamonpowder
+	name = REAGENT_CINNAMONPOWDER
+	id = REAGENT_ID_CINNAMONPOWDER
+	description = "Cinnamon, a spice made from tree bark, ground into a fine powder. Probably not a good idea to eat on its own!"
+	taste_description= "sweet spice with a hint of wood"
+	color = "#a96622"
+
+	glass_name = REAGENT_ID_CINNAMONPOWDER
+	glass_desc = "A glass of ground cinnamon. Dare you take the challenge?"
+
+	supply_conversion_value = REFINERYEXPORT_VALUE_COMMON
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+
+/datum/reagent/gelatin
+	name = REAGENT_GELATIN
+	id = REAGENT_ID_GELATIN
+	description = "It doesnt taste like anything."
+	taste_description = REAGENT_ID_NOTHING
+	color = "#aaabcf"
+
+	glass_name = REAGENT_GELATIN
+	glass_desc = "It's like flavourless slime."
+
+	supply_conversion_value = REFINERYEXPORT_VALUE_UNWANTED
+	industrial_use = REFINERYEXPORT_REASON_FOOD
+
+
+/datum/reagent/drink/teamush
+	name = REAGENT_TEAMUSH
+	id = REAGENT_ID_TEAMUSH
+	description = "Mashed tea leaves, a bit like grass clippings. You can't make proper tea out of this now."
+	taste_description = "overwhelmingly bitter plant"
+	color = "#7db72d"
+
+	glass_name = "blended plant"
+	glass_desc = "Chunky, mashed up plant of some sort. Looks kinda gross."
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
