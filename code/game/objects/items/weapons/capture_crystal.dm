@@ -30,11 +30,11 @@
 		if(bound_mob in contents)
 			unleash()
 		to_chat(bound_mob, span_notice("You feel like yourself again. You are no longer under the influence of \the [src]'s command."))
-		UnregisterSignal(bound_mob, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(bound_mob, COMSIG_QDELETING)
 		bound_mob.capture_caught = FALSE
 		bound_mob = null
 	if(owner)
-		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(owner, COMSIG_QDELETING)
 		owner = null
 	if(in_gut) // CHOMPedit start
 		UnregisterSignal(in_gut, COMSIG_PARENT_QDELETING)
@@ -160,7 +160,7 @@
 	else
 		M.visible_message("\The [src] flickers in \the [M]'s hand and emits a little tone.", "\The [src] flickers in your hand and emits a little tone.")
 		playsound(src, 'sound/effects/capture-crystal-out.ogg', 75, 1, -1)
-		UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(owner, COMSIG_QDELETING)
 		owner = null
 
 //Let's make inviting ghosts be an option you can do instead of an automatic thing!
@@ -255,8 +255,8 @@
 
 //Make it so the crystal knows if its mob references get deleted to make sure things get cleaned up
 /obj/item/capture_crystal/proc/knowyoursignals(mob/living/M, mob/living/U)
-	RegisterSignal(M, COMSIG_PARENT_QDELETING, PROC_REF(mob_was_deleted), TRUE)
-	RegisterSignal(U, COMSIG_PARENT_QDELETING, PROC_REF(owner_was_deleted), TRUE)
+	RegisterSignal(M, COMSIG_QDELETING, PROC_REF(mob_was_deleted), TRUE)
+	RegisterSignal(U, COMSIG_QDELETING, PROC_REF(owner_was_deleted), TRUE)
 
 //The basic capture command does most of the registration work.
 /obj/item/capture_crystal/proc/capture(mob/living/M, mob/living/U)
@@ -340,8 +340,14 @@
 
 //The clean up procs!
 /obj/item/capture_crystal/proc/mob_was_deleted()
+<<<<<<< HEAD
 	UnregisterSignal(bound_mob, COMSIG_PARENT_QDELETING)
 	UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+=======
+	SIGNAL_HANDLER
+	UnregisterSignal(bound_mob, COMSIG_QDELETING)
+	UnregisterSignal(owner, COMSIG_QDELETING)
+>>>>>>> f85a202d80 ([MIRROR] Refactors do_after w/ TG's do_after (#11486))
 	bound_mob.capture_caught = FALSE
 	bound_mob = null
 	owner = null
@@ -350,7 +356,12 @@
 	update_icon()
 
 /obj/item/capture_crystal/proc/owner_was_deleted()
+<<<<<<< HEAD
 	UnregisterSignal(owner, COMSIG_PARENT_QDELETING)
+=======
+	SIGNAL_HANDLER
+	UnregisterSignal(owner, COMSIG_QDELETING)
+>>>>>>> f85a202d80 ([MIRROR] Refactors do_after w/ TG's do_after (#11486))
 	owner = null
 	active = FALSE
 	update_icon()

@@ -12,7 +12,7 @@
 /datum/component/recursive_move/RegisterWithParent()
 	. = ..()
 	holder = parent
-	RegisterSignal(holder, COMSIG_PARENT_QDELETING, PROC_REF(on_holder_qdel))
+	RegisterSignal(holder, COMSIG_QDELETING, PROC_REF(on_holder_qdel))
 	spawn(0) // Delayed action if our holder is spawned in nullspace and then loc = target, hopefully this catches it. VV Add item does this, for example.
 		if(!QDELETED(src))
 			setup_parents()
@@ -34,7 +34,7 @@
 		recursion++
 		parents += cur_parent
 		RegisterSignal(cur_parent, COMSIG_ATOM_EXITED, PROC_REF(heirarchy_changed))
-		RegisterSignal(cur_parent, COMSIG_PARENT_QDELETING, PROC_REF(on_qdel))
+		RegisterSignal(cur_parent, COMSIG_QDELETING, PROC_REF(on_qdel))
 
 		cur_parent = cur_parent.loc
 
@@ -64,7 +64,7 @@
 	if(!length(parents))
 		return
 	for(var/atom/movable/cur_parent in parents)
-		UnregisterSignal(cur_parent, COMSIG_PARENT_QDELETING)
+		UnregisterSignal(cur_parent, COMSIG_QDELETING)
 		UnregisterSignal(cur_parent, COMSIG_ATOM_EXITED)
 
 	UnregisterSignal(parents[parents.len], COMSIG_ATOM_ENTERING)
@@ -90,7 +90,12 @@
 	RegisterSignal(holder, COMSIG_ATOM_ENTERING, PROC_REF(setup_parents))
 
 /datum/component/recursive_move/proc/on_holder_qdel()
+<<<<<<< HEAD
 	UnregisterSignal(holder, COMSIG_PARENT_QDELETING)
+=======
+	SIGNAL_HANDLER
+	UnregisterSignal(holder, COMSIG_QDELETING)
+>>>>>>> f85a202d80 ([MIRROR] Refactors do_after w/ TG's do_after (#11486))
 	reset_parents()
 	holder = null
 	qdel(src)
@@ -98,7 +103,7 @@
 /datum/component/recursive_move/Destroy()
 	. = ..()
 	reset_parents()
-	if(holder) UnregisterSignal(holder, COMSIG_PARENT_QDELETING)
+	if(holder) UnregisterSignal(holder, COMSIG_QDELETING)
 	holder = null
 
 /datum/component/recursive_move/proc/reset_parents()
