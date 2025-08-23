@@ -283,10 +283,6 @@ var/global/list/micro_tunnels = list()
 /obj/structure/micro_tunnel/magic
 	magic = TRUE
 
-/obj
-	var/micro_accepted_scale = 0.5
-	var/micro_target = FALSE
-
 /obj/Initialize(mapload)
 	. = ..()
 	if(micro_target)

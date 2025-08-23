@@ -16,6 +16,7 @@ var/list/gurgled_overlays = list(
 								"pink" = image('icons/effects/sludgeoverlay_vr.dmi', icon_state = "pink")
 								)
 
+<<<<<<< HEAD
 /obj/item
 	var/gurgled = FALSE
 	var/oldname //CHOMPEdit
@@ -23,6 +24,8 @@ var/list/gurgled_overlays = list(
 	var/cleandesc
 	var/gurgled_color
 
+=======
+>>>>>>> 938e760841 ([MIRROR] Gets rid of hasvar usage and moves up some vars (#11484))
 /obj/item/proc/gurgle_contaminate(atom/movable/item_storage = null, contamination_flavor = "Generic", contamination_color = "green")
 	if(!can_gurgle())
 		return FALSE

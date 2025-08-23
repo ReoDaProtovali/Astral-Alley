@@ -257,6 +257,7 @@
 	//Replace this with a VORE setting so all types of posibrains can/can't be digested on a whim
 	return FALSE
 
+<<<<<<< HEAD
 //CHOMPEdit - moved prot organ digest to their appropriate file
 
 // Gradual damage measurement
@@ -265,3 +266,6 @@
 	var/d_mult_old = 1 //CHOMPEdit: digest stage descriptions
 	var/d_mult = 1 //CHOMPEdit: digest stage descriptions
 	var/d_stage_overlay //CHOMPEdit: digest stage effects
+=======
+//moved prot organ digest to their appropriate file
+>>>>>>> 938e760841 ([MIRROR] Gets rid of hasvar usage and moves up some vars (#11484))
