@@ -1137,7 +1137,15 @@
 		to_chat(src, "You don't have enough space to spin a cocoon!")
 		return
 
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/station_special_abilities_vr.dm
 	if(do_after(src, 25, exclusive = TASK_USER_EXCLUSIVE))
+=======
+	if(buckled ||stat || paralysis || weakened || stunned || world.time < last_special) //No tongue flicking while stunned.
+		to_chat(src, span_warning("You can't do that in your current state."))
+		return
+
+	if(do_after(src, 25))
+>>>>>>> f85a202d80 ([MIRROR] Refactors do_after w/ TG's do_after (#11486)):code/modules/mob/living/carbon/human/species/station/station_special_abilities.dm
 		var/obj/item/storage/vore_egg/bugcocoon/C = new(loc)
 		forceMove(C)
 		transforming = TRUE

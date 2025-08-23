@@ -412,8 +412,13 @@
 				user.hand && (affecting.organ_tag in list(BP_L_ARM, BP_L_HAND)) ))
 				balloon_alert(user, "You can't apply a splint to the arm you're using!") // CHOMPEdit - Balloon Alerts
 				return
+<<<<<<< HEAD
 			user.balloon_alert_visible("[user] starts to apply \the [src] to their [limb].", "Applying \the [src] to your [limb].", "You hear something being wrapped.") // CHOMPEdit - Balloon Alerts
 		if(do_after(user, 50, M, exclusive = TASK_USER_EXCLUSIVE))
+=======
+			user.balloon_alert_visible("[user] starts to apply \the [src] to their [limb].", "applying \the [src] to your [limb].", "You hear something being wrapped.")
+		if(do_after(user, 50, M))
+>>>>>>> f85a202d80 ([MIRROR] Refactors do_after w/ TG's do_after (#11486))
 			if(affecting.splinted)
 				balloon_alert(user, "[M]'s [limb] is already splinted!") // CHOMPEdit - Balloon Alerts
 				return
