@@ -114,20 +114,36 @@
 	name = "laser scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field.  This one looks basic and could be improved."
 	icon_state = "scalpel_laser1"
+<<<<<<< HEAD
 	damtype = "fire"
+=======
+	damtype = BURN
+	hitsound = 'sound/weapons/blade1.ogg'
+	clamp_chance = 75
+>>>>>>> 938e760841 ([MIRROR] Gets rid of hasvar usage and moves up some vars (#11484))
 
 /obj/item/surgical/scalpel/laser2
 	name = "laser scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field.  This one looks somewhat advanced."
 	icon_state = "scalpel_laser2"
+<<<<<<< HEAD
 	damtype = "fire"
+=======
+	damtype = BURN
+	hitsound = 'sound/weapons/blade1.ogg'
+>>>>>>> 938e760841 ([MIRROR] Gets rid of hasvar usage and moves up some vars (#11484))
 	force = 12.0
 
 /obj/item/surgical/scalpel/laser3
 	name = "laser scalpel"
 	desc = "A scalpel augmented with a directed laser, for more precise cutting without blood entering the field.  This one looks to be the pinnacle of precision energy cutlery!"
 	icon_state = "scalpel_laser3"
+<<<<<<< HEAD
 	damtype = "fire"
+=======
+	damtype = BURN
+	hitsound = 'sound/weapons/blade1.ogg'
+>>>>>>> 938e760841 ([MIRROR] Gets rid of hasvar usage and moves up some vars (#11484))
 	force = 15.0
 
 /obj/item/surgical/scalpel/manager

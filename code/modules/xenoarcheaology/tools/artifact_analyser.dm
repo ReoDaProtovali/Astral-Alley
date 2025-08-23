@@ -79,11 +79,11 @@
 						continue
 					if(istype(O, /obj/machinery/artifact))
 						var/obj/machinery/artifact/A = O
-						if(A.being_used)
+						if(A.in_use)
 							artifact_in_use = 1
 						else
 							A.anchored = TRUE
-							A.being_used = 1
+							A.in_use = 1
 
 					if(artifact_in_use)
 						atom_say("Cannot scan. Too much interference.")
@@ -133,7 +133,7 @@
 		if(scanned_object && istype(scanned_object, /obj/machinery/artifact))
 			var/obj/machinery/artifact/A = scanned_object
 			A.anchored = FALSE
-			A.being_used = 0
+			A.in_use = 0
 		scanned_object = null
 
 //hardcoded responses, oh well
