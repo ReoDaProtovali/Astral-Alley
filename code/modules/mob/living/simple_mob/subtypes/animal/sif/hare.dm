@@ -64,8 +64,13 @@
 	meat_amount = 1
 
 	say_list_type = /datum/say_list/hare
+<<<<<<< HEAD
 	
 	can_be_drop_prey = TRUE //CHOMP Add
+=======
+
+	can_be_drop_prey = TRUE
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 /datum/say_list/hare
 	speak = list("Snrf...","Crk!")

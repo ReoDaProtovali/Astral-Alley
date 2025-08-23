@@ -3,6 +3,7 @@
 ////////////////////////////
 
 /mob/living/simple_mob/construct
+	icon = 'icons/mob/construct.dmi'
 	name = "Construct"
 	real_name = "Construct"
 	desc = ""
@@ -62,8 +63,14 @@
 	var/list/construct_spells = list()
 //	var/do_glow = TRUE
 
+<<<<<<< HEAD
 	can_be_drop_prey = FALSE //CHOMP Add
 	can_pain_emote = FALSE // CHOMPEdit: Can't feel pain
+=======
+	can_be_drop_prey = FALSE
+	can_pain_emote = FALSE
+	ai_holder_type = /datum/ai_holder/simple_mob/melee
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 /mob/living/simple_mob/construct/place_spell_in_hand(var/path)
 	if(!path || !ispath(path))

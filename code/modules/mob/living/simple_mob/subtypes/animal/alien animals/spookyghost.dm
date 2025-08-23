@@ -86,8 +86,13 @@
 	reload_max = 1
 	reload_count = 0
 	reload_time = 7 SECONDS
+<<<<<<< HEAD
 	
 	can_be_drop_prey = FALSE //CHOMP Add
+=======
+
+	can_be_drop_prey = FALSE
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 
 /datum/ai_holder/simple_mob/ranged/kiting/space_ghost

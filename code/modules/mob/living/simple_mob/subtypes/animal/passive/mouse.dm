@@ -44,14 +44,20 @@
 
 	var/body_color //brown, gray, white and black, leave blank for random
 
+<<<<<<< HEAD
 	//CHOMP Addition: Added these vore variables in and swapped the booleans from their defaults too.
+=======
+	var/list/datum/disease/rat_diseases
+
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 	can_be_drop_prey = TRUE
 	can_be_drop_pred = FALSE
 	species_sounds = "Mouse"
 
-	pain_emote_1p = list("squeak", "squik") // CHOMP Addition: Pain/etc sounds
-	pain_emote_1p = list("squeaks", "squiks") // CHOMP Addition: Pain/etc sounds
+	pain_emote_1p = list("squeak", "squik")
+	pain_emote_1p = list("squeaks", "squiks")
 
+<<<<<<< HEAD
 //CHOMPEdit Start
 /mob/living/simple_mob/animal/passive/mouse/Initialize()
 	. = ..()
@@ -66,6 +72,17 @@
 
 /mob/living/simple_mob/animal/passive/mouse/New()
 	..()
+=======
+/mob/living/simple_mob/animal/passive/mouse/Destroy()
+	GLOB.active_ghost_pods -= src
+	return ..()
+
+/mob/living/simple_mob/animal/passive/mouse/Initialize(mapload, keep_parent_data)
+	. = ..()
+	ghostjoin = TRUE
+	ghostjoin_icon()
+	GLOB.active_ghost_pods += src
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 	add_verb(src, /mob/living/proc/ventcrawl)
 	add_verb(src, /mob/living/proc/hide)
@@ -214,10 +231,9 @@
 	emote_hear = list("squeeks","squeaks","squiks")
 	emote_see = list("runs in a circle", "shakes", "scritches at something")
 
-// CHOMPAdd - Verb for mice colour changing
 /mob/living/simple_mob/animal/passive/mouse/verb/set_mouse_colour()
 	set name = "Set Mouse Colour"
-	set category = "Abilities.Mouse" //CHOMPEdit
+	set category = "Abilities.Mouse"
 	set desc = "Set the colour of your mouse."
 	var/new_mouse_colour = tgui_input_list(usr, "Set Mouse Colour", "Pick a colour", list("brown","gray","white","black"))
 	if(!new_mouse_colour) return
@@ -229,5 +245,26 @@
 	desc = "A small [new_mouse_colour] rodent, often seen hiding in maintenance areas and making a nuisance of itself."
 	holder_type = text2path("/obj/item/holder/mouse/[new_mouse_colour]")
 	to_chat(src, span_notice("You are now a [new_mouse_colour] mouse!"))
+<<<<<<< HEAD
 	remove_verb(src,/mob/living/simple_mob/animal/passive/mouse/verb/set_mouse_colour) //CHOMPEdit TGPanel
 // CHOMPAdd End
+=======
+	remove_verb(src,/mob/living/simple_mob/animal/passive/mouse/verb/set_mouse_colour)
+
+/mob/living/simple_mob/animal/passive/mouse/white/virology
+	name = "Fleming"
+	desc = "A small white rodent, often found in Virology. This one isn't quite the nuisance!"
+
+/mob/living/simple_mob/animal/passive/mouse/white/virology/Initialize(mapload)
+	. = ..()
+	name = initial(name)
+	desc = initial(desc)
+	rat_diseases += new /datum/disease/advance/random(2, 2, 1, infected = src)
+
+/mob/living/simple_mob/animal/passive/mouse/white/virology/Crossed(atom/movable/AM)
+	. = ..()
+
+	if(isliving(AM) && !isnull(rat_diseases) && prob(20))
+		var/mob/living/L = AM
+		L.ContractDisease(pick(rat_diseases), BP_R_FOOT)
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))

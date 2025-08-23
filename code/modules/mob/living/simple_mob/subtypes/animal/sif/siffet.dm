@@ -40,7 +40,10 @@
 
 	say_list_type = /datum/say_list/siffet
 	ai_holder_type = /datum/ai_holder/simple_mob/siffet
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 /datum/say_list/siffet
 	speak = list("Yap!", "Heh!", "Huff.")
@@ -58,10 +61,12 @@
 
 /mob/living/simple_mob/animal/sif/siffet/IIsAlly(mob/living/L)
 	. = ..()
-	//CHOMPAdd START: Compatibility with structures
 	if(!. && !istype(L, /mob/living))
 		return TRUE
 	else
 		if(!. && L.mob_size > 10) //Attacks things it considers small enough to take on, otherwise only attacks if attacked.
 			return TRUE
+<<<<<<< HEAD
 	//CHOMPAdd END
+=======
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))

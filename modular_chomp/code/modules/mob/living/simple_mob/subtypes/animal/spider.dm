@@ -210,6 +210,7 @@
 	min_oxy = 0
 	max_tox = 0
 	max_co2 = 0
+<<<<<<< HEAD
 
 	/* Use the parent
 	maxHealth = 30
@@ -218,3 +219,5 @@
 	melee_damage_lower = 5
 	melee_damage_upper = 10
 	*/
+=======
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))

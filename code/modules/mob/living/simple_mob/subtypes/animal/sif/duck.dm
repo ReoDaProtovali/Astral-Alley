@@ -17,7 +17,11 @@
 	name = "crystal-feather duck"
 	desc = "A glittering flightless bird."
 	tt_desc = "S Anatidae vitriae"
+<<<<<<< HEAD
 	catalogue_data = list(/datum/category_item/catalogue/fauna/crystalduck)	
+=======
+	catalogue_data = list(/datum/category_item/catalogue/fauna/crystalduck) // CHOMPEnable
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 	faction = FACTION_DUCK
 

@@ -38,8 +38,13 @@
 	say_list_type = /datum/say_list/mouse	// Close enough
 
 	var/scare_chance = 15
+<<<<<<< HEAD
 	
 	can_be_drop_prey = FALSE //CHOMP Add
+=======
+
+	can_be_drop_prey = FALSE
+>>>>>>> 4febf95738 ([MIRROR] Simple mob port [IDB IGNORE] (#11492))
 
 /mob/living/simple_mob/animal/space/bats/apply_melee_effects(var/atom/A)
 	if(isliving(A))
