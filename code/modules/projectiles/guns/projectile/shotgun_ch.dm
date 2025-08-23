@@ -32,4 +32,7 @@
 
 /obj/item/gun/projectile/shotgun/doublebarrel/sawn/alt/holy
 	ammo_type = /obj/item/ammo_casing/a12g/silver
+<<<<<<< HEAD
 	holy = 1
+=======
+>>>>>>> 18b5644926 (Cleans up some unused files / vars (#11496))
