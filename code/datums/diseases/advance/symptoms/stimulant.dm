@@ -23,6 +23,7 @@ Bonus
 	transmittable = -3
 	level = 3
 	severity = 1
+<<<<<<< HEAD
 
 /datum/symptom/stimulant/Activate(datum/disease/advance/A)
 	..()
@@ -41,3 +42,65 @@ Bonus
 				if(prob(30))
 					L.jitteriness += 15
 	return
+=======
+	symptom_delay_min = 25 SECONDS
+	symptom_delay_max = 35 SECONDS
+
+	var/clearacc = FALSE
+
+	threshold_descs = list(
+		"Resistance 8" = "This virus causes an even greater rate of nutriment loss, able to cause starvation, but it's energy gain greatly increases.",
+		"Stage 8" = "The virus causes extreme nervousness and paranoia, resulting in occasional hallucinations, and extreme restlessness, but great overall energy."
+	)
+
+	prefixes = list("Gray ", "Amped ", "Nervous ")
+	bodies = list("Hyper")
+
+/datum/symptom/stimulant/severityset(datum/disease/advance/A)
+	. = ..()
+	if(A.resistance >= 8)
+		severity -= 1
+	if(A.stage_rate >= 8)
+		severity -= 1
+		prefixes = list("Gray ", "Amped ", "Paranoid ")
+		suffixes = list(" Madness", " Insanity")
+
+/datum/symptom/stimulant/Start(datum/disease/advance/A)
+	if(!..())
+		return
+	power = initial(power)
+	if(A.resistance >= 8)
+		power += 2
+	if(A.stage_rate >= 8)
+		power += 1
+		clearacc = TRUE
+
+/datum/symptom/stimulant/Activate(datum/disease/advance/A)
+	if(!..())
+		return
+	var/mob/living/carbon/human/H = A.affected_mob
+	if(H.stat == DEAD)
+		return
+	switch(A.stage)
+		if(2 to 3)
+			if(prob(power) && H.stat)
+				H.make_jittery(2 * power)
+				H.emote("twitch")
+				to_chat(H, span_notice("[pick("you feel energetic!", "You feel well-rested.", "You feel great!")]"))
+		if(4 to 5)
+			H.drowsyness = max(0, H.drowsyness - 10 * power)
+			H.AdjustSleeping(-10 * power)
+			H.AdjustStunned(-10 * power)
+			H.emote("twitch")
+			H.reagents.add_reagent(REAGENT_ID_HYPERZINE, 5)
+			if(prob(base_message_chance))
+				to_chat(H, span_notice("[pick("You feel nervous...", "You feel anxious.", "You feel like everything is moving in slow motion.")]"))
+			if(H.nutrition > 150 - (30 * power))
+				H.nutrition = max(150 - (30 * power), H.nutrition - (2 * power))
+			if(prob(25))
+				H.make_jittery(2 * power)
+			if(clearacc)
+				if(prob(power) && prob(50))
+					H.emote("scream")
+				H.hallucination = min(20, H.hallucination + (5 * power))
+>>>>>>> d1c0c3ee0d ([MIRROR] Virology fixes (#11500))
