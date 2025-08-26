@@ -262,6 +262,25 @@ GLOBAL_LIST_INIT(advance_cures, list(
 			Refresh(1)
 	return
 
+<<<<<<< HEAD
+=======
+// Randomly neuter a symptom.
+/datum/disease/advance/proc/Neuter()
+	if(symptoms.len)
+		var/s = safepick(symptoms)
+		if(s)
+			NeuterSymptom(s)
+
+// Falter the disease, making it non-spreadable.
+/datum/disease/advance/proc/Falter()
+	if(global_flag_check(virus_modifiers, FALTERED))
+		return
+	else
+		virus_modifiers |= FALTERED
+		spread_flags = DISEASE_SPREAD_BLOOD
+		spread_text = "Intentional Injection"
+
+>>>>>>> d1c0c3ee0d ([MIRROR] Virology fixes (#11500))
 // Name the disease.
 /datum/disease/advance/proc/AssignName(name = "Unknown")
 	src.name = name
