@@ -71,6 +71,7 @@
 		//CHOMPEdit End
 	. = jointext(.,null)
 
+<<<<<<< HEAD
 /datum/category_item/player_setup_item/general/basic/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(href_list["rename"])
 		var/raw_name = tgui_input_text(user, "Choose your character's name:", "Character Name")
@@ -78,6 +79,97 @@
 			var/new_name = sanitize_name(raw_name, pref.species, is_FBP())
 			if(new_name)
 				pref.real_name = new_name
+=======
+/datum/category_item/player_setup_item/general/basic/tgui_data(mob/user)
+	var/list/data = ..()
+
+	data["real_name"] = pref.real_name
+	data["be_random_name"] = pref.read_preference(/datum/preference/toggle/human/name_is_always_random)
+	data["nickname"] = pref.nickname
+	data["biological_sex"] = gender2text(pref.biological_gender)
+	data["identifying_gender"] = gender2text(pref.identifying_gender)
+	data["age"] = pref.read_preference(/datum/preference/numeric/human/age)
+	data["bday_month"] = pref.read_preference(/datum/preference/numeric/human/bday_month)
+	data["bday_day"] = pref.read_preference(/datum/preference/numeric/human/bday_day)
+	data["bday_announce"] = pref.read_preference(/datum/preference/toggle/human/bday_announce)
+	data["spawnpoint"] = pref.read_preference(/datum/preference/choiced/living/spawnpoint)
+	data["ooc_notes_length"] = LAZYLEN(pref.read_preference(/datum/preference/text/living/ooc_notes))
+	data["vore_egg_type"] = pref.vore_egg_type
+	data["autohiss"] = pref.autohiss
+	data["emote_sound_mode"] = pref.read_preference(/datum/preference/choiced/living/emote_sound_mode)
+
+	return data
+
+/datum/category_item/player_setup_item/general/basic/tgui_static_data(mob/user)
+	var/list/data = ..()
+
+	data["allow_metadata"] = CONFIG_GET(flag/allow_metadata)
+
+	return data
+
+/datum/category_item/player_setup_item/general/basic/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	var/mob/user = ui.user
+
+	switch(action)
+		if("rename")
+			var/raw_name = tgui_input_text(user, "Choose your character's name:", "Character Name", pref.real_name, encode = FALSE)
+			if(!isnull(raw_name))
+				var/new_name = sanitize_name(raw_name, pref.species, is_FBP())
+				if(new_name)
+					pref.real_name = new_name
+					return TOPIC_REFRESH
+				else
+					to_chat(user, span_warning("Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and ."))
+					return TOPIC_NOACTION
+
+		if("random_name")
+			pref.real_name = random_name(pref.identifying_gender, pref.species)
+			return TOPIC_REFRESH
+
+		if("always_random_name")
+			pref.update_preference_by_type(/datum/preference/toggle/human/name_is_always_random, !pref.read_preference(/datum/preference/toggle/human/name_is_always_random))
+			return TOPIC_REFRESH
+
+		if("nickname")
+			var/raw_nickname = tgui_input_text(user, "Choose your character's nickname:", "Character Nickname", pref.nickname, encode = FALSE)
+			if(!isnull(raw_nickname))
+				var/new_nickname = sanitize_name(raw_nickname, pref.species, is_FBP())
+				if(new_nickname)
+					pref.nickname = new_nickname
+					return TOPIC_REFRESH
+				else
+					to_chat(user, span_warning("Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and ."))
+					return TOPIC_NOACTION
+
+		if("reset_nickname")
+			var/nick_choice = tgui_alert(user, "Wipe your Nickname? This will completely remove any chosen nickname(s).","Wipe Nickname",list("Yes","No"))
+			if(nick_choice == "Yes")
+				pref.nickname = null
+			return TOPIC_REFRESH
+
+		if("bio_gender")
+			var/new_gender = lowertext(params["gender"])
+			if(new_gender in get_genders())
+				pref.set_biological_gender(new_gender)
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+
+		if("id_gender")
+			var/new_gender = lowertext(params["gender"])
+			if(new_gender in all_genders_define_list)
+				pref.identifying_gender = new_gender
+			return TOPIC_REFRESH
+
+		if("age")
+			var/min_age = get_min_age()
+			var/max_age = get_max_age()
+			var/new_age = tgui_input_number(user, "Choose your character's age:\n([min_age]-[max_age])", "Character Preference", pref.read_preference(/datum/preference/numeric/human/age), max_age, min_age)
+			if(new_age)
+				pref.update_preference_by_type(/datum/preference/numeric/human/age, max(min(round(text2num(new_age)), max_age), min_age))
+>>>>>>> 575ff91c05 ([MIRROR] fix name inputs (#11509))
 				return TOPIC_REFRESH
 			else
 				to_chat(user, span_warning("Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and ."))
