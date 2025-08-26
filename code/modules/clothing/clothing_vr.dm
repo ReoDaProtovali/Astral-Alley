@@ -131,6 +131,7 @@
 		src.visible_message(span_red("\The [src] moves a little!"))
 		to_chat(user, span_red("You throw yourself against the inside of \the [src]!"))
 
+<<<<<<< HEAD
 //Mask
 /obj/item/clothing/mask
 	name = "mask"
@@ -171,6 +172,8 @@
 		SPECIES_VOX = 'icons/inventory/suit/mob_vox.dmi',
 		SPECIES_WEREBEAST = 'icons/inventory/suit/mob_vr_werebeast.dmi')
 
+=======
+>>>>>>> 0cd0015f91 ([MIRROR] clothing _vr dmi cleanup: eyewear and masks (#11503))
 /obj/item/clothing/under
 	sensor_mode = 3
 	var/sensorpref = 5
