@@ -898,9 +898,6 @@
 	name = "Delete Me"
 	desc = "Why did you spawn this one? Dork."
 	sensor_mode = 3
-
-	icon = 'icons/inventory/uniform/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/uniform/mob_vr.dmi'
 	icon_state = "khi_uniform"
 
 /obj/item/clothing/under/rank/khi/cmd //Command version
@@ -1177,12 +1174,9 @@ Departamental Swimsuits, for general use
 //Just some alt-uniforms themed around Star Trek - Pls don't sue, Mr Roddenberry ;_;
 // PS. <3 Nienhaus
 
-
 /obj/item/clothing/under/rank/trek
 	name = "Section 31 Uniform"
 	desc = "Oooh... right."
-	icon = 'icons/inventory/uniform/item_vr.dmi'
-	default_worn_icon = 'icons/inventory/uniform/mob_vr.dmi'
 
 //TOS
 /obj/item/clothing/under/rank/trek/command
