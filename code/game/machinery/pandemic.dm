@@ -12,10 +12,16 @@
 	var/selected_strain_index = 1
 	var/obj/item/reagent_containers/beaker = null
 
+<<<<<<< HEAD
 // PanDEMIC Bottle
 /obj/item/reagent_containers/glass/bottle/vaccine
 	icon_state = "bottle10"
 	possible_transfer_amounts = (list(5, 10, 15))
+=======
+// PanDEMIC Vial
+/obj/item/reagent_containers/glass/beaker/vial/vaccine
+	max_transfer_amount = 15
+>>>>>>> 3bf3fa4351 ([MIRROR] Alt click reagent containers to set transfer volume (#11511))
 	volume = 15
 
 /obj/machinery/computer/pandemic/Initialize(mapload)
