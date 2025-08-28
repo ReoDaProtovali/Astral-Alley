@@ -152,9 +152,13 @@
 	matter = list(MAT_STEEL = 50, MAT_GLASS = 10)
 	volume = 20
 	flags = OPENCONTAINER
+<<<<<<< HEAD
 
 /obj/item/reagent_containers/ecig_cartridge/New()
 	create_reagents(volume)
+=======
+	max_transfer_amount = null
+>>>>>>> 3bf3fa4351 ([MIRROR] Alt click reagent containers to set transfer volume (#11511))
 
 /obj/item/reagent_containers/ecig_cartridge/examine(mob/user as mob)//to see how much left
 	. = ..()
