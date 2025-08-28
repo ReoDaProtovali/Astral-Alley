@@ -34,6 +34,7 @@
 
 	apply_layer(SHOES_LAYER)
 	apply_layer(SHOES_LAYER_ALT)
+<<<<<<< HEAD
 
 /mob/living/carbon/human/proc/GetAppearanceFromPrefs(var/flavourtext, var/oocnotes)
 	/* Jank code that effectively creates the client's mob from save, then copies its appearance to our current mob.
@@ -93,3 +94,5 @@ Would need to fix this proc up to work as smoothly as the above proc, though.
 /mob/living/carbon/human/update_tail_showing()
 	. = ..()
 	update_vore_tail_sprite()
+=======
+>>>>>>> 332210d6f7 ([MIRROR] adds additional deertaur belly sprites. (#11521))
