@@ -55,9 +55,6 @@
 #define MAT_PLASTEELREBAR	"plasteel rebar"
 #define MAT_GRASS			"grass"
 #define MAT_RESIN			"resin"
-#define MAT_CULT			"cult"
-#define MAT_CULT2			"cult2"
-#define MAT_ALIENALLOY		"alienalloy"
 #define MAT_COMPOSITE		"composite"
 #define MAT_BIOMASS			"biomass"
 #define MAT_WEEDEXTRACT		"weed extract"
@@ -67,6 +64,23 @@
 #define MAT_DARKGLASS		"darkglass"
 #define MAT_FLESH			"flesh"
 #define MAT_FANCYBLACK		"fancyblack"
+<<<<<<< HEAD
+=======
+#define MAT_FOAM			"foam"
+#define MAT_FLOKIUM			"flockium"
+#define MAT_SMOLEBRICKS		"smolebricks"
+#define MAT_WAX				"wax"
+
+#define MAT_CULT			"cult"
+#define MAT_CULT2			"cult2"
+
+// ALien materials
+#define MAT_ALIENALLOY		"alienalloy"
+#define MAT_ALIEN_ALIUM		"alium"
+#define MAT_ALIEN_BEDROCK	"bedrock"
+#define MAT_ALIEN_DUNGEON	"dungeonium"
+#define MAT_ALIEN_ELEVAT	"elevatorium"
+>>>>>>> a272557ccd ([MIRROR] sane stacks (#11533))
 
 // cloth materials
 #define MAT_WOOL			"wool"

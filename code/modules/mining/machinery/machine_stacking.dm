@@ -10,6 +10,7 @@
 	var/obj/machinery/mineral/stacking_machine/machine = null
 	//var/machinedir = SOUTHEAST //This is really dumb, so lets burn it with fire.
 
+<<<<<<< HEAD
 /obj/machinery/mineral/stacking_unit_console/New()
 
 	..()
@@ -23,6 +24,18 @@
 			//Silently failing and causing mappers to scratch their heads while runtiming isn't ideal.
 			to_world(span_danger("Warning: Stacking machine console at [src.x], [src.y], [src.z] could not find its machine!"))
 			qdel(src)
+=======
+/obj/machinery/mineral/stacking_unit_console/Initialize(mapload)
+	. = ..()
+	//src.machine = locate(/obj/machinery/mineral/stacking_machine, get_step(src, machinedir)) //No.
+	src.machine = locate(/obj/machinery/mineral/stacking_machine) in range(5,src)
+	if (machine)
+		machine.console = src
+	else
+		//Silently failing and causing mappers to scratch their heads while runtiming isn't ideal.
+		stack_trace(span_danger("Warning: Stacking machine console at [src.x], [src.y], [src.z] could not find its machine!"))
+		return INITIALIZE_HINT_QDEL
+>>>>>>> a272557ccd ([MIRROR] sane stacks (#11533))
 
 /obj/machinery/mineral/stacking_unit_console/attack_hand(mob/user)
 	add_fingerprint(user)
