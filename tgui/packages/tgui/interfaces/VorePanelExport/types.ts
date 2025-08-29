@@ -27,6 +27,7 @@ export type Belly = {
   digest_oxy: number;
   digest_tox: number;
   digest_clone: number;
+  bellytemperature: number;
 
   can_taste: BooleanLike;
   contaminates: BooleanLike;
@@ -41,6 +42,14 @@ export type Belly = {
   shrink_grow_size: number;
   egg_type: string;
   selective_preference: string;
+<<<<<<< HEAD
+=======
+  recycling: BooleanLike;
+  storing_nutrition: BooleanLike;
+  entrance_logs: BooleanLike;
+  item_digest_logs: BooleanLike;
+  temperature_damage: BooleanLike;
+>>>>>>> 393e117ffe ([MIRROR] Belly temperature (#11529))
 
   // Messages
   struggle_messages_outside: string[];
