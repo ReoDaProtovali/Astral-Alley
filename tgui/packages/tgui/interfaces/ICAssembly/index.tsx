@@ -22,6 +22,7 @@ export const ICAssembly = (props) => {
   return (
     <Window
       buttons={
+<<<<<<< HEAD
         <>
           <Button
             color="transparent"
@@ -45,6 +46,47 @@ export const ICAssembly = (props) => {
             onClick={() => setShowInfo(!showInfo)}
           />
         </>
+=======
+        <Stack>
+          <Stack.Item>
+            <Button
+              color="transparent"
+              width={2.5}
+              height={2}
+              textAlign="center"
+              icon="pencil"
+              tooltip="Edit Name"
+              tooltipPosition="bottom-start"
+              onClick={() => act('rename')}
+            />
+          </Stack.Item>
+          <Stack.Item>
+            <Button
+              color="transparent"
+              width={2.5}
+              height={2}
+              textAlign="center"
+              icon="file-export"
+              tooltip="Export Circuit"
+              tooltipPosition="bottom-start"
+              onClick={() => act('export_circuit')}
+            />
+          </Stack.Item>
+          <Stack.Item>
+            <Button
+              color="transparent"
+              width={2.5}
+              height={2}
+              textAlign="center"
+              icon="info"
+              tooltip="Circuit Info"
+              tooltipPosition="bottom-start"
+              selected={showInfo}
+              onClick={() => setShowInfo(!showInfo)}
+            />
+          </Stack.Item>
+        </Stack>
+>>>>>>> eabb9e4b20 ([MIRROR] Circuitry cloning implementation (#11536))
       }
       width={1280}
       height={800}
