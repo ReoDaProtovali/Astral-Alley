@@ -80,7 +80,12 @@
 
 /datum/tgui_alert/Destroy(force, ...)
 	SStgui.close_uis(src)
+<<<<<<< HEAD
 	QDEL_NULL(buttons)
+=======
+	state = null
+	buttons?.Cut()
+>>>>>>> 87b3497230 ([MIRROR] selective belly import (#11530))
 	. = ..()
 
 /**
