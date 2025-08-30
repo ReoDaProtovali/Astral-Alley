@@ -20,4 +20,9 @@
 	while(reaction_occurred)
 	for(var/decl/chemical_reaction/C as anything in effect_reactions)
 		C.post_reaction(src)
+<<<<<<< HEAD
 	update_total()
+=======
+	update_total()
+	return TRUE
+>>>>>>> 539538383e ([MIRROR] Bunsen Burner (#11543))

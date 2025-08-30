@@ -13,7 +13,12 @@
 	use_power = TRUE
 	idle_power_usage = 20
 	clicksound = "button"
+	circuit = /obj/item/circuitboard/chemical_analyzer
 	var/analyzing = FALSE
+
+/obj/machinery/chemical_analyzer/Initialize(mapload)
+	. = ..()
+	default_apply_parts()
 
 /obj/machinery/chemical_analyzer/update_icon()
 	icon_state = "chem_analyzer[analyzing ? "-working":""]"
