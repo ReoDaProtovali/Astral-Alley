@@ -120,3 +120,13 @@ export type Belly = {
   absorbchance: number;
   digestchance: number;
 };
+
+type Formatter<T> = (val: T) => string;
+
+export type SettingItem<T = any> = {
+  label: string;
+  value: T;
+  formatter?: Formatter<T>;
+};
+
+export type EmoteEntry = { label: string; messages?: string[] };

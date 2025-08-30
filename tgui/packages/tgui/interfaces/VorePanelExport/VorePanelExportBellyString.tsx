@@ -1,6 +1,28 @@
+<<<<<<< HEAD
 import { ItemModeSpan, ModeSpan } from './constants';
 import type { Belly } from './types';
 import { GetAddons } from './VorePanelExportBellyStringHelpers';
+=======
+import {
+  ItemModeSpan,
+  ModeSpan,
+  STRUGGLE_OUTSIDE_ABSORBED_MESSAGE,
+  STRUGGLE_OUTSIDE_MESSAGE,
+} from './constants';
+import {
+  formatListEmotes,
+  formatListItems,
+  formatListMessages,
+  getYesNo,
+} from './functions';
+import type { Belly, EmoteEntry, SettingItem } from './types';
+
+import {
+  GetAddons,
+  GetAutotransferFlags,
+  GetLiquidAddons,
+} from './VorePanelExportBellyStringHelpers';
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
 
 // prettier-ignore
 export const generateBellyString = (belly: Belly, index: number) => {
@@ -119,6 +141,7 @@ export const generateBellyString = (belly: Belly, index: number) => {
   } = belly;
 
   let result = '';
+<<<<<<< HEAD
   result += '<div class="accordion-item"><h2 class="accordion-header" id="heading' + index + '">';
   result += '<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse' + index + '" aria-expanded="false" aria-controls="collapse' + index + '">';
   result +=
@@ -137,6 +160,28 @@ export const generateBellyString = (belly: Belly, index: number) => {
     ModeSpan[mode] +
     ' - ' +
     ItemModeSpan[item_mode];
+=======
+  result += `<div class="accordion-item"><h2 class="accordion-header" id="heading${index}">`;
+  result += `<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${index}" aria-expanded="false" aria-controls="collapse${index}">`;
+
+  const damageTypes = [
+    { value: digest_brute, color: 'red' },
+    { value: digest_burn, color: 'orange' },
+    { value: digest_oxy, color: 'blue' },
+    { value: digest_tox, color: 'green' },
+    { value: digest_clone, color: 'purple' },
+  ];
+
+  const damageSpans = damageTypes
+    .map(({ value, color }) => `<span style="color: ${color};">${value}</span>`)
+    .join('/');
+
+  const temperatureCelsius = Math.round((bellytemperature - 273.15) * 10) / 10;
+  const temperatureSpan = `<span${temperature_damage ? ' style="color: red;"' : ''}>${temperatureCelsius}°C</span>`;
+
+  result += `${name} - (${damageSpans}/${temperatureSpan}) - ${ModeSpan[mode]} - ${ItemModeSpan[item_mode]}`;
+
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
   result += '</button></h2>';
 
   result += '<div id="collapse' + index + '" class="accordion-collapse collapse" aria-labelledby="heading' + index + '" data-bs-parent="#accordionBellies">';
@@ -144,10 +189,24 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += 'Addons:<br>' + GetAddons(addons) + '<br><br>';
 
   result += '<b>== Descriptions ==</b><br>';
+<<<<<<< HEAD
   result += 'Vore Verb:<br>' + vore_verb + '<br><br>';
   result += 'Release Verb:<br>' + release_verb + '<br><br>';
   result += 'Description:<br>"' + desc + '"<br><br>';
   result += 'Absorbed Description:<br>"' + absorbed_desc + '"<br><br>';
+=======
+
+  const infoFields = [
+    { label: 'Vore Verb', value: vore_verb },
+    { label: 'Release Verb', value: release_verb },
+    { label: 'Description', value: `"${desc}"` },
+    { label: 'Absorbed Description', value: `"${absorbed_desc}"` },
+  ];
+
+  infoFields.forEach(({ label, value }) => {
+    result += `${label}:<br>${value}<br><br>`;
+  });
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
 
   result += '<hr>';
 
@@ -156,6 +215,7 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += '<div role="messagesTabpanel">'; // Start Div messagesTabpanel
   result += '<div class="row"><div class="col-4">';
   result += '<div class="list-group" id="messagesList" role="messagesTablist">';
+<<<<<<< HEAD
   result += '<a class="list-group-item list-group-item-action active" data-bs-toggle="list" href="#escapeAttemptMessagesOwner' + index + '" role="tab">Escape Attempt Messages (Owner)</a>';
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeAttemptMessagesPrey' + index + '" role="tab">Escape Attempt Messages (Prey)</a>';
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#escapeMessagesOwner' + index + '" role="tab">Escape Message (Owner)</a>';
@@ -193,11 +253,130 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#unabsorbMessagesPrey' + index + '" role="tab">Unabsorb Messages (Prey)</a>';
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#examineMessages' + index + '" role="tab">Examine Messages</a>';
   result += '<a class="list-group-item list-group-item-action" data-bs-toggle="list" href="#examineMessagesAbsorbed' + index + '" role="tab">Examine Messages (Absorbed)</a>';
+=======
+
+  const tabLinks: {
+    id: string;
+    label: string;
+    active?: boolean;
+    enabled?: boolean;
+  }[] = [
+    {
+      id: 'escapeAttemptMessagesOwner',
+      label: 'Escape Attempt Messages (Owner)',
+      active: true,
+    },
+    {
+      id: 'escapeAttemptMessagesPrey',
+      label: 'Escape Attempt Messages (Prey)',
+    },
+    { id: 'escapeMessagesOwner', label: 'Escape Message (Owner)' },
+    { id: 'escapeMessagesPrey', label: 'Escape Message (Prey)' },
+    { id: 'escapeMessagesOutside', label: 'Escape Message (Outside)' },
+    { id: 'escapeItemMessagesOwner', label: 'Escape Item Messages (Owner)' },
+    { id: 'escapeItemMessagesPrey', label: 'Escape Item Messages (Prey)' },
+    {
+      id: 'escapeItemMessagesOutside',
+      label: 'Escape Item Messages (Outside)',
+    },
+    { id: 'escapeFailMessagesOwner', label: 'Escape Fail Messages (Owner)' },
+    { id: 'escapeFailMessagesPrey', label: 'Escape Fail Messages (Prey)' },
+    {
+      id: 'escapeAttemptAbsorbedMessagesOwner',
+      label: 'Escape Attempt Absorbed Messages (Owner)',
+    },
+    {
+      id: 'escapeAttemptAbsorbedMessagesPrey',
+      label: 'Escape Attempt Absorbed Messages (Prey)',
+    },
+    {
+      id: 'escapeAbsorbedMessagesOwner',
+      label: 'Escape Absorbed Messages (Owner)',
+    },
+    {
+      id: 'escapeAbsorbedMessagesPrey',
+      label: 'Escape Absorbed Messages (Prey)',
+    },
+    {
+      id: 'escapeAbsorbedMessagesOutside',
+      label: 'Escape Absorbed Messages (Outside)',
+    },
+    {
+      id: 'escapeFailAbsorbedMessagesOwner',
+      label: 'Escape Fail Absorbed Messages (Owner)',
+    },
+    {
+      id: 'escapeFailAbsorbedMessagesPrey',
+      label: 'Escape Fail Absorbed Messages (Prey)',
+    },
+    {
+      id: 'primaryTransferMessagesOwner',
+      label: 'Primary Transfer Messages (Owner)',
+    },
+    {
+      id: 'primaryTransferMessagesPrey',
+      label: 'Primary Transfer Messages (Prey)',
+    },
+    {
+      id: 'secondaryTransferMessagesOwner',
+      label: 'Secondary Transfer Messages (Owner)',
+    },
+    {
+      id: 'secondaryTransferMessagesPrey',
+      label: 'Secondary Transfer Messages (Prey)',
+    },
+    {
+      id: 'digestChanceMessagesOwner',
+      label: 'Digest Chance Messages (Owner)',
+    },
+    { id: 'digestChanceMessagesPrey', label: 'Digest Chance Messages (Prey)' },
+    {
+      id: 'absorbChanceMessagesOwner',
+      label: 'Absorb Chance Messages (Owner)',
+    },
+    { id: 'absorbChanceMessagesPrey', label: 'Absorb Chance Messages (Prey)' },
+    {
+      id: 'struggleMessagesOutside',
+      label: 'Struggle Messages (Outside)',
+      enabled: (displayed_message_flags & STRUGGLE_OUTSIDE_MESSAGE) > 0,
+    },
+    { id: 'struggleMessagesInside', label: 'Struggle Messages (Inside)' },
+    {
+      id: 'absorbedStruggleOutside',
+      label: 'Absorbed Struggle Messages (Outside)',
+      enabled:
+        (displayed_message_flags & STRUGGLE_OUTSIDE_ABSORBED_MESSAGE) > 0,
+    },
+    {
+      id: 'absorbedStruggleInside',
+      label: 'Absorbed Struggle Messages (Inside)',
+    },
+    { id: 'digestMessagesOwner', label: 'Digest Messages (Owner)' },
+    { id: 'digestMessagesPrey', label: 'Digest Messages (Prey)' },
+    { id: 'absorbMessagesOwner', label: 'Absorb Messages (Owner)' },
+    { id: 'absorbMessagesPrey', label: 'Absorb Messages (Prey)' },
+    { id: 'unabsorbMessagesOwner', label: 'Unabsorb Messages (Owner)' },
+    { id: 'unabsorbMessagesPrey', label: 'Unabsorb Messages (Prey)' },
+    { id: 'examineMessages', label: 'Examine Messages' },
+    { id: 'examineMessagesAbsorbed', label: 'Examine Messages (Absorbed)' },
+    { id: 'trash_eater_in', label: 'Trash Eater Ingest Messages' },
+    { id: 'trash_eater_out', label: 'Item Expel Messages' },
+  ];
+
+  tabLinks.forEach(({ id, label, enabled }, i) => {
+    const isActive = i === 0 ? ' active' : '';
+    const status = enabled === undefined ? '' : getYesNo(enabled);
+
+    result += `<a class="list-group-item list-group-item-action${isActive}" data-bs-toggle="list" href="#${id}${index}" role="tab">${label}${status}</a>`;
+  });
+
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
   result += '</div></div>';
 
   result += '<div class="col-8">';
   result += '<div class="tab-content">';
 
+<<<<<<< HEAD
   result += '<div class="tab-pane fade show active" id="escapeAttemptMessagesOwner' + index + '" role="messagesTabpanel">';
   escape_attempt_messages_owner?.forEach((msg) => {
     result += msg + '<br>';
@@ -421,11 +600,73 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += '</div>';
 
   result += '</div>';
+=======
+  const messageTypes: [string, string[] | null][] = [
+    ['escapeAttemptMessagesOwner', escape_attempt_messages_owner],
+    ['escapeAttemptMessagesPrey', escape_attempt_messages_prey],
+    ['escapeMessagesOwner', escape_messages_owner],
+    ['escapeMessagesPrey', escape_messages_prey],
+    ['escapeMessagesOutside', escape_messages_outside],
+    ['escapeItemMessagesOwner', escape_item_messages_owner],
+    ['escapeItemMessagesPrey', escape_item_messages_prey],
+    ['escapeItemMessagesOutside', escape_item_messages_outside],
+    ['escapeFailMessagesOwner', escape_fail_messages_owner],
+    ['escapeFailMessagesPrey', escape_fail_messages_prey],
+    [
+      'escapeAttemptAbsorbedMessagesOwner',
+      escape_attempt_absorbed_messages_owner,
+    ],
+    [
+      'escapeAttemptAbsorbedMessagesPrey',
+      escape_attempt_absorbed_messages_prey,
+    ],
+    ['escapeAbsorbedMessagesOwner', escape_absorbed_messages_owner],
+    ['escapeAbsorbedMessagesPrey', escape_absorbed_messages_prey],
+    ['escapeAbsorbedMessagesOutside', escape_absorbed_messages_outside],
+    ['escapeFailAbsorbedMessagesOwner', escape_fail_absorbed_messages_owner],
+    ['escapeFailAbsorbedMessagesPrey', escape_fail_absorbed_messages_prey],
+    ['primaryTransferMessagesOwner', primary_transfer_messages_owner],
+    ['primaryTransferMessagesPrey', primary_transfer_messages_prey],
+    ['secondaryTransferMessagesOwner', secondary_transfer_messages_owner],
+    ['secondaryTransferMessagesPrey', secondary_transfer_messages_prey],
+    ['primaryAutoTransferMessagesOwner', primary_autotransfer_messages_owner],
+    ['primaryAutoTransferMessagesPrey', primary_autotransfer_messages_prey],
+    [
+      'secondaryAutoTransferMessagesOwner',
+      secondary_autotransfer_messages_owner,
+    ],
+    ['secondaryAutoTransferMessagesPrey', secondary_autotransfer_messages_prey],
+    ['digestChanceMessagesOwner', digest_chance_messages_owner],
+    ['digestChanceMessagesPrey', digest_chance_messages_prey],
+    ['absorbChanceMessagesOwner', absorb_chance_messages_owner],
+    ['absorbChanceMessagesPrey', absorb_chance_messages_prey],
+    ['struggleMessagesOutside', struggle_messages_outside],
+    ['struggleMessagesInside', struggle_messages_inside],
+    ['absorbedStruggleOutside', absorbed_struggle_messages_outside],
+    ['absorbedStruggleInside', absorbed_struggle_messages_inside],
+    ['digestMessagesOwner', digest_messages_owner],
+    ['digestMessagesPrey', digest_messages_prey],
+    ['absorbMessagesOwner', absorb_messages_owner],
+    ['absorbMessagesPrey', absorb_messages_prey],
+    ['unabsorbMessagesOwner', unabsorb_messages_owner],
+    ['unabsorbMessagesPrey', unabsorb_messages_prey],
+    ['examineMessages', examine_messages],
+    ['examineMessagesAbsorbed', examine_messages_absorbed],
+    ['trash_eater_in', trash_eater_in],
+    ['trash_eater_out', trash_eater_out],
+  ];
+
+  messageTypes.forEach(([messageKey, messageData], i) => {
+    result += formatListMessages(`${messageKey}${index}`, messageData, i === 0);
+  });
+  result += '</div>';
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
   result += '</div></div>';
   result += '</div>'; // End Div messagesTabpanel
 
   result += '<details><summary>= Idle Messages =</summary><p>';
 
+<<<<<<< HEAD
   result += '<details><summary>Idle Messages (Hold):</summary><p>';
   emotes_hold?.forEach((msg) => {
     result += msg + '<br>';
@@ -491,6 +732,23 @@ export const generateBellyString = (belly: Belly, index: number) => {
     result += msg + '<br>';
   });
   result += '</details></p><br>';
+=======
+  const emoteSections: EmoteEntry[] = [
+    { label: 'Idle Messages (Hold)', messages: emotes_hold },
+    { label: 'Idle Messages (Hold Absorbed)', messages: emotes_holdabsorbed },
+    { label: 'Idle Messages (Digest)', messages: emotes_digest },
+    { label: 'Idle Messages (Absorb)', messages: emotes_absorb },
+    { label: 'Idle Messages (Unabsorb)', messages: emotes_unabsorb },
+    { label: 'Idle Messages (Drain)', messages: emotes_drain },
+    { label: 'Idle Messages (Heal)', messages: emotes_heal },
+    { label: 'Idle Messages (Size Steal)', messages: emotes_steal },
+    { label: 'Idle Messages (Shrink)', messages: emotes_shrink },
+    { label: 'Idle Messages (Grow)', messages: emotes_grow },
+    { label: 'Idle Messages (Encase In Egg)', messages: emotes_egg },
+  ];
+
+  result += formatListEmotes(emoteSections);
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
 
   result += '</details></p><br>';
 
@@ -509,6 +767,7 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += '<div id="settingsAccordion' + index + '-collapseOne" class="accordion-collapse collapse" aria-labelledby="settingsAccordion' + index + '-headingOne">';
   result += '<div class="accordion-body">';
   result += '<ul class="list-group">';
+<<<<<<< HEAD
   result += '<li class="list-group-item">Can Taste: ' + (can_taste ? '<span style="color: green;">Yes' : '<span style="color: red;">No') + '</li>';
   result += '<li class="list-group-item">Contaminates: ' + (contaminates ? '<span style="color: green;">Yes' : '<span style="color: red;">No') + '</li>';
   result += '<li class="list-group-item">Contamination Flavor: ' + contamination_flavor + '</li>';
@@ -522,6 +781,98 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += '<li class="list-group-item">Shrink/Grow Size: ' + shrink_grow_size * 100 + '%</li>';
   result += '<li class="list-group-item">Egg Type: ' + egg_type + '</li>';
   result += '<li class="list-group-item">Selective Mode Preference: ' + selective_preference + '</li>';
+=======
+
+  const settingItem: SettingItem[] = [
+    {
+      label: 'Can Taste',
+      value: can_taste,
+      formatter: (val: boolean): string => getYesNo(val),
+    },
+    {
+      label: 'Feedable',
+      value: is_feedable,
+      formatter: (val: boolean): string => getYesNo(val),
+    },
+    {
+      label: 'Contaminates',
+      value: contaminates,
+      formatter: (val: boolean): string => getYesNo(val),
+    },
+    { label: 'Contamination Flavor', value: contamination_flavor },
+    { label: 'Contamination Color', value: contamination_color },
+    {
+      label: 'Nutritional Gain',
+      value: nutrition_percent,
+      formatter: (val: number): string => `${val}%`,
+    },
+    {
+      label: 'Required Examine Size',
+      value: bulge_size,
+      formatter: (val: number): string => `${val * 100}%`,
+    },
+    {
+      label: 'Display Absorbed Examines',
+      value: display_absorbed_examine,
+      formatter: (val: boolean): string =>
+        val
+          ? '<span style="color: green;">True</span>'
+          : '<span style="color: red;">False</span>',
+    },
+    {
+      label: 'Save Digest Mode',
+      value: save_digest_mode,
+      formatter: (val: boolean): string =>
+        val
+          ? '<span style="color: green;">True</span>'
+          : '<span style="color: red;">False</span>',
+    },
+    {
+      label: 'Idle Emotes',
+      value: emote_active,
+      formatter: (val: boolean): string =>
+        val
+          ? '<span style="color: green;">Active</span>'
+          : '<span style="color: red;">Inactive</span>',
+    },
+    {
+      label: 'Idle Emote Delay',
+      value: emote_time,
+      formatter: (val: number): string => `${val} seconds`,
+    },
+    {
+      label: 'Shrink/Grow Size',
+      value: shrink_grow_size,
+      formatter: (val: number): string => `${val * 100}%`,
+    },
+    {
+      label: 'Vore Spawn Blacklist',
+      value: vorespawn_blacklist,
+      formatter: (val: boolean): string => getYesNo(val),
+    },
+    {
+      label: 'Vore Spawn Whitelist',
+      value: vorespawn_whitelist,
+      formatter: (val: string[]): string =>
+        val.length ? val.join(', ') : 'Anyone!',
+    },
+    {
+      label: 'Vore Spawn Absorbed',
+      value: vorespawn_absorbed,
+      formatter: (val: number): string =>
+        val === 0
+          ? '<span style="color: red;">No</span>'
+          : val === 1
+            ? '<span style="color: green;">Yes</span>'
+            : '<span style="color: orange;">Prey Choice</span>',
+    },
+    { label: 'Egg Type', value: egg_type },
+    { label: 'Selective Mode Preference', value: selective_preference },
+  ];
+
+  result += formatListItems(settingItem);
+
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
   result += '</ul>';
   result += '</div></div></div>';
 
@@ -537,11 +888,25 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += '<div id="settingsAccordion' + index + '-collapseTwo" class="accordion-collapse collapse" aria-labelledby="settingsAccordion' + index + '-headingTwo">';
   result += '<div class="accordion-body">';
   result += '<ul class="list-group">';
+<<<<<<< HEAD
   result += '<li class="list-group-item">Fleshy Belly: ' + (is_wet ? '<span style="color: green;">Yes' : '<span style="color: red;">No') + '</li>';
   result += '<li class="list-group-item">Internal Loop: ' + (wet_loop ? '<span style="color: green;">Yes' : '<span style="color: red;">No') + '</li>';
   result += '<li class="list-group-item">Use Fancy Sounds: ' + (fancy_vore ? '<span style="color: green;">Yes' : '<span style="color: red;">No') + '</li>';
   result += '<li class="list-group-item">Vore Sound: ' + vore_sound + '</li>';
   result += '<li class="list-group-item">Release Sound: ' + release_sound + '</li>';
+=======
+
+  const soundItems = [
+    { label: 'Fleshy Belly', value: is_wet, formatter: getYesNo },
+    { label: 'Internal Loop', value: wet_loop, formatter: getYesNo },
+    { label: 'Use Fancy Sounds', value: fancy_vore, formatter: getYesNo },
+    { label: 'Vore Sound', value: vore_sound },
+    { label: 'Release Sound', value: release_sound },
+  ];
+
+  result += formatListItems(soundItems);
+
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
   result += '</ul>';
   result += '</div></div></div>';
 
@@ -556,6 +921,54 @@ export const generateBellyString = (belly: Belly, index: number) => {
 
   result += '<div id="settingsAccordion' + index + '-collapseVisuals" class="accordion-collapse collapse" aria-labelledby="settingsAccordion' + index + '-headingVisuals>';
   result += '<div class="accordion-body">';
+<<<<<<< HEAD
+=======
+  result += '<b>Vore Sprites</b>';
+  result += '<ul class="list-group">';
+
+  const visualItems = [
+    {
+      label: 'Affect Vore Sprites',
+      value: affects_vore_sprites,
+      formatter: getYesNo,
+    },
+    {
+      label: 'Count Absorbed prey for vore sprites',
+      value: count_absorbed_prey_for_sprite,
+      formatter: getYesNo,
+    },
+    {
+      label: 'Animation when prey resist',
+      value: resist_triggers_animation,
+      formatter: getYesNo,
+    },
+    { label: 'Vore Sprite Size Factor', value: size_factor_for_sprite },
+    { label: 'Belly Sprite to affect', value: belly_sprite_to_affect },
+  ];
+
+  result += formatListItems(visualItems);
+
+  result += '</ul>';
+  result += '<b>Belly Fullscreens Preview and Coloring</b>';
+  result += '<ul class="list-group">';
+
+  const bellyColorItems = [
+    { label: 'Fullscreen Color', value: belly_fullscreen_color },
+    { label: 'Fullscreen Color 2', value: belly_fullscreen_color2 },
+    { label: 'Fullscreen Color 3', value: belly_fullscreen_color3 },
+    { label: 'Fullscreen Color 4', value: belly_fullscreen_color4 },
+    { label: 'Fullscreen Alpha', value: belly_fullscreen_alpha },
+  ];
+
+  bellyColorItems.forEach(({ label, value }) => {
+    const isColorCode = typeof value === 'string' && value.startsWith('#');
+    result += `<li class="list-group-item">${label}: ${
+      isColorCode ? `<span style="color: ${value};">${value}</span>` : value
+    }</li>`;
+  });
+
+  result += '</ul>';
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
   result += '<b>Vore FX</b>';
   result += '<ul class="list-group">';
   result += '<li class="list-group-item">Disable Prey HUD: ' + (disable_hud ? '<span style="color: green;">Yes' : '<span style="color: red;">No') + '</li>';
@@ -577,6 +990,7 @@ export const generateBellyString = (belly: Belly, index: number) => {
   (escapable ? '<span style="color: green;">Enabled' : '<span style="color: red;">Disabled') +
   '</span>)</b>';
   result += '<ul class="list-group">';
+<<<<<<< HEAD
   result += '<li class="list-group-item">Escape Chance: ' + escapechance + '%</li>';
   result += '<li class="list-group-item">Escape Chance: ' + escapechance_absorbed + '%</li>';
   result += '<li class="list-group-item">Escape Time: ' + escapetime / 10 + 's</li>';
@@ -586,10 +1000,235 @@ export const generateBellyString = (belly: Belly, index: number) => {
   result += '<li class="list-group-item">Secondary Transfer Location: ' + transferlocation_secondary + '</li>';
   result += '<li class="list-group-item">Absorb Chance: ' + absorbchance + '%</li>';
   result += '<li class="list-group-item">Digest Chance: ' + digestchance + '%</li>';
+=======
+
+  const interactionItems = [
+    { label: 'Escape Chance', value: escapechance, suffix: '%' },
+    {
+      label: 'Escape Chance (Absorbed)',
+      value: escapechance_absorbed,
+      suffix: '%',
+    },
+    { label: 'Escape Time', value: escapetime / 10, suffix: 's' },
+    { label: 'Transfer Chance', value: transferchance, suffix: '%' },
+    { label: 'Transfer Location', value: transferlocation },
+    {
+      label: 'Secondary Transfer Chance',
+      value: transferchance_secondary,
+      suffix: '%',
+    },
+    { label: 'Secondary Transfer Location', value: transferlocation_secondary },
+    { label: 'Absorb Chance', value: absorbchance, suffix: '%' },
+    { label: 'Digest Chance', value: digestchance, suffix: '%' },
+    { label: 'Belch Chance', value: belchchance, suffix: '%' },
+  ];
+
+  result += formatListItems(interactionItems);
+
+  result += '</ul>';
+  result += '<hr>';
+  result += `<b>Auto-Transfer Options (${
+    autotransfer_enabled
+      ? '<span style="color: green;">Enabled'
+      : '<span style="color: red;">Disabled'
+  }</span>)</b>`;
+  result += '<ul class="list-group">';
+
+  const transferItems = [
+    { label: 'Auto-Transfer Time', value: autotransferwait / 10, suffix: 's' },
+    { label: 'Auto-Transfer Chance', value: autotransferchance, suffix: '%' },
+    { label: 'Auto-Transfer Location', value: autotransferlocation },
+    {
+      label: 'Auto-Transfer Chance (Secondary)',
+      value: autotransferchance_secondary,
+      suffix: '%',
+    },
+    {
+      label: 'Auto-Transfer Location (Secondary)',
+      value: autotransferlocation_secondary,
+    },
+    { label: 'Auto-Transfer Min Amount', value: autotransfer_min_amount },
+    { label: 'Auto-Transfer Max Amount', value: autotransfer_max_amount },
+
+    {
+      label: 'Auto-Transfer Primary Chance',
+      value: autotransferchance,
+      suffix: '%',
+    },
+    { label: 'Auto-Transfer Primary Location', value: autotransferlocation },
+    {
+      label: 'Auto-Transfer Primary Location Extras',
+      value: autotransferextralocation.join(', '),
+    },
+
+    {
+      label: 'Auto-Transfer Primary Whitelist (Mobs)',
+      value: GetAutotransferFlags(autotransfer_whitelist, true),
+    },
+    {
+      label: 'Auto-Transfer Primary Whitelist (Items)',
+      value: GetAutotransferFlags(autotransfer_whitelist_items, true),
+    },
+    {
+      label: 'Auto-Transfer Primary Blacklist (Mobs)',
+      value: GetAutotransferFlags(autotransfer_blacklist, false),
+    },
+    {
+      label: 'Auto-Transfer Primary Blacklist (Items)',
+      value: GetAutotransferFlags(autotransfer_blacklist_items, false),
+    },
+
+    {
+      label: 'Auto-Transfer Secondary Chance',
+      value: autotransferchance_secondary,
+      suffix: '%',
+    },
+    {
+      label: 'Auto-Transfer Secondary Location',
+      value: autotransferlocation_secondary,
+    },
+    {
+      label: 'Auto-Transfer Secondary Location Extras',
+      value: autotransferextralocation_secondary.join(', '),
+    },
+
+    {
+      label: 'Auto-Transfer Secondary Whitelist (Mobs)',
+      value: GetAutotransferFlags(autotransfer_secondary_whitelist, true),
+    },
+    {
+      label: 'Auto-Transfer Secondary Whitelist (Items)',
+      value: GetAutotransferFlags(autotransfer_secondary_whitelist_items, true),
+    },
+    {
+      label: 'Auto-Transfer Secondary Blacklist (Mobs)',
+      value: GetAutotransferFlags(autotransfer_secondary_blacklist, false),
+    },
+    {
+      label: 'Auto-Transfer Secondary Blacklist (Items)',
+      value: GetAutotransferFlags(
+        autotransfer_secondary_blacklist_items,
+        false,
+      ),
+    },
+  ];
+
+  result += formatListItems(transferItems);
+
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
   result += '</ul>';
   result += '</div></div></div>';
 
   // END INTERACTIONS
+<<<<<<< HEAD
+=======
+  // LIQUID OPTIONS
+
+  result += '<div class="accordion-item">';
+  result += `<h2 class="accordion-header" id="settingsAccordion${index}-headingFour">`;
+  result += `<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#settingsAccordion${index}-collapseFour" aria-expanded="true" aria-controls="settingsAccordion${index}-collapseFour">`;
+  result += `<b>== Liquid Options (${
+    show_liquids
+      ? '<span style="color: green;">Liquids On'
+      : '<span style="color: red;">Liquids Off'
+  }</span>) ==</b>`;
+  result += '</button></h2>';
+
+  result += `<div id="settingsAccordion${index}-collapseFour" class="accordion-collapse collapse" aria-labelledby="settingsAccordion${index}-headingFour">`;
+  result += '<div class="accordion-body">';
+  result += '<ul class="list-group">';
+  result += `<li class="list-group-item">Generate Liquids: ${
+    reagentbellymode
+      ? '<span style="color: green;">On'
+      : '<span style="color: red;">Off'
+  }</li>`;
+
+  const liquidItems = [
+    { label: 'Liquid Type', value: reagent_chosen },
+    { label: 'Liquid Name', value: reagent_name },
+    { label: 'Transfer Verb', value: reagent_transfer_verb },
+    { label: 'Generation Time', value: gen_time_display },
+    { label: 'Liquid Capacity', value: custom_max_volume },
+  ];
+
+  result += formatListItems(liquidItems);
+
+  result += `<li class="list-group-item">Slosh Sounds: ${
+    vorefootsteps_sounds
+      ? '<span style="color: green;">On'
+      : '<span style="color: red;">Off'
+  }</li>`;
+  result += `<li class="list-group-item">Liquid Addons: ${GetLiquidAddons(reagent_mode_flag_list)}</li>`;
+  result += '</ul>';
+  result += '</div></div></div>';
+
+  // END LIQUID OPTIONS
+  // LIQUID MESSAGES
+
+  result += '<div class="accordion-item">';
+  result += `<h2 class="accordion-header" id="settingsAccordion${index}-headingFive">`;
+  result += `<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#settingsAccordion${index}-collapseFive" aria-expanded="true" aria-controls="settingsAccordion${index}-collapseFive">`;
+  result += `<b>== Liquid Messages (${
+    show_liquids
+      ? '<span style="color: green;">Messages On'
+      : '<span style="color: red;">Messages Off'
+  }</span>) ==</b>`;
+  result += '</button></h2>';
+
+  result += `<div id="settingsAccordion${index}-collapseFive" class="accordion-collapse collapse" aria-labelledby="settingsAccordion${index}-headingFive">`;
+  result += '<div class="accordion-body">';
+
+  result += '<div role="liquidMessagesTabpanel">'; // Start Div liquidMessagesTabpanel
+  result += '<div class="row"><div class="col-4">';
+  result +=
+    '<div class="list-group" id="liquidMessagesList" role="messagesTablist">';
+
+  const fullnessItems = [
+    ['examineMessage0_20', liquid_fullness1_messages, '0 to 20%'],
+    ['examineMessage20_40', liquid_fullness2_messages, '20 to 40%'],
+    ['examineMessage40_60', liquid_fullness3_messages, '40 to 60%'],
+    ['examineMessage60_80', liquid_fullness4_messages, '60 to 80%'],
+    ['examineMessage80_100', liquid_fullness5_messages, '80 to 100%'],
+  ];
+
+  fullnessItems.forEach(([idPrefix, messages, label], i) => {
+    const activeClass = i === 0 ? 'active' : '';
+    const isOn = messages
+      ? '<span style="color: green;">On</span>'
+      : '<span style="color: red;">Off</span>';
+    result += `<a class="list-group-item list-group-item-action ${activeClass}" data-bs-toggle="list" href="#${idPrefix}${index}" role="tab">Examine Message (${label}) (${isOn})</a>`;
+  });
+
+  result += '</div></div>';
+
+  result += '<div class="col-8">';
+  result += '<div class="tab-content">';
+
+  const fullnessMessages: [string, string[]][] = [
+    ['examineMessage0_20', fullness1_messages],
+    ['examineMessage20_40', fullness2_messages],
+    ['examineMessage40_60', fullness3_messages],
+    ['examineMessage60_80', fullness4_messages],
+    ['examineMessage80_100', fullness5_messages],
+  ];
+
+  fullnessMessages.forEach(([idPrefix, messages], i) => {
+    const classes = i === 0 ? 'tab-pane fade show active' : 'tab-pane fade';
+    result += `<div class="${classes}" id="${idPrefix}${index}" role="liquidMessagesTabpanel">`;
+    messages?.forEach((msg) => {
+      result += `${msg}<br>`;
+    });
+    result += '</div>';
+  });
+
+  result += '</div>';
+  result += '</div></div>';
+  result += '</div>'; // End Div liquidMessagesTabpanel
+
+  result += '</div></div></div>';
+
+  // END LIQUID MESSAGES
+>>>>>>> 5a761de1a4 ([MIRROR] cleans up the html export somewhat (#11544))
 
   result += '</div></div></div>';
 
