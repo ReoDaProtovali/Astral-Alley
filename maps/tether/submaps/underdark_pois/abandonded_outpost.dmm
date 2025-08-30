@@ -5,9 +5,6 @@
 "ab" = (
 /turf/simulated/wall,
 /area/mine/explored/underdark)
-"ac" = (
-/turf/template_noop,
-/area/space)
 "ad" = (
 /turf/simulated/mineral/floor/ignore_cavegen/virgo3b,
 /area/mine/explored/underdark)
@@ -404,7 +401,7 @@ ad
 ad
 aj
 ad
-ac
+aa
 "}
 (2,1,1) = {"
 aa
@@ -430,7 +427,7 @@ aj
 ad
 ad
 ad
-ac
+aa
 "}
 (3,1,1) = {"
 aa
@@ -456,7 +453,7 @@ ab
 ab
 ab
 ad
-ac
+aa
 "}
 (4,1,1) = {"
 aa
@@ -482,7 +479,7 @@ bp
 ae
 ab
 ad
-ac
+aa
 "}
 (5,1,1) = {"
 aj
@@ -508,7 +505,7 @@ ae
 ae
 ab
 ad
-ac
+aa
 "}
 (6,1,1) = {"
 aj
@@ -534,7 +531,7 @@ bi
 ae
 ab
 ad
-ac
+aa
 "}
 (7,1,1) = {"
 ad
@@ -560,7 +557,7 @@ br
 ae
 ab
 ad
-ac
+aa
 "}
 (8,1,1) = {"
 ad
@@ -586,7 +583,7 @@ bj
 bj
 ab
 ad
-ac
+aa
 "}
 (9,1,1) = {"
 aA
@@ -612,7 +609,7 @@ bj
 bj
 ab
 bc
-ac
+aa
 "}
 (10,1,1) = {"
 ad
@@ -638,7 +635,7 @@ bj
 bD
 ab
 ad
-ac
+aa
 "}
 (11,1,1) = {"
 aA
@@ -664,7 +661,7 @@ ae
 bC
 ab
 ad
-ac
+aa
 "}
 (12,1,1) = {"
 aB
@@ -690,7 +687,7 @@ ae
 aJ
 ab
 ad
-ac
+aa
 "}
 (13,1,1) = {"
 aA
@@ -716,7 +713,7 @@ ae
 aK
 ab
 ad
-ac
+aa
 "}
 (14,1,1) = {"
 aA
@@ -742,7 +739,7 @@ ae
 aL
 ab
 bc
-ac
+aa
 "}
 (15,1,1) = {"
 aA
@@ -768,7 +765,7 @@ ae
 bC
 ab
 ad
-ac
+aa
 "}
 (16,1,1) = {"
 ad
@@ -794,7 +791,7 @@ ae
 bC
 ab
 ad
-ac
+aa
 "}
 (17,1,1) = {"
 aA
@@ -820,7 +817,7 @@ ae
 ae
 ab
 ad
-ac
+aa
 "}
 (18,1,1) = {"
 bu
@@ -846,7 +843,7 @@ ae
 ae
 ab
 ad
-ac
+aa
 "}
 (19,1,1) = {"
 ad
@@ -872,7 +869,7 @@ ae
 bk
 ab
 ad
-ac
+aa
 "}
 (20,1,1) = {"
 aj
@@ -898,7 +895,7 @@ ae
 ae
 ab
 ad
-ac
+aa
 "}
 (21,1,1) = {"
 aj
@@ -924,7 +921,7 @@ ae
 ae
 ab
 ad
-ac
+aa
 "}
 (22,1,1) = {"
 aa
@@ -950,7 +947,7 @@ bq
 ae
 ab
 ad
-ac
+aa
 "}
 (23,1,1) = {"
 aa
@@ -976,7 +973,7 @@ ab
 ab
 ab
 ad
-ac
+aa
 "}
 (24,1,1) = {"
 aa
@@ -1002,7 +999,7 @@ ad
 aj
 ad
 ad
-ac
+aa
 "}
 (25,1,1) = {"
 aa
@@ -1028,5 +1025,5 @@ ad
 ad
 ad
 ad
-ac
+aa
 "}
