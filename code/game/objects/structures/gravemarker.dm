@@ -25,8 +25,13 @@
 		material_name = MAT_WOOD
 	material = get_material_by_name("[material_name]")
 	if(!material)
+<<<<<<< HEAD
 		qdel(src)
 		return
+=======
+		stack_trace("Material of type: [material_name] does not exist.")
+		return INITIALIZE_HINT_QDEL
+>>>>>>> a272557ccd ([MIRROR] sane stacks (#11533))
 	color = material.icon_colour
 
 /obj/structure/gravemarker/examine(mob/user)
