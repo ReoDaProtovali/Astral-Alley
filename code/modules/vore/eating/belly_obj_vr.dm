@@ -155,6 +155,117 @@
 	var/belly_fullscreen_color4 = "#FFFFFF" //ChompEDIT
 	var/belly_fullscreen_alpha = 255 //ChompEDIT
 
+<<<<<<< HEAD
+=======
+	// Liquid belly vars
+	var/reagentbellymode = FALSE			// Belly has abilities to make liquids from digested/absorbed/drained prey and/or nutrition
+	var/reagent_mode_flags = 0
+
+	var/tmp/static/list/reagent_mode_flag_list= list(
+		"Produce Liquids" = DM_FLAG_REAGENTSNUTRI,
+		"Digestion Liquids" = DM_FLAG_REAGENTSDIGEST,
+		"Absorption Liquids" = DM_FLAG_REAGENTSABSORB,
+		"Draining Liquids" = DM_FLAG_REAGENTSDRAIN
+		)
+
+	var/show_liquids = FALSE //Moved from vorepanel_ch to be a belly var
+	var/show_fullness_messages = FALSE //Moved from vorepanel_ch to be a belly var
+	var/liquid_overlay = TRUE						//Belly-specific liquid overlay toggle
+	var/max_liquid_level = 100						//Custom max level for liquid overlay
+	var/mush_overlay = FALSE						//Toggle for nutrition mush overlay
+	var/reagent_touches = TRUE						//If reagents touch and interact with things in belly
+	var/mush_color = "#664330"						//Nutrition mush overlay color
+	var/mush_alpha = 255							//Mush overlay transparency.
+	var/max_mush = 500								//How much nutrition for full mush overlay
+	var/min_mush = 0								//Manual setting for lowest mush level
+	var/item_mush_val = 0							//How much solid belly contents raise mush level per item
+	var/metabolism_overlay = FALSE					//Extra mush layer for ingested reagents currently in metabolism.
+	var/metabolism_mush_ratio = 15					//Metabolism reagent volume per unit compared to nutrition units.
+	var/max_ingested = 500							//How much metabolism content for full overlay.
+	var/ingested_color = "#664330"					//Normal color holder for ingested layer. Blended from existing reagent colors.
+	var/custom_ingested_color = null				//Custom color for ingested reagent layer.
+	var/custom_ingested_alpha = 255					//Custom alpha for ingested reagent layer if not using normal mush layer.
+
+	var/nutri_reagent_gen = FALSE					//if belly produces reagent over time using nutrition, needs to be optimized to use subsystem - Jack
+	var/is_beneficial = FALSE							//Sets a reagent as a beneficial one / healing reagents
+	var/list/generated_reagents = list(REAGENT_ID_WATER = 1) //Any number of reagents, the associated value is how many units are generated per process()
+	var/reagent_name = REAGENT_ID_WATER 						//What is shown when reagents are removed, doesn't need to be an actual reagent
+	var/reagentid = REAGENT_ID_WATER							//Selected reagent's id, for use in puddle system currently
+	var/reagentcolor = "#0064C877"					//Selected reagent's color, for use in puddle system currently
+	var/custom_reagentcolor							//Custom reagent color. Blank for normal reagent color
+	var/custom_reagentalpha							//Custom reagent alpha. Blank for capacity based alpha
+	var/gen_cost = 1 								//amount of nutrient taken from the host everytime nutrition is used to make reagents
+	var/gen_amount = 1							//Does not actually influence amount produced, but is used as a way to tell the system how much total reagent it has to take into account when filling a belly
+
+	var/gen_interval = 0							//Interval in seconds for generating fluids, once it reaches the value of gen_time one cycle of reagents generation will occur
+	var/gen_time = 5								//Time it takes in seconds to produce one cycle of reagents, technically add 1 second to it for the tick where the fluid is produced
+	var/gen_time_display = "1 hour"					//The displayed time it takes from a belly to go from 0 to 100
+	var/custom_max_volume = 100						//Variable for people to limit amount of liquid they can receive/produce in a belly
+	var/digest_nutri_gain = 0						//variable to store temporary nutrition gain from digestion and allow a seperate proc to ease up on the wall of code
+	var/reagent_transfer_verb = "injects"			//verb for transfer of reagent from a vore belly
+
+	var/vorefootsteps_sounds = FALSE				//If this belly can make sounds when someone walks around
+	var/liquid_fullness1_messages = FALSE
+	var/liquid_fullness2_messages = FALSE
+	var/liquid_fullness3_messages = FALSE
+	var/liquid_fullness4_messages = FALSE
+	var/liquid_fullness5_messages = FALSE
+	var/vorespawn_blacklist = FALSE
+	var/vorespawn_whitelist = list()
+	var/vorespawn_absorbed = 0
+
+	var/list/fullness1_messages = list(
+		"%pred's %belly looks empty"
+		)
+	var/list/fullness2_messages = list(
+		"%pred's %belly looks filled"
+		)
+	var/list/fullness3_messages = list(
+		"%pred's %belly looks like it's full of liquid"
+		)
+	var/list/fullness4_messages = list(
+		"%pred's %belly is quite full!"
+		)
+	var/list/fullness5_messages = list(
+		"%pred's %belly is completely filled to it's limit!"
+		)
+
+	var/tmp/reagent_chosen = REAGENT_WATER				// variable for switch to figure out what to set variables when a certain reagent is selected
+	var/tmp/static/list/reagent_choices = list(		// List of reagents people can chose, maybe one day expand so it covers criterias like dogborgs who can make meds, booze, etc - Jack
+	REAGENT_WATER,
+	REAGENT_MILK,
+	REAGENT_CREAM,
+	REAGENT_HONEY,
+	REAGENT_CHERRYJELLY,
+	REAGENT_STOMACID,
+	REAGENT_DIETSTOMACID,
+	REAGENT_CLEANER,
+	REAGENT_LUBE,
+	REAGENT_BIOMASS,
+	REAGENT_CONCENTRATEDRADIUM,
+	REAGENT_TRICORDRAZINE,
+	REAGENT_ETHANOL
+	)
+
+	// Special var section
+	var/special_entrance_sound				// Mob specific custom entry sound set by mob's init_vore when applicable
+	var/slow_digestion = FALSE				// Gradual corpse digestion
+	var/slow_brutal = FALSE					// Gradual corpse digestion: Stumpy's Special
+	var/sound_volume = 100					// Volume knob.
+	var/speedy_mob_processing = FALSE		// Independent belly processing to utilize SSobj instead of SSbellies 3x speed.
+	var/cycle_sloshed = FALSE				// Has vorgan entrance made a wet slosh this cycle? Soundspam prevention for multiple items entered.
+	var/egg_cycles = 0						// Process egg mode after 10 cycles.
+	var/recycling = FALSE					// Recycling mode.
+	var/entrance_logs = TRUE				// Belly-specific entry message toggle.
+	var/noise_freq = 42500					// Tasty sound prefs.
+	var/item_digest_logs = FALSE			// Chat messages for digested items.
+	var/storing_nutrition = FALSE			// Storing gained nutrition as paste instead of absorbing it.
+	var/belchchance = 0						// % Chance of pred belching on prey struggle
+
+	var/list/belly_surrounding = list()		// A list of living mobs surrounded by this belly, including inside containers, food, on mobs, etc. Exclusing inside other bellies.
+	var/bellytemperature = T20C				// Temperature applied to humans in the belly.
+	var/temperature_damage = FALSE			// Does temperature damage prey?
+>>>>>>> 393e117ffe ([MIRROR] Belly temperature (#11529))
 
 //For serialization, keep this updated, required for bellies to save correctly.
 /obj/belly/vars_to_save()
@@ -175,6 +286,7 @@
 	"digest_oxy",
 	"digest_tox",
 	"digest_clone",
+	"bellytemperature",
 	"immutable",
 	"can_taste",
 	"escapable",
@@ -1780,6 +1892,7 @@
 	dupe.digest_oxy = digest_oxy
 	dupe.digest_tox = digest_tox
 	dupe.digest_clone = digest_clone
+	dupe.bellytemperature = bellytemperature
 	dupe.immutable = immutable
 	dupe.can_taste = can_taste
 	dupe.escapable = escapable
