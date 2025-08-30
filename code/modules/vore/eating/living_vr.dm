@@ -190,7 +190,7 @@
 			var/obj/belly/B = tgui_input_list(user, "Which belly?", "Select A Belly", vore_organs)
 			if(!istype(B))
 				return TRUE
-			visible_message(span_warning("[user] is trying to stuff a beacon into [src]'s [lowertext(B.name)]!"),
+			visible_message(span_warning("[user] is trying to stuff a beacon into [src]'s [B.get_belly_name()]!"),
 				span_warning("[user] is trying to stuff a beacon into you!"))
 			if(do_after(user,30,src))
 				user.drop_item()
@@ -1406,9 +1406,14 @@
 	if(latejoin_prey)
 		dat += span_bold("Late join prey auto accept:") + " [no_latejoin_prey_warning ? span_green("Enabled") : span_red("Disabled")]<br>"
 	dat += span_bold("Global Vore Privacy is:") + " [eating_privacy_global ? span_green("Subtle") : span_red("Loud")]<br>"
+<<<<<<< HEAD
 	dat += span_bold("Current active belly:") + " [vore_selected ? vore_selected.name : "None"]<br>"
 	dat += span_bold("Belly rub target:") + " [belly_rub_target ? belly_rub_target : (vore_selected ? vore_selected.name : "None")]<br>"
 	//CHOMPEdit End
+=======
+	dat += span_bold("Current active belly:") + " [vore_selected ? vore_selected.get_belly_name(TRUE) : "None"]<br>"
+	dat += span_bold("Belly rub target:") + " [belly_rub_target ? belly_rub_target : (vore_selected ? vore_selected.get_belly_name(TRUE) : "None")]<br>"
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 	var/datum/browser/popup = new(user, "[name]mvp", "Vore Prefs: [src]", 300, 700, src)
 	popup.set_content(dat)
 	popup.open()
@@ -1633,3 +1638,310 @@
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "vore"
 	screen_loc = ui_smallquad
+<<<<<<< HEAD
+=======
+
+
+
+//
+// Returns examine messages for how much reagents are in bellies
+//
+/mob/living/proc/examine_reagent_bellies()
+	if(!show_pudge()) //Some clothing or equipment can hide this. Reagent inflation is not very different in this aspect.
+		return ""
+
+	var/message = ""
+	for (var/belly in vore_organs)
+		var/obj/belly/B = belly
+
+		var/fill_percentage = round((B.custom_max_volume > 0 ? B.reagents.total_volume / B.custom_max_volume : 0) * 100)
+
+		if(B.show_fullness_messages)
+			switch(fill_percentage)
+				if(0 to 20)
+					if(B.liquid_fullness1_messages)
+						message += B.get_reagent_examine_msg1()
+				if(20 to 40)
+					if(B.liquid_fullness2_messages)
+						message += B.get_reagent_examine_msg2()
+				if(40 to 60)
+					if(B.liquid_fullness3_messages)
+						message += B.get_reagent_examine_msg3()
+				if(60 to 80)
+					if(B.liquid_fullness4_messages)
+						message += B.get_reagent_examine_msg4()
+				if(80 to 100)
+					if(B.liquid_fullness5_messages)
+						message += B.get_reagent_examine_msg5()
+
+	return message
+
+/mob/living/proc/vore_check_reagents()
+	set name = "Check Belly Liquid (Vore)"
+	set category = "Abilities.Vore"
+	set desc = "Check the amount of liquid in your belly."
+
+	var/obj/belly/RTB = tgui_input_list(src, "Choose which vore belly to check", "Select Belly", vore_organs)
+	if(!RTB)
+		return FALSE
+
+	var/total_report = span_vnotice("[RTB] has [RTB.reagents.total_volume] units of liquid.")
+	if(RTB.reagents.total_volume > 0)
+		for(var/datum/reagent/R in RTB.reagents.reagent_list)
+			total_report += "<br>"
+			total_report += span_info("  -[R.name]: [R.volume]u")
+	to_chat(src, total_report)
+
+/mob/living/proc/vore_transfer_reagents()
+	set name = "Transfer Liquid (Vore)"
+	set category = "Abilities.Vore"
+	set desc = "Transfer liquid from an organ to another or stomach, or into another person or container."
+	set popup_menu = FALSE
+
+	if(!checkClickCooldown() || incapacitated(INCAPACITATION_KNOCKOUT))
+		return FALSE
+
+	var/mob/living/user = src
+
+	var/list/transfer_from = mobs_in_view(1,user)
+	for(var/obj/belly/B in vore_organs)
+		for(var/mob/living/L in B.contents)
+			transfer_from |= L
+	var/mob/living/TG = tgui_input_list(user, "Choose who to transfer from", "Transfer From", transfer_from)
+	if(!TG)
+		return FALSE
+	if(TG.give_reagents == FALSE && user != TG) //User isnt forced to allow giving in prefs if they are the one doing it
+		to_chat(user, span_vwarning("This person's prefs dont allow that!"))
+		return FALSE
+
+	if(!LAZYLEN(TG.vore_organs))
+		return FALSE
+
+	var/obj/belly/RTB = tgui_input_list(user, "Choose which vore belly to transfer from", "Select Belly", TG.vore_organs)
+	if(!RTB)
+		return FALSE
+
+	var/transfer_amount = tgui_input_list(user, "How much to transfer?", "Transfer Amount", list(5,10,25,50,100))
+	if(!transfer_amount)
+		return FALSE
+
+	switch(tgui_input_list(user,"Choose what to transfer to","Select Target", list("Vore belly", "Stomach", "Container", "Floor", "Cancel")))
+		if("Cancel")
+			return FALSE
+		if("Vore belly")
+			var/list/transfer_to = mobs_in_view(1,user)
+			for(var/obj/belly/B in vore_organs)
+				for(var/mob/living/L in B.contents)
+					transfer_to |= L
+			var/mob/living/TR = tgui_input_list(user,"Choose who to transfer to","Select Target", transfer_to)
+			if(!TR)  return FALSE
+
+			if(TR == user) //Proceed, we dont need to have prefs enabled for transfer within user
+				var/obj/belly/TB = tgui_input_list(user, "Choose which organ to transfer to", "Select Belly", user.vore_organs)
+				if(!TB)
+					return FALSE
+				if(!Adjacent(TR) || !Adjacent(TG))
+					return //No long distance transfer
+				if(!TB.reagents?.get_free_space())
+					to_chat(user, span_vnotice("[TB] is full!"))
+					return FALSE
+
+				if(TG == user)
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [RTB.get_belly_name()] into their [TB.get_belly_name()]."))
+				else
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]'s [RTB.get_belly_name()] into their [TB.get_belly_name()]."))
+					add_attack_logs(user,TR,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to [TR]'s [TB]")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
+				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_VORE, 1, 0, TB)
+				if(RTB.count_liquid_for_sprite || TB.count_liquid_for_sprite)
+					handle_belly_update()
+
+			else if(TR.receive_reagents == FALSE)
+				to_chat(user, span_vwarning("This person's prefs dont allow that!"))
+				return FALSE
+
+			else
+				var/obj/belly/TB = tgui_input_list(user, "Choose which organ to transfer to", "Select Belly", TR.vore_organs)
+				if(!TB)
+					return FALSE
+				if(!Adjacent(TR) || !Adjacent(TG))
+					return //No long distance transfer
+				if(!TB.reagents?.get_free_space())
+					to_chat(user, span_vnotice("[TR]'s [TB.get_belly_name()] is full!"))
+					return FALSE
+
+				if(TG == user)
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [RTB.get_belly_name()] into [TR]'s [TB.get_belly_name()]."))
+				else
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]s [RTB.get_belly_name()] into [TR]'s [TB.get_belly_name()]."))
+
+				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_VORE, 1, 0, TB)
+				add_attack_logs(user,TR,"Transfered reagents from [TG]'s [RTB] to [TR]'s [TB]")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
+				if(RTB.count_liquid_for_sprite)
+					handle_belly_update()
+				if(TB.count_liquid_for_sprite)
+					TR.handle_belly_update()
+
+
+		if("Stomach")
+			var/list/transfer_to = mobs_in_view(1,user)
+			for(var/obj/belly/B in vore_organs)
+				for(var/mob/living/L in B.contents)
+					transfer_to |= L
+			var/mob/living/TR = tgui_input_list(user,"Choose who to transfer to","Select Target", transfer_to)
+			if(!TR)  return
+			if(!Adjacent(TR) || !Adjacent(TG))
+				return //No long distance transfer
+
+			if(TR == user) //Proceed, we dont need to have prefs enabled for transfer within user
+				if(TG == user)
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [RTB.get_belly_name()] into their stomach."))
+				else
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]'s [RTB.get_belly_name()] into their stomach."))
+				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_INGEST, 1, 0, null)
+				add_attack_logs(user,TR,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to [TR]'s Stomach")
+				if(RTB.count_liquid_for_sprite)
+					handle_belly_update()
+
+			else if(TR.receive_reagents == FALSE)
+				to_chat(user, span_vwarning("This person's prefs dont allow that!"))
+				return FALSE
+
+			else
+				if(TG == user)
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [RTB.get_belly_name()] into [TR]'s stomach."))
+				else
+					user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]'s [RTB.get_belly_name()] into [TR]'s stomach."))
+
+				RTB.reagents.vore_trans_to_mob(TR, transfer_amount, CHEM_INGEST, 1, 0, null)
+				add_attack_logs(user,TR,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to [TR]'s Stomach")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
+				if(RTB.count_liquid_for_sprite)
+					handle_belly_update()
+
+		if("Container")
+			if(RTB.reagentid == REAGENT_ID_STOMACID)
+				return
+			var/list/choices = list()
+			for(var/obj/item/reagent_containers/rc in view(1,user.loc))
+				choices += rc
+			var/obj/item/reagent_containers/arc = user.get_active_hand()
+			if(istype(arc,/obj/item/reagent_containers))
+				choices += arc
+			var/obj/item/reagent_containers/irc = user.get_inactive_hand()
+			if(istype(irc,/obj/item/reagent_containers))
+				choices += irc
+
+			var/obj/item/reagent_containers/T = tgui_input_list(user,"Choose what to transfer to","Select Target", choices)
+			if(!T)
+				return FALSE
+			if(!Adjacent(T) || !Adjacent(TG))
+				return //No long distance transfer
+
+			if(TG == user)
+				user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from their [RTB.get_belly_name()] into [T]."))
+			else
+				user.custom_emote_vr(1, span_vnotice("[RTB.reagent_transfer_verb] [RTB.reagent_name] from [TG]'s [RTB.get_belly_name()] into [T]."))
+
+			RTB.reagents.vore_trans_to_con(T, transfer_amount, 1, 0)
+			add_attack_logs(user, T,"Transfered [RTB.reagent_name] from [TG]'s [RTB] to a [T]")	//Bonus for staff so they can see if people have abused transfer and done pref breaks
+			if(RTB.count_liquid_for_sprite)
+				handle_belly_update()
+		if("Floor")
+			if(RTB.reagentid == REAGENT_ID_WATER)
+				return
+			var/amount_removed = RTB.reagents.remove_any(transfer_amount)
+			if(RTB.count_liquid_for_sprite)
+				handle_belly_update()
+			var/puddle_amount = round(amount_removed/5)
+
+			if(puddle_amount == 0)
+				to_chat(user,span_vnotice("[RTB.reagent_name] dripples from the [RTB.get_belly_name()], not enough to form a puddle."))
+				return
+
+			if(TG == user)
+				user.custom_emote_vr(1, span_vnotice("spills [RTB.reagent_name] from their [RTB.get_belly_name()] onto the floor!"))
+			else
+				user.custom_emote_vr(1, span_vnotice("spills [RTB.reagent_name] from [TG]'s [RTB.get_belly_name()] onto the floor!"))
+
+			if (RTB.custom_reagentcolor)
+				new /obj/effect/decal/cleanable/blood/reagent(TG.loc, RTB.reagent_name, RTB.custom_reagentcolor, RTB.reagentid, puddle_amount, user.ckey, TG.ckey)
+			else
+				new /obj/effect/decal/cleanable/blood/reagent(TG.loc, RTB.reagent_name, RTB.reagentcolor, RTB.reagentid, puddle_amount, user.ckey, TG.ckey)
+
+			var/soundfile
+			if(!RTB.fancy_vore)
+				soundfile = GLOB.classic_release_sounds[RTB.release_sound]
+			else
+				soundfile = GLOB.fancy_release_sounds[RTB.release_sound]
+			if(soundfile)
+				playsound(src, soundfile, vol = 100, vary = 1, falloff = VORE_SOUND_FALLOFF, preference = /datum/preference/toggle/eating_noises)
+
+/mob/living/proc/vore_bellyrub(var/mob/living/T in view(1,src))
+
+	if(!T)
+		return FALSE
+
+	if(!(T in view(1,src)))
+		return FALSE
+	if(T.vore_selected)
+		var/obj/belly/B = T.vore_selected
+		if(istype(B))
+			if(T == src)
+				custom_emote_vr(1, "rubs their [belly_rub_target ? belly_rub_target : B.get_belly_name()].")
+			else
+				custom_emote_vr(1, "gives some rubs over [T]'s [T.belly_rub_target ? T.belly_rub_target : B.get_belly_name()].")
+			B.quick_cycle()
+			return TRUE
+	to_chat(src, span_vwarning("There is no suitable belly for rubs."))
+	return FALSE
+
+/mob/living/proc/mute_entry()
+	set name = "Mute Vorgan Entrance"
+	set category = "Preferences.Vore"
+	set desc = "Mute the chatlog messages when something enters a vore belly."
+	mute_entry = !mute_entry
+	to_chat(src, span_vwarning("Entrance logs [mute_entry ? "disabled" : "enabled"]."))
+
+/mob/living/proc/restrict_trasheater()
+	set name = "Restrict Trash Eater"
+	set category = "Abilities.Vore"
+	set desc = "Toggle Trash Eater restriction level."
+	adminbus_trash = !adminbus_trash
+	to_chat(src, span_vwarning("Trash Eater restriction level set to [adminbus_trash ? "everything not blacklisted" : "only whitelisted items"]."))
+
+/mob/living/proc/liquidbelly_visuals()
+	set name = "Toggle Liquidbelly Visuals"
+	set category = "Preferences.Vore"
+	set desc = "Toggle liquidbelly fullscreen visual effect."
+	liquidbelly_visuals = !liquidbelly_visuals
+	to_chat(src, span_vwarning("Liquidbelly overlays [liquidbelly_visuals ? "enabled" : "disabled"]."))
+
+/mob/living/proc/fix_vore_effects()
+	set name = "Fix Vore Effects"
+	set category = "OOC.Debug"
+	set desc = "Fix certain vore effects lingering after you've exited a belly."
+
+	if(!isbelly(src.loc))
+		if(alert(src, "Only use this verb if you are affected by certain vore effects outside of a belly, such as muffling or a stuck belly fullscreen.", "Clear Vore Effects", "Continue", "Nevermind") != "Continue")
+			return
+
+		absorbed = FALSE
+		muffled = FALSE
+		clear_fullscreen("belly")
+		clear_fullscreen(ATOM_BELLY_FULLSCREEN)
+		stop_sound_channel(CHANNEL_PREYLOOP)
+
+/mob/living/verb/vore_check_nutrition()
+	set name = "Check Nutrition"
+	set category = "Abilities.Vore"
+	set desc = "Check your current nutrition level."
+	to_chat(src, span_vnotice("Current nutrition level: [nutrition]."))
+
+// This proc will either return the first belly the mob is in or return null if they're not in one
+/mob/living/proc/surrounding_belly()
+	var/atom/curloc = src.loc
+	while(curloc && !isbelly(curloc))
+		if(istype(curloc, /turf)) break
+		if(!curloc.loc || curloc == curloc.loc) break
+		curloc = curloc.loc
+	if(isbelly(curloc)) return curloc
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
