@@ -128,6 +128,14 @@
 		start_typing(payload["channel"])
 		return TRUE
 	if(type == "entry" || type == "force")
+<<<<<<< HEAD
+=======
+		var/id = href_list["packetId"]
+		if(!isnull(id))
+			payload = handle_packets(id, href_list["totalPackets"], href_list["packet"])
+			if(!payload)
+				return FALSE
+>>>>>>> b3e84aecb7 ([MIRROR] adds a timeout to tgui payloads (#11535))
 		handle_entry(type, payload)
 		return TRUE
 	if(type == "lenwarn")

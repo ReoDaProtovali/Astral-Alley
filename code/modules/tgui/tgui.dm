@@ -349,6 +349,14 @@
 	// Pass act type messages to tgui_act
 	if(type && copytext(type, 1, 5) == "act/")
 		var/act_type = copytext(type, 5)
+<<<<<<< HEAD
+=======
+		var/id = href_list["packetId"]
+		if(!isnull(id))
+			payload = handle_packets(id, href_list["totalPackets"], href_list["packet"])
+			if(!payload)
+				return FALSE
+>>>>>>> b3e84aecb7 ([MIRROR] adds a timeout to tgui payloads (#11535))
 		#ifdef TGUI_DEBUGGING
 		log_tgui(user, "Action: [act_type] [href_list["payload"]], Window: [window.id], Source: [src_object]")
 		#endif
