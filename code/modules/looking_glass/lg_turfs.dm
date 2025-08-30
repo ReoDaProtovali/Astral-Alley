@@ -84,6 +84,10 @@
 	appearance = MA
 
 	animate(src, color = null, time = 3 SECONDS)
+<<<<<<< HEAD
 	sleep(3 SECONDS)
 	icon_state = "origin"
 
+=======
+	VARSET_IN(src, icon_state, "origin", 3 SECONDS)
+>>>>>>> 8d29707485 ([MIRROR] Removes some simple sleeps (#11527))
