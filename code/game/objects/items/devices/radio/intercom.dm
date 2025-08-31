@@ -80,8 +80,13 @@
 
 /obj/item/radio/intercom/omni
 	name = "global announcer"
+<<<<<<< HEAD
 /obj/item/radio/intercom/omni/Initialize()
 	channels = radiochannels.Copy()
+=======
+/obj/item/radio/intercom/omni/Initialize(mapload)
+	channels = GLOB.radiochannels.Copy()
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	return ..()
 
 /obj/item/radio/intercom/Initialize()
@@ -96,7 +101,7 @@
 	. = ..()
 	internal_channels = list(
 		num2text(PUB_FREQ) = list(),
-		num2text(SEC_I_FREQ) = list(access_security)
+		num2text(SEC_I_FREQ) = list(ACCESS_SECURITY)
 	)
 
 /obj/item/radio/intercom/entertainment/Initialize()
@@ -115,7 +120,7 @@
 
 /obj/item/radio/intercom/syndicate/Initialize()
 	. = ..()
-	internal_channels[num2text(SYND_FREQ)] = list(access_syndicate)
+	internal_channels[num2text(SYND_FREQ)] = list(ACCESS_SYNDICATE)
 
 /obj/item/radio/intercom/raider
 	name = "illicit intercom"
@@ -126,7 +131,7 @@
 
 /obj/item/radio/intercom/raider/Initialize()
 	. = ..()
-	internal_channels[num2text(RAID_FREQ)] = list(access_syndicate)
+	internal_channels[num2text(RAID_FREQ)] = list(ACCESS_SYNDICATE)
 
 /obj/item/radio/intercom/attack_ai(mob/user as mob)
 	src.add_fingerprint(user)
@@ -235,4 +240,8 @@
 
 /obj/item/radio/intercom/locked/confessional
 	name = "confessional intercom"
+<<<<<<< HEAD
 	frequency = 1480
+=======
+	frequency = LOCKED_COM_FREQ
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))

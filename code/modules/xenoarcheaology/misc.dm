@@ -12,7 +12,11 @@
 	update_icon()
 
 /obj/machinery/alarm/isolation
-	req_one_access = list(access_research, access_atmospherics, access_engine_equip)
+	req_one_access = list(ACCESS_RESEARCH, ACCESS_ATMOSPHERICS, ACCESS_ENGINE_EQUIP)
 
 /obj/machinery/alarm/monitor/isolation
+<<<<<<< HEAD
 	req_one_access = list(access_research, access_atmospherics, access_engine_equip)
+=======
+	req_one_access = list(ACCESS_RESEARCH, ACCESS_ATMOSPHERICS, ACCESS_ENGINE_EQUIP)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))

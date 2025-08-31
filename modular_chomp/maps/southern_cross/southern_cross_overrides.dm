@@ -1,13 +1,17 @@
 /mob/living/silicon/robot/platform/explorer
-	req_access = list(access_explorer)
+	req_access = list(ACCESS_EXPLORER)
 
 /mob/living/silicon/robot/platform/cargo
+<<<<<<< HEAD
 	req_access = list(access_cargo_bot)
 
 /obj/item/card/id/platform/Initialize()
 	. = ..()
 	// access |= access_explorer
 	// access |= access_pilot
+=======
+	req_access = list(ACCESS_CARGO_BOT)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 /obj/structure/dark_portal/hub
 	destination_station_areas = list(/area/hallway/primary/firstdeck/elevator)

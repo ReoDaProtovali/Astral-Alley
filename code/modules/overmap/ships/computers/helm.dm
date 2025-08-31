@@ -27,8 +27,13 @@ GLOBAL_LIST_EMPTY(all_waypoints)
 	var/dy		//coordinates
 	var/speedlimit = 1/(20 SECONDS) //top speed for autopilot, 5
 	var/accellimit = 0.001 //manual limiter for acceleration
+<<<<<<< HEAD
 	req_one_access = list(access_pilot) //VOREStation Edit
 	ai_control = FALSE	//VOREStation Edit - AI/Borgs shouldn't really be flying off in ships without crew help // Chompstation Edit - Not an issue on this server, use of shuttles is extremely rare also . //Chompeditedit - No
+=======
+	//req_one_access = list(ACCESS_PILOT) //VOREStation Edit // CHOMPRemove, removed hard access locks.
+	ai_control = FALSE	//VOREStation Edit - AI/Borgs shouldn't really be flying off in ships without crew help
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 // fancy sprite
 /obj/machinery/computer/ship/helm/adv

@@ -139,9 +139,15 @@
 
 // The shuttle's 'shuttle' computer
 // /obj/machinery/computer/shuttle_control/explore/vespaboat
+<<<<<<< HEAD
     //name = "Vespa's Shuttle control console"
     //shuttle_tag = "Vespa's Ship's Boat"
     //req_one_access = list(access_pilot)
+=======
+	//name = "Vespa's Shuttle control console"
+	//shuttle_tag = "Vespa's Ship's Boat"
+	//req_one_access = list(ACCESS_PILOT)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 // A shuttle lateloader landmark
 // /obj/effect/shuttle_landmark/shuttle_initializer/vespaboat

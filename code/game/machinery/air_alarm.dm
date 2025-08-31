@@ -41,16 +41,16 @@
 	idle_power_usage = 80
 	active_power_usage = 1000 //For heating/cooling rooms. 1000 joules equates to about 1 degree every 2 seconds for a single tile of air.
 	power_channel = ENVIRON
-	req_one_access = list(access_atmospherics, access_engine_equip)
+	req_one_access = list(ACCESS_ATMOSPHERICS, ACCESS_ENGINE_EQUIP)
 	clicksound = "button"
 	clickvol = 30
 	blocks_emissive = NONE
 	light_power = 0.25
 	var/alarm_id = null
 	var/breach_detection = 1 // Whether to use automatic breach detection or not
-	var/frequency = 1439
+	var/frequency = PUMPS_FREQ
 	//var/skipprocess = 0 //Experimenting
-	var/alarm_frequency = 1437
+	var/alarm_frequency = ALERT_FREQ
 	var/remote_control = 0
 	var/rcon_setting = 2
 	var/rcon_time = 0
@@ -842,6 +842,7 @@
 
 /obj/machinery/alarm/power_change()
 	..()
+<<<<<<< HEAD
 	spawn(rand(0,15))
 		update_icon()
 		// CHOMPEdit Start: Looping Alarms
@@ -852,6 +853,35 @@
 		else if(atmoswarn)
 			soundloop.start()
 		// CHOMPEdit End
+=======
+	var/delay_time = rand(0,15)
+	if(delay_time)
+		addtimer(CALLBACK(src, PROC_REF(process_power_change)), delay_time, TIMER_DELETE_ME) // CHOMPEdit
+		return
+	process_power_change()
+
+// CHOMPAdd Start
+/obj/machinery/alarm/proc/process_power_change()
+	update_icon()
+	if(!soundloop)
+		return
+	if(stat & (NOPOWER | BROKEN))
+		soundloop.stop()
+	else if(atmoswarn)
+		soundloop.start()
+// CHOMPAdd End
+
+/obj/machinery/alarm/server/Initialize(mapload)
+	. = ..()
+	req_access = list(ACCESS_RD, ACCESS_ATMOSPHERICS, ACCESS_ENGINE_EQUIP)
+	TLV[GAS_O2] =			list(-1.0, -1.0,-1.0,-1.0) // Partial pressure, kpa
+	TLV[GAS_CO2] = list(-1.0, -1.0,   5,  10) // Partial pressure, kpa
+	TLV[GAS_PHORON] =			list(-1.0, -1.0, 0, 0.5) // Partial pressure, kpa
+	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
+	TLV["pressure"] =		list(0,ONE_ATMOSPHERE*0.10,ONE_ATMOSPHERE*1.40,ONE_ATMOSPHERE*1.60) /* kpa */
+	TLV["temperature"] =	list(20, 40, 140, 160) // K
+	target_temperature = 90
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 // VOREStation Edit Start
 /obj/machinery/alarm/freezer

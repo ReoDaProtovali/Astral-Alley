@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 var/const/ENGSEC			=(1<<0)
 
@@ -166,8 +167,10 @@ var/list/whitelisted_positions = list(
 	JOB_AI
 ) //CHOMPEdit: end
 
+=======
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 /proc/guest_jobbans(var/job)
-	return // ((job in whitelisted_positions)) // CHOMPedit: spaghetti that is our whitelist system means this prevents use of config/jobswhitelist.txt
+	return
 
 /proc/get_job_datums()
 	var/list/occupations = list()

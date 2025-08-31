@@ -82,7 +82,11 @@ var/global/list/default_medbay_channels = list(
 	set_frequency(frequency)
 
 	for (var/ch_name in channels)
+<<<<<<< HEAD
 		secure_radio_connections[ch_name] = radio_controller.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
+=======
+		secure_radio_connections[ch_name] = SSradio.add_object(src, GLOB.radiochannels[ch_name],  RADIO_CHAT)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 	if(bluespace_radio)
 		if(bs_tx_preload_id)
@@ -132,7 +136,11 @@ var/global/list/default_medbay_channels = list(
 	if(radio_controller)
 		radio_controller.remove_object(src, frequency)
 		for (var/ch_name in channels)
+<<<<<<< HEAD
 			radio_controller.remove_object(src, radiochannels[ch_name])
+=======
+			SSradio.remove_object(src, GLOB.radiochannels[ch_name])
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	return ..()
 
 /obj/item/radio/proc/recalculateChannels()
@@ -194,7 +202,7 @@ var/global/list/default_medbay_channels = list(
 		var/chan_stat = channels[ch_name]
 		var/listening = !!(chan_stat & FREQ_LISTENING) != 0
 
-		dat.Add(list(list("chan" = ch_name, "display_name" = ch_name, "secure_channel" = 1, "sec_channel_listen" = !listening, "freq" = radiochannels[ch_name])))
+		dat.Add(list(list("chan" = ch_name, "display_name" = ch_name, "secure_channel" = 1, "sec_channel_listen" = !listening, "freq" = GLOB.radiochannels[ch_name])))
 
 	return dat
 
@@ -674,7 +682,11 @@ GLOBAL_DATUM(autospeaker, /mob/living/silicon/ai/announcer)
 
 
 			for(var/ch_name in channels)
+<<<<<<< HEAD
 				radio_controller.remove_object(src, radiochannels[ch_name])
+=======
+				SSradio.remove_object(src, GLOB.radiochannels[ch_name])
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 				secure_radio_connections[ch_name] = null
 
 
@@ -739,17 +751,29 @@ GLOBAL_DATUM(autospeaker, /mob/living/silicon/ai/announcer)
 		name = "broken radio headset"
 		return
 	for (var/ch_name in channels)
+<<<<<<< HEAD
 		secure_radio_connections[ch_name] = radio_controller.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
+=======
+		secure_radio_connections[ch_name] = SSradio.add_object(src, GLOB.radiochannels[ch_name],  RADIO_CHAT)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 
 /obj/item/radio/proc/config(op)
 	if(radio_controller)
 		for (var/ch_name in channels)
+<<<<<<< HEAD
 			radio_controller.remove_object(src, radiochannels[ch_name])
+=======
+			SSradio.remove_object(src, GLOB.radiochannels[ch_name])
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	secure_radio_connections = new
 	channels = op
 	if(radio_controller)
 		for (var/ch_name in op)
+<<<<<<< HEAD
 			secure_radio_connections[ch_name] = radio_controller.add_object(src, radiochannels[ch_name],  RADIO_CHAT)
+=======
+			secure_radio_connections[ch_name] = SSradio.add_object(src, GLOB.radiochannels[ch_name],  RADIO_CHAT)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	return
 
 /obj/item/radio/off
