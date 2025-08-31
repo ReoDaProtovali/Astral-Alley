@@ -11,6 +11,7 @@ export type Belly = {
   // General Information
   name: string;
   desc: string;
+  display_name: string;
   message_mode: BooleanLike;
   absorbed_desc: string;
   vore_verb: string;
@@ -80,6 +81,12 @@ export type Belly = {
   unabsorb_messages_prey: string[];
   examine_messages: string[];
   examine_messages_absorbed: string[];
+<<<<<<< HEAD
+=======
+  trash_eater_in: string[];
+  trash_eater_out: string[];
+  displayed_message_flags: number;
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 
   // emote_list: string[];
   emotes_digest: string[];

@@ -1020,8 +1020,13 @@ var/global/list/belly_colorable_only_fullscreens = list("a_synth_flesh_mono",
 			return TRUE
 		//CHOMPAdd start - vore sprites color
 		if("set_belly_rub")
+<<<<<<< HEAD
 			host.belly_rub_target = tgui_input_list(ui.user, "Which belly would you prefer to be rubbed?","Select Target", host.vore_organs)
 			if(!(host.belly_rub_target))
+=======
+			var/rub_target = html_encode(params["val"])
+			if(rub_target == "Current Selected")
+>>>>>>> 8724a009b4 ([MIRROR] allow vorebelly display names (#11541))
 				host.belly_rub_target = null
 			if(host.client.prefs_vr)
 				host.client.prefs_vr.belly_rub_target = host.belly_rub_target
