@@ -46112,7 +46112,7 @@
 	},
 /area/survivalpod)
 "nwq" = (
-/obj/structure/closet/secure_closet/CMO,
+/obj/structure/closet/secure_closet/chief_medical_officer,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},
@@ -76419,7 +76419,7 @@
 	},
 /area/survivalpod)
 "wsV" = (
-/obj/structure/closet/secure_closet/RD,
+/obj/structure/closet/secure_closet/research_director,
 /turf/simulated/fitness{
 	icon_state = "vault"
 	},

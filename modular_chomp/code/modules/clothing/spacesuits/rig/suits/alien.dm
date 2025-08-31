@@ -38,8 +38,13 @@
 	rigsuit_min_pressure = 0							  // Min pressure the rig protects against when sealed
 
 	req_one_access = list()
+<<<<<<< HEAD
 	req_access = list(access_engine)
 	allowed = list(/obj/item/flashlight,/obj/item/tank,/obj/item/suit_cooling_unit,/obj/item/storage)
+=======
+	req_access = list(ACCESS_ENGINE)
+	allowed = list(POCKET_GENERIC, POCKET_ALL_TANKS, POCKET_SECURITY, POCKET_SUIT_REGULATORS)
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	offline_vision_restriction = 1
 
 	initial_modules = list(

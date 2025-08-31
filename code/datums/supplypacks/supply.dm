@@ -144,7 +144,7 @@
 	cost = 10
 	containertype = /obj/structure/closet/crate/secure/xion
 	containername = "Shaft miner equipment"
-	access = access_mining
+	access = ACCESS_MINING
 
 /* //No longer supported on our current maps, as it requires specialized dropoff beacons and the pathfinding doesn't work well on multi-z
 //plus we have the destination tagger
@@ -194,7 +194,7 @@
 	cost=25
 	containertype = /obj/structure/closet/crate/secure/xion
 	containername = JOB_EXPLORER + " equipment"
-	access = access_explorer //CHOMP explo keep
+	access = ACCESS_EXPLORER //CHOMP explo keep
 
 /datum/supply_pack/pilotgear
 	name= JOB_PILOT + " gear"
@@ -221,7 +221,7 @@
 	cost=20
 	containertype = /obj/structure/closet/crate/secure/xion
 	containername =  JOB_PILOT + " equipment"
-	access = access_pilot
+	access = ACCESS_PILOT
 
 /datum/supply_pack/supply/foodcubes
 	name = "Emergency food cubes"
@@ -259,4 +259,21 @@
 	cost = 75
 	containertype = /obj/structure/closet/crate/secure/xion
 	containername = JOB_PATHFINDER + " equipment"
+<<<<<<< HEAD
 	access = list(access_explorer)
+=======
+	access = list(ACCESS_EXPLORER)
+
+/datum/supply_pack/supply/postal_service
+	name = "Postal Service Supplies"
+	contains = list(
+		/obj/item/mail/blank = 10,
+		/obj/item/pen/fountain,
+		/obj/item/pen/multi,
+		/obj/item/destTagger,
+		/obj/item/storage/bag/mail
+	)
+	cost = 15
+	containertype = /obj/structure/closet/crate/nanotrasen
+	containername = "Postal Service crate"
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))

@@ -11,10 +11,16 @@ import { VoreUserPreferences } from './VoreUserPreferences';
 /**
  * There are three main sections to this UI.
  *  - The Inside Panel, where all relevant data for interacting with a belly you're in is located.
+ *  - The soulcatcher, which allows to capture prey after digestion to entrap them.
  *  - The Belly Selection Panel, where you can select what belly people will go into and customize the active one.
  *  - User Preferences, where you can adjust all of your vore preferences on the fly.
  */
+<<<<<<< HEAD
 export const VorePanel = (props) => {
+=======
+
+export const VorePanel = () => {
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
   const { act, data } = useBackend<Data>();
 
   const { inside, our_bellies, selected, prefs, show_pictures, host_mobtype } =

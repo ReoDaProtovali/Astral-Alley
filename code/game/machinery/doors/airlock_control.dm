@@ -158,7 +158,7 @@
 
 	var/id_tag
 	var/master_tag
-	var/frequency = 1379
+	var/frequency = AIRLOCK_FREQ
 	var/command = "cycle"
 
 	var/datum/radio_frequency/radio_connection
@@ -285,7 +285,7 @@
 	circuit = /obj/item/circuitboard/airlock_cycling
 
 	var/master_tag
-	var/frequency = 1449
+	var/frequency = AMAG_ELE_FREQ
 	var/command = "cycle"
 
 	var/datum/radio_frequency/radio_connection
@@ -369,9 +369,9 @@
 	return ..()
 
 /obj/machinery/access_button/airlock_interior
-	frequency = 1379
+	frequency = AIRLOCK_FREQ
 	command = "cycle_interior"
 
 /obj/machinery/access_button/airlock_exterior
-	frequency = 1379
+	frequency = AIRLOCK_FREQ
 	command = "cycle_exterior"

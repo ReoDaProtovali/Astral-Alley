@@ -23,7 +23,11 @@
 	icon_keyboard = "tech_key"
 	icon_screen = "supply"
 	light_color = "#b88b2e"
+<<<<<<< HEAD
 	req_access = list(access_cargo)
+=======
+	//req_access = list(ACCESS_CARGO) //CHOMPRemove, removing hard access locks.
+>>>>>>> 89704592dd ([MIRROR] jobs, access and radio to defines (#11546))
 	circuit = /obj/item/circuitboard/supplycomp/control
 	authorization = SUP_SEND_SHUTTLE | SUP_ACCEPT_ORDERS
 

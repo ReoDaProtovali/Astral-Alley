@@ -115,8 +115,8 @@
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
 	product_slogans = "I hope nobody asks me for a bloody cup o' tea...;Alcohol is humanity's friend. Would you abandon a friend?;Quite delighted to serve you!;Is nobody thirsty on this station?"
 	product_ads = "Drink up!;Booze is good for you!;Alcohol is humanity's best friend.;Quite delighted to serve you!;Care for a nice, cold beer?;Nothing cures you like booze!;Have a sip!;Have a drink!;Have a beer!;Beer is good for you!;Only the finest alcohol!;Best quality booze since 2053!;Award-winning wine!;Maximum alcohol!;Man loves beer.;A toast for progress!"
-	req_access = list(access_bar)
-	req_log_access = access_bar
+	req_access = list(ACCESS_BAR)
+	req_log_access = ACCESS_BAR
 	has_logs = 1
 	vending_sound = "machines/vending/vending_cans.ogg"
 
@@ -324,11 +324,11 @@
 	desc = "Cartridges for PDAs."
 	product_slogans = "Carts to go!"
 	icon_state = "cart"
-	req_access = list(access_hop)
+	req_access = list(ACCESS_HOP)
 	products = list(/obj/item/cartridge/medical = 10,/obj/item/cartridge/engineering = 10,/obj/item/cartridge/security = 10,
 					/obj/item/cartridge/janitor = 10,/obj/item/cartridge/signal/science = 10,/obj/item/pda/heads = 10,
 					/obj/item/cartridge/captain = 3,/obj/item/cartridge/quartermaster = 10)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/cigarette
@@ -403,7 +403,7 @@
 	description_fluff = "NanoMed is NanoTrasen's medical science division, and provides almost all of the modern medbay essentials in-house at no extra charge. By using this vending machine, employees accept liability for products that may or may not be temporarily replaced by placebos or experimental treatments."
 	icon_state = "med"
 	product_ads = "Go save some lives!;The best stuff for your medbay.;Only the finest tools.;Natural chemicals!;This stuff saves lives.;Don't you want some?;Ping!"
-	req_access = list(access_medical)
+	req_access = list(ACCESS_MEDICAL)
 	products = list(/obj/item/reagent_containers/glass/bottle/antitoxin = 4,
 					/obj/item/reagent_containers/glass/bottle/inaprovaline = 4,
 					/obj/item/reagent_containers/glass/bottle/stoxin = 4,
@@ -427,7 +427,7 @@
 					/obj/item/reagent_containers/pill/stox = 4,
 					/obj/item/reagent_containers/pill/antitox = 6)
 	idle_power_usage = 211 //refrigerator - believe it or not, this is actually the average power consumption of a refrigerated vending machine according to NRCan.
-	req_log_access = access_cmo
+	req_log_access = ACCESS_CMO
 	has_logs = 1
 
 /obj/machinery/vending/phoronresearch
@@ -441,7 +441,7 @@
 					/obj/item/assembly/signaler = 6,
 					/obj/item/assembly/prox_sensor = 6,
 					/obj/item/assembly/igniter = 6)
-	req_log_access = access_rd
+	req_log_access = ACCESS_RD
 	has_logs = 1
 
 /obj/machinery/vending/wallmed1
@@ -460,7 +460,7 @@
 	contraband = list(/obj/item/reagent_containers/syringe/antitoxin = 4,
 				/obj/item/reagent_containers/syringe/antiviral = 4,
 				/obj/item/reagent_containers/pill/tox = 1)
-	req_log_access = access_cmo
+	req_log_access = ACCESS_CMO
 	has_logs = 1
 	can_rotate = 0
 
@@ -478,7 +478,7 @@
 				/obj/item/healthanalyzer = 3,
 				/obj/item/bodybag/cryobag = 3)
 	contraband = list(/obj/item/reagent_containers/pill/tox = 3)
-	req_log_access = access_cmo
+	req_log_access = ACCESS_CMO
 	has_logs = 1
 	can_rotate = 0
 
@@ -495,7 +495,7 @@
 	description_fluff = "Security vending is kindly provided by the Lawson Arms company, Hephaestus Industries' law enforcement division."
 	product_ads = "Crack capitalist skulls!;Beat some heads in!;Don't forget - harm is good!;Your weapons are right here.;Handcuffs!;Freeze, scumbag!;Don't tase me bro!;Tase them, bro.;Why not have a donut?"
 	icon_state = "sec"
-	req_access = list(access_security)
+	req_access = list(ACCESS_SECURITY)
 	products = list(/obj/item/handcuffs = 8,
 					/obj/item/grenade/flashbang = 4,
 					/obj/item/flash = 5,
@@ -511,7 +511,7 @@
 	contraband = list(/obj/item/clothing/glasses/sunglasses = 2,
 					/obj/item/storage/box/donut = 2,
 					/obj/item/implanter/compliance = 1)
-	req_log_access = access_armory
+	req_log_access = ACCESS_ARMORY
 	has_logs = 1
 
 /obj/machinery/vending/hydronutrients
@@ -660,7 +660,7 @@
 	name = "YouTool"
 	desc = "Tools for tools."
 	icon_state = "tool"
-	//req_access = list(access_maint_tunnels) //Maintenance access
+	//req_access = list(ACCESS_MAINT_TUNNELS) //Maintenance access
 	products = list(/obj/item/stack/cable_coil/random = 10,
 					/obj/item/tool/crowbar = 5,
 					/obj/item/weldingtool = 3,
@@ -679,14 +679,14 @@
 	contraband = list(/obj/item/weldingtool/hugetank = 2,
 					/obj/item/clothing/gloves/fyellow = 2)
 	premium = list(/obj/item/clothing/gloves/heavy_engineer = 1) //VOREStation Edit - yellow gloves are common in engineering, let's make "premium" actually mean something
-	req_log_access = access_ce
+	req_log_access = ACCESS_CE
 	has_logs = 1
 
 /obj/machinery/vending/engivend
 	name = "Engi-Vend"
 	desc = "Spare tool vending. What? Did you expect some witty description?"
 	icon_state = "engivend"
-	req_access = list(access_engine_equip)
+	req_access = list(ACCESS_ENGINE_EQUIP)
 	products = list(/obj/item/geiger = 4,
 					/obj/item/clothing/glasses/meson = 2,
 					/obj/item/multitool = 4,
@@ -725,14 +725,14 @@
 						/obj/item/rms = 5)
 	premium = list(/obj/item/storage/belt/utility = 3)
 	product_records = list()
-	req_log_access = access_ce
+	req_log_access = ACCESS_CE
 	has_logs = 1
 
 /obj/machinery/vending/engineering
 	name = "Robco Tool Maker"
 	desc = "Everything you need for do-it-yourself station repair."
 	icon_state = "engi"
-	req_access = list(access_engine_equip)
+	req_access = list(ACCESS_ENGINE_EQUIP)
 	products = list(/obj/item/clothing/under/rank/chief_engineer = 4,
 					/obj/item/clothing/under/rank/engineer = 4,
 					/obj/item/clothing/shoes/orange = 4,
@@ -758,14 +758,14 @@
 					/obj/item/stock_parts/matter_bin = 5,
 					/obj/item/stock_parts/manipulator = 5,
 					/obj/item/stock_parts/console_screen = 5)
-	req_log_access = access_ce
+	req_log_access = ACCESS_CE
 	has_logs = 1
 
 /obj/machinery/vending/robotics
 	name = "Robotech Deluxe"
 	desc = "All the tools you need to create your own robot army."
 	icon_state = "robotics"
-	req_access = list(access_robotics)
+	req_access = list(ACCESS_ROBOTICS)
 	products = list(/obj/item/clothing/suit/storage/toggle/labcoat = 4,
 					/obj/item/clothing/under/rank/roboticist = 4,
 					/obj/item/stack/cable_coil = 4,
@@ -780,7 +780,7 @@
 					/obj/item/clothing/mask/breath/medical = 5,
 					/obj/item/tool/screwdriver = 5,
 					/obj/item/tool/crowbar = 5)
-	req_log_access = access_rd
+	req_log_access = ACCESS_RD
 	has_logs = 1
 
 /obj/machinery/vending/giftvendor
@@ -1250,7 +1250,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "bardrobe"
-	req_access = list(access_bar)
+	req_access = list(ACCESS_BAR)
 	products = list(
 		/obj/item/clothing/under/rank/bartender = 5,
 		/obj/item/clothing/under/rank/bartender/skirt = 5,
@@ -1263,7 +1263,7 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_civ_dep = 5,
 		/obj/item/clothing/accessory/permit/gun/bar = 1
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/secdrobe
@@ -1271,7 +1271,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "secdrobe"
-	req_access = list(access_brig)
+	req_access = list(ACCESS_BRIG)
 	products = list(
 		/obj/item/clothing/under/rank/security = 5,
 		/obj/item/clothing/under/rank/security2 = 5,
@@ -1321,7 +1321,7 @@
 		/obj/item/clothing/accessory/holster/leg = 2,
 		/obj/item/clothing/accessory/holster/leg/black = 2
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/chefdrobe
@@ -1329,7 +1329,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "chefdrobe"
-	req_access = list(access_kitchen)
+	req_access = list(ACCESS_KITCHEN)
 	products = list(
 		/obj/item/clothing/under/rank/chef = 5,
 		/obj/item/clothing/shoes/black = 5,
@@ -1344,7 +1344,7 @@
 		/obj/item/clothing/under/waiter = 5,
 		/obj/item/clothing/under/sundress = 1
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/medidrobe
@@ -1352,7 +1352,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "medidrobe"
-	req_access = list(access_medical_equip)
+	req_access = list(ACCESS_MEDICAL_EQUIP)
 	products = list(
 		/obj/item/clothing/under/rank/medical = 5,
 		/obj/item/clothing/under/rank/medical/skirt = 5,
@@ -1394,7 +1394,7 @@
 		/obj/item/clothing/shoes/boots/winter/medical = 5,
 		/obj/item/clothing/head/beret/medical = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/chemdrobe
@@ -1402,7 +1402,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "chemdrobe"
-	req_access = list(access_chemistry)
+	req_access = list(ACCESS_CHEMISTRY)
 	products = list(
 		/obj/item/clothing/under/rank/chemist = 5,
 		/obj/item/clothing/under/rank/chemist/skirt = 5,
@@ -1419,7 +1419,7 @@
 		/obj/item/storage/backpack/satchel/chem = 5,
 		/obj/item/storage/bag/chemistry = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/genedrobe
@@ -1427,7 +1427,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "genedrobe"
-	req_access = list(access_genetics)
+	req_access = list(ACCESS_GENETICS)
 	products = list(
 		/obj/item/clothing/under/rank/geneticist = 5,
 		/obj/item/clothing/under/rank/geneticist/skirt = 5,
@@ -1438,7 +1438,7 @@
 		/obj/item/storage/backpack/genetics = 5,
 		/obj/item/storage/backpack/satchel/gen = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/virodrobe
@@ -1446,7 +1446,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "virodrobe"
-	req_access = list(access_virology)
+	req_access = list(ACCESS_VIROLOGY)
 	products = list(
 		/obj/item/clothing/under/rank/virologist = 5,
 		/obj/item/clothing/under/rank/virologist/skirt = 5,
@@ -1461,7 +1461,7 @@
 		/obj/item/storage/backpack/virology = 5,
 		/obj/item/storage/backpack/satchel/vir = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/scidrobe
@@ -1469,7 +1469,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "scidrobe"
-	req_access = list(access_research)
+	req_access = list(ACCESS_RESEARCH)
 	products = list(
 		/obj/item/clothing/under/rank/scientist = 5,
 		/obj/item/clothing/under/rank/scientist/skirt = 5,
@@ -1491,7 +1491,7 @@
 		/obj/item/storage/backpack/toxins = 5,
 		/obj/item/storage/backpack/satchel/tox = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/robodrobe
@@ -1499,7 +1499,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "robodrobe"
-	req_access = list(access_robotics)
+	req_access = list(ACCESS_ROBOTICS)
 	products = list(
 		/obj/item/clothing/under/rank/roboticist = 5,
 		/obj/item/clothing/suit/storage/toggle/labcoat/roboticist = 5,
@@ -1517,7 +1517,7 @@
 	contraband = list(
 		/obj/item/clothing/suit/storage/hooded/techpriest = 2
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/chapdrobe
@@ -1525,7 +1525,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "chapdrobe"
-	req_access = list(access_chapel_office)
+	req_access = list(ACCESS_CHAPEL_OFFICE)
 	products = list(
 		/obj/item/clothing/under/rank/chaplain = 5,
 		/obj/item/clothing/shoes/black = 5,
@@ -1544,7 +1544,7 @@
 		/obj/item/clothing/suit/storage/hooded/wintercoat/ratvar = 1,
 		/obj/item/clothing/suit/storage/hooded/wintercoat/narsie = 1
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/engidrobe
@@ -1552,7 +1552,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "engidrobe"
-	req_access = list(access_engine_equip)
+	req_access = list(ACCESS_ENGINE_EQUIP)
 	products = list(
 		/obj/item/clothing/under/rank/engineer = 5,
 		/obj/item/clothing/under/rank/engineer/skirt = 5,
@@ -1570,7 +1570,7 @@
 		/obj/item/clothing/shoes/boots/winter/engineering = 5,
 		/obj/item/clothing/shoes/boots/workboots = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/atmosdrobe
@@ -1578,7 +1578,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "atmosdrobe"
-	req_access = list(access_atmospherics)
+	req_access = list(ACCESS_ATMOSPHERICS)
 	products = list(
 		/obj/item/clothing/under/rank/atmospheric_technician = 5,
 		/obj/item/clothing/under/rank/atmospheric_technician/skirt = 5,
@@ -1592,7 +1592,7 @@
 		/obj/item/clothing/suit/storage/hooded/wintercoat/engineering/atmos = 5,
 		/obj/item/clothing/shoes/boots/winter/atmos = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/hydrobe
@@ -1600,7 +1600,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "hydrobe"
-	req_access = list(access_hydroponics)
+	req_access = list(ACCESS_HYDROPONICS)
 	products = list(
 		/obj/item/clothing/under/rank/hydroponics = 5,
 		/obj/item/analyzer/plant_analyzer = 5,
@@ -1612,7 +1612,7 @@
 		/obj/item/clothing/suit/storage/toggle/labcoat/neo_civ_dep = 5,
 		/obj/item/clothing/shoes/boots/winter/hydro = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/cargodrobe
@@ -1620,7 +1620,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "cargodrobe"
-	req_access = list(access_cargo)
+	req_access = list(ACCESS_CARGO)
 	products = list(
 		/obj/item/clothing/under/rank/cargotech = 5,
 		/obj/item/clothing/under/rank/cargotech/skirt = 5,
@@ -1647,7 +1647,7 @@
 		/obj/item/clothing/gloves/fingerless = 5,
 		/obj/item/clothing/head/soft = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 /*
 
@@ -1658,7 +1658,7 @@
 	icon_state = "curadrobe"
 	req_access = list()
 	products = list()
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 */
@@ -1668,7 +1668,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "janidrobe"
-	req_access = list(access_janitor)
+	req_access = list(ACCESS_JANITOR)
 	products = list(
 		/obj/item/clothing/head/soft/purple = 5,
 		/obj/item/clothing/head/beret/purple = 5,
@@ -1686,7 +1686,7 @@
 		/obj/item/clothing/glasses/hud/janitor = 5,
 		/obj/item/cartridge/janitor = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/lawdrobe
@@ -1694,7 +1694,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "lawdrobe"
-	req_access = list(access_lawyer)
+	req_access = list(ACCESS_LAWYER)
 	products = list(
 		/obj/item/clothing/under/lawyer/female = 5,
 		/obj/item/clothing/under/lawyer/black = 5,
@@ -1718,7 +1718,7 @@
 		/obj/item/clothing/under/lawyer/blue/skirt = 5,
 		/obj/item/rectape/random = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/detdrobe
@@ -1726,7 +1726,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Want to do your job? Sure you do!"
 	icon_state = "detdrobe"
-	req_access = list(access_forensics_lockers)
+	req_access = list(ACCESS_FORENSICS_LOCKERS)
 	products = list(
 		/obj/item/clothing/head/det = 5,
 		/obj/item/clothing/head/det/grey = 5,
@@ -1745,7 +1745,7 @@
 		/obj/item/clothing/suit/storage/forensics/blue = 5,
 		/obj/item/clothing/suit/storage/forensics/red = 5
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/mimedrobe
@@ -1753,7 +1753,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "..."
 	icon_state = "mimedrobe"
-	req_access = list(access_mime)
+	req_access = list(ACCESS_MIME)
 	products = list(
 		/obj/item/clothing/under/mime = 1,
 		/obj/item/clothing/under/sexymime = 1,
@@ -1765,7 +1765,7 @@
 		/obj/item/clothing/suit/suspenders = 1,
 		/obj/item/clothing/shoes/mime = 1
 		)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
 
 /obj/machinery/vending/wardrobe/clowndrobe
@@ -1773,7 +1773,7 @@
 	desc = "All the things you need to perform your job! Why didn't you already have them?"
 	product_slogans = "Honk!"
 	icon_state = "clowndrobe"
-	req_access = list(access_clown)
+	req_access = list(ACCESS_CLOWN)
 	products = list(
 		/obj/item/clothing/under/rank/clown = 1,
 		/obj/item/clothing/under/sexyclown = 1,
@@ -1792,5 +1792,5 @@
 	contraband = list(
 		/obj/item/clothing/under/clown/rainbow = 1
 	)
-	req_log_access = access_hop
+	req_log_access = ACCESS_HOP
 	has_logs = 1
