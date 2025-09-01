@@ -6,10 +6,19 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "common": "workspace:*",
+<<<<<<< HEAD
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tgui": "workspace:*",
     "tgui-core": "^1.8.0",
     "tgui-polyfill": "workspace:*"
   }
+=======
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tgui": "workspace:*",
+    "tgui-core": "^5.2.0"
+  },
+  "private": true
+>>>>>>> 7fe1535ad2 ([MIRROR] tgui core 5.2.0 (#11559))
 }

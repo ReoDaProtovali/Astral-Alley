@@ -9,6 +9,7 @@
     "blob-polyfill": "^9.0.20240710",
     "common": "workspace:*",
     "dateformat": "^5.0.3",
+<<<<<<< HEAD
     "dompurify": "^3.2.4",
     "file-extension-icon-js": "^1.1.6",
     "highlight.js": "^11.10.0",
@@ -22,4 +23,19 @@
     "tgui-dev-server": "workspace:*",
     "tgui-polyfill": "workspace:*"
   }
+=======
+    "dompurify": "^3.2.6",
+    "es-toolkit": "^1.39.10",
+    "highlight.js": "^11.11.1",
+    "js-yaml": "^4.1.0",
+    "marked": "^15.0.12",
+    "marked-base-url": "^1.1.7",
+    "marked-smartypants": "^1.1.10",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tgui-core": "^5.2.0",
+    "tgui-dev-server": "workspace:*"
+  },
+  "private": true
+>>>>>>> 7fe1535ad2 ([MIRROR] tgui core 5.2.0 (#11559))
 }
