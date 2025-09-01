@@ -22681,11 +22681,12 @@
 	dir = 8;
 	pixel_x = -24
 	},
+/obj/machinery/vending/exploration_fieldmedic,
 /turf/simulated/floor/tiled/steel,
 /area/hangar/lockerroomthree)
 "nrb" = (
-/obj/structure/frame/computer,
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
+/obj/machinery/vending/exploration_pilot,
 /turf/simulated/floor/tiled/monotile,
 /area/hangar/lockerroomthree)
 "nrg" = (
@@ -24351,9 +24352,6 @@
 /turf/simulated/floor/tiled,
 /area/hangar/lockerroomthree)
 "pvA" = (
-/obj/structure/bed/chair{
-	dir = 1
-	},
 /obj/machinery/atmospherics/pipe/simple/hidden/scrubbers{
 	dir = 6
 	},
@@ -25559,11 +25557,7 @@
 	dir = 4
 	},
 /obj/effect/floor_decal/rust,
-/obj/structure/closet/secure_closet/guncabinet{
-	desc = "It's an immobile card-locked storage unit. For storing weapons and other items when station side.";
-	name = "Secure Locker";
-	req_one_access = list(67,43,3)
-	},
+/obj/machinery/vending/exploration_misc,
 /turf/simulated/floor/tiled,
 /area/hangar/lockerroomthree)
 "qGt" = (
@@ -25580,6 +25574,7 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/machinery/vending/exploration_weapons,
 /turf/simulated/floor/tiled,
 /area/hangar/lockerroomthree)
 "qGK" = (
@@ -25599,6 +25594,7 @@
 	pixel_y = -24
 	},
 /obj/effect/floor_decal/steeldecal/steel_decals_central6,
+/obj/machinery/vending/exploration_armor,
 /turf/simulated/floor/tiled,
 /area/hangar/lockerroomthree)
 "qGO" = (
