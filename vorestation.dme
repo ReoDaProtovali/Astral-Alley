@@ -401,6 +401,11 @@
 #include "code\controllers\subsystems\mapping.dm"
 #include "code\controllers\subsystems\media_tracks.dm"
 #include "code\controllers\subsystems\mobs.dm"
+<<<<<<< HEAD
+=======
+#include "code\controllers\subsystems\motion_tracker.dm"
+#include "code\controllers\subsystems\nerdle.dm"
+>>>>>>> 74d68be7e3 ([MIRROR] We love word games (#11552))
 #include "code\controllers\subsystems\nightshift.dm"
 #include "code\controllers\subsystems\overlays_ch.dm"
 #include "code\controllers\subsystems\overmap_renamer_vr.dm"
@@ -3965,6 +3970,7 @@
 #include "code\modules\pda\core_apps.dm"
 #include "code\modules\pda\messenger.dm"
 #include "code\modules\pda\messenger_plugins.dm"
+#include "code\modules\pda\nerdle.dm"
 #include "code\modules\pda\pda.dm"
 #include "code\modules\pda\pda_subtypes.dm"
 #include "code\modules\pda\pda_tgui.dm"
