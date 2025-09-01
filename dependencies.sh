@@ -19,7 +19,11 @@ export NODE_VERSION_LTS=22.11.0
 export NODE_VERSION_COMPAT=20.2.0
 
 # SpacemanDMM git tag
+<<<<<<< HEAD
 export SPACEMAN_DMM_VERSION=suite-1.9
+=======
+export SPACEMAN_DMM_VERSION=suite-1.11
+>>>>>>> 58b6bd9113 ([MIRROR] sdmm up (#11550))
 
 # Python version for mapmerge and other tools
 export PYTHON_VERSION=3.11.9
