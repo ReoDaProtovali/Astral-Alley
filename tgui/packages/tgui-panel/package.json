@@ -6,6 +6,7 @@
     "@types/node": "^22.9.0",
     "@types/react": "^18.3.12",
     "common": "workspace:*",
+<<<<<<< HEAD
     "dompurify": "^3.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
@@ -14,4 +15,15 @@
     "tgui-dev-server": "workspace:*",
     "tgui-polyfill": "workspace:*"
   }
+=======
+    "dompurify": "^3.2.6",
+    "es-toolkit": "^1.39.10",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tgui": "workspace:*",
+    "tgui-core": "^5.2.0",
+    "tgui-dev-server": "workspace:*"
+  },
+  "private": true
+>>>>>>> 7fe1535ad2 ([MIRROR] tgui core 5.2.0 (#11559))
 }

@@ -12,6 +12,29 @@ export const RIGSuit = (props) => {
 
   const { interfacelock, malf, aicontrol, ai } = data;
 
+<<<<<<< HEAD
+=======
+  const [showLoading, setShowLoading] = useSharedState('rigsuit-loading', true);
+
+  if (config.status < UI_INTERACTIVE) {
+    return (
+      <Window width={300} height={300}>
+        <Window.Content backgroundColor="black">
+          <Stack align="center" justify="center" fill>
+            <Stack.Item fontSize={2} color="bad">
+              --RIG Access Denied--
+            </Stack.Item>
+          </Stack>
+        </Window.Content>
+      </Window>
+    );
+  }
+
+  if (showLoading) {
+    return <RIGSuitLoader onFinish={() => setShowLoading(false)} />;
+  }
+
+>>>>>>> 7fe1535ad2 ([MIRROR] tgui core 5.2.0 (#11559))
   let override: React.JSX.Element | null = null;
 
   if (interfacelock || malf) {

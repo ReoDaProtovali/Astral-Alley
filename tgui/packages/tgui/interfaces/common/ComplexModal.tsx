@@ -99,6 +99,9 @@ export const ComplexModal = (props) => {
 
   const { modal } = data;
 
+  const lastValue = useRef(modal.value);
+  const [curValue, setCurValue] = useState(modal.value);
+
   if (!modal) {
     return;
   }
@@ -119,7 +122,15 @@ export const ComplexModal = (props) => {
   if (bodyOverrides[id]) {
     modalBody = bodyOverrides[id](modal);
   } else if (type === 'input') {
+<<<<<<< HEAD
     let curValue = modal.value;
+=======
+    if (lastValue.current !== modal.value) {
+      lastValue.current = modal.value;
+      setCurValue(modal.value);
+    }
+
+>>>>>>> 7fe1535ad2 ([MIRROR] tgui core 5.2.0 (#11559))
     modalOnEnter = (e) => modalAnswer(id, curValue, {});
     modalBody = (
       <Input

@@ -1,4 +1,14 @@
 {
+<<<<<<< HEAD
+=======
+  "name": "tgui-dev-server",
+  "version": "6.0.0",
+  "dependencies": {
+    "axios": "^1.11.0",
+    "source-map": "^0.7.6",
+    "stacktrace-parser": "^0.1.11"
+  },
+>>>>>>> 7fe1535ad2 ([MIRROR] tgui core 5.2.0 (#11559))
   "private": true,
   "name": "tgui-dev-server",
   "version": "5.0.3",
