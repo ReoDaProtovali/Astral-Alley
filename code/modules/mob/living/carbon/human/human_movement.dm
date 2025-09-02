@@ -197,9 +197,14 @@
 		var/turf_move_cost = T.movement_cost
 		if(istype(T, /turf/simulated/floor/water))
 			if(species.water_movement)
+<<<<<<< HEAD
 				//turf_move_cost = CLAMP(turf_move_cost + species.water_movement, HUMAN_LOWEST_SLOWDOWN, 15) //ChompEDIT - all water is free movement for aquatics
 				turf_move_cost = 0 //ChompEDIT - all water is free movement for aquatics
 			if(istype(shoes, /obj/item/clothing/shoes))	//CHOMPEdit - Fixes runtime
+=======
+				turf_move_cost = CLAMP(turf_move_cost + species.water_movement, HUMAN_LOWEST_SLOWDOWN, 15)
+			if(istype(shoes, /obj/item/clothing/shoes))
+>>>>>>> 58b7919c14 ([MIRROR] fixes water movement not being applied properly (#11558))
 				var/obj/item/clothing/shoes/feet = shoes
 				if(istype(feet) && feet.water_speed)
 					turf_move_cost = CLAMP(turf_move_cost + feet.water_speed, HUMAN_LOWEST_SLOWDOWN, 15)
