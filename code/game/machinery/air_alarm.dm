@@ -153,6 +153,7 @@
 	TLV[GAS_N2] =		list(0, 0, 135, 140) // Partial pressure, kpa
 	TLV[GAS_CO2] = list(-1.0, -1.0, 5, 10) // Partial pressure, kpa
 	TLV[GAS_PHORON] =			list(-1.0, -1.0, 0, 0.5) // Partial pressure, kpa
+	TLV[GAS_CH4] = 		list(-1.0, -1.0, 0, 0.5) // Partial pressure, kpa
 	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
 	TLV["pressure"] =		list(ONE_ATMOSPHERE * 0.80, ONE_ATMOSPHERE * 0.90, ONE_ATMOSPHERE * 1.10, ONE_ATMOSPHERE * 1.20) /* kpa */
 	TLV["temperature"] =	list(T0C - 26, T0C, T0C + 40, T0C + 66) // K
@@ -290,6 +291,8 @@
 	var/co2_dangerlevel = TEST_TLV_VALUES
 	LOAD_TLV_VALUES(TLV[GAS_PHORON], environment.gas[GAS_PHORON]*partial_pressure)
 	var/phoron_dangerlevel = TEST_TLV_VALUES
+	LOAD_TLV_VALUES(TLV[GAS_CH4], environment.gas[GAS_CH4]*partial_pressure)
+	var/methane_dangerlevel = TEST_TLV_VALUES
 	LOAD_TLV_VALUES(TLV["temperature"], environment.temperature)
 	var/temperature_dangerlevel = TEST_TLV_VALUES
 	LOAD_TLV_VALUES(TLV["other"], other_moles*partial_pressure)
@@ -300,6 +303,7 @@
 		oxygen_dangerlevel,
 		co2_dangerlevel,
 		phoron_dangerlevel,
+		methane_dangerlevel,
 		other_dangerlevel,
 		temperature_dangerlevel
 		)
@@ -630,12 +634,13 @@
 				"scrubbing"	= info["scrubbing"],
 				"panic"		= info["panic"],
 				"filters"   = list(
-					list("name" = "Oxygen",			"command" = "o2_scrub",	"val" = info["filter_o2"]),
-					list("name" = "Nitrogen",		"command" = "n2_scrub",	"val" = info["filter_n2"]),
-					list("name" = "Carbon Dioxide", "command" = "co2_scrub","val" = info["filter_co2"]),
-					list("name" = "Phoron"	, 		"command" = "tox_scrub","val" = info["filter_phoron"]),
-					list("name" = "Nitrous Oxide",	"command" = "n2o_scrub","val" = info["filter_n2o"]),
-					list("name" = "Volatile Fuel",	"command" = "fuel_scrub","val" = info["filter_fuel"])
+					list("name" = GASNAME_O2,			"command" = "o2_scrub",	"val" = info["filter_o2"]),
+					list("name" = GASNAME_N2,			"command" = "n2_scrub",	"val" = info["filter_n2"]),
+					list("name" = GASNAME_CO2, 			"command" = "co2_scrub", "val" = info["filter_co2"]),
+					list("name" = GASNAME_PHORON, 		"command" = "tox_scrub", "val" = info["filter_phoron"]),
+					list("name" = GASNAME_CH4, 			"command" = "ch4_scrub", "val" = info["filter_ch4"]),
+					list("name" = GASNAME_N2O,			"command" = "n2o_scrub", "val" = info["filter_n2o"]),
+					list("name" = GASNAME_VOLATILE_FUEL,"command" = "fuel_scrub", "val" = info["filter_fuel"])
 				)
 			))
 		data["scrubbers"] = scrubbers
@@ -654,7 +659,7 @@
 		var/list/selected
 		var/list/thresholds = list()
 
-		var/list/gas_names = list(GAS_O2, GAS_CO2, GAS_PHORON, "other")	//Gas ids made to match code\defines\gases.dm
+		var/list/gas_names = list(GAS_O2, GAS_CO2, GAS_PHORON, GAS_CH4, "other")	//Gas ids made to match code\defines\gases.dm
 		for(var/g in gas_names)
 			thresholds[++thresholds.len] = list("name" = g, "settings" = list())
 			selected = TLV[g]
@@ -722,6 +727,7 @@
 			"tox_scrub",
 			"n2o_scrub",
 			"fuel_scrub",
+			"ch4_scrub",
 			"panic_siphon",
 			"scrubbing",
 			"direction")
@@ -842,6 +848,7 @@
 
 /obj/machinery/alarm/power_change()
 	..()
+<<<<<<< HEAD
 	spawn(rand(0,15))
 		update_icon()
 		// CHOMPEdit Start: Looping Alarms
@@ -852,6 +859,36 @@
 		else if(atmoswarn)
 			soundloop.start()
 		// CHOMPEdit End
+=======
+	var/delay_time = rand(0,15)
+	if(delay_time)
+		addtimer(CALLBACK(src, PROC_REF(process_power_change)), delay_time, TIMER_DELETE_ME) // CHOMPEdit
+		return
+	process_power_change()
+
+// CHOMPAdd Start
+/obj/machinery/alarm/proc/process_power_change()
+	update_icon()
+	if(!soundloop)
+		return
+	if(stat & (NOPOWER | BROKEN))
+		soundloop.stop()
+	else if(atmoswarn)
+		soundloop.start()
+// CHOMPAdd End
+
+/obj/machinery/alarm/server/Initialize(mapload)
+	. = ..()
+	req_access = list(ACCESS_RD, ACCESS_ATMOSPHERICS, ACCESS_ENGINE_EQUIP)
+	TLV[GAS_O2] =			list(-1.0, -1.0,-1.0,-1.0) // Partial pressure, kpa
+	TLV[GAS_CO2] =			list(-1.0, -1.0,   5,  10) // Partial pressure, kpa
+	TLV[GAS_PHORON] =		list(-1.0, -1.0, 0, 0.5) // Partial pressure, kpa
+	TLV[GAS_CH4] = 			list(-1.0, -1.0, 0, 0.5) // Partial pressure, kpa
+	TLV["other"] =			list(-1.0, -1.0, 0.5, 1.0) // Partial pressure, kpa
+	TLV["pressure"] =		list(0,ONE_ATMOSPHERE*0.10,ONE_ATMOSPHERE*1.40,ONE_ATMOSPHERE*1.60) /* kpa */
+	TLV["temperature"] =	list(20, 40, 140, 160) // K
+	target_temperature = 90
+>>>>>>> 9a5ca42e91 ([MIRROR] Methane Atmogas (#11574))
 
 // VOREStation Edit Start
 /obj/machinery/alarm/freezer
