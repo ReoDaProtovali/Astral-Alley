@@ -14,7 +14,7 @@
 		user.visible_message("[user] starts to feed a sheet of [M.default_type] into \the [src].")
 		while(M.amount > 0)
 			icon_state = "coinpress1"
-			if(do_after(user, 2 SECONDS, src))
+			if(do_after(user, 2 SECONDS, target = src))
 				M.amount--
 				if(M.default_type == MAT_SILVER)
 					while(coinsToProduce-- > 0)

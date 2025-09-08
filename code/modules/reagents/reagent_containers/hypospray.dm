@@ -56,7 +56,7 @@
 			// to_chat(H, span_danger(" [user] is trying to inject you with \the [src]!"))
 			balloon_alert(user, "Injecting [H] with \the [src]") // CHOMPEdit - Changed to balloon alert
 			balloon_alert(H, "[user] is trying to inject you with \the [src]")
-			if(!do_after(user, 30, H))
+			if(!do_after(user, 3 SECONDS, target = H))
 				return
 		//VOREstation Add End
 		else if(!H.stat && !prototype) //VOREStation Edit
@@ -66,7 +66,7 @@
 					// to_chat(H, span_danger(" [user] is trying to inject you with \the [src]!"))
 					balloon_alert(user, "[H] resists your attempt to inject them with \the [src].")
 					balloon_alert(H, "[user] is trying to inject you with \the [src]")
-					if(!do_after(user, 30, H))
+					if(!do_after(user, 3 SECONDS, target = H))
 						return
 
 	do_injection(H, user)
@@ -136,9 +136,14 @@
 /obj/item/reagent_containers/hypospray/vial/attackby(obj/item/W, mob/user as mob)
 	if(istype(W, /obj/item/reagent_containers/glass/beaker/vial))
 		if(!loaded_vial)
+<<<<<<< HEAD
 			// user.visible_message(span_notice("[user] begins loading [W] into \the [src]."),span_notice("You start loading [W] into \the [src]."))
 			balloon_alert_visible("[user] begins loading [W] into \the [src].", "Loading [W] into \the [src].") // CHOMPEdit - Changed to balloon alert
 			if(!do_after(user,30) || loaded_vial || !(W in user))
+=======
+			balloon_alert_visible("[user] begins loading [W] into \the [src].", "loading [W] into \the [src].")
+			if(!do_after(user, 3 SECONDS, target = src) || loaded_vial || !(W in user))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 				return 0
 			if(W.is_open_container())
 				W.flags ^= OPENCONTAINER

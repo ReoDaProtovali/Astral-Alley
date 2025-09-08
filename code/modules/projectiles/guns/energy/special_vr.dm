@@ -56,8 +56,13 @@
 	spinning_up = TRUE
 	update_icon()
 	user.visible_message(span_notice("[user] starts charging the [src]!"), \
+<<<<<<< HEAD
                         span_notice("You start charging the [src]!"))
 	if(do_after(user, 8, src))
+=======
+						span_notice("You start charging the [src]!"))
+	if(do_after(user, 8, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		spinning_up = FALSE
 		..()
 	else

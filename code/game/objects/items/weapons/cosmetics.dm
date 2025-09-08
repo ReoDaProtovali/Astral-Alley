@@ -55,8 +55,13 @@
 			H.update_icons_body()
 		else
 			user.visible_message(span_warning("[user] begins to do [H]'s lips with \the [src]."), \
+<<<<<<< HEAD
 								 span_notice("You begin to apply \the [src]."))
 			if(do_after(user, 20, H))	//user needs to keep their active hand, H does not.
+=======
+									span_notice("You begin to apply \the [src]."))
+			if(do_after(user, 2 SECONDS, target = H))	//user needs to keep their active hand, H does not.
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 				user.visible_message(span_notice("[user] does [H]'s lips with \the [src]."), \
 									 span_notice("You apply \the [src]."))
 				H.lip_style = colour
