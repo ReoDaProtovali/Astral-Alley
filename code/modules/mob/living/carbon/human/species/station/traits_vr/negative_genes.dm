@@ -53,8 +53,8 @@
 	activation_message="You feel lightheaded."
 	primitive_expression_messages=list("trips.")
 
-/datum/trait/negative/disability_tourettes
-	name = "Tourettes Syndrome"
+/datum/trait/negative/disability_coprolalia
+	name = "Coprolalia"
 	desc = "You have periodic motor seizures, and cannot stop yourself from yelling profanity."
 	cost = -2
 	custom_only = FALSE
@@ -65,6 +65,7 @@
 	disability=TOURETTES
 	activation_message="You twitch."
 	primitive_expression_messages=list("twitches and chitters.")
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/negative_genes.dm
 
 /datum/trait/negative/disability_anxiety
 	name = "Anxiety Disorder"
@@ -78,6 +79,9 @@
 	disability=NERVOUS
 	activation_message="You feel nervous."
 	primitive_expression_messages=list("anxiously chitters.")
+=======
+	added_component_path = /datum/component/coprolalia_disability
+>>>>>>> 2e63a86d17 ([MIRROR] Better Tourette's (#11583)):code/modules/mob/living/carbon/human/species/station/traits/negative_genes.dm
 
 /* Replaced by /datum/trait/negative/blindness
 /datum/trait/negative/disability_blind
