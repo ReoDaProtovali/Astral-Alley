@@ -94,6 +94,7 @@
 				var/mob/mob_to_be_changed = micro_holder.held_mob
 				var/mob/living/M = mob_to_be_changed
 				//Start of mob code shamelessly ripped from mouseray
+<<<<<<< HEAD
 				new_mob.faction = M.faction
 
 				if(new_mob && isliving(new_mob))
@@ -143,11 +144,15 @@
 					///End of mobcode.
 					qdel(source_material)
 				M.forceMove(new_mob)
+=======
+				M.tf_into(new_mob)
+>>>>>>> fe9c94f6f6 ([MIRROR] TF Verb Mergening (#11585))
 
 			//Did they put a person in it?
 			else if(isliving(source_material))
 				var/mob/living/M = source_material
 				//Start of mob code shamelessly ripped from mouseray
+<<<<<<< HEAD
 				new_mob.faction = M.faction
 
 				if(new_mob && isliving(new_mob))
@@ -196,6 +201,9 @@
 					new_mob.tf_mob_holder = M
 					///End of mobcode.
 
+=======
+				M.tf_into(new_mob)
+>>>>>>> fe9c94f6f6 ([MIRROR] TF Verb Mergening (#11585))
 
 			spawn_progress_time = 0
 			max_spawn_time = rand(30,100)
@@ -447,24 +455,11 @@
 				var/obj/item/holder/micro/micro_holder = source_material //Tells the machine that a micro is the material being used
 				var/mob/mob_to_be_changed = micro_holder.held_mob //Get the mob.
 				var/mob/living/M = mob_to_be_changed
-				M.release_vore_contents(TRUE, TRUE) //Release their stomach contents. Don't spam the chat, either.
-				spawned_obj.inhabit_item(M, original_name, M) //Take the spawned mob and call the TF proc on it.
-				var/mob/living/possessed_voice = spawned_obj.possessed_voice //Get the possessed voice.
-				qdel(source_material) 	//Deletes the micro holder, we don't need it anymore.
-				spawned_obj.trash_eatable = M.devourable //Can this item be eaten? Let's decide based on the person's prefs!
-				spawned_obj.unacidable = !M.digestable //Can this item be digested?
-				M.forceMove(possessed_voice) //Places them in the 'voice' for later recovery! Essentially: The item contains a 'possessed voice' mob, which contains their original mob.
-
+				M.tf_into(spawned_obj, TRUE, original_name)
 
 			else if(isliving(source_material))//Did they shove a person in there normally?
 				var/mob/living/M = source_material //If so, this cuts down the work we have to do!
-				M.release_vore_contents(TRUE, TRUE) //Release their stomach contents. Don't spam the chat, either.
-				spawned_obj.inhabit_item(M, original_name, M)
-				var/mob/living/possessed_voice = spawned_obj.possessed_voice
-				spawned_obj.trash_eatable = M.devourable
-				spawned_obj.unacidable = !M.digestable
-				M.forceMove(possessed_voice)
-
+				M.tf_into(spawned_obj, TRUE, original_name)
 
 			spawn_progress_time = 0
 			max_spawn_time = rand(30,100)
