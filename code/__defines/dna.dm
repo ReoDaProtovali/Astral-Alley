@@ -157,7 +157,7 @@ var/SMALLSIZEBLOCK     = 0
 #define DNA_UI_WING3_B     57 // VOREStation snippet end.
 #define DNA_UI_LENGTH      57 // VOREStation Edit - Needs to match the highest number above.
 
-#define DNA_SE_LENGTH 90 // Traitgenes (Expanded from 49 to 84, there have been a considerable expansion of genes.
+#define DNA_SE_LENGTH 91 // Traitgenes (Expanded from 49 to 84, there have been a considerable expansion of genes. //CHOMPEdit: Upped to 91. NOTE: Ensure it's increased when there is a conflict here! Thanks!
 // This leaves room for future expansion. This can be arbitrarily raised without worry if genes start to get crowded.
 // Should have more than 10 empty genes after setup. - Willbird)
 

@@ -247,7 +247,7 @@
 	disabling = TRUE
 
 /obj/item/dnainjector/set_trait/tourettes // tour
-	trait_path = /datum/trait/negative/disability_tourettes
+	trait_path = /datum/trait/neutral/disability_tourettes
 /obj/item/dnainjector/set_trait/tourettes/disable
 	disabling = TRUE
 
