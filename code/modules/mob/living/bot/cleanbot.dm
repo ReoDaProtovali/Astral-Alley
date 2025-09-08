@@ -119,8 +119,13 @@
 	if(istype(D, /obj/effect/decal/cleanable))
 		cleantime = istype(D, /obj/effect/decal/cleanable/dirt) ? 10 : 50
 		if(prob(20))
+<<<<<<< HEAD
 			custom_emote(2, "begins to clean up \the [D]")
 		if(do_after(src, cleantime * cTimeMult))
+=======
+			automatic_custom_emote(AUDIBLE_MESSAGE, "begins to clean up \the [D]")
+		if(do_after(src, cleantime * cTimeMult, target = D))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			if(istype(loc, /turf/simulated))
 				var/turf/simulated/f = loc
 				f.dirt = 0
@@ -138,8 +143,13 @@
 				cleantime += 50
 		if(cleantime != 0)
 			if(prob(20))
+<<<<<<< HEAD
 				custom_emote(2, "begins to clean up \the [loc]")
 			if(do_after(src, cleantime * cTimeMult))
+=======
+				automatic_custom_emote(AUDIBLE_MESSAGE, "begins to clean up \the [loc]")
+			if(do_after(src, cleantime * cTimeMult, target = loc))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 				if(blood)
 					clean_blood()
 				if(istype(loc, /turf/simulated))

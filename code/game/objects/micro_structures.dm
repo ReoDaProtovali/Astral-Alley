@@ -150,7 +150,11 @@ var/global/list/micro_tunnels = list()
 				if(!choice)
 					return
 				to_chat(user,span_notice("You begin moving..."))
+<<<<<<< HEAD
 				if(!do_after(user, 10 SECONDS, exclusive = TRUE))
+=======
+				if(!do_after(user, 10 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 					return
 				user.forceMove(choice)
 				user.cancel_camera()
@@ -184,7 +188,11 @@ var/global/list/micro_tunnels = list()
 
 	if(!can_enter(user))
 		user.visible_message(span_warning("\The [user] reaches into \the [src]. . ."),span_warning("You reach into \the [src]. . ."))
+<<<<<<< HEAD
 		if(!do_after(user, 3 SECONDS, exclusive = TRUE))
+=======
+		if(!do_after(user, 3 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			user.visible_message(span_notice("\The [user] pulls their hand out of \the [src]."),span_warning("You pull your hand out of \the [src]"))
 			return
 		if(!src.contents.len)
@@ -223,7 +231,11 @@ var/global/list/micro_tunnels = list()
 			return
 
 	user.visible_message(span_notice("\The [user] begins climbing into \the [src]!"))
+<<<<<<< HEAD
 	if(!do_after(user, 10 SECONDS, exclusive = TRUE))
+=======
+	if(!do_after(user, 10 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		to_chat(user, span_warning("You didn't go into \the [src]!"))
 		return
 
@@ -250,7 +262,11 @@ var/global/list/micro_tunnels = list()
 	var/mob/living/k = M
 
 	k.visible_message(span_notice("\The [k] begins climbing into \the [src]!"))
+<<<<<<< HEAD
 	if(!do_after(k, 3 SECONDS, exclusive = TRUE))
+=======
+	if(!do_after(k, 3 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		to_chat(k, span_warning("You didn't go into \the [src]!"))
 		return
 
@@ -346,7 +362,11 @@ var/global/list/micro_tunnels = list()
 				if(!choice)
 					return
 				to_chat(usr,span_notice("You begin moving..."))
+<<<<<<< HEAD
 				if(!do_after(usr, 10 SECONDS, exclusive = TRUE))
+=======
+				if(!do_after(usr, 10 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 					return
 				if(QDELETED(src))
 					return
@@ -384,7 +404,11 @@ var/global/list/micro_tunnels = list()
 
 	if(!(usr.mob_size <= MOB_TINY || usr.get_effective_size(TRUE) <= micro_accepted_scale))
 		usr.visible_message(span_warning("\The [usr] reaches into \the [src]. . ."),span_warning("You reach into \the [src]. . ."))
+<<<<<<< HEAD
 		if(!do_after(usr, 3 SECONDS, exclusive = TRUE))
+=======
+		if(!do_after(usr, 3 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			usr.visible_message(span_notice("\The [usr] pulls their hand out of \the [src]."),span_warning("You pull your hand out of \the [src]"))
 			return
 
@@ -425,7 +449,11 @@ var/global/list/micro_tunnels = list()
 			return
 
 	usr.visible_message(span_notice("\The [usr] begins climbing into \the [src]!"))
+<<<<<<< HEAD
 	if(!do_after(usr, 10 SECONDS, exclusive = TRUE))
+=======
+	if(!do_after(usr, 10 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		to_chat(usr, span_warning("You didn't go into \the [src]!"))
 		return
 

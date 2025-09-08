@@ -27,7 +27,7 @@
 	if(opened)
 		visible_message(span_notice("[user] starts to climb into \the [src.name]."), \
 						span_notice("You start to lower yourself into \the [src.name]."))
-		if(do_after(user, 50))
+		if(do_after(user, 5 SECONDS, target = src))
 			user.forceMove(src.loc)
 			visible_message(span_notice("[user] climbs into \the [src.name]."), \
 							span_notice("You climb into \the [src.name]."))
@@ -70,9 +70,15 @@
 	if(src.opened)
 		if(istype(W, /obj/item/shovel))
 			user.visible_message(span_notice("[user] piles dirt into \the [src.name]."), \
+<<<<<<< HEAD
 								 span_notice("You start to pile dirt into \the [src.name]."), \
 								 span_notice("You hear dirt being moved."))
 			if(do_after(user, 40 * W.toolspeed))
+=======
+									span_notice("You start to pile dirt into \the [src.name]."), \
+									span_notice("You hear dirt being moved."))
+			if(do_after(user, 4 SECONDS * W.toolspeed, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 				user.visible_message(span_notice("[user] pats down the dirt on top of \the [src.name]."), \
 								 span_notice("You finish filling in \the [src.name]."))
 				close()
@@ -107,9 +113,15 @@
 		if(istype(W, /obj/item/shovel))
 			if(user.a_intent == I_HURT)	// Hurt intent means you're trying to kill someone, or just get rid of the grave
 				user.visible_message(span_notice("[user] begins to smoothe out the dirt of \the [src.name]."), \
+<<<<<<< HEAD
 									 span_notice("You start to smoothe out the dirt of \the [src.name]."), \
 									 span_notice("You hear dirt being moved."))
 				if(do_after(user, 40 * W.toolspeed))
+=======
+										span_notice("You start to smoothe out the dirt of \the [src.name]."), \
+										span_notice("You hear dirt being moved."))
+				if(do_after(user, 4 SECONDS * W.toolspeed, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 					user.visible_message(span_notice("[user] finishes smoothing out \the [src.name]."), \
 										 span_notice("You finish smoothing out \the [src.name]."))
 					if(LAZYLEN(contents))
@@ -123,9 +135,15 @@
 					return
 			else
 				user.visible_message(span_notice("[user] begins to unearth \the [src.name]."), \
+<<<<<<< HEAD
 									 span_notice("You start to unearth \the [src.name]."), \
 									 span_notice("You hear dirt being moved."))
 				if(do_after(user, 40 * W.toolspeed))
+=======
+										span_notice("You start to unearth \the [src.name]."), \
+										span_notice("You hear dirt being moved."))
+				if(do_after(user, 4 SECONDS * W.toolspeed, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 					user.visible_message(span_notice("[user] reaches the bottom of \the [src.name]."), \
 										 span_notice("You finish digging out \the [src.name]."))
 					break_open()

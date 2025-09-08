@@ -138,8 +138,13 @@
 		add_fingerprint(user)
 		return 1
 	playsound(src, W.usesound, 50, 1)
+<<<<<<< HEAD
 	to_chat(user, span_notice("You begin to unfasten \the [src]..."))
 	if (do_after(user, 10 * W.toolspeed))
+=======
+
+	if (do_after(user, 10 * W.toolspeed, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 		user.visible_message( \
 			span_infoplain(span_bold("\The [user]") + " unfastens \the [src]."), \
 			span_notice("You have unfastened \the [src]."), \

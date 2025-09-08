@@ -203,8 +203,13 @@ GLOBAL_LIST_INIT(pitcher_plant_lure_messages, list(
 		var/mob/living/carbon/human/H
 		var/N = 0
 		for(H in vore_selected.contents) //Only works for carbons, RIP mice. Should pick the first human the code finds.
+<<<<<<< HEAD:code/modules/mob/living/simple_mob/subtypes/vore/plants_ch/pitcher.dm
 			user.visible_message("[user] tries to fish somebody out of \the [src].", "You try to snag somebody trapped in \the [src]...")
 			if(do_after(user, rand(3 SECONDS, 7 SECONDS))) //You can just spam click to stack attempts if you feel like abusing it.
+=======
+			user.visible_message(span_infoplain("[user] uses a loop of wire to try fishing someone out of \the [src]."), span_infoplain("You use a loop of wire to try snagging someone trapped in \the [src]..."))
+			if(do_after(user, rand(3 SECONDS, 7 SECONDS), target = src)) //You can just spam click to stack attempts if you feel like abusing it.
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582)):code/modules/mob/living/simple_mob/subtypes/vore/plants/pitcher.dm
 				if(prob(15))
 					user.visible_message("[user] tugs a sticky [H] free from \the [src].", "You heft [H] free from \the [src].")
 					LAZYSET(prey_excludes, H, world.time)

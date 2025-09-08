@@ -304,7 +304,7 @@
 		if(state == FRAME_PLACED && !anchored)
 			to_chat(user, span_notice("You start to wrench the frame into place."))
 			playsound(src, P.usesound, 50, 1)
-			if(do_after(user, 20 * P.toolspeed))
+			if(do_after(user, 2 SECONDS * P.toolspeed, target = src))
 				anchored = TRUE
 				if(!need_circuit && circuit)
 					state = FRAME_FASTENED
@@ -316,7 +316,7 @@
 
 		else if(state == FRAME_PLACED && anchored)
 			playsound(src, P.usesound, 50, 1)
-			if(do_after(user, 20 * P.toolspeed))
+			if(do_after(user, 2 SECONDS * P.toolspeed, target = src))
 				to_chat(user, span_notice("You unfasten the frame."))
 				anchored = FALSE
 
@@ -325,7 +325,7 @@
 			var/obj/item/weldingtool/WT = P.get_welder()
 			if(WT.remove_fuel(0, user))
 				playsound(src, P.usesound, 50, 1)
-				if(do_after(user, 20 * P.toolspeed))
+				if(do_after(user, 2 SECONDS * P.toolspeed, target = src))
 					if(src && WT.isOn())
 						to_chat(user, span_notice("You deconstruct the frame."))
 						new /obj/item/stack/material/steel(src.loc, frame_type.frame_size)
@@ -501,7 +501,7 @@
 				return
 			to_chat(user, span_notice("You start to add cables to the frame."))
 			playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
-			if(do_after(user, 20) && state == FRAME_FASTENED)
+			if(do_after(user, 2 SECONDS, target = src) && state == FRAME_FASTENED)
 				if(C.use(5))
 					to_chat(user, span_notice("You add cables to the frame."))
 					state = FRAME_WIRED
@@ -561,7 +561,7 @@
 					return
 				playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
 				to_chat(user, span_notice("You start to put in the glass panel."))
-				if(do_after(user, 20) && state == FRAME_WIRED)
+				if(do_after(user, 2 SECONDS, target = src) && state == FRAME_WIRED)
 					if(G.use(2))
 						to_chat(user, span_notice("You put in the glass panel."))
 						state = FRAME_PANELED
@@ -573,7 +573,7 @@
 					return
 				playsound(src, 'sound/items/Deconstruct.ogg', 50, 1)
 				to_chat(user, span_notice("You start to put in the glass panel."))
-				if(do_after(user, 20) && state == FRAME_WIRED)
+				if(do_after(user, 2 SECONDS, target = src) && state == FRAME_WIRED)
 					if(G.use(2))
 						to_chat(user, span_notice("You put in the glass panel."))
 						state = FRAME_PANELED

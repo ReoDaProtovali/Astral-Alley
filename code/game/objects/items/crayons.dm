@@ -98,9 +98,13 @@
 				if(!drawtype || get_dist(target, user) > 1 || !(user.z == target.z))
 					return
 				to_chat(user, "You start drawing an arrow on the [target.name].")
+<<<<<<< HEAD
 		if(instant || do_after(user, 50))
 			// CHOMPEdit Start - Better graffiti
 			//new /obj/effect/decal/cleanable/crayon(target,colour,shadeColour,drawtype)
+=======
+		if(instant || do_after(user, 5 SECONDS, target = src))
+>>>>>>> 1b8f394a14 ([MIRROR] Makes uses of do_after sane (#11582))
 			var/list/mouse_control = params2list(click_parameters)
 			var/p_x = 0
 			var/p_y = 0
