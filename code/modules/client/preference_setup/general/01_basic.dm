@@ -71,6 +71,7 @@
 		//CHOMPEdit End
 	. = jointext(.,null)
 
+<<<<<<< HEAD
 /datum/category_item/player_setup_item/general/basic/OnTopic(var/href,var/list/href_list, var/mob/user)
 	if(href_list["rename"])
 		var/raw_name = tgui_input_text(user, "Choose your character's name:", "Character Name")
@@ -78,6 +79,185 @@
 			var/new_name = sanitize_name(raw_name, pref.species, is_FBP())
 			if(new_name)
 				pref.real_name = new_name
+=======
+/datum/category_item/player_setup_item/general/basic/tgui_data(mob/user)
+	var/list/data = ..()
+
+	data["real_name"] = pref.real_name
+	data["be_random_name"] = pref.read_preference(/datum/preference/toggle/human/name_is_always_random)
+	data["nickname"] = pref.nickname
+	data["biological_sex"] = gender2text(pref.biological_gender)
+	data["identifying_gender"] = gender2text(pref.identifying_gender)
+	data["age"] = pref.read_preference(/datum/preference/numeric/human/age)
+	data["bday_month"] = pref.read_preference(/datum/preference/numeric/human/bday_month)
+	data["bday_day"] = pref.read_preference(/datum/preference/numeric/human/bday_day)
+	data["bday_announce"] = pref.read_preference(/datum/preference/toggle/human/bday_announce)
+	data["spawnpoint"] = pref.read_preference(/datum/preference/choiced/living/spawnpoint)
+	data["ooc_notes_length"] = LAZYLEN(pref.read_preference(/datum/preference/text/living/ooc_notes))
+	data["vore_egg_type"] = pref.vore_egg_type
+	data["autohiss"] = pref.autohiss
+	data["emote_sound_mode"] = pref.read_preference(/datum/preference/choiced/living/emote_sound_mode)
+
+	// Get species stats so they can be displayed
+	var/datum/species/species = null
+	var/mob/living/carbon/human/dummy/mannequin/mannequin = get_mannequin(pref.client_ckey)
+	if(mannequin)
+		species = mannequin.species
+	else if(pref.species)
+		species = GLOB.all_species[pref.species]
+	else
+		species = GLOB.all_species[SPECIES_HUMAN]
+
+	var/list/species_stats = list(
+		"total_health" = species.total_health,
+		"slowdown" = species.slowdown,
+		"brute_mod" = species.brute_mod,
+		"burn_mod" = species.burn_mod,
+		"oxy_mod" = species.oxy_mod,
+		"toxins_mod" = species.toxins_mod,
+		"radiation_mod" = species.radiation_mod,
+		"flash_mod" = species.flash_mod,
+		"pain_mod" = species.pain_mod,
+		"stun_mod" = species.stun_mod,
+		"weaken_mod" = species.weaken_mod,
+		"lightweight" = species.lightweight,
+		"dispersed_eyes" = species.dispersed_eyes,
+		"trashcan" = species.trashcan,
+		"eat_minerals" = species.eat_minerals,
+		"darksight" = species.darksight,
+		"chem_strength_tox" = species.chem_strength_tox,
+		"cold_level_1" = species.cold_level_1,
+		"heat_level_1" = species.heat_level_1,
+		"chem_strength_heal" = species.chem_strength_heal,
+		"siemens_coefficient" = species.siemens_coefficient,
+		"has_vibration_sense" = species.has_vibration_sense,
+		"item_slowdown_mod" = species.item_slowdown_mod,
+		"body_temperature" = species.body_temperature,
+		"hazard_low_pressure" = species.hazard_low_pressure,
+		"breath_type" = GLOB.gas_data.name[species.breath_type],
+		"hazard_high_pressure" = species.hazard_high_pressure,
+		"soft_landing" = species.soft_landing,
+		"bloodsucker" = species.bloodsucker,
+		"can_space_freemove" = species.can_space_freemove,
+		"can_zero_g_move" = species.can_zero_g_move,
+		"water_breather" = species.water_breather,
+		"can_climb" = species.can_climb,
+		"has_flight" = (/mob/living/proc/flying_toggle in species.inherent_verbs),
+	)
+
+	data["species_stats"] = species_stats
+
+	return data
+
+/datum/category_item/player_setup_item/general/basic/tgui_static_data(mob/user)
+	var/list/data = ..()
+
+	data["allow_metadata"] = CONFIG_GET(flag/allow_metadata)
+
+	var/list/human_stats = list(
+		"total_health" = /datum/species/human::total_health,
+		"slowdown" = /datum/species/human::slowdown,
+		"brute_mod" = /datum/species/human::brute_mod,
+		"burn_mod" = /datum/species/human::burn_mod,
+		"oxy_mod" = /datum/species/human::oxy_mod,
+		"toxins_mod" = /datum/species/human::toxins_mod,
+		"radiation_mod" = /datum/species/human::radiation_mod,
+		"flash_mod" = /datum/species/human::flash_mod,
+		"pain_mod" = /datum/species/human::pain_mod,
+		"stun_mod" = /datum/species/human::stun_mod,
+		"weaken_mod" = /datum/species/human::weaken_mod,
+		"lightweight" = FALSE,
+		"dispersed_eyes" = FALSE,
+		"trashcan" = FALSE,
+		"eat_minerals" = FALSE,
+		"darksight" = /datum/species/human::darksight,
+		"chem_strength_tox" = /datum/species/human::chem_strength_tox,
+		"cold_level_1" = /datum/species/human::cold_level_1,
+		"heat_level_1" = /datum/species/human::heat_level_1,
+		"chem_strength_heal" = /datum/species/human::chem_strength_heal,
+		"siemens_coefficient" = /datum/species/human::siemens_coefficient,
+		"has_vibration_sense" = FALSE,
+		"item_slowdown_mod" = /datum/species/human::item_slowdown_mod,
+		"body_temperature" = /datum/species/human::body_temperature,
+		"hazard_low_pressure" = /datum/species/human::hazard_low_pressure,
+		"breath_type" = GLOB.gas_data.name[/datum/species/human::breath_type],
+		"hazard_high_pressure" = /datum/species/human::hazard_high_pressure,
+		"soft_landing" = FALSE,
+		"bloodsucker" = FALSE,
+		"can_space_freemove" = FALSE,
+		"can_zero_g_move" = FALSE,
+		"water_breather" = FALSE,
+		"can_climb" = FALSE,
+		"has_flight" = FALSE,
+	)
+
+	data["basehuman_stats"] = human_stats
+
+	return data
+
+/datum/category_item/player_setup_item/general/basic/tgui_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	. = ..()
+	if(.)
+		return
+
+	var/mob/user = ui.user
+
+	switch(action)
+		if("rename")
+			var/raw_name = tgui_input_text(user, "Choose your character's name:", "Character Name", pref.real_name, encode = FALSE)
+			if(!isnull(raw_name))
+				var/new_name = sanitize_name(raw_name, pref.species, is_FBP())
+				if(new_name)
+					pref.real_name = new_name
+					return TOPIC_REFRESH
+				else
+					to_chat(user, span_warning("Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and ."))
+					return TOPIC_NOACTION
+
+		if("random_name")
+			pref.real_name = random_name(pref.identifying_gender, pref.species)
+			return TOPIC_REFRESH
+
+		if("always_random_name")
+			pref.update_preference_by_type(/datum/preference/toggle/human/name_is_always_random, !pref.read_preference(/datum/preference/toggle/human/name_is_always_random))
+			return TOPIC_REFRESH
+
+		if("nickname")
+			var/raw_nickname = tgui_input_text(user, "Choose your character's nickname:", "Character Nickname", pref.nickname, encode = FALSE)
+			if(!isnull(raw_nickname))
+				var/new_nickname = sanitize_name(raw_nickname, pref.species, is_FBP())
+				if(new_nickname)
+					pref.nickname = new_nickname
+					return TOPIC_REFRESH
+				else
+					to_chat(user, span_warning("Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and ."))
+					return TOPIC_NOACTION
+
+		if("reset_nickname")
+			var/nick_choice = tgui_alert(user, "Wipe your Nickname? This will completely remove any chosen nickname(s).","Wipe Nickname",list("Yes","No"))
+			if(nick_choice == "Yes")
+				pref.nickname = null
+			return TOPIC_REFRESH
+
+		if("bio_gender")
+			var/new_gender = lowertext(params["gender"])
+			if(new_gender in get_genders())
+				pref.set_biological_gender(new_gender)
+			return TOPIC_REFRESH_UPDATE_PREVIEW
+
+		if("id_gender")
+			var/new_gender = lowertext(params["gender"])
+			if(new_gender in all_genders_define_list)
+				pref.identifying_gender = new_gender
+			return TOPIC_REFRESH
+
+		if("age")
+			var/min_age = get_min_age()
+			var/max_age = get_max_age()
+			var/new_age = tgui_input_number(user, "Choose your character's age:\n([min_age]-[max_age])", "Character Preference", pref.read_preference(/datum/preference/numeric/human/age), max_age, min_age)
+			if(new_age)
+				pref.update_preference_by_type(/datum/preference/numeric/human/age, max(min(round(text2num(new_age)), max_age), min_age))
+>>>>>>> 837fc4c83d ([MIRROR] Species Stats Visible During Creation (#11595))
 				return TOPIC_REFRESH
 			else
 				to_chat(user, span_warning("Invalid name. Your name should be at least 2 and at most [MAX_NAME_LEN] characters long. It may only contain the characters A-Z, a-z, -, ' and ."))
