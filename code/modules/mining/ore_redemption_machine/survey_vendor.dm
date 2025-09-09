@@ -107,7 +107,18 @@
 		EQUIPMENT("Survey Tools - Mechanical Trap",	/obj/item/beartrap,	50),
 		EQUIPMENT("Survey Tools - Binoculars",		/obj/item/binoculars,40),
 	)
+	prize_list["Shelter Capsules"] = list(
+		EQUIPMENT("Shelter Capsule - Shelter (5x5)",				/obj/item/survivalcapsule,									50),
+		EQUIPMENT("Shelter Capsule - Luxury Shelter (7x7)",			/obj/item/survivalcapsule/luxury,							310),
+		EQUIPMENT("Shelter Capsule - Redspace (7x7)",				/obj/item/survivalcapsule/randomized,						500),
+		EQUIPMENT("Shelter Capsule - Sauna (7x7)",					/obj/item/survivalcapsule/sauna,							500),
+		EQUIPMENT("Shelter Capsule - Rec Room + Cards Table (9x9)",	/obj/item/survivalcapsule/recroom,							750),
+		EQUIPMENT("Shelter Capsule - Bar (11x11)",					/obj/item/survivalcapsule/luxurybar,						1000),
+		EQUIPMENT("Shelter Capsule - Deluxe Cabin (11x11)",			/obj/item/survivalcapsule/luxurycabin,						1000),
+		EQUIPMENT("Shelter Capsule - Cafe (11x11)",					/obj/item/survivalcapsule/cafe,								1000),
+	)
 	prize_list["Miscellaneous"] = list(
+<<<<<<< HEAD
 		EQUIPMENT(REAGENT_ABSINTHE,					/obj/item/reagent_containers/food/drinks/bottle/absinthe,	10),
 		EQUIPMENT(REAGENT_WHISKEY,					/obj/item/reagent_containers/food/drinks/bottle/whiskey,		10),
 		EQUIPMENT("Cigar",						/obj/item/clothing/mask/smokable/cigarette/cigar/havana,			15),
@@ -128,6 +139,25 @@
 	    EQUIPMENT("Security-Grade PSG",			/obj/item/personal_shield_generator/belt/security/loaded,	200),
 	    EQUIPMENT("PSG Variant-P",			    /obj/item/personal_shield_generator/belt/parry,	            250),
 	//CHOMPedit End
+=======
+		EQUIPMENT(REAGENT_ABSINTHE,									/obj/item/reagent_containers/food/drinks/bottle/absinthe,					10),
+		EQUIPMENT(REAGENT_WHISKEY,									/obj/item/reagent_containers/food/drinks/bottle/whiskey,					10),
+		EQUIPMENT("Cigar",											/obj/item/clothing/mask/smokable/cigarette/cigar/havana,					15),
+		EQUIPMENT("Digital Tablet - Standard",						/obj/item/modular_computer/tablet/preset/custom_loadout/standard,			50),
+		EQUIPMENT("Digital Tablet - Advanced",						/obj/item/modular_computer/tablet/preset/custom_loadout/advanced,			100),
+		EQUIPMENT("Industrial Equipment - Phoron Bore",				/obj/item/gun/magnetic/matfed/phoronbore/loaded,							300),
+		EQUIPMENT("Industrial Equipment - Inducer",					/obj/item/inducer,															750),
+		EQUIPMENT("Laser Pointer",									/obj/item/laser_pointer,													90),
+		EQUIPMENT("Plush Toy",										/obj/random/plushie,														30),
+		EQUIPMENT("Soap",											/obj/item/soap/nanotrasen,													20),
+		EQUIPMENT("Thalers - 100",									/obj/item/spacecash/c100,													100),
+		EQUIPMENT("Thalers - 1000",									/obj/item/spacecash/c1000,													1000),
+		EQUIPMENT("Umbrella",										/obj/item/melee/umbrella/random,											20),
+		EQUIPMENT("UAV - Recon Skimmer",							/obj/item/uav,																40),
+		EQUIPMENT("Mining-Grade PSG",								/obj/item/personal_shield_generator/belt/mining/loaded,						100), //CHOMPADD
+		EQUIPMENT("Security-Grade PSG",								/obj/item/personal_shield_generator/belt/security/loaded,					200), //CHOMPADD
+		EQUIPMENT("PSG Variant-P",			   						/obj/item/personal_shield_generator/belt/parry,	            				250), //CHOMPADD
+>>>>>>> b32383d19d ([MIRROR] Big fucking shelter capsule update (#11592))
 	)
 	//VOREStation Edit End
 
