@@ -237,7 +237,6 @@ var/list/ai_verbs_default = list(
 	QDEL_NULL(aiCommunicator)
 	QDEL_NULL(aiMulti)
 	QDEL_NULL(aiRadio)
-	QDEL_NULL(aiCamera)
 	hack = null
 
 	return ..()
