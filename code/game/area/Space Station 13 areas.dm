@@ -903,6 +903,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "\improper Bridge"
 	icon_state = "bridge"
 	music = "signal"
+	flags = AREA_BLOCK_INSTANT_BUILDING
 
 /area/bridge_hallway
 	name = "\improper Bridge Hallway"
@@ -963,7 +964,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/crew_quarters
 	name = "\improper Dormitories"
 	icon_state = "Sleep"
-	flags = RAD_SHIELDED | AREA_FORBID_EVENTS | AREA_FORBID_SINGULO
+	flags = RAD_SHIELDED | AREA_FORBID_EVENTS | AREA_FORBID_SINGULO | AREA_BLOCK_INSTANT_BUILDING
 	ambience = AMBIENCE_GENERIC
 
 /area/crew_quarters/toilet
@@ -1240,6 +1241,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 
 /area/chapel
 	ambience = AMBIENCE_CHAPEL
+	flags = AREA_BLOCK_INSTANT_BUILDING
 
 /area/chapel/main
 	name = "\improper Chapel"
@@ -1261,6 +1263,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/holodeck_control
 	name = "\improper Holodeck Control"
 	icon_state = "holodeck_control"
+	flags = AREA_BLOCK_INSTANT_BUILDING
 
 /area/vacant/vacant_shop
 	name = "\improper Vacant Shop"
@@ -1279,7 +1282,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	icon_state = "Holodeck"
 	dynamic_lighting = 0
 	sound_env = LARGE_ENCLOSED
-	flags = AREA_FLAG_IS_NOT_PERSISTENT | AREA_FORBID_EVENTS
+	flags = AREA_FLAG_IS_NOT_PERSISTENT | AREA_FORBID_EVENTS | AREA_BLOCK_INSTANT_BUILDING
 
 /area/holodeck/alphadeck
 	name = "\improper Holodeck Alpha"
@@ -1353,6 +1356,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "\improper Engineering"
 	icon_state = "engineering"
 	ambience = AMBIENCE_ENGINEERING
+	flags = AREA_BLOCK_INSTANT_BUILDING
 
 /area/engineering/atmos
 	name = "\improper Atmospherics"
@@ -1384,7 +1388,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "\improper Engine Room"
 	icon_state = "engine"
 	sound_env = LARGE_ENCLOSED
-	flags = AREA_FORBID_EVENTS
+	flags = AREA_FORBID_EVENTS | AREA_BLOCK_INSTANT_BUILDING
 
 /area/engineering/engine_airlock
 	name = "\improper Engine Room Airlock"
@@ -1520,6 +1524,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 	name = "\improper Gateway"
 	icon_state = "teleporter"
 	music = "signal"
+	flags = AREA_BLOCK_INSTANT_BUILDING
 
 /area/AIsattele
 	name = "\improper AI Satellite Teleporter Room"
@@ -1643,12 +1648,12 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical/surgery
 	name = "\improper Operating Theatre 1"
 	icon_state = "surgery"
-	flags = AREA_FLAG_IS_NOT_PERSISTENT //This WOULD become a filth pit
+	flags = AREA_FLAG_IS_NOT_PERSISTENT | AREA_BLOCK_INSTANT_BUILDING//This WOULD become a filth pit
 
 /area/medical/surgery2
 	name = "\improper Operating Theatre 2"
 	icon_state = "surgery"
-	flags = AREA_FLAG_IS_NOT_PERSISTENT
+	flags = AREA_FLAG_IS_NOT_PERSISTENT | AREA_BLOCK_INSTANT_BUILDING
 
 /area/medical/surgeryobs
 	name = "\improper Operation Observation Room"
@@ -1685,7 +1690,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/medical/sleeper
 	name = "\improper Emergency Treatment Centre"
 	icon_state = "exam_room"
-	flags = AREA_FLAG_IS_NOT_PERSISTENT //Trust me.
+	flags = AREA_FLAG_IS_NOT_PERSISTENT | AREA_BLOCK_INSTANT_BUILDING//Trust me.
 
 /area/medical/first_aid_station_starboard
 	name = "\improper Starboard First-Aid Station"
@@ -1861,6 +1866,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/hydroponics
 	name = "\improper Hydroponics"
 	icon_state = "hydro"
+	flags = AREA_BLOCK_INSTANT_BUILDING
 
 /area/hydroponics/cafegarden
 	name = "\improper Cafeteria Garden"
@@ -1875,6 +1881,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/quartermaster
 	name = "\improper Quartermasters"
 	icon_state = "quart"
+	flags = AREA_BLOCK_INSTANT_BUILDING
 
 /area/quartermaster/office
 	name = "\improper Cargo Office"
@@ -1900,7 +1907,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/quartermaster/delivery
 	name = "\improper Cargo - Delivery Office"
 	icon_state = "quart"
-	flags = AREA_FLAG_IS_NOT_PERSISTENT //So trash doesn't pile up too hard.
+	flags = AREA_FLAG_IS_NOT_PERSISTENT | AREA_BLOCK_INSTANT_BUILDING//So trash doesn't pile up too hard.
 
 /area/quartermaster/miningdock
 	name = "\improper Cargo Mining Dock"
@@ -1941,7 +1948,7 @@ NOTE: there are two lists of areas in the end of this file: centcom and station 
 /area/rnd/rdoffice
 	name = "\improper Research Director's Office"
 	icon_state = "head_quarters"
-	flags = AREA_FLAG_IS_NOT_PERSISTENT
+	flags = AREA_FLAG_IS_NOT_PERSISTENT | AREA_BLOCK_INSTANT_BUILDING
 
 /area/rnd/supermatter
 	name = "\improper Supermatter Lab"
@@ -2613,6 +2620,7 @@ var/list/the_station_areas = list (
 	dynamic_lighting = 0
 	requires_power = 0
 
+<<<<<<< HEAD
 
 //CHOMPSTATION AREAS
 //Moved hangars to here from Southern cross areas.
@@ -2683,3 +2691,11 @@ var/list/the_station_areas = list (
 	name = "\improper Junker"
 	icon_state = "shuttlered"
 	requires_power = 1
+=======
+/area/shadekin
+	name = "\improper Shadekin Retreat"
+	icon_state = "blue"
+	requires_power = 0
+	ambience = AMBIENCE_OTHERWORLDLY
+	flags = RAD_SHIELDED | AREA_FLAG_IS_NOT_PERSISTENT | BLUE_SHIELDED | AREA_ALLOW_LARGE_SIZE | AREA_LIMIT_DARK_RESPITE | AREA_ALLOW_CLOCKOUT | AREA_BLOCK_INSTANT_BUILDING
+>>>>>>> b32383d19d ([MIRROR] Big fucking shelter capsule update (#11592))
