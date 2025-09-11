@@ -5540,9 +5540,6 @@
 	dir = 2
 	},
 /area/centcom/specops)
-"ne" = (
-/turf/unsimulated/wall,
-/area)
 "nf" = (
 /turf/unsimulated/wall,
 /area/centcom/specops)
@@ -10780,11 +10777,7 @@
 /area/syndicate_station/start)
 "xv" = (
 /obj/machinery/door/airlock/external,
-/obj/effect/forcefield{
-	desc = "You can't get in. Heh.";
-	layer = 1;
-	name = "Blocker"
-	},
+/obj/effect/blocker,
 /turf/unsimulated/floor{
 	icon_state = "vault";
 	dir = 5
@@ -16863,22 +16856,14 @@
 	},
 /area/tdome)
 "Kc" = (
-/obj/effect/forcefield{
-	desc = "You can't get in. Heh.";
-	layer = 1;
-	name = "Blocker"
-	},
+/obj/effect/blocker,
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor{
 	icon_state = "dark"
 	},
 /area/tdome)
 "Kd" = (
-/obj/effect/forcefield{
-	desc = "You can't get in. Heh.";
-	layer = 1;
-	name = "Blocker"
-	},
+/obj/effect/blocker,
 /obj/structure/disposalpipe/segment,
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor{
@@ -17583,11 +17568,7 @@
 	},
 /area/tdome)
 "Lx" = (
-/obj/effect/forcefield{
-	desc = "You can't get in. Heh.";
-	layer = 1;
-	name = "Blocker"
-	},
+/obj/effect/blocker,
 /obj/machinery/atmospherics/pipe/simple/visible,
 /obj/effect/wingrille_spawn/reinforced/crescent,
 /turf/unsimulated/floor{
@@ -21240,7 +21221,7 @@ lV
 lV
 lV
 lV
-ne
+lV
 af
 af
 af
