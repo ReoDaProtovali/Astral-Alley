@@ -27,6 +27,7 @@ var
 	OOP_UNARY			- Unary Operators
 	OOP_GROUP			- Parentheses
 */
+<<<<<<< HEAD
 		OOP_OR      = 							1   //||
 		OOP_AND     = OOP_OR			+ 1   	//&&
 		OOP_BIT     = OOP_AND			+ 1   //&, |
@@ -37,6 +38,8 @@ var
 		OOP_POW     = OOP_MULTIPLY+ 1		//^
 		OOP_UNARY   = OOP_POW			+ 1   //!
 		OOP_GROUP   = OOP_UNARY		+ 1   //()
+=======
+>>>>>>> 9ffd5403b9 ([MIRROR] Consts (#11652))
 
 /*
 	Class: node
