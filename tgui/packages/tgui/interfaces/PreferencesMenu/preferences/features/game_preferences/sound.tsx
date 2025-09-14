@@ -1,8 +1,15 @@
 import {
   CheckboxInput,
+  type Feature,
   FeatureNumberInput,
+<<<<<<< HEAD
   FeatureNumeric,
   FeatureToggle,
+=======
+  type FeatureNumeric,
+  FeatureSliderInput,
+  type FeatureToggle,
+>>>>>>> d8408a2c59 ([MIRROR] Instrument Update (#11645))
 } from '../base';
 
 export const SOUND_MIDI: FeatureToggle = {
@@ -24,6 +31,13 @@ export const SOUND_AMBIENCE: FeatureToggle = {
   category: 'SOUNDS',
   description: 'Enable hearing ambient sounds and music.',
   component: CheckboxInput,
+};
+
+export const sound_instruments: Feature<number> = {
+  name: 'Instruments volume',
+  category: 'SOUND',
+  description: 'Volume of instruments.',
+  component: FeatureSliderInput,
 };
 
 export const SOUND_JUKEBOX: FeatureToggle = {

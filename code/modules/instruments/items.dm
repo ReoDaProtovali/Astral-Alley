@@ -9,7 +9,7 @@
 		slot_l_hand_str = 'icons/mob/items/lefthand_instruments.dmi',
 		slot_r_hand_str = 'icons/mob/items/righthand_instruments.dmi',
 	)
-
+	abstract_type = /obj/item/instrument
 	/// Our song datum.
 	var/datum/song/handheld/song
 	/// Our allowed list of instrument ids. This is nulled on initialize.
@@ -20,27 +20,30 @@
 /obj/item/instrument/Initialize(mapload)
 	. = ..()
 	song = new(src, allowed_instrument_ids, instrument_range)
-	allowed_instrument_ids = null //We don't need this clogging memory after it's used.
+	allowed_instrument_ids = null //We don't need this clogging memory after its used.
 
 /obj/item/instrument/Destroy()
 	QDEL_NULL(song)
 	return ..()
 
-/obj/item/instrument/proc/should_stop_playing(mob/user)
-	return user.incapacitated() || !((loc == user) || (isturf(loc) && Adjacent(user))) // sorry, no more TK playing.
+/obj/item/instrument/proc/can_play(atom/music_player)
+	if(!ismob(music_player))
+		return FALSE
+	var/mob/user = music_player
+	if(user.incapacitated())
+		return FALSE
+	if(!Adjacent(user))
+		return FALSE
+	return TRUE
 
-/obj/item/instrument/attack_self(mob/user)
-	if(!user.IsAdvancedToolUser())
-		to_chat(user, span_warning("You don't have the dexterity to do this!"))
-		return TRUE
-	interact(user)
-
-/obj/item/instrument/interact(mob/living/user)
-	if(!isliving(user) || user.incapacitated())
+/obj/item/instrument/attack_self(mob/M)
+	if(!M.IsAdvancedToolUser())
 		return
 
-	user.set_machine(src)
-	song.interact(user)
+	tgui_interact(M)
+
+/obj/item/instrument/tgui_interact(mob/user, datum/tgui/ui)
+	return song.tgui_interact(user)
 
 /obj/item/instrument/violin
 	name = "space violin"
@@ -60,6 +63,7 @@
 	icon_state = "xylophone"
 	allowed_instrument_ids = "xylophone"
 
+<<<<<<< HEAD
 /obj/item/instrument/piano_synth
 	name = "synthesizer"
 	desc = "An advanced electronic synthesizer that can be used as various instruments."
@@ -121,6 +125,8 @@
 	//strip_delay = 100 //air pods don't fall out
 	instrument_range = 0 //you're paying for quality here
 
+=======
+>>>>>>> d8408a2c59 ([MIRROR] Instrument Update (#11645))
 /obj/item/instrument/banjo
 	name = "banjo"
 	desc = "A 'Mura' brand banjo. It's pretty much just a drum with a neck and strings."
@@ -177,7 +183,7 @@
 	AddComponent(/datum/component/spooky)
 */
 /obj/item/instrument/trumpet/spectral/attack(mob/living/carbon/C, mob/user)
-	playsound (src, 'sound/instruments/trombone/En4.mid', 100,1,-1)
+	playsound (src, 'sound/runtime/instruments/trombone/En4.mid', 100,1,-1)
 	..()
 
 /obj/item/instrument/saxophone
@@ -200,7 +206,7 @@
 */
 
 /obj/item/instrument/saxophone/spectral/attack(mob/living/carbon/C, mob/user)
-	playsound (src, 'sound/instruments/saxophone/En4.mid', 100,1,-1)
+	playsound (src, 'sound/runtime/instruments/saxophone/En4.mid', 100,1,-1)
 	..()
 
 /obj/item/instrument/trombone
@@ -223,7 +229,7 @@
 */
 
 /obj/item/instrument/trombone/spectral/attack(mob/living/carbon/C, mob/user)
-	playsound (src, 'sound/instruments/trombone/Cn4.mid', 100,1,-1)
+	playsound (src, 'sound/runtime/instruments/trombone/Cn4.mid', 100,1,-1)
 	..()
 
 /obj/item/instrument/recorder
