@@ -18,7 +18,7 @@
 	name = "grab"
 	icon = 'icons/mob/screen1.dmi'
 	icon_state = "reinforce"
-	flags = 0
+	item_flags = DROPDEL | NOSTRIP
 	var/obj/screen/grab/hud = null
 	var/mob/living/affecting = null
 	var/mob/living/carbon/human/assailant = null
@@ -33,7 +33,6 @@
 	abstract = 1
 	item_state = "nothing"
 	w_class = ITEMSIZE_HUGE
-	destroy_on_drop = TRUE	//VOREStation Edit
 
 
 /obj/item/grab/New(mob/user, mob/victim)
@@ -342,6 +341,7 @@
 				if(I_DISARM)
 					pin_down(affecting, assailant)
 
+<<<<<<< HEAD
 	//clicking on yourself while grabbing them
 	if(M == assailant && state >= GRAB_AGGRESSIVE)
 		devour(affecting, assailant)
@@ -352,6 +352,8 @@
 	if(!QDELETED(src))
 		qdel(src)
 
+=======
+>>>>>>> e97dd3d6e2 ([MIRROR] Moves destroy_on_drop to TG style and adds signal (#11640))
 /obj/item/grab/proc/reset_kill_state()
 	if(state == GRAB_KILL)
 		var/datum/gender/T = gender_datums[assailant.get_visible_gender()]

@@ -31,6 +31,7 @@
 	icon = 'icons/obj/weapons.dmi'
 	icon_state = "electric_hand"
 	show_examine = FALSE
+	item_flags = DROPDEL | NOSTRIP
 
 /obj/item/finger_lockpick/New()
 	if(ismob(loc))
@@ -39,9 +40,6 @@
 /obj/item/finger_lockpick/dropped(mob/user)
 	..()
 	to_chat(user, span_notice("We discreetly shape our finger back to a less suspicious form."))
-	spawn(1)
-		if(src)
-			qdel(src)
 
 /obj/item/finger_lockpick/afterattack(var/atom/target, var/mob/living/user, proximity)
 	if(!target)
