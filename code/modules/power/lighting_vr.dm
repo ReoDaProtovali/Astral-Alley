@@ -75,6 +75,7 @@
 	fixture_type = /obj/machinery/light/floortube
 	sheets_refunded = 2
 
+<<<<<<< HEAD
 /obj/machinery/light_construct/floortube/verb/rotate_clockwise()
     set name = "Rotate Fixture Clockwise"
     set category = "Object"
@@ -94,6 +95,11 @@
         return
 
     src.set_dir(turn(src.dir, 90))
+=======
+/obj/machinery/light_construct/floortube/Initialize(mapload, newdir, building, datum/frame/frame_types/frame_type, obj/machinery/light/fixture)
+	. = ..()
+	AddElement(/datum/element/rotatable)
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))
 
 /obj/machinery/light_construct/floortube/update_icon()
 	switch(stage)
