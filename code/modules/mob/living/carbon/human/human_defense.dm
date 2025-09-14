@@ -389,8 +389,12 @@ emp_act
 	return 1
 
 //this proc handles being hit by a thrown atom
+<<<<<<< HEAD
 /mob/living/carbon/human/hitby(atom/movable/AM as mob|obj,var/speed = THROWFORCE_SPEED_DIVISOR)
 	// CHOMPADD Start
+=======
+/mob/living/carbon/human/hitby(atom/movable/source, var/speed = THROWFORCE_SPEED_DIVISOR)
+>>>>>>> 980ece6324 ([MIRROR] Mop do_after multi use)
 	if(src.is_incorporeal())
 		return
 	// CHOMPAdd End
@@ -400,9 +404,15 @@ emp_act
 	//VORESTATION EDIT START - Allows for thrown vore!
 	//Throwing a prey into a pred takes priority. After that it checks to see if the person being thrown is a pred.
 	// I put more comments here for ease of reading.
+<<<<<<< HEAD
 	if(isliving(AM))
 		var/mob/living/thrown_mob = AM
 		if(isanimal(thrown_mob) && !allowmobvore) //Is the thrown_mob an animal and we don't allow mobvore?
+=======
+	if(isliving(source))
+		var/mob/living/thrown_mob = source
+		if(isanimal(thrown_mob) && !allowmobvore && !thrown_mob.ckey) //Is the thrown_mob an animal and we don't allow mobvore?
+>>>>>>> 980ece6324 ([MIRROR] Mop do_after multi use)
 			return
 		// PERSON BEING HIT: CAN BE DROP PRED, ALLOWS THROW VORE.
 		// PERSON BEING THROWN: DEVOURABLE, ALLOWS THROW VORE, CAN BE DROP PREY.
@@ -425,6 +435,7 @@ emp_act
 			return
 	//VORESTATION EDIT END - Allows for thrown vore!
 
+<<<<<<< HEAD
 	if(istype(AM,/obj/))
 		var/obj/O = AM
 		if(stat != DEAD && istype(O,/obj/item) && trash_catching && vore_selected) //Ported from chompstation
@@ -433,6 +444,15 @@ emp_act
 				visible_message(span_vwarning("[I] is thrown directly into [src]'s [lowertext(vore_selected.name)]!")) //CHOMPEdit
 				I.throwing = 0
 				I.forceMove(vore_selected)
+=======
+	if(isitem(source))
+		var/obj/item/O = source
+		if(stat != DEAD && trash_catching && vore_selected)
+			if(adminbus_trash || is_type_in_list(O, GLOB.edible_trash) && O.trash_eatable && !is_type_in_list(O, GLOB.item_vore_blacklist))
+				visible_message(span_vwarning("[O] is thrown directly into [src]'s [lowertext(vore_selected.name)]!"))
+				O.throwing = 0
+				O.forceMove(vore_selected)
+>>>>>>> 980ece6324 ([MIRROR] Mop do_after multi use)
 				return
 		if(in_throw_mode && speed <= THROWFORCE_SPEED_DIVISOR)	//empty active hand and we're in throw mode
 			if(canmove && !restrained() && !src.is_incorporeal()) // CHOMPADD - No hands for the phased ones.
