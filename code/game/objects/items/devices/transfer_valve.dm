@@ -62,9 +62,14 @@
 		return
 	var/atom/movable/AM = WF.resolve()
 	if(isnull(AM))
+<<<<<<< HEAD
 		log_debug("DEBUG: HasProximity called without reference on [src].")
 	attached_device?.HasProximity(T, WEAKREF(AM), old_loc)
 // CHOMPEdit End
+=======
+		log_runtime("DEBUG: HasProximity called without reference on [src].")
+	attached_device?.HasProximity(T, WF, old_loc)
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 /obj/item/transfer_valve/Moved(old_loc, direction, forced)
 	. = ..()

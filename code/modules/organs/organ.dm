@@ -96,7 +96,7 @@ var/list/organ_cache = list()
 			qdel_swap(dna, C.dna.Clone())
 			species = C.species
 		else
-			log_debug("[src] at [loc] spawned without a proper DNA.")
+			log_runtime("[src] at [loc] spawned without a proper DNA.")
 		var/mob/living/carbon/human/H = C
 		if(istype(H))
 			if(internal)

@@ -117,11 +117,11 @@ var/global/list/additional_antag_types = list()
 				return
 
 /datum/game_mode/proc/announce() //to be called when round starts
-	to_world(span_world("The current game mode is [capitalize(name)]!"))
+	to_chat(world, span_world("The current game mode is [capitalize(name)]!"))
 	if(round_description)
-		to_world(span_filter_system("[round_description]"))
+		to_chat(world, span_filter_system("[round_description]"))
 	if(round_autoantag)
-		to_world(span_filter_system("Antagonists will be added to the round automagically as needed."))
+		to_chat(world, span_filter_system("Antagonists will be added to the round automagically as needed."))
 	if(antag_templates && antag_templates.len)
 		var/antag_summary = span_bold("Possible antagonist types:") + " "
 		var/i = 1
@@ -134,8 +134,13 @@ var/global/list/additional_antag_types = list()
 			antag_summary += "[antag.role_text_plural]"
 			i++
 		antag_summary += "."
+<<<<<<< HEAD
 		if(antag_templates.len > 1 && master_mode != "secret")
 			to_world(span_filter_system("[antag_summary]"))
+=======
+		if(antag_templates.len > 1 && GLOB.master_mode != "secret")
+			to_chat(world, span_filter_system("[antag_summary]"))
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 		else
 			message_admins("[antag_summary]")
 
@@ -362,7 +367,7 @@ var/global/list/additional_antag_types = list()
 		text += ".<br>"
 	else
 		text += "There were " + span_bold("no survivors") + " (" + span_bold("[ghosts] ghosts") + ")."
-	to_world(span_filter_system(text))
+	to_chat(world, span_filter_system(text))
 
 	if(clients > 0)
 		feedback_set("round_end_clients",clients)
@@ -431,7 +436,7 @@ var/global/list/additional_antag_types = list()
 			if(isobserver(player) && !ghosts_only)
 				continue
 			if(!role || (player.client.prefs.be_special & role))
-				log_debug("[player.key] had [antag_id] enabled, so we are drafting them.")
+				log_game("[player.key] had [antag_id] enabled, so we are drafting them.")
 				candidates |= player.mind
 	else
 		// Assemble a list of active players without jobbans.
@@ -442,7 +447,7 @@ var/global/list/additional_antag_types = list()
 		// Get a list of all the people who want to be the antagonist for this round
 		for(var/mob/new_player/player in players)
 			if(!role || (player.client.prefs.be_special & role))
-				log_debug("[player.key] had [antag_id] enabled, so we are drafting them.")
+				log_game("[player.key] had [antag_id] enabled, so we are drafting them.")
 				candidates += player.mind
 				players -= player
 
@@ -452,7 +457,7 @@ var/global/list/additional_antag_types = list()
 		if(candidates.len < required_enemies)
 			for(var/mob/new_player/player in players)
 				if(player.ckey in round_voters)
-					log_debug("[player.key] voted for this round, so we are drafting them.")
+					log_game("[player.key] voted for this round, so we are drafting them.")
 					candidates += player.mind
 					players -= player
 					break

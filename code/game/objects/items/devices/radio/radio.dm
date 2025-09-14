@@ -92,6 +92,7 @@ var/global/list/default_medbay_channels = list(
 					bs_tx_weakref = WEAKREF(RX)
 					RX.link_radio(src)
 					break
+<<<<<<< HEAD
 			//Hmm, howabout an AIO machine
 			if(!bs_tx_weakref)
 				for(var/obj/machinery/telecomms/allinone/AIO in telecomms_list)
@@ -101,6 +102,10 @@ var/global/list/default_medbay_channels = list(
 						break
 			if(!bs_tx_weakref)
 				testing("A radio [src] at [x],[y],[z] specified bluespace prelink IDs, but the machines with corresponding IDs ([bs_tx_preload_id], [bs_rx_preload_id]) couldn't be found.")
+=======
+		if(!bs_tx_weakref)
+			log_mapping("A radio [src] at [x],[y],[z] specified bluespace prelink IDs, but the machines with corresponding IDs ([bs_tx_preload_id], [bs_rx_preload_id]) couldn't be found.")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 		if(bs_rx_preload_id)
 			var/found = 0
@@ -110,6 +115,7 @@ var/global/list/default_medbay_channels = list(
 					TX.link_radio(src)
 					found = 1
 					break
+<<<<<<< HEAD
 			//Hmm, howabout an AIO machine
 			if(!found)
 				for(var/obj/machinery/telecomms/allinone/AIO in telecomms_list)
@@ -124,6 +130,10 @@ var/global/list/default_medbay_channels = list(
 	internal_channels = default_internal_channels.Copy()
 	listening_objects += src
 	return INITIALIZE_HINT_LATELOAD
+=======
+		if(!found)
+			log_mapping("A radio [src] at [x],[y],[z] specified bluespace prelink IDs, but the machines with corresponding IDs ([bs_tx_preload_id], [bs_rx_preload_id]) couldn't be found.")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 /obj/item/radio/Destroy()
 	qdel(wires)
@@ -768,4 +778,115 @@ GLOBAL_DATUM(autospeaker, /mob/living/silicon/ai/announcer)
 
 /obj/item/radio/phone/medbay/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	internal_channels = default_medbay_channels.Copy()
+=======
+	internal_channels = GLOB.default_medbay_channels.Copy()
+
+/obj/item/radio/proc/can_broadcast_to()
+	var/list/output = list()
+	var/turf/T = get_turf(src)
+	var/dnumber = canhear_range*CANBROADCAST_INNERBOX
+	for(var/cand_x = max(0, T.x - canhear_range), cand_x <= T.x + canhear_range, cand_x++)
+		for(var/cand_y = max(0, T.y - canhear_range), cand_y <= T.y + canhear_range, cand_y++)
+			var/turf/cand_turf = locate(cand_x,cand_y,T.z)
+			if(!cand_turf)
+				continue
+			if((abs(T.x - cand_x) < dnumber) || (abs(T.y - cand_y) < dnumber))
+				output += cand_turf
+				continue
+			if(sqrt((T.x - cand_x)**2 + (T.y - cand_y)**2) <= canhear_range)
+				output += cand_turf
+				continue
+	return output
+/obj/item/radio/intercom
+	var/list/broadcast_tiles
+
+/obj/item/radio/intercom/proc/update_broadcast_tiles()
+	var/list/output = list()
+	var/turf/T = get_turf(src)
+	if(!T)
+		return
+	var/dnumber = canhear_range*CANBROADCAST_INNERBOX
+	for(var/cand_x = max(0, T.x - canhear_range), cand_x <= T.x + canhear_range, cand_x++)
+		for(var/cand_y = max(0, T.y - canhear_range), cand_y <= T.y + canhear_range, cand_y++)
+			var/turf/cand_turf = locate(cand_x,cand_y,T.z)
+			if(!cand_turf)
+				continue
+			if((abs(T.x - cand_x) < dnumber) || (abs(T.y - cand_y) < dnumber))
+				output += cand_turf
+				continue
+			if(sqrt((T.x - cand_x)**2 + (T.y - cand_y)**2) <= canhear_range)
+				output += cand_turf
+				continue
+	broadcast_tiles = output
+
+/obj/item/radio/intercom/forceMove(atom/destination)
+	. = ..()
+	update_broadcast_tiles()
+
+/obj/item/radio/intercom/Initialize(mapload)
+	. = ..()
+	update_broadcast_tiles()
+
+/obj/item/radio/intercom/can_broadcast_to()
+	if(!broadcast_tiles)
+		update_broadcast_tiles()
+	return broadcast_tiles
+
+//*Subspace Radio*//
+/obj/item/radio/subspace
+	adhoc_fallback = 1
+	canhear_range = 8
+	desc = "A heavy duty radio that can pick up all manor of shortwave and subspace frequencies. It's a bit bulkier than a normal radio thanks to the extra hardware."
+	description_info = "This radio can broadcast over any headset frequency that the user has access to. It has a shortwave fallback to directly broadcast to all radio equipment on the same Z-Level/Map in the event of a telecommunications failure. This device requires a functioning Telecommunications Network/Relay to send and receive signals meant for headsets. Additionally, the volume knob seems to be stuck on the max setting. You could hear this thing clear across a room... Not good for discretely listening in on secure channels or being stealthy!"
+	icon_state = "radio"
+	name = "subspace radio"
+	subspace_transmission = 1
+	throwforce = 5
+	throw_range = 7
+	throw_speed = 1
+
+//* Bluespace Radio *//
+/obj/item/bluespaceradio/southerncross_prelinked
+	name = "bluespace radio (southerncross)"
+	handset = /obj/item/radio/bluespacehandset/linked/southerncross_prelinked
+
+/obj/item/radio/bluespacehandset/linked/southerncross_prelinked
+	bs_tx_preload_id = "Receiver A" //Transmit to a receiver
+	bs_rx_preload_id = "Broadcaster A" //Recveive from a transmitter
+
+#undef CANBROADCAST_INNERBOX
+
+/obj/item/radio/phone
+	subspace_transmission = TRUE
+	canhear_range = 0
+	adhoc_fallback = TRUE
+
+/obj/item/radio/emergency
+	name = "Medbay Emergency Radio Link"
+	icon_state = "med_walkietalkie"
+	frequency = MED_I_FREQ
+	subspace_transmission = TRUE
+	adhoc_fallback = TRUE
+
+/obj/item/radio/emergency/Initialize(mapload)
+	. = ..()
+	internal_channels = GLOB.default_medbay_channels.Copy()
+
+/obj/item/bluespaceradio/tether_prelinked
+	name = "bluespace radio (tether)"
+	handset = /obj/item/radio/bluespacehandset/linked/tether_prelinked
+
+/obj/item/radio/bluespacehandset/linked/tether_prelinked
+	bs_tx_preload_id = "tether_rx" //Transmit to a receiver
+	bs_rx_preload_id = "tether_tx" //Recveive from a transmitter
+
+/obj/item/bluespaceradio/talon_prelinked
+	name = "bluespace radio (talon)"
+	handset = /obj/item/radio/bluespacehandset/linked/talon_prelinked
+
+/obj/item/radio/bluespacehandset/linked/talon_prelinked
+	bs_tx_preload_id = "talon_aio" //Transmit to a receiver
+	bs_rx_preload_id = "talon_aio" //Recveive from a transmitter
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))

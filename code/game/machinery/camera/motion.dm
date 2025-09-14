@@ -61,7 +61,7 @@
 		return
 	var/atom/movable/AM = WF.resolve()
 	if(isnull(AM))
-		log_debug("DEBUG: HasProximity called without reference on [src].")
+		log_runtime("DEBUG: HasProximity called without reference on [src].")
 		return
 	// CHOMPEdit End
 	// Motion cameras outside of an "ai monitored" area will use this to detect stuff.

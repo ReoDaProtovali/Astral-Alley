@@ -31,7 +31,12 @@
 /obj/effect/temporary_effect/eruption/proc/on_eruption(var/turf/Target)	// Override for specific functions, as below.
 	return TRUE
 
+<<<<<<< HEAD
 /obj/effect/temporary_effect/eruption/testing/on_eruption(var/turf/Target)
+=======
+/obj/effect/temporary_effect/eruption/test/on_eruption(var/turf/Target)
+	flick("[icon_state]_erupt",src)
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 	if(Target)
 		new /obj/effect/explosion(Target)
 	return TRUE

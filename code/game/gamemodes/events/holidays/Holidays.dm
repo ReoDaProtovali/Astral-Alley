@@ -260,13 +260,19 @@ var/global/list/Holiday = list() //Holidays are lists now, so we can have more t
 			holidays.Add(p)
 			holiday_blurbs.Add("[Holiday[p]]")
 		var/holidays_string = english_list(holidays, nothing_text = "nothing", and_text = " and ", comma_text = ", ", final_comma_text = "" )
-		to_world(span_filter_system(span_blue("and...")))
-		to_world(span_filter_system("<h4>Happy [holidays_string] Everybody!</h4>"))
+		to_chat(world, span_filter_system(span_blue("and...")))
+		to_chat(world, span_filter_system("<h4>Happy [holidays_string] Everybody!</h4>"))
 		if(holiday_blurbs.len != 0)
 			for(var/blurb in holiday_blurbs)
+<<<<<<< HEAD
 				to_world(span_filter_system(span_blue("<div align='center'>[blurb]</div>")))
 		switch(Holiday)			//special holidays
 			if("Easter")
+=======
+				to_chat(world, span_filter_system(span_blue("<div align='center'>[blurb]</div>")))
+		switch(GLOB.Holiday)			//special holidays
+			//if("Easter")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 				//do easter stuff
 			if("Christmas Eve","Christmas")
 				Christmas_Game_Start()

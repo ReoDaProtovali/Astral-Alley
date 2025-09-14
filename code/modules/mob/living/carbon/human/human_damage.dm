@@ -516,8 +516,14 @@ This function restores all organs.
 */
 
 /mob/living/carbon/human/apply_damage(var/damage = 0, var/damagetype = BRUTE, var/def_zone = null, var/blocked = 0, var/soaked = 0, var/sharp = FALSE, var/edge = FALSE, var/obj/used_weapon = null, var/projectile = FALSE)
+<<<<<<< HEAD
 	if(Debug2)
 		to_world_log("## DEBUG: human/apply_damage() was called on [src], with [damage] damage, an armor value of [blocked], and a soak value of [soaked].")
+=======
+	SEND_SIGNAL(src, COMSIG_MOB_APPLY_DAMAGE, damage, damagetype, def_zone, blocked, soaked, sharp, edge, used_weapon, projectile)
+	if(GLOB.Debug2)
+		log_world("## DEBUG: human/apply_damage() was called on [src], with [damage] damage, an armor value of [blocked], and a soak value of [soaked].")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 	var/obj/item/organ/external/organ = null
 	if(isorgan(def_zone))
 		organ = def_zone
@@ -599,8 +605,13 @@ This function restores all organs.
 	if(soaked)
 		damage -= soaked
 
+<<<<<<< HEAD
 	if(Debug2)
 		to_world_log("## DEBUG: [src] was hit for [damage].")
+=======
+	if(GLOB.Debug2)
+		log_world("## DEBUG: [src] was hit for [damage].")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 	switch(damagetype)
 		if(BRUTE)

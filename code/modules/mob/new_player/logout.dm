@@ -15,3 +15,11 @@
 		key = null//We null their key before deleting the mob, so they are properly kicked out.
 		qdel(src)
 	return
+<<<<<<< HEAD
+=======
+
+/mob/new_player/proc/disable_lobby_browser()
+	var/client/exiting_client = persistent_client.client
+	if(exiting_client)
+		winset(exiting_client, "lobby_browser", "is-disabled=true;is-visible=false")
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
