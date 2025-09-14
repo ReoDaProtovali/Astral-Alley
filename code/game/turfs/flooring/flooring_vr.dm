@@ -25,7 +25,7 @@
 		))
 
 /decl/flooring/grass/outdoors
-	flags = 0
+	flags = NONE
 	build_type = null
 
 /decl/flooring/grass/outdoors/forest

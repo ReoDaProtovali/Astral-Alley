@@ -52,12 +52,16 @@ const Story = (props) => {
           </Button>
         }
       >
+<<<<<<< HEAD:tgui/packages/tgui/stories/ByondUi.stories.jsx
         <Box
           as="textarea"
           width="100%"
           height="10em"
           onChange={(e) => setCode(e.target.value)}
         >
+=======
+        <TextArea fluid height="10em" onChange={setCode}>
+>>>>>>> ba1065b92e ([MIRROR] clean up flags (Requires #11623 Merged First) (#11637)):tgui/packages/tgui/stories/ByondUi.stories.tsx
           {code}
         </Box>
       </Section>
