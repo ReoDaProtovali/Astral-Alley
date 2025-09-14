@@ -432,6 +432,11 @@
 /obj/machinery/mining/brace/Initialize()
 	. = ..()
 	default_apply_parts()
+<<<<<<< HEAD
+=======
+	AddElement(/datum/element/climbable)
+	AddElement(/datum/element/rotatable)
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))
 
 /obj/machinery/mining/brace/RefreshParts()
 	..()
@@ -500,6 +505,7 @@
 	connected.supports -= src
 	connected.check_supports()
 	connected = null
+<<<<<<< HEAD
 
 /obj/machinery/mining/brace/verb/rotate_clockwise()
 	set name = "Rotate Brace Clockwise"
@@ -530,3 +536,5 @@
 
 	src.set_dir(turn(src.dir, 90))
 	return 1
+=======
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))

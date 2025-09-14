@@ -25,7 +25,10 @@
 	wires = new(src)
 	connected_parts = list()
 	update_active_power_usage(initial(active_power_usage) * (strength + 1))
+<<<<<<< HEAD
 	..()
+=======
+>>>>>>> d5605935a4 ([MIRROR] Rotatable Atom Element (#11639))
 
 /obj/machinery/particle_accelerator/control_box/Destroy()
 	if(active)
