@@ -24,10 +24,13 @@
 		else
 			spawning_id = new_chem
 			break
+
+/obj/item/reagent_containers/glass/replenishing/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
 /obj/item/reagent_containers/glass/replenishing/process()
 	reagents.add_reagent(spawning_id, 0.3)
-
-
 
 //a talking gas mask!
 /obj/item/clothing/mask/gas/poltergeist
@@ -37,6 +40,10 @@
 
 /obj/item/clothing/mask/gas/poltergeist/New()
 	START_PROCESSING(SSobj, src)
+
+/obj/item/clothing/mask/gas/poltergeist/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
 
 /obj/item/clothing/mask/gas/poltergeist/process()
 	if(heard_talk.len && isliving(src.loc) && prob(10))
@@ -50,8 +57,6 @@
 	heard_talk.Add(multilingual_to_message(message_pieces))
 	if(isliving(src.loc) && world.time - last_twitch > 50)
 		last_twitch = world.time
-
-
 
 //a vampiric statuette
 //todo: cult integration
@@ -71,6 +76,10 @@
 /obj/item/vampiric/New()
 	..()
 	START_PROCESSING(SSobj, src)
+
+/obj/item/vampiric/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
 
 /obj/item/vampiric/process()
 	//see if we've identified anyone nearby
@@ -162,6 +171,10 @@
 	START_PROCESSING(SSobj, src)
 	loc_last_process = src.loc
 
+/obj/effect/decal/cleanable/blood/splatter/animated/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
+
 /obj/effect/decal/cleanable/blood/splatter/animated/process()
 	if(target_turf && src.loc != target_turf)
 		step_towards(src,target_turf)
@@ -190,6 +203,10 @@
 
 /obj/effect/shadow_wight/New()
 	START_PROCESSING(SSobj, src)
+
+/obj/effect/shadow_wight/Destroy()
+	STOP_PROCESSING(SSobj, src)
+	. = ..()
 
 /obj/effect/shadow_wight/process()
 	if(src.loc)
