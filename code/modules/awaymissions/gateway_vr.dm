@@ -55,9 +55,15 @@
     if(CL)
         destination = CL
 
+<<<<<<< HEAD
     if(!destination)
         warning("A gateway is trying to spawn it's mcguffin but there are no mapped in spawner landmarks")
         destination = get_turf(src)
+=======
+	if(!destination)
+		WARNING("A gateway is trying to spawn it's mcguffin but there are no mapped in spawner landmarks")
+		destination = get_turf(src)
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
     key = new mcguffin_type(destination)
 

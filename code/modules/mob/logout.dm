@@ -3,7 +3,7 @@
 	player_list -= src
 	disconnect_time = world.realtime	//VOREStation Addition: logging when we disappear.
 	update_client_z(null)
-	log_access_out(src)
+	log_access("Mob Logout: [key_name(src)]")
 	unset_machine()
 	if(admin_datums[src.ckey])
 		message_admins("Staff logout: [key_name(src)]") // CHOMPEdit: Admin logout notice displays no matter what//Edit2: STAFF

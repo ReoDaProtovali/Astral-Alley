@@ -96,11 +96,16 @@
 		parent = newparent
 
 	if(!SSplants)
+<<<<<<< HEAD
 		sleep(250) // ugly hack, should mean roundstart plants are fine. TODO initialize perhaps?
 	if(!SSplants)
 		to_world(span_danger("Plant controller does not exist and [src] requires it. Aborting."))
 		qdel(src)
 		return
+=======
+		to_chat(world, span_danger("Plant controller does not exist and [src] requires it. Aborting."))
+		return INITIALIZE_HINT_QDEL
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 	if(!istype(newseed))
 		newseed = SSplants.seeds[DEFAULT_SEED]

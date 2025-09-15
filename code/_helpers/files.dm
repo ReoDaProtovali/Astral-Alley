@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //checks if a file exists and contains text
 //returns text as a string if these conditions are met
 /proc/return_file_text(filename)
@@ -16,6 +17,13 @@
 /client/proc/getFiles()
 	for(var/file in args)
 		src << browse_rsc(file)
+=======
+/**
+ * For FTP requests. (i.e. downloading runtime logs.)
+ *
+ * However it'd be ok to use for accessing attack logs and such too, which are even laggier.
+ */
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 
 /client/proc/browse_files(root="data/logs/", max_iterations=10, list/valid_extensions=list(".txt",".log",".htm"))
 	var/path = root

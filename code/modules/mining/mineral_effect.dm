@@ -25,5 +25,10 @@
 		if(O)
 			scanner_image = image(icon, loc = get_turf(src), icon_state = (O.scan_icon ? O.scan_icon : icon_state))
 		else
+<<<<<<< HEAD
 			to_world("No ore data for [src]!")
 	return scanner_image
+=======
+			to_chat(world, "No ore data for [src]!")
+	return scanner_image
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))

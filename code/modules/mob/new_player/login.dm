@@ -41,13 +41,18 @@ var/obj/effect/lobby_image = new /obj/effect/lobby_image
 		mind.active = 1
 		mind.current = src
 
+<<<<<<< HEAD
 	//loc = null CHOMPEdit Removal
 	//client.screen += lobby_image CHOMPEdit Removal
 	my_client = client
+=======
+	loc = null
+>>>>>>> 5a62077f2c ([MIRROR] JSON Logging Refactor (#11623))
 	sight |= SEE_TURFS
 	player_list |= src
 
 	created_for = ckey
+	client.persistent_client.set_mob(src)
 
 	new_player_panel()
 	client.init_verbs()
