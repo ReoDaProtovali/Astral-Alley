@@ -67,6 +67,7 @@
 	emote_message_3p_target = "gwahs at TARGET."
 	emote_sound = 'modular_chomp/sound/voice/emotes/gwah.ogg'
 
+<<<<<<< HEAD
 /decl/emote/audible/caw
 	key = "caw"
 	emote_message_1p = "You caw!"
@@ -75,6 +76,8 @@
 	emote_message_3p_target = "caws at TARGET."
 	emote_sound = 'modular_chomp/sound/voice/emotes/caw.ogg' // Copyright Sampling+ 1.0 Vixuxx (freesound.org) for the source audio.
 
+=======
+>>>>>>> df5f77880a ([MIRROR] Bird up. Added 3 cawing emotes for the crows lover (#11650))
 /decl/emote/audible/wawa
 	key = "wawa"
 	emote_message_1p = "You wawa."
