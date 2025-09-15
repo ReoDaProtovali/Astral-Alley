@@ -275,10 +275,25 @@
 	desc = "A case containing a nanite fabricator implant."
 	icon_state = "implantcase-b"
 
+<<<<<<< HEAD
 /obj/item/implantcase/sprinter/New()
 	src.imp = new /obj/item/implant/organ/pelvic( src )
 	..()
 	return
+=======
+/obj/item/implantcase/sprinter/Initialize(mapload)
+	. = ..()
+	imp = new /obj/item/implant/organ/pelvic/sprint(src)
+
+/obj/item/implantcase/med_scanner
+	name = "glass case - 'Scanner'"
+	desc = "A case containing a nanite fabricator implant."
+	icon_state = "implantcase-b"
+
+/obj/item/implantcase/med_scanner/Initialize(mapload)
+	. = ..()
+	imp = new /obj/item/implant/organ/pelvic/scanner(src)
+>>>>>>> 74c8394c2d ([MIRROR] Add an implantable health scanner (#11655))
 
 /obj/item/implantcase/armblade
 	name = "glass case - 'Armblade'"
