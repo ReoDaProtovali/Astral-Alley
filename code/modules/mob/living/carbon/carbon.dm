@@ -263,7 +263,7 @@
 					src.adjust_fire_stacks(-0.5)
 					if (prob(10) && (M.fire_stacks <= 0))
 						M.adjust_fire_stacks(1)
-					M.IgniteMob()
+					M.ignite_mob()
 					if (M.on_fire)
 						M.visible_message(span_danger("The fire spreads from [src] to [M]!"),
 						span_danger("The fire spreads to you as well!"))
@@ -272,8 +272,7 @@
 						if (src.fire_stacks <= 0)
 							M.visible_message(span_warning("[M] successfully pats out [src]'s flames."),
 							span_warning("You successfully pat out [src]'s flames."))
-							src.ExtinguishMob()
-							src.fire_stacks = 0
+							src.extinguish_mob()
 		else
 			if (ishuman(src) && src:w_uniform)
 				var/mob/living/carbon/human/H = src
@@ -303,9 +302,15 @@
 						src.adjust_fire_stacks(1)
 						M.adjust_fire_stacks(-1)
 					if(M.on_fire)
+<<<<<<< HEAD
 						src.IgniteMob()
 					if(do_after(M, 0.5 SECONDS)) //.5 second delay. Makes it a bit stronger than just typing rest.
 						M.resting = 0 //Hoist yourself up up off the ground. No para/stunned/weakened removal.
+=======
+						src.ignite_mob()
+					M.resting = 0 //Hoist yourself up up off the ground. No para/stunned/weakened removal.
+					update_canmove()
+>>>>>>> 9f292671ae ([MIRROR] Port /datum/status_effect and convert wetness and fire stacks to it (#11666))
 				else if(istype(hugger))
 					hugger.species.hug(hugger,src)
 				else
@@ -315,7 +320,7 @@
 					src.adjust_fire_stacks(1)
 					M.adjust_fire_stacks(-1)
 				if(M.on_fire)
-					src.IgniteMob()
+					src.ignite_mob()
 			AdjustParalysis(-3)
 			AdjustStunned(-3)
 			AdjustWeakened(-3)

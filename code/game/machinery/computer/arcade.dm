@@ -415,8 +415,13 @@
 				if(emagged)
 					var/mob/living/M = user
 					M.adjust_fire_stacks(5)
+<<<<<<< HEAD
 					M.IgniteMob() //flew into a star, so you're on fire
 					to_chat(user,span_danger("<font size=3>You feel an immense wave of heat emanate from \the [src]. Your skin bursts into flames.</font>"))
+=======
+					M.ignite_mob() //flew into a star, so you're on fire
+					to_chat(user,span_danger(span_large("You feel an immense wave of heat emanate from \the [src]. Your skin bursts into flames.")))
+>>>>>>> 9f292671ae ([MIRROR] Port /datum/status_effect and convert wetness and fire stacks to it (#11666))
 		dat += "<br><P ALIGN=Right><a href='byond://?src=\ref[src];menu=1'>OK...</a></P>"
 
 		if(emagged)
