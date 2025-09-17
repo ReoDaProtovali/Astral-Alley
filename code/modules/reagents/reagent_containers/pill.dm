@@ -89,7 +89,7 @@
 		// to_chat(user, span_notice("You dissolve \the [src] in [target]."))
 		balloon_alert_visible("[user] puts something in \the [target]", "[target] dissolves in \the [src]", 2) // CHOMPEdit - Changed to balloon alert
 
-		add_attack_logs(user,null,"Spiked [target.name] with a pill containing [reagentlist()]")
+		add_attack_logs(user,target,"Spiked [target.name] with a pill containing [reagentlist()]")
 
 		reagents.trans_to(target, reagents.total_volume)
 		/* for(var/mob/O in viewers(2, user)) // CHOMPEdit - balloon_alert_visible handles this
