@@ -509,6 +509,7 @@
 			if(ticker < burst)
 				addtimer(CALLBACK(src, PROC_REF(handle_gunfire),target, ++ticker, TRUE), burst_delay, TIMER_DELETE_ME)
 
+<<<<<<< HEAD
 	var/target_for_log
 	if(ismob(target))
 		target_for_log = target
@@ -516,6 +517,9 @@
 		target_for_log = "[target.name]"
 
 	add_attack_logs("Unmanned",target_for_log,"Fired [src.name]")
+=======
+	add_attack_logs(src,target,"Fired [src.name] (Unmanned)")
+>>>>>>> fa407a034a ([MIRROR] runtime viewer fixes (#11668))
 
 
 //obtains the next projectile to fire
