@@ -43,8 +43,12 @@
 	var/tod = null // Time of death
 	var/update_slimes = 1
 	var/silent = null 		// Can't talk. Value goes down every life proc.
-	var/on_fire = 0 //The "Are we on fire?" var
+
+	/// Helper vars for quick access to firestacks, these should be updated every time firestacks are adjusted
+	var/on_fire = 0
 	var/fire_stacks
+	/// Rate at which fire stacks should decay from this mob
+	var/fire_stack_decay_rate = -0.05
 
 	var/failed_last_breath = 0 //This is used to determine if the mob failed a breath. If they did fail a brath, they will attempt to breathe each tick, otherwise just once per 4 ticks.
 	var/lastpuke = 0
@@ -105,3 +109,20 @@
 									"'s hands are shaking.",
 									" is rocking slightly from side to side."
 									)
+<<<<<<< HEAD
+=======
+
+	var/touch_reaction_flags
+
+	var/virtual_reality_mob = FALSE // gross boolean for keeping VR mobs in VR
+
+	var/mob/living/tf_form // Shapeshifter shenanigans
+	var/tf_form_ckey
+
+	var/ooc_notes_favs = null
+	var/ooc_notes_maybes = null
+	var/ooc_notes_style = FALSE
+
+	///a list of all status effects the mob has
+	var/list/status_effects
+>>>>>>> 9f292671ae ([MIRROR] Port /datum/status_effect and convert wetness and fire stacks to it (#11666))

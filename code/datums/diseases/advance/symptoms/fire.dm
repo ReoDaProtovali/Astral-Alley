@@ -31,6 +31,7 @@ Bonus
 		switch(A.stage)
 			if(3)
 				to_chat(M, span_warning(pick("You feel hot.", "You hear a crackling noise.", "You smell smoke.")))
+<<<<<<< HEAD
 			if(4)
 				Firestacks_stage_4(M, A)
 				M.IgniteMob()
@@ -39,6 +40,17 @@ Bonus
 			if(5)
 				Firestacks_stage_5(M, A)
 				M.IgniteMob()
+=======
+		if(4)
+			Firestacks_stage_4(M, A)
+			M.ignite_mob()
+			to_chat(M, span_userdanger("Your skin bursts into flames!"))
+			M.emote("scream")
+		if(5)
+			Firestacks_stage_5(M, A)
+			M.ignite_mob()
+			if(M.stat != DEAD)
+>>>>>>> 9f292671ae ([MIRROR] Port /datum/status_effect and convert wetness and fire stacks to it (#11666))
 				to_chat(M, span_userdanger("Your skin erupts into an inferno!"))
 				M.emote("scream")
 	return
