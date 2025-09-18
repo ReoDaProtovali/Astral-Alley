@@ -131,8 +131,12 @@
 	name = "weaversilk bindings"
 	desc = "A webbed cocoon that completely restrains the wearer."
 	icon_state = "web_bindings"
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/weaver_objs.dm
 	item_state = "web_bindings_mob"
 	body_parts_covered = UPPER_TORSO|LOWER_TORSO|LEGS|FEET|ARMS|HANDS
+=======
+	body_parts_covered = CHEST|LEGS|FEET|ARMS|HANDS
+>>>>>>> a4c92fc775 ([MIRROR] Fluff icon fixes [IDB IGNORE] (#11674)):code/modules/mob/living/carbon/human/species/station/traits/weaver_objs.dm
 	flags_inv = HIDEGLOVES|HIDESHOES|HIDEJUMPSUIT|HIDETAIL
 	//CHOMPedit - Teshari sprite, this was originally a YW edit of the old web bindings
 	sprite_sheets = list(
