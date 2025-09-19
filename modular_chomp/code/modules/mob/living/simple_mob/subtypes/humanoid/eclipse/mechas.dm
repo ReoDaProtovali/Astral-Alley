@@ -1061,8 +1061,114 @@
 
 /obj/item/projectile/energy/randospeed/Move()
 	. = ..()
+<<<<<<< HEAD
 	if(prob(50))
 		speed += spinvaule
+=======
+	var/obj/belly/B = vore_selected
+	B.name = "stomach"
+	B.mode_flags = DM_FLAG_THICKBELLY | DM_FLAG_NUMBING
+	B.digest_brute = 1
+	B.digest_burn = 1
+	B.digestchance = 0
+	B.absorbchance = 0
+	B.escapechance = 25
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/tankyboss/chambera //poison boss
+	name = "experiment 20"
+	icon_state = "poison_boss"
+	icon_living = "poison_boss"
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/tankyboss/chamberc/bullet_act(obj/item/projectile/P)
+	if(istype(P,/obj/item/projectile/beam) || istype(P, /obj/item/projectile/energy))
+		nutrition += 5
+		if(size_multiplier > 1.95)
+			visible_message(span_boldwarning(span_orange("[P] heals the beast!.")))
+			adjustBruteLoss(-nutrition)
+			adjustFireLoss(-nutrition)
+			nutrition -= 5
+		else
+			size_multiplier += 0.05
+			..()
+	else
+		..()
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/tankyboss/chambera/do_special_attack(atom/A)
+	var/rng_cycle = rand(1,6)
+	if(attackcycle == 1)
+		addtimer(CALLBACK(src, PROC_REF(quad_random_firing), A, 20, rng_cycle, 20), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 2)
+		addtimer(CALLBACK(src, PROC_REF(dual_spin), A, rng_cycle, 15), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 3)
+		addtimer(CALLBACK(src, PROC_REF(cross_spin), A, rng_cycle, 15), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 4)
+		addtimer(CALLBACK(src, PROC_REF(hole_in_wall), A, rng_cycle, 15), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 5)
+		addtimer(CALLBACK(src, PROC_REF(bomb_lines), A, rng_cycle), 2.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 6)
+		addtimer(CALLBACK(src, PROC_REF(bomb_chaos), A, rng_cycle), 2.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/tankyboss/chamberb //knock back boss
+	name = "experiment 3"
+	specialattackprojectile = /obj/item/projectile/knockback/slow
+	icon_state = "sonic_boss"
+	icon_living = "sonic_boss"
+	projectiletype = /obj/item/projectile/knockback/slow
+
+/obj/item/projectile/knockback/slow
+	speed = 10
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/tankyboss/chamberb/do_special_attack(atom/A)
+	rng_cycle = rand(1,6)
+	if(attackcycle == 1)
+		addtimer(CALLBACK(src, PROC_REF(quad_random_firing), A, 20, rng_cycle, 10), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 2)
+		addtimer(CALLBACK(src, PROC_REF(dual_spin), A, rng_cycle, 5), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 3)
+		addtimer(CALLBACK(src, PROC_REF(cross_spin), A, rng_cycle, 10), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 4)
+		addtimer(CALLBACK(src, PROC_REF(hole_in_wall), A, rng_cycle, 10), 0.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 5)
+		addtimer(CALLBACK(src, PROC_REF(bomb_lines), A, rng_cycle), 2.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+	else if(attackcycle == 6)
+		addtimer(CALLBACK(src, PROC_REF(bomb_chaos), A, rng_cycle), 2.5 SECONDS, TIMER_DELETE_ME)
+		attackcycle = 0
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/tankyboss/chamberc //wierd shields
+	name = "experiment 7"
+	specialattackprojectile = /obj/item/projectile/energy/eclipse/tyrjavelin
+	health = 400
+	maxHealth = 400 //shield mechanic
+	icon_state = "UPshield_boss"
+	icon_living = "UPshield_boss"
+	projectiletype = /obj/item/projectile/energy/eclipse/tyrjavelin
+	var/fullshield = 300
+	var/shieldrage = 3
+
+/mob/living/simple_mob/mechanical/mecha/eclipse/tankyboss/chamberc/bullet_act(obj/item/projectile/P)
+	if(fullshield > 0)
+		fullshield -= P.damage
+		if(P == /obj/item/projectile/ion)
+			fullshield = 0
+			visible_message(span_boldwarning(span_orange("[P] breaks the shield!!.")))
+			icon_state = "shield_boss"
+		if(fullshield > 0)
+			visible_message(span_boldwarning(span_orange("[P] is absorbed by the shield!.")))
+		else
+			visible_message(span_boldwarning(span_orange("[P] breaks the shield!!.")))
+			icon_state = "shield_boss"
+>>>>>>> 54aa0db1d1 (Tyr Alterations (#11702))
 	else
 		speed -= spinvaule
 
