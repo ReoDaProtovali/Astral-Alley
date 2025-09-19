@@ -837,15 +837,25 @@
 					/obj/item/toy/plushie/teshari/y_yw = 1,
 					//YawnWider Add End
 					//CHOMPStation Add Start
+<<<<<<< HEAD
 					/obj/item/toy/plushie/red_dragon = 1,
 					/obj/item/toy/plushie/green_dragon = 1,
 					/obj/item/toy/plushie/red_eastdragon = 1,
 					/obj/item/toy/plushie/green_eastdragon = 1,
 					/obj/item/toy/plushie/gold_eastdragon = 1,
+=======
+					/obj/item/toy/plushie/dragon/customizable = 10,
+>>>>>>> 9e91e9017e ([MIRROR] Dragon Plushie Upport (#11700))
 					/obj/item/toy/plushie/teppi = 1,
-					/obj/item/toy/plushie/teppi/alt = 1
+					/obj/item/toy/plushie/teppi/alt = 1,
 					//CHOMPStation Add End
-					)
+					/obj/item/toy/plushie/dragon = 1,
+					/obj/item/toy/plushie/dragon/green = 1,
+					/obj/item/toy/plushie/dragon/purple = 1,
+					/obj/item/toy/plushie/dragon/red_east = 1,
+					/obj/item/toy/plushie/dragon/green_east = 1,
+					/obj/item/toy/plushie/dragon/white_east = 1,
+					/obj/item/toy/plushie/dragon/gold_east = 1)
 	premium = list(/obj/item/reagent_containers/food/drinks/bottle/champagne = 1,
 					/obj/item/storage/trinketbox = 2)
 	prices = list(/obj/item/storage/fancy/heartbox = 15,
@@ -896,15 +906,26 @@
 					/obj/item/toy/plushie/teshari/y_yw = 150,
 					//YawnWider Add End
 					//CHOMPStation Add Start
+<<<<<<< HEAD
 					/obj/item/toy/plushie/red_dragon = 50,
 					/obj/item/toy/plushie/green_dragon = 50,
 					/obj/item/toy/plushie/red_eastdragon = 50,
 					/obj/item/toy/plushie/green_eastdragon = 50,
 					/obj/item/toy/plushie/gold_eastdragon = 500,
+=======
+					/obj/item/toy/plushie/dragon/customizable = 50,
+>>>>>>> 9e91e9017e ([MIRROR] Dragon Plushie Upport (#11700))
 					/obj/item/toy/plushie/teppi = 50,
-					/obj/item/toy/plushie/teppi/alt = 50
+					/obj/item/toy/plushie/teppi/alt = 50,
 					//CHOMPStation Add End
-					)
+					/obj/item/toy/plushie/dragon = 50,
+					/obj/item/toy/plushie/dragon/green = 50,
+					/obj/item/toy/plushie/dragon/purple = 50,
+					/obj/item/toy/plushie/dragon/red_east = 50,
+					/obj/item/toy/plushie/dragon/green_east = 50,
+					/obj/item/toy/plushie/dragon/white_east = 50,
+					/obj/item/toy/plushie/dragon/gold_east = 500)
+
 
 /obj/machinery/vending/fishing
 	name = "Loot Trawler"

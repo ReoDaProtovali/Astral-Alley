@@ -784,6 +784,7 @@
 				/obj/item/toy/plushie/teshari/y_yw,
 				//YawnWider Add End
 				//CHOMPStation Add Start
+<<<<<<< HEAD
 				/obj/item/toy/plushie/red_dragon,
 				/obj/item/toy/plushie/green_dragon,
 				/obj/item/toy/plushie/purple_dragon,
@@ -791,9 +792,18 @@
 				/obj/item/toy/plushie/red_eastdragon,
 				/obj/item/toy/plushie/green_eastdragon,
 				/obj/item/toy/plushie/gold_eastdragon,
+=======
+>>>>>>> 9e91e9017e ([MIRROR] Dragon Plushie Upport (#11700))
 				/obj/item/toy/plushie/teppi,
-				/obj/item/toy/plushie/teppi/alt)
+				/obj/item/toy/plushie/teppi/alt,
 				//CHOMPStation Add End
+				pick(list(/obj/item/toy/plushie/dragon,
+							/obj/item/toy/plushie/dragon/green,
+							/obj/item/toy/plushie/dragon/purple,
+							/obj/item/toy/plushie/dragon/red_east,
+							/obj/item/toy/plushie/dragon/green_east,
+							/obj/item/toy/plushie/dragon/white_east,
+							/obj/item/toy/plushie/dragon/gold_east)))
 
 /obj/random/plushielarge
 	name = "random large plushie"

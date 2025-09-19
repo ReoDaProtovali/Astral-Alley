@@ -1153,3 +1153,90 @@
 		return
 	user.visible_message(span_danger("\The [user] waves \the [src] in front of the [M]!"))
 	M.PounceTarget(user,100)
+<<<<<<< HEAD
+=======
+
+/// Fluff item for digitalsquirrel
+
+/obj/item/toy/acorn_branch
+	name = "oak staff"
+	desc = "A branch of oak wood bearing a collection of still living leaves, and many acorns hanging among them."
+	icon = 'icons/obj/items.dmi'
+	icon_state = "acorn_branch"
+	w_class = ITEMSIZE_SMALL
+	var/next_use = 0
+	var/registered_mob //On request, only one person is able to use it at a time.
+
+/obj/item/toy/acorn_branch/attack_self(mob/user)
+	if(user.stat || !ishuman(user))
+		return
+	if(world.time < next_use)
+		to_chat(user, span_notice("You need to wait a bit longer before you can pull out another acorn!"))
+		return
+	var/mob/living/carbon/human/H = user
+	if(registered_mob)
+		if(registered_mob != H)
+			to_chat(user, span_notice("It's a lovely branch!"))
+			return
+	else
+		registered_mob = H
+	if(H.get_inactive_hand())
+		to_chat(user, span_notice("You need to have a free hand to pick an acorn out!"))
+		return
+	var/spawnloc = get_turf(H)
+	var/obj/item/I = new /obj/item/reagent_containers/food/snacks/acorn(spawnloc)
+	H.put_in_inactive_hand(I)
+	next_use = (world.time + 30 SECONDS)
+	H.visible_message(span_notice("\The [H] pulls an acorn from \the [src]!"))
+
+/obj/item/toy/plushie/dragon
+	name = "dragon plushie"
+	desc = "A soft plushie in the shape of a dragon. How ferocious!"
+	icon = 'icons/obj/toy.dmi'
+	icon_state = "reddragon"
+	var/cooldown = FALSE
+
+/obj/item/toy/plushie/dragon/Initialize(mapload)
+	. = ..()
+	if (pokephrase != "Rawr~!")
+		pokephrase = pick("ROAR!", "RAWR!", "GAWR!", "GRR!", "GROAR!", "GRAH!", "Weh!", "Merp!")
+
+/obj/item/toy/plushie/dragon/attack_self(mob/user)
+	if(!cooldown)
+		switch(pokephrase)
+			if("Weh!")
+				playsound(user, 'sound/voice/weh.ogg', 20, 0)
+			if("Merp!")
+				playsound(user, 'sound/voice/merp.ogg', 20, 0)
+			else
+				playsound(user, 'sound/voice/roarbark.ogg', 20, 0)
+		cooldown = TRUE
+		addtimer(VARSET_CALLBACK(src, cooldown, FALSE), 5 SECONDS, TIMER_DELETE_ME)
+	return ..()
+
+/obj/item/toy/plushie/dragon/green
+	name = "green dragon plushie"
+	icon_state = "greendragon"
+
+/obj/item/toy/plushie/dragon/purple
+	name = "purple dragon plushie"
+	icon_state = "purpledragon"
+
+/obj/item/toy/plushie/dragon/white_east
+	name = "white eastern dragon plushie"
+	icon_state = "whiteeasterndragon"
+
+/obj/item/toy/plushie/dragon/red_east
+	name = "red eastern dragon plushie"
+	icon_state = "redeasterndragon"
+
+/obj/item/toy/plushie/dragon/green_east
+	name = "green eastern dragon plushie"
+	icon_state = "greeneasterndragon"
+
+/obj/item/toy/plushie/dragon/gold_east
+	name = "golden eastern dragon plushie"
+	desc = "A soft plushie of a shiny golden dragon. Made of Real* gold!"
+	icon_state = "goldeasterndragon"
+	pokephrase = "Rawr~!"
+>>>>>>> 9e91e9017e ([MIRROR] Dragon Plushie Upport (#11700))
