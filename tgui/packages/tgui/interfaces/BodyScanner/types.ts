@@ -36,6 +36,7 @@ export type occupant = {
   objectPrey: number;
   weight: number;
   husked: BooleanLike;
+  hasWithdrawl: BooleanLike;
 };
 
 type reagent = { name: string; amount: number; overdose: BooleanLike };

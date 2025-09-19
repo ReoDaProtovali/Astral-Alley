@@ -48,6 +48,11 @@ export const abnormalities: (string | ((occupant: occupant) => string))[][] = [
     'bad',
     (occupant) => 'Anatomical structure lost, resuscitation not possible!',
   ],
+  [
+    'hasWithdrawl',
+    'bad',
+    (occupant) => 'Experiencing withdrawal! Inaprovaline can reduce symptoms.',
+  ],
 ];
 
 export const damages: string[][] = [
