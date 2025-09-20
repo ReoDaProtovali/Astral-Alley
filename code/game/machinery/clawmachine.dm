@@ -68,6 +68,7 @@
 						/obj/item/toy/plushie/otter,
 						/obj/item/toy/plushie/shark,
 						//CHOMPStation Add Start
+<<<<<<< HEAD
 						/obj/item/toy/plushie/red_dragon,
 						/obj/item/toy/plushie/green_dragon,
 						/obj/item/toy/plushie/purple_dragon,
@@ -78,6 +79,19 @@
 						/obj/item/toy/plushie/teppi,
 						/obj/item/toy/plushie/teppi/alt
 						//CHOMPStation Add End
+=======
+						/obj/item/toy/plushie/teppi,
+						/obj/item/toy/plushie/teppi/alt,
+						//CHOMPStation Add End
+						/obj/item/toy/plushie/tinytin_sec,
+						/obj/item/toy/plushie/dragon,
+						/obj/item/toy/plushie/dragon/green,
+						/obj/item/toy/plushie/dragon/purple,
+						/obj/item/toy/plushie/dragon/red_east,
+						/obj/item/toy/plushie/dragon/green_east,
+						/obj/item/toy/plushie/dragon/white_east,
+						/obj/item/toy/plushie/dragon/gold_east
+>>>>>>> 9e91e9017e ([MIRROR] Dragon Plushie Upport (#11700))
 						)
 
 /obj/machinery/clawmachine/update_icon()

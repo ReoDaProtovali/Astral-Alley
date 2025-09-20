@@ -230,7 +230,20 @@ var/global/list/datum/supply_drop_loot/supply_drop
 		/obj/item/toy/katana,
 		/obj/item/toy/katana,
 		/obj/item/inflatable_duck,
+<<<<<<< HEAD
 		/obj/item/inflatable_duck)
+=======
+		/obj/item/inflatable_duck,
+		/obj/item/toy/plushie/tinytin,
+		/obj/item/toy/plushie/tinytin_sec,
+		/obj/item/toy/plushie/dragon,
+		/obj/item/toy/plushie/dragon/green,
+		/obj/item/toy/plushie/dragon/purple,
+		/obj/item/toy/plushie/dragon/red_east,
+		/obj/item/toy/plushie/dragon/green_east,
+		/obj/item/toy/plushie/dragon/white_east,
+		/obj/item/toy/plushie/dragon/gold_east)
+>>>>>>> 9e91e9017e ([MIRROR] Dragon Plushie Upport (#11700))
 
 /datum/supply_drop_loot/christmas
 	name = "Surplus Christmas Supplies"
