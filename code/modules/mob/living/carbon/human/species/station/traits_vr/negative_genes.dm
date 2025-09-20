@@ -195,11 +195,34 @@
 	activation_message="You feel bloated..."
 	primitive_expression_messages=list("shudders.","gasps.","chokes.")
 
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/negative_genes.dm
 /datum/trait/negative/disability_censored
 	name = "Censored"
 	desc = "You are unable to speak profanity. To an excessive degree..."
 	cost = -1
 	custom_only = FALSE
+=======
+
+/datum/trait/negative/disability_damagedspine
+	name = "Lumbar Impairment"
+	desc = "Due to neurological damage, you are unable to use your legs. Collapsing to the ground as soon as you try to stand. You should check the loadout menu for something to assist you."
+	cost = -3
+	custom_only = FALSE
+	can_take = ORGANICS
+
+	is_genetrait = TRUE
+	hidden = FALSE
+	activity_bounds = DNA_HARDER_BOUNDS // Shouldn't be easy for genetics to find this
+
+	sdisability=SPINE
+	activation_message="Your legs shake..."
+
+/datum/trait/negative/ambulant_blood
+	name = "Ambulant Blood"
+	desc = "Your blood reacts to hostile stimulation such as burning when seperated from your body, as if it was its own creature. You WILL be mistaken for a changeling, you may want to document this in your medical records."
+	var_changes = list("ambulant_blood" = TRUE)
+	cost = -1 //CHOMPEdit - Keep original value
+>>>>>>> eb17a0b5dd ([MIRROR] Negative trait point changes. (#11670)):code/modules/mob/living/carbon/human/species/station/traits/negative_genes.dm
 
 	is_genetrait = TRUE
 	hidden = FALSE
