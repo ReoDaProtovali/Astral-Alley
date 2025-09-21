@@ -98,6 +98,11 @@
 	for(var/decl/chemical_reaction/C as anything in effect_reactions)
 		C.post_reaction(src)
 	update_total()
+<<<<<<< HEAD
+=======
+	SEND_SIGNAL(src, COMSIG_REAGENTS_HOLDER_REACTED, effect_reactions)
+	return effect_reactions.len
+>>>>>>> 83dc4c095c ([MIRROR] Even STRICTER reaction unittest (#11711))
 
 /* Holder-to-chemical */
 
