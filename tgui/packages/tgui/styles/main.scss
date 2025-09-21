@@ -72,6 +72,13 @@
 @include meta.load-css('./interfaces/IDCard.scss');
 @include meta.load-css('./interfaces/TinderMessaging.scss');
 @include meta.load-css('./interfaces/Turbolift.scss');
+<<<<<<< HEAD
+=======
+@include meta.load-css('./interfaces/TicketPanel.scss');
+@include meta.load-css('./interfaces/VorePanel.scss');
+@include meta.load-css('./interfaces/Wires.scss');
+@include meta.load-css('./interfaces/PlushEditor.scss');
+>>>>>>> 3fd22e8106 ([MIRROR] Customizable dragon plushie! (#11717))
 
 // Layouts
 @include meta.load-css('./layouts/Layout.scss');
