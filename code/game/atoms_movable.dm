@@ -29,8 +29,16 @@
 
 	var/cloaked = FALSE //If we're cloaked or not
 	var/image/cloaked_selfimage //The image we use for our client to let them see where we are
+<<<<<<< HEAD
 	var/belly_cycles = 0 //CHOMPEdit: Counting current belly process cycles for autotransfer.
 	var/autotransferable = TRUE //CHOMPEdit: Toggle for autotransfer mechanics.
+=======
+	var/belly_cycles = 0 // Counting current belly process cycles for autotransfer.
+	var/autotransferable = TRUE // Toggle for autotransfer mechanics.
+	var/recursive_listeners
+	var/listening_recursive = NON_LISTENING_ATOM
+	var/unacidable = TRUE
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 
 /atom/movable/Initialize(mapload)
 	. = ..()

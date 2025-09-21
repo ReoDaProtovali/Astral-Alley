@@ -333,8 +333,13 @@
 	if(soulcatcher) // CHOMPEdit Start, needs it's own handling to allow vore_fx
 		if(ext_blind)
 			eye_blind = 5
+<<<<<<< HEAD
 			client.screen.Remove(global_hud.whitense)
 			overlay_fullscreen("blind", /obj/screen/fullscreen/blind)
+=======
+			client.screen.Remove(GLOB.global_hud.whitense)
+			overlay_fullscreen("blind", /atom/movable/screen/fullscreen/blind)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 		else
 			eye_blind = 0
 			clear_fullscreens()

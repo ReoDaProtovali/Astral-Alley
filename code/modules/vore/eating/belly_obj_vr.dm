@@ -564,6 +564,7 @@
 		L.clear_fullscreen("belly")
 	if(belly_fullscreen)
 		if(colorization_enabled)
+<<<<<<< HEAD
 			/* //Chomp Disable - disable upstream's solution, use ours
 			var/obj/screen/fullscreen/F = L.overlay_fullscreen("belly", /obj/screen/fullscreen/belly/colorized)
 			F.icon_state = belly_fullscreen
@@ -589,6 +590,9 @@
 
 			// Chomp EDIT Begin
 			var/obj/screen/fullscreen/F = L.overlay_fullscreen("belly", /obj/screen/fullscreen/belly, severity) //CHOMPEdit Start: preserving save data
+=======
+			var/atom/movable/screen/fullscreen/F = L.overlay_fullscreen("belly", /atom/movable/screen/fullscreen/belly, severity) // preserving save data
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 			var/datum/belly_overlays/lookup_belly_path = text2path("/datum/belly_overlays/[lowertext(belly_fullscreen)]")
 			if(!lookup_belly_path)
 				CRASH("Icon datum was not defined for [belly_fullscreen]")
@@ -660,8 +664,13 @@
 				F.add_overlay(I)
 			F.update_for_view(L.client.view)
 		else
+<<<<<<< HEAD
 			var/obj/screen/fullscreen/F = L.overlay_fullscreen("belly", /obj/screen/fullscreen/belly/fixed, severity) //preserving save data
 			F.icon = file("modular_chomp/icons/mob/vore_fullscreens/[belly_fullscreen].dmi")
+=======
+			var/atom/movable/screen/fullscreen/F = L.overlay_fullscreen("belly", /atom/movable/screen/fullscreen/belly/fixed, severity) //preserving save data
+			F.icon = 'icons/mob/screen_full_vore.dmi'
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 			F.cut_overlays()
 			F.add_overlay(image(F.icon, belly_fullscreen))
 			F.add_overlay(image(F.icon, belly_fullscreen+"-2"))
