@@ -68,8 +68,13 @@
 		/obj/item/holder,
 		/obj/machinery/camera,
 		/obj/belly,
+<<<<<<< HEAD
 		/obj/soulgem, // CHOMPAdd
 		/obj/screen,
+=======
+		/obj/soulgem,
+		/atom/movable/screen,
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 		/atom/movable/emissive_blocker,
 		/obj/item/material,
 		/obj/item/melee,

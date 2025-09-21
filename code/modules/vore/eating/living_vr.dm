@@ -715,8 +715,13 @@
 		src.forceMove(get_turf(F))
 		log_and_message_admins("used the OOC escape button to get out of a food item.", src)
 
+<<<<<<< HEAD
 	else if(src.alerts["leashed"])
 		var/obj/screen/alert/leash_pet/pet_alert = src.alerts["leashed"]
+=======
+	else if(alerts && alerts["leashed"])
+		var/atom/movable/screen/alert/leash_pet/pet_alert = src.alerts["leashed"]
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 		var/obj/item/leash/owner = pet_alert.master
 		owner.clear_leash()
 		log_and_message_admins("used the OOC escape button to get out of a leash.", src)
@@ -1414,11 +1419,19 @@
 	popup.open()
 
 // Full screen belly overlays!
+<<<<<<< HEAD
 /obj/screen/fullscreen/belly
 	icon = 'modular_chomp/icons/mob/vore_fullscreens/screen_full_vore_ch.dmi' //CHOMPedit
 
 /obj/screen/fullscreen/belly/fixed //CHOMPedit: tweaking to preserve save data
 	icon = 'icons/mob/screen_full_vore.dmi' //CHOMPedit: tweaking to preserve save data
+=======
+/atom/movable/screen/fullscreen/belly
+	icon = 'icons/mob/vore_fullscreens/screen_full_vore_list.dmi'
+
+/atom/movable/screen/fullscreen/belly/fixed
+	icon = 'icons/mob/screen_full_vore.dmi'
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719))
 	icon_state = ""
 
 /* //Chomp DISABLE - use our solution, not upstream's.
@@ -1578,7 +1591,7 @@
  * Small helper component to manage the vore panel HUD icon
  */
 /datum/component/vore_panel
-	var/obj/screen/vore_panel/screen_icon
+	var/atom/movable/screen/vore_panel/screen_icon
 
 /datum/component/vore_panel/Initialize()
 	if(!isliving(parent))
@@ -1628,7 +1641,7 @@
 /**
  * Screen object for vore panel
  */
-/obj/screen/vore_panel
+/atom/movable/screen/vore_panel
 	name = "vore panel"
 	icon = 'icons/mob/screen/midnight.dmi'
 	icon_state = "vore"

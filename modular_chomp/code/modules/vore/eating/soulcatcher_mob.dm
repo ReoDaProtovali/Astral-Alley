@@ -30,8 +30,13 @@
 
 	if(ext_blind)
 		eye_blind = 5
+<<<<<<< HEAD:modular_chomp/code/modules/vore/eating/soulcatcher_mob.dm
 		client.screen.Remove(global_hud.whitense)
 		overlay_fullscreen("blind", /obj/screen/fullscreen/blind)
+=======
+		client.screen.Remove(GLOB.global_hud.whitense)
+		overlay_fullscreen("blind", /atom/movable/screen/fullscreen/blind)
+>>>>>>> 303e88c0b2 ([MIRROR] obj screen to atom movable screen (#11719)):code/modules/vore/eating/soulcatcher_mob.dm
 	else
 		eye_blind = 0
 		clear_fullscreen("blind")
