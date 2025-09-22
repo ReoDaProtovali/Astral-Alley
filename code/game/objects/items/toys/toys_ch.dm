@@ -30,6 +30,7 @@
 	icon_state = "reddragon"
 	pokephrase = "RAWR!"
 
+<<<<<<< HEAD
 /obj/item/toy/plushie/green_dragon
 	name = "green dragon plushie"
 	icon = 'icons/obj/toy_ch.dmi'
@@ -67,6 +68,8 @@
 	icon_state = "goldeasterndragon"
 	pokephrase = "Shine!"
 
+=======
+>>>>>>> 34510735da (Remove the old customizable plushie (#11722))
 /obj/item/toy/plushie/teppi
 	name = "teppi plushie"
 	desc = "A soft, fluffy plushie made out of real teppi fur!"
