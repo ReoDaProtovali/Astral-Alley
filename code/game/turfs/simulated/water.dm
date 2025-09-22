@@ -22,7 +22,13 @@
 	var/reagent_type = REAGENT_ID_WATER
 	// var/datum/looping_sound/water/soundloop CHOMPEdit: Removing soundloop for now.
 
+<<<<<<< HEAD
 /turf/simulated/floor/water/Initialize()
+=======
+	var/watercolor = null
+
+/turf/simulated/floor/water/Initialize(mapload)
+>>>>>>> 94900aedc0 ([MIRROR] various map related features (#11724))
 	. = ..()
 	update_icon()
 	handle_fish()
