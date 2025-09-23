@@ -114,6 +114,75 @@
 
 	return FALSE
 
+<<<<<<< HEAD
+=======
+/// Actions pertaining to the old bay system
+/datum/preferences/proc/bay_act(action, list/params, datum/tgui/ui, datum/tgui_state/state)
+	. = FALSE
+
+	switch(action)
+		// Basic actions
+		if("load")
+			if(!IsGuestKey(ui.user.key))
+				open_load_dialog(ui.user)
+			. = TRUE
+		if("save")
+			save_character()
+			save_preferences()
+			saved_notification = TRUE
+			VARSET_IN(src, saved_notification, FALSE, 1 SECONDS)
+			. = TRUE
+		if("reload")
+			load_preferences(TRUE)
+			load_character()
+			client.prefs_vr.load_vore()
+			sanitize_preferences()
+			. = TRUE
+		if("resetslot")
+			if(!isnewplayer(ui.user))
+				to_chat(ui.user, span_userdanger("You can't change your character slot while being in round."))
+			if("Yes" != tgui_alert(ui.user, "This will reset the current slot. Continue?", "Reset current slot?", list("No", "Yes")))
+				return
+			if("Yes" != tgui_alert(ui.user, "Are you completely sure that you want to reset this character slot?", "Reset current slot?", list("No", "Yes")))
+				return
+			reset_slot()
+			sanitize_preferences()
+			. = TRUE
+		if("copy")
+			if(!isnewplayer(ui.user))
+				to_chat(ui.user, span_userdanger("You can't change your character slot while being in round."))
+			if(!IsGuestKey(ui.user.key))
+				open_copy_dialog(ui.user)
+			. = TRUE
+		// More specific stuff
+		if("switch_category")
+			var/new_category = params["category"]
+			for(var/datum/category_group/player_setup_category/PS in player_setup.categories)
+				if(PS.name == new_category)
+					player_setup.selected_category = PS
+					update_tgui_static_data(ui.user, ui)
+					break
+			. = TRUE
+		if("game_prefs")
+			ui.user.client.game_options()
+			. = TRUE
+		if("refresh_character_preview")
+			if(!COOLDOWN_FINISHED(src, ui_refresh_cooldown))
+				return
+			update_preview_icon()
+			COOLDOWN_START(src, ui_refresh_cooldown, 5 SECONDS)
+			CallAsync(src, PROC_REF(jiggle_map))
+			. = TRUE
+
+/datum/preferences/proc/jiggle_map()
+	// Fix for weird byond bug, jiggles the map around a little
+	var/atom/movable/screen/setup_preview/pm_helper/PMH = LAZYACCESS(char_render_holders, "PMH")
+	sleep(0.1 SECONDS)
+	PMH.screen_loc = LAZYACCESS(preview_screen_locs, "PMHjiggle")
+	sleep(0.1 SECONDS)
+	PMH.screen_loc = LAZYACCESS(preview_screen_locs, "PMH")
+
+>>>>>>> 2738c2c020 ([MIRROR] Modernizing doors (#11728))
 /datum/preferences/tgui_close(mob/user)
 	save_character()
 	save_preferences()

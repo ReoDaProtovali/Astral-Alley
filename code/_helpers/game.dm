@@ -610,6 +610,7 @@
 		temps[direction] = rstats
 	return temps
 
+<<<<<<< HEAD
 /proc/MinutesToTicks(var/minutes)
 	return SecondsToTicks(60 * minutes)
 
@@ -618,6 +619,15 @@
 
 /proc/window_flash(var/client_or_usr)
 	if (!client_or_usr)
+=======
+///Flash the window of a player
+/proc/window_flash(client/flashed_client, ignorepref = FALSE)
+	if(ismob(flashed_client))
+		var/mob/player_mob = flashed_client
+		if(player_mob.client)
+			flashed_client = player_mob.client
+	if(!flashed_client || (!flashed_client.prefs.read_preference(/datum/preference/toggle/window_flashing) && !ignorepref))
+>>>>>>> 2738c2c020 ([MIRROR] Modernizing doors (#11728))
 		return
 	winset(client_or_usr, "mainwindow", "flash=5")
 
