@@ -829,8 +829,11 @@
 		else
 			resist_restraints()
 
+<<<<<<< HEAD
 	if(attempt_vr(src,"vore_process_resist",args)) return TRUE //VOREStation Code
 
+=======
+>>>>>>> 2738c2c020 ([MIRROR] Modernizing doors (#11728))
 /mob/living/proc/resist_buckle()
 	if(buckled)
 		if(istype(buckled, /obj/vehicle))
