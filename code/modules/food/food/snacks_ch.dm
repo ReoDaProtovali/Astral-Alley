@@ -324,6 +324,7 @@
 /obj/item/reagent_containers/food/snacks/blondiesslice/filled/Initialize()
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_PROTEIN, 1)
+<<<<<<< HEAD
 
 /obj/item/reagent_containers/food/snacks/churro
 	name = "churro"
@@ -339,3 +340,5 @@
 /obj/item/reagent_containers/food/snacks/churro/Initialize()
 	. = ..()
 	reagents.add_reagent(REAGENT_ID_COOKINGOIL, 1)
+=======
+>>>>>>> 89d0db08eb ([MIRROR] Upports Churros (#11731))
