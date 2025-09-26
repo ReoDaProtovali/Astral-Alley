@@ -143,7 +143,7 @@ var/global/list/micro_tunnels = list()
 				if(!destinations.len)
 					to_chat(user, span_warning("There are no other tunnels connected to this one!"))
 					return
-				else if(destinations.len == 1)
+				else if(destinations.len == 1 || random)
 					choice = pick(destinations)
 				else
 					choice = tgui_input_list(user, "Where would you like to go?", "Pick a tunnel", destinations)
