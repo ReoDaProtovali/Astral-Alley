@@ -2,6 +2,7 @@
 //Original Casino Code created by Shadowfire117#1269 - Ported from CHOMPstation
 //Modified by GhostActual#2055 for use with VOREstation
 
+<<<<<<< HEAD
 /obj/item/deck/cards/casino/New()
 	var/datum/playingcard/casino/P
 	for(var/suit in list("spades","clubs","diamonds","hearts"))
@@ -26,6 +27,8 @@
 			P.back_icon = "casino_card_back"
 			cards += P
 
+=======
+>>>>>>> a493e176e2 ([MIRROR] Luckier 7 event map content + Card deck init improvement/bugfixing (#11735))
 /datum/playingcard/casino
 	name = "playing card"
 	card_icon = "card_back"
@@ -45,4 +48,17 @@
 	name = "deck of casino cards"
 	desc = "A deck of playing cards from the golden goose casino, comes without a joker card!"
 	icon = 'icons/obj/playing_cards.dmi'
+<<<<<<< HEAD
 	icon_state = "casino_deck"
+=======
+	icon_state = "casino_deck"
+	card_icon_prefix = "casino_"
+
+/obj/item/deck/cards/casino/init_jokers()
+	return
+
+/obj/item/deck/cards/casino/triple
+	name = "big deck of casino cards"
+	desc = "A triply-sized deck of playing cards from the golden goose casino, comes without a joker card!"
+	deck_size = 3
+>>>>>>> a493e176e2 ([MIRROR] Luckier 7 event map content + Card deck init improvement/bugfixing (#11735))
