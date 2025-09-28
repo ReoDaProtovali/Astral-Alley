@@ -1131,6 +1131,82 @@
 	color_blend_mode = ICON_MULTIPLY
 	extra_overlay = "angler_bulb"
 
+<<<<<<< HEAD
+=======
+/datum/sprite_accessory/ears/demi_tesh_ears
+	name = "Demi-Teshari ears"
+	desc = ""
+	icon_state = "demi-tesh-kit-ears"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/demi_tesh_ears_female
+	name = "Demi-Teshari female pattern ears"
+	desc = ""
+	icon_state = "demi-tesh-kit-ears"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "demi-tesh-kit-ears_female"
+
+/datum/sprite_accessory/ears/demi_tesh_ears_male
+	name = "Demi-Teshari male pattern ears"
+	desc = ""
+	icon_state = "demi-tesh-kit-ears"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+	extra_overlay = "demi-tesh-kit-ears_male"
+
+/datum/sprite_accessory/ears/naga_ears
+	name = "naga ears"
+	desc = ""
+	icon_state = "naga-ears"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/axehorn
+	name = "axe horn"
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "axehorn"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/axehorn_alt
+	name = "axe horn, alt"
+	icon = 'icons/mob/vore/ears_32x64.dmi'
+	icon_state = "axehornalt"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/swepthorns
+	name = "Horns, swept back"
+	desc = ""
+	icon_state = "swept_horns"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+
+/datum/sprite_accessory/ears/swepthornsbroken
+	name = "Horns, stumps"
+	desc = ""
+	icon_state = "swept_horns_broken"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/swepthornsbrokenr
+	name = "Horns, swept, right broken"
+	desc = ""
+	icon_state = "swept_horns_broken_r"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+/datum/sprite_accessory/ears/swepthornsbrokenl
+	name = "Horns, swept, left broken"
+	desc = ""
+	icon_state = "swept_horns_broken_l"
+	do_colouration = 1
+	color_blend_mode = ICON_MULTIPLY
+
+>>>>>>> efbc9a0e0c ([MIRROR] Adds a few new sprites (#11753))
 //Dino frills
 /datum/sprite_accessory/ears/dino_frills
 	name = "triceratops frills"
