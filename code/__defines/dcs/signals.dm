@@ -808,3 +808,35 @@
 #define COMSIG_OBSERVER_ITEM_UNEQUIPPED "observer_item_unequipped"
 #define COMSIG_OBSERVER_APC "observer_apc"
 #define COMSIG_OBSERVER_GLOBALMOVED "observer_global_move"
+<<<<<<< HEAD
+=======
+
+// Bellies
+///from /obj/belly/HandleBellyReagents() and /obj/belly/update_internal_overlay()
+#define COMSIG_BELLY_UPDATE_VORE_FX "update_vore_fx"
+///from /obj/belly/process()
+#define COMSIG_BELLY_UPDATE_PREY_LOOP "update_prey_loop"
+/// COMSIG used to get messages where they need to go
+#define COMSIG_VISIBLE_MESSAGE "visible_message"
+
+// Gargoyle Component
+///from /mob/living/carbon/human/proc/gargoyle_transformation()
+#define COMSIG_GARGOYLE_TRANSFORMATION "gargoyle_transformation"
+///from /mob/living/carbon/human/proc/gargoyle_pause()
+#define COMSIG_GARGOYLE_PAUSE "gargoyle_pause"
+///from /mob/living/carbon/human/proc/gargoyle_checkenergy()
+#define COMSIG_GARGOYLE_CHECK_ENERGY "gargoyle_check_energy"
+
+// Species Components
+///from /datum/species/proc/handle_species_components()
+#define COMSIG_XENOCHIMERA_COMPONENT "xenochimera_component"
+#define COMSIG_SHADEKIN_COMPONENT "shadekin_component"
+
+// Hose Connector Component
+#define COMSIG_HOSE_FORCEPUMP "hose_force_pump"
+
+//Unittest data update
+#ifdef UNIT_TESTS
+#define COMSIG_UNITTEST_DATA "unittest_send_data"
+#endif
+>>>>>>> 4778981111 ([MIRROR] Makes weaver TGUI (#11768))

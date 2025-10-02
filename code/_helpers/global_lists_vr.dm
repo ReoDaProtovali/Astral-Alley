@@ -619,10 +619,23 @@ var/global/list/remainless_species = list(SPECIES_PROMETHEAN,
 			continue //A prototype or something
 		weavable_items[instance.title] = instance
 
+	paths = subtypesof(/datum/weaver_recipe)
+	for(var/path in paths)
+		var/datum/weaver_recipe/instance = new path()
+		if(!instance.title)
+			continue //A prototype or something
+		GLOB.all_weavable[instance.title] = instance
+
 	return 1 // Hooks must return 1
 
+<<<<<<< HEAD
 var/global/list/weavable_structures = list()
 var/global/list/weavable_items = list()
+=======
+GLOBAL_LIST_EMPTY(weavable_structures)
+GLOBAL_LIST_EMPTY(weavable_items)
+GLOBAL_LIST_EMPTY(all_weavable)
+>>>>>>> 4778981111 ([MIRROR] Makes weaver TGUI (#11768))
 
 
 var/global/list/xenobio_metal_materials_normal = list(

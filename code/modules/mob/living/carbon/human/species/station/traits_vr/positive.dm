@@ -197,8 +197,15 @@
 	var_changes = list("is_weaver" = 1)
 //	allowed_species = list(SPECIES_HANNER, SPECIES_CUSTOM) //So it only shows up for custom species and hanner CHOMPedit: We allowed further access of this.
 	custom_only = FALSE
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/positive.dm
 	has_preferences = list("silk_production" = list(TRAIT_PREF_TYPE_BOOLEAN, "Silk production on spawn", TRAIT_VAREDIT_TARGET_SPECIES), \
 							"silk_color" = list(TRAIT_PREF_TYPE_COLOR, "Silk color", TRAIT_VAREDIT_TARGET_SPECIES))
+=======
+	has_preferences = list("silk_production" = list(TRAIT_PREF_TYPE_BOOLEAN, "Silk production on spawn", TRAIT_NO_VAREDIT_TARGET), \
+							"silk_color" = list(TRAIT_PREF_TYPE_COLOR, "Silk color", TRAIT_NO_VAREDIT_TARGET))
+	added_component_path = /datum/component/weaver
+	excludes = list(/datum/trait/positive/cocoon_tf)
+>>>>>>> 4778981111 ([MIRROR] Makes weaver TGUI (#11768)):code/modules/mob/living/carbon/human/species/station/traits/positive.dm
 
 /datum/trait/positive/weaver/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
@@ -228,6 +235,7 @@
 	cost = 1
 //	allowed_species = list(SPECIES_HANNER, SPECIES_CUSTOM) //So it only shows up for custom species and hanner CHOMPEDIT: It's a roleplay trait. Will things explode if more folks have it?
 	custom_only = FALSE
+	excludes = list(/datum/trait/positive/weaver)
 
 /datum/trait/positive/cocoon_tf/apply(var/datum/species/S,var/mob/living/carbon/human/H)
 	..()
