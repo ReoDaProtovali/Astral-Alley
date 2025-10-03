@@ -63,6 +63,21 @@ export const Ticket = (props) => {
 
   const messagesEndRef: RefObject<HTMLDivElement> = useRef(null);
 
+  const {
+    id,
+    name,
+    ticket_ref,
+    state,
+    level,
+    handler,
+    opened_at,
+    closed_at,
+    opened_at_date,
+    closed_at_date,
+    actions,
+    log,
+  } = data;
+
   useEffect(() => {
     const scroll = messagesEndRef.current;
     if (scroll) {
@@ -80,22 +95,8 @@ export const Ticket = (props) => {
         scroll.scrollTop = scroll.scrollHeight;
       }
     }
-  });
+  }, [log]);
 
-  const {
-    id,
-    name,
-    ticket_ref,
-    state,
-    level,
-    handler,
-    opened_at,
-    closed_at,
-    opened_at_date,
-    closed_at_date,
-    actions,
-    log,
-  } = data;
   return (
     <Window width={900} height={600}>
       <Window.Content>
