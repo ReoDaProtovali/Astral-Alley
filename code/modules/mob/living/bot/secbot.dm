@@ -322,8 +322,13 @@
 		if(!H.lying || H.handcuffed || arrest_type)
 			cuff = FALSE
 		if(!cuff)
+<<<<<<< HEAD
 			H.stun_effect_act(0, stun_strength, null)
 			playsound(src, 'sound/weapons/Egloves.ogg', 50, 1, -1)
+=======
+			H.stun_effect_act(0, stun_strength, null, electric = TRUE)
+			playsound(src, 'sound/weapons/egloves.ogg', 50, 1, -1)
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
 			do_attack_animation(H)
 			busy = TRUE
 			update_icons()

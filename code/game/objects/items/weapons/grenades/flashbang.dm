@@ -163,6 +163,17 @@
 	var/temploc = src.loc
 	walk_away(src,temploc,stepdist)
 
+<<<<<<< HEAD
 	var/dettime = rand(15,60)
 	spawn(dettime)
 		detonate()
+=======
+	addtimer(CALLBACK(src, PROC_REF(detonate)), rand(15, 60), TIMER_DELETE_ME)
+
+/obj/item/grenade/flashbang/clusterbang/primed
+	desc = "This clusterbang seems to have already been activated. Uhoh."
+
+/obj/item/grenade/flashbang/clusterbang/primed/Initialize(mapload)
+	. = ..()
+	activate()
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775))
