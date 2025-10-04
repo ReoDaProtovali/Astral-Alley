@@ -704,3 +704,139 @@
 	cost = -5
 	var_changes = list("dirtslip" = TRUE)
 	excludes = list(/datum/trait/positive/absorbent) // CHOMPAdd
+<<<<<<< HEAD:code/modules/mob/living/carbon/human/species/station/traits_vr/negative.dm
+=======
+
+/datum/trait/negative/thick_digits
+	name = "Thick Digits"
+	desc = "Your hands are not shaped in a way that allows useage of guns."
+	cost = -4
+	custom_only = FALSE
+
+/datum/trait/negative/thick_digits/apply(var/datum/species/S,var/mob/living/carbon/human/H)
+	..()
+	H.add_modifier(/datum/modifier/trait/thickdigits)
+
+/datum/trait/negative/nodefib
+	name = "Unreviveable"
+	desc = "For whatever strange genetic reason, defibs cannot restart your heart."
+	cost = -1
+	custom_only = FALSE
+	var_changes = list("flags" = NO_DEFIB)
+	can_take = ORGANICS
+	excludes = list(/datum/trait/negative/noresleeve, /datum/trait/negative/onelife)
+
+/datum/trait/negative/noresleeve
+	name = "Unsleeveable"
+	desc = "Your genetics have been ruined, to the point where resleeving can no longer bring you back. Your DNA is unappealing to slimes as a result." //The autoresleever still resleeves on Virgo as that section has been commented out, but eh, whatever. It's not really a big concern. -1+-1 = -2 is all I care about.
+	cost = -1
+	custom_only = TRUE
+	var_changes = list("flags" = NO_SLEEVE)
+	excludes = list(/datum/trait/negative/nodefib, /datum/trait/negative/onelife)
+
+/datum/trait/negative/onelife
+	name = "One Life"
+	desc = "Once you are dead, you are incapable of being resleeved or revived using a defib."
+	cost = -2
+	custom_only = TRUE
+	var_changes = list("flags" = NO_SLEEVE | NO_DEFIB)
+	excludes = list(/datum/trait/negative/nodefib, /datum/trait/negative/noresleeve)
+
+// Why put this on Xenochimera of all species? I have no idea, but someone may be enough of a lunatic to take it.
+/datum/trait/negative/neural_hypersensitivity/xenochimera
+	sort = TRAIT_SORT_SPECIES
+	allowed_species = list(SPECIES_XENOCHIMERA)
+	name = "Xenochimera: Neural Hypersensitivity"
+	desc = "Despite your evolutionary efforts, you are unusually sensitive to pain. \
+	Given your species' typical reactions to pain, this can only end well for you!"
+	cost = 0
+	category = 0
+	custom_only = FALSE
+
+/datum/trait/negative/photodegeneration
+	name = "Photodegeneration"
+	desc = "Without the protection of darkness or a suit your body quickly begins to break down when exposed to light."
+	cost = -4
+	is_genetrait = TRUE // There is no upside, a neat landmine for genetics
+	hidden = TRUE //Disabled on Virgo
+	can_take = ORGANICS
+	added_component_path = /datum/component/burninlight // Literally just Zaddat, but you don't start with any suit. Good luck.
+
+// Addictions
+/datum/trait/neutral/addiction_alcohol
+	name = "Addiction - Alcohol"
+	desc = "You have become chemically dependant to any alcoholic drink, and need to regularly consume it or suffer withdrawals."
+	addiction = REAGENT_ID_ETHANOL
+	custom_only = FALSE
+	hidden = TRUE //Disabled on Virgo
+
+/datum/trait/neutral/addiction_bliss
+	name = "Addiction - " + REAGENT_BLISS
+	desc = "You have become chemically dependant to " + REAGENT_BLISS + ", and need to regularly consume it or suffer withdrawals."
+	addiction = REAGENT_ID_BLISS
+	custom_only = FALSE
+	hidden = TRUE //Disabled on Virgo
+
+/datum/trait/neutral/addiction_coffee
+	name = "Addiction - " + REAGENT_COFFEE
+	desc = "You have become chemically dependant to " + REAGENT_COFFEE + ", and need to regularly consume it or suffer withdrawals."
+	addiction = REAGENT_ID_COFFEE
+	custom_only = FALSE
+
+/datum/trait/neutral/addiction_hyper
+	name = "Addiction - " + REAGENT_HYPERZINE
+	desc = "You have become chemically dependant to " + REAGENT_HYPERZINE + ", and need to regularly consume it or suffer withdrawals."
+	addiction = REAGENT_ID_HYPERZINE
+	custom_only = FALSE
+	hidden = TRUE //Disabled on Virgo
+
+/datum/trait/neutral/addiction_nicotine
+	name = "Addiction - " + REAGENT_NICOTINE
+	desc = "You have become chemically dependant to " + REAGENT_NICOTINE + ", and need to regularly consume it or suffer withdrawals."
+	addiction = REAGENT_ID_NICOTINE
+	custom_only = FALSE
+
+/datum/trait/neutral/addiction_oxy
+	name = "Addiction - " + REAGENT_OXYCODONE
+	desc = "You have become chemically dependant to " + REAGENT_OXYCODONE + ", and need to regularly consume it or suffer withdrawals."
+	addiction = REAGENT_ID_OXYCODONE
+	custom_only = FALSE
+	hidden = TRUE //Disabled on Virgo
+
+/datum/trait/neutral/addiction_painkiller
+	name = "Addiction - Pain Killers"
+	desc = "You have become chemically dependant to " + REAGENT_TRAMADOL + ", and need to regularly consume it or suffer withdrawals."
+	addiction = REAGENT_ID_TRAMADOL
+	custom_only = FALSE
+	hidden = TRUE //Disabled on Virgo
+
+/datum/trait/neutral/addiction_asustenance
+	name = "Unstable Vat Grown Body"
+	desc = "You are chemically dependant to " + REAGENT_ASUSTENANCE + ", and need to regularly consume it or your body decays."
+	addiction = REAGENT_ID_ASUSTENANCE
+	custom_only = FALSE
+	hidden = TRUE //Disabled on Virgo
+
+/datum/trait/negative/unlucky
+	name = "Unlucky"
+	desc = "You are naturally unlucky and ill-events often befall you."
+	cost = -2
+	is_genetrait = FALSE
+	hidden = FALSE
+	custom_only = FALSE
+	added_component_path = /datum/component/omen/trait
+	excludes = list(/datum/trait/negative/unlucky/major)
+
+
+/datum/trait/negative/unlucky/major
+	name = "Unlucky, Major"
+	desc = "Your luck is extremely awful and potentially fatal."
+	cost = -5
+	tutorial = "You should avoid disposal bins."
+	is_genetrait = TRUE
+	hidden = FALSE
+	added_component_path = /datum/component/omen/trait/major
+	excludes = list(/datum/trait/negative/unlucky)
+	activation_message= span_cult(span_bold("What a terrible night to have a curse!"))
+	primitive_expression_messages=list("unluckily stubs their toe!")
+>>>>>>> b8fe8fa68d ([MIRROR] Unlucky trait (#11775)):code/modules/mob/living/carbon/human/species/station/traits/negative.dm
