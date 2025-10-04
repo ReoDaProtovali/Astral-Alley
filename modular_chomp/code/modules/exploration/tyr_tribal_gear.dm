@@ -1,7 +1,6 @@
-#define MAT_TYRWOOD			"petrified wood"
-#define MAT_WAGATE			"weathered agate"
 //Hello, welcome to the tyr outsider content.
 //We're going to have some oddities here.
+<<<<<<< HEAD
 //Two-ish tiers. The first tier is made from natural stuff around the caverns.
 //Tier 2 armor is made from the hides and such from the dangerous wildlife.
 //Whilst weapons have parts from the wildlife, and the alien ruins.
@@ -50,6 +49,9 @@
 	singular_name = "weathered agate"
 	default_type = "weathered agate"
 
+=======
+//Otherwise holds stuff meant for outsiders on tyr
+>>>>>>> 117a964661 (Science Fix, and Preparing For Agate Port (#11776))
 /obj/item/reagent_containers/food/snacks/weatherlily
 	name = "strange leaves"
 	desc = "A strange flower producing an odd substance."
@@ -96,7 +98,7 @@
 	name = "flora"
 	desc = "A strange plant."
 	icon_state = "stonetree"
-	harvest_loot = list(/obj/item/stack/material/wood/tyr = 1)
+	harvest_loot = list(/obj/item/stack/material/wood = 1)
 
 /obj/structure/flora/tyr/lilly
 	name = "flora"
