@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /mob/living/proc/CanStumbleVore(mob/living/target)
 	if(!can_be_drop_pred)
 		return FALSE
@@ -15,6 +16,8 @@
 		return FALSE
 	return TRUE
 
+=======
+>>>>>>> 11a4471110 ([MIRROR] Spontaneous Vore Element (#11785))
 /mob/living/Bump(atom/movable/AM)
 	//. = ..()
 	if(isliving(AM))
@@ -34,11 +37,21 @@
 	..()
 
 /mob/living/stumble_into(mob/living/M)
+<<<<<<< HEAD
 	var/mob/living/carbon/human/S = src
+=======
+	if(buckled || M.buckled)
+		return
+
+	//Stumblevore occurs here. Look at the 'stumblevore' element for more information.
+	if(SEND_SIGNAL(src, COMSIG_LIVING_STUMBLED_INTO, M) & CANCEL_STUMBLED_INTO)
+		return
+>>>>>>> 11a4471110 ([MIRROR] Spontaneous Vore Element (#11785))
 
 	playsound(src, "punch", 25, 1, -1)
 	M.Weaken(4)
 	M.stop_flying()
+<<<<<<< HEAD
 	if(CanStumbleVore(M))
 		visible_message(span_vwarning("[M] flops carelessly into [src]!"))
 		perform_the_nom(src,M,src,src.vore_selected,1)
@@ -53,6 +66,21 @@
 		stop_flying()
 		apply_damage(0.5, BRUTE)
 	else if(round(weight) > 474)
+=======
+
+	if(ishuman(src))
+		var/mob/living/carbon/human/S = src
+		if(S.species.lightweight == 1)
+			visible_message(span_vwarning("[M] carelessly bowls [src] over!"))
+			M.forceMove(get_turf(src))
+			M.apply_damage(0.5, BRUTE)
+			Weaken(4)
+			stop_flying()
+			apply_damage(0.5, BRUTE)
+			return
+
+	if(round(weight) > 474)
+>>>>>>> 11a4471110 ([MIRROR] Spontaneous Vore Element (#11785))
 		var/throwtarget = get_edge_target_turf(M, reverse_direction(M.dir))
 		visible_message(span_vwarning("[M] bounces backwards off of [src]'s plush body!"))
 		M.throw_at(throwtarget, 2, 1)
