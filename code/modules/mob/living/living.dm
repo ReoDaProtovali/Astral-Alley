@@ -16,7 +16,22 @@
 	dsma.blend_mode = BLEND_ADD
 	dsoverlay.appearance = dsma
 
+<<<<<<< HEAD
 	selected_image = image(icon = buildmode_hud, loc = src, icon_state = "ai_sel")
+=======
+	selected_image = image(icon = GLOB.buildmode_hud, loc = src, icon_state = "ai_sel")
+
+	AddElement(/datum/element/spontaneous_vore)
+
+/mob/living/proc/get_visible_name()
+	var/datum/component/shadekin/SK = get_shadekin_component()
+	if(SK && SK.in_phase)
+		return "Something"
+	if(real_name)
+		return real_name
+	else
+		return name
+>>>>>>> 11a4471110 ([MIRROR] Spontaneous Vore Element (#11785))
 
 /mob/living/Destroy()
 	SSradiation.listeners -= src
