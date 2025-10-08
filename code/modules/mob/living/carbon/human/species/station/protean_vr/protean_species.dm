@@ -132,13 +132,14 @@
 	)
 	// CHOMPEdit Start
 	var/list/dullahan_overlays = list(
-		"dullahanbody" = "#FFFFFF",
-		"dullahanhead" = "#FFFFFF",
-		"dullahanmetal" = "#FFFFFF",
-		"dullahaneyes" = "#FFFFFF",
-		"dullahandecals" = "#FFFFFF",
-		"dullahanextended" = "#FFFFFF"
-		// loads the icons from the DMI file in that order on spawn. they are overlay 1-6.
+		"dullahanbody" = "#FFFFFF", // body 1
+		"dullahanhead" = "#FFFFFF", // head 4
+		"dullahanmetal" = "#FFFFFF", // metal 3
+		"dullahaneyes" = "#FFFFFF", // eyes 2
+		"dullahanlightsempty" = "#FFFFFF", // lights 5
+		"dullahanextended" = "#FFFFFF", // breastplate part only on 6, do not use for anything else
+		"dullahanclothesempty" = "#FFFFFF" // clothes 7
+		// loads the icons from the DMI file in that order on spawn. they are overlay 1-6. specifically it uses those names in the DMI file.
 	)
 	// CHOMPEdit End
 	var/pseudodead = 0
