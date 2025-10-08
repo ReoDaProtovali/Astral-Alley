@@ -62,7 +62,11 @@
 						because Central Command gives a partial refund."
 
 	alt_titles = list(JOB_ALT_CARGO_LOADER = /datum/alt_title/cargo_loader, JOB_ALT_CARGO_HANDLER = /datum/alt_title/cargo_handler, JOB_ALT_SUPPLY_COURIER = /datum/alt_title/supply_courier,
+<<<<<<< HEAD
 					JOB_ALT_DISPOSALS_SORTER = /datum/alt_title/disposal_sorter, JOB_ALT_MAILMAN = /datum/alt_title/mailman) // CHOMPEdit: Adds Mailman title.
+=======
+					JOB_ALT_DISPOSALS_SORTER = /datum/alt_title/disposal_sorter, JOB_ALT_MAILMAN = /datum/alt_title/mailman, JOB_ALT_DELIVERY_WORKER = /datum/alt_title/delivery_worker)
+>>>>>>> 833357169a ([MIRROR] Some extra alt titles (#11795))
 
 /datum/alt_title/supply_courier
 	title = JOB_ALT_SUPPLY_COURIER
@@ -80,6 +84,19 @@
 	title = JOB_ALT_DISPOSALS_SORTER
 	title_blurb = "A " + JOB_ALT_DISPOSALS_SORTER + " is usually tasked with operating disposals delivery system, sorting the trash and tagging parcels for delivery."
 
+<<<<<<< HEAD
+=======
+/datum/alt_title/mailman
+	title = JOB_ALT_MAILMAN
+	title_blurb = "A Mail Carrier is tasked with delivering packages or mail to whoever it might adress."
+	title_outfit = /decl/hierarchy/outfit/job/cargo/cargo_tech/mailman
+
+/datum/alt_title/delivery_worker
+	title = JOB_ALT_DELIVERY_WORKER
+	title_blurb = "A " + JOB_ALT_DELIVERY_WORKER + " takes a more personal role in delivering items directly to those who ordered them."
+
+
+>>>>>>> 833357169a ([MIRROR] Some extra alt titles (#11795))
 //////////////////////////////////
 //			Shaft Miner
 //////////////////////////////////
